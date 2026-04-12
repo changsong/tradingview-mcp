@@ -282,20 +282,17 @@ async function scanStocks() {
     await sleep(500);
   }
 
-  // 筛选符合条件的股票 - 更灵活的条件
-  // 原始严格条件: trendUp && validCompression && volOK && validStock && !fakeBreak
-  // 修改为: 至少满足3个核心条件，或signal为GO
+  // 筛选符合条件的股票
+  // 必须满足以下所有条件:
+  // 1. trendUp = true (上升趋势)
+  // 2. fakeBreak = false (非假突破)
+  // 3. validCompression = true (有效压缩)
+  // 4. rawData 包含 "GO" 或 signal = "GO"
   const qualified = results.filter(r => {
-    // 或者满足3个或更多条件
-    const conditionsMet = [
-      r.trendUp,
-      r.validCompression,
-      r.volOK,
-      r.validStock,
-      !r.fakeBreak
-    ].filter(c => c).length;
-
-    return conditionsMet >= 4;
+    return r.trendUp &&
+           !r.fakeBreak &&
+           r.validCompression &&
+           (r.signal === 'GO' || r.rawData.includes('GO'));
   });
 
   console.log(`\n✅ 扫描完成！共分析 ${results.length}/${symbols.length} 个股票`);
