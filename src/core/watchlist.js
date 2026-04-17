@@ -5,20 +5,24 @@
 import { evaluate, evaluateAsync, getClient } from '../connection.js';
 
 export async function get() {
-  // Try internal API first — reads from the active watchlist widget
+  // First, ensure watchlist panel is fully visible and focused
+  await evaluate(`
+    (function() {
+      var rightArea = document.querySelector('[class*="layout__area--right"]');
+      if (rightArea) {
+        rightArea.style.visibility = 'visible';
+        rightArea.focus();
+      }
+    })()
+  `);
+
+  // Get all visible symbols without scrolling
   const symbols = await evaluate(`
     (function() {
-      // Method 1: Try the watchlist widget's internal data
-      try {
-        var rightArea = document.querySelector('[class*="layout__area--right"]');
-        if (!rightArea || rightArea.offsetWidth < 50) return { symbols: [], source: 'panel_closed' };
-      } catch(e) {}
-
-      // Method 2: Read data-symbol-full attributes from watchlist rows
       var results = [];
       var seen = {};
       var container = document.querySelector('[class*="layout__area--right"]');
-      if (!container) return { symbols: [], source: 'no_container' };
+      if (!container) return [];
 
       // Find all elements with symbol data attributes
       var symbolEls = container.querySelectorAll('[data-symbol-full]');
@@ -37,28 +41,15 @@ export async function get() {
         }
         results.push({ symbol: sym, last: nums[0] || null, change: nums[1] || null, change_percent: nums[2] || null });
       }
-
-      if (results.length > 0) return { symbols: results, source: 'data_attributes' };
-
-      // Method 3: Scan for ticker-like text in the right panel
-      var items = container.querySelectorAll('[class*="symbolName"], [class*="tickerName"], [class*="symbol-"]');
-      for (var k = 0; k < items.length; k++) {
-        var text = items[k].textContent.trim();
-        if (text && /^[A-Z][A-Z0-9.:!]{0,20}$/.test(text) && !seen[text]) {
-          seen[text] = true;
-          results.push({ symbol: text, last: null, change: null, change_percent: null });
-        }
-      }
-
-      return { symbols: results, source: results.length > 0 ? 'text_scan' : 'empty' };
+      return results;
     })()
   `);
 
   return {
     success: true,
-    count: symbols?.symbols?.length || 0,
-    source: symbols?.source || 'unknown',
-    symbols: symbols?.symbols || [],
+    count: symbols.length,
+    source: 'visible_symbols_only',
+    symbols: symbols,
   };
 }
 

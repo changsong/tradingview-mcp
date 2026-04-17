@@ -1,0 +1,13 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(D:/trade_workspace/tradingview-mcp/scripts/launch_tv_debug.bat)",
+      "Bash(node -e \"\nconst { evaluate } = require\\(''./src/connection.js''\\);\n\nasync function exploreNewsApi\\(\\) {\n  // 探索 TradingViewApi 对象的所有属性\n  const apiKeys = await evaluate\\(\\\\`\n    \\(function\\(\\) {\n      var api = window.TradingViewApi;\n      if \\(!api\\) return { error: ''TradingViewApi not found'' };\n      var keys = Object.keys\\(api\\).concat\\(Object.getOwnPropertyNames\\(api\\)\\);\n      var unique = [...new Set\\(keys\\)];\n      // 过滤出可能与新闻相关的\n      var newsRelated = unique.filter\\(k => /news|feed|article|headline|story|event|calendar/i.test\\(k\\)\\);\n      return { all_keys: unique.slice\\(0, 100\\), news_related: newsRelated };\n    }\\)\\(\\)\n  \\\\`\\);\n  console.log\\(''TradingViewApi keys:'', JSON.stringify\\(apiKeys, null, 2\\)\\);\n}\n\nexploreNewsApi\\(\\).catch\\(console.error\\);\n\")",
+      "Bash(node scripts/explore_news_api.js:*)",
+      "Bash(node scripts/explore_news_api_deep.js:*)",
+      "Bash(node scripts/explore_news_formats.js:*)",
+      "Bash(node scripts/find_news_api.js:*)",
+      "Bash(node scripts/explore_news_panel.js:*)"
+    ]
+  }
+}
