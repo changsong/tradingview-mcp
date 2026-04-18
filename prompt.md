@@ -1,9 +1,11 @@
 ## 上升趋势股票过滤
 ### A股
-使用 ./scripts/launch_tv_debug.bat 启动TradigView，然后使用 --symbols=filepath=./watchlist/cn.txt 作为入参执行 scan_stocks.js,选出的股票需要输出到 ./watchlist/cn_selected.txt,格式保持同cn.txt一致
+使用 ./scripts/launch_tv_debug.bat 启动TradigView，然后使用 --symbols=filepath=./watchlist/cn.txt 作为入参执行 scan_stocks.js,选出的股票需要输出到 ./watchlist/cn_selected.txt,格式保持同cn.txt一致,并且排重
+设置时间TradigView图表周期为天
 
 ### 美股
-使用 ./scripts/launch_tv_debug.bat 启动TradigView，然后使用 --symbols=filepath=../watchlist/us.txt 作为入参执行 scan_stocks.js,,选出的股票需要输出到 ./watchlist/us_selected.txt,格式保持同us.txt一致
+使用 ./scripts/launch_tv_debug.bat 启动TradigView，然后使用 --symbols=filepath=../watchlist/us.txt 作为入参执行 scan_stocks.js,选出的股票需要输出到 ./watchlist/us_selected.txt,格式保持同us.txt一致,并且排重
+设置时间TradigView周期为天
 
 
 ## 研报及新闻分析

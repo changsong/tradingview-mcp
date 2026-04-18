@@ -384,6 +384,22 @@ async function scanStocks() {
   console.log('='.repeat(80));
   console.log(`\n✅ 详细分析结果已保存到: ${outputFile}`);
 
+  // ===== 保存选中的股票到 watchlist 文件 =====
+  const outputArg = process.argv.find(arg => arg.startsWith('--output='));
+  if (outputArg) {
+    const outputPath = outputArg.split('=')[1];
+
+    // 提取股票符号并去重
+    const selectedSymbols = [...new Set(detailedAnalysis.map(s => s.symbol))];
+
+    // 保存为逗号分隔格式（与 us.txt 格式一致）
+    const content = selectedSymbols.join(',');
+    writeFileSync(outputPath, content, 'utf8');
+
+    console.log(`\n✅ 已保存 ${selectedSymbols.length} 个选中股票到: ${outputPath}`);
+    console.log(`   格式: 逗号分隔，已排重\n`);
+  }
+
   return {
     summary: {
       totalScanned: results.length,
