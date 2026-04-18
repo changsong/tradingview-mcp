@@ -40,7 +40,7 @@ function loadStocks(filepath) {
 
 // 获取策略指标
 async function getStrategyMetrics(symbol) {
-  await sleep(10000); // 等待策略重新计算
+  await sleep(20000); // 等待策略重新计算（增加到20秒减少数据污染）
 
   const tables = runCommand('data tables');
   if (!tables || !tables.success || tables.study_count === 0) {
@@ -51,20 +51,27 @@ async function getStrategyMetrics(symbol) {
   const metrics = {};
 
   rows.forEach(row => {
-    const [key, value] = row.split(' | ');
-    metrics[key.trim()] = value.trim();
+    const parts = row.split(' | ');
+    if (parts.length >= 2) {
+      metrics[parts[0].trim()] = parts[1].trim();
+    }
   });
+
+  // 解析胜率（去掉%符号）
+  const winRateStr = metrics['胜率'] || '0%';
+  const winRate = parseFloat(winRateStr.replace('%', '')) || 0;
+
+  // 解析净利润（去掉$符号和逗号）
+  const netProfitStr = metrics['净利润'] || '0';
+  const netProfit = parseFloat(netProfitStr.replace(/[$,]/g, '')) || 0;
 
   return {
     symbol,
     trades: parseInt(metrics['交易数']) || 0,
-    winRate: parseFloat(metrics['胜率'].replace('%', '')) || 0,
-    profitFactor: parseFloat(metrics['盈利因子']) || 0,
-    netProfit: parseFloat(metrics['净利润']) || 0,
-    optimizedFilter: metrics['优化过滤'] || '?',
-    surge10d: parseFloat(metrics['10日最大涨%']) || 0,
-    position26w: parseFloat(metrics['26周位置%']) || 0,
-    volatility5d: parseFloat(metrics['5日波动%']) || 0
+    winRate,
+    netProfit,
+    pricePosition26w: parseFloat(metrics['26周位置%']) || null,
+    volatility5d: parseFloat(metrics['5日波动%']) || null
   };
 }
 
@@ -93,18 +100,18 @@ async function main() {
     try {
       // 切换股票
       runCommand(`symbol ${symbol}`);
-      await sleep(3000);
+      await sleep(8000); // 增加到8秒等待图表加载
 
       // 设置1分钟周期
       runCommand('timeframe 1');
-      await sleep(2000);
+      await sleep(5000); // 增加到5秒等待周期切换
 
       // 获取回测数据
       const metrics = await getStrategyMetrics(symbol);
 
       if (metrics) {
         results.push(metrics);
-        console.log(`  ✅ 交易${metrics.trades}次, 胜率${metrics.winRate}%, 净利润$${metrics.netProfit}`);
+      console.log(`  ✅ 交易${metrics.trades}次, 胜率${metrics.winRate}%, 净利润$${metrics.netProfit}`);
       } else {
         console.log(`  ⚠️  无法获取数据`);
       }
@@ -128,9 +135,10 @@ async function main() {
   console.log(`🟢 盈利股票 (${profitable.length}/${results.length}):\n`);
   profitable.forEach((r, idx) => {
     console.log(`${idx + 1}. ${r.symbol}`);
-    console.log(`   交易: ${r.trades}, 胜率: ${r.winRate}%, 盈利因子: ${r.profitFactor}`);
-    console.log(`   净利润: $${r.netProfit}`);
-    console.log(`   优化过滤: ${r.optimizedFilter}, 10日涨幅: ${r.surge10d}%, 26周位置: ${r.position26w}%, 5日波动: ${r.volatility5d}%\n`);
+    console.log(`   交易: ${r.trades}, 胜率: ${r.winRate}%, 净利润: $${r.netProfit}`);
+    const pos = r.pricePosition26w != null ? r.pricePosition26w.toFixed(1) : 'N/A';
+    const vol = r.volatility5d != null ? r.volatility5d.toFixed(1) : 'N/A';
+    console.log(`   26周位置: ${pos}%, 5日波动: ${vol}%\n`);
   });
 
   console.log(`\n🔴 亏损股票 (${unprofitable.length}/${results.length}):\n`);
@@ -156,7 +164,7 @@ async function main() {
   const outputFile = `batch_backtest_results_${new Date().toISOString().replace(/[:.]/g, '-')}.json`;
   writeFileSync(outputFile, JSON.stringify({
     test_time: new Date().toISOString(),
-    strategy: 'US-急涨急跌吸筹策略 v3 (平衡优化)',
+    strategy: 'US-急涨急跌吸筹策略 v5 (精准入场)',
     total_stocks: results.length,
     profitable_count: profitable.length,
     unprofitable_count: unprofitable.length,
