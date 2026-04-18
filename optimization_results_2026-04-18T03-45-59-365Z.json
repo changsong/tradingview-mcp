@@ -1,0 +1,83 @@
+{
+  "test_time": "2026-04-18T03:45:59.366Z",
+  "symbol": "NYSE:CSW",
+  "results": [
+    {
+      "params": {
+        "maxSurge10d": 100,
+        "lowPositionPct": 100,
+        "max5dVolatility": 100
+      },
+      "metrics": {
+        "trades": 6,
+        "winRate": 33,
+        "profitFactor": 0.89,
+        "netProfit": -788
+      },
+      "score": 3402,
+      "testName": "基准版本（无优化）"
+    },
+    {
+      "params": {
+        "maxSurge10d": 25,
+        "lowPositionPct": 80,
+        "max5dVolatility": 25
+      },
+      "metrics": {
+        "trades": 6,
+        "winRate": 33,
+        "profitFactor": 0.89,
+        "netProfit": -788
+      },
+      "score": 3402,
+      "testName": "宽松优化"
+    },
+    {
+      "params": {
+        "maxSurge10d": 20,
+        "lowPositionPct": 70,
+        "max5dVolatility": 20
+      },
+      "metrics": {
+        "trades": 6,
+        "winRate": 33,
+        "profitFactor": 0.89,
+        "netProfit": -788
+      },
+      "score": 3402,
+      "testName": "中等优化"
+    },
+    {
+      "params": {
+        "maxSurge10d": 15,
+        "lowPositionPct": 50,
+        "max5dVolatility": 15
+      },
+      "metrics": {
+        "trades": 6,
+        "winRate": 33,
+        "profitFactor": 0.89,
+        "netProfit": -788
+      },
+      "score": 3402,
+      "testName": "严格优化"
+    },
+    {
+      "params": {
+        "maxSurge10d": 20,
+        "lowPositionPct": 70,
+        "max5dVolatility": 20,
+        "stopLossPct": 4,
+        "takeProfit1": 6
+      },
+      "metrics": {
+        "trades": 6,
+        "winRate": 33,
+        "profitFactor": 0.89,
+        "netProfit": -788
+      },
+      "score": 3402,
+      "testName": "调整止损止盈"
+    }
+  ]
+}

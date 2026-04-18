@@ -1,0 +1,274 @@
+//@version=6
+strategy("US-急涨急跌吸筹策略 v3 (平衡优化)",
+     overlay=true,
+     initial_capital=100000,
+     pyramiding=0,
+     default_qty_type=strategy.percent_of_equity,
+     default_qty_value=90,
+     commission_type=strategy.commission.percent,
+     commission_value=0.1,
+     calc_on_every_tick=true,
+     close_entries_rule="ANY")
+
+//================ 参数 =================
+pumpPct = input.float(2.0, "急拉阈值%")
+dumpPct = input.float(1.0, "急跌阈值%")
+windowBars = input.int(30, "单次形态检测窗口")
+lookbackBars = input.int(1950, "5日回溯K线数(390*5)")
+minPatternCount = input.int(2, "最少形态次数")
+
+takeProfit1 = input.float(5.0, "止盈1%")
+takeProfit2 = input.float(10.0, "止盈2%")
+stopLossPct = input.float(3.0, "止损%")
+
+// 优化参数（调整为更宽松的默认值）
+enableOptimization = input.bool(true, "启用优化过滤")
+maxSurge10d = input.float(20.0, "前10日最大涨幅%（超过则过滤）")
+lowPositionPct = input.float(70.0, "26周低位阈值%（必须低于此位置）")
+max5dVolatility = input.float(20.0, "5日最大波动%")
+
+// 回测结束日期
+endYear = input.int(2026, "结束年份")
+endMonth = input.int(4, "结束月份")
+endDay = input.int(15, "结束日期")
+
+//================ 指标 =================
+ma15 = ta.sma(close, 15)
+ma20 = ta.sma(close, 20)
+
+//================ 日线趋势过滤 =================
+dailyClose = request.security(syminfo.tickerid, "D", close)
+dailyMA10 = request.security(syminfo.tickerid, "D", ta.sma(close, 10))
+dailyMA20 = request.security(syminfo.tickerid, "D", ta.sma(close, 20))
+
+dailyUptrend = dailyClose > dailyMA20
+dailySideways = math.abs(dailyClose - dailyMA20) / dailyMA20 < 0.03 and math.abs(dailyMA10 - dailyMA20) / dailyMA20 < 0.02
+dailyTrendOK = dailySideways
+
+//================ 优化：前10日大涨过滤 =================
+dailyChange1 = request.security(syminfo.tickerid, "D", (close - close[1]) / close[1] * 100)
+dailyChange2 = request.security(syminfo.tickerid, "D", (close[1] - close[2]) / close[2] * 100)
+dailyChange3 = request.security(syminfo.tickerid, "D", (close[2] - close[3]) / close[3] * 100)
+dailyChange4 = request.security(syminfo.tickerid, "D", (close[3] - close[4]) / close[4] * 100)
+dailyChange5 = request.security(syminfo.tickerid, "D", (close[4] - close[5]) / close[5] * 100)
+dailyChange6 = request.security(syminfo.tickerid, "D", (close[5] - close[6]) / close[6] * 100)
+dailyChange7 = request.security(syminfo.tickerid, "D", (close[6] - close[7]) / close[7] * 100)
+dailyChange8 = request.security(syminfo.tickerid, "D", (close[7] - close[8]) / close[8] * 100)
+dailyChange9 = request.security(syminfo.tickerid, "D", (close[8] - close[9]) / close[9] * 100)
+dailyChange10 = request.security(syminfo.tickerid, "D", (close[9] - close[10]) / close[10] * 100)
+
+maxDailyChange10 = math.max(dailyChange1, dailyChange2, dailyChange3, dailyChange4, dailyChange5,
+                             dailyChange6, dailyChange7, dailyChange8, dailyChange9, dailyChange10)
+
+noRecentSurge = maxDailyChange10 < maxSurge10d
+
+//================ 优化：26周低位过滤 =================
+weeklyHigh26 = request.security(syminfo.tickerid, "D", ta.highest(high, 130))
+weeklyLow26 = request.security(syminfo.tickerid, "D", ta.lowest(low, 130))
+pricePosition26w = (dailyClose - weeklyLow26) / (weeklyHigh26 - weeklyLow26) * 100
+
+isLowPosition = pricePosition26w < lowPositionPct
+
+//================ 优化：5日波动过滤 =================
+dailyHigh5 = request.security(syminfo.tickerid, "D", ta.highest(high, 5))
+dailyLow5 = request.security(syminfo.tickerid, "D", ta.lowest(low, 5))
+volatility5d = (dailyHigh5 - dailyLow5) / dailyLow5 * 100
+
+lowVolatility = volatility5d < max5dVolatility
+
+//================ 综合过滤条件 =================
+optimizedFilter = enableOptimization ? (noRecentSurge and isLowPosition and lowVolatility) : true
+
+//================ 时间过滤 =================
+timeInMinutes = hour * 60 + minute
+isAfterOpenHour = timeInMinutes >= 10 * 60 + 30
+
+//================ 急拉急跌识别 =================
+hh = ta.highest(high, windowBars)
+ll = ta.lowest(low, windowBars)
+
+rise = (hh - ll) / ll * 100
+fall = (hh - close) / hh * 100
+
+hhIdx = ta.highestbars(high, windowBars)
+llIdx = ta.lowestbars(low, windowBars)
+
+isPattern = rise > pumpPct and fall > dumpPct and fall < rise * 0.6 and llIdx < hhIdx and isAfterOpenHour
+newPattern = isPattern and not isPattern[1]
+
+//================ 统计形态次数 =================
+var float patternCounter = 0.0
+
+if newPattern
+    patternCounter := patternCounter + 1
+
+hasEnoughPatterns = patternCounter >= minPatternCount
+patternCount = patternCounter
+
+//================ 趋势过滤 =================
+trendOK = close > ma20
+allTrendOK = trendOK and dailyTrendOK
+
+//================ T+1 严格控制 =================
+var int entryYear = na
+var int entryMonth = na
+var int entryDay = na
+
+isDifferentDay = strategy.position_size > 0 and not na(entryDay) and (year != entryYear or month != entryMonth or dayofmonth != entryDay)
+canSell = isDifferentDay
+
+if strategy.position_size == 0 and strategy.position_size[1] > 0
+    entryYear := na
+    entryMonth := na
+    entryDay := na
+
+//================ 买点（加入优化过滤） =================
+isEndDate = year == endYear and month == endMonth and dayofmonth == endDay
+buySignal = newPattern and hasEnoughPatterns and allTrendOK and optimizedFilter and strategy.position_size == 0 and not isEndDate
+
+//================ 盈亏计算 =================
+entryPrice = strategy.position_avg_price
+profitPct = strategy.position_size > 0 ? (close - entryPrice) / entryPrice * 100 : 0.0
+maxProfit = ta.highest(profitPct, 50)
+
+//================ 止损价格 =================
+stopPrice = entryPrice * (1 - stopLossPct / 100)
+
+//================ 卖点（严格T+1） =================
+tp1 = profitPct >= takeProfit1 and canSell
+tp2 = profitPct >= takeProfit2 and canSell
+sl = close < stopPrice and canSell
+
+// 移动止盈
+trailingExit = profitPct < 1.5 and profitPct > 0 and canSell and maxProfit > 3.0
+
+// 趋势破坏
+trendBreak = close < ma15 and profitPct < -1.0 and canSell
+
+//================ 执行 =================
+if buySignal
+    qty = strategy.equity * 0.9 / close
+    tp1Price = close * (1 + takeProfit1 / 100)
+    tp2Price = close * (1 + takeProfit2 / 100)
+    stopPriceCalc = close * (1 - stopLossPct / 100)
+
+    strategy.entry("BUY", strategy.long)
+    entryYear := year
+    entryMonth := month
+    entryDay := dayofmonth
+    patternCounter := 0
+
+    alert(
+        '{"symbol":"'+syminfo.ticker+
+        '","type":"us"'+
+        ',"side":"LONG","action":"ENTRY"'+
+        ',"qty":'+str.tostring(qty)+
+        ',"entry":'+str.tostring(close)+
+        ',"stop":'+str.tostring(stopPriceCalc)+
+        ',"tp1":'+str.tostring(tp1Price)+
+        ',"tp2":'+str.tostring(tp2Price)+
+        ',"score":'+str.tostring(patternCount)+'}',
+        alert.freq_once_per_bar_close)
+
+if tp1 and not tp2
+    strategy.close("BUY", qty_percent=50, comment="TP1")
+    alert(
+        '{"symbol":"'+syminfo.ticker+
+        '","type":"us"'+
+        ',"side":"LONG","action":"EXIT"'+
+        ',"reason":"TP1"'+
+        ',"exit":'+str.tostring(close)+
+        ',"profit_pct":'+str.tostring(profitPct)+'}',
+        alert.freq_once_per_bar_close)
+
+if tp2
+    strategy.close("BUY", comment="TP2")
+    alert(
+        '{"symbol":"'+syminfo.ticker+
+        '","type":"us"'+
+        ',"side":"LONG","action":"EXIT"'+
+        ',"reason":"TP2"'+
+        ',"exit":'+str.tostring(close)+
+        ',"profit_pct":'+str.tostring(profitPct)+'}',
+        alert.freq_once_per_bar_close)
+
+if sl
+    strategy.close("BUY", comment="SL")
+    alert(
+        '{"symbol":"'+syminfo.ticker+
+        '","type":"us"'+
+        ',"side":"LONG","action":"EXIT"'+
+        ',"reason":"STOP_LOSS"'+
+        ',"exit":'+str.tostring(close)+
+        ',"profit_pct":'+str.tostring(profitPct)+'}',
+        alert.freq_once_per_bar_close)
+
+if trailingExit
+    strategy.close("BUY", comment="移动止盈")
+    alert(
+        '{"symbol":"'+syminfo.ticker+
+        '","type":"us"'+
+        ',"side":"LONG","action":"EXIT"'+
+        ',"reason":"TRAILING_STOP"'+
+        ',"exit":'+str.tostring(close)+
+        ',"profit_pct":'+str.tostring(profitPct)+'}',
+        alert.freq_once_per_bar_close)
+
+if trendBreak
+    strategy.close("BUY", comment="趋势破坏")
+    alert(
+        '{"symbol":"'+syminfo.ticker+
+        '","type":"us"'+
+        ',"side":"LONG","action":"EXIT"'+
+        ',"reason":"TREND_BREAK"'+
+        ',"exit":'+str.tostring(close)+
+        ',"profit_pct":'+str.tostring(profitPct)+'}',
+        alert.freq_once_per_bar_close)
+
+//================ 图表 =================
+plot(ma15, color=color.orange, linewidth=1)
+plot(ma20, color=color.blue, linewidth=2)
+
+plotshape(newPattern, location=location.belowbar, color=color.orange, style=shape.triangleup, size=size.small, text="形态")
+plotshape(buySignal, location=location.belowbar, color=color.green, style=shape.labelup, size=size.normal, text="买")
+bgcolor(isPattern ? color.new(color.yellow, 92) : na)
+bgcolor(strategy.position_size > 0 and not canSell ? color.new(color.red, 90) : na)
+
+//================ 面板 =================
+var table tb = table.new(position.top_right, 2, 15, bgcolor=color.new(color.gray, 80))
+if barstate.islast
+    table.cell(tb, 0, 0, "涨幅%", text_color=color.white)
+    table.cell(tb, 1, 0, str.tostring(rise, "#.##"), text_color=rise > pumpPct ? color.green : color.red)
+    table.cell(tb, 0, 1, "跌幅%", text_color=color.white)
+    table.cell(tb, 1, 1, str.tostring(fall, "#.##"), text_color=fall > dumpPct ? color.green : color.red)
+    table.cell(tb, 0, 2, "形态计数", text_color=color.white)
+    table.cell(tb, 1, 2, str.tostring(patternCount, "#"), text_color=patternCount >= minPatternCount ? color.green : color.red)
+    table.cell(tb, 0, 3, "日线趋势", text_color=color.white)
+    table.cell(tb, 1, 3, dailyUptrend ? "上升" : (dailySideways ? "横盘" : "下降"), text_color=dailyTrendOK ? color.green : color.red)
+
+    // 优化指标显示
+    table.cell(tb, 0, 4, "10日最大涨%", text_color=color.white)
+    table.cell(tb, 1, 4, str.tostring(maxDailyChange10, "#.##"), text_color=noRecentSurge ? color.green : color.red)
+    table.cell(tb, 0, 5, "26周位置%", text_color=color.white)
+    table.cell(tb, 1, 5, str.tostring(pricePosition26w, "#.##"), text_color=isLowPosition ? color.green : color.red)
+    table.cell(tb, 0, 6, "5日波动%", text_color=color.white)
+    table.cell(tb, 1, 6, str.tostring(volatility5d, "#.##"), text_color=lowVolatility ? color.green : color.red)
+    table.cell(tb, 0, 7, "优化过滤", text_color=color.white)
+    table.cell(tb, 1, 7, optimizedFilter ? "✓" : "✗", text_color=optimizedFilter ? color.green : color.red)
+
+    table.cell(tb, 0, 8, "入场日", text_color=color.white)
+    table.cell(tb, 1, 8, na(entryDay) ? "-" : str.tostring(entryMonth) + "/" + str.tostring(entryDay), text_color=color.yellow)
+    table.cell(tb, 0, 9, "可卖出", text_color=color.white)
+    table.cell(tb, 1, 9, canSell ? "是" : "否(T+1)", text_color=canSell ? color.green : color.red)
+    table.cell(tb, 0, 10, "盈亏%", text_color=color.white)
+    table.cell(tb, 1, 10, str.tostring(profitPct, "#.##"), text_color=profitPct >= 0 ? color.green : color.red)
+    table.cell(tb, 0, 11, "交易数", text_color=color.white)
+    table.cell(tb, 1, 11, str.tostring(strategy.closedtrades), text_color=color.yellow)
+    table.cell(tb, 0, 12, "胜率", text_color=color.white)
+    wr = strategy.closedtrades > 0 ? strategy.wintrades / strategy.closedtrades * 100 : 0
+    table.cell(tb, 1, 12, str.tostring(wr, "#") + "%", text_color=wr >= 50 ? color.green : color.red)
+    table.cell(tb, 0, 13, "盈利因子", text_color=color.white)
+    pf = strategy.grossloss != 0 ? strategy.grossprofit / math.abs(strategy.grossloss) : 0
+    table.cell(tb, 1, 13, str.tostring(pf, "#.##"), text_color=pf >= 1 ? color.green : color.red)
+    table.cell(tb, 0, 14, "净利润", text_color=color.white)
+    table.cell(tb, 1, 14, str.tostring(strategy.netprofit, "#"), text_color=strategy.netprofit >= 0 ? color.green : color.red)
