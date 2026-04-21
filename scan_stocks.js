@@ -199,7 +199,8 @@ async function scanStocks() {
 
   if (customSymbolsArg) {
     // Load symbols from file (supports .json and .txt)
-    const filePath = customSymbolsArg.split('=')[1];
+    const rawValue = customSymbolsArg.slice('--symbols='.length);
+    const filePath = rawValue.startsWith('filepath=') ? rawValue.slice('filepath='.length) : rawValue;
     try {
       const content = readFileSync(filePath, 'utf8').trim();
 

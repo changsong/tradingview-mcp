@@ -12,11 +12,11 @@ timeout /t 2 /nobreak >nul
 REM Auto-detect TradingView install location
 set "TV_EXE="
 
-REM Check common install locations
-if exist "%LOCALAPPDATA%\TradingView\TradingView.exe" set "TV_EXE=%LOCALAPPDATA%\TradingView\TradingView.exe"
-if exist "%PROGRAMFILES%\TradingView\TradingView.exe" set "TV_EXE=%PROGRAMFILES%\TradngView\TradingView.exe"
-if exist "%PROGRAMFILES(x86)%\TradingView\TradingView.exe" set "TV_EXE=%PROGRAMFILES(x86)%\TradingView\TradingView.exe"
+REM Check common install locations (D:\Program Files first - confirmed install path)
 if exist "D:\Program Files\TradingView\TradingView.exe" set "TV_EXE=D:\Program Files\TradingView\TradingView.exe"
+if exist "%LOCALAPPDATA%\TradingView\TradingView.exe" set "TV_EXE=%LOCALAPPDATA%\TradingView\TradingView.exe"
+if exist "%PROGRAMFILES%\TradingView\TradingView.exe" set "TV_EXE=%PROGRAMFILES%\TradingView\TradingView.exe"
+if exist "%PROGRAMFILES(x86)%\TradingView\TradingView.exe" set "TV_EXE=%PROGRAMFILES(x86)%\TradingView\TradingView.exe"
 
 REM Check MSIX / Windows Store installs
 if "%TV_EXE%"=="" (

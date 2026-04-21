@@ -1,11 +1,11 @@
+# 工作流
 ## 上升趋势股票过滤
 ### A股
-使用 ./scripts/launch_tv_debug.bat 启动TradigView，然后使用 --symbols=filepath=./watchlist/cn.txt 作为入参执行 scan_stocks.js,选出的股票需要输出到 ./watchlist/cn_selected.txt,格式保持同cn.txt一致,并且排重
-设置时间TradigView图表周期为天
+使用 ./scripts/launch_tv_debug.bat 启动TradigView，请使用策略名为：A Share SQZMOM PRO v6 (Daily), 设置图表周期为天。然后使用 --symbols=filepath=./watchlist/cn.txt 作为入参执行 scan_stocks.js,选出的股票需要输出到 ./watchlist/cn_selected.txt,格式保持同cn.txt一致,并且排重
+
 
 ### 美股
-使用 ./scripts/launch_tv_debug.bat 启动TradigView，然后使用 --symbols=filepath=../watchlist/us.txt 作为入参执行 scan_stocks.js,选出的股票需要输出到 ./watchlist/us_selected.txt,格式保持同us.txt一致,并且排重
-设置时间TradigView周期为天
+使用 ./scripts/launch_tv_debug.bat 启动TradigView，请使用策略名为：A Share SQZMOM PRO v6 (Daily), 设置图表周期为天。然后使用 --symbols=filepath=../watchlist/us.txt 作为入参执行 scan_stocks.js,选出的股票需要输出到 ./watchlist/us_selected.txt,格式保持同us.txt一致,并且排重  
 
 
 ## 研报及新闻分析
@@ -52,3 +52,29 @@
 
 ### 合并分析
 1. 请根据以上股票 研报及新闻分析、技术面分析，综合判断这些股票那些是最值得介入的，统一进行排序，介入的价位是多少，止损的价位是多少，卖出的价位是多少
+
+
+# 策略优化
+## 编写策略
+### 使用 ./scripts/launch_tv_debug.bat 启动TradigView，请使用策略名为：US-急涨急跌吸筹策略， 在分钟线上进行回测并对结果进行改进，目前改进的方向是：比如CSW在最近一年交易清单，
+1.分析避免前10日内有大涨，如果有则不进入。2.股价应该在26周内处于低位 3.最近5日股价波动上下不要超过10%， 加入这三个条件，尽量保证多的交易信号，同时提高胜率，比如出现大涨就在后几日，却被提前止损立场
+优化策略后，请使用 ../watchlist/us.txt 做回测，根据回测结果继续优化，直到不能继续优化为止
+
+
+ ### 使用 ./scripts/launch_tv_debug.bat 启动TradigView，请使用策略名为：US-急涨急跌吸筹策略， 在分钟线上进行回测并对结果进行改进，
+ 目前改进的方向是：比如CSW在最近一年交易清单，去掉避免 前10日内有大涨，如果有则不进入 这个条件，同时调整参数尽量保证多的交易信号，同时提高胜率，重点解决如何避免出现大涨前却被提前止损离场的情况，优化策略后，请使用 ../watchlist/us.txt 做回测，根据回测结果继续优化，直到不能继续优化为止 
+
+
+ 1. 入场确认：
+ 2. 形态出现后，等待价格站上短期均线（ma5）才入场，避免在下跌途中接刀
+   保留固定止损但适当放宽到4%
+   去掉trendBreak（这是主要的早止损来源）
+   去掉trailingExit（这也会提前出场）
+   日线趋势恢复横盘+上升
+
+
+
+
+
+
+
