@@ -262,6 +262,7 @@ async function scanStocks() {
           trendUp: rawData.includes('trendUp:true'),
           validCompression: rawData.includes('validCompression:true'),
           volOK: rawData.includes('volOK:true'),
+          volMom: rawData.includes('volMom:true'),
           validStock: rawData.includes('validStock:true'),
           fakeBreak: rawData.includes('fakeBreak:true'),
           signal: rawData.includes('WAIT') ? 'WAIT' :
@@ -271,7 +272,7 @@ async function scanStocks() {
         };
 
         results.push(baseParams);
-        console.log(`  ✓ trendUp:${baseParams.trendUp} validComp:${baseParams.validCompression} volOK:${baseParams.volOK} validStock:${baseParams.validStock} fakeBreak:${baseParams.fakeBreak} → ${baseParams.signal}`);
+        console.log(`  ✓ trendUp:${baseParams.trendUp} validComp:${baseParams.validCompression} volMom:${baseParams.volMom} volOK:${baseParams.volOK} validStock:${baseParams.validStock} fakeBreak:${baseParams.fakeBreak} → ${baseParams.signal}`);
       } else {
         console.log(`  ⚠️  未找到 SQZMOM 指标数据`);
       }
@@ -289,6 +290,7 @@ async function scanStocks() {
   // 2. fakeBreak = false (非假突破)
   // 3. validCompression = true (有效压缩)
   // 4. rawData 包含 "GO" 或 signal = "GO"
+  // 注: volMom (v11新增) 记录在日志中但不作为强制过滤条件，作为候选参考
   const qualified = results.filter(r => {
     return r.trendUp &&
            !r.fakeBreak &&
