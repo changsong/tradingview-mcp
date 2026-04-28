@@ -260,7 +260,7 @@ async function scanStocks() {
         const baseParams = {
           symbol: symbol,
           trendUp: rawData.includes('trendUp:true'),
-          validCompression: rawData.includes('validCompression:true'),
+          validCompression: rawData.includes('validComp:true') || rawData.includes('validCompression:true'),
           volOK: rawData.includes('volOK:true'),
           volMom: rawData.includes('volMom:true'),
           validStock: rawData.includes('validStock:true'),
@@ -292,9 +292,9 @@ async function scanStocks() {
   // 4. rawData 包含 "GO" 或 signal = "GO"
   // 注: volMom (v11新增) 记录在日志中但不作为强制过滤条件，作为候选参考
   const qualified = results.filter(r => {
-    return r.trendUp &&
-           !r.fakeBreak &&
-           r.validCompression &&
+    return (r.trendUp &&
+            !r.fakeBreak &&
+            r.validCompression) ||
            (r.signal === 'GO' || r.rawData.includes('GO'));
   });
 
@@ -392,15 +392,21 @@ async function scanStocks() {
   if (outputArg) {
     const outputPath = outputArg.split('=')[1];
 
-    // 提取股票符号并去重
-    const selectedSymbols = [...new Set(detailedAnalysis.map(s => s.symbol))];
+    // 读取已有内容并合并排重
+    let existingSymbols = [];
+    try {
+      const existing = readFileSync(outputPath, 'utf8').trim();
+      if (existing) existingSymbols = existing.split(',').map(s => s.trim()).filter(Boolean);
+    } catch (e) { /* file doesn't exist yet */ }
 
-    // 保存为逗号分隔格式（与 us.txt 格式一致）
-    const content = selectedSymbols.join(',');
-    writeFileSync(outputPath, content, 'utf8');
+    const newSymbols = detailedAnalysis.map(s => s.symbol);
+    const mergedSymbols = [...new Set([...existingSymbols, ...newSymbols])];
 
-    console.log(`\n✅ 已保存 ${selectedSymbols.length} 个选中股票到: ${outputPath}`);
-    console.log(`   格式: 逗号分隔，已排重\n`);
+    // 保存为逗号分隔格式（与 cn.txt 格式一致）
+    writeFileSync(outputPath, mergedSymbols.join(','), 'utf8');
+
+    console.log(`\n✅ 已保存到: ${outputPath}`);
+    console.log(`   本次新增: ${newSymbols.length}, 已有: ${existingSymbols.length}, 排重后总计: ${mergedSymbols.length}\n`);
   }
 
   return {

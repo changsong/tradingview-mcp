@@ -90,9 +90,12 @@ export async function connect() {
 async function findChartTarget() {
   const resp = await fetch(`http://${CDP_HOST}:${CDP_PORT}/json/list`);
   const targets = await resp.json();
-  // Prefer targets with tradingview.com/chart in the URL
+  // Priority 1: https tradingview.com/chart
   return targets.find(t => t.type === 'page' && /tradingview\.com\/chart/i.test(t.url))
-    || targets.find(t => t.type === 'page' && /tradingview/i.test(t.url))
+    // Priority 2: any https tradingview.com page (not file://)
+    || targets.find(t => t.type === 'page' && /^https?:\/\/.+tradingview/i.test(t.url))
+    // Priority 3: any page mentioning tradingview (fallback, avoids file:// toast windows)
+    || targets.find(t => t.type === 'page' && /tradingview/i.test(t.url) && t.url.startsWith('http'))
     || null;
 }
 
