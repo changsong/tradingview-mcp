@@ -1,8 +1,9 @@
 NYSE:ENVA,NYSE:PWR,NYSE:ST,NASE:AROC
 
+claude --dangerously-skip-permissions
 
 ## 研报及新闻分析 5-10分钟
-利用 ./src/core/usNew.js 获取这些推荐股票的新闻，包含研报，快讯，新闻等，进行 市场情绪倾向（看涨/看跌/中性比例），对股价的潜在影响预测（利好/利空因素），关键风险和机会点 请将新闻转化为“可交易信号”，最好最近5天最重要新闻。 
+利用 ./src/core/usNew.js 获取这些股票: NYSE:ENVA,NYSE:PWR,NYSE:ST,NASE:AROC 的新闻，包含研报，快讯，新闻等，进行 市场情绪倾向（看涨/看跌/中性比例），对股价的潜在影响预测（利好/利空因素），关键风险和机会点 请将新闻转化为“可交易信号”，最好是最近5天最重要新闻。 
 1.抓取并筛选高影响力新闻(去噪)
 2.对每条新闻打标签:
   -类型:政策/财报/并购/行业/黑天鹅/传闻
@@ -25,7 +26,7 @@ NYSE:ENVA,NYSE:PWR,NYSE:ST,NASE:AROC
   -是否是假利好  
 
 ## 技术面分析
-分析一下这些股票的技术面，比如：趋势结构（Trend）,动能系统（Momentum）,波动压缩与释放（Volatility），成交量行为（Volume）,量价时空, 关键结构位（Structure）,资金行为模拟（高级）
+用 ./scripts/launch_tv_debug.bat 启动TradigView, 分析这些股票的技术面，比如：趋势结构（Trend）,动能系统（Momentum）,波动压缩与释放（Volatility），成交量行为（Volume）,量价时空, 关键结构位（Structure）,资金行为模拟（高级）
 等相关的技术指标。通过不同时间周期: 1h，4h，1d,1w 进行分析，如果明天入手，哪支股票明天开始最可能上涨的概率最大，有最大的涨幅，基于的理由是什么。
 【交易信号判断】必须给出：
 1. 结论：看多 / 看空 / 观望
