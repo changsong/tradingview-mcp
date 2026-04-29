@@ -6,7 +6,7 @@
 
 ## 上升趋势股票过滤
 ### A股 40分钟左右
-使用 ./scripts/launch_tv_debug.bat 启动TradigView，请使用策略名为：A Share SQZMOM PRO v22 (Daily), 设置图表周期为天。然后使用 --symbols=filepath=./watchlist/cn.txt 作为入参执行 scan_stocks.js,选出的股票需要输出到 ./watchlist/cn_selected.txt,格式保持同cn.txt一致,并且排重
+使用 ./scripts/launch_tv_debug.bat 启动TradigView，请使用策略名为：A Share SQZMOM PRO v22 (Daily), 设置图表周期为天。然后使用 --symbols=filepath=./watchlist/cn.txt 作为入参执行 scan_stocks.js,选出的股票需要合并./watchlist/cn_selected.txt已有的股票输出到 /watchlist/cn_selected.txt 格式保持同cn.txt一致,一起排重
 
 ## 研报及新闻分析 5-10分钟
 利用 ./src/core/webNews.js 获取这些推荐股票的新闻，包含研报，快讯，新闻等，进行 市场情绪倾向（看涨/看跌/中性比例），对股价的潜在影响预测（利好/利空因素），关键风险和机会点 请将新闻转化为“可交易信号”，最好最近5天最重要新闻。  
@@ -47,14 +47,12 @@
   - 是否存在诱多/假突破
 
 ### 合并分析 2分钟
-1. 请根据以上的股票的研报及新闻分析、技术面分析，综合判断这些股票那些是最值得介入的，统一进行排序，介入的价位是多少，止损的价位是多少，卖出的价位是多少
-
-
+1. 请根据以上的股票的研报及新闻分析、技术面分析，综合判断这些股票中哪些是最值得介入的，统一进行排序，介入的价位是多少，止损的价位是多少，卖出的价位是多少
 
 
 
 ### 美股 30分钟左右
-使用 ./scripts/launch_tv_debug.bat 启动TradigView，请使用策略名为：US Stock SQZMOM Daily PRO v4 (ATR + EMA20 Stop), 设置图表周期为天。然后使用 --symbols=filepath=../watchlist/us.txt 作为入参执行 scan_stocks.js,选出的股票需要输出到 ./watchlist/us_selected.txt,格式保持同us.txt一致,并且排重  
+使用 ./scripts/launch_tv_debug.bat 启动TradigView，请使用策略名为：US Stock SQZMOM Daily PRO v4 (ATR + EMA20 Stop), 设置图表周期为天。然后使用 --symbols=filepath=../watchlist/us.txt 作为入参执行 scan_stocks.js,选出的股票需要合并./watchlist/us_selected.txt已有的股票输出到 /watchlist/us_selected.txt 格式保持同us.txt一致,并排重
 
 ## 研报及新闻分析 5-10分钟
 利用 ./src/core/usNew.js 获取这些推荐股票的新闻，包含研报，快讯，新闻等，进行 市场情绪倾向（看涨/看跌/中性比例），对股价的潜在影响预测（利好/利空因素），关键风险和机会点 请将新闻转化为“可交易信号”，最好最近5天最重要新闻。 
@@ -95,7 +93,7 @@
   - 是否存在诱多/假突破
 
 ### 合并分析
-1. 请根据以上的股票的研报及新闻分析、技术面分析，综合判断这些股票那些是最值得介入的，统一进行排序，介入的价位是多少，止损的价位是多少，卖出的价位是多少 
+1. 请根据以上的股票的研报及新闻分析、技术面分析，综合判断这些股票中哪些是最值得介入的，统一进行排序，介入的价位是多少，止损的价位是多少，卖出的价位是多少 
                                                                                                                                                                                                         
 
 
