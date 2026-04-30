@@ -6,6 +6,81 @@
 
 import { fetchXueqiuPosts as fetchXueqiuWithPuppeteer } from './xueqiu.js';
 
+// UA 池：轮换降低被 Eastmoney/Sina 限流概率
+const UA_POOL = [
+  'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36',
+  'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/121.0.0.0 Safari/537.36',
+  'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36',
+  'Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:122.0) Gecko/20100101 Firefox/122.0',
+  'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/17.2 Safari/605.1.15',
+];
+let _uaCursor = 0;
+function pickUA() {
+  const ua = UA_POOL[_uaCursor % UA_POOL.length];
+  _uaCursor++;
+  return ua;
+}
+
+const DEFAULT_TIMEOUT_MS = 10000;
+
+// 带超时 + UA 轮换的 fetch。任何源卡住都不会拖垮整个 Promise.all。
+async function fetchWithTimeout(url, options = {}, timeoutMs = DEFAULT_TIMEOUT_MS) {
+  const controller = new AbortController();
+  const timer = setTimeout(() => controller.abort(), timeoutMs);
+  try {
+    const headers = { 'User-Agent': pickUA(), ...(options.headers || {}) };
+    return await fetch(url, { ...options, headers, signal: controller.signal });
+  } finally {
+    clearTimeout(timer);
+  }
+}
+
+// 简易并发限制器（限制同时进行的 fetch 数，避免触发限流）
+function createLimiter(maxConcurrent) {
+  let active = 0;
+  const queue = [];
+  const dequeue = () => {
+    if (active >= maxConcurrent || queue.length === 0) return;
+    const { fn, resolve, reject } = queue.shift();
+    active++;
+    Promise.resolve()
+      .then(fn)
+      .then(resolve, reject)
+      .finally(() => {
+        active--;
+        dequeue();
+      });
+  };
+  return (fn) => new Promise((resolve, reject) => {
+    queue.push({ fn, resolve, reject });
+    dequeue();
+  });
+}
+
+// 全局并发限制：同时最多 6 个 fetch 在飞，平衡速度和限流风险
+const limit = createLimiter(6);
+
+// 简易 LRU：缓存 fetchStockInfo 结果（同一 symbol 重复查询时直接命中）
+class LRUCache {
+  constructor(max = 200) {
+    this.max = max;
+    this.map = new Map();
+  }
+  get(key) {
+    if (!this.map.has(key)) return undefined;
+    const v = this.map.get(key);
+    this.map.delete(key);
+    this.map.set(key, v);
+    return v;
+  }
+  set(key, value) {
+    if (this.map.has(key)) this.map.delete(key);
+    this.map.set(key, value);
+    if (this.map.size > this.max) this.map.delete(this.map.keys().next().value);
+  }
+}
+const _stockInfoCache = new LRUCache(500);
+
 // 情绪关键词字典
 const SENTIMENT_KEYWORDS = {
   bullish: [
@@ -57,15 +132,10 @@ function analyzeSentiment(posts) {
     } else if (bearishScore > bullishScore) {
       sentiment = 'bearish';
       bearishCount++;
-    } else if (bullishScore === 0 && bearishScore === 0) {
-      // 检查中性关键词
-      const hasNeutral = SENTIMENT_KEYWORDS.neutral.some(kw => text.includes(kw));
-      if (hasNeutral) {
-        neutralCount++;
-      } else {
-        neutralCount++;
-      }
     } else {
+      // 平局或0分：检查中性词，否则也算中性
+      const hasNeutral = SENTIMENT_KEYWORDS.neutral.some(kw => text.includes(kw));
+      sentiment = hasNeutral ? 'neutral' : 'neutral';
       neutralCount++;
     }
 
@@ -135,23 +205,25 @@ function getEastmoneyMarket(symbol) {
   return '0'; // 深市
 }
 
-// 获取股票基本信息
+// 获取股票基本信息（带 LRU 缓存）
 async function fetchStockInfo(code, market) {
-  const secid = market + '.' + code;
-  const url = `https://push2.eastmoney.com/api/qt/stock/get?secid=${secid}&fields=f57,f58`;
+  const cacheKey = `${market}.${code}`;
+  const cached = _stockInfoCache.get(cacheKey);
+  if (cached) return cached;
+
+  const url = `https://push2.eastmoney.com/api/qt/stock/get?secid=${cacheKey}&fields=f57,f58`;
 
   try {
-    const res = await fetch(url, {
-      headers: {
-        'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) Chrome/120.0.0.0',
-        'Referer': 'https://quote.eastmoney.com/',
-      },
+    const res = await fetchWithTimeout(url, {
+      headers: { 'Referer': 'https://quote.eastmoney.com/' },
     });
     const data = await res.json();
-    return {
+    const info = {
       code: data.data?.f57,
       name: data.data?.f58,
     };
+    if (info.name) _stockInfoCache.set(cacheKey, info);
+    return info;
   } catch (err) {
     return { error: err.message };
   }
@@ -162,11 +234,8 @@ async function fetchResearchReports(code, count = 10) {
   const url = `https://reportapi.eastmoney.com/report/list?industryCode=*&pageNo=1&pageSize=${count}&ratingChange=*&beginTime=&endTime=&fields=&qType=0&orgCode=&code=${code}&rcode=&_=${Date.now()}`;
 
   try {
-    const res = await fetch(url, {
-      headers: {
-        'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) Chrome/120.0.0.0',
-        'Referer': 'https://data.eastmoney.com/',
-      },
+    const res = await fetchWithTimeout(url, {
+      headers: { 'Referer': 'https://data.eastmoney.com/' },
     });
     const data = await res.json();
 
@@ -189,17 +258,15 @@ async function fetchResearchReports(code, count = 10) {
 }
 
 // 获取快讯新闻 (通用财经新闻)
-async function fetchKuaixunNews(keyword, count = 10) {
+// keywords: 单个字符串或字符串数组（任一命中即保留）
+async function fetchKuaixunNews(keywords, count = 10) {
   // 使用东方财富快讯 API - 获取更多数据以提高匹配率
   const fetchCount = Math.max(100, count * 10); // 至少获取100条
   const url = `https://newsapi.eastmoney.com/kuaixun/v1/getlist_102_ajaxResult_${fetchCount}_1_.html`;
 
   try {
-    const res = await fetch(url, {
-      headers: {
-        'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) Chrome/120.0.0.0',
-        'Referer': 'https://kuaixun.eastmoney.com/',
-      },
+    const res = await fetchWithTimeout(url, {
+      headers: { 'Referer': 'https://kuaixun.eastmoney.com/' },
     });
     const text = await res.text();
 
@@ -210,13 +277,16 @@ async function fetchKuaixunNews(keyword, count = 10) {
     const data = JSON.parse(jsonMatch[1]);
     if (!data.LivesList) return [];
 
-    // 过滤包含关键词的新闻（支持多个关键词）
-    const keywordLower = keyword.toLowerCase();
+    // 关键词数组化，过滤掉空值；中文比较直接用包含关系，不需要 toLowerCase
+    const kwList = (Array.isArray(keywords) ? keywords : [keywords])
+      .filter(k => k && String(k).length >= 2)
+      .map(k => String(k));
+
+    if (kwList.length === 0) return [];
+
     const filtered = data.LivesList.filter(item => {
-      const title = (item.title || '').toLowerCase();
-      const digest = (item.digest || '').toLowerCase();
-      const content = title + ' ' + digest;
-      return content.includes(keywordLower);
+      const haystack = (item.title || '') + ' ' + (item.digest || '');
+      return kwList.some(kw => haystack.includes(kw));
     });
 
     return filtered.slice(0, count).map(item => ({
@@ -237,9 +307,8 @@ async function fetchGubaHot(code, count = 10) {
   const url = `https://guba.eastmoney.com/list,${code}.html`;
 
   try {
-    const res = await fetch(url, {
+    const res = await fetchWithTimeout(url, {
       headers: {
-        'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) Chrome/120.0.0.0',
         'Referer': 'https://guba.eastmoney.com/',
         'Accept': 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8',
       },
@@ -278,11 +347,8 @@ async function fetchThsMarketSentiment(count = 10) {
   const url = 'https://t.10jqka.com.cn/';
 
   try {
-    const res = await fetch(url, {
-      headers: {
-        'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) Chrome/120.0.0.0',
-        'Referer': 'https://www.10jqka.com.cn/',
-      },
+    const res = await fetchWithTimeout(url, {
+      headers: { 'Referer': 'https://www.10jqka.com.cn/' },
     });
 
     if (res.status !== 200) {
@@ -332,11 +398,8 @@ async function fetchSinaGuba(code, count = 10) {
   const url = `https://guba.sina.com.cn/bar.php?name=${sinaCode}`;
 
   try {
-    const res = await fetch(url, {
-      headers: {
-        'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) Chrome/120.0.0.0',
-        'Referer': 'https://finance.sina.com.cn/',
-      },
+    const res = await fetchWithTimeout(url, {
+      headers: { 'Referer': 'https://finance.sina.com.cn/' },
     });
 
     if (res.status !== 200) {
@@ -377,12 +440,171 @@ async function fetchSinaGuba(code, count = 10) {
   }
 }
 
-// 获取雪球讨论
-// 使用Puppeteer绕过WAF限制
-async function fetchXueqiuPosts(code, count = 10) {
+// 获取东方财富个股资讯（按股票代码精准过滤，比 fetchKuaixunNews 命中率高）
+async function fetchEastmoneyStockNews(code, market, count = 10) {
+  // mTypeAndCode: 0.{code} = 深市, 1.{code} = 沪市
+  const mtc = `${market}.${code}`;
+  const url = `https://np-listapi.eastmoney.com/comm/web/getListInfo?client=web&biz=web_news_zx&mTypeAndCode=${mtc}&type=1&pageSize=${count}&pageIndex=1`;
+
   try {
-    // 使用Puppeteer版本
-    return await fetchXueqiuWithPuppeteer(code, count);
+    const res = await fetchWithTimeout(url, {
+      headers: { 'Referer': 'https://quote.eastmoney.com/' },
+    });
+    const data = await res.json();
+
+    if (!data?.data?.list || !Array.isArray(data.data.list)) return [];
+
+    return data.data.list.slice(0, count).map(item => ({
+      title: item.Art_Title,
+      source: '东方财富资讯',
+      date: item.Art_ShowTime,
+      url: item.Art_Url || item.Art_OriginUrl,
+      origin: item.Np_dst || '',
+      type: 'news',
+    }));
+  } catch (err) {
+    return [{ error: `东财个股资讯获取失败: ${err.message}` }];
+  }
+}
+
+// 获取东方财富个股公告（公司官方披露，权威性最高）
+async function fetchEastmoneyAnnouncements(code, count = 10) {
+  const url = `https://np-anotice-stock.eastmoney.com/api/security/ann?sr=-1&page_size=${count}&page_index=1&ann_type=A&client_source=web&stock_list=${code}`;
+
+  try {
+    const res = await fetchWithTimeout(url, {
+      headers: { 'Referer': 'https://data.eastmoney.com/notices/' },
+    });
+    const data = await res.json();
+
+    if (!data?.data?.list || !Array.isArray(data.data.list)) return [];
+
+    return data.data.list.slice(0, count).map(item => ({
+      title: item.title,
+      source: '东方财富公告',
+      date: (item.notice_date || '').split(' ')[0],
+      column: item.columns?.[0]?.column_name || '',
+      url: `https://data.eastmoney.com/notices/detail/${code}/${item.art_code}.html`,
+      type: 'announcement',
+    }));
+  } catch (err) {
+    return [{ error: `东财公告获取失败: ${err.message}` }];
+  }
+}
+
+// 获取新浪财经个股新闻（与 fetchSinaGuba 互补：这是真实新闻流，非论坛帖）
+async function fetchSinaStockNews(code, count = 10) {
+  const sinaCode = code.startsWith('6') ? `sh${code}` : `sz${code}`;
+  const url = `https://vip.stock.finance.sina.com.cn/corp/view/vCB_AllNewsStock.php?symbol=${sinaCode}&Page=1`;
+
+  try {
+    const res = await fetchWithTimeout(url, {
+      headers: { 'Referer': 'https://finance.sina.com.cn/' },
+    });
+
+    if (res.status !== 200) return [];
+
+    // 新浪 GB2312 编码
+    const buffer = await res.arrayBuffer();
+    const html = new TextDecoder('gb2312').decode(buffer);
+
+    // 抓取新闻链接：<a target='_blank' href='...'>标题</a> 后面跟着日期
+    const items = [];
+    const linkRe = /<a\s+target=['"]_blank['"]\s+href=['"]([^'"]+)['"]>([^<]{8,80})<\/a>(?:\s|&nbsp;){0,5}\(?(\d{4}-\d{2}-\d{2})/g;
+    let m;
+    while ((m = linkRe.exec(html)) !== null) {
+      if (items.length >= count) break;
+      const [, link, title, date] = m;
+      const cleanTitle = title.trim();
+      if (cleanTitle.length < 5) continue;
+      items.push({
+        title: cleanTitle,
+        source: '新浪财经',
+        date,
+        url: link,
+        type: 'news',
+      });
+    }
+
+    // 兜底：链接+标题（无日期），用于 sina 改版后正则失效时
+    if (items.length === 0) {
+      const fallbackRe = /<a\s+target=['"]_blank['"]\s+href=['"](https?:\/\/[^'"]+sina[^'"]+)['"]>([^<]{10,80})<\/a>/g;
+      while ((m = fallbackRe.exec(html)) !== null) {
+        if (items.length >= count) break;
+        items.push({
+          title: m[2].trim(),
+          source: '新浪财经',
+          date: '',
+          url: m[1],
+          type: 'news',
+        });
+      }
+    }
+
+    return items;
+  } catch (err) {
+    return [{ error: `新浪个股新闻获取失败: ${err.message}` }];
+  }
+}
+
+// 获取巨潮资讯公告（深交所/上交所官方披露平台，权威性最高）
+// orgId 规则：6开头(沪市) → gssh0+code，其他(深市) → gssz0+code
+async function fetchCninfoAnnouncements(code, count = 10) {
+  const isSH = code.startsWith('6');
+  const orgId = (isSH ? 'gssh0' : 'gssz0') + code;
+  const column = isSH ? 'sse' : 'szse';
+  const url = 'http://www.cninfo.com.cn/new/hisAnnouncement/query';
+
+  const body = new URLSearchParams({
+    stock: `${code},${orgId}`,
+    tabName: 'fulltext',
+    pageSize: String(count),
+    pageNum: '1',
+    column,
+  });
+
+  try {
+    const res = await fetchWithTimeout(url, {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/x-www-form-urlencoded',
+        'Referer': `http://www.cninfo.com.cn/new/disclosure/stock?stockCode=${code}&orgId=${orgId}`,
+      },
+      body: body.toString(),
+    });
+
+    const data = await res.json();
+    if (!data?.announcements || !Array.isArray(data.announcements)) return [];
+
+    return data.announcements.slice(0, count).map(item => ({
+      title: item.announcementTitle,
+      source: '巨潮资讯',
+      date: item.announcementTime
+        ? new Date(item.announcementTime).toISOString().split('T')[0]
+        : '',
+      url: item.adjunctUrl
+        ? `http://static.cninfo.com.cn/${item.adjunctUrl}`
+        : `http://www.cninfo.com.cn/new/disclosure/detail?stockCode=${code}&announcementId=${item.announcementId}&orgId=${orgId}`,
+      file_type: item.adjunctType || 'PDF',
+      file_size_kb: item.adjunctSize || 0,
+      type: 'announcement',
+    }));
+  } catch (err) {
+    return [{ error: `巨潮公告获取失败: ${err.message}` }];
+  }
+}
+
+// 获取雪球讨论
+// 使用Puppeteer绕过WAF限制；用 Promise.race 强制 30 秒硬超时，避免无限挂起
+async function fetchXueqiuPosts(code, count = 10) {
+  const timeoutMs = 30000;
+  try {
+    return await Promise.race([
+      fetchXueqiuWithPuppeteer(code, count),
+      new Promise((_, reject) =>
+        setTimeout(() => reject(new Error(`Xueqiu Puppeteer timeout after ${timeoutMs}ms`)), timeoutMs)
+      ),
+    ]);
   } catch (err) {
     console.error(`雪球数据获取失败: ${err.message}`);
     return [];
@@ -416,43 +638,76 @@ export async function searchNews({ symbol, name, source = 'all', count = 10 }) {
   }
 
   const keyword = result.name || code;
+  // 多关键词命中：公司名 + 6位代码 都匹配，提升快讯命中率
+  const kuaixunKeywords = [result.name, code].filter(Boolean);
   const promises = [];
 
-  // 获取研报
+  // 每源状态追踪：调用者可以看到哪些源失败/超时
+  result.sources_status = {};
+  const trackSource = (name, fn) =>
+    fn().then(items => {
+      const arr = Array.isArray(items) ? items : [];
+      const errored = arr.find(it => it && it.error);
+      result.sources_status[name] = {
+        ok: !errored,
+        count: arr.filter(it => !it.error).length,
+        error: errored?.error || null,
+      };
+      return arr;
+    }).catch(err => {
+      result.sources_status[name] = { ok: false, count: 0, error: err.message };
+      return [];
+    });
+
+  // 获取研报 + 新闻：多源并行（research + 快讯 + 东财个股资讯 + 东财公告 + 新浪个股新闻）
   if (source === 'all' || source === 'news') {
     promises.push(
-      fetchResearchReports(code, Math.ceil(count / 2))
-        .then(reports => { result.research = reports; })
+      trackSource('研报', () => fetchResearchReports(code, Math.ceil(count / 2)))
+        .then(items => { result.research = items; })
     );
 
-    // 获取快讯新闻
+    // 6路新闻并行抓取，按URL去重，按日期降序
     promises.push(
-      fetchKuaixunNews(keyword, count)
-        .then(news => { result.news = news; })
+      Promise.all([
+        trackSource('东财快讯', () => limit(() => fetchKuaixunNews(kuaixunKeywords, count))),
+        trackSource('东财个股资讯', () => limit(() => fetchEastmoneyStockNews(code, emMarket, count))),
+        trackSource('东财公告', () => limit(() => fetchEastmoneyAnnouncements(code, Math.ceil(count / 2)))),
+        trackSource('新浪个股新闻', () => limit(() => fetchSinaStockNews(code, count))),
+        trackSource('巨潮公告', () => limit(() => fetchCninfoAnnouncements(code, Math.ceil(count / 2)))),
+      ]).then(([kuaixun, emStockNews, emAnn, sinaNews, cninfo]) => {
+        const seen = new Set();
+        const merged = [];
+        for (const item of [...emStockNews, ...sinaNews, ...kuaixun, ...emAnn, ...cninfo]) {
+          if (item.error) continue;
+          const key = (item.url || item.title).toLowerCase();
+          if (!seen.has(key)) {
+            seen.add(key);
+            merged.push(item);
+          }
+        }
+        merged.sort((a, b) => (b.date || '').localeCompare(a.date || ''));
+        result.news = merged.slice(0, count * 2);
+      })
     );
   }
 
   // 获取股吧 - 支持A股和美股
   if (source === 'all' || source === 'forum') {
     if (marketType === 'CN') {
-      // A股：从多个来源获取
-      const forumCount = Math.ceil(count / 3); // 每个来源获取 1/3
+      const forumCount = Math.ceil(count / 3);
       promises.push(
         Promise.all([
-          fetchGubaHot(code, forumCount),
-          fetchSinaGuba(code, forumCount),
-          fetchXueqiuPosts(code, forumCount), // 启用雪球（支持CDP模式）
+          trackSource('东财股吧', () => limit(() => fetchGubaHot(code, forumCount))),
+          trackSource('新浪股吧', () => limit(() => fetchSinaGuba(code, forumCount))),
+          trackSource('雪球', () => fetchXueqiuPosts(code, forumCount)), // 雪球用 Puppeteer，不走 limit
         ]).then(results => {
-          // 合并所有股吧数据
           result.forum = [...results[0], ...results[1], ...results[2]];
         })
       );
     } else {
-      // 美股/港股：仅使用雪球
       promises.push(
-        fetchXueqiuPosts(code, count).then(posts => {
-          result.forum = posts;
-        })
+        trackSource('雪球', () => fetchXueqiuPosts(code, count))
+          .then(posts => { result.forum = posts; })
       );
     }
   }
