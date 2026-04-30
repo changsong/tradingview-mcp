@@ -26,8 +26,7 @@ claude --dangerously-skip-permissions
   -是否是假利好  
 
 ## 技术面分析
-用 ./scripts/launch_tv_debug.bat 启动TradigView, 分析这些股票的技术面，比如：趋势结构（Trend）,动能系统（Momentum）,波动压缩与释放（Volatility），成交量行为（Volume）,量价时空, 关键结构位（Structure）,资金行为模拟（高级）
-等相关的技术指标。通过不同时间周期: 1h，4h，1d,1w 进行分析，如果明天入手，哪支股票明天开始最可能上涨的概率最大，有最大的涨幅，基于的理由是什么。
+用 ./scripts/launch_tv_debug.bat 启动TradigView, 分析这些股票的技术面，比如：趋势结构（Trend）,动能系统（Momentum）,波动压缩与释放（Volatility），成交量行为（Volume）,量价时空, 关键结构位（Structure）,资金行为模拟（高级）等相关的技术指标。通过不同时间周期: 1h，4h，1d,1w 进行分析，如果明天入手，哪支股票明天开始最可能上涨的概率最大，有最大的涨幅，基于的理由是什么。
 【交易信号判断】必须给出：
 1. 结论：看多 / 看空 / 观望
 2. 类型：

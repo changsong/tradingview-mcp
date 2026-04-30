@@ -189,15 +189,15 @@ async function fetchRedditStocks(symbol, count = 10) {
   }
 }
 
-// Fetch StockTwits messages
-async function fetchStockTwits(symbol, count = 10) {
-  // StockTwits public API
-  const url = `https://api.stocktwits.com/api/2/streams/symbol/${symbol}.json?limit=${count}`;
+// Fetch news from Yahoo Finance (no API key required, no anti-bot)
+async function fetchYahooFinanceNews(symbol, count = 10) {
+  const url = `https://query1.finance.yahoo.com/v1/finance/search?q=${symbol}&newsCount=${count}&quotesCount=0`;
 
   try {
     const res = await fetch(url, {
       headers: {
-        'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) Chrome/120.0.0.0',
+        'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36',
+        'Accept': 'application/json',
       },
     });
 
@@ -206,36 +206,223 @@ async function fetchStockTwits(symbol, count = 10) {
     }
 
     const data = await res.json();
-    if (!data.messages) {
+    if (!data.news || !Array.isArray(data.news)) {
       return [];
     }
 
-    return data.messages.map(item => ({
-      title: item.body.substring(0, 100) + (item.body.length > 100 ? '...' : ''),
-      content: item.body,
-      author: item.user?.username || 'Anonymous',
-      date: new Date(item.created_at).toISOString().split('T')[0],
-      likes: item.likes?.total || 0,
-      url: `https://stocktwits.com/${item.user?.username}/message/${item.id}`,
-      sentiment: item.entities?.sentiment?.basic || 'neutral',
-      source: 'StockTwits',
-      type: 'social',
+    return data.news.slice(0, count).map(item => ({
+      title: item.title,
+      content: item.summary || '',
+      url: item.link,
+      date: item.providerPublishTime
+        ? new Date(item.providerPublishTime * 1000).toISOString().split('T')[0]
+        : '',
+      publisher: item.publisher || 'Yahoo Finance',
+      related_tickers: item.relatedTickers || [],
+      source: 'Yahoo Finance',
+      type: 'news',
     }));
   } catch (err) {
-    console.error(`StockTwits fetch error: ${err.message}`);
+    console.error(`Yahoo Finance fetch error: ${err.message}`);
     return [];
   }
 }
 
-// Fetch Seeking Alpha news (via web scraping)
+// Fetch news from Finnhub (free tier: 60 req/min, requires FINNHUB_API_KEY env var)
+async function fetchFinnhubNews(symbol, count = 10) {
+  // Last 7 days window
+  const today = new Date();
+  const weekAgo = new Date(today.getTime() - 7 * 24 * 60 * 60 * 1000);
+  const fmt = d => d.toISOString().split('T')[0];
+
+  const url = `https://finnhub.io/api/v1/company-news?symbol=${symbol}&from=${fmt(weekAgo)}&to=${fmt(today)}&token=d7p9dvpr01qlb0a984ngd7p9dvpr01qlb0a984o0`;
+
+  try {
+    const res = await fetch(url, {
+      headers: { 'Accept': 'application/json' },
+    });
+
+    if (res.status !== 200) {
+      return [];
+    }
+
+    const data = await res.json();
+    if (!Array.isArray(data)) {
+      return [];
+    }
+
+    return data.slice(0, count).map(item => ({
+      title: item.headline,
+      content: item.summary || '',
+      url: item.url,
+      date: item.datetime
+        ? new Date(item.datetime * 1000).toISOString().split('T')[0]
+        : '',
+      publisher: item.source || 'Finnhub',
+      category: item.category || '',
+      image: item.image || '',
+      source: 'Finnhub',
+      type: 'news',
+    }));
+  } catch (err) {
+    console.error(`Finnhub fetch error: ${err.message}`);
+    return [];
+  }
+}
+
+// Fetch news from MarketWatch top-stories RSS, filter by symbol/company mentions
+async function fetchMarketWatchRSS(symbol, name, count = 10) {
+  const feeds = [
+    'https://feeds.content.dowjones.io/public/rss/mw_topstories',
+    'https://feeds.content.dowjones.io/public/rss/mw_marketpulse',
+    'https://feeds.content.dowjones.io/public/rss/RSSMarketsMain',
+  ];
+
+  const tickerRe = new RegExp(`\\b${symbol}\\b`, 'i');
+  const nameRe = name ? new RegExp(name.replace(/[.*+?^${}()|[\]\\]/g, '\\$&'), 'i') : null;
+
+  try {
+    const xmls = await Promise.all(
+      feeds.map(url =>
+        fetch(url, { headers: { 'User-Agent': 'Mozilla/5.0', 'Accept': 'application/rss+xml,application/xml' } })
+          .then(r => (r.status === 200 ? r.text() : ''))
+          .catch(() => '')
+      )
+    );
+
+    const items = [];
+    for (const xml of xmls) {
+      if (!xml) continue;
+      const itemMatches = xml.matchAll(/<item>([\s\S]*?)<\/item>/g);
+      for (const m of itemMatches) {
+        const block = m[1];
+        const title = (block.match(/<title>(?:<!\[CDATA\[)?([\s\S]*?)(?:\]\]>)?<\/title>/) || [])[1]?.trim();
+        const link = (block.match(/<link>([\s\S]*?)<\/link>/) || [])[1]?.trim();
+        const desc = (block.match(/<description>(?:<!\[CDATA\[)?([\s\S]*?)(?:\]\]>)?<\/description>/) || [])[1]?.trim() || '';
+        const pubDate = (block.match(/<pubDate>([\s\S]*?)<\/pubDate>/) || [])[1]?.trim();
+
+        if (!title || !link) continue;
+
+        const haystack = `${title} ${desc}`;
+        const matchTicker = tickerRe.test(haystack);
+        const matchName = nameRe ? nameRe.test(haystack) : false;
+        if (!matchTicker && !matchName) continue;
+
+        items.push({
+          title,
+          content: desc.replace(/<[^>]+>/g, '').substring(0, 300),
+          url: link,
+          date: pubDate ? new Date(pubDate).toISOString().split('T')[0] : '',
+          publisher: 'MarketWatch',
+          source: 'MarketWatch',
+          type: 'news',
+        });
+      }
+    }
+
+    const seen = new Set();
+    return items.filter(it => {
+      const k = it.url.toLowerCase();
+      if (seen.has(k)) return false;
+      seen.add(k);
+      return true;
+    }).slice(0, count);
+  } catch (err) {
+    console.error(`MarketWatch RSS fetch error: ${err.message}`);
+    return [];
+  }
+}
+
+// Fetch news from NewsAPI.org (free dev tier: 100 req/day, requires NEWSAPI_KEY env var)
+async function fetchNewsAPI(symbol, name, count = 10) {
+  const apiKey = process.env.NEWSAPI_KEY;
+  if (!apiKey) {
+    return [];
+  }
+
+  const query = name ? `(${symbol} OR "${name}")` : symbol;
+  const url = `https://newsapi.org/v2/everything?q=${encodeURIComponent(query)}&language=en&sortBy=publishedAt&pageSize=${count}`;
+
+  try {
+    const res = await fetch(url, {
+      headers: { 'X-Api-Key': apiKey, 'Accept': 'application/json' },
+    });
+
+    if (res.status !== 200) {
+      return [];
+    }
+
+    const data = await res.json();
+    if (!data.articles || !Array.isArray(data.articles)) {
+      return [];
+    }
+
+    return data.articles.slice(0, count).map(item => ({
+      title: item.title,
+      content: item.description || '',
+      url: item.url,
+      date: item.publishedAt ? item.publishedAt.split('T')[0] : '',
+      publisher: item.source?.name || 'NewsAPI',
+      author: item.author || '',
+      image: item.urlToImage || '',
+      source: 'NewsAPI',
+      type: 'news',
+    }));
+  } catch (err) {
+    console.error(`NewsAPI fetch error: ${err.message}`);
+    return [];
+  }
+}
+
+// Fetch Yahoo Finance Conversations. Yahoo's Spot.IM endpoint requires a browser
+// session crumb and blocks direct API calls. Returns empty unless YAHOO_CONVERSATIONS_PROXY
+// (a Playwright-rendering microservice) is configured. Reddit covers community sentiment otherwise.
+async function fetchYahooConversations(symbol, count = 10) {
+  const proxyUrl = process.env.YAHOO_CONVERSATIONS_PROXY;
+  if (!proxyUrl) {
+    return [];
+  }
+
+  try {
+    const res = await fetch(`${proxyUrl}?symbol=${encodeURIComponent(symbol)}&count=${count}`, {
+      headers: { 'Accept': 'application/json' },
+    });
+
+    if (res.status !== 200) {
+      return [];
+    }
+
+    const data = await res.json();
+    if (!Array.isArray(data?.messages)) {
+      return [];
+    }
+
+    return data.messages.slice(0, count).map(item => ({
+      title: (item.text || '').substring(0, 100) + ((item.text?.length || 0) > 100 ? '...' : ''),
+      content: item.text || '',
+      author: item.author || 'Anonymous',
+      date: item.created_at ? item.created_at.split('T')[0] : '',
+      likes: item.likes || 0,
+      url: item.url || `https://finance.yahoo.com/quote/${symbol}/community`,
+      sentiment: item.sentiment || 'neutral',
+      source: 'Yahoo Conversations',
+      type: 'social',
+    }));
+  } catch (err) {
+    console.error(`Yahoo Conversations fetch error: ${err.message}`);
+    return [];
+  }
+}
+
+// Fetch Seeking Alpha news via public RSS feed (Cloudflare-friendly)
 async function fetchSeekingAlpha(symbol, count = 10) {
-  const url = `https://seekingalpha.com/symbol/${symbol}/news`;
+  const url = `https://seekingalpha.com/api/sa/combined/${symbol}.xml`;
 
   try {
     const res = await fetch(url, {
       headers: {
-        'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) Chrome/120.0.0.0',
-        'Accept': 'text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8',
+        'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36',
+        'Accept': 'application/rss+xml,application/xml,text/xml',
       },
     });
 
@@ -243,43 +430,101 @@ async function fetchSeekingAlpha(symbol, count = 10) {
       return [];
     }
 
-    const html = await res.text();
-
-    // Extract article data from JSON-LD or data attributes
-    const articles = [];
-    const articleMatches = html.matchAll(/<article[^>]*data-test-id="post-list-item"[^>]*>(.*?)<\/article>/gs);
-
-    for (const match of articleMatches) {
-      if (articles.length >= count) break;
-
-      const articleHtml = match[1];
-
-      // Extract title
-      const titleMatch = articleHtml.match(/<a[^>]*data-test-id="post-list-item-title"[^>]*>([^<]+)<\/a>/);
-      const title = titleMatch ? titleMatch[1].trim() : '';
-
-      // Extract URL
-      const urlMatch = articleHtml.match(/<a[^>]*data-test-id="post-list-item-title"[^>]*href="([^"]+)"/);
-      const articleUrl = urlMatch ? `https://seekingalpha.com${urlMatch[1]}` : '';
-
-      // Extract date
-      const dateMatch = articleHtml.match(/data-test-id="post-list-date"[^>]*>([^<]+)</);
-      const date = dateMatch ? dateMatch[1].trim() : '';
-
-      if (title && articleUrl) {
-        articles.push({
-          title: title,
-          url: articleUrl,
-          date: date,
-          source: 'Seeking Alpha',
-          type: 'news',
-        });
-      }
+    const xml = await res.text();
+    if (!xml.includes('<item>')) {
+      return [];
     }
 
-    return articles;
+    const items = [];
+    const itemMatches = xml.matchAll(/<item>([\s\S]*?)<\/item>/g);
+    for (const m of itemMatches) {
+      if (items.length >= count) break;
+      const block = m[1];
+
+      const title = (block.match(/<title>(?:<!\[CDATA\[)?([\s\S]*?)(?:\]\]>)?<\/title>/) || [])[1]?.trim();
+      const link = (block.match(/<link>([\s\S]*?)<\/link>/) || [])[1]?.trim();
+      const pubDate = (block.match(/<pubDate>([\s\S]*?)<\/pubDate>/) || [])[1]?.trim();
+      const author = (block.match(/<sa:author_name>([\s\S]*?)<\/sa:author_name>/) || [])[1]?.trim() || '';
+      const desc = (block.match(/<description>(?:<!\[CDATA\[)?([\s\S]*?)(?:\]\]>)?<\/description>/) || [])[1]?.trim() || '';
+
+      if (!title || !link) continue;
+
+      // Classify by URL pattern: article = analysis, MarketCurrent = news flash
+      const itemType = link.includes('/article/') ? 'analysis'
+                     : link.includes('MarketCurrent') || link.includes('/news') ? 'news'
+                     : 'news';
+
+      items.push({
+        title,
+        content: desc.replace(/<[^>]+>/g, '').substring(0, 300),
+        url: link,
+        date: pubDate ? new Date(pubDate).toISOString().split('T')[0] : '',
+        author,
+        publisher: 'Seeking Alpha',
+        source: 'Seeking Alpha',
+        type: itemType,
+      });
+    }
+
+    return items;
   } catch (err) {
     console.error(`Seeking Alpha fetch error: ${err.message}`);
+    return [];
+  }
+}
+
+// Fetch StockTwits messages with full browser headers (+ optional OAuth token)
+// StockTwits API now sits behind Cloudflare. With STOCKTWITS_TOKEN env var set,
+// requests go to the authenticated endpoint (200 req/hour). Without it, attempts the
+// public stream with browser-mimicking headers (works in some regions / sometimes).
+async function fetchStockTwits(symbol, count = 10) {
+  const token = process.env.STOCKTWITS_TOKEN;
+  const url = token
+    ? `https://api.stocktwits.com/api/2/streams/symbol/${symbol}.json?limit=${count}&access_token=${token}`
+    : `https://api.stocktwits.com/api/2/streams/symbol/${symbol}.json?limit=${count}`;
+
+  const headers = {
+    'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36',
+    'Accept': 'application/json',
+    'Accept-Language': 'en-US,en;q=0.9',
+    'Referer': `https://stocktwits.com/symbol/${symbol}`,
+  };
+  if (token) {
+    headers['Authorization'] = `OAuth ${token}`;
+  }
+
+  try {
+    const res = await fetch(url, { headers });
+
+    if (res.status !== 200) {
+      // 401/403 = no token, 429 = rate limit, 503 = Cloudflare challenge
+      return [];
+    }
+
+    // Confirm response is JSON (Cloudflare challenges return HTML)
+    const ctype = res.headers.get('content-type') || '';
+    if (!ctype.includes('json')) {
+      return [];
+    }
+
+    const data = await res.json();
+    if (!data?.messages) {
+      return [];
+    }
+
+    return data.messages.slice(0, count).map(item => ({
+      title: (item.body || '').substring(0, 100) + ((item.body?.length || 0) > 100 ? '...' : ''),
+      content: item.body || '',
+      author: item.user?.username || 'Anonymous',
+      date: item.created_at ? new Date(item.created_at).toISOString().split('T')[0] : '',
+      likes: item.likes?.total || 0,
+      url: `https://stocktwits.com/${item.user?.username}/message/${item.id}`,
+      sentiment: item.entities?.sentiment?.basic?.toLowerCase() || 'neutral',
+      source: 'StockTwits',
+      type: 'social',
+    }));
+  } catch (err) {
+    console.error(`StockTwits fetch error: ${err.message}`);
     return [];
   }
 }
@@ -347,24 +592,46 @@ export async function searchUSNews({ symbol, name, source = 'all', count = 10 })
 
   const promises = [];
 
-  // Fetch news from Seeking Alpha
+  // Fetch news from Yahoo Finance + Finnhub + MarketWatch RSS + NewsAPI + Seeking Alpha (parallel, deduplicated by URL)
   if (source === 'all' || source === 'news') {
     promises.push(
-      fetchSeekingAlpha(cleanSymbol, count)
-        .then(articles => { result.news = articles; })
+      Promise.all([
+        fetchYahooFinanceNews(cleanSymbol, count),
+        fetchFinnhubNews(cleanSymbol, count),
+        fetchMarketWatchRSS(cleanSymbol, name, count),
+        fetchNewsAPI(cleanSymbol, name, count),
+        fetchSeekingAlpha(cleanSymbol, count),
+      ]).then(([yahoo, finnhub, mw, newsapi, sa]) => {
+        const seen = new Set();
+        const merged = [];
+        for (const item of [...yahoo, ...finnhub, ...mw, ...newsapi, ...sa]) {
+          const key = (item.url || item.title).toLowerCase();
+          if (!seen.has(key)) {
+            seen.add(key);
+            merged.push(item);
+          }
+        }
+        // Sort newest first
+        merged.sort((a, b) => (b.date || '').localeCompare(a.date || ''));
+        result.news = merged.slice(0, count * 2); // allow more since we have 5 sources
+      })
     );
   }
 
-  // Fetch social media from StockTwits
+  // Social: Yahoo Conversations + StockTwits (both degrade gracefully without auth)
   if (source === 'all' || source === 'social') {
     promises.push(
-      fetchStockTwits(cleanSymbol, count)
-        .then(messages => { result.social = messages; })
+      Promise.all([
+        fetchYahooConversations(cleanSymbol, count),
+        fetchStockTwits(cleanSymbol, count),
+      ]).then(([yahooConv, stockTwits]) => {
+        result.social = [...yahooConv, ...stockTwits];
+      })
     );
   }
 
-  // Fetch forum discussions from Reddit and Bogleheads
-  if (source === 'all' || source === 'forum') {
+  // Fetch forum discussions from Reddit and Bogleheads (covers community sentiment)
+  if (source === 'all' || source === 'social' || source === 'forum') {
     const forumCount = Math.ceil(count / 3);
     promises.push(
       Promise.all([
@@ -395,7 +662,7 @@ export async function searchUSNews({ symbol, name, source = 'all', count = 10 })
   }
 
   // Generate analysis hint
-  let analysisHint = `Based on ${result.total_count} items from Reddit, StockTwits, Seeking Alpha, and Bogleheads:\n`;
+  let analysisHint = `Based on ${result.total_count} items from Yahoo Finance, Finnhub, MarketWatch, NewsAPI, Seeking Alpha, Yahoo Conversations, StockTwits, Reddit, and Bogleheads:\n`;
   analysisHint += '1) Market sentiment (bullish/bearish/neutral ratio)\n';
   analysisHint += '2) Potential price impact (catalysts and risks)\n';
   analysisHint += '3) Key opportunities and concerns\n';
