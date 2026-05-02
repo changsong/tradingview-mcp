@@ -3,97 +3,104 @@
 2. 打开 cursor, 找到prompt.md, 在Termial 输入：claude --dangerously-skip-permissions，开始依次输入一下内容
 3. A股跑完之后，Ctrl +c 连续2次退出，重新输入：claude --dangerously-skip-permissions，开始进行美股操作
 
+> ⚠️ **重要：流水线已固化**。每个段落对应**唯一固定的脚本路径**，请直接执行下面给出的命令，**不要重新生成脚本文件**。
+> - 4 阶段脚本：`pipeline/1-scan/`、`pipeline/2-news/`、`pipeline/3-technical/`、`pipeline/4-combined/`
+> - 阶段间通过 JSON 契约连接（`watchlist/<market>_news_signals.json` → `watchlist/<market>_tech_signals.json` → 合并阶段消费）
+> - 历史脚本/报告/Pine 已迁移至 `archive/`，仅供回看
+
 
 ## 上升趋势股票过滤
 ### A股 40分钟左右
-使用 ./scripts/launch_tv_debug.bat 启动TradigView，请使用策略名为：A Share SQZMOM PRO v22 (Daily), 设置图表周期为天。然后使用 --symbols=filepath=./watchlist/cn.txt 作为入参执行 scan_stocks.js,选出的股票需要合并./watchlist/cn_selected.txt已有的股票输出到 /watchlist/cn_selected.txt 格式保持同cn.txt一致,一起排重
+使用 `./scripts/launch_tv_debug.bat` 启动TradingView，请使用策略名为：A Share SQZMOM PRO v22 (Daily), 设置图表周期为天。然后执行：
+
+```bash
+npm run scan:cn
+# 等价：node pipeline/1-scan/scan_stocks.js --symbols=filepath=./watchlist/cn.txt
+```
+
+选出的股票需要合并 `./watchlist/cn_selected.txt` 已有的股票输出到 `./watchlist/cn_selected.txt`，格式保持同 `cn.txt` 一致，并排重。
 
 ## 研报及新闻分析 5-10分钟
-利用 ./src/core/webNews.js 获取这些推荐股票的新闻，包含研报，快讯，新闻等，进行 市场情绪倾向（看涨/看跌/中性比例），对股价的潜在影响预测（利好/利空因素），关键风险和机会点 请将新闻转化为“可交易信号”，最好最近5天最重要新闻。  
-1.抓取并筛选高影响力新闻(去噪)
-2.对每条新闻打标签:
-  -类型:政策/财报/并购/行业/黑天鹅/传闻
-  -情绪:+1/0/-1
-  -影响权重:1~5
-3.构建情绪指数:
-  - Sentiment Score =Σ(情绪 × 权重)  
-4.识别关键模式(重点)
-  -情绪持续增强(trend)
-  -情绪反转(reversal)
-  -情绪背离(pricevsnews)
-4.输出交易信号:
-  - Long / Short / No Trade
-  -触发原因(必须可解释)
-  -是否适合:追涨/低吸/反转
-【重点】
-必须识别:
-  -是否已经提前炒作
-  -是否存在情绪过热
-  -是否是假利好  
+利用 `./src/core/webNews.js` 获取这些推荐股票的新闻（研报/快讯/新闻），分析市场情绪倾向、对股价的潜在影响、关键风险和机会点，将新闻转化为"可交易信号"，最好覆盖最近 5 个交易日最重要的新闻。直接执行：
+
+```bash
+npm run news:cn
+# 产物：watchlist/cn_news_signals.md（人看） + watchlist/cn_news_signals.json（下游契约）
+```
+
+脚本内置规则：
+1. 抓取并筛选高影响力新闻（去噪）
+2. 对每条新闻打标签：类型（政策/财报/并购/行业/黑天鹅/传闻）+ 情绪（+1/0/-1）+ 权重（1~5）
+3. 构建情绪指数：Sentiment Score = Σ(情绪 × 权重)
+4. 识别关键模式：情绪持续增强(trend) / 情绪反转(reversal) / 情绪背离(price vs news)
+5. 输出交易信号：Long / Short / No Trade + 触发原因 + 是否适合追涨/低吸/反转
+6. 必须识别：是否已经提前炒作 / 是否存在情绪过热 / 是否是假利好
 
 ## 技术面分析 10分钟
-使用 ./scripts/launch_tv_debug.bat 启动TradigView, 使用 analyze_tech_cn_mtf.mjs 对这些股票进行技术面分析，比如：趋势结构（Trend）,动能系统（Momentum）,波动压缩与释放（Volatility），成交量行为（Volume）,量价时空, 关键结构位（Structure）,资金行为模拟（高级）
-等相关的技术指标。通过不同时间周期: 1h，4h，1d,1w 进行分析，如果明天入手，哪支股票明天开始最可能上涨的概率最大，有最大的涨幅，基于的理由是什么。
-【交易信号判断】必须给出：
-1. 结论：看多 / 看空 / 观望
-2. 类型：
- - 突破型
- - 回调低吸
- - 反转
-3. 是否适合追涨：YES / NO
-4. 关键风险
-  - 是否接近压力位
-  - 是否动能衰减
-  - 是否存在诱多/假突破
+使用 `./scripts/launch_tv_debug.bat` 启动TradingView。直接执行：
+
+```bash
+npm run tech:cn
+# 产物：watchlist/cn_tech_signals.md（人看） + watchlist/cn_tech_signals.json（下游契约）
+```
+
+脚本内置：1H/4H/1D/1W 多周期合成（权重 0.10/0.25/0.40/0.25）+ EMA/RSI/MACD/ADX/Squeeze/OBV/StochRSI/背离 + 量能高潮 + Squeeze 持续天数 + 收益加速度 + 支撑测试次数 + R/R + ATR 止损 + Pivot 目标价 + 相对沪深 300 强度 + A 股涨跌停 / 连板检测。
+
+【交易信号】每只股票输出：结论（看多/看空/观望）+ 类型（突破型/回调低吸/反转/趋势追涨/过热追涨）+ 是否追涨（YES/NO）+ 关键风险标签（压力/假突/诱多/动能衰/震荡/看空背离/RR 差/涨跌停）。
 
 ### 合并分析 2分钟
-1. 请根据以上的股票的研报及新闻分析、技术面分析，综合判断这些股票中哪些是最值得介入的，统一进行排序，介入的价位是多少，止损的价位是多少，卖出的价位是多少
+直接执行（**不要重新生成脚本，脚本读取上面两个 JSON 契约**）：
+
+```bash
+npm run combined:cn
+# 产物：watchlist/cn_combined_signals.md + 自动快照到 reports/<YYYY-MM-DD>/
+```
+
+公式：`Combined = TechScore × 0.6 + NewsScore × 2 × 0.4 - (过热 ? 10 : 0)`，按等级 A/B/C+/C 排序，自动算入场价/止损/目标位/盈亏比。
+
+> 💡 一键全跑：`npm run full:cn`（=news:cn + tech:cn + combined:cn）
 
 
 
 ### 美股 30分钟左右
-使用 ./scripts/launch_tv_debug.bat 启动TradigView，请使用策略名为：US Stock SQZMOM Daily PRO v4 (ATR + EMA20 Stop), 设置图表周期为天。然后使用 --symbols=filepath=../watchlist/us.txt 作为入参执行 scan_stocks.js,选出的股票需要合并./watchlist/us_selected.txt已有的股票输出到 /watchlist/us_selected.txt 格式保持同us.txt一致,并排重
+使用 `./scripts/launch_tv_debug.bat` 启动TradingView，请使用策略名为：US Stock SQZMOM Daily PRO v4 (ATR + EMA20 Stop), 设置图表周期为天。然后执行：
+
+```bash
+npm run scan:us
+# 等价：node pipeline/1-scan/scan_stocks.js --symbols=filepath=./watchlist/us.txt
+```
+
+选出的股票需要合并 `./watchlist/us_selected.txt` 已有的股票输出到 `./watchlist/us_selected.txt`，格式保持同 `us.txt` 一致，并排重。
 
 ## 研报及新闻分析 5-10分钟
-利用 ./src/core/usNew.js 获取这些推荐股票的新闻，包含研报，快讯，新闻等，进行 市场情绪倾向（看涨/看跌/中性比例），对股价的潜在影响预测（利好/利空因素），关键风险和机会点 请将新闻转化为“可交易信号”，最好最近5天最重要新闻。 
-1.抓取并筛选高影响力新闻(去噪)
-2.对每条新闻打标签:
-  -类型:政策/财报/并购/行业/黑天鹅/传闻
-  -情绪:+1/0/-1
-  -影响权重:1~5
-3.构建情绪指数:
-  - Sentiment Score =Σ(情绪 × 权重)  
-4.识别关键模式(重点)
-  -情绪持续增强(trend)
-  -情绪反转(reversal)
-  -情绪背离(pricevsnews)
-4.输出交易信号:
-  - Long / Short / No Trade
-  -触发原因(必须可解释)
-  -是否适合:追涨/低吸/反转
-【重点】
-必须识别:
-  -是否已经提前炒作
-  -是否存在情绪过热
-  -是否是假利好  
+利用 `./src/core/usNews.js` 获取这些推荐股票的新闻（研报/快讯/新闻）。直接执行：
+
+```bash
+npm run news:us
+# 产物：watchlist/us_news_signals.md + watchlist/us_news_signals.json
+```
+
+规则同上（情绪量化 → Long / Short / No Trade，识别提前炒作 / 过热 / 假利好）。
 
 ## 技术面分析
-使用 ./scripts/launch_tv_debug.bat 启动TradigView, 使用 analyze_tech_us_mtf.mjs 对这些股票进行技术面分析，比如：趋势结构（Trend）,动能系统（Momentum）,波动压缩与释放（Volatility），成交量行为（Volume）,量价时空, 关键结构位（Structure）,资金行为模拟（高级）
-等相关的技术指标。通过不同时间周期: 1h，4h，1d,1w 进行分析，如果明天入手，哪支股票明天开始最可能上涨的概率最大，有最大的涨幅，基于的理由是什么。
-【交易信号判断】必须给出：
-1. 结论：看多 / 看空 / 观望
-2. 类型：
- - 突破型
- - 回调低吸
- - 反转
-3. 是否适合追涨：YES / NO
-4. 关键风险
-  - 是否接近压力位
-  - 是否动能衰减
-  - 是否存在诱多/假突破
+使用 `./scripts/launch_tv_debug.bat` 启动TradingView。直接执行：
+
+```bash
+npm run tech:us
+# 产物：watchlist/us_tech_signals.md + watchlist/us_tech_signals.json
+```
+
+【交易信号】结论（Long/Short/Wait）+ 类型（Breakout/Pullback/Reversal/Trend/Overheat）+ 是否追涨 + 关键风险（压力位/动能衰/诱多/假突）。
 
 ### 合并分析
-1. 请根据以上的股票的研报及新闻分析、技术面分析，综合判断这些股票中哪些是最值得介入的，统一进行排序，介入的价位是多少，止损的价位是多少，卖出的价位是多少 
+直接执行：
+
+```bash
+npm run combined:us
+# 产物：watchlist/us_combined_signals.md + 自动快照到 reports/<YYYY-MM-DD>/
+```
+
+> 💡 一键全跑：`npm run full:us`
                                                                                                                                                                                                         
 
 

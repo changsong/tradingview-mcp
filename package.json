@@ -20,7 +20,17 @@
     "test:cli": "node --test tests/cli.test.js",
     "test:all": "node --test tests/e2e.test.js tests/pine_analyze.test.js tests/cli.test.js",
     "test:verbose": "node --test --test-reporter=spec tests/e2e.test.js tests/pine_analyze.test.js",
-    "test:count": "node --test --test-reporter=spec tests/e2e.test.js 2>&1 | tail -5"
+    "test:count": "node --test --test-reporter=spec tests/e2e.test.js 2>&1 | tail -5",
+    "scan:cn":     "node pipeline/1-scan/scan_stocks.js --symbols=filepath=./watchlist/cn.txt",
+    "scan:us":     "node pipeline/1-scan/scan_stocks.js --symbols=filepath=./watchlist/us.txt",
+    "news:cn":     "node pipeline/2-news/analyze_cn_news.mjs",
+    "news:us":     "node pipeline/2-news/analyze_us_news.mjs",
+    "tech:cn":     "node pipeline/3-technical/analyze_tech_cn_mtf.mjs",
+    "tech:us":     "node pipeline/3-technical/analyze_tech_us_mtf.mjs",
+    "combined:cn": "node pipeline/4-combined/analyze_cn_combined.mjs",
+    "combined:us": "node pipeline/4-combined/analyze_us_combined.mjs",
+    "full:cn":     "npm run news:cn && npm run tech:cn && npm run combined:cn",
+    "full:us":     "npm run news:us && npm run tech:us && npm run combined:us"
   },
   "dependencies": {
     "@modelcontextprotocol/sdk": "^1.12.1",

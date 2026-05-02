@@ -1,6 +1,87 @@
+# CLAUDE.md
+
+This file provides guidance to Claude Code (claude.ai/code) when working with code in this repository.
+
 # TradingView MCP — Claude Instructions
 
-68 tools for reading and controlling a live TradingView Desktop chart via CDP (port 9222).
+78 tools for reading and controlling a live TradingView Desktop chart via CDP (port 9222).
+
+## Development Commands
+
+```bash
+# Run as MCP server (stdio transport — for use with Claude Code)
+npm start
+
+# CLI access — every MCP tool is a subcommand
+node src/cli/index.js --help      # or: npm run tv -- --help
+node src/cli/index.js health      # example tool call
+node src/cli/index.js chart get   # example with subcommand
+
+# Tests
+npm test                    # e2e + unit (requires TradingView running on port 9222)
+npm run test:unit           # unit tests only — no TradingView required
+npm run test:e2e            # e2e tests only — requires TradingView
+npm run test:cli            # CLI tests only
+node --test tests/pine_analyze.test.js   # single test file
+
+# Launch TradingView with CDP enabled (Windows)
+scripts\launch_tv_debug.bat [port]   # default port 9222
+```
+
+> E2E tests require TradingView Desktop running with `--remote-debugging-port=9222`. Unit tests (`pine_analyze.test.js`, `cli.test.js`) run without TradingView.
+
+## Code Architecture
+
+```
+Claude Code ←→ MCP Server (stdio) ←→ CDP (localhost:9222) ←→ TradingView Desktop (Electron)
+```
+
+The codebase has a strict two-layer structure:
+
+| Layer | Path | Role |
+|-------|------|------|
+| Tool registration | `src/tools/*.js` | Thin wrappers: validate input with zod, call core, format response |
+| Core logic | `src/core/*.js` | All actual CDP interactions and business logic |
+| CLI | `src/cli/commands/*.js` | One file per tool group; calls core directly |
+| Connection | `src/connection.js` | CDP client singleton, `evaluate()` / `evaluateAsync()`, injection-safe helpers |
+| Entry point | `src/server.js` | Creates McpServer, imports all tools from `src/tools/`, starts stdio transport |
+
+**Adding a new tool:** implement in `src/core/`, register in `src/tools/` and `src/cli/commands/`, export from `src/core/index.js`.
+
+**Injection safety:** Always use `safeString(str)` from `connection.js` when interpolating user input into JS expressions sent via CDP. Use `requireFinite(value, name)` for numeric validation. Never string-interpolate raw user input into `evaluate()` calls.
+
+**CDP path constants:** `KNOWN_PATHS` in `connection.js` documents the discovered `window.TradingViewApi.*` access paths. If TradingView updates break a tool, this is where to update the paths.
+
+Pine graphics path: `study._graphics._primitivesCollection.dwglines.get('lines').get(false)._primitivesDataById`
+
+## Analysis Pipeline
+
+The end-to-end stock-screening workflow is a fixed 4-stage pipeline. Each stage maps to **one** script — do NOT regenerate scripts.
+
+```
+1-scan  → 2-news  → 3-technical  → 4-combined
+                                 → reports/<YYYY-MM-DD>/  (auto snapshot)
+```
+
+| Stage | Script | NPM | Output |
+|-------|--------|-----|--------|
+| 1. Scan | `pipeline/1-scan/scan_stocks.js` | `scan:cn` / `scan:us` | `watchlist/{cn,us}_selected.txt` |
+| 2. News | `pipeline/2-news/analyze_{cn,us}_news.mjs` | `news:cn` / `news:us` | `watchlist/{cn,us}_news_signals.{md,json}` |
+| 3. Technical | `pipeline/3-technical/analyze_tech_{cn,us}_mtf.mjs` | `tech:cn` / `tech:us` | `watchlist/{cn,us}_tech_signals.{md,json}` |
+| 4. Combined | `pipeline/4-combined/analyze_{cn,us}_combined.mjs` | `combined:cn` / `combined:us` | `watchlist/{cn,us}_combined_signals.md` + `reports/<date>/` |
+
+**JSON contracts** are the integration layer. Each `*.md` is human-readable; each `*.json` is the machine input for the next stage. The combined-stage script reads the two upstream JSONs and never hardcodes data — that was the historical pain point and is what these contracts solve.
+
+- News JSON: `{ generated_at, market, stocks: { "<sym>": { name, score, signal, patterns, top_news, ... } } }`
+- Tech JSON: `{ generated_at, market, weights, stocks: { "<sym>": { name, tech_score, verdict, type, chase, flags, price, atr_pct, tf: { "1H":..., "4H":..., "1D":..., "1W":... } } } }`
+
+**Combined formula**: `Combined = TechScore × 0.6 + NewsScore × 2 × 0.4 - (overheated ? 10 : 0)`. Grades A/B/C+/C/D drive entry/stop/target levels via ATR multipliers per trade type (breakout 1.8/2.5, pullback 2.0/2.0, trend 1.5/2.2, overheat 2.2/2.0).
+
+**Snapshot**: `pipeline/lib/snapshot.mjs` copies `watchlist/<market>_*.{md,json}` to `reports/<YYYY-MM-DD>/` at the end of each combined run, giving a per-day audit trail.
+
+**One-shot**: `npm run full:cn` / `npm run full:us` runs news → tech → combined sequentially.
+
+**Archived assets**: legacy analysis scripts, time-stamped reports, and old Pine versions live under `archive/` (kept for reference; do not edit). Active Pine strategies live in `pine/`.
 
 ## Decision Tree — Which Tool When
 
@@ -38,6 +119,7 @@ Use `study_filter` parameter to target a specific indicator by name substring (e
 - `chart_set_timeframe` → switch resolution (e.g., "1", "5", "15", "60", "D", "W")
 - `chart_set_type` → switch chart style (Candles, HeikinAshi, Line, Area, Renko, etc.)
 - `chart_manage_indicator` → add or remove studies (use full name: "Relative Strength Index", not "RSI")
+- `indicator_set_inputs` → change indicator settings (length, source, etc.)
 - `chart_scroll_to_date` → jump to a date (ISO format: "2025-01-15")
 - `chart_set_visible_range` → zoom to exact date range (unix timestamps)
 
@@ -72,6 +154,18 @@ Use `study_filter` parameter to target a specific indicator by name substring (e
 - `alert_create` → set price alert (condition: "crossing", "greater_than", "less_than")
 - `alert_list` → view active alerts
 - `alert_delete` → remove alerts
+
+### "Multi-pane layouts"
+- `pane_list` → list all panes and their symbols
+- `pane_set_layout` → set grid layout: "s" (single), "2h", "2v", "4", "6", "8"
+- `pane_focus` → focus a specific pane
+- `pane_set_symbol` → set symbol on a specific pane
+
+### "Multi-tab management"
+- `tab_list` → list open chart tabs
+- `tab_new` → open a new chart tab
+- `tab_close` → close a tab
+- `tab_switch` → switch to a tab
 
 ### "Navigate the UI"
 - `ui_open_panel` → open/close pine-editor, strategy-tester, watchlist, alerts, trading
@@ -119,11 +213,3 @@ These tools can return large payloads. Follow these rules to avoid context bloat
 - Screenshots save to `screenshots/` directory with timestamps
 - OHLCV capped at 500 bars, trades at 20 per request
 - Pine labels capped at 50 per study by default (pass `max_labels` to override)
-
-## Architecture
-
-```
-Claude Code ←→ MCP Server (stdio) ←→ CDP (localhost:9222) ←→ TradingView Desktop (Electron)
-```
-
-Pine graphics path: `study._graphics._primitivesCollection.dwglines.get('lines').get(false)._primitivesDataById`

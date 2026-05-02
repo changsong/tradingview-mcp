@@ -11,10 +11,15 @@
  */
 
 import { readFileSync, writeFileSync } from 'fs';
-import { searchUSNews } from './src/core/usNews.js';
+import { fileURLToPath } from 'url';
+import { dirname, resolve } from 'path';
+import { searchUSNews } from '../../src/core/usNews.js';
+
+process.chdir(resolve(dirname(fileURLToPath(import.meta.url)), '../..'));
 
 const SYMBOLS_FILE = './watchlist/us_selected.txt';
 const OUTPUT_MD    = './watchlist/us_news_signals.md';
+const OUTPUT_JSON  = './watchlist/us_news_signals.json';
 const DAYS_BACK    = 7;
 const NEWS_COUNT   = 20;
 const BATCH_SIZE   = 4;
@@ -425,7 +430,35 @@ async function main() {
 
   const report = buildReport(results);
   writeFileSync(OUTPUT_MD, report, 'utf8');
-  console.log(`\nReport saved: ${OUTPUT_MD}\n`);
+  console.log(`\nReport saved: ${OUTPUT_MD}`);
+
+  const json = {
+    generated_at: new Date().toISOString(),
+    market: 'us',
+    source: 'src/core/usNews.js',
+    window: { from: cutoffStr, to: todayStr, days: DAYS_BACK },
+    stocks: Object.fromEntries(results.map(r => [r.symbol, {
+      name: r.name,
+      score: r.score,
+      signal: r.signal,
+      strategy: r.strategy,
+      suitable_for: r.suitableFor,
+      confidence: r.confidence,
+      patterns: r.patterns ?? [],
+      positive_factors: r.positive_factors ?? [],
+      negative_factors: r.negative_factors ?? [],
+      news_count: r.news_count,
+      top_news: (r.tagged ?? []).slice(0, 5).map(t => ({
+        date: t.date || null,
+        title: (t.title || '').slice(0, 100),
+        type: t.type,
+        sentiment: t.sentiment,
+        weight: t.weight,
+      })),
+    }])),
+  };
+  writeFileSync(OUTPUT_JSON, JSON.stringify(json, null, 2), 'utf8');
+  console.log(`JSON contract saved: ${OUTPUT_JSON}\n`);
 }
 
 main().catch(err => {
