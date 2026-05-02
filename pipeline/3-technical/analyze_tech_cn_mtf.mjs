@@ -28,11 +28,18 @@
 
 import { execSync } from 'child_process';
 import { readFileSync, writeFileSync, existsSync } from 'fs';
+import { fileURLToPath } from 'url';
+import { dirname, resolve } from 'path';
+
+// 锁定 CWD 为项目根，使 ./watchlist 等相对路径稳定
+process.chdir(resolve(dirname(fileURLToPath(import.meta.url)), '../..'));
 
 const CLI       = 'node src/cli/index.js';
 const OUT_MD    = './watchlist/cn_tech_signals.md';
+const OUT_JSON  = './watchlist/cn_tech_signals.json';
 const SEL_TXT   = './watchlist/cn_selected.txt';
 const NEWS_MD   = './watchlist/cn_news_signals.md';
+const NEWS_JSON = './watchlist/cn_news_signals.json';
 const BENCH_SYM = 'SSE:000300';   // 沪深 300
 
 // ═══════════════════════════════════════════════════════════════
@@ -61,6 +68,25 @@ function loadSymbols(args) {
 
 // CN 新闻 md 格式：| 1 | 福赛科技 | SZSE:301529 | **+31** | ⚠️ No Trade (情绪过热) | ...
 function loadNewsScores() {
+  // 优先读 JSON 契约（pipeline/2-news 阶段产物）
+  if (existsSync(NEWS_JSON)) {
+    try {
+      const j = JSON.parse(readFileSync(NEWS_JSON, 'utf8'));
+      const map = {};
+      for (const [sym, s] of Object.entries(j.stocks ?? {})) {
+        const sig = String(s.signal ?? '');
+        const newsSignal = /Long\s*\(强\)|强\s*看多/i.test(sig) ? '强看多'
+                         : /Long\s*\(中\)|中等?看多/i.test(sig) ? '中看多'
+                         : /Short|做空|跌|空/i.test(sig)        ? '看空/避险'
+                         : /过热/i.test(sig)                      ? '过热观望'
+                         : '中性';
+        map[sym] = { newsScore: s.score, newsSignal, newsName: s.name };
+      }
+      if (Object.keys(map).length) return map;
+    } catch (e) {
+      console.warn(`[loadNewsScores] JSON parse 失败，回退 MD：${e.message}`);
+    }
+  }
   if (!existsSync(NEWS_MD)) return {};
   const raw = readFileSync(NEWS_MD, 'utf8');
   const map = {};
@@ -1191,6 +1217,91 @@ async function main() {
   const rpt = buildReport(results, { haveNews, haveBench: !!benchBars });
   writeFileSync(OUT_MD, rpt, 'utf8');
   console.log(`\n✅ 报告已保存: ${OUT_MD}\n`);
+
+  // ── 写下游契约 JSON（被 4-combined 阶段消费）──
+  const tfShape = (tf) => {
+    if (!tf?.details) return null;
+    const d = tf.details;
+    return {
+      score: tf.score,
+      price: d.price,
+      ema5: d.EMA5, ema20: d.EMA20, ema50: d.EMA50, ema200: d.EMA200,
+      dist20_pct: d.dist20Pct,
+      bull_ema: d.bullEMA, above_ema200: d.aboveEMA200,
+      rsi: d.RSI, rsi_live: d.RSI_live ?? null,
+      macd_hist: d.MACD?.hist ?? null, macd_turning: d.MACD?.turning ?? null, macd_above_zero: d.MACD?.aboveZero ?? null,
+      adx: d.ADX?.adx ?? null, adx_chop: d.ADX?.chop ?? null,
+      atr_pct: d.atrPct, atr_stop: d.atrStop, target: d.target, rr: d.rr,
+      vol_ratio: d.volRatio, obv_dir: d.obvDir,
+      near_resist: d.nearResist, near_support: d.nearSupport,
+      resist_price: d.resistPrice, support_price: d.supportPrice,
+      sqz: d.SQZ, sqz_streak: d.SQZ_STREAK,
+      stoch_rsi: d.stochRsi, divergence: d.divergence,
+      ret3: d.ret3, ret5: d.ret5, ret10: d.ret10, ret20: d.ret20,
+      rs: d.rs ?? null,
+      limit_info: d.limitInfo ?? null,
+    };
+  };
+  const techJson = {
+    generated_at: new Date().toISOString(),
+    market: 'cn',
+    weights: { '1W': 0.25, '1D': 0.40, '4H': 0.25, '1H': 0.10 },
+    bench: benchBars ? BENCH_SYM : null,
+    stocks: Object.fromEntries(results.map(r => {
+      const sig = r.signal;
+      const dD = r.tfs['1D']?.details ?? {};
+      const flags = [
+        sig.overheated      && '过热',
+        sig.fakeBreak       && '假突',
+        sig.bullTrap        && '诱多',
+        sig.momDecay        && '动能衰',
+        sig.nearResist      && '压力',
+        sig.chop            && '震荡',
+        sig.bearDiv         && '看空背离',
+        sig.lowRR           && 'RR差',
+        sig.reversal        && '反转',
+        sig.upLimitToday    && '涨停',
+        sig.downLimitToday  && '跌停',
+      ].filter(Boolean);
+      return [r.symbol, {
+        name: r.name,
+        tech_score: r.finalScore,
+        composite: r.composite,
+        adj_score: r.adjScore,
+        news_score: r.newsScore,
+        news_signal: r.newsSignal,
+        verdict: sig.bias,
+        type: sig.type,
+        chase: sig.chaseOK === 'YES',
+        confidence: sig.confidence,
+        sqzmom: r.sqzmom,
+        alignment: r.alignment.label,
+        alignment_summary: r.alignment.summary,
+        flags,
+        risks: sig.risks ?? [],
+        price: r.price ?? null,
+        atr_pct: dD.atrPct ?? null,
+        atr_stop: dD.atrStop ?? null,
+        target: dD.target ?? null,
+        rr: dD.rr ?? null,
+        ema20d_pct: dD.dist20Pct ?? null,
+        rsi: dD.RSI ?? null,
+        adx: dD.ADX?.adx ?? null,
+        support: dD.supportPrice ?? null,
+        resist: dD.resistPrice ?? null,
+        rs: dD.rs ?? null,
+        limit_info: dD.limitInfo ?? null,
+        tf: {
+          '1W': tfShape(r.tfs['1W']),
+          '1D': tfShape(r.tfs['1D']),
+          '4H': tfShape(r.tfs['4H']),
+          '1H': tfShape(r.tfs['1H']),
+        },
+      }];
+    })),
+  };
+  writeFileSync(OUT_JSON, JSON.stringify(techJson, null, 2), 'utf8');
+  console.log(`✅ 下游契约 JSON 已保存: ${OUT_JSON}\n`);
 }
 
 main().catch(console.error);

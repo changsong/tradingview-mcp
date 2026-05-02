@@ -12,11 +12,17 @@
  */
 
 import { readFileSync, writeFileSync } from 'fs';
-import { searchNews, extractCode, detectMarket } from './src/core/webNews.js';
+import { fileURLToPath } from 'url';
+import { dirname, resolve } from 'path';
+import { searchNews, extractCode, detectMarket } from '../../src/core/webNews.js';
+
+// 锁定 CWD 为项目根，使 ./watchlist 等相对路径稳定
+process.chdir(resolve(dirname(fileURLToPath(import.meta.url)), '../..'));
 
 // ─── 配置 ────────────────────────────────────────────────────────────────────
 const SYMBOLS_FILE = './watchlist/cn_selected.txt';
 const OUTPUT_MD    = './watchlist/cn_news_signals.md';
+const OUTPUT_JSON  = './watchlist/cn_news_signals.json';
 const DAYS_BACK    = 7;   // 往前7天覆盖5个交易日
 const NEWS_COUNT   = 20;  // 每股最多拉取条数
 const BATCH_SIZE   = 5;   // 并行批次大小
@@ -506,7 +512,36 @@ async function main() {
   // ── 写报告 ──
   const report = buildReport(results);
   writeFileSync(OUTPUT_MD, report, 'utf8');
-  console.log(`\n✅ 详细报告已保存: ${OUTPUT_MD}\n`);
+  console.log(`\n✅ 详细报告已保存: ${OUTPUT_MD}`);
+
+  // ── 写下游契约 JSON（被 4-combined 阶段消费）──
+  const json = {
+    generated_at: new Date().toISOString(),
+    market: 'cn',
+    source: 'src/core/webNews.js',
+    window: { from: cutoffStr, to: todayStr, days: DAYS_BACK },
+    stocks: Object.fromEntries(results.map(r => [r.symbol, {
+      name: r.name,
+      score: r.score,
+      signal: r.signal,
+      strategy: r.strategy,
+      suitable_for: r.suitableFor,
+      confidence: r.confidence,
+      patterns: r.patterns ?? [],
+      positive_factors: r.positive_factors ?? [],
+      negative_factors: r.negative_factors ?? [],
+      news_count: r.news_count,
+      top_news: (r.tagged ?? []).slice(0, 5).map(t => ({
+        date: t.date || null,
+        title: (t.title || '').slice(0, 100),
+        type: t.type,
+        sentiment: t.sentiment,
+        weight: t.weight,
+      })),
+    }])),
+  };
+  writeFileSync(OUTPUT_JSON, JSON.stringify(json, null, 2), 'utf8');
+  console.log(`✅ 下游契约 JSON 已保存: ${OUTPUT_JSON}\n`);
 }
 
 main().catch(err => {
