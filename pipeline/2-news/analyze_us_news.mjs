@@ -24,7 +24,7 @@ const DAYS_BACK    = 7;
 const NEWS_COUNT   = 20;
 const BATCH_SIZE   = 4;
 
-const today  = new Date('2026-04-30');
+const today  = new Date();
 const cutoff = new Date(today);
 cutoff.setDate(today.getDate() - DAYS_BACK);
 const cutoffStr = cutoff.toISOString().split('T')[0];
