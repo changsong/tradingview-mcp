@@ -1,28 +1,33 @@
 #!/usr/bin/env node
 /**
- * US Stock News Sentiment Quantitative Analysis → Tradeable Signals
- * Pipeline:
- *  1. Load us_selected.txt
- *  2. Fetch news in parallel (Yahoo Finance, Finnhub, MarketWatch, Seeking Alpha)
- *  3. Tag: type | sentiment (+1/0/-1) | weight (1~5)
- *  4. Sentiment Score = Σ(sentiment × weight)
- *  5. Detect patterns: trend/reversal/overheated/pre-priced/false positive
- *  6. Output: Long / Short / No Trade + reason + strategy type
+ * US Stock News Sentiment → Tradeable Signals (v2)
+ *
+ * v2 changes:
+ *  - Shared lib (pipeline/2-news/lib/) — same algorithms as CN
+ *  - Cross-stock + noise pre-filter (DISREGARD / press release wraps)
+ *  - title + content scoring + negation window
+ *  - Three-stage weight: sourceAuthority × typeMul × recencyDecay
+ *  - 0-100 normalized score (neutral=50)
+ *  - Optional LLM rerate (NEWS_LLM=1 or --llm)
  */
 
 import { readFileSync, writeFileSync } from 'fs';
 import { fileURLToPath } from 'url';
 import { dirname, resolve } from 'path';
 import { searchUSNews } from '../../src/core/usNews.js';
+import { analyzeStockData } from './lib/analyze.mjs';
+import { rerateTopNews, isLLMEnabled } from './lib/llm_rerate.mjs';
 
 process.chdir(resolve(dirname(fileURLToPath(import.meta.url)), '../..'));
 
+// ─── Config ──────────────────────────────────────────────────────────────────
 const SYMBOLS_FILE = './watchlist/us_selected.txt';
 const OUTPUT_MD    = './watchlist/us_news_signals.md';
 const OUTPUT_JSON  = './watchlist/us_news_signals.json';
 const DAYS_BACK    = 7;
 const NEWS_COUNT   = 20;
 const BATCH_SIZE   = 4;
+const MARKET       = 'us';
 
 const today  = new Date();
 const cutoff = new Date(today);
@@ -30,255 +35,123 @@ cutoff.setDate(today.getDate() - DAYS_BACK);
 const cutoffStr = cutoff.toISOString().split('T')[0];
 const todayStr  = today.toISOString().split('T')[0];
 
-// ─── News Type Classification ─────────────────────────────────────────────────
-const TYPE_RULES = [
-  { type: 'Black Swan', re: /fraud|lawsuit|probe|recall|fine|penalty|SEC|DOJ|subpoena|bankruptcy|default|scandal|restatement|investigation|violation|delisting/i },
-  { type: 'Earnings',   re: /earnings|revenue|profit|EPS|guidance|beat|miss|quarterly|annual report|outlook|forecast|margin|income|loss|results/i },
-  { type: 'M&A',        re: /acqui|merger|buyout|takeover|deal|divest|spin.?off|joint venture|partnership|stake|strategic alliance/i },
-  { type: 'Policy',     re: /Fed|Federal Reserve|rate|tariff|regulation|legislation|congress|government|FDA|approval|FTC|antitrust|sanctions|subsidy|trade/i },
-  { type: 'Rumor',      re: /reportedly|sources say|could be|may be|might|expected to|rumored|speculation|unconfirmed|people familiar/i },
-  { type: 'Industry',   re: /sector|industry|market share|competitor|supply chain|AI|semiconductor|chip|cloud|EV|biotech|healthcare|energy|fintech/i },
-];
+const llmFlag = process.argv.includes('--llm') || process.env.NEWS_LLM === '1';
 
-function classifyType(title) {
-  title = title || '';
-  for (const rule of TYPE_RULES) {
-    if (rule.re.test(title)) return rule.type;
-  }
-  return 'Industry';
+// ─── Lightweight ticker → company name map for cross-stock dedup ─────────────
+// 不必完整；缺失时仅用 ticker 自身做主体校验。常用名可在此扩充。
+const TICKER_NAMES = {
+  AAPL: 'Apple', MSFT: 'Microsoft', GOOG: 'Alphabet', GOOGL: 'Alphabet',
+  AMZN: 'Amazon', META: 'Meta', NVDA: 'Nvidia', TSLA: 'Tesla',
+  NFLX: 'Netflix', AMD: 'AMD', INTC: 'Intel', AVGO: 'Broadcom',
+  GRMN: 'Garmin', AAOI: 'Applied Optoelectronics', FN: 'Fabrinet',
+};
+
+function aliasesFor(symbol, ticker) {
+  const aliases = [ticker];
+  if (TICKER_NAMES[ticker]) aliases.push(TICKER_NAMES[ticker]);
+  return aliases;
 }
 
-const BULLISH_RE = /beat|outperform|upgrade|strong|surge|rally|buy|bullish|positive|record|growth|profit|win|approval|authorized|raise guidance|above.?expect|exceed|expand|breakout|award|milestone|boost|record high/i;
-const BEARISH_RE = /miss|underperform|downgrade|weak|drop|plunge|fall|sell|bearish|negative|loss|decline|cut guidance|below.?expect|disappoint|probe|lawsuit|fraud|fine|penalty|layoff|restructure|warning|risk|concern|headwind/i;
-
-function scoreSentiment(title, type) {
-  title = title || '';
-  if (type === 'Black Swan') return -1;
-  if (BULLISH_RE.test(title)) return  1;
-  if (BEARISH_RE.test(title)) return -1;
-  return 0;
-}
-
-function calcWeight(item, newsType) {
-  let w = 2;
-  if (item.source === 'Seeking Alpha' || item.type === 'analysis') w += 1;
-  if (item.source === 'Finnhub') w += 1;
-  if (newsType === 'Earnings')    w += 1;
-  if (newsType === 'Policy')      w += 1;
-  if (newsType === 'M&A')         w += 2;
-  if (newsType === 'Black Swan')  w += 2;
-  if (newsType === 'Rumor')       w -= 1;
-  return Math.max(1, Math.min(5, w));
-}
-
-function isRecent(dateStr) {
-  dateStr = dateStr || '';
-  if (!dateStr) return false;
-  try {
-    const d = new Date(dateStr.slice(0, 10));
-    return d >= cutoff && d <= today;
-  } catch { return false; }
-}
-
-function detectPatterns(tagged) {
-  if (tagged.length === 0) return [];
-  const sorted = [...tagged].sort((a, b) => (b.date || '').localeCompare(a.date || ''));
-  const half = Math.max(1, Math.floor(sorted.length / 2));
-  const recent = sorted.slice(0, half);
-  const older  = sorted.slice(half);
-  const scoreOf = arr => arr.reduce((s, i) => s + i.sentiment * i.weight, 0);
-  const recentScore = scoreOf(recent);
-  const olderScore  = older.length ? scoreOf(older) : 0;
-  const patterns = [];
-
-  if (recentScore > 2 && olderScore >= 0)  patterns.push('Sentiment Strengthening UP (trend)');
-  if (recentScore < -2 && olderScore <= 0) patterns.push('Sentiment Weakening DOWN (trend)');
-  if (recentScore > 2 && olderScore < -1)  patterns.push('Bearish-to-Bullish Reversal (reversal)');
-  if (recentScore < -2 && olderScore > 1)  patterns.push('Bullish-to-Bearish Reversal (reversal)');
-
-  const posCount = tagged.filter(i => i.sentiment > 0).length;
-  const negCount = tagged.filter(i => i.sentiment < 0).length;
-  if (posCount >= 5 && negCount === 0) patterns.push('WARNING: Overheated Sentiment (one-sided bullish)');
-
-  const rumorCount = tagged.filter(i => i.type === 'Rumor').length;
-  if (tagged.length > 0 && rumorCount / tagged.length > 0.5 && recentScore > 0)
-    patterns.push('WARNING: Rumor-Driven (false positive risk)');
-
-  const hasFundamental = tagged.some(i => ['Earnings', 'Policy', 'M&A'].includes(i.type) && i.sentiment > 0);
-  if (!hasFundamental && recentScore > 4)
-    patterns.push('WARNING: Likely Pre-Priced (no hard catalyst)');
-
-  const hasBlackSwan = tagged.some(i => i.type === 'Black Swan');
-  if (hasBlackSwan && posCount > negCount)
-    patterns.push('WARNING: Sentiment Divergence (black swan masked by noise)');
-
-  return patterns;
-}
-
-function generateSignal(score, patterns, tagged) {
-  const hasRisk      = patterns.some(p => p.startsWith('WARNING'));
-  const hasBlackSwan = tagged.some(i => i.type === 'Black Swan' && i.sentiment < 0);
-
-  if (hasBlackSwan) return {
-    signal: 'RED No Trade / Short',
-    strategy: 'Black swan risk — avoid until event clarity',
-    suitableFor: 'Reversal (wait for bottom confirmation)',
-    confidence: 'High',
-  };
-
-  if (score >= 8) {
-    if (hasRisk) return {
-      signal: 'WARN No Trade (Overheated)',
-      strategy: 'Score very high but overheated/pre-priced — wait for pullback to buy dip',
-      suitableFor: 'Buy Dip (wait for pullback)',
-      confidence: 'Low (risk present)',
-    };
-    return {
-      signal: 'GREEN Long (Strong)',
-      strategy: 'Multiple bullish catalysts converging — strong fundamental + sentiment support',
-      suitableFor: 'Momentum / Hold',
-      confidence: 'High',
-    };
-  }
-
-  if (score >= 4) {
-    if (hasRisk) return {
-      signal: 'WARN Long (Cautious)',
-      strategy: 'Bullish lean but risk flags present — small position, tight stop',
-      suitableFor: 'Buy Dip (small size)',
-      confidence: 'Medium (risk present)',
-    };
-    return {
-      signal: 'GREEN Long (Mid)',
-      strategy: 'Positive sentiment flow — suitable for dip-buy or light momentum entry',
-      suitableFor: 'Buy Dip / Light Momentum',
-      confidence: 'Medium',
-    };
-  }
-
-  if (score >= 1) return {
-    signal: 'NEUTRAL No Trade (Weak Bullish)',
-    strategy: 'Mildly positive, insufficient signal — watch for stronger catalyst',
-    suitableFor: 'Watch',
-    confidence: 'Low',
-  };
-
-  if (score >= -2) return {
-    signal: 'NEUTRAL No Trade (Neutral)',
-    strategy: 'No clear directional bias — stay flat',
-    suitableFor: 'Watch',
-    confidence: 'Low',
-  };
-
-  if (score >= -5) return {
-    signal: 'RED No Trade / Avoid',
-    strategy: 'Bearish lean — reduce exposure, wait for stabilization',
-    suitableFor: 'Reversal (wait for stabilization)',
-    confidence: 'Medium',
-  };
-
-  return {
-    signal: 'RED Short / Avoid',
-    strategy: 'Sustained bearish flow, multiple headwinds — exit or consider short',
-    suitableFor: 'Reversal (wait for bottom)',
-    confidence: 'High',
-  };
-}
-
+// ─── Per-stock pipeline ──────────────────────────────────────────────────────
 async function analyzeStock(symbol) {
-  const cleanSym = symbol.replace(/^(NASDAQ:|NYSE:|BATS:|CBOE:)/, '');
+  const ticker = symbol.replace(/^(NASDAQ:|NYSE:|BATS:|CBOE:|AMEX:)/, '');
   process.stdout.write(`  [${symbol}] fetching...`);
+
   try {
-    const result = await searchUSNews({ symbol: cleanSym, source: 'news', count: NEWS_COUNT });
+    const result = await searchUSNews({ symbol: ticker, source: 'news', count: NEWS_COUNT });
     const allNews = result.news || [];
-    const recent  = allNews.filter(n => isRecent(n.date));
-    process.stdout.write(` -> ${recent.length} recent\n`);
 
-    if (recent.length === 0) return {
-      symbol, name: cleanSym, score: 0,
-      signal: 'NEUTRAL No Trade (No Data)',
-      strategy: 'No news in last 7 days', suitableFor: 'Watch', confidence: '-',
-      patterns: [], tagged: [], positive_factors: [], negative_factors: [], news_count: 0,
-    };
-
-    const tagged = recent.map(item => {
-      const type      = classifyType(item.title || '');
-      const sentiment = scoreSentiment(item.title || '', type);
-      const weight    = calcWeight(item, type);
-      return { ...item, type, sentiment, weight };
+    const r = analyzeStockData(allNews, {
+      symbol,
+      name:   aliasesFor(symbol, ticker),
+      today, cutoff,
+      market: MARKET,
     });
 
-    const score    = tagged.reduce((s, i) => s + i.sentiment * i.weight, 0);
-    const patterns = detectPatterns(tagged);
-    const { signal, strategy, suitableFor, confidence } = generateSignal(score, patterns, tagged);
+    if (llmFlag && r.tagged.length > 0) {
+      const updated = await rerateTopNews({
+        topItems: r.tagged.slice(0, 5),
+        symbol, name: ticker, market: MARKET,
+      });
+      if (updated) {
+        for (const u of updated) {
+          const idx = r.tagged.findIndex(t => t._llmId === u._llmId);
+          if (idx >= 0) Object.assign(r.tagged[idx], u);
+        }
+        const { calcScores }     = await import('./lib/normalize.mjs');
+        const { detectPatterns } = await import('./lib/patterns.mjs');
+        const { generateSignal } = await import('./lib/signal.mjs');
+        const sc = calcScores(r.tagged);
+        r.score = sc.normalized; r.score_raw = sc.raw;
+        r.score_components.positive_weight_sum = sc.positive_weight_sum;
+        r.score_components.negative_weight_sum = sc.negative_weight_sum;
+        r.patterns = detectPatterns(r.tagged, MARKET);
+        const sig = generateSignal(r.score, r.patterns, r.tagged, MARKET);
+        r.signal = sig.signal; r.strategy = sig.strategy;
+        r.suitableFor = sig.suitableFor; r.confidence = sig.confidence;
+      }
+    }
 
-    const positive_factors = tagged
-      .filter(i => i.sentiment > 0).sort((a, b) => b.weight - a.weight).slice(0, 3)
-      .map(i => `[${i.type}|W:${i.weight}] ${(i.title || '').slice(0, 70)}`);
+    process.stdout.write(` -> ${r.news_count} kept / ${r.news_dropped} filtered, score=${r.score}\n`);
 
-    const negative_factors = tagged
-      .filter(i => i.sentiment < 0).sort((a, b) => b.weight - a.weight).slice(0, 3)
-      .map(i => `[${i.type}|W:${i.weight}] ${(i.title || '').slice(0, 70)}`);
-
-    return {
-      symbol, name: cleanSym,
-      score: Math.round(score * 10) / 10,
-      signal, strategy, suitableFor, confidence, patterns,
-      positive_factors, negative_factors,
-      tagged: tagged.slice(0, 8),
-      news_count: recent.length,
-    };
+    return { symbol, name: ticker, ...r };
   } catch (err) {
     process.stdout.write(` ERR ${err.message}\n`);
     return {
-      symbol, name: cleanSym, score: 0,
+      symbol, name: ticker,
+      score: 50, score_raw: 0,
       signal: 'NEUTRAL No Trade (Fetch Failed)', strategy: err.message,
-      suitableFor: '-', confidence: '-', patterns: [], tagged: [],
-      positive_factors: [], negative_factors: [], news_count: 0,
+      suitableFor: '-', confidence: '-',
+      patterns: [], tagged: [],
+      positive_factors: [], negative_factors: [],
+      news_count: 0, news_dropped: 0,
+      score_components: { positive_weight_sum: 0, negative_weight_sum: 0 },
     };
   }
 }
 
+// ─── Report ──────────────────────────────────────────────────────────────────
 function formatDetail(r) {
   const lines = [];
   const h = s => lines.push(s);
-  const sc = r.score >= 0 ? `+${r.score}` : String(r.score);
-  const sigIcon = r.signal.startsWith('GREEN') ? '🟢' : r.signal.startsWith('RED') ? '🔴' : r.signal.startsWith('WARN') ? '⚠️' : '⚪';
+  const sigIcon =
+    r.signal.startsWith('GREEN') ? '🟢' :
+    r.signal.startsWith('RED')   ? '🔴' :
+    r.signal.startsWith('WARN')  ? '⚠️' : '⚪';
   const sigText = r.signal.replace(/^(GREEN|RED|WARN|NEUTRAL)\s+/, '');
 
   h(`### ${r.symbol}`);
   h('');
   h('| Metric | Detail |');
   h('|--------|--------|');
-  h(`| Sentiment Score | **${sc}** |`);
+  h(`| Normalized Score | **${r.score}** / 100 |`);
+  h(`| Raw Weighted Score | ${r.score_raw} |`);
   h(`| Trading Signal | **${sigIcon} ${sigText}** |`);
   h(`| Strategy | ${r.strategy} |`);
   h(`| Suitable For | ${r.suitableFor} |`);
   h(`| Confidence | ${r.confidence} |`);
-  h(`| News Analyzed | ${r.news_count} items |`);
-  if ((r.patterns ?? []).length) {
-    h(`| Patterns | ${r.patterns.join(' / ')} |`);
-  }
+  h(`| News Kept / Dropped | ${r.news_count} / ${r.news_dropped} |`);
+  if ((r.patterns ?? []).length) h(`| Patterns | ${r.patterns.join(' / ')} |`);
   h('');
-  if (r.positive_factors && r.positive_factors.length) {
+  if (r.positive_factors?.length) {
     h('**📈 Bullish Factors:**');
     r.positive_factors.forEach(f => h(`- 🟢 ${f}`));
     h('');
   }
-  if (r.negative_factors && r.negative_factors.length) {
+  if (r.negative_factors?.length) {
     h('**📉 Bearish Factors:**');
     r.negative_factors.forEach(f => h(`- 🔴 ${f}`));
     h('');
   }
-  if (r.tagged && r.tagged.length) {
-    h('**📰 Key News Items (tagged):**');
+  if (r.tagged?.length) {
+    h('**📰 Key News (tagged):**');
     h('');
-    h('| Date | Type | Sent | Wt | Headline |');
-    h('|------|------|------|----|----------|');
-    r.tagged.forEach(item => {
-      const emo   = item.sentiment > 0 ? '🟢 +1' : item.sentiment < 0 ? '🔴 -1' : '⚪  0';
-      const title = (item.title || '').slice(0, 65).replace(/\|/g, ' ');
-      h(`| ${item.date || '-'} | ${item.type} | ${emo} | ${item.weight} | ${title} |`);
+    h('| Date | Type | Sent | finalW | Source | Headline |');
+    h('|------|------|------|--------|--------|----------|');
+    r.tagged.slice(0, 8).forEach(item => {
+      const emo = item.sentiment > 0 ? '🟢 +1' : item.sentiment < 0 ? '🔴 -1' : '⚪  0';
+      const title = (item.title || '').slice(0, 60).replace(/\|/g, ' ');
+      h(`| ${(item.date || '-').slice(0,10)} | ${item.type} | ${emo} | ${item.finalWeight} | ${(item.source || '-').slice(0,10)} | ${title} |`);
     });
     h('');
   }
@@ -291,20 +164,24 @@ function buildReport(results) {
   const lines = [];
   const h = s => lines.push(s);
 
-  h('# US Stock News Sentiment Analysis - Tradeable Signals');
+  h('# US Stock News Sentiment Analysis - Tradeable Signals (v2)');
   h(`**Analysis Date:** ${todayStr}  |  **News Window:** ${cutoffStr} ~ ${todayStr}`);
-  h(`**Stock Pool:** us_selected.txt (${results.length} stocks)`);
+  h(`**Stock Pool:** us_selected.txt (${results.length})  |  **LLM Rerate:** ${llmFlag ? 'enabled' : 'disabled'}`);
+  h(`**Score Scale:** 0-100 normalized (neutral=50, strong long ≥75, avoid ≤39)`);
   h('');
-  h('## Summary Overview (sorted by Sentiment Score)');
+
+  h('## Summary Overview (sorted by Normalized Score)');
   h('');
-  h('| # | Ticker | Score | Signal | Suitable For | Confidence | Key Pattern |');
-  h('|---|--------|-------|--------|--------------|------------|-------------|');
+  h('| # | Ticker | Score | Raw | Signal | Suitable For | Confidence | Kept/Dropped | Key Pattern |');
+  h('|---|--------|-------|-----|--------|--------------|------------|--------------|-------------|');
   results.forEach((r, idx) => {
-    const sc  = r.score >= 0 ? `+${r.score}` : String(r.score);
-    const sigIcon = r.signal.startsWith('GREEN') ? '🟢' : r.signal.startsWith('RED') ? '🔴' : r.signal.startsWith('WARN') ? '⚠️' : '⚪';
+    const sigIcon =
+      r.signal.startsWith('GREEN') ? '🟢' :
+      r.signal.startsWith('RED')   ? '🔴' :
+      r.signal.startsWith('WARN')  ? '⚠️' : '⚪';
     const sigShort = r.signal.replace(/^(GREEN|RED|WARN|NEUTRAL)\s+/, '');
     const pat = (r.patterns ?? []).map(p => p.replace(/^WARNING:\s*/, '')).slice(0, 1).join('') || '-';
-    h(`| ${idx+1} | **${r.symbol}** | **${sc}** | ${sigIcon} ${sigShort} | ${r.suitableFor || '-'} | ${r.confidence || '-'} | ${pat} |`);
+    h(`| ${idx+1} | **${r.symbol}** | **${r.score}** | ${r.score_raw} | ${sigIcon} ${sigShort} | ${r.suitableFor || '-'} | ${r.confidence || '-'} | ${r.news_count}/${r.news_dropped} | ${pat} |`);
   });
   h('');
   h('---');
@@ -320,43 +197,19 @@ function buildReport(results) {
   const shorts  = results.filter(r => r.signal.includes('Short') || r.signal.includes('Avoid'));
   const neutral = results.filter(r => r.signal.startsWith('NEUTRAL'));
 
-  if (longStrong.length) {
-    h(`## 🟢 Strong Long Signals (${longStrong.length}) — Priority Watch`);
-    h('');
-    longStrong.forEach(r => h(formatDetail(r)));
-  }
-  if (longMid.length) {
-    h(`## 🟢 Mid Long Signals (${longMid.length}) — Light Position Entry`);
-    h('');
-    longMid.forEach(r => h(formatDetail(r)));
-  }
-  if (longCautious.length) {
-    h(`## 🟡 Cautious Long Signals (${longCautious.length}) — Small Size + Tight Stop`);
-    h('');
-    longCautious.forEach(r => h(formatDetail(r)));
-  }
-  if (overheated.length) {
-    h(`## ⚠️ Overheated Warning (${overheated.length}) — Do Not Chase`);
-    h('');
-    overheated.forEach(r => h(formatDetail(r)));
-  }
-  if (risks.length) {
-    h(`## ⚠️ Risk Pattern Detected (${risks.length}) — Verify Signal Authenticity`);
-    h('');
-    risks.forEach(r => h(formatDetail(r)));
-  }
-  if (shorts.length) {
-    h(`## 🔴 Avoid / Short Signals (${shorts.length})`);
-    h('');
-    shorts.forEach(r => h(formatDetail(r)));
-  }
+  if (longStrong.length)   { h(`## 🟢 Strong Long (${longStrong.length})`);   h(''); longStrong.forEach(r => h(formatDetail(r))); }
+  if (longMid.length)      { h(`## 🟢 Mid Long (${longMid.length})`);         h(''); longMid.forEach(r => h(formatDetail(r))); }
+  if (longCautious.length) { h(`## 🟡 Cautious Long (${longCautious.length})`); h(''); longCautious.forEach(r => h(formatDetail(r))); }
+  if (overheated.length)   { h(`## ⚠️ Overheated (${overheated.length})`);    h(''); overheated.forEach(r => h(formatDetail(r))); }
+  if (risks.length)        { h(`## ⚠️ Risk Pattern (${risks.length})`);       h(''); risks.forEach(r => h(formatDetail(r))); }
+  if (shorts.length)       { h(`## 🔴 Avoid / Short (${shorts.length})`);     h(''); shorts.forEach(r => h(formatDetail(r))); }
   if (neutral.length) {
     h(`## ⚪ Watch / Neutral (${neutral.length})`);
     h('');
     neutral.forEach(r => {
       const sigText = r.signal.replace(/^NEUTRAL\s+/, '');
       h(`### ${r.symbol}`);
-      h(`- Score: ${r.score} | News: ${r.news_count} items | ${r.strategy}`);
+      h(`- Score: ${r.score}/100 | raw: ${r.score_raw} | News: ${r.news_count} kept / ${r.news_dropped} dropped | ${r.strategy}`);
       if ((r.patterns ?? []).length) h(`- Patterns: ${r.patterns.join(' | ')}`);
       h('');
     });
@@ -368,22 +221,24 @@ function buildReport(results) {
   h('');
   h('| Risk Type | Detection Criteria | Response |');
   h('|-----------|-------------------|----------|');
-  h('| Pre-Priced | No hard catalyst (earnings/policy/M&A), score inflated by fluff | Wait for real announcement before entry |');
-  h('| Overheated | All news bullish, zero bearish items | Wait for pullback to confirm support |');
-  h('| False Positive | Rumor-driven >50%, no official confirmation | Hold until press release or filing |');
-  h('| Divergence | Black swan present but market still bullish | Avoid first, wait for event clarity |');
+  h('| Pre-Priced | No hard catalyst (earnings/policy/M&A), score ≥60 inflated | Wait for real announcement |');
+  h('| Overheated | All news bullish, zero bearish (5+ items) | Wait for pullback to confirm support |');
+  h('| False Positive | Rumor-driven >50%, no official confirmation | Hold until press release/filing |');
+  h('| Divergence | Black swan present but mostly bullish | Avoid first, wait for clarity |');
   h('');
   h('---');
-  h(`*Generated: ${new Date().toISOString()} | Sources: Yahoo Finance / Finnhub / MarketWatch / Seeking Alpha*`);
+  h(`*Generated: ${new Date().toISOString()} | Sources: Yahoo / Finnhub / MarketWatch / NewsAPI / Seeking Alpha${llmFlag ? ' + Claude Haiku' : ''}*`);
 
   return lines.join('\n');
 }
 
+// ─── Main ────────────────────────────────────────────────────────────────────
 async function main() {
   console.log('');
   console.log('================================================================');
-  console.log('  US Stock News Sentiment Analysis -> Tradeable Signals');
+  console.log('  US Stock News Sentiment Analysis -> Tradeable Signals (v2)');
   console.log(`  Window: ${cutoffStr} ~ ${todayStr}`);
+  console.log(`  LLM Rerate: ${llmFlag ? (isLLMEnabled() ? 'enabled (Claude Haiku)' : 'requested but no API key') : 'disabled'}`);
   console.log('================================================================');
   console.log('');
 
@@ -409,14 +264,17 @@ async function main() {
 
   console.log('\n');
   console.log('='.repeat(72));
-  console.log('Trading Signal Summary');
+  console.log('Trading Signal Summary (normalized 0-100)');
   console.log('='.repeat(72));
   results.forEach((r, i) => {
-    const sc  = String(r.score >= 0 ? `+${r.score}` : r.score).padStart(5);
+    const sc  = String(r.score).padStart(3);
     const sym = r.symbol.padEnd(18);
-    const sigIcon = r.signal.startsWith('GREEN') ? '[LONG]' : r.signal.startsWith('RED') ? '[AVOID]' : r.signal.startsWith('WARN') ? '[WARN]' : '[WATCH]';
+    const sigIcon =
+      r.signal.startsWith('GREEN') ? '[LONG]' :
+      r.signal.startsWith('RED')   ? '[AVOID]' :
+      r.signal.startsWith('WARN')  ? '[WARN]' : '[WATCH]';
     const pat = (r.patterns ?? []).filter(p => p.startsWith('WARNING')).map(p => p.slice(9, 30)).join('|');
-    console.log(`${String(i+1).padStart(2)}. ${sym} Score:${sc}  ${sigIcon}  ${pat}`);
+    console.log(`${String(i+1).padStart(2)}. ${sym} Score:${sc}/100  ${sigIcon}  ${pat}`);
   });
 
   const longs  = results.filter(r => r.signal.startsWith('GREEN'));
@@ -428,18 +286,21 @@ async function main() {
   console.log('Risk Alerts     : ' + (alerts.map(r => r.symbol).join(', ') || 'None'));
   console.log('Avoid / Short   : ' + (shorts.map(r => r.symbol).join(', ') || 'None'));
 
-  const report = buildReport(results);
-  writeFileSync(OUTPUT_MD, report, 'utf8');
+  writeFileSync(OUTPUT_MD, buildReport(results), 'utf8');
   console.log(`\nReport saved: ${OUTPUT_MD}`);
 
   const json = {
     generated_at: new Date().toISOString(),
     market: 'us',
     source: 'src/core/usNews.js',
+    score_scale: '0-100 normalized (neutral=50)',
     window: { from: cutoffStr, to: todayStr, days: DAYS_BACK },
+    llm_used: llmFlag,
     stocks: Object.fromEntries(results.map(r => [r.symbol, {
       name: r.name,
       score: r.score,
+      score_raw: r.score_raw,
+      score_components: r.score_components,
       signal: r.signal,
       strategy: r.strategy,
       suitable_for: r.suitableFor,
@@ -448,12 +309,18 @@ async function main() {
       positive_factors: r.positive_factors ?? [],
       negative_factors: r.negative_factors ?? [],
       news_count: r.news_count,
+      news_dropped: r.news_dropped,
       top_news: (r.tagged ?? []).slice(0, 5).map(t => ({
         date: t.date || null,
         title: (t.title || '').slice(0, 100),
         type: t.type,
         sentiment: t.sentiment,
         weight: t.weight,
+        final_weight: t.finalWeight,
+        source_authority: t.sourceAuthority,
+        recency_factor: t.recencyFactor,
+        source: t.source || null,
+        ...(t.llm_reviewed ? { llm_reviewed: true, llm_confidence: t.llm_confidence } : {}),
       })),
     }])),
   };

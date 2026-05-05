@@ -27,7 +27,7 @@ const DAYS_BACK    = 7;   // 往前7天覆盖5个交易日
 const NEWS_COUNT   = 20;  // 每股最多拉取条数
 const BATCH_SIZE   = 5;   // 并行批次大小
 
-const today = new Date();
+const today = new Date('2026-04-30');
 const cutoff = new Date(today);
 cutoff.setDate(today.getDate() - DAYS_BACK);
 const cutoffStr   = cutoff.toISOString().split('T')[0];   // 2026-04-23

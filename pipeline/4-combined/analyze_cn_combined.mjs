@@ -1,7 +1,8 @@
 #!/usr/bin/env node
 /**
  * CN 合并分析：技术面 × 新闻情绪 → 最终交易排名 + 入场/止损/目标位
- * Combined = TechScore × 0.6 + NewsScore × 2 × 0.4 - (过热 ? 10 : 0)
+ * Combined = TechScore × 0.6 + NewsScore × 0.4 - (过热 ? 10 : 0)
+ *   （NewsScore 已为 0-100 归一化分，中性=50；不再 ×2）
  *
  * 输入契约（pipeline 上游产物）：
  *   ./watchlist/cn_tech_signals.json   ← pipeline/3-technical/analyze_tech_cn_mtf.mjs
@@ -31,12 +32,15 @@ function loadJson(p, label) {
   return JSON.parse(readFileSync(p, 'utf8'));
 }
 
-// 信号语义识别（兼容多种命名）
+// 信号语义识别（基于 v2 信号词典：Long/Short/No Trade/规避/过热）
 function classifyNews(signal) {
   const s = String(signal ?? '');
   const overheated = /过热/.test(s);
-  const longSig    = /Long|看多|多/.test(s) && !overheated;
-  const shortSig   = /Short|做空|看空|空|避险|微多|中性/.test(s) && !longSig && !overheated;
+  const noTrade    = /No Trade|无数据/.test(s);
+  // Long 明确：包含 Long 关键词且非过热/非 No Trade
+  const longSig    = /Long/.test(s) && !overheated && !noTrade;
+  // Short 明确：包含 Short / 规避（无 Long 修饰）
+  const shortSig   = (/Short/.test(s) || /规避/.test(s)) && !longSig && !overheated;
   return { overheated, long: longSig, short: shortSig };
 }
 
@@ -105,7 +109,7 @@ async function main() {
     const cls = classifyNews(nd.signal);
     const techScore = td.tech_score ?? 0;
     const newsScore = nd.score ?? 0;
-    const combined  = +((techScore * 0.6) + (newsScore * 2 * 0.4) - (cls.overheated ? 10 : 0)).toFixed(1);
+    const combined  = +((techScore * 0.6) + (newsScore * 0.4) - (cls.overheated ? 10 : 0)).toFixed(1);
     const levels    = calcLevels(td.price, td.atr_pct, td.type);
     const grade     = gradeOf(techScore, cls);
     rows.push({
@@ -121,7 +125,7 @@ async function main() {
 
   p(`# 综合分析报告 · 最终入场排名（CN）`);
   p(`**日期:** ${date}　　**方法:** 技术面 60% × 新闻情绪 40% - 过热惩罚`);
-  p(`**公式:** Combined = TechScore × 0.6 + NewsScore × 2 × 0.4 - (过热 ? 10 : 0)`);
+  p(`**公式:** Combined = TechScore × 0.6 + NewsScore × 0.4 - (过热 ? 10 : 0)　　（NewsScore 0-100 归一化，中性=50）`);
   p(`**数据源:** ${TECH_JSON} + ${NEWS_JSON}`);
   p('');
   p('---');
