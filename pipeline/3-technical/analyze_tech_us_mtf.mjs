@@ -729,9 +729,14 @@ const TF_LIST = [
 
 async function fetchBenchBars() {
   process.stdout.write(`  Fetching benchmark ${BENCH_SYM}...`);
-  const sw = run(`symbol ${BENCH_SYM}`);
+  let sw = null;
+  for (let attempt = 0; attempt < 3; attempt++) {
+    if (attempt > 0) await sleep(2000 * attempt);
+    sw = run(`symbol ${BENCH_SYM}`);
+    if (sw?.success) break;
+  }
   if (!sw?.success) { process.stdout.write(' X failed\n'); return null; }
-  await sleep(1500);
+  await sleep(2000);
   run('timeframe D');
   await sleep(800);
   const o = run('ohlcv -n 60');
@@ -744,9 +749,14 @@ async function analyzeStock(meta, opts, benchBars) {
   const { symbol, newsScore, newsSignal } = meta;
   process.stdout.write(`  ${symbol.padEnd(16)} `);
 
-  const sw = run(`symbol ${symbol}`);
+  let sw = null;
+  for (let attempt = 0; attempt < 3; attempt++) {
+    if (attempt > 0) await sleep(2000 * attempt);
+    sw = run(`symbol ${symbol}`);
+    if (sw?.success) break;
+  }
   if (!sw?.success) { process.stdout.write('X switch failed\n'); return null; }
-  await sleep(1200);
+  await sleep(2000);
 
   const tfMap = {};
   let dailyBarsForRS = null;

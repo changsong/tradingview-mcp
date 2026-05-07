@@ -1,8 +1,8 @@
 #!/usr/bin/env node
 /**
  * CN 合并分析：技术面 × 新闻情绪 → 最终交易排名 + 入场/止损/目标位
- * Combined = TechScore × 0.6 + NewsScore × 0.4 - (过热 ? 10 : 0)
- *   （NewsScore 已为 0-100 归一化分，中性=50；不再 ×2）
+ * Combined = TechScore × 0.6 + NewsScore × 0.4 + (趋势类 ? +5 : 0) - (过热且非趋势类 ? 5 : 0)
+ *   （NewsScore 为原始情绪分,中性≈0;趋势类 = 突破型/趋势追涨/趋势延续）
  *
  * 输入契约（pipeline 上游产物）：
  *   ./watchlist/cn_tech_signals.json   ← pipeline/3-technical/analyze_tech_cn_mtf.mjs
@@ -104,12 +104,16 @@ async function main() {
   console.log(`  news: ${Object.keys(news.stocks ?? {}).length} 只 (${news.generated_at})\n`);
 
   const rows = [];
+  const TRENDY_TYPES = /突破型|趋势追涨|趋势延续/;
   for (const [sym, td] of Object.entries(tech.stocks ?? {})) {
     const nd  = news.stocks?.[sym] ?? { score: 0, signal: '无数据', name: td.name };
     const cls = classifyNews(nd.signal);
     const techScore = td.tech_score ?? 0;
     const newsScore = nd.score ?? 0;
-    const combined  = +((techScore * 0.6) + (newsScore * 0.4) - (cls.overheated ? 10 : 0)).toFixed(1);
+    const isTrendy  = TRENDY_TYPES.test(td.type || '');
+    const overheatPenalty = (cls.overheated && !isTrendy) ? 5 : 0;
+    const trendyBonus = isTrendy ? 5 : 0;
+    const combined  = +((techScore * 0.6) + (newsScore * 0.4) - overheatPenalty + trendyBonus).toFixed(1);
     const levels    = calcLevels(td.price, td.atr_pct, td.type);
     const grade     = gradeOf(techScore, cls);
     rows.push({
@@ -125,7 +129,7 @@ async function main() {
 
   p(`# 综合分析报告 · 最终入场排名（CN）`);
   p(`**日期:** ${date}　　**方法:** 技术面 60% × 新闻情绪 40% - 过热惩罚`);
-  p(`**公式:** Combined = TechScore × 0.6 + NewsScore × 0.4 - (过热 ? 10 : 0)　　（NewsScore 0-100 归一化，中性=50）`);
+  p(`**公式:** Combined = TechScore × 0.6 + NewsScore × 0.4 + (趋势类 ? +5 : 0) - (过热且非趋势类 ? 5 : 0)　　（NewsScore 为原始分,中性≈0）`);
   p(`**数据源:** ${TECH_JSON} + ${NEWS_JSON}`);
   p('');
   p('---');

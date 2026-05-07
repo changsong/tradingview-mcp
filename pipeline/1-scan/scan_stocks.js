@@ -292,10 +292,11 @@ async function scanStocks() {
   // 4. rawData 包含 "GO" 或 signal = "GO"
   // 注: volMom (v11新增) 记录在日志中但不作为强制过滤条件，作为候选参考
   const qualified = results.filter(r => {
-    return r.trendUp && (
+    return (r.trendUp && (
             !r.fakeBreak &&
+            r.validCompression &&
             r.volOK &&
-            r.validStock) ||
+            r.validStock)) ||
            (r.signal === 'GO' || r.rawData.includes('GO'));
   });
 

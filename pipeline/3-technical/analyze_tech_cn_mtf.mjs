@@ -607,7 +607,7 @@ function scoreTF(bars, tfKey, live = {}, extra = {}) {
 //  多周期合成
 // ═══════════════════════════════════════════════════════════════
 
-const TF_WEIGHT = { '1W': 0.25, '1D': 0.40, '4H': 0.25, '1H': 0.10 };
+const TF_WEIGHT = { '1W': 0.35, '1D': 0.40, '4H': 0.20, '1H': 0.05 };
 
 function composite(tfs) {
   let s = 0, w = 0;
@@ -1245,7 +1245,7 @@ async function main() {
   const techJson = {
     generated_at: new Date().toISOString(),
     market: 'cn',
-    weights: { '1W': 0.25, '1D': 0.40, '4H': 0.25, '1H': 0.10 },
+    weights: { '1W': 0.35, '1D': 0.40, '4H': 0.20, '1H': 0.05 },
     bench: benchBars ? BENCH_SYM : null,
     stocks: Object.fromEntries(results.map(r => {
       const sig = r.signal;

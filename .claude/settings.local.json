@@ -7,7 +7,13 @@
       "Bash(node scripts/explore_news_api_deep.js:*)",
       "Bash(node scripts/explore_news_formats.js:*)",
       "Bash(node scripts/find_news_api.js:*)",
-      "Bash(node scripts/explore_news_panel.js:*)"
+      "Bash(node scripts/explore_news_panel.js:*)",
+      "Bash(npm run *)",
+      "Bash(tee D:/ai-workspace/tradingview-mcp/tmp_tech_cn.log)",
+      "Bash(tee D:/ai-workspace/tradingview-mcp/tmp_combined_cn.log)",
+      "Bash(node -e \"const j=require\\('D:/ai-workspace/tradingview-mcp/watchlist/cn_tech_signals.json'\\); for \\(const sym of ['SSE:603162','SZSE:002245','SZSE:301165','SSE:600176']\\) { const s=j.stocks[sym]; if\\(!s\\){console.log\\(sym,'MISSING'\\);continue;} console.log\\(sym, s.name||'', 'tech='+s.tech_score, 'type='+s.type, 'verdict='+s.verdict\\); }\")",
+      "Bash(node *)",
+      "Bash(git add *)"
     ]
   }
 }

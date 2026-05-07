@@ -1,8 +1,8 @@
 #!/usr/bin/env node
 /**
  * US Combined Analysis: Tech × News → Final Trade Ranking + Entry/Stop/Target
- * Combined = TechScore × 0.6 + NewsScore × 0.4 - (overheated ? 10 : 0)
- *   (NewsScore is now 0-100 normalized, neutral=50; no longer ×2)
+ * Combined = TechScore × 0.6 + NewsScore × 0.4 + (trendy ? +5 : 0) - (overheated && !trendy ? 5 : 0)
+ *   (NewsScore is 0-100 normalized, neutral=50; trendy = Breakout / Trend Follow / Trend Continuation)
  *
  * Inputs (upstream contracts):
  *   ./watchlist/us_tech_signals.json   ← pipeline/3-technical/analyze_tech_us_mtf.mjs
@@ -99,12 +99,16 @@ async function main() {
   console.log(`  news: ${Object.keys(news.stocks ?? {}).length} stocks (${news.generated_at})\n`);
 
   const rows = [];
+  const TRENDY_TYPES = /Breakout|Trend Follow|Trend Continuation/i;
   for (const [sym, td] of Object.entries(tech.stocks ?? {})) {
     const nd  = news.stocks?.[sym] ?? { score: 0, signal: 'No data', name: td.name };
     const cls = classifyNews(nd.signal);
     const techScore = td.tech_score ?? 0;
     const newsScore = nd.score ?? 0;
-    const combined  = +((techScore * 0.6) + (newsScore * 0.4) - (cls.overheated ? 10 : 0)).toFixed(1);
+    const isTrendy  = TRENDY_TYPES.test(td.type || '');
+    const overheatPenalty = (cls.overheated && !isTrendy) ? 5 : 0;
+    const trendyBonus = isTrendy ? 5 : 0;
+    const combined  = +((techScore * 0.6) + (newsScore * 0.4) - overheatPenalty + trendyBonus).toFixed(1);
     const levels    = calcLevels(td.price, td.atr_pct, td.type);
     const grade     = gradeOf(techScore, cls);
     rows.push({
@@ -120,7 +124,7 @@ async function main() {
 
   p(`# Combined Analysis Report · Final Entry Ranking (US)`);
   p(`**Date:** ${date}　　**Method:** Tech 60% × News 40% - Overheat Penalty`);
-  p(`**Formula:** Combined = TechScore × 0.6 + NewsScore × 0.4 - (overheated ? 10 : 0)　　(NewsScore is 0-100 normalized, neutral=50)`);
+  p(`**Formula:** Combined = TechScore × 0.6 + NewsScore × 0.4 + (trendy ? +5 : 0) - (overheated && !trendy ? 5 : 0)　　(NewsScore is 0-100 normalized, neutral=50)`);
   p(`**Sources:** ${TECH_JSON} + ${NEWS_JSON}`);
   p('');
   p('---');
