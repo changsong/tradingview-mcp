@@ -17,11 +17,10 @@
 npm run scan:cn
 # 等价：node pipeline/1-scan/scan_stocks.js --symbols=filepath=./watchlist/cn.txt
 ```
+将筛选出的股票需要合并 `./watchlist/cn_selected.txt`,并排重。
 
-选出的股票需要合并 `./watchlist/cn_selected.txt` 已有的股票输出到 `./watchlist/cn_selected.txt`，格式保持同 `cn.txt` 一致，并排重。
-
-## 研报及新闻分析 5-10分钟
-利用 `./src/core/webNews.js` 获取这些推荐股票的新闻（研报/快讯/新闻），分析市场情绪倾向、对股价的潜在影响、关键风险和机会点，将新闻转化为"可交易信号"，最好覆盖最近 5 个交易日最重要的新闻。直接执行：
+### 研报及新闻分析 5-10分钟
+利用 `./src/core/webNews.js` 获取这些推筛选出的股票的新闻（研报/快讯/新闻），分析市场情绪倾向、对股价的潜在影响、关键风险和机会点，将新闻转化为"可交易信号"，最好覆盖最近 5 个交易日最重要的新闻。直接执行：
 
 ```bash
 npm run news:cn
@@ -36,7 +35,7 @@ npm run news:cn
 5. 输出交易信号：Long / Short / No Trade + 触发原因 + 是否适合追涨/低吸/反转
 6. 必须识别：是否已经提前炒作 / 是否存在情绪过热 / 是否是假利好
 
-## 技术面分析 10分钟
+### 技术面分析 10分钟
 使用 `./scripts/launch_tv_debug.bat` 启动TradingView。直接执行：
 
 ```bash
@@ -56,10 +55,9 @@ npm run combined:cn
 # 产物：watchlist/cn_combined_signals.md + 自动快照到 reports/<YYYY-MM-DD>/
 ```
 
-公式：`Combined = TechScore × 0.6 + NewsScore × 2 × 0.4 - (过热 ? 10 : 0)`，按等级 A/B/C+/C 排序，自动算入场价/止损/目标位/盈亏比。
+
 
 > 💡 一键全跑：`npm run full:cn`（=news:cn + tech:cn + combined:cn）
-
 
 
 ### 美股 30分钟左右
@@ -69,18 +67,23 @@ npm run combined:cn
 npm run scan:us
 # 等价：node pipeline/1-scan/scan_stocks.js --symbols=filepath=./watchlist/us.txt
 ```
-
-选出的股票需要合并 `./watchlist/us_selected.txt` 已有的股票输出到 `./watchlist/us_selected.txt`，格式保持同 `us.txt` 一致，并排重。
+将筛选出的股票需要合并 `./watchlist/us_selected.txt`,并排重。
 
 ## 研报及新闻分析 5-10分钟
-利用 `./src/core/usNews.js` 获取这些推荐股票的新闻（研报/快讯/新闻）。直接执行：
+利用 `./src/core/usNews.js` 获取这些推荐股票的新闻（研报/快讯/新闻）。 获取这些推筛选出的股票的新闻（研报/快讯/新闻），分析市场情绪倾向、对股价的潜在影响、关键风险和机会点，将新闻转化为"可交易信号"，最好覆盖最近 5 个交易日最重要的新闻。直接执行：
 
 ```bash
 npm run news:us
 # 产物：watchlist/us_news_signals.md + watchlist/us_news_signals.json
 ```
 
-规则同上（情绪量化 → Long / Short / No Trade，识别提前炒作 / 过热 / 假利好）。
+脚本内置规则：
+1. 抓取并筛选高影响力新闻（去噪）
+2. 对每条新闻打标签：类型（政策/财报/并购/行业/黑天鹅/传闻）+ 情绪（+1/0/-1）+ 权重（1~5）
+3. 构建情绪指数：Sentiment Score = Σ(情绪 × 权重)
+4. 识别关键模式：情绪持续增强(trend) / 情绪反转(reversal) / 情绪背离(price vs news)
+5. 输出交易信号：Long / Short / No Trade + 触发原因 + 是否适合追涨/低吸/反转
+6. 必须识别：是否已经提前炒作 / 是否存在情绪过热 / 是否是假利好
 
 ## 技术面分析
 使用 `./scripts/launch_tv_debug.bat` 启动TradingView。直接执行：
@@ -100,8 +103,34 @@ npm run combined:us
 # 产物：watchlist/us_combined_signals.md + 自动快照到 reports/<YYYY-MM-DD>/
 ```
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 > 💡 一键全跑：`npm run full:us`
-                                                                                                                                                            ## 单只股票涨跌分析                                          
+ ## 单只股票涨跌分析                                          
 一键全跑：`npm run full:us`，只分析美股票：SM ，分析这一只股票明日及之后一周内的涨跌预期
 
 一键全跑：`npm run full:cn`，只分析A股票：SM ，分析这一只股票明日及之后一周内的涨跌预期
