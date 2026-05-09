@@ -1,0 +1,303 @@
+//@version=6
+strategy(
+     "A Share SQZMOM PRO v25 (Daily)",
+     overlay=true,
+     initial_capital=100000,
+     pyramiding=0,
+     default_qty_type=strategy.fixed,
+     commission_type=strategy.commission.percent,
+     commission_value=0.03,
+     calc_on_every_tick=false,
+     process_orders_on_close=false)
+
+//==================================================
+// 参数
+//==================================================
+
+bbLen   = input.int(20,"BB Length")
+bbMult  = input.float(2.0)
+kcLen   = input.int(20,"KC Length")
+kcMult  = input.float(1.5)
+
+emaFast = input.int(60,"Trend EMA")
+emaSlow = input.int(200,"Market EMA")
+
+riskPct  = input.float(1.0,"Risk %")
+minScore = input.int(72,"Min Score")
+
+atrLen  = input.int(14,"ATR Length")
+atrMult = input.float(2.0,"ATR Mult (Initial Stop)")
+
+slipATRmult  = input.float(0.1,"ATR Slippage")
+cooldownBars = input.int(3, "Cooldown Bars After Exit")
+
+minSqzBars = input.int(3,  "Min SQZ Bars")
+maxSqzBars = input.int(20, "Max SQZ Bars")
+
+tp1Mult         = input.float(1.5, "TP1 ATR Mult")
+// v25: 加宽TP1后追踪至2.0x，配合保本保护让更多交易跑到TP2
+atrMultAfterTP1 = input.float(2.0, "ATR Mult After TP1")  // v24:1.5→v25:2.0
+tp2Mult         = input.float(3.0, "TP2 ATR Mult")
+
+rsiMin = input.int(50, "RSI Min")
+rsiMax = input.int(82, "RSI Max")
+
+maxLossPct = input.float(8.0, "Max Loss % (Hard Stop)")
+
+// v25新增：ATR相对波动率过滤（过度波动股不入场）
+maxAtrPct = input.float(4.0, "Max ATR% Filter")  // ATR/close > 4% 不入场
+
+//==================================================
+// SQZMOM
+//==================================================
+f_sqz(src)=>
+    basis = ta.sma(src, bbLen)
+    dev   = bbMult * ta.stdev(src, bbLen)
+    upperBB = basis + dev
+    lowerBB = basis - dev
+    ma = ta.sma(src, kcLen)
+    kcATR = ta.atr(kcLen)
+    upperKC = ma + kcATR * kcMult
+    lowerKC = ma - kcATR * kcMult
+    bb_width = upperBB - lowerBB
+    kc_width = upperKC - lowerKC
+    sqzOff = bb_width < (kc_width * 0.8)
+    mid = (ta.highest(high,kcLen)+ta.lowest(low,kcLen))/2
+    val = ta.linreg(src-mid,kcLen,0)
+    [sqzOff,val]
+
+[sqz,val] = f_sqz(close)
+
+//==================================================
+// 压缩计数
+//==================================================
+var int sqzCount = 0
+if sqz
+    sqzCount += 1
+else
+    sqzCount := 0
+
+validCompression = sqzCount >= minSqzBars and sqzCount <= maxSqzBars
+
+//==================================================
+// 趋势
+//==================================================
+ema20  = ta.ema(close, 20)
+ema60  = ta.ema(close, emaFast)
+ema200 = ta.ema(close, emaSlow)
+
+trendUp = ema20 > ema60 and ema60 > ema200 and close > ema20
+
+//==================================================
+// 成交量
+//==================================================
+volumeMA20      = ta.sma(volume, 20)
+volOK_primary   = volume > volumeMA20 * 1.2
+vol20High       = ta.highest(volume, 20)
+volOK_secondary = (volume > vol20High * 0.5) and sqz and trendUp
+volOK = volOK_primary or volOK_secondary
+
+//==================================================
+// 风控过滤
+//==================================================
+limitUp        = (close - close[1]) / close[1] > 0.095
+noTradeLimitUp = limitUp and close == high
+
+isST = str.contains(syminfo.ticker,"ST")
+
+volume5 = ta.sma(volume,5)
+oneLine = (high == low) and volume < volume5
+
+limitUpCount10 = 0
+for i = 0 to 10
+    limitUpCount10 += (close[i] - close[i+1]) / close[i+1] > 0.095 ? 1 : 0
+notTooHot = limitUpCount10 <= 3
+
+bigMove = (close - ta.lowest(close,5)) / ta.lowest(close,5) > 0.30
+notOverExtended = notTooHot and not bigMove
+
+volMA20   = ta.sma(volume,20)
+hhv5      = ta.highest(high,5)
+fakeBreak = high > hhv5[1] and close < open and volume > volMA20 and (high-close)/(high-low) > 0.6
+
+validStock = not noTradeLimitUp and not isST and not oneLine and notOverExtended
+
+//==================================================
+// 信号辅助
+//==================================================
+vol5        = ta.sma(volume,5)
+vol20m      = ta.sma(volume,20)
+volMomentum = vol5 > vol20m
+
+valAccel    = val > val[1]
+
+rsiVal = ta.rsi(close,14)
+rsiOK  = rsiVal > rsiMin and rsiVal < rsiMax
+
+ema20Rising = ema20 > ema20[5]
+
+high250    = ta.highest(high,250)
+low250     = ta.lowest(low,250)
+annualMid  = (high250 + low250) / 2
+aboveAnnualMid = close > annualMid
+
+barRange       = high - low + 0.0001
+barStrength    = (close - low) / barRange
+strongCloseBar = barStrength > 0.55
+
+valNewHigh = val > ta.highest(val[1],5)
+
+weeklyTrendProxy = ta.ema(close,5) > ta.ema(close,25)
+
+// v25: ATR波动率过滤
+atr      = ta.atr(atrLen)
+atrPct   = atr / close * 100
+notHighVol = atrPct < maxAtrPct  // ATR占价格比例不超过阈值
+
+//==================================================
+// 评分
+//==================================================
+score = 0
+score += sqz and val > 0    ? 30 : 0
+score += validCompression   ? 15 : 0
+score += ta.crossover(val,0) ? 20 : 0
+score += volOK              ? 15 : 0
+score += trendUp            ? 10 : 0
+score += weeklyTrendProxy   ? 10 : 0
+score += volMomentum        ? 10 : 0
+score += valAccel           ? 10 : 0
+score += rsiOK              ? 10 : 0
+score += ema20Rising        ? 10 : 0
+score += valNewHigh         ? 15 : 0
+score += strongCloseBar     ? 15 : 0
+
+canTrade = score >= minScore
+
+//==================================================
+// ATR & 仓位
+//==================================================
+slippage = atr * slipATRmult
+stopDist = atr * atrMult
+
+risk = strategy.equity * riskPct / 100
+qty  = math.max(1, math.floor(risk / stopDist))
+
+//==================================================
+// 状态机
+//==================================================
+var float entryPrice        = na
+var float tp1Price          = na
+var float tp2Price          = na
+var float hardStopPrice     = na
+var float highestSinceEntry = na
+var bool  tookTP1           = false
+var string exitReason       = ""
+var int   barsSinceExit     = 0
+
+//==================================================
+// 入场条件（v25新增：notHighVol过滤高波动股）
+//==================================================
+longCond =
+     trendUp          and
+     ema20Rising       and
+     aboveAnnualMid    and
+     canTrade          and
+     validCompression  and
+     validStock        and
+     notHighVol        and   // v25新增：拒绝ATR>4%的过度波动股
+     not fakeBreak     and
+     barstate.isconfirmed and
+     barsSinceExit >= cooldownBars and
+     strategy.position_size == 0
+
+//==================================================
+// 追踪止损更新
+//==================================================
+if strategy.position_size > 0
+    highestSinceEntry := na(highestSinceEntry) ? high : math.max(highestSinceEntry, high)
+else
+    highestSinceEntry := na
+    barsSinceExit += 1
+
+float curAtrMult = tookTP1 ? atrMultAfterTP1 : atrMult
+atrTrailStop_raw = highestSinceEntry - atr * curAtrMult
+
+// v25: TP1后追踪加宽到2.0x，但加保本保护（止损不低于入场价）
+// 当tookTP1=true：stop = max(atrTrail, entryPrice)，永远不亏损剩余50%
+float rawStop   = na(atrTrailStop_raw) ? na : atrTrailStop_raw
+float safeStop  = tookTP1 and not na(rawStop) and not na(entryPrice)
+                  ? math.max(rawStop, entryPrice)
+                  : rawStop
+
+//==================================================
+// 入场执行
+//==================================================
+if longCond
+    entryPrice        := close + slippage
+    tp1Price          := entryPrice + stopDist * tp1Mult
+    tp2Price          := entryPrice + stopDist * tp2Mult
+    hardStopPrice     := entryPrice * (1 - maxLossPct/100)
+    highestSinceEntry := high
+    tookTP1           := false
+    exitReason        := ""
+    barsSinceExit     := 0
+    strategy.entry("LONG", strategy.long, qty)
+
+    alert(
+     '{"action":"ENTRY","symbol":"'+syminfo.ticker+
+     '","qty":'+str.tostring(qty)+
+     ',"type":"cn","side":"LONG"'+
+     ',"entry":'+str.tostring(entryPrice)+
+     ',"tp1":'+str.tostring(tp1Price)+
+     ',"tp2":'+str.tostring(tp2Price)+
+     ',"stop":'+str.tostring(entryPrice - stopDist)+
+     ',"hard_stop":'+str.tostring(hardStopPrice)+
+     ',"score":'+str.tostring(score)+'}',
+     alert.freq_once_per_bar_close)
+
+//==================================================
+// 持仓管理（v25: EMA20需连续2根确认 + 硬止损 + 保本保护）
+//==================================================
+if strategy.position_size > 0
+
+    highestSinceEntry := math.max(highestSinceEntry, high)
+
+    if not tookTP1 and high >= tp1Price
+        tookTP1 := true
+        strategy.close("LONG", "TP1", qty_percent=50)
+        alert('{"action":"PARTIAL","reason":"TP1","symbol":"'+syminfo.ticker+'"}',
+              alert.freq_once_per_bar_close)
+
+    ema20BelowTwo = close < ema20 and close[1] < ema20[1]
+    // v25: EMA20转向判断加长至5日（减少短暂回调误判）
+    ema20Turning  = ema20 < ema20[5]   // v24: ema20[3] → v25: ema20[5]
+
+    if exitReason == ""
+        if close <= hardStopPrice
+            exitReason := "HARD"
+        else if not na(safeStop) and close <= safeStop
+            exitReason := "ATR"
+        else if ema20BelowTwo and ema20Turning
+            exitReason := "EMA20"
+        else if high >= tp2Price
+            exitReason := "TP2"
+
+    if exitReason != ""
+        strategy.close("LONG", exitReason)
+        alert('{"action":"EXIT","reason":"'+exitReason+'","symbol":"'+syminfo.ticker+'"}',
+              alert.freq_once_per_bar_close)
+
+//==================================================
+// 图形
+//==================================================
+plot(safeStop,      "ATR Trail (保本)", color=color.yellow)
+plot(hardStopPrice, "Hard Stop",        color=color.red, style=plot.style_circles)
+plot(ema20,         "EMA20",            color=color.orange)
+plotchar(score,     "Score", "⭐",      location.top)
+
+string param1 = "trendUp:"+str.tostring(trendUp)+" validComp:"+str.tostring(validCompression)+" atrPct:"+str.tostring(atrPct, "#.#")+"%"
+string param2 = "volOK:"+str.tostring(volOK)+" rsiOK:"+str.tostring(rsiOK)+" notHighVol:"+str.tostring(notHighVol)
+string statusText = param1+" "+param2+" "+(score < minScore ? str.tostring(score)+" 🔴 WAIT" : str.tostring(score)+" 🟢 LONG")
+color statusColor = score < minScore ? color.red : color.green
+var table panel = table.new(position.top_right,1,1)
+table.cell(panel,0,0,statusText,bgcolor=statusColor,text_color=color.white)
