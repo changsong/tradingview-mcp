@@ -190,6 +190,64 @@ function calculateOverallScore(taScore, fundamentalScore, sentimentScore) {
   return Math.round(overall);
 }
 
+/**
+ * Parse SQZMOM table statusText into structured fields.
+ *
+ * New format (param1 + param2 + score + signal):
+ *   "trendUp:true validComp:true atrPct:3.5% volOK:true rsiOK:true notHighVol:true 85 🟢 LONG"
+ *   "trendUp:false validComp:false atrPct:2.1% volOK:false rsiOK:false notHighVol:true 45 🔴 WAIT"
+ *
+ * Also backward-compatible with old format fields (volMom, validStock, fakeBreak).
+ */
+function parseRawData(rawData) {
+  const result = {
+    trendUp: false,
+    validCompression: false,
+    atrPct: null,
+    volOK: false,
+    rsiOK: false,
+    notHighVol: false,
+    volMom: false,
+    validStock: false,
+    fakeBreak: false,
+    score: null,
+    signal: 'UNKNOWN',
+  };
+
+  // Parse bool key:value pairs (handles both old and new field names)
+  const boolRe = /(trendUp|validComp(?:ression)?|volOK|rsiOK|notHighVol|volMom|validStock|fakeBreak):(true|false)/g;
+  let m;
+  while ((m = boolRe.exec(rawData)) !== null) {
+    const v = m[2] === 'true';
+    switch (m[1]) {
+      case 'trendUp':          result.trendUp = v;          break;
+      case 'validComp':
+      case 'validCompression': result.validCompression = v; break;
+      case 'volOK':            result.volOK = v;            break;
+      case 'rsiOK':            result.rsiOK = v;            break;
+      case 'notHighVol':       result.notHighVol = v;       break;
+      case 'volMom':           result.volMom = v;           break;
+      case 'validStock':       result.validStock = v;       break;
+      case 'fakeBreak':        result.fakeBreak = v;        break;
+    }
+  }
+
+  // Parse atrPct float: "atrPct:X.X%"
+  const atrM = rawData.match(/atrPct:([\d.]+)%/);
+  if (atrM) result.atrPct = parseFloat(atrM[1]);
+
+  // Parse score + signal: trailing number before emoji
+  //   "... 85 🟢 LONG"  →  score=85,  signal=LONG
+  //   "... 72.5 🔴 WAIT" → score=72.5, signal=WAIT
+  const sigM = rawData.match(/(\d+\.?\d*)\s*(?:🟢|🔴)\s*(LONG|WAIT)/u);
+  if (sigM) {
+    result.score  = parseFloat(sigM[1]);
+    result.signal = sigM[2];
+  }
+
+  return result;
+}
+
 async function scanStocks() {
   console.log('📊 开始扫描 A股可交易股票列表...\n');
 
@@ -257,22 +315,17 @@ async function scanStocks() {
         const rawData = study.tables[0].rows[0];
 
         // 解析参数
+        const parsed = parseRawData(rawData);
         const baseParams = {
-          symbol: symbol,
-          trendUp: rawData.includes('trendUp:true'),
-          validCompression: rawData.includes('validComp:true') || rawData.includes('validCompression:true'),
-          volOK: rawData.includes('volOK:true'),
-          volMom: rawData.includes('volMom:true'),
-          validStock: rawData.includes('validStock:true'),
-          fakeBreak: rawData.includes('fakeBreak:true'),
-          signal: rawData.includes('WAIT') ? 'WAIT' :
-                  rawData.includes('🟢') ? 'GO' :
-                  rawData.includes('🔴') ? 'STOP' : 'UNKNOWN',
-          rawData: rawData
+          symbol,
+          ...parsed,
+          rawData,
         };
 
         results.push(baseParams);
-        console.log(`  ✓ trendUp:${baseParams.trendUp} validComp:${baseParams.validCompression} volMom:${baseParams.volMom} volOK:${baseParams.volOK} validStock:${baseParams.validStock} fakeBreak:${baseParams.fakeBreak} → ${baseParams.signal}`);
+        const atrStr = baseParams.atrPct != null ? ` atrPct:${baseParams.atrPct.toFixed(1)}%` : '';
+        const scoreStr = baseParams.score != null ? ` score:${baseParams.score}` : '';
+        console.log(`  ✓ trendUp:${baseParams.trendUp} validComp:${baseParams.validCompression}${atrStr} volOK:${baseParams.volOK} rsiOK:${baseParams.rsiOK} notHighVol:${baseParams.notHighVol}${scoreStr} → ${baseParams.signal}`);
       } else {
         console.log(`  ⚠️  未找到 SQZMOM 指标数据`);
       }
@@ -284,20 +337,21 @@ async function scanStocks() {
     await sleep(500);
   }
 
-  // 筛选符合条件的股票
-  // 必须满足以下所有条件:
+  // 筛选符合条件的股票（基于 SQZMOM v2 statusText 字段）
+  // 必须满足:
   // 1. trendUp = true (上升趋势)
-  // 2. fakeBreak = false (非假突破)
-  // 3. validCompression = true (有效压缩)
-  // 4. rawData 包含 "GO" 或 signal = "GO"
-  // 注: volMom (v11新增) 记录在日志中但不作为强制过滤条件，作为候选参考
+  // 2. validCompression = true (有效压缩)
+  // 3. volOK = true (成交量确认)
+  // 4. rsiOK = true (RSI健康)
+  // 5. notHighVol = true (非高波动)
+  // 6. signal = 'LONG' (做多信号)
   const qualified = results.filter(r => {
-    return (r.trendUp && (
-            !r.fakeBreak &&
-            r.validCompression &&
-            r.volOK &&
-            r.validStock)) ||
-           (r.signal === 'GO' || r.rawData.includes('GO'));
+    return r.trendUp &&
+           r.validCompression &&
+           r.volOK &&
+           r.rsiOK &&
+           r.notHighVol &&
+           r.signal === 'LONG';
   });
 
   console.log(`\n✅ 扫描完成！共分析 ${results.length}/${symbols.length} 个股票`);

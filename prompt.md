@@ -15,7 +15,7 @@
 
 ```bash
 npm run scan:cn
-# 等价：node pipeline/1-scan/scan_stocks.js --symbols=filepath=./watchlist/cn.txt
+# 等价：node pipeline/1-scan/scan_stocks.js --symbols=filepath=./watchlist/cn.txt --output=./watchlist/cn_selected.txt
 ```
 将筛选出的股票需要合并 `./watchlist/cn_selected.txt`,并排重。
 
@@ -62,7 +62,7 @@ npm run combined:cn
 
 ```bash
 npm run scan:us
-# 等价：node pipeline/1-scan/scan_stocks.js --symbols=filepath=./watchlist/us.txt
+# 等价：node pipeline/1-scan/scan_stocks.js --symbols=filepath=./watchlist/us.txt --output=./watchlist/us_selected.txt
 ```
 将筛选出的股票需要合并 `./watchlist/us_selected.txt`,并排重。
 
