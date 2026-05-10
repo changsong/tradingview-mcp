@@ -722,6 +722,14 @@ export async function searchNews({ symbol, name, source = 'all', count = 10 }) {
 
   result.total_count = result.news.length + result.research.length + result.forum.length;
 
+  // 每个来源抓取条数统计
+  const sourceStats = {};
+  for (const item of [...result.news, ...result.research, ...result.forum]) {
+    const src = item.source || '未知';
+    sourceStats[src] = (sourceStats[src] || 0) + 1;
+  }
+  result.source_stats = sourceStats;
+
   // 情绪分析
   if (result.forum.length > 0) {
     result.sentiment_analysis = analyzeSentiment(result.forum);

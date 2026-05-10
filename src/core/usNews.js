@@ -587,8 +587,24 @@ export async function searchUSNews({ symbol, name, source = 'all', count = 10 })
     news: [],
     social: [],
     forum: [],
+    sources_status: {},
     search_time: new Date().toISOString(),
   };
+
+  const trackSource = (srcName, fn) =>
+    fn().then(items => {
+      const arr = Array.isArray(items) ? items : [];
+      const errored = arr.find(it => it && it.error);
+      result.sources_status[srcName] = {
+        ok: !errored,
+        count: arr.filter(it => !it.error).length,
+        error: errored?.error || null,
+      };
+      return arr;
+    }).catch(err => {
+      result.sources_status[srcName] = { ok: false, count: 0, error: err.message };
+      return [];
+    });
 
   const promises = [];
 
@@ -596,11 +612,11 @@ export async function searchUSNews({ symbol, name, source = 'all', count = 10 })
   if (source === 'all' || source === 'news') {
     promises.push(
       Promise.all([
-        fetchYahooFinanceNews(cleanSymbol, count),
-        fetchFinnhubNews(cleanSymbol, count),
-        fetchMarketWatchRSS(cleanSymbol, name, count),
-        fetchNewsAPI(cleanSymbol, name, count),
-        fetchSeekingAlpha(cleanSymbol, count),
+        trackSource('Yahoo Finance', () => fetchYahooFinanceNews(cleanSymbol, count)),
+        trackSource('Finnhub',       () => fetchFinnhubNews(cleanSymbol, count)),
+        trackSource('MarketWatch',   () => fetchMarketWatchRSS(cleanSymbol, name, count)),
+        trackSource('NewsAPI',       () => fetchNewsAPI(cleanSymbol, name, count)),
+        trackSource('Seeking Alpha', () => fetchSeekingAlpha(cleanSymbol, count)),
       ]).then(([yahoo, finnhub, mw, newsapi, sa]) => {
         const seen = new Set();
         const merged = [];
@@ -622,8 +638,8 @@ export async function searchUSNews({ symbol, name, source = 'all', count = 10 })
   if (source === 'all' || source === 'social') {
     promises.push(
       Promise.all([
-        fetchYahooConversations(cleanSymbol, count),
-        fetchStockTwits(cleanSymbol, count),
+        trackSource('Yahoo Conversations', () => fetchYahooConversations(cleanSymbol, count)),
+        trackSource('StockTwits',          () => fetchStockTwits(cleanSymbol, count)),
       ]).then(([yahooConv, stockTwits]) => {
         result.social = [...yahooConv, ...stockTwits];
       })
@@ -635,9 +651,9 @@ export async function searchUSNews({ symbol, name, source = 'all', count = 10 })
     const forumCount = Math.ceil(count / 3);
     promises.push(
       Promise.all([
-        fetchRedditWSB(cleanSymbol, forumCount),
-        fetchRedditStocks(cleanSymbol, forumCount),
-        fetchBogleheads(cleanSymbol, forumCount),
+        trackSource('r/wallstreetbets', () => fetchRedditWSB(cleanSymbol, forumCount)),
+        trackSource('r/stocks',         () => fetchRedditStocks(cleanSymbol, forumCount)),
+        trackSource('Bogleheads',       () => fetchBogleheads(cleanSymbol, forumCount)),
       ]).then(results => {
         result.forum = [...results[0], ...results[1], ...results[2]];
       })
@@ -653,6 +669,14 @@ export async function searchUSNews({ symbol, name, source = 'all', count = 10 })
   result.forum = result.forum.filter(item => !item.error);
 
   result.total_count = result.news.length + result.social.length + result.forum.length;
+
+  // 每个来源抓取条数统计（基于最终去重后的数组）
+  const sourceStats = {};
+  for (const item of [...result.news, ...result.social, ...result.forum]) {
+    const src = item.source || 'Unknown';
+    sourceStats[src] = (sourceStats[src] || 0) + 1;
+  }
+  result.source_stats = sourceStats;
 
   // Sentiment analysis on social + forum posts
   const allPosts = [...result.social, ...result.forum];
