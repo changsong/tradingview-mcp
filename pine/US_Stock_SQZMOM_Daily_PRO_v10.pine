@@ -1,0 +1,264 @@
+//@version=6
+strategy(
+     "US Stock SQZMOM Daily PRO v10 (Tiered Entry)",
+     overlay=true,
+     initial_capital=100000,
+     pyramiding=0,
+     default_qty_type=strategy.fixed,
+     commission_type=strategy.commission.percent,
+     commission_value=0.05,
+     calc_on_every_tick=false,
+     process_orders_on_close=false)
+
+//==================================================
+// 参数
+//==================================================
+bbLen    = input.int(20, "BB Length")
+bbMult   = input.float(2.0)
+kcLen    = input.int(20, "KC Length")
+kcMult   = input.float(1.5)
+
+emaFast  = input.int(60,  "Trend EMA")
+emaSlow  = input.int(200, "Market EMA")
+
+riskPct  = input.float(1.0, "Risk %")
+// v10: 双门槛评分
+minScore       = input.int(65, "Min Score (with valAccel)")      // valAccel=true时的最低分
+minScoreStrong = input.int(75, "Min Score (no valAccel needed)")  // 无需valAccel的高质量入场
+
+atrLen   = input.int(14, "ATR Length")
+atrMult  = input.float(2.0, "ATR Stop Mult")
+
+slipATRmult     = input.float(0.1, "ATR Slippage")
+cooldownBars    = input.int(3,  "Cooldown Bars")
+minSqzBars      = input.int(5,  "Min SQZ Bars")   // v10: 保留5
+maxSqzBars      = input.int(8,  "Max SQZ Bars")
+
+tp1Mult         = input.float(2.0, "TP1 ATR Mult")
+tp2Mult         = input.float(3.5, "TP2 ATR Mult")
+atrMultAfterTP1 = input.float(1.5, "ATR Trail After TP1")
+
+rsiLen          = input.int(14, "RSI Length")
+rsiOverbought   = input.int(75, "RSI Overbought")
+
+breakoutBars    = input.int(5, "Breakout Lookback")
+
+maxLossPct      = input.float(6.0, "Max Loss %")   // v10: 保留6%
+
+//==================================================
+// SQZMOM
+//==================================================
+f_sqz(src) =>
+    basis    = ta.sma(src, bbLen)
+    dev      = bbMult * ta.stdev(src, bbLen)
+    upperBB  = basis + dev
+    lowerBB  = basis - dev
+    ma       = ta.sma(src, kcLen)
+    kcATR    = ta.atr(kcLen)
+    upperKC  = ma + kcATR * kcMult
+    lowerKC  = ma - kcATR * kcMult
+    sqzOff   = (upperBB - lowerBB) < ((upperKC - lowerKC) * 0.8)
+    mid      = (ta.highest(high, kcLen) + ta.lowest(low, kcLen)) / 2
+    val      = ta.linreg(src - mid, kcLen, 0)
+    [sqzOff, val]
+
+[sqz, val] = f_sqz(close)
+
+valSlope = val - val[2]
+valAccel = valSlope > 0 and val > 0
+
+//==================================================
+// 压缩计数
+//==================================================
+var int sqzCount = 0
+if sqz
+    sqzCount += 1
+else
+    sqzCount := 0
+
+validCompression = sqzCount >= minSqzBars and sqzCount <= maxSqzBars
+
+//==================================================
+// 趋势
+//==================================================
+ema20  = ta.ema(close, 20)
+ema60  = ta.ema(close, emaFast)
+ema200 = ta.ema(close, emaSlow)
+
+trendUp =
+     ema20  > ema60  and
+     ema60  > ema200 and
+     close  > ema20
+
+ema20Rising = ema20 > ema20[3]
+
+//==================================================
+// RSI 过滤
+//==================================================
+rsi   = ta.rsi(close, rsiLen)
+rsiOK = rsi < rsiOverbought
+
+//==================================================
+// 突破确认
+//==================================================
+hhvBreak = close > ta.highest(high, breakoutBars)[1]
+
+//==================================================
+// 成交量
+//==================================================
+volumeMA20      = ta.sma(volume, 20)
+volOK_primary   = volume > volumeMA20 * 1.0
+vol20High       = ta.highest(volume, 20)
+volOK_secondary = (volume > vol20High * 0.5) and sqz and trendUp
+volOK           = volOK_primary or volOK_secondary
+minLiquidity    = volumeMA20 > 100000
+vol5            = ta.sma(volume, 5)
+volMomentum     = vol5 > volumeMA20
+
+//==================================================
+// 风控过滤
+//==================================================
+bigGap          = (close - close[1]) / close[1] > 0.15
+bigMove         = (close - ta.lowest(close, 5)) / ta.lowest(close, 5) > 0.25
+notOverExtended = not bigMove and not bigGap
+volMA20         = ta.sma(volume, 20)
+hhv5            = ta.highest(high, 5)
+fakeBreak       = high > hhv5[1] and close < open and volume > volMA20 and (high - close) / (high - low + 0.0001) > 0.6
+validStock      = notOverExtended and minLiquidity
+
+//==================================================
+// 评分 v10（同v6）
+//==================================================
+score = 0
+score += sqz and val > 0 ? 25 : 0
+score += valAccel ? 15 : 0
+score += hhvBreak ? 10 : 0
+score += validCompression ? 10 : 0
+score += volOK ? 10 : 0
+score += trendUp ? 10 : 0
+score += not fakeBreak ? 10 : 0
+score += ema20Rising ? 10 : 0
+
+// v10: 分级入场逻辑
+// 强信号（≥75分）：无需valAccel，信号本身足够强
+// 弱信号（65-74分）：必须有valAccel动量加速确认
+canTrade = score >= minScoreStrong or (score >= minScore and valAccel)
+
+//==================================================
+// ATR + 仓位
+//==================================================
+atr      = ta.atr(atrLen)
+slippage = atr * slipATRmult
+stopDist = atr * atrMult
+risk     = strategy.equity * riskPct / 100
+qty      = math.max(1, math.floor(risk / stopDist))
+
+//==================================================
+// 状态变量
+//==================================================
+var float entryPrice        = na
+var float tp1Price          = na
+var float tp2Price          = na
+var float maxLossPrice      = na
+var float highestSinceEntry = na
+var bool  tookTP1           = false
+var string exitReason       = ""
+var bool  inPosition        = false
+var int   barsSinceExit     = 0
+
+//==================================================
+// 入场条件 v10
+// v10改变：
+//   - 分级评分入场：强信号(≥75)无需valAccel；弱信号(65-74)需要valAccel
+//   - 去掉 strongTrend (无效)
+//   - 去掉 EMA200Rising (无效)
+//   - minSqzBars = 5
+//   - MaxLoss = 6%
+//==================================================
+longCond =
+     trendUp            and
+     ema20Rising        and
+     canTrade           and   // v10: 分级评分
+     validCompression   and
+     not fakeBreak      and
+     validStock         and
+     volMomentum        and
+     rsiOK              and
+     barstate.isconfirmed and
+     barsSinceExit >= cooldownBars and
+     strategy.position_size == 0
+
+//==================================================
+// ATR Trailing
+//==================================================
+if strategy.position_size > 0
+    highestSinceEntry := na(highestSinceEntry) ? high : math.max(highestSinceEntry, high)
+else
+    highestSinceEntry := na
+    barsSinceExit += 1
+
+float curAtrMult = tookTP1 ? atrMultAfterTP1 : atrMult
+atrTrailStop_raw = highestSinceEntry - atr * curAtrMult
+safeStop         = na(atrTrailStop_raw) ? entryPrice - stopDist : atrTrailStop_raw
+
+//==================================================
+// 入场执行
+//==================================================
+if longCond
+    entryPrice        := close + slippage
+    tp1Price          := entryPrice + stopDist * tp1Mult
+    tp2Price          := entryPrice + stopDist * tp2Mult
+    maxLossPrice      := entryPrice * (1.0 - maxLossPct / 100.0)
+    highestSinceEntry := high
+    tookTP1           := false
+    exitReason        := ""
+    inPosition        := true
+    barsSinceExit     := 0
+    strategy.entry("LONG", strategy.long, qty)
+
+//==================================================
+// 持仓管理 v10
+//==================================================
+if strategy.position_size > 0
+    highestSinceEntry := math.max(highestSinceEntry, high)
+
+    if not tookTP1 and high >= tp1Price
+        tookTP1 := true
+        strategy.close("LONG", "TP1", qty_percent = 50)
+
+    ema20Falling  = ema20 < ema20[1] and ema20 < ema20[3]
+    belowEma20x2  = close < ema20 and close[1] < ema20[1]
+    ema20StopCond = belowEma20x2 and ema20Falling
+
+    if exitReason == ""
+        if not na(maxLossPrice) and close <= maxLossPrice
+            exitReason := "MaxLoss"
+        else if close <= safeStop
+            exitReason := "ATR"
+        else if ema20StopCond
+            exitReason := "EMA20"
+        else if high >= tp2Price
+            exitReason := "TP2"
+
+    if exitReason != ""
+        strategy.close("LONG", exitReason)
+        inPosition := false
+
+//==================================================
+// 图形
+//==================================================
+plot(safeStop, "ATR Trail", color=color.yellow, linewidth=1)
+plot(not na(maxLossPrice) and strategy.position_size > 0 ? maxLossPrice : na, "MaxLoss", color=color.orange, linewidth=1, style=plot.style_circles)
+plot(ema20,    "EMA20",     color=color.red,    linewidth=1)
+plot(ema60,    "EMA60",     color=color.blue,   linewidth=1)
+
+plotchar(score, "Score", "⭐", location.top)
+barcolor(rsi > rsiOverbought ? color.new(color.red, 60) : na)
+
+string scoreMode = score >= minScoreStrong ? "Strong" : (canTrade ? "Accel" : "Wait")
+string p1 = "trendUp:" + str.tostring(trendUp) + " EMA20↑:" + str.tostring(ema20Rising) + " valAccel:" + str.tostring(valAccel)
+string p2 = "RSI:" + str.tostring(math.round(rsi)) + " validComp:" + str.tostring(validCompression) + " Mode:" + scoreMode
+string st_txt = p1 + " | " + p2 + " | Score:" + str.tostring(score) + (canTrade and trendUp and ema20Rising ? " 🟢LONG" : " 🔴WAIT")
+color statusColor = canTrade and trendUp and ema20Rising ? color.green : color.red
+var table panel = table.new(position.top_right, 1, 1)
+table.cell(panel, 0, 0, st_txt, bgcolor=statusColor, text_color=color.white, text_size=size.small)
