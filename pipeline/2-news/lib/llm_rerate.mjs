@@ -1,11 +1,11 @@
 /**
- * llm_rerate.mjs — 可选 Claude Haiku 复评
+ * llm_rerate.mjs — DeepSeek 复评
  *
- * 触发：CLI `--llm` 或 env `NEWS_LLM=1` 且 `ANTHROPIC_API_KEY` 存在。
+ * 触发：CLI `--llm` 或 env `NEWS_LLM=1` 且 `DEEPSEEK_API_KEY` 存在。
  *
  * 流程：
  *   1) 拿每股 top 5 高 finalWeight 的 tagged news（标题 + 短摘要）；
- *   2) 调 claude-haiku-4-5-20251001（messages API），system 部分启用 prompt caching；
+ *   2) 调 DeepSeek Chat API（OpenAI 兼容接口）；
  *   3) 模型返回 JSON `[{idx, sentiment: -2..+2, is_real_catalyst, confidence: 0-1}]`；
  *   4) 落地策略：
  *      - is_real_catalyst=false → finalWeight × 0.4
@@ -20,9 +20,16 @@ import { readFileSync, writeFileSync, existsSync, mkdirSync } from 'fs';
 import { resolve } from 'path';
 import { createHash } from 'crypto';
 
-const MODEL       = 'claude-haiku-4-5-20251001';
-const ENDPOINT    = 'https://api.anthropic.com/v1/messages';
-const ANTHROPIC_VERSION = '2023-06-01';
+// 加载 .env（从项目根目录）
+import dotenv from 'dotenv';
+import { fileURLToPath } from 'url';
+import { dirname } from 'path';
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = dirname(__filename);
+dotenv.config({ path: resolve(__dirname, '..', '..', '..', '.env') });
+
+const MODEL       = process.env.DEEPSEEK_MODEL || 'deepseek-chat';
+const ENDPOINT    = 'https://api.deepseek.com/v1/chat/completions';
 const CACHE_DIR   = resolve('./watchlist/.cache');
 const REQ_TIMEOUT_MS = 45_000;
 
@@ -61,7 +68,7 @@ let _hasKey     = false;
 
 export function isLLMEnabled() {
   if (!_envChecked) {
-    _hasKey = !!process.env.ANTHROPIC_API_KEY;
+    _hasKey = !!process.env.DEEPSEEK_API_KEY;
     _envChecked = true;
   }
   return _hasKey;
@@ -95,7 +102,7 @@ export async function rerateTopNews({ topItems, symbol, name, market }) {
 
   let llmRaw;
   try {
-    llmRaw = await callHaiku(items, { symbol, name, market });
+    llmRaw = await callDeepSeek(items, { symbol, name, market });
   } catch (err) {
     process.stderr.write(`  [LLM] ${symbol} fail: ${err.message}\n`);
     return null;
@@ -111,8 +118,8 @@ export async function rerateTopNews({ topItems, symbol, name, market }) {
   return applyLLMResults(items, parsed, market);
 }
 
-// ─── HTTP 调用 ─────────────────────────────────────────────────────────────────
-async function callHaiku(items, { symbol, name, market }) {
+// ─── HTTP 调用 (DeepSeek OpenAI-compatible API) ────────────────────────────────
+async function callDeepSeek(items, { symbol, name, market }) {
   const sys = market === 'cn' ? SYSTEM_PROMPT_CN : SYSTEM_PROMPT_US;
   const userMsg = buildUserMessage(items, symbol, name, market);
 
@@ -125,17 +132,17 @@ async function callHaiku(items, { symbol, name, market }) {
       method: 'POST',
       signal: ctrl.signal,
       headers: {
-        'content-type': 'application/json',
-        'x-api-key': process.env.ANTHROPIC_API_KEY,
-        'anthropic-version': ANTHROPIC_VERSION,
+        'Content-Type': 'application/json',
+        'Authorization': `Bearer ${process.env.DEEPSEEK_API_KEY}`,
       },
       body: JSON.stringify({
         model: MODEL,
         max_tokens: 800,
-        system: [
-          { type: 'text', text: sys, cache_control: { type: 'ephemeral' } },
+        temperature: 0.1,
+        messages: [
+          { role: 'system', content: sys },
+          { role: 'user', content: userMsg },
         ],
-        messages: [{ role: 'user', content: userMsg }],
       }),
     });
   } finally {
@@ -147,7 +154,7 @@ async function callHaiku(items, { symbol, name, market }) {
     throw new Error(`HTTP ${resp.status}: ${body.slice(0, 200)}`);
   }
   const data = await resp.json();
-  const text = data?.content?.[0]?.text;
+  const text = data?.choices?.[0]?.message?.content;
   if (!text) throw new Error('empty response content');
   return text;
 }

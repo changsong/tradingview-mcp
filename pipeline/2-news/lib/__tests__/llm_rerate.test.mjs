@@ -7,11 +7,10 @@ import { describe, it, beforeEach, afterEach } from 'node:test';
 import assert from 'node:assert/strict';
 import { rerateTopNews, isLLMEnabled } from '../llm_rerate.mjs';
 
-const ORIG_KEY = process.env.ANTHROPIC_API_KEY;
+const ORIG_KEY = process.env.DEEPSEEK_API_KEY;
 
 describe('isLLMEnabled', () => {
   it('returns false without key (cached), and stays cached for the run', () => {
-    // 第一次调用即定型；在 module-level 缓存影响下，本测试仅验证当前会话的当前态
     const first = isLLMEnabled();
     assert.equal(typeof first, 'boolean');
     assert.equal(isLLMEnabled(), first);
@@ -19,7 +18,7 @@ describe('isLLMEnabled', () => {
 });
 
 describe('rerateTopNews (no key path)', () => {
-  it('returns null without ANTHROPIC_API_KEY', async () => {
+  it('returns null without DEEPSEEK_API_KEY', async () => {
     const result = await rerateTopNews({
       topItems: [{ title: 'x', date: '2026-05-04', finalWeight: 3, sentiment: 1, type: 'news' }],
       symbol: 'TEST',

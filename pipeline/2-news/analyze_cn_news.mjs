@@ -15,6 +15,7 @@ import { readFileSync, writeFileSync } from 'fs';
 import { fileURLToPath } from 'url';
 import { dirname, resolve } from 'path';
 import { searchNews, extractCode, detectMarket } from '../../src/core/webNews.js';
+import { rerateTopNews, isLLMEnabled } from './lib/llm_rerate.mjs';
 
 // 锁定 CWD 为项目根，使 ./watchlist 等相对路径稳定
 process.chdir(resolve(dirname(fileURLToPath(import.meta.url)), '../..'));
@@ -26,6 +27,8 @@ const OUTPUT_JSON  = './watchlist/cn_news_signals.json';
 const DAYS_BACK    = 7;   // 往前7天覆盖5个交易日
 const NEWS_COUNT   = 20;  // 每股最多拉取条数
 const BATCH_SIZE   = 5;   // 并行批次大小
+
+const llmFlag = !process.argv.includes('--no-llm');
 
 const today  = new Date();
 const cutoff = new Date(today);
@@ -252,10 +255,33 @@ async function analyzeStock(symbol) {
       const type      = classifyType(item.title || '');
       const sentiment = scoreSentiment(item.title || '', type, item.rating);
       const weight    = calcWeight(item, type);
-      return { ...item, type, sentiment, weight };
+      return { ...item, type, sentiment, weight, finalWeight: weight };
     });
 
-    // 情绪指数
+    // LLM 复评（默认开启，--no-llm 关闭）
+    if (llmFlag && tagged.length > 0) {
+      const updated = await rerateTopNews({
+        topItems: tagged.slice(0, 5),
+        symbol,
+        name: result.name || code,
+        market: 'cn',
+      });
+      if (updated) {
+        for (const u of updated) {
+          const idx = tagged.findIndex(t => t._llmId === u._llmId);
+          if (idx >= 0) {
+            tagged[idx].sentiment   = u.sentiment;
+            tagged[idx].weight      = u.weight;
+            tagged[idx].finalWeight = u.finalWeight;
+            tagged[idx].llm_reviewed    = u.llm_reviewed;
+            tagged[idx].llm_confidence  = u.llm_confidence;
+            tagged[idx].llm_is_real_catalyst = u.llm_is_real_catalyst;
+          }
+        }
+      }
+    }
+
+    // 情绪指数（使用 LLM 修正后的 sentiment/weight）
     const score = tagged.reduce((s, i) => s + i.sentiment * i.weight, 0);
 
     // 模式识别
@@ -395,7 +421,7 @@ function buildReport(results) {
   h('| 情绪背离 | 有黑天鹅但市场仍乐观 | 先规避，等事件明朗 |');
   h('');
   h('---');
-  h(`*生成时间: ${new Date().toISOString()} | 数据来源: 东方财富/新浪财经/巨潮资讯/研报*`);
+  h(`*生成时间: ${new Date().toISOString()} | 数据来源: 东方财富/新浪财经/巨潮资讯/研报${llmFlag ? ' + DeepSeek 复评' : ''}*`);
 
   return lines.join('\n');
 }
@@ -455,8 +481,9 @@ function formatDetail(r) {
 async function main() {
   console.log('');
   console.log('╔══════════════════════════════════════════════════════════╗');
-  console.log('║   A股新闻情绪量化分析 → 可交易信号  v1.0               ║');
+  console.log('║   A股新闻情绪量化分析 → 可交易信号  v1.1               ║');
   console.log(`║   分析窗口: ${cutoffStr} ~ ${todayStr}                    ║`);
+  console.log(`║   LLM 复评: ${llmFlag ? (isLLMEnabled() ? '已启用 (DeepSeek)' : '无 API Key，跳过') : '已关闭'}                           ║`);
   console.log('╚══════════════════════════════════════════════════════════╝');
   console.log('');
 
@@ -537,6 +564,7 @@ async function main() {
         type: t.type,
         sentiment: t.sentiment,
         weight: t.weight,
+        ...(t.llm_reviewed ? { llm_reviewed: true, llm_confidence: t.llm_confidence } : {}),
       })),
     }])),
   };

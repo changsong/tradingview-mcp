@@ -8,7 +8,7 @@
  *  - title + content scoring + negation window
  *  - Three-stage weight: sourceAuthority × typeMul × recencyDecay
  *  - 0-100 normalized score (neutral=50)
- *  - Optional LLM rerate (NEWS_LLM=1 or --llm)
+ *  - LLM rerate enabled by default (--no-llm to disable)
  */
 
 import { readFileSync, writeFileSync } from 'fs';
@@ -35,7 +35,7 @@ cutoff.setDate(today.getDate() - DAYS_BACK);
 const cutoffStr = cutoff.toISOString().split('T')[0];
 const todayStr  = today.toISOString().split('T')[0];
 
-const llmFlag = process.argv.includes('--llm') || process.env.NEWS_LLM === '1';
+const llmFlag = !process.argv.includes('--no-llm');
 
 // ─── Lightweight ticker → company name map for cross-stock dedup ─────────────
 // 不必完整；缺失时仅用 ticker 自身做主体校验。常用名可在此扩充。
@@ -227,7 +227,7 @@ function buildReport(results) {
   h('| Divergence | Black swan present but mostly bullish | Avoid first, wait for clarity |');
   h('');
   h('---');
-  h(`*Generated: ${new Date().toISOString()} | Sources: Yahoo / Finnhub / MarketWatch / NewsAPI / Seeking Alpha${llmFlag ? ' + Claude Haiku' : ''}*`);
+  h(`*Generated: ${new Date().toISOString()} | Sources: Yahoo / Finnhub / MarketWatch / NewsAPI / Seeking Alpha${llmFlag ? ' + DeepSeek' : ''}*`);
 
   return lines.join('\n');
 }
@@ -238,7 +238,7 @@ async function main() {
   console.log('================================================================');
   console.log('  US Stock News Sentiment Analysis -> Tradeable Signals (v2)');
   console.log(`  Window: ${cutoffStr} ~ ${todayStr}`);
-  console.log(`  LLM Rerate: ${llmFlag ? (isLLMEnabled() ? 'enabled (Claude Haiku)' : 'requested but no API key') : 'disabled'}`);
+  console.log(`  LLM Rerate: ${llmFlag ? (isLLMEnabled() ? 'enabled (DeepSeek)' : 'requested but no DEEPSEEK_API_KEY') : 'disabled'}`);
   console.log('================================================================');
   console.log('');
 

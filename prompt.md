@@ -57,11 +57,8 @@ npm run combined:cn
 
 
 
-> 💡 一键全跑：`npm run full:cn`（=news:cn + tech:cn + combined:cn）
-
-
 ### 美股 30分钟左右
-使用 `./scripts/launch_tv_debug.bat` 启动TradingView，请使用策略名为：US Stock SQZMOM Daily PRO v4 (ATR + EMA20 Stop), 设置图表周期为天。然后执行：
+使用 `./scripts/launch_tv_debug.bat` 启动TradingView，请使用策略名为：US Stock SQZMOM Daily PRO v7 (Max Loss Cap), 设置图表周期为天。然后执行：
 
 ```bash
 npm run scan:us
@@ -95,7 +92,7 @@ npm run tech:us
 
 【交易信号】结论（Long/Short/Wait）+ 类型（Breakout/Pullback/Reversal/Trend/Overheat）+ 是否追涨 + 关键风险（压力位/动能衰/诱多/假突）。
 
-### 合并分析
+## 合并分析
 直接执行：
 
 ```bash
@@ -112,22 +109,7 @@ npm run combined:us
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+> 💡 一键全跑：`npm run full:cn`（=news:cn + tech:cn + combined:cn）
 
 > 💡 一键全跑：`npm run full:us`
  ## 单只股票涨跌分析                                          
