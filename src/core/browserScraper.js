@@ -1,17 +1,35 @@
 /**
- * Shared Crawlee + Playwright scraper utility.
- * Wraps PlaywrightCrawler for single-URL fetches with:
- *  - fingerprint injection (anti-bot, built into Crawlee v3)
- *  - in-memory storage only (no crawlee_storage/ dirs on disk)
- *  - configurable locale, waitUntil, and timeout
- *  - graceful [] return on any error or timeout
+ * Shared Playwright-based scraper utility.
+ * Provides scrapeOne() for single-URL browser fetches with:
+ *  - Anti-bot browser context (UA, viewport, locale, headers)
+ *  - System Chrome preferred (avoids downloading extra binaries)
+ *  - Graceful [] return on any error or timeout
+ *
+ * Uses raw Playwright (chromium.launch) instead of Crawlee's
+ * launchPersistentContext, which is slow on Windows with system Chrome.
  */
 
-import { PlaywrightCrawler, Configuration } from '@crawlee/playwright';
-import { MemoryStorage } from '@crawlee/memory-storage';
+import { chromium } from 'playwright';
+import { existsSync } from 'fs';
+
+// System Chrome candidates — same search order as xueqiu.js
+const CHROME_PATHS = [
+  'C:\\Program Files\\Google\\Chrome\\Application\\chrome.exe',
+  'C:\\Program Files (x86)\\Google\\Chrome\\Application\\chrome.exe',
+  process.env.LOCALAPPDATA + '\\Google\\Chrome\\Application\\chrome.exe',
+];
+
+function findChrome() {
+  for (const p of CHROME_PATHS) {
+    if (p && existsSync(p)) return p;
+  }
+  return null;
+}
+
+const CHROME_EXECUTABLE = findChrome();
 
 /**
- * Scrape a single URL using Crawlee + Playwright.
+ * Scrape a single URL using Playwright with anti-bot browser settings.
  *
  * @param {string} url
  * @param {(page: import('playwright').Page) => Promise<any>} handler
@@ -29,53 +47,50 @@ export async function scrapeOne(url, handler, options = {}) {
     waitUntil   = 'domcontentloaded',
   } = options;
 
-  let result = [];
-
-  // In-memory storage: no crawlee_storage/ or storage/ dirs created on disk
-  const config = new Configuration({
-    storageClient: new MemoryStorage({ persistStorage: false }),
-  });
-
-  const crawler = new PlaywrightCrawler(
-    {
-      // Fingerprint injection is on by default in Crawlee v3
-      browserPoolOptions: {
-        // Retire the browser after one page — mimics xueqiu.js browser.close() pattern
-        retireBrowserAfterPageCount: 1,
-      },
-      launchContext: {
-        launchOptions: {
-          headless: true,
-          locale,
-          args: ['--no-sandbox', '--disable-setuid-sandbox'],
-        },
-      },
-      preNavigationHooks: [
-        async (_ctx, gotoOptions) => {
-          gotoOptions.waitUntil = waitUntil;
-        },
-      ],
-      navigationTimeoutSecs:     timeoutSecs,
-      requestHandlerTimeoutSecs: timeoutSecs,
-      maxRequestRetries: 0,   // no retries; caller already handles [] via trackSource
-      maxConcurrency: 1,
-
-      async requestHandler({ page }) {
-        result = await handler(page);
-      },
-
-      async failedRequestHandler() {
-        // silent — result stays []
-      },
-    },
-    config,
-  );
+  const isZhCN = locale === 'zh-CN';
+  let browser = null;
 
   try {
-    await crawler.run([url]);
-  } catch (_) {
-    // swallow any Crawlee-level errors
-  }
+    const launchOptions = {
+      headless: true,
+      args: [
+        '--no-sandbox',
+        '--disable-setuid-sandbox',
+        '--disable-blink-features=AutomationControlled',
+        '--disable-infobars',
+      ],
+    };
+    if (CHROME_EXECUTABLE) {
+      launchOptions.executablePath = CHROME_EXECUTABLE;
+    }
 
-  return result;
+    browser = await chromium.launch(launchOptions);
+
+    const context = await browser.newContext({
+      locale,
+      userAgent: isZhCN
+        ? 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36'
+        : 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/121.0.0.0 Safari/537.36',
+      viewport: { width: 1920, height: 1080 },
+      extraHTTPHeaders: {
+        'Accept-Language': isZhCN ? 'zh-CN,zh;q=0.9,en;q=0.8' : 'en-US,en;q=0.9',
+        'Accept': 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8',
+      },
+    });
+
+    // Mask automation indicators
+    await context.addInitScript(() => {
+      Object.defineProperty(navigator, 'webdriver', { get: () => undefined });
+    });
+
+    const page = await context.newPage();
+    await page.goto(url, { waitUntil, timeout: timeoutSecs * 1000 });
+
+    const result = await handler(page);
+    return result ?? [];
+  } catch (_) {
+    return [];
+  } finally {
+    if (browser) await browser.close().catch(() => {});
+  }
 }
