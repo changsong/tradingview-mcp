@@ -5,6 +5,7 @@
  */
 
 import { fetchXueqiuPosts as fetchXueqiuWithPuppeteer } from './xueqiu.js';
+import { scrapeOne } from './browserScraper.js';
 
 // UA 池：轮换降低被 Eastmoney/Sina 限流概率
 const UA_POOL = [
@@ -302,142 +303,89 @@ async function fetchKuaixunNews(keywords, count = 10) {
   }
 }
 
-// 获取股吧热帖 (通过解析 HTML) - 东方财富
+// 获取股吧热帖 — Playwright renders JS so window.article_list is always available
 async function fetchGubaHot(code, count = 10) {
   const url = `https://guba.eastmoney.com/list,${code}.html`;
-
   try {
-    const res = await fetchWithTimeout(url, {
-      headers: {
-        'Referer': 'https://guba.eastmoney.com/',
-        'Accept': 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8',
-      },
-    });
-    const html = await res.text();
-
-    // 提取 article_list 变量
-    const match = html.match(/var article_list=({.*?});/s);
-    if (!match) {
-      return [];
-    }
-
-    const data = JSON.parse(match[1]);
-    if (!data.re || !Array.isArray(data.re)) {
-      return [];
-    }
-
-    return data.re.slice(0, count).map(item => ({
-      title: item.post_title,
-      source: '东方财富股吧',
-      date: item.post_publish_time,
-      replies: item.post_comment_count,
-      views: item.post_click_count,
-      author: item.user_nickname,
-      url: `https://guba.eastmoney.com/news,${code},${item.post_id}.html`,
-      type: 'forum',
-    }));
+    return await scrapeOne(url, async (page) => {
+      const data = await page.evaluate(() => {
+        try { return window.article_list; } catch { return null; }
+      });
+      if (!data?.re || !Array.isArray(data.re)) return [];
+      return data.re.slice(0, count).map(item => ({
+        title: item.post_title,
+        source: '东方财富股吧',
+        date: item.post_publish_time,
+        replies: item.post_comment_count,
+        views: item.post_click_count,
+        author: item.user_nickname,
+        url: `https://guba.eastmoney.com/news,${code},${item.post_id}.html`,
+        type: 'forum',
+      }));
+    }, { locale: 'zh-CN' });
   } catch (err) {
     return [];
   }
 }
 
-// 获取同花顺财经社区大盘观点（用于大盘情绪分析，非个股）
+// 获取同花顺财经社区大盘观点 — Playwright bypasses WAF + renders dynamic content
 async function fetchThsMarketSentiment(count = 10) {
-  // 同花顺财经社区 - 用于分析大盘整体情绪
-  const url = 'https://t.10jqka.com.cn/';
-
-  try {
-    const res = await fetchWithTimeout(url, {
-      headers: { 'Referer': 'https://www.10jqka.com.cn/' },
-    });
-
-    if (res.status !== 200) {
-      return [];
-    }
-
-    const html = await res.text();
-
-    // 提取市场观点（包含"今天"、"明天"、"大盘"、"市场"的内容）
-    const posts = [];
-    const viewMatches = html.matchAll(/<div[^>]*class="[^"]*(?:content|text|view|opinion)[^"]*"[^>]*>([^<]{20,300})<\/div>/gi);
-
-    for (const match of viewMatches) {
-      if (posts.length >= count) break;
-
-      const content = match[1].trim();
-
-      // 筛选包含关键词的观点
-      if (
-        content.length > 20 &&
-        content.length < 300 &&
-        (content.includes('今天') ||
-          content.includes('明天') ||
-          content.includes('大盘') ||
-          content.includes('市场'))
-      ) {
-        posts.push({
-          title: content.substring(0, 100) + (content.length > 100 ? '...' : ''),
-          content: content,
-          source: '同花顺财经社区',
-          date: new Date().toISOString().split('T')[0],
-          type: 'market_view',
-        });
+  return scrapeOne('https://t.10jqka.com.cn/', async (page) => {
+    await page.waitForTimeout(2000);
+    return page.evaluate((maxCount) => {
+      const posts = [];
+      const divs = document.querySelectorAll(
+        '[class*="content"],[class*="text"],[class*="view"],[class*="opinion"]'
+      );
+      for (const el of divs) {
+        if (posts.length >= maxCount) break;
+        const content = el.textContent?.trim() || '';
+        if (
+          content.length > 20 && content.length < 300 &&
+          (content.includes('今天') || content.includes('明天') ||
+           content.includes('大盘') || content.includes('市场'))
+        ) {
+          posts.push({
+            title: content.substring(0, 100) + (content.length > 100 ? '...' : ''),
+            content,
+            source: '同花顺财经社区',
+            date: new Date().toISOString().split('T')[0],
+            type: 'market_view',
+          });
+        }
       }
-    }
-
-    return posts;
-  } catch (err) {
-    return [];
-  }
+      return posts;
+    }, count);
+  }, { locale: 'zh-CN', waitUntil: 'networkidle' });
 }
 
-// 获取新浪财经股吧
+// 获取新浪财经股吧 — Playwright handles GB2312 charset automatically
 async function fetchSinaGuba(code, count = 10) {
-  // 新浪股吧需要转换代码格式
   const sinaCode = code.startsWith('6') ? `sh${code}` : `sz${code}`;
   const url = `https://guba.sina.com.cn/bar.php?name=${sinaCode}`;
-
-  try {
-    const res = await fetchWithTimeout(url, {
-      headers: { 'Referer': 'https://finance.sina.com.cn/' },
-    });
-
-    if (res.status !== 200) {
-      return [];
-    }
-
-    // 新浪股吧使用GB2312编码，需要转换
-    const buffer = await res.arrayBuffer();
-    const decoder = new TextDecoder('gb2312');
-    const html = decoder.decode(buffer);
-
-    // 提取帖子列表 - 新浪的表格结构
+  return scrapeOne(url, async (page) => {
+    const html = await page.content();   // UTF-8; browser auto-decodes GB2312
     const posts = [];
-    const trMatches = html.matchAll(/<tr[^>]*>.*?<td>.*?<a href="([^"]*)"[^>]*>([^<]+)<\/a>.*?<td>([^<]*)<\/td>.*?<\/tr>/gs);
-
+    const trMatches = html.matchAll(
+      /<tr[^>]*>.*?<td>.*?<a href="([^"]*)"[^>]*>([^<]+)<\/a>.*?<td>([^<]*)<\/td>.*?<\/tr>/gs
+    );
     for (const match of trMatches) {
       if (posts.length >= count) break;
-
       const title = match[2].trim();
-      const url = match[1];
+      const postUrl = match[1];
       const date = match[3].trim();
-
-      // 过滤掉无效的标题
       if (title && title.length > 5 && !title.includes('class=')) {
         posts.push({
-          title: title,
+          title,
           source: '新浪股吧',
-          date: date,
-          url: url.startsWith('http') ? url : `https://guba.sina.com.cn${url}`,
+          date,
+          url: postUrl.startsWith('http') ? postUrl : `https://guba.sina.com.cn${postUrl}`,
           type: 'forum',
         });
       }
     }
-
     return posts;
-  } catch (err) {
-    return [];
-  }
+  }, { locale: 'zh-CN' });
 }
 
 // 获取东方财富个股资讯（按股票代码精准过滤，比 fetchKuaixunNews 命中率高）
@@ -492,23 +440,12 @@ async function fetchEastmoneyAnnouncements(code, count = 10) {
   }
 }
 
-// 获取新浪财经个股新闻（与 fetchSinaGuba 互补：这是真实新闻流，非论坛帖）
+// 获取新浪财经个股新闻 — Playwright handles GB2312 charset automatically
 async function fetchSinaStockNews(code, count = 10) {
   const sinaCode = code.startsWith('6') ? `sh${code}` : `sz${code}`;
   const url = `https://vip.stock.finance.sina.com.cn/corp/view/vCB_AllNewsStock.php?symbol=${sinaCode}&Page=1`;
-
-  try {
-    const res = await fetchWithTimeout(url, {
-      headers: { 'Referer': 'https://finance.sina.com.cn/' },
-    });
-
-    if (res.status !== 200) return [];
-
-    // 新浪 GB2312 编码
-    const buffer = await res.arrayBuffer();
-    const html = new TextDecoder('gb2312').decode(buffer);
-
-    // 抓取新闻链接：<a target='_blank' href='...'>标题</a> 后面跟着日期
+  return scrapeOne(url, async (page) => {
+    const html = await page.content();   // UTF-8; browser auto-decodes GB2312
     const items = [];
     const linkRe = /<a\s+target=['"]_blank['"]\s+href=['"]([^'"]+)['"]>([^<]{8,80})<\/a>(?:\s|&nbsp;){0,5}\(?(\d{4}-\d{2}-\d{2})/g;
     let m;
@@ -517,34 +454,18 @@ async function fetchSinaStockNews(code, count = 10) {
       const [, link, title, date] = m;
       const cleanTitle = title.trim();
       if (cleanTitle.length < 5) continue;
-      items.push({
-        title: cleanTitle,
-        source: '新浪财经',
-        date,
-        url: link,
-        type: 'news',
-      });
+      items.push({ title: cleanTitle, source: '新浪财经', date, url: link, type: 'news' });
     }
-
-    // 兜底：链接+标题（无日期），用于 sina 改版后正则失效时
+    // Fallback: links without dates (handles Sina layout changes)
     if (items.length === 0) {
       const fallbackRe = /<a\s+target=['"]_blank['"]\s+href=['"](https?:\/\/[^'"]+sina[^'"]+)['"]>([^<]{10,80})<\/a>/g;
       while ((m = fallbackRe.exec(html)) !== null) {
         if (items.length >= count) break;
-        items.push({
-          title: m[2].trim(),
-          source: '新浪财经',
-          date: '',
-          url: m[1],
-          type: 'news',
-        });
+        items.push({ title: m[2].trim(), source: '新浪财经', date: '', url: m[1], type: 'news' });
       }
     }
-
     return items;
-  } catch (err) {
-    return [{ error: `新浪个股新闻获取失败: ${err.message}` }];
-  }
+  }, { locale: 'zh-CN' });
 }
 
 // 获取巨潮资讯公告（深交所/上交所官方披露平台，权威性最高）

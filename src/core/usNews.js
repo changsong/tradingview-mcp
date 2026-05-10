@@ -3,6 +3,28 @@
  * Fetches from Reddit, Seeking Alpha, StockTwits, and Bogleheads
  */
 
+import { scrapeOne } from './browserScraper.js';
+
+// Concurrency limiter for browser-based fetchers (avoids too many headless browsers at once)
+function createLimiter(maxConcurrent) {
+  let active = 0;
+  const queue = [];
+  const dequeue = () => {
+    if (active >= maxConcurrent || queue.length === 0) return;
+    const { fn, resolve, reject } = queue.shift();
+    active++;
+    Promise.resolve()
+      .then(fn)
+      .then(resolve, reject)
+      .finally(() => { active--; dequeue(); });
+  };
+  return (fn) => new Promise((resolve, reject) => {
+    queue.push({ fn, resolve, reject });
+    dequeue();
+  });
+}
+const browserLimit = createLimiter(4);
+
 // English sentiment keywords for US stocks
 const SENTIMENT_KEYWORDS = {
   bullish: [
@@ -414,26 +436,13 @@ async function fetchYahooConversations(symbol, count = 10) {
   }
 }
 
-// Fetch Seeking Alpha news via public RSS feed (Cloudflare-friendly)
+// Fetch Seeking Alpha news via RSS — Playwright bypasses Cloudflare WAF
 async function fetchSeekingAlpha(symbol, count = 10) {
   const url = `https://seekingalpha.com/api/sa/combined/${symbol}.xml`;
-
-  try {
-    const res = await fetch(url, {
-      headers: {
-        'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36',
-        'Accept': 'application/rss+xml,application/xml,text/xml',
-      },
-    });
-
-    if (res.status !== 200) {
-      return [];
-    }
-
-    const xml = await res.text();
-    if (!xml.includes('<item>')) {
-      return [];
-    }
+  return browserLimit(() => scrapeOne(url, async (page) => {
+    // page.content() returns the XML (browser may wrap in <html><body><pre>; <item> tags still present)
+    const xml = await page.content();
+    if (!xml.includes('<item>')) return [];
 
     const items = [];
     const itemMatches = xml.matchAll(/<item>([\s\S]*?)<\/item>/g);
@@ -449,7 +458,6 @@ async function fetchSeekingAlpha(symbol, count = 10) {
 
       if (!title || !link) continue;
 
-      // Classify by URL pattern: article = analysis, MarketCurrent = news flash
       const itemType = link.includes('/article/') ? 'analysis'
                      : link.includes('MarketCurrent') || link.includes('/news') ? 'news'
                      : 'news';
@@ -465,113 +473,106 @@ async function fetchSeekingAlpha(symbol, count = 10) {
         type: itemType,
       });
     }
-
     return items;
-  } catch (err) {
-    console.error(`Seeking Alpha fetch error: ${err.message}`);
-    return [];
-  }
+  }, { locale: 'en-US' }));
 }
 
-// Fetch StockTwits messages with full browser headers (+ optional OAuth token)
-// StockTwits API now sits behind Cloudflare. With STOCKTWITS_TOKEN env var set,
-// requests go to the authenticated endpoint (200 req/hour). Without it, attempts the
-// public stream with browser-mimicking headers (works in some regions / sometimes).
+// Fetch StockTwits messages — token fast-path, then Playwright page scrape for Cloudflare bypass
 async function fetchStockTwits(symbol, count = 10) {
   const token = process.env.STOCKTWITS_TOKEN;
-  const url = token
-    ? `https://api.stocktwits.com/api/2/streams/symbol/${symbol}.json?limit=${count}&access_token=${token}`
-    : `https://api.stocktwits.com/api/2/streams/symbol/${symbol}.json?limit=${count}`;
 
-  const headers = {
-    'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36',
-    'Accept': 'application/json',
-    'Accept-Language': 'en-US,en;q=0.9',
-    'Referer': `https://stocktwits.com/symbol/${symbol}`,
-  };
+  // Fast path: authenticated API endpoint works reliably when token is set
   if (token) {
-    headers['Authorization'] = `OAuth ${token}`;
+    try {
+      const url = `https://api.stocktwits.com/api/2/streams/symbol/${symbol}.json?limit=${count}&access_token=${token}`;
+      const res = await fetch(url, {
+        headers: {
+          'Authorization': `OAuth ${token}`,
+          'Accept': 'application/json',
+        },
+      });
+      if (res.status === 200) {
+        const ctype = res.headers.get('content-type') || '';
+        if (ctype.includes('json')) {
+          const data = await res.json();
+          if (data?.messages) {
+            return data.messages.slice(0, count).map(item => ({
+              title: (item.body || '').substring(0, 100) + ((item.body?.length || 0) > 100 ? '...' : ''),
+              content: item.body || '',
+              author: item.user?.username || 'Anonymous',
+              date: item.created_at ? new Date(item.created_at).toISOString().split('T')[0] : '',
+              likes: item.likes?.total || 0,
+              url: `https://stocktwits.com/${item.user?.username}/message/${item.id}`,
+              sentiment: item.entities?.sentiment?.basic?.toLowerCase() || 'neutral',
+              source: 'StockTwits',
+              type: 'social',
+            }));
+          }
+        }
+      }
+    } catch (_) { /* fall through to browser */ }
   }
 
-  try {
-    const res = await fetch(url, { headers });
-
-    if (res.status !== 200) {
-      // 401/403 = no token, 429 = rate limit, 503 = Cloudflare challenge
-      return [];
-    }
-
-    // Confirm response is JSON (Cloudflare challenges return HTML)
-    const ctype = res.headers.get('content-type') || '';
-    if (!ctype.includes('json')) {
-      return [];
-    }
-
-    const data = await res.json();
-    if (!data?.messages) {
-      return [];
-    }
-
-    return data.messages.slice(0, count).map(item => ({
-      title: (item.body || '').substring(0, 100) + ((item.body?.length || 0) > 100 ? '...' : ''),
-      content: item.body || '',
-      author: item.user?.username || 'Anonymous',
-      date: item.created_at ? new Date(item.created_at).toISOString().split('T')[0] : '',
-      likes: item.likes?.total || 0,
-      url: `https://stocktwits.com/${item.user?.username}/message/${item.id}`,
-      sentiment: item.entities?.sentiment?.basic?.toLowerCase() || 'neutral',
-      source: 'StockTwits',
-      type: 'social',
-    }));
-  } catch (err) {
-    console.error(`StockTwits fetch error: ${err.message}`);
-    return [];
-  }
+  // Browser path: navigate to the symbol page (bypasses Cloudflare challenge)
+  return browserLimit(() => scrapeOne(
+    `https://stocktwits.com/symbol/${symbol}`,
+    async (page) => {
+      await page.waitForSelector('[data-testid="message-item"], .st_2bT4b', { timeout: 15000 }).catch(() => {});
+      return page.evaluate((maxCount, sym) => {
+        const items = document.querySelectorAll('[data-testid="message-item"]');
+        const results = [];
+        for (const item of items) {
+          if (results.length >= maxCount) break;
+          const bodyEl = item.querySelector('[data-testid="message-body"], p');
+          const body = bodyEl?.textContent?.trim() || '';
+          if (!body) continue;
+          const authorEl = item.querySelector('[data-testid="username"], a[href^="/"]');
+          const author = authorEl?.textContent?.trim() || 'Anonymous';
+          const timeEl = item.querySelector('time');
+          const dateStr = timeEl?.getAttribute('datetime') || '';
+          results.push({
+            title: body.substring(0, 100) + (body.length > 100 ? '...' : ''),
+            content: body,
+            author,
+            date: dateStr ? new Date(dateStr).toISOString().split('T')[0] : '',
+            likes: 0,
+            url: `https://stocktwits.com/symbol/${sym}`,
+            sentiment: 'neutral',
+            source: 'StockTwits',
+            type: 'social',
+          });
+        }
+        return results;
+      }, count, symbol);
+    },
+    { locale: 'en-US', waitUntil: 'networkidle' },
+  ));
 }
 
-// Fetch Bogleheads forum discussions
+// Fetch Bogleheads forum discussions — Playwright renders phpBB search results reliably
 async function fetchBogleheads(symbol, count = 10) {
-  // Bogleheads forum search
   const searchTerm = encodeURIComponent(symbol);
   const url = `https://www.bogleheads.org/forum/search.php?keywords=${searchTerm}&terms=all&author=&fid%5B%5D=1&sc=1&sf=titleonly&sr=topics&sk=t&sd=d&st=0&ch=300&t=0&submit=Search`;
-
-  try {
-    const res = await fetch(url, {
-      headers: {
-        'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) Chrome/120.0.0.0',
-        'Accept': 'text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8',
-      },
-    });
-
-    if (res.status !== 200) {
-      return [];
-    }
-
-    const html = await res.text();
-    const posts = [];
-
-    // Extract topic rows
-    const topicMatches = html.matchAll(/<div class="topic-title"[^>]*>.*?<a href="([^"]+)"[^>]*>([^<]+)<\/a>.*?<\/div>/gs);
-
-    for (const match of topicMatches) {
-      if (posts.length >= count) break;
-
-      const url = match[1];
-      const title = match[2].trim();
-
-      posts.push({
-        title: title,
-        url: url.startsWith('http') ? url : `https://www.bogleheads.org/forum/${url}`,
-        source: 'Bogleheads',
-        type: 'forum',
-      });
-    }
-
-    return posts;
-  } catch (err) {
-    console.error(`Bogleheads fetch error: ${err.message}`);
-    return [];
-  }
+  return browserLimit(() => scrapeOne(url, async (page) => {
+    return page.evaluate((maxCount) => {
+      const posts = [];
+      const topicDivs = document.querySelectorAll('div.topic-title');
+      for (const div of topicDivs) {
+        if (posts.length >= maxCount) break;
+        const link = div.querySelector('a');
+        if (!link) continue;
+        const title = link.textContent.trim();
+        const href = link.getAttribute('href') || '';
+        posts.push({
+          title,
+          url: href.startsWith('http') ? href : `https://www.bogleheads.org/forum/${href}`,
+          source: 'Bogleheads',
+          type: 'forum',
+        });
+      }
+      return posts;
+    }, count);
+  }, { locale: 'en-US' }));
 }
 
 // Main function: search US stock news and community data
