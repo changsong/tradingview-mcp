@@ -1,8 +1,11 @@
 #!/usr/bin/env node
 /**
  * CN 合并分析：技术面 × 新闻情绪 → 最终交易排名 + 入场/止损/目标位
- * Combined = TechScore × 0.6 + NewsScore × 0.4 + (趋势类 ? +5 : 0) - (过热且非趋势类 ? 5 : 0)
+ * Combined = TechScore × 0.6 + NewsScore × 0.4
+ *          + (趋势类 ? +5 : 0) - (过热梯级惩罚)
+ *          + (全周期ADX>30 ? +8 : 0) + (全周期RSI 60-75 ? +5 : 0)
  *   （NewsScore 为原始情绪分,中性≈0;趋势类 = 突破型/趋势追涨/趋势延续）
+ *   （回溯优化 2026-05-11: 增加全周期ADX/RSI一致性加分 + 过热梯级化）
  *
  * 输入契约（pipeline 上游产物）：
  *   ./watchlist/cn_tech_signals.json   ← pipeline/3-technical/analyze_tech_cn_mtf.mjs
@@ -83,6 +86,25 @@ function calcLevels(price, atrPct, tradeType) {
   return { entry, stop, target, rr, stopMul };
 }
 
+// ── 全周期 ADX/RSI 一致性检查（回溯优化 2026-05-11）──
+const ALL_TFS = ['1W', '1D', '4H', '1H'];
+function allTfAdxAbove30(td) {
+  const tfs = td?.tf;
+  if (!tfs) return false;
+  return ALL_TFS.every(k => tfs[k]?.adx != null && tfs[k].adx > 30);
+}
+function allTfRsiInRange(td, lo, hi) {
+  const tfs = td?.tf;
+  if (!tfs) return false;
+  return ALL_TFS.every(k => tfs[k]?.rsi != null && tfs[k].rsi >= lo && tfs[k].rsi <= hi);
+}
+function calcOverheatPenalty(cls, isTrendy, td) {
+  if (!cls.overheated) return 0;
+  if (isTrendy) return 0;
+  if (allTfAdxAbove30(td)) return 2;
+  return 5;
+}
+
 function gradeOf(tech, cls) {
   if (cls.overheated && tech >= 38) return 'C+';      // 强技术 + 过热 → 等回调
   if (cls.long && !cls.overheated && tech >= 30) return 'A';
@@ -111,9 +133,11 @@ async function main() {
     const techScore = td.tech_score ?? 0;
     const newsScore = nd.score ?? 0;
     const isTrendy  = TRENDY_TYPES.test(td.type || '');
-    const overheatPenalty = (cls.overheated && !isTrendy) ? 5 : 0;
+    const overheatPenalty = calcOverheatPenalty(cls, isTrendy, td);
     const trendyBonus = isTrendy ? 5 : 0;
-    const combined  = +((techScore * 0.6) + (newsScore * 0.4) - overheatPenalty + trendyBonus).toFixed(1);
+    const adxAllBonus = allTfAdxAbove30(td) ? 8 : 0;
+    const rsiAllBonus = allTfRsiInRange(td, 60, 75) ? 5 : 0;
+    const combined  = +((techScore * 0.6) + (newsScore * 0.4) + trendyBonus + adxAllBonus + rsiAllBonus - overheatPenalty).toFixed(1);
     const levels    = calcLevels(td.price, td.atr_pct, td.type);
     const grade     = gradeOf(techScore, cls);
     rows.push({
@@ -128,8 +152,8 @@ async function main() {
   const p = s => L.push(s);
 
   p(`# 综合分析报告 · 最终入场排名（CN）`);
-  p(`**日期:** ${date}　　**方法:** 技术面 60% × 新闻情绪 40% - 过热惩罚`);
-  p(`**公式:** Combined = TechScore × 0.6 + NewsScore × 0.4 + (趋势类 ? +5 : 0) - (过热且非趋势类 ? 5 : 0)　　（NewsScore 为原始分,中性≈0）`);
+  p(`**日期:** ${date}　　**方法:** 技术面 60% × 新闻情绪 40% - 过热梯级惩罚<br/>**增强:** 全周期ADX一致性+8 + 全周期RSI持续性+5`);
+  p(`**公式:** Combined = TechScore × 0.6 + NewsScore × 0.4 + (趋势类 ? +5 : 0) + (全周期ADX>30 ? +8 : 0) + (全周期RSI 60-75 ? +5 : 0) - 过热梯级惩罚（有ADX支撑:-2,无:-5,趋势类免罚）　　（NewsScore 为原始分,中性≈0）`);
   p(`**数据源:** ${TECH_JSON} + ${NEWS_JSON}`);
   p('');
   p('---');

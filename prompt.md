@@ -1,6 +1,6 @@
 # 工作流
 1. 打开clash， vpn软件，可以访问外网
-2. 打开 cursor, 找到prompt.md, 在Termial 输入：claude --dangerously-skip-permissions，开始依次输入一下内容
+2. 打开 cursor, 找到prompt.md, 在Termial 输入：，开始依次输入一下内容claude --dangerously-skip-permissions
 3. A股跑完之后，Ctrl +c 连续2次退出，重新输入：claude --dangerously-skip-permissions，开始进行美股操作
 
 > ⚠️ **重要：流水线已固化**。每个段落对应**唯一固定的脚本路径**，请直接执行下面给出的命令，**不要重新生成脚本文件**。

@@ -338,25 +338,27 @@ async function scanStocks() {
   }
 
   // 筛选符合条件的股票（基于 SQZMOM v2 statusText 字段）
-  // 必须满足:
-  // 1. trendUp = true (上升趋势)
-  // 2. validCompression = true (有效压缩)
-  // 3. volOK = true (成交量确认)
-  // 4. rsiOK = true (RSI健康)
-  // 5. notHighVol = true (非高波动)
-  // 6. signal = 'LONG' (做多信号)
+  // 主通道（6条件AND）：
+  //   1. trendUp = true (上升趋势)
+  //   2. validCompression = true (有效压缩)
+  //   3. volOK = true (成交量确认)
+  //   4. rsiOK = true (RSI健康)
+  //   5. notHighVol = true (非高波动)
+  //   6. signal = 'LONG' (做多信号)
+  //
+  // 趋势延伸二级通道（回溯优化 2026-05-11）：
+  //   validCompression 可能为 false（已突破压缩阶段），
+  //   但 trendUp + volOK + rsiOK + notHighVol 全满足 → 可能是趋势加速中的股票
   const qualified = results.filter(r => {
-    return r.trendUp &&
-           r.validCompression &&
-           r.volOK &&
-           r.rsiOK &&
-           r.notHighVol &&
-           r.signal === 'LONG';
+    // 主通道：全条件满足
+    if (r.trendUp && r.validCompression && r.volOK && r.rsiOK && r.notHighVol && r.signal === 'LONG') return true;
+    // 二级通道：趋势延伸 — validCompression=false（已突破），但其他4个条件全满足
+    if (r.trendUp && !r.validCompression && r.volOK && r.rsiOK && r.notHighVol) return true;
+    return false;
   });
 
   console.log(`\n✅ 扫描完成！共分析 ${results.length}/${symbols.length} 个股票`);
-  console.log(`🎯 符合初步条件的股票 (${qualified.length}):\n`);
-
+  console.log(`🎯 符合初步条件的股票 (${qualified.length}，含二级趋势延伸通道):\n`);
   // ===== 对符合条件的股票进行深度分析 =====
   const detailedAnalysis = [];
 

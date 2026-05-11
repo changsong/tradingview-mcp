@@ -576,9 +576,11 @@ function scoreTF(bars, tfKey, live = {}, extra = {}) {
 
   // RS vs CSI300 (仅 1D)
   if (extra.rs != null && tfKey === '1D') {
-    if (extra.rs > 5)       { score += 6; notes.push(`RS+${extra.rs}% 跑赢大盘(+6)★`); }
-    else if (extra.rs > 0)  { score += 3; notes.push(`RS+${extra.rs}% 略强大盘(+3)`); }
-    else if (extra.rs < -5) { score -= 4; notes.push(`RS${extra.rs}% 跑输大盘(-4)`); }
+    if (extra.rs > 50)       { score += 15; notes.push(`RS+${extra.rs}% 远超大盘(+15)★★★`); }
+    else if (extra.rs > 30)  { score += 10; notes.push(`RS+${extra.rs}% 大幅跑赢(+10)★★`); }
+    else if (extra.rs > 15)  { score += 5;  notes.push(`RS+${extra.rs}% 跑赢大盘(+5)★`); }
+    else if (extra.rs > 0)   { score += 2;  notes.push(`RS+${extra.rs}% 略强大盘(+2)`); }
+    else if (extra.rs < -5)  { score -= 4;  notes.push(`RS${extra.rs}% 跑输大盘(-4)`); }
   }
 
   return {
