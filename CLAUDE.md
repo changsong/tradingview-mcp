@@ -56,11 +56,11 @@ Pine graphics path: `study._graphics._primitivesCollection.dwglines.get('lines')
 
 ## Analysis Pipeline
 
-The end-to-end stock-screening workflow is a fixed 4-stage pipeline. Each stage maps to **one** script — do NOT regenerate scripts.
+The end-to-end stock-screening workflow is a fixed 5-stage pipeline. Each stage maps to **one** script — do NOT regenerate scripts.
 
 ```
-1-scan  → 2-news  → 3-technical  → 4-combined
-                                 → reports/<YYYY-MM-DD>/  (auto snapshot)
+1-scan  → 2-news  → 3-technical  → 4-combined  → reports/<YYYY-MM-DD>/  (auto snapshot)
+                                              ↘ (next day) 5-review → 权重调整建议
 ```
 
 | Stage | Script | NPM | Output |
@@ -69,6 +69,7 @@ The end-to-end stock-screening workflow is a fixed 4-stage pipeline. Each stage 
 | 2. News | `pipeline/2-news/analyze_{cn,us}_news.mjs` | `news:cn` / `news:us` | `watchlist/{cn,us}_news_signals.{md,json}` |
 | 3. Technical | `pipeline/3-technical/analyze_tech_{cn,us}_mtf.mjs` | `tech:cn` / `tech:us` | `watchlist/{cn,us}_tech_signals.{md,json}` |
 | 4. Combined | `pipeline/4-combined/analyze_{cn,us}_combined.mjs` | `combined:cn` / `combined:us` | `watchlist/{cn,us}_combined_signals.md` + `reports/<date>/` |
+| 5. Review | `pipeline/5-review/review_{cn,us}.mjs` | `review:cn` / `review:us` | `watchlist/{cn,us}_review.{md,json}` + `reports/<date>/` |
 
 **JSON contracts** are the integration layer. Each `*.md` is human-readable; each `*.json` is the machine input for the next stage. The combined-stage script reads the two upstream JSONs and never hardcodes data — that was the historical pain point and is what these contracts solve.
 
@@ -79,7 +80,9 @@ The end-to-end stock-screening workflow is a fixed 4-stage pipeline. Each stage 
 
 **Snapshot**: `pipeline/lib/snapshot.mjs` copies `watchlist/<market>_*.{md,json}` to `reports/<YYYY-MM-DD>/` at the end of each combined run, giving a per-day audit trail.
 
-**One-shot**: `npm run full:cn` / `npm run full:us` runs news → tech → combined sequentially.
+**Stage 5 — 回归检核 (Regression validation)**: Run after market close (or before next session). `review:cn` / `review:us` fetches today's daily change% for every symbol in `<market>_selected.txt`, picks top-10 gainers + top-10 losers, looks each up in the **previous-day** `reports/<date>/` to extract categorical features (news patterns, tech flags, RSI/ADX/MACD buckets), then tallies common features per group and emits weight-adjustment recommendations with exact `file:line` references. **It does NOT modify any scoring source — recommendations require human review.** Outputs land in `watchlist/<market>_review.{md,json}` and are snapshotted to `reports/<today>/`. Independent of `full:cn` / `full:us` (different time semantics).
+
+**One-shot**: `npm run full:cn` / `npm run full:us` runs news → tech → combined sequentially. (Stage 5 is intentionally not chained — needs today's close + yesterday's snapshot.)
 
 **Archived assets**: legacy analysis scripts, time-stamped reports, and old Pine versions live under `archive/` (kept for reference; do not edit). Active Pine strategies live in `pine/`.
 

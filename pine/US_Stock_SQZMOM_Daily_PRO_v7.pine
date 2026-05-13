@@ -252,9 +252,9 @@ plot(ema60,    "EMA60",     color=color.blue,   linewidth=1)
 plotchar(score, "Score", "⭐", location.top)
 barcolor(rsi > rsiOverbought ? color.new(color.red, 60) : na)
 
-string p1 = "trendUp:" + str.tostring(trendUp) + " EMA20↑:" + str.tostring(ema20Rising) + " valAccel:" + str.tostring(valAccel)
-string p2 = "RSI:" + str.tostring(math.round(rsi)) + " hhvBreak:" + str.tostring(hhvBreak) + " validComp:" + str.tostring(validCompression)
-string st_txt = p1 + " | " + p2 + " | Score:" + str.tostring(score) + (score >= minScore ? " 🟢LONG" : " 🔴WAIT")
+string p1 = "trendUp:" + str.tostring(trendUp) + " validComp:" + str.tostring(validCompression) + " volOK:" + str.tostring(volOK) + " rsiOK:" + str.tostring(rsiOK) + " notHighVol:" + str.tostring(validStock)
+string p2 = "EMA20↑:" + str.tostring(ema20Rising) + " valAccel:" + str.tostring(valAccel) + " hhvBreak:" + str.tostring(hhvBreak)
+string st_txt = p1 + " " + p2 + " " + str.tostring(score) + (score >= minScore ? " 🟢 LONG" : " 🔴 WAIT")
 color statusColor = score >= minScore ? color.green : color.red
 var table panel = table.new(position.top_right, 1, 1)
 table.cell(panel, 0, 0, st_txt, bgcolor=statusColor, text_color=color.white, text_size=size.small)
