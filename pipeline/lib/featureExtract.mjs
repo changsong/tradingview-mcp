@@ -271,6 +271,7 @@ const TECH_FEATURES_COMMON = {
   // ADX
   'tech.1D.adx.strong':     { label: 'ADX>30 强趋势 (1D)', current: 6 },
   'tech.1W.adx.strong':     { label: 'ADX>30 强趋势 (1W)', current: 6 },
+  'tech.4H.adx.strong':     { label: 'ADX>30 强趋势 (4H)', current: 6 },
   'tech.1D.adx.chop':       { label: 'ADX<20 震荡折半 (1D)', current: 0 /* multiplier 0.5 */ },
   // RSI
   'tech.1D.rsi.healthy':    { label: 'RSI 50-72健康 (1D)', current: 8 },
@@ -278,7 +279,8 @@ const TECH_FEATURES_COMMON = {
   'tech.1D.rsi.overheat':   { label: 'RSI>80超买 (1D)',    current: -12 },
   // MACD
   'tech.1D.macd.turning':   { label: 'MACD金叉/柱转正 (1D)', current: 12 },
-  'tech.1D.macd.bullish':   { label: 'MACD柱正在零上 (1D)',  current: 8 },
+  'tech.1D.macd.bullish':   { label: 'MACD柱正在零上 (1D)',  current: 10 },
+  'tech.1W.macd.bullish':   { label: 'MACD柱正在零上 (1W)',  current: 8 },
   // Divergence
   'tech.1D.divergence.bull':{ label: 'RSI看多背离 (1D)',   current: 10 },
   'tech.1D.divergence.bear':{ label: 'RSI看空背离 (1D)',   current: -10 },
@@ -297,7 +299,7 @@ const TECH_FEATURES_COMMON = {
   'tech.flag.bull_trap':      { label: '诱多 (高位+压力)', current: -12 },
   'tech.flag.fake_breakout':  { label: '假突 (高位+低量)', current: -10 },
   'tech.flag.bear_div':       { label: '看空背离',         current: -6 },
-  'tech.flag.bad_rr':         { label: 'R/R<1.5',          current: -4 },
+  'tech.flag.bad_rr':         { label: 'R/R<1.5',          current: -3 },
   'tech.flag.chop':           { label: '震荡市',           current: -4 },
   'tech.flag.momentum_decay': { label: '动能衰减',         current: null },
   'tech.flag.resistance':     { label: '近压力位/年内高',  current: null },
@@ -315,6 +317,8 @@ const TECH_FEATURES_COMMON = {
   // RS
   'tech.rs.strong':           { label: 'RS 跑赢大盘',       current: 5 },
   'tech.rs.weak':             { label: 'RS 跑输大盘',       current: -4 },
+  // Score buckets (descriptive)
+  'tech.score.mid':           { label: '技术分15-35中等区间', current: null },
 };
 
 const NEWS_FEATURES_COMMON = {
@@ -358,12 +362,14 @@ const CN_TECH_PATHS = {
   'tech.1D.dist20.overheat':  'pipeline/3-technical/analyze_tech_cn_mtf.mjs:511',
   'tech.1D.adx.strong':       'pipeline/3-technical/analyze_tech_cn_mtf.mjs:515',
   'tech.1W.adx.strong':       'pipeline/3-technical/analyze_tech_cn_mtf.mjs:515',
+  'tech.4H.adx.strong':       'pipeline/3-technical/analyze_tech_cn_mtf.mjs:515',
   'tech.1D.adx.chop':         'pipeline/3-technical/analyze_tech_cn_mtf.mjs:501',
   'tech.1D.rsi.healthy':      'pipeline/3-technical/analyze_tech_cn_mtf.mjs:522',
   'tech.1D.rsi.oversold':     'pipeline/3-technical/analyze_tech_cn_mtf.mjs:523',
   'tech.1D.rsi.overheat':     'pipeline/3-technical/analyze_tech_cn_mtf.mjs:524',
   'tech.1D.macd.turning':     'pipeline/3-technical/analyze_tech_cn_mtf.mjs:525',
   'tech.1D.macd.bullish':     'pipeline/3-technical/analyze_tech_cn_mtf.mjs:526',
+  'tech.1W.macd.bullish':     'pipeline/3-technical/analyze_tech_cn_mtf.mjs:526',
   'tech.1D.divergence.bull':  'pipeline/3-technical/analyze_tech_cn_mtf.mjs:531',
   'tech.1D.divergence.bear':  'pipeline/3-technical/analyze_tech_cn_mtf.mjs:532',
   'tech.1D.sqz.active':       'pipeline/3-technical/analyze_tech_cn_mtf.mjs:541',
@@ -389,6 +395,7 @@ const CN_TECH_PATHS = {
   'tech.type.reversal':       'pipeline/3-technical/analyze_tech_cn_mtf.mjs:690',
   'tech.rs.strong':           'pipeline/3-technical/analyze_tech_cn_mtf.mjs:579',
   'tech.rs.weak':             'pipeline/3-technical/analyze_tech_cn_mtf.mjs:583',
+  'tech.score.mid':            'pipeline/3-technical/analyze_tech_cn_mtf.mjs (scoreTF 总分区间)',
 };
 
 // US tech offsets — different line numbers, same conceptual scoring rules
@@ -400,10 +407,12 @@ const US_TECH_PATHS = {
   'tech.1D.dist20.near':      'pipeline/3-technical/analyze_tech_us_mtf.mjs:484',
   'tech.1D.adx.strong':       'pipeline/3-technical/analyze_tech_us_mtf.mjs:489',
   'tech.1W.adx.strong':       'pipeline/3-technical/analyze_tech_us_mtf.mjs:489',
+  'tech.4H.adx.strong':       'pipeline/3-technical/analyze_tech_us_mtf.mjs:489',
   'tech.1D.rsi.healthy':      'pipeline/3-technical/analyze_tech_us_mtf.mjs:496',
   'tech.1D.rsi.oversold':     'pipeline/3-technical/analyze_tech_us_mtf.mjs:497',
   'tech.1D.macd.turning':     'pipeline/3-technical/analyze_tech_us_mtf.mjs:499',
   'tech.1D.macd.bullish':     'pipeline/3-technical/analyze_tech_us_mtf.mjs:500',
+  'tech.1W.macd.bullish':     'pipeline/3-technical/analyze_tech_us_mtf.mjs:500',
   'tech.1D.divergence.bull':  'pipeline/3-technical/analyze_tech_us_mtf.mjs:505',
   'tech.1D.sqz.active':       'pipeline/3-technical/analyze_tech_us_mtf.mjs:515',
   'tech.1D.sqz.long_streak':  'pipeline/3-technical/analyze_tech_us_mtf.mjs:517',
@@ -417,6 +426,7 @@ const US_TECH_PATHS = {
   'tech.flag.bad_rr':         'pipeline/3-technical/analyze_tech_us_mtf.mjs (genSignal adjScore)',
   'tech.flag.chop':           'pipeline/3-technical/analyze_tech_us_mtf.mjs (genSignal adjScore)',
   'tech.flag.reversal':       'pipeline/3-technical/analyze_tech_us_mtf.mjs (genSignal adjScore)',
+  'tech.score.mid':            'pipeline/3-technical/analyze_tech_us_mtf.mjs (scoreTF 总分区间)',
 };
 
 const CN_NEWS_PATHS = {

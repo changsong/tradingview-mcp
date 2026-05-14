@@ -497,7 +497,7 @@ function scoreTF(bars, tfKey, live = {}, extra = {}) {
   else if (RSI < 35)         { score += 6;  notes.push(`RSI ${RSI} oversold bounce (+6)`); }
   else if (RSI > 80)         { score -= 12; notes.push(`RSI ${RSI} overbought (-12)`); }
   if (MACD.turning)          { score += 12; notes.push('MACD golden cross (+12) ★'); }
-  else if (MACD.aboveZero && MACD.histRising) { score += 8; notes.push('MACD hist accelerating (+8)'); }
+  else if (MACD.aboveZero && MACD.histRising) { score += 10; notes.push('MACD hist accelerating (+10)'); }
   else if (MACD.aboveZero)   { score += 4;  notes.push('MACD hist positive (+4)'); }
   else if (!MACD.turning)    { score -= 6;  notes.push('MACD hist negative (-6)'); }
 
@@ -667,7 +667,7 @@ function genSignal(tfs, sqzmom, meta, alignment) {
   if (fakeBreak) adjScore -= 10;
   if (reversal)  adjScore +=  8;
   if (bearDiv)   adjScore -=  6;
-  if (lowRR)     adjScore -=  4;
+  if (lowRR)     adjScore -=  3;
   if (chop)      adjScore -=  4;
   adjScore = r1(adjScore);
 

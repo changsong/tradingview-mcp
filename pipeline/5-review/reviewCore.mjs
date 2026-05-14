@@ -72,8 +72,8 @@ export async function runReview(market) {
   const prevTech = JSON.parse(readFileSync(join(prevDir, `${market}_tech_signals.json`), 'utf8'));
 
   // ── 3. Health check on TradingView ───────────────────────────────────────
-  const hc = runCli('health');
-  if (!hc?.success) {
+  const hc = runCli('status');
+  if (!hc?.cdp_connected) {
     throw new Error(`TradingView 未连接 — 请先 scripts\\launch_tv_debug.bat 启动 (CDP 9222)`);
   }
 
