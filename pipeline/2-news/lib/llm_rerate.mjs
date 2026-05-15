@@ -167,7 +167,7 @@ function buildUserMessage(items, symbol, name, market) {
 
   const list = items.map((it, idx) => {
     const body = pickBody(it);
-    return `[${idx}] type=${it.type || '-'} | date=${(it.date || '-').slice(0, 10)} | source=${it.source || '-'}\nTITLE: ${(it.title || '').slice(0, 200)}\nBODY: ${body.slice(0, 400)}`;
+    return `[${idx}] type=${it.type || '-'} | date=${(it.date || '-').slice(0, 10)} | source=${it.source || '-'}\nTITLE: ${(it.title || '').slice(0, 200)}\nBODY: ${body.slice(0, 2000)}`;
   }).join('\n\n');
 
   const tail = isCn
@@ -239,8 +239,9 @@ function round2(v)  { return Math.round(v * 100) / 100; }
 
 // ─── 缓存 ────────────────────────────────────────────────────────────────────
 function cachePathFor(symbol, items) {
-  const sig = items.map(it => `${(it.title || '').slice(0, 30)}|${it.date || ''}`).join('§');
-  const hash = createHash('md5').update(sig).digest('hex').slice(0, 12);
+  const titleSig   = items.map(it => `${(it.title || '').slice(0, 30)}|${it.date || ''}`).join('§');
+  const contentSig = items.map(it => (it.content || '').slice(0, 80)).join('|');
+  const hash = createHash('md5').update(titleSig + contentSig).digest('hex').slice(0, 12);
   const safeSym = String(symbol).replace(/[^A-Za-z0-9_]/g, '_');
   return resolve(CACHE_DIR, `news_llm_${safeSym}_${hash}.json`);
 }

@@ -313,6 +313,7 @@ async function main() {
       top_news: (r.tagged ?? []).slice(0, 5).map(t => ({
         date: t.date || null,
         title: (t.title || '').slice(0, 100),
+        content: t.content || '',
         type: t.type,
         sentiment: t.sentiment,
         weight: t.weight,

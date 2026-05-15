@@ -46,9 +46,10 @@ const TYPE_RULES = [
   { type: '行业',   regex: /行业|板块|赛道|竞争|格局|产业链|供应链|新能源|半导体|AI|人工智能|芯片|光伏|储能|机器人|医疗|生物/ },
 ];
 
-function classifyType(title = '') {
+function classifyType(item) {
+  const text = ((item.title || '') + ' ' + (item.content || '')).slice(0, 800);
   for (const rule of TYPE_RULES) {
-    if (rule.regex.test(title)) return rule.type;
+    if (rule.regex.test(text)) return rule.type;
   }
   return '行业';
 }
@@ -57,7 +58,8 @@ function classifyType(title = '') {
 const BULLISH_RE = /利好|涨停|新高|突破|买入|增持|超预期|大幅增长|同比增长|环比增|扭亏|获批|中标|签约|合作|补贴|政策支持|走强|拉升|底部|企稳|反弹|强势|看多|积极/;
 const BEARISH_RE = /利空|跌停|新低|破位|卖出|减持|不及预期|大幅下降|同比下滑|净亏损|警示|处罚|违规|召回|下调|终止|失败|拖累|压力|风险|负面|下行|恶化/;
 
-function scoreSentiment(title = '', type, rating) {
+function scoreSentiment(item, type, rating) {
+  const text = ((item.title || '') + ' ' + (item.content || '')).slice(0, 800);
   // 研报评级优先
   if (rating) {
     if (/买入|强烈推荐|强推/.test(rating))         return  1;
@@ -67,8 +69,8 @@ function scoreSentiment(title = '', type, rating) {
   }
   // 黑天鹅类型强制 -1
   if (type === '黑天鹅') return -1;
-  if (BULLISH_RE.test(title)) return  1;
-  if (BEARISH_RE.test(title)) return -1;
+  if (BULLISH_RE.test(text)) return  1;
+  if (BEARISH_RE.test(text)) return -1;
   return 0;
 }
 
@@ -252,8 +254,8 @@ async function analyzeStock(symbol) {
 
     // 打标签
     const tagged = recent.map(item => {
-      const type      = classifyType(item.title || '');
-      const sentiment = scoreSentiment(item.title || '', type, item.rating);
+      const type      = classifyType(item);
+      const sentiment = scoreSentiment(item, type, item.rating);
       const weight    = calcWeight(item, type);
       return { ...item, type, sentiment, weight, finalWeight: weight };
     });
@@ -561,6 +563,7 @@ async function main() {
       top_news: (r.tagged ?? []).slice(0, 5).map(t => ({
         date: t.date || null,
         title: (t.title || '').slice(0, 100),
+        content: t.content || '',
         type: t.type,
         sentiment: t.sentiment,
         weight: t.weight,
