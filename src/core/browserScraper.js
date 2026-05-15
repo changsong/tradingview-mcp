@@ -28,6 +28,67 @@ function findChrome() {
 
 const CHROME_EXECUTABLE = findChrome();
 
+// Prioritized selectors for article body extraction (English + Chinese sites)
+const ARTICLE_SELECTORS = [
+  'article',
+  '[itemprop="articleBody"]',
+  '[class*="article-body"]',
+  '[class*="article__body"]',
+  '[class*="articleBody"]',
+  '[class*="story-body"]',
+  '[class*="story__body"]',
+  '[class*="post-content"]',
+  '[class*="entry-content"]',
+  '[class*="post-body"]',
+  '[class*="caas-body"]',
+  '[class*="article__content"]',
+  '[class*="newsContent"]',
+  '[class*="news-content"]',
+  '[class*="article-content"]',
+  '[id="ContentBody"]',
+  '[id="newsContent"]',
+  '[id="article"]',
+  '[id="content"]',
+  'main',
+];
+
+/**
+ * Fetch the full article body text from a news URL via headless browser.
+ * Tries ARTICLE_SELECTORS in priority order, falls back to aggregating <p> tags.
+ * Returns empty string on failure, timeout, or PDF URLs.
+ *
+ * @param {string} url
+ * @param {string} [locale='en-US']
+ * @returns {Promise<string>}
+ */
+export async function fetchArticleContent(url, locale = 'en-US') {
+  if (!url) return '';
+  const lower = url.toLowerCase();
+  if (lower.endsWith('.pdf') || lower.includes('.pdf?') || lower.includes('adjunctUrl')) return '';
+
+  const text = await scrapeOne(url, (page) =>
+    page.evaluate((sels) => {
+      for (const sel of sels) {
+        try {
+          const el = document.querySelector(sel);
+          if (!el) continue;
+          const t = el.innerText?.replace(/[\t ]+/g, ' ').replace(/\n{3,}/g, '\n\n').trim();
+          if (t && t.length > 150) return t;
+        } catch (_) {}
+      }
+      // Fallback: gather meaningful paragraphs across the whole page
+      const joined = Array.from(document.querySelectorAll('p'))
+        .map(p => p.innerText?.trim())
+        .filter(t => t && t.length > 30)
+        .join('\n');
+      return joined.length > 150 ? joined : '';
+    }, sels),
+    { locale, timeoutSecs: 20 }
+  );
+
+  return typeof text === 'string' ? text : '';
+}
+
 /**
  * Scrape a single URL using Playwright with anti-bot browser settings.
  *

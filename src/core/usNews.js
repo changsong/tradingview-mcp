@@ -3,7 +3,7 @@
  * Fetches from Reddit, Seeking Alpha, StockTwits, and Bogleheads
  */
 
-import { scrapeOne } from './browserScraper.js';
+import { scrapeOne, fetchArticleContent } from './browserScraper.js';
 
 // Concurrency limiter for browser-based fetchers (avoids too many headless browsers at once)
 function createLimiter(maxConcurrent) {
@@ -159,7 +159,7 @@ async function fetchRedditWSB(symbol, count = 10) {
 
     return data.data.children.map(item => ({
       title: item.data.title,
-      content: item.data.selftext?.substring(0, 200) || '',
+      content: item.data.selftext || '',
       author: item.data.author,
       date: new Date(item.data.created_utc * 1000).toISOString().split('T')[0],
       upvotes: item.data.ups,
@@ -196,7 +196,7 @@ async function fetchRedditStocks(symbol, count = 10) {
 
     return data.data.children.map(item => ({
       title: item.data.title,
-      content: item.data.selftext?.substring(0, 200) || '',
+      content: item.data.selftext || '',
       author: item.data.author,
       date: new Date(item.data.created_utc * 1000).toISOString().split('T')[0],
       upvotes: item.data.ups,
@@ -332,7 +332,7 @@ async function fetchMarketWatchRSS(symbol, name, count = 10) {
 
         items.push({
           title,
-          content: desc.replace(/<[^>]+>/g, '').substring(0, 300),
+          content: desc.replace(/<[^>]+>/g, ''),
           url: link,
           date: pubDate ? new Date(pubDate).toISOString().split('T')[0] : '',
           publisher: 'MarketWatch',
@@ -464,7 +464,7 @@ async function fetchSeekingAlpha(symbol, count = 10) {
 
       items.push({
         title,
-        content: desc.replace(/<[^>]+>/g, '').substring(0, 300),
+        content: desc.replace(/<[^>]+>/g, ''),
         url: link,
         date: pubDate ? new Date(pubDate).toISOString().split('T')[0] : '',
         author,
@@ -575,6 +575,22 @@ async function fetchBogleheads(symbol, count = 10) {
   }, { locale: 'en-US' }));
 }
 
+// Enrich news/forum items with full article content via secondary browser fetch.
+// Skips items that already have substantial content (Reddit selftext).
+async function enrichWithContent(items) {
+  await Promise.all(
+    items
+      .filter(item => item.url && (!item.content || item.content.length < 200))
+      .map(item =>
+        browserLimit(() =>
+          fetchArticleContent(item.url, 'en-US').then(text => {
+            if (text) item.content = text;
+          }).catch(() => {})
+        )
+      )
+  );
+}
+
 // Main function: search US stock news and community data
 export async function searchUSNews({ symbol, name, source = 'all', count = 10 }) {
   // Clean symbol (remove exchange prefix if present)
@@ -669,6 +685,12 @@ export async function searchUSNews({ symbol, name, source = 'all', count = 10 })
   result.social = result.social.filter(item => !item.error);
   result.forum = result.forum.filter(item => !item.error);
 
+  // Second-pass: fetch full article content for news + Bogleheads forum items
+  await Promise.all([
+    enrichWithContent(result.news),
+    enrichWithContent(result.forum.filter(f => f.source === 'Bogleheads')),
+  ]);
+
   result.total_count = result.news.length + result.social.length + result.forum.length;
 
   // 每个来源抓取条数统计（基于最终去重后的数组）
@@ -720,7 +742,7 @@ export async function getUSMarketSentiment() {
       if (data.data && data.data.children) {
         result.market_views = data.data.children.map(item => ({
           title: item.data.title,
-          content: item.data.selftext?.substring(0, 300) || '',
+          content: item.data.selftext || '',
           upvotes: item.data.ups,
           comments: item.data.num_comments,
           url: `https://www.reddit.com${item.data.permalink}`,

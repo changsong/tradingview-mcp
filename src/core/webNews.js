@@ -5,7 +5,7 @@
  */
 
 import { fetchXueqiuPosts as fetchXueqiuWithPuppeteer } from './xueqiu.js';
-import { scrapeOne } from './browserScraper.js';
+import { scrapeOne, fetchArticleContent } from './browserScraper.js';
 
 // UA 池：轮换降低被 Eastmoney/Sina 限流概率
 const UA_POOL = [
@@ -294,7 +294,7 @@ async function fetchKuaixunNews(keywords, count = 10) {
       title: item.title,
       source: '东方财富快讯',
       date: item.showtime,
-      snippet: item.digest,
+      content: item.digest,
       url: item.url_w,
       type: 'news',
     }));
@@ -532,6 +532,26 @@ async function fetchXueqiuPosts(code, count = 10) {
   }
 }
 
+// Separate browser concurrency limit for article enrichment (heavier than plain HTTP)
+const articleLimit = createLimiter(3);
+
+// Enrich news/forum items with full article content via secondary browser fetch.
+// Skips PDF/announcement types and items that already have substantial content.
+async function enrichWithContent(items, locale = 'zh-CN') {
+  const SKIP_TYPES = new Set(['announcement']);
+  await Promise.all(
+    items
+      .filter(item => item.url && !SKIP_TYPES.has(item.type) && (!item.content || item.content.length < 200))
+      .map(item =>
+        articleLimit(() =>
+          fetchArticleContent(item.url, locale).then(text => {
+            if (text) item.content = text;
+          }).catch(() => {})
+        )
+      )
+  );
+}
+
 // 主函数：获取新闻
 export async function searchNews({ symbol, name, source = 'all', count = 10 }) {
   const marketType = detectMarket(symbol);
@@ -640,6 +660,12 @@ export async function searchNews({ symbol, name, source = 'all', count = 10 }) {
   result.news = result.news.filter(item => !item.error);
   result.research = result.research.filter(item => !item.error);
   result.forum = result.forum.filter(item => !item.error);
+
+  // 二次抓取：为 news 和 forum 补全正文内容
+  await Promise.all([
+    enrichWithContent(result.news, 'zh-CN'),
+    enrichWithContent(result.forum, 'zh-CN'),
+  ]);
 
   result.total_count = result.news.length + result.research.length + result.forum.length;
 
