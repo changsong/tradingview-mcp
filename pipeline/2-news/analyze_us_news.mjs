@@ -70,7 +70,7 @@ async function analyzeStock(symbol) {
 
     if (llmFlag && r.tagged.length > 0) {
       const updated = await rerateTopNews({
-        topItems: r.tagged.slice(0, 5),
+        topItems: r.tagged.slice(0, 10),
         symbol, name: ticker, market: MARKET,
       });
       if (updated) {

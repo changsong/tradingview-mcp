@@ -54,6 +54,10 @@ npm run tech:cn
 npm run combined:cn
 # 产物：watchlist/cn_combined_signals.md + 自动快照到 reports/<YYYY-MM-DD>/
 ```
+请单独出一份股票列表,名单需要满足如下三个条件：
+1. 等级为：🟢A
+2. 多周期对齐：3/4 (75%) 或 4/4 (100%)
+3. 盈亏比大于 2:1
 
 
 
@@ -99,6 +103,11 @@ npm run tech:us
 npm run combined:us
 # 产物：watchlist/us_combined_signals.md + 自动快照到 reports/<YYYY-MM-DD>/
 ```
+请单独出一份股票列表,名单需要满足如下三个条件：
+1. 等级为：🟢A
+2. 多周期对齐：3/4 (75%) 或 4/4 (100%)
+3. 盈亏比大于 2:1
+
 
 
 
@@ -121,9 +130,10 @@ npm run combined:us
 需要需要分析一个原因：今天是5月6日，昨日的股票分析结果在 ./reports/2026-05-05 
 下。今天5月6日，市场的结果：603162,002245,301165,600176 大涨，能否分析出这些大涨的股票在5月5日分析中有没有公共特征，如果有看需要增加这些特征的权重
 
-使用 ./scripts/launch_tv_debug.bat, 启动TradigView 运行:     
+使用 ./scripts/launch_tv_debug.bat, 启动TradigView 运行如下:     
     npm review:cn
     npm review:us
+两个命令依次执行
 
 ---------------------------------------------------------------------------------------------------------------------------------------------------------
 # 策略优化

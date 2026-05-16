@@ -263,7 +263,7 @@ async function analyzeStock(symbol) {
     // LLM 复评（默认开启，--no-llm 关闭）
     if (llmFlag && tagged.length > 0) {
       const updated = await rerateTopNews({
-        topItems: tagged.slice(0, 5),
+        topItems: tagged.slice(0, 10),
         symbol,
         name: result.name || code,
         market: 'cn',

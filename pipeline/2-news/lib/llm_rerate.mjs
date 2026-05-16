@@ -86,7 +86,7 @@ export async function rerateTopNews({ topItems, symbol, name, market }) {
   if (!isLLMEnabled()) return null;
   if (!topItems || topItems.length === 0) return null;
 
-  const items = topItems.slice(0, 5);
+  const items = topItems.slice(0, 10);
 
   // 给每条打稳定 _llmId（基于 title+date），方便回写
   items.forEach((it, i) => {
