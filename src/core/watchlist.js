@@ -61,11 +61,18 @@ export async function add({ symbol }) {
   const panelState = await evaluate(`
     (function() {
       var btn = document.querySelector('[data-name="base-watchlist-widget-button"]')
-        || document.querySelector('[aria-label*="Watchlist"]');
-      if (!btn) return { error: 'Watchlist button not found' };
+        || document.querySelector('[aria-label*="Watchlist"]')
+        || document.querySelector('[aria-label*="自选"]');
+      if (!btn) {
+        // Panel may already be open — check if watchlist header is visible
+        var header = document.querySelector('[class*="titleRow"]');
+        if (header) return { opened: false, alreadyOpen: true };
+        return { error: 'Watchlist button not found' };
+      }
       var isActive = btn.getAttribute('aria-pressed') === 'true'
         || btn.classList.toString().indexOf('Active') !== -1
-        || btn.classList.toString().indexOf('active') !== -1;
+        || btn.classList.toString().indexOf('active') !== -1
+        || btn.classList.toString().indexOf('isActive') !== -1;
       if (!isActive) { btn.click(); return { opened: true }; }
       return { opened: false };
     })()
@@ -74,13 +81,15 @@ export async function add({ symbol }) {
   if (panelState?.error) throw new Error(panelState.error);
   if (panelState?.opened) await new Promise(r => setTimeout(r, 500));
 
-  // Click the "Add symbol" button (various selectors)
+  // Click the "Add symbol" button (various selectors, including Chinese UI)
   const addClicked = await evaluate(`
     (function() {
       var selectors = [
         '[data-name="add-symbol-button"]',
         '[aria-label="Add symbol"]',
         '[aria-label*="Add symbol"]',
+        '[aria-label="添加商品代码"]',
+        '[aria-label*="添加"]',
         'button[class*="addSymbol"]',
       ];
       for (var s = 0; s < selectors.length; s++) {
@@ -93,7 +102,7 @@ export async function add({ symbol }) {
         var buttons = container.querySelectorAll('button');
         for (var i = 0; i < buttons.length; i++) {
           var ariaLabel = buttons[i].getAttribute('aria-label') || '';
-          if (/add.*symbol/i.test(ariaLabel) || buttons[i].textContent.trim() === '+') {
+          if (/add.*symbol/i.test(ariaLabel) || /添加/.test(ariaLabel) || buttons[i].textContent.trim() === '+') {
             buttons[i].click();
             return { found: true, method: 'fallback' };
           }
