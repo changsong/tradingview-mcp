@@ -16,7 +16,7 @@ import { fileURLToPath } from 'url';
 import { dirname, resolve } from 'path';
 import { searchUSNews } from '../../src/core/usNews.js';
 import { analyzeStockData } from './lib/analyze.mjs';
-import { rerateTopNews, isLLMEnabled } from './lib/llm_rerate.mjs';
+import { isLLMEnabled } from './lib/llm_common.mjs';
 
 process.chdir(resolve(dirname(fileURLToPath(import.meta.url)), '../..'));
 
@@ -61,36 +61,14 @@ async function analyzeStock(symbol) {
     const result = await searchUSNews({ symbol: ticker, source: 'news', count: NEWS_COUNT });
     const allNews = result.news || [];
 
-    const r = analyzeStockData(allNews, {
+    const r = await analyzeStockData(allNews, {
       symbol,
       name:   aliasesFor(symbol, ticker),
       today, cutoff,
       market: MARKET,
+      // --no-llm: 显式注入 null 分类器 → 上层走 No Data 分支（不退回关键字）
+      classifierFn: llmFlag ? undefined : async () => null,
     });
-
-    if (llmFlag && r.tagged.length > 0) {
-      const updated = await rerateTopNews({
-        topItems: r.tagged.slice(0, 10),
-        symbol, name: ticker, market: MARKET,
-      });
-      if (updated) {
-        for (const u of updated) {
-          const idx = r.tagged.findIndex(t => t._llmId === u._llmId);
-          if (idx >= 0) Object.assign(r.tagged[idx], u);
-        }
-        const { calcScores }     = await import('./lib/normalize.mjs');
-        const { detectPatterns } = await import('./lib/patterns.mjs');
-        const { generateSignal } = await import('./lib/signal.mjs');
-        const sc = calcScores(r.tagged);
-        r.score = sc.normalized; r.score_raw = sc.raw;
-        r.score_components.positive_weight_sum = sc.positive_weight_sum;
-        r.score_components.negative_weight_sum = sc.negative_weight_sum;
-        r.patterns = detectPatterns(r.tagged, MARKET);
-        const sig = generateSignal(r.score, r.patterns, r.tagged, MARKET);
-        r.signal = sig.signal; r.strategy = sig.strategy;
-        r.suitableFor = sig.suitableFor; r.confidence = sig.confidence;
-      }
-    }
 
     process.stdout.write(` -> ${r.news_count} kept / ${r.news_dropped} filtered, score=${r.score}\n`);
 
@@ -321,7 +299,12 @@ async function main() {
         source_authority: t.sourceAuthority,
         recency_factor: t.recencyFactor,
         source: t.source || null,
-        ...(t.llm_reviewed ? { llm_reviewed: true, llm_confidence: t.llm_confidence } : {}),
+        ...(t.llm_reviewed ? {
+          llm_reviewed: true,
+          llm_confidence: t.llm_confidence,
+          llm_is_real_catalyst: t.llm_is_real_catalyst,
+          llm_reasoning: t.llm_reasoning,
+        } : {}),
       })),
     }])),
   };

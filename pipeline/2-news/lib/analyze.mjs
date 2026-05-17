@@ -4,16 +4,20 @@
  * 输入：原始新闻列表（已合并 news+research+forum）+ symbol/name + 市场
  * 输出：打好标签 + 算好分 + 模式 + 信号 的结构，供主脚本写 JSON
  *
+ * 分类/情绪：调 LLM（lib/llm_classify.mjs）；权重：仍由 lib/weight.mjs 计算
+ * （source × typeMul × recency），LLM 给的 is_real_catalyst / confidence 仅作
+ *  finalWeight 的折减系数。
+ *
  * 不负责 IO，便于单测 + 复用 CN/US。
  */
 
-import { filterRelevant } from './relevance.mjs';
-import { classifyType }    from './classify.mjs';
-import { scoreSentiment }  from './sentiment.mjs';
-import { calcWeight }      from './weight.mjs';
-import { calcScores }      from './normalize.mjs';
-import { detectPatterns }  from './patterns.mjs';
-import { generateSignal }  from './signal.mjs';
+import { filterRelevant }   from './relevance.mjs';
+import { calcWeight }       from './weight.mjs';
+import { calcScores }       from './normalize.mjs';
+import { detectPatterns }   from './patterns.mjs';
+import { generateSignal }   from './signal.mjs';
+import { classifyByLLM }    from './llm_classify.mjs';
+import { mapLLMSentiment }  from './llm_common.mjs';
 
 /**
  * @param {object[]} rawItems   合并后的新闻列表（每条至少含 title/date/source/type）
@@ -23,11 +27,13 @@ import { generateSignal }  from './signal.mjs';
  * @param {Date}   ctx.today
  * @param {Date}   ctx.cutoff
  * @param {'cn'|'us'} ctx.market
- * @returns {object}
+ * @param {Function} [ctx.classifierFn]  可选：注入分类器（测试用）。签名同 classifyByLLM。
+ * @returns {Promise<object>}
  */
-export function analyzeStockData(rawItems, ctx) {
-  const { symbol, name, today, cutoff, market } = ctx;
+export async function analyzeStockData(rawItems, ctx) {
+  const { symbol, name, today, cutoff, market, classifierFn } = ctx;
   const initialCount = rawItems?.length || 0;
+  const isCn = market === 'cn';
 
   // ── 1) 日期窗口过滤 ──
   const recent = (rawItems || []).filter(n => isInWindow(n.date, cutoff, today));
@@ -36,50 +42,67 @@ export function analyzeStockData(rawItems, ctx) {
   const { kept, dropped, reasons } = filterRelevant(recent, symbol, name, { market });
 
   if (kept.length === 0) {
-    const isCn = market === 'cn';
-    return {
-      tagged: [],
-      score: 50, score_raw: 0,
-      score_components: { positive_weight_sum: 0, negative_weight_sum: 0 },
-      news_count: 0, news_dropped: dropped + (initialCount - recent.length),
+    return noDataResult({
+      reason: isCn ? '近期无相关有效新闻' : 'No relevant news in window',
+      news_dropped: dropped + (initialCount - recent.length),
       drop_reasons: reasons,
-      patterns: [],
-      signal: isCn ? '⚪ No Trade (无数据)' : 'NEUTRAL No Trade (No Data)',
-      strategy: isCn ? '近期无相关有效新闻' : 'No relevant news in window',
-      suitableFor: isCn ? '观望' : 'Watch',
-      confidence: '-',
-      positive_factors: [],
-      negative_factors: [],
-    };
+      market,
+    });
   }
 
-  // ── 3) 打标签：type / sentiment / weight ──
-  const tagged = kept.map(item => {
-    const type      = classifyType(item, market);
-    const sentiment = scoreSentiment(item, type, market);
-    const w         = calcWeight(item, type, today);
+  // ── 3) LLM 分类 + 情绪 + 催化标记 ──
+  const classifier = classifierFn || classifyByLLM;
+  const llmResults = await classifier(kept, { symbol, name, market });
+
+  if (!llmResults) {
+    // LLM 失败 / 未启用：按设计走 No Data，不退回关键字
+    return noDataResult({
+      reason: isCn ? 'LLM 不可用或调用失败（不走关键字降级）' : 'LLM unavailable or call failed (no keyword fallback)',
+      news_dropped: dropped + (initialCount - recent.length),
+      drop_reasons: reasons,
+      market,
+    });
+  }
+
+  // ── 4) 组装 tagged：LLM 出 type/sentiment，weight 仍走确定性公式 ──
+  const tagged = kept.map((item, i) => {
+    const r = llmResults[i] || {};
+    const type = r.type;                                  // 已在 alignResults 里 normalize
+    const sentiment = mapLLMSentiment(r.sentiment) ?? 0;  // -2..+2 → -1/0/+1
+    const w = calcWeight(item, type, today);
+
+    let finalWeight = w.finalWeight;
+    if (r.is_real_catalyst === false)        finalWeight *= 0.4;
+    if ((r.confidence ?? 0) < 0.5)           finalWeight *= 0.5;
+    finalWeight = +Math.max(0.5, Math.min(8, finalWeight)).toFixed(2);
+
     return {
       ...item,
       type,
       sentiment,
-      weight: Math.round(w.finalWeight),  // 兼容旧字段（int 1-5 区间）
-      finalWeight: w.finalWeight,
+      weight: Math.round(finalWeight),
+      finalWeight,
       sourceAuthority: w.sourceAuthority,
       typeMul: w.typeMul,
       recencyFactor: w.recency,
+      // 审计字段（向后兼容、可选消费）
+      llm_reviewed: true,
+      llm_confidence: r.confidence,
+      llm_is_real_catalyst: r.is_real_catalyst,
+      llm_reasoning: r.reasoning || '',
     };
   });
 
-  // ── 4) 评分 ──
+  // ── 5) 评分 ──
   const scores = calcScores(tagged);
 
-  // ── 5) 模式 ──
+  // ── 6) 模式 ──
   const patterns = detectPatterns(tagged, market);
 
-  // ── 6) 信号 ──
+  // ── 7) 信号 ──
   const sig = generateSignal(scores.normalized, patterns, tagged, market);
 
-  // ── 7) 利好 / 利空摘要（按 finalWeight 排序）──
+  // ── 8) 利好 / 利空摘要（按 finalWeight 排序）──
   const fmt = i => `[${i.type}|w${i.finalWeight}] ${(i.title || '').slice(0, 70)}`;
   const positive_factors = tagged
     .filter(i => i.sentiment > 0)
@@ -112,6 +135,24 @@ export function analyzeStockData(rawItems, ctx) {
     confidence: sig.confidence,
     positive_factors,
     negative_factors,
+  };
+}
+
+function noDataResult({ reason, news_dropped, drop_reasons, market }) {
+  const isCn = market === 'cn';
+  return {
+    tagged: [],
+    score: 50, score_raw: 0,
+    score_components: { positive_weight_sum: 0, negative_weight_sum: 0 },
+    news_count: 0, news_dropped,
+    drop_reasons,
+    patterns: [],
+    signal: isCn ? '⚪ No Trade (无数据)' : 'NEUTRAL No Trade (No Data)',
+    strategy: reason,
+    suitableFor: isCn ? '观望' : 'Watch',
+    confidence: '-',
+    positive_factors: [],
+    negative_factors: [],
   };
 }
 
