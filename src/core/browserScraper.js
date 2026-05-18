@@ -11,6 +11,7 @@
 
 import { chromium } from 'playwright';
 import { existsSync } from 'fs';
+import { PDFParse } from 'pdf-parse';
 
 // System Chrome candidates — same search order as xueqiu.js
 const CHROME_PATHS = [
@@ -55,7 +56,8 @@ const ARTICLE_SELECTORS = [
 /**
  * Fetch the full article body text from a news URL via headless browser.
  * Tries ARTICLE_SELECTORS in priority order, falls back to aggregating <p> tags.
- * Returns empty string on failure, timeout, or PDF URLs.
+ * PDF URLs are routed to fetchPdfText() instead.
+ * Returns empty string on failure or timeout.
  *
  * @param {string} url
  * @param {string} [locale='en-US']
@@ -64,8 +66,9 @@ const ARTICLE_SELECTORS = [
 export async function fetchArticleContent(url, locale = 'en-US') {
   if (!url) return '';
   const lower = url.toLowerCase();
-  // PDF detection: cninfo serves announcements as direct PDFs (static.cninfo.com.cn/.../xxx.PDF)
-  if (lower.endsWith('.pdf') || lower.includes('.pdf?') || lower.includes('static.cninfo.com.cn')) return '';
+  if (lower.endsWith('.pdf') || lower.includes('.pdf?')) {
+    return fetchPdfText(url);
+  }
 
   const text = await scrapeOne(url, (page) =>
     page.evaluate((sels) => {
@@ -88,6 +91,48 @@ export async function fetchArticleContent(url, locale = 'en-US') {
   );
 
   return typeof text === 'string' ? text : '';
+}
+
+/**
+ * Fetch a PDF URL and extract its full text via pdf-parse (pdfjs under the hood).
+ * No truncation — caller is responsible for length-aware downstream handling.
+ * Returns empty string on fetch error, parse error, or non-PDF response.
+ *
+ * @param {string} url
+ * @param {object} [opts]
+ * @param {number} [opts.timeoutMs=60000]  Total fetch + parse budget
+ * @returns {Promise<string>}
+ */
+export async function fetchPdfText(url, { timeoutMs = 60000 } = {}) {
+  if (!url) return '';
+  const controller = new AbortController();
+  const timer = setTimeout(() => controller.abort(), timeoutMs);
+  let parser = null;
+  try {
+    const res = await fetch(url, {
+      headers: {
+        'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36',
+        'Accept': 'application/pdf,*/*',
+      },
+      signal: controller.signal,
+    });
+    if (!res.ok) return '';
+    const buf = new Uint8Array(await res.arrayBuffer());
+    // Magic-bytes sanity check: real PDFs start with "%PDF-"
+    if (buf.length < 5 || buf[0] !== 0x25 || buf[1] !== 0x50 || buf[2] !== 0x44 || buf[3] !== 0x46) {
+      return '';
+    }
+    parser = new PDFParse({ data: buf });
+    const result = await parser.getText();
+    return (result?.text || '').trim();
+  } catch (_) {
+    return '';
+  } finally {
+    clearTimeout(timer);
+    if (parser?.destroy) {
+      await parser.destroy().catch(() => {});
+    }
+  }
 }
 
 /**
