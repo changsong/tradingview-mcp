@@ -82,7 +82,7 @@ export async function fetchArticleContent(url, locale = 'en-US') {
         .filter(t => t && t.length > 30)
         .join('\n');
       return joined.length > 150 ? joined : '';
-    }, sels),
+    }, ARTICLE_SELECTORS),
     { locale, timeoutSecs: 20 }
   );
 
