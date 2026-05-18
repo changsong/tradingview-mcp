@@ -685,10 +685,12 @@ export async function searchUSNews({ symbol, name, source = 'all', count = 10 })
   result.social = result.social.filter(item => !item.error);
   result.forum = result.forum.filter(item => !item.error);
 
-  // Second-pass: fetch full article content for news + Bogleheads forum items
+  // Second-pass: fetch full article content for news + all forum items
+  // (Reddit link-only posts have empty selftext; the <200 char filter in
+  // enrichWithContent decides whether to actually refetch.)
   await Promise.all([
     enrichWithContent(result.news),
-    enrichWithContent(result.forum.filter(f => f.source === 'Bogleheads')),
+    enrichWithContent(result.forum),
   ]);
 
   result.total_count = result.news.length + result.social.length + result.forum.length;

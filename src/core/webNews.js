@@ -535,13 +535,14 @@ async function fetchXueqiuPosts(code, count = 10) {
 // Separate browser concurrency limit for article enrichment (heavier than plain HTTP)
 const articleLimit = createLimiter(3);
 
-// Enrich news/forum items with full article content via secondary browser fetch.
-// Skips PDF/announcement types and items that already have substantial content.
+// Enrich items with full article content via secondary browser fetch.
+// fetchArticleContent itself skips PDF URLs (cninfo announcements), so we don't
+// pre-filter by type here — announcement detail pages (eastmoney) are valid HTML
+// targets and should be enriched.
 async function enrichWithContent(items, locale = 'zh-CN') {
-  const SKIP_TYPES = new Set(['announcement']);
   await Promise.all(
     items
-      .filter(item => item.url && !SKIP_TYPES.has(item.type) && (!item.content || item.content.length < 200))
+      .filter(item => item.url && (!item.content || item.content.length < 200))
       .map(item =>
         articleLimit(() =>
           fetchArticleContent(item.url, locale).then(text => {
@@ -661,9 +662,10 @@ export async function searchNews({ symbol, name, source = 'all', count = 10 }) {
   result.research = result.research.filter(item => !item.error);
   result.forum = result.forum.filter(item => !item.error);
 
-  // 二次抓取：为 news 和 forum 补全正文内容
+  // 二次抓取：为 news / research / forum 补全正文内容
   await Promise.all([
     enrichWithContent(result.news, 'zh-CN'),
+    enrichWithContent(result.research, 'zh-CN'),
     enrichWithContent(result.forum, 'zh-CN'),
   ]);
 

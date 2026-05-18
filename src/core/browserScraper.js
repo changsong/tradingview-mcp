@@ -64,7 +64,8 @@ const ARTICLE_SELECTORS = [
 export async function fetchArticleContent(url, locale = 'en-US') {
   if (!url) return '';
   const lower = url.toLowerCase();
-  if (lower.endsWith('.pdf') || lower.includes('.pdf?') || lower.includes('adjunctUrl')) return '';
+  // PDF detection: cninfo serves announcements as direct PDFs (static.cninfo.com.cn/.../xxx.PDF)
+  if (lower.endsWith('.pdf') || lower.includes('.pdf?') || lower.includes('static.cninfo.com.cn')) return '';
 
   const text = await scrapeOne(url, (page) =>
     page.evaluate((sels) => {
