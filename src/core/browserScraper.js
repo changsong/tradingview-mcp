@@ -11,7 +11,14 @@
 
 import { chromium } from 'playwright';
 import { existsSync } from 'fs';
+import { readFile, writeFile, mkdir, stat } from 'node:fs/promises';
+import { dirname, resolve } from 'node:path';
+import { fileURLToPath } from 'node:url';
 import { PDFParse } from 'pdf-parse';
+
+// PDF disk cache lives at <repo-root>/pdf/. Derived from this module's path so it
+// works regardless of CWD.
+const PDF_CACHE_DIR = resolve(dirname(fileURLToPath(import.meta.url)), '../../pdf');
 
 // System Chrome candidates — same search order as xueqiu.js
 const CHROME_PATHS = [
@@ -94,41 +101,95 @@ export async function fetchArticleContent(url, locale = 'en-US') {
 }
 
 /**
+ * Map a PDF URL to its on-disk cache path: <PDF_CACHE_DIR>/<host>/<path>.
+ * Path-mirror layout keeps the URL→file relationship human-readable.
+ * Returns null if the URL can't be parsed or contains unsafe segments.
+ */
+function pdfCachePath(url) {
+  let parsed;
+  try {
+    parsed = new URL(url);
+  } catch (_) {
+    return null;
+  }
+  const segments = parsed.pathname.split('/').filter(Boolean);
+  // Defense in depth: reject traversal and forbid Windows-reserved chars in any segment.
+  for (const seg of segments) {
+    if (seg === '..' || /[<>:"|?*\x00-\x1f]/.test(seg)) return null;
+  }
+  if (!segments.length) return null;
+  return resolve(PDF_CACHE_DIR, parsed.hostname, ...segments);
+}
+
+/**
  * Fetch a PDF URL and extract its full text via pdf-parse (pdfjs under the hood).
+ * Disk-caches PDF bytes under <repo-root>/pdf/<host>/<path>; subsequent calls
+ * with the same URL skip the network fetch and read the cached bytes directly.
  * No truncation — caller is responsible for length-aware downstream handling.
  * Returns empty string on fetch error, parse error, or non-PDF response.
  *
  * @param {string} url
  * @param {object} [opts]
- * @param {number} [opts.timeoutMs=60000]  Total fetch + parse budget
+ * @param {number} [opts.timeoutMs=60000]  Network fetch budget (cache reads bypass this)
  * @returns {Promise<string>}
  */
 export async function fetchPdfText(url, { timeoutMs = 60000 } = {}) {
   if (!url) return '';
-  const controller = new AbortController();
-  const timer = setTimeout(() => controller.abort(), timeoutMs);
-  let parser = null;
-  try {
-    const res = await fetch(url, {
-      headers: {
-        'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36',
-        'Accept': 'application/pdf,*/*',
-      },
-      signal: controller.signal,
-    });
-    if (!res.ok) return '';
-    const buf = new Uint8Array(await res.arrayBuffer());
+  const cachePath = pdfCachePath(url);
+  let buf = null;
+
+  // Try cache first
+  if (cachePath) {
+    try {
+      const s = await stat(cachePath);
+      if (s.isFile() && s.size > 0) {
+        buf = new Uint8Array(await readFile(cachePath));
+      }
+    } catch (_) { /* cache miss */ }
+  }
+
+  // Network fetch on cache miss
+  if (!buf) {
+    const controller = new AbortController();
+    const timer = setTimeout(() => controller.abort(), timeoutMs);
+    try {
+      const res = await fetch(url, {
+        headers: {
+          'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36',
+          'Accept': 'application/pdf,*/*',
+        },
+        signal: controller.signal,
+      });
+      if (!res.ok) return '';
+      buf = new Uint8Array(await res.arrayBuffer());
+    } catch (_) {
+      return '';
+    } finally {
+      clearTimeout(timer);
+    }
+
     // Magic-bytes sanity check: real PDFs start with "%PDF-"
     if (buf.length < 5 || buf[0] !== 0x25 || buf[1] !== 0x50 || buf[2] !== 0x44 || buf[3] !== 0x46) {
       return '';
     }
+
+    // Best-effort cache write — never block parsing on cache errors
+    if (cachePath) {
+      try {
+        await mkdir(dirname(cachePath), { recursive: true });
+        await writeFile(cachePath, buf);
+      } catch (_) { /* ignore */ }
+    }
+  }
+
+  let parser = null;
+  try {
     parser = new PDFParse({ data: buf });
     const result = await parser.getText();
     return (result?.text || '').trim();
   } catch (_) {
     return '';
   } finally {
-    clearTimeout(timer);
     if (parser?.destroy) {
       await parser.destroy().catch(() => {});
     }
