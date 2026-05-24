@@ -475,7 +475,7 @@ function scoreTF(bars, tfKey, live = {}, extra = {}) {
   const chopDiscount = ADX?.chop ? 0.5 : 1;  // halve trend-block scores in chop
 
   // Trend (±35, scaled by chopDiscount on bullEMA / hhhl)
-  if (bullEMA)       { const v = Math.round(12 * chopDiscount); score += v; notes.push(`EMA bull alignment (+${v}${ADX?.chop ? ' chop-disc' : ''})`); }
+  if (bullEMA)       { const baseW = (tfKey === '1W') ? 9 : 12; const v = Math.round(baseW * chopDiscount); score += v; notes.push(`EMA bull alignment (+${v}${ADX?.chop ? ' chop-disc' : ''})`); }
   if (aboveEMA200)   { score += 8;  notes.push('Above EMA200 (+8)'); }
   else               { score -= 8;  notes.push('Below EMA200 (-8)'); }
   if (ema200Rising)  { score += 4;  notes.push('EMA200 rising (+4)'); }

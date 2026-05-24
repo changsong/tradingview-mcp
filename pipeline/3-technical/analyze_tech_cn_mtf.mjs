@@ -519,11 +519,11 @@ function scoreTF(bars, tfKey, live = {}, extra = {}) {
   }
 
   // 动能 (±30)
-  if (RSI > 50 && RSI < 72)  { score += 8;  notes.push(`RSI${RSI}健康区(+8)`); }
+  if (RSI > 50 && RSI < 72)  { score += 10; notes.push(`RSI${RSI}健康区(+10)`); }
   else if (RSI < 35)         { score += 6;  notes.push(`RSI${RSI}超卖反弹(+6)`); }
   else if (RSI > 80)         { score -= 12; notes.push(`RSI${RSI}超买危险(-12)`); }
   if (MACD.turning)          { score += 12; notes.push('MACD金叉/柱转正(+12)★★'); }
-  else if (MACD.aboveZero && MACD.histRising) { score += 8; notes.push('MACD柱正且加速(+8)'); }
+  else if (MACD.aboveZero && MACD.histRising) { score += 10; notes.push('MACD柱正且加速(+10)'); }
   else if (MACD.aboveZero)   { score += 4;  notes.push('MACD柱正(+4)'); }
   else if (!MACD.turning)    { score -= 6;  notes.push('MACD柱负(-6)'); }
 
