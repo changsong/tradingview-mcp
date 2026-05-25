@@ -23,16 +23,22 @@
     "test:count": "node --test --test-reporter=spec tests/e2e.test.js 2>&1 | tail -5",
     "scan:cn": "node pipeline/1-scan/scan_stocks.js --symbols=filepath=./watchlist/cn.txt --output=./watchlist/cn_selected.txt",
     "scan:us": "node pipeline/1-scan/scan_stocks.js --symbols=filepath=./watchlist/us.txt --output=./watchlist/us_selected.txt",
+    "scan:hk": "node pipeline/1-scan/scan_stocks.js --symbols=filepath=./watchlist/hk.txt --output=./watchlist/hk_selected.txt",
     "news:cn": "node pipeline/2-news/analyze_cn_news.mjs",
     "news:us": "node pipeline/2-news/analyze_us_news.mjs",
+    "news:hk": "node pipeline/2-news/analyze_hk_news.mjs",
     "tech:cn": "node pipeline/3-technical/analyze_tech_cn_mtf.mjs",
     "tech:us": "node pipeline/3-technical/analyze_tech_us_mtf.mjs",
+    "tech:hk": "node pipeline/3-technical/analyze_tech_hk_mtf.mjs",
     "combined:cn": "node pipeline/4-combined/analyze_cn_combined.mjs",
     "combined:us": "node pipeline/4-combined/analyze_us_combined.mjs",
+    "combined:hk": "node pipeline/4-combined/analyze_hk_combined.mjs",
     "review:cn": "node pipeline/5-review/review_cn.mjs",
     "review:us": "node pipeline/5-review/review_us.mjs",
+    "review:hk": "node pipeline/5-review/review_hk.mjs",
     "full:cn": "npm run news:cn && npm run tech:cn && npm run combined:cn",
-    "full:us": "npm run news:us && npm run tech:us && npm run combined:us"
+    "full:us": "npm run news:us && npm run tech:us && npm run combined:us",
+    "full:hk": "npm run news:hk && npm run tech:hk && npm run combined:hk"
   },
   "dependencies": {
     "@crawlee/playwright": "^3.16.0",

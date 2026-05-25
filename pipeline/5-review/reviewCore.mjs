@@ -43,7 +43,7 @@ const DOWN_FACTOR = 0.75;       // recommended weight shrink for loser features
 //  Public entry
 // ═══════════════════════════════════════════════════════════════════════════
 /**
- * @param {'cn'|'us'} market
+ * @param {'cn'|'us'|'hk'} market
  */
 export async function runReview(market) {
   const tag = market.toUpperCase();

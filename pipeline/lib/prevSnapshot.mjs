@@ -12,7 +12,7 @@ const REPORTS_DIR = './reports';
 const DATE_RE = /^\d{4}-\d{2}-\d{2}$/;
 
 /**
- * @param {'cn'|'us'} market
+ * @param {'cn'|'us'|'hk'} market
  * @param {string} todayISO  e.g. "2026-05-13" — must be strict ISO date
  * @returns {{ dir: string, date: string }}
  */

@@ -406,6 +406,74 @@ const CN_TECH_PATHS = {
   'tech.score.mid':            'pipeline/3-technical/analyze_tech_cn_mtf.mjs (scoreTF 总分区间)',
 };
 
+// HK tech — same conceptual scoring rules as CN, line offsets specific to the HK script
+const HK_TECH_PATHS = {
+  'tech.1D.bull_ema':         'pipeline/3-technical/analyze_tech_hk_mtf.mjs:444',
+  'tech.1W.bull_ema':         'pipeline/3-technical/analyze_tech_hk_mtf.mjs:444',
+  'tech.1D.above_ema200':     'pipeline/3-technical/analyze_tech_hk_mtf.mjs:445',
+  'tech.1W.above_ema200':     'pipeline/3-technical/analyze_tech_hk_mtf.mjs:445',
+  'tech.1D.dist20.near':      'pipeline/3-technical/analyze_tech_hk_mtf.mjs:450',
+  'tech.1H.dist20.near':      'pipeline/3-technical/analyze_tech_hk_mtf.mjs:450',
+  'tech.1D.dist20.overheat':  'pipeline/3-technical/analyze_tech_hk_mtf.mjs:451',
+  'tech.1D.adx.strong':       'pipeline/3-technical/analyze_tech_hk_mtf.mjs:454',
+  'tech.1W.adx.strong':       'pipeline/3-technical/analyze_tech_hk_mtf.mjs:454',
+  'tech.4H.adx.strong':       'pipeline/3-technical/analyze_tech_hk_mtf.mjs:454',
+  'tech.1H.adx.trending':     'pipeline/3-technical/analyze_tech_hk_mtf.mjs:454',
+  'tech.1D.adx.chop':         'pipeline/3-technical/analyze_tech_hk_mtf.mjs:441',
+  'tech.1D.rsi.healthy':      'pipeline/3-technical/analyze_tech_hk_mtf.mjs:460',
+  'tech.1D.rsi.oversold':     'pipeline/3-technical/analyze_tech_hk_mtf.mjs:461',
+  'tech.1D.rsi.overheat':     'pipeline/3-technical/analyze_tech_hk_mtf.mjs:462',
+  'tech.1W.rsi.overheat':     'pipeline/3-technical/analyze_tech_hk_mtf.mjs:462',
+  'tech.1D.macd.turning':     'pipeline/3-technical/analyze_tech_hk_mtf.mjs:463',
+  'tech.1D.macd.bullish':     'pipeline/3-technical/analyze_tech_hk_mtf.mjs:464',
+  'tech.1W.macd.bullish':     'pipeline/3-technical/analyze_tech_hk_mtf.mjs:464',
+  'tech.1D.divergence.bull':  'pipeline/3-technical/analyze_tech_hk_mtf.mjs:468',
+  'tech.1D.divergence.bear':  'pipeline/3-technical/analyze_tech_hk_mtf.mjs:469',
+  'tech.1D.sqz.active':       'pipeline/3-technical/analyze_tech_hk_mtf.mjs:476',
+  'tech.1D.sqz.long_streak':  'pipeline/3-technical/analyze_tech_hk_mtf.mjs:478',
+  'tech.1W.sqz.active':       'pipeline/3-technical/analyze_tech_hk_mtf.mjs:476',
+  'tech.1D.vol.expanding':    'pipeline/3-technical/analyze_tech_hk_mtf.mjs:485',
+  'tech.1D.obv.up':           'pipeline/3-technical/analyze_tech_hk_mtf.mjs:488',
+  'tech.1W.obv.up':           'pipeline/3-technical/analyze_tech_hk_mtf.mjs:488',
+  'tech.1D.near_support':     'pipeline/3-technical/analyze_tech_hk_mtf.mjs:493',
+  'tech.flag.overheat':       'pipeline/3-technical/analyze_tech_hk_mtf.mjs:451',
+  'tech.flag.bull_trap':      'pipeline/3-technical/analyze_tech_hk_mtf.mjs:620',
+  'tech.flag.fake_breakout':  'pipeline/3-technical/analyze_tech_hk_mtf.mjs:621',
+  'tech.flag.bear_div':       'pipeline/3-technical/analyze_tech_hk_mtf.mjs:623',
+  'tech.flag.bad_rr':         'pipeline/3-technical/analyze_tech_hk_mtf.mjs:624',
+  'tech.flag.chop':           'pipeline/3-technical/analyze_tech_hk_mtf.mjs:625',
+  'tech.flag.reversal':       'pipeline/3-technical/analyze_tech_hk_mtf.mjs:622',
+  'tech.type.breakout':       'pipeline/3-technical/analyze_tech_hk_mtf.mjs:610',
+  'tech.type.trend_chase':    'pipeline/3-technical/analyze_tech_hk_mtf.mjs:613',
+  'tech.type.trend_continue': 'pipeline/3-technical/analyze_tech_hk_mtf.mjs:616',
+  'tech.type.pullback':       'pipeline/3-technical/analyze_tech_hk_mtf.mjs:612',
+  'tech.type.overheat_chase': 'pipeline/3-technical/analyze_tech_hk_mtf.mjs:614',
+  'tech.type.reversal':       'pipeline/3-technical/analyze_tech_hk_mtf.mjs:607',
+  'tech.rs.strong':           'pipeline/3-technical/analyze_tech_hk_mtf.mjs:509',
+  'tech.rs.weak':             'pipeline/3-technical/analyze_tech_hk_mtf.mjs:512',
+  'tech.score.mid':            'pipeline/3-technical/analyze_tech_hk_mtf.mjs (scoreTF 总分区间)',
+};
+
+// HK news — shares the CN news pipeline (webNews.js + 2-news/lib), so the source
+// paths are identical to CN. Listed separately so getWeightSources('hk') resolves.
+const HK_NEWS_PATHS = {
+  'news.top_news_type.财报':   'pipeline/2-news/analyze_hk_news.mjs (via lib/dictionaries.mjs TYPE_WEIGHT)',
+  'news.top_news_type.政策':   'pipeline/2-news/analyze_hk_news.mjs (via lib/dictionaries.mjs TYPE_WEIGHT)',
+  'news.top_news_type.并购':   'pipeline/2-news/analyze_hk_news.mjs (via lib/dictionaries.mjs TYPE_WEIGHT)',
+  'news.top_news_type.黑天鹅': 'pipeline/2-news/analyze_hk_news.mjs (via lib/dictionaries.mjs TYPE_WEIGHT)',
+  'news.top_news_type.传闻':   'pipeline/2-news/analyze_hk_news.mjs (via lib/dictionaries.mjs TYPE_WEIGHT)',
+  'news.pattern.trend_up':              'pipeline/2-news/lib/patterns.mjs (情绪持续增强)',
+  'news.pattern.trend_down':            'pipeline/2-news/lib/patterns.mjs (情绪持续走弱)',
+  'news.pattern.reversal_up':           'pipeline/2-news/lib/patterns.mjs (情绪由空转多)',
+  'news.pattern.reversal_down':         'pipeline/2-news/lib/patterns.mjs (情绪由多转空)',
+  'news.pattern.overheat_warn':         'pipeline/2-news/lib/patterns.mjs (⚠️情绪过热)',
+  'news.pattern.rumor_dominant':        'pipeline/2-news/lib/patterns.mjs (⚠️传闻主导)',
+  'news.pattern.early_hype':            'pipeline/2-news/lib/patterns.mjs (⚠️提前炒作)',
+  'news.pattern.divergence_blackswan':  'pipeline/2-news/lib/patterns.mjs (⚠️情绪背离)',
+  'news.signal.long_strong':            'pipeline/2-news/lib/signal.mjs (强看多)',
+  'news.signal.overheated':             'pipeline/2-news/lib/signal.mjs (过热)',
+};
+
 // US tech offsets — different line numbers, same conceptual scoring rules
 const US_TECH_PATHS = {
   'tech.1D.bull_ema':         'pipeline/3-technical/analyze_tech_us_mtf.mjs:478',
@@ -470,12 +538,16 @@ const US_NEWS_PATHS = {
 
 /**
  * Build a market-specific WEIGHT_SOURCES map.
- * @param {'cn'|'us'} market
+ * @param {'cn'|'us'|'hk'} market
  * @returns {Record<string, { layer: 'tech'|'news', source_path: string, source_label: string, current: number|null }>}
  */
 export function getWeightSources(market) {
-  const techPaths = market === 'us' ? US_TECH_PATHS : CN_TECH_PATHS;
-  const newsPaths = market === 'us' ? US_NEWS_PATHS : CN_NEWS_PATHS;
+  const techPaths = market === 'us' ? US_TECH_PATHS
+                  : market === 'hk' ? HK_TECH_PATHS
+                  : CN_TECH_PATHS;
+  const newsPaths = market === 'us' ? US_NEWS_PATHS
+                  : market === 'hk' ? HK_NEWS_PATHS
+                  : CN_NEWS_PATHS;
   const out = {};
   for (const [k, meta] of Object.entries(TECH_FEATURES_COMMON)) {
     if (!techPaths[k]) continue;
