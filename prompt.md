@@ -109,7 +109,9 @@ npm run combined:us
 # 产物：watchlist/us_combined_signals.md + 自动快照到 reports/<YYYY-MM-DD>/
 ```
 请单独出一份股票列表,名单需要满足如下三个条件：
-1. 等级为：🟢A 2. 多周期对齐：3/4 (75%) 或 4/4 (100%) 3. 盈亏比大于 2:1
+1. 等级为：🟢A 
+2. 2. 多周期对齐：3/4 (75%) 或 4/4 (100%) 
+3. News Signal是：GREEN Long (Strong)
 
 ### 评估模型结果 10分钟
 使用 ./scripts/launch_tv_debug.bat, 启动TradigView 运行如下命令:     
@@ -128,6 +130,58 @@ npm run combined:us
 
 
 
+
+## 港股
+### 港股 30分钟左右
+使用 `./scripts/launch_tv_debug.bat` 启动TradingView，请使用策略名为：HK Market SQZMOM PRO v1.0 , 设置图表周期为天。然后执行：
+
+```bash
+npm run scan:hk
+# 等价：node pipeline/1-scan/scan_stocks.js --symbols=filepath=./watchlist/hk.txt --output=./watchlist/hk_selected.txt
+```
+将筛选出的股票需要合并 `./watchlist/hk_selected.txt`,并排重。
+
+## 研报及新闻分析 5-10分钟
+利用 `./src/core/usNews.js` 获取这些推荐股票的新闻（研报/快讯/新闻）。 获取这些推筛选出的股票的新闻（研报/快讯/新闻），分析市场情绪倾向、对股价的潜在影响、关键风险和机会点，将新闻转化为"可交易信号"，最好覆盖最近 5 个交易日最重要的新闻。直接执行：
+
+```bash
+npm run news:us
+# 产物：watchlist/us_news_signals.md + watchlist/us_news_signals.json
+```
+
+脚本内置规则：
+1. 抓取并筛选高影响力新闻（去噪）
+2. 对每条新闻打标签：类型（政策/财报/并购/行业/黑天鹅/传闻）+ 情绪（+1/0/-1）+ 权重（1~5）
+3. 构建情绪指数：Sentiment Score = Σ(情绪 × 权重)
+4. 识别关键模式：情绪持续增强(trend) / 情绪反转(reversal) / 情绪背离(price vs news)
+5. 输出交易信号：Long / Short / No Trade + 触发原因 + 是否适合追涨/低吸/反转
+6. 必须识别：是否已经提前炒作 / 是否存在情绪过热 / 是否是假利好
+
+## 技术面分析
+使用 `./scripts/launch_tv_debug.bat` 启动TradingView。直接执行：
+
+```bash
+npm run tech:us
+# 产物：watchlist/us_tech_signals.md + watchlist/us_tech_signals.json
+```
+
+【交易信号】结论（Long/Short/Wait）+ 类型（Breakout/Pullback/Reversal/Trend/Overheat）+ 是否追涨 + 关键风险（压力位/动能衰/诱多/假突）。
+
+## 合并分析
+直接执行：
+
+```bash
+npm run combined:us
+# 产物：watchlist/us_combined_signals.md + 自动快照到 reports/<YYYY-MM-DD>/
+```
+请单独出一份股票列表,名单需要满足如下三个条件：
+1. 等级为：🟢A 
+2. 2. 多周期对齐：3/4 (75%) 或 4/4 (100%) 
+3. News Signal是：GREEN Long (Strong)
+
+### 评估模型结果 10分钟
+使用 ./scripts/launch_tv_debug.bat, 启动TradigView 运行如下命令:     
+    npm review:us
 
 
 
