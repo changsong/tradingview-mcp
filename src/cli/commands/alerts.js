@@ -9,14 +9,16 @@ register('alert', {
       handler: () => core.list(),
     }],
     ['create', {
-      description: 'Create a price alert',
+      description: 'Create a price-crossing alert',
       options: {
-        price: { type: 'string', short: 'p', description: 'Price level' },
-        condition: { type: 'string', short: 'c', description: 'Condition: crossing, greater_than, less_than' },
+        symbol: { type: 'string', short: 's', description: 'Optional: switch chart to this symbol first (e.g., NASDAQ:RKLB)' },
+        price: { type: 'string', short: 'p', description: 'Price level (required)' },
+        condition: { type: 'string', short: 'c', description: 'Condition: crossing (only supported)' },
         message: { type: 'string', short: 'm', description: 'Alert message' },
       },
       handler: (opts) => core.create({
-        price: Number(opts.price),
+        symbol: opts.symbol,
+        price: opts.price,
         condition: opts.condition || 'crossing',
         message: opts.message,
       }),

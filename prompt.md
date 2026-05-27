@@ -26,10 +26,10 @@ npm run scan:cn
 npm run news:cn
 # 产物：watchlist/cn_news_signals.md（人看） + watchlist/cn_news_signals.json（下游契约）
 ```
-
-脚本内置规则：
 1. 抓取并筛选高影响力新闻（去噪）
-2. 对每条新闻打标签：类型（政策/财报/并购/行业/黑天鹅/传闻）+ 情绪（+1/0/-1）+ 权重（1~5）
+2. 对每条新闻打标签：类型（政策/财报/并购/行业/黑天鹅/传闻）+ 情绪（+1/0/-1）+ 权
+
+脚本内置规则：重（1~5）
 3. 构建情绪指数：Sentiment Score = Σ(情绪 × 权重)
 4. 识别关键模式：情绪持续增强(trend) / 情绪反转(reversal) / 情绪背离(price vs news)
 5. 输出交易信号：Long / Short / No Trade + 触发原因 + 是否适合追涨/低吸/反转
@@ -98,12 +98,11 @@ npm run news:us
 npm run tech:us
 # 产物：watchlist/us_tech_signals.md + watchlist/us_tech_signals.json
 ```
-
 【交易信号】结论（Long/Short/Wait）+ 类型（Breakout/Pullback/Reversal/Trend/Overheat）+ 是否追涨 + 关键风险（压力位/动能衰/诱多/假突）。
 
 ## 合并分析
-直接执行：
 
+直接执行：
 ```bash
 npm run combined:us
 # 产物：watchlist/us_combined_signals.md + 自动快照到 reports/<YYYY-MM-DD>/
@@ -116,9 +115,6 @@ npm run combined:us
 ### 评估模型结果 10分钟
 使用 ./scripts/launch_tv_debug.bat, 启动TradigView 运行如下命令:     
     npm review:us
-
-
-
 
 
 
@@ -142,10 +138,10 @@ npm run scan:hk
 将筛选出的股票需要合并 `./watchlist/hk_selected.txt`,并排重。
 
 ## 研报及新闻分析 5-10分钟
-利用 `./src/core/usNews.js` 获取这些推荐股票的新闻（研报/快讯/新闻）。 获取这些推筛选出的股票的新闻（研报/快讯/新闻），分析市场情绪倾向、对股价的潜在影响、关键风险和机会点，将新闻转化为"可交易信号"，最好覆盖最近 5 个交易日最重要的新闻。直接执行：
+利用 `./src/core/hkNews.js` 获取这些推荐股票的新闻（研报/快讯/新闻）。 获取这些推筛选出的股票的新闻（研报/快讯/新闻），分析市场情绪倾向、对股价的潜在影响、关键风险和机会点，将新闻转化为"可交易信号"，最好覆盖最近 5 个交易日最重要的新闻。直接执行：
 
 ```bash
-npm run news:us
+npm run news:hk
 # 产物：watchlist/us_news_signals.md + watchlist/us_news_signals.json
 ```
 
@@ -161,7 +157,7 @@ npm run news:us
 使用 `./scripts/launch_tv_debug.bat` 启动TradingView。直接执行：
 
 ```bash
-npm run tech:us
+npm run tech:hk
 # 产物：watchlist/us_tech_signals.md + watchlist/us_tech_signals.json
 ```
 
@@ -171,7 +167,7 @@ npm run tech:us
 直接执行：
 
 ```bash
-npm run combined:us
+npm run combined:hk
 # 产物：watchlist/us_combined_signals.md + 自动快照到 reports/<YYYY-MM-DD>/
 ```
 请单独出一份股票列表,名单需要满足如下三个条件：
@@ -181,7 +177,7 @@ npm run combined:us
 
 ### 评估模型结果 10分钟
 使用 ./scripts/launch_tv_debug.bat, 启动TradigView 运行如下命令:     
-    npm review:us
+    npm review:hk
 
 
 
@@ -190,17 +186,21 @@ npm run combined:us
 
 > 💡 一键全跑：`npm run full:us`
  ## 单只股票涨跌分析                                          
-使用 `./scripts/launch_tv_debug.bat` 启动TradingView， 只分析A股票：002245，分析这一只股票历史K线情况: 1D, 4H，1H，30m，1m情况，根据技术形态，分析主力意图，预测明日及之后一周内的涨跌预期，目前持仓成本为：18.943 ，400股，并请详细说明后续的操作方法
+使用 `./scripts/launch_tv_debug.bat` 启动TradingView， 只分析A股票：002156，分析这一只股票历史K线情况: 1D, 4H，1H，30m，1m情况，根据技术形态，分析主力意图，预测明日及之后一周内的涨跌预期，目前持仓成本为： 73.114，300股，并请详细说明后续的操作方法
 
 
-使用 `./scripts/launch_tv_debug.bat` 启动TradingView， 只分析A股票：300445 ，分析这一只股票历史K线情况: 1D, 4H，1H，30m，1m情况，根据技术形态，分析主力意图，预测明日及之后一周内的涨跌预期，目前持仓成本为：25 ，900股，并请详细说明后续的操作方法
+使用 `./scripts/launch_tv_debug.bat` 启动TradingView， 只分析A股票：600114 ，分析这一只股票历史K线情况: 1D, 4H，1H，30m，1m情况，根据技术形态，分析主力意图，预测明日及之后一周内的涨跌预期，目前持仓成本为：37.211 ,300股，并请详细说明后续的操作方法
 
 
-使用 `./scripts/launch_tv_debug.bat` 启动TradingView， 分析A股票：600114, 600388,600584 分析这几只股票历史K线情况: 1D, 4H，1H，30m，1m情况，根据技术形态，分析主力意图，预测明日是否是介入的好时刻，并请详细说明后续的操作方法
+使用 `./scripts/launch_tv_debug.bat` 启动TradingView， 只分析A股票：002452 ，分析这一只股票历史K线情况: 1D, 4H，1H，30m，1m情况，根据技术形态，分析主力意图，预测明日及之后一周内的涨跌预期，目前持仓成本为：12.145, 200股，并请详细说明后续的操作方法
+
+
+使用 `./scripts/launch_tv_debug.bat` 启动TradingView， 分析A股票：江海股份、江波龙、紫光国微、 北方华创、 东睦股份、申菱环境、长高电新、恒立液压、华工科技、科士达、通富微电、领益智造、深科技 、海通发展、华天科技、中国巨石、快克智能 分析这几只股票历史K线情况: 1D, 4H，1H，30m，1m情况，根据技术形态，分析主力意图，预测明日是否是介入的好时刻，并请详细说明后续的操作方法
+
 
 
 ## 自选股分析
-目前有如下股票：龙净环保 快克智能 东睦股份 中国巨石 通富微电 中恒电气 长电科技 海通发展 艾迪精密 华工科技
+目前有如下股票：江海股份、江波龙、紫光国微、 北方华创、 东睦股份、申菱环境、长高电新、恒立液压、华工科技、科士达、通富微电、领益智造、深科技 、海通发展、华天科技、中国巨石、快克智能
 这些股票，有1000000的本金，结合大盘情况，怎么买入，分配比例预期收益最大，并分析明日及之后一周内的涨跌预期，请详细说明后续的操作方法
 
 ## 评估体系优化
@@ -211,6 +211,9 @@ npm run combined:us
     npm review:cn
     npm review:us
 两个命令依次执行
+
+## 设置报警
+设置RKLB 股票，到达 $111 的报警
 
 ---------------------------------------------------------------------------------------------------------------------------------------------------------
 # 策略优化
@@ -227,12 +230,11 @@ npm run combined:us
 ### 使用 ./scripts/launch_tv_debug.bat 启动TradigView，请使用策略：US Stock SQZMOM Daily PRO v4 (ATR + EMA20 Stop)，请分析这个策略，有没有可以提高的地方, 先列出可能优化的点，并制定优化计划，在日线上进行回测并分析交易清单，对策略进行改进，提高交易信号同时，也需要提高胜率，提高收益, 优化策略后，请使用 ../watchlist/us.txt 中的股票列表做回测，根据回测结果特别是交易清单，研究亏损的订单，总结规律，不断优化策略，并回测，做对比，对策略进行改进，提高交易信号同时，也需要提高胜率提高胜率，提高收益，持续优化，直到不能持续优化为止
 
 ## 添加Wathlist
-使用 ./scripts/launch_tv_debug.bat 启动TradigView，将 002371.SZ,603501.SH,300308.SZ,002463.SZ,603919.SH,002049.SZ,600588.SH,300274.SZ,300014.SZ,002594.SZ,600406.SH,002459.SZ,600031.SH,000157.SZ,601665.SH,600585.SH,002146.SZ,000333.SZ,000651.SZ,600690.SH,002415.SZ,002281.SZ,002011.SZ,600590.SH,300812.SZ,600316.SH,002472,300124,603728,002979,601100,300580,603667,603662,300354,300007,002050,601689,002475,300660,002230，159770,562500,002028,002270,002922,300763,300274,605117,
-  300872.SZ,603306.SH,002979,002050,601689,603728,603662,300124,601100,603667,300660,002230,300007,300354 这些股票加入 A股可交易 这个watchlist
+使用 ./scripts/launch_tv_debug.bat 启动TradigView，将 300308.SZ,002273.SZ,300502.SZ,002222.SZ,300394.SZ,301479.SZ,603297.SH 这些股票加入 A股可交易 这个watchlist
 
-使用 ./scripts/launch_tv_debug.bat 启动TradigView，将 ENPH,SEDG,GNRC,TYGO,SBGSY,SMERY,SMTGY,GEV,ETN,HTHIY,ABBNY,HMDPF,PWR,NVDA,TSM,AVGO,VRT,ASML,CRWD,TSLA,ARM,VRTX,RXRX 这些股票加入 美股可交易 这个watchlist
+使用 ./scripts/launch_tv_debug.bat 启动TradigView，将 LITE,COHR,AAOI,FN,CRDO,HSAI 这些股票加入 美股可交易 这个watchlist
 
-使用 ./scripts/launch_tv_debug.bat 启动TradigView，将 06656,03393,08070,02722,01072,01608,02727,01133,00658,02208,00042,0020,9660.HK,9880.HK,9880.HK,9660.HK这些股票加入 港股可交易 这个watchlist
+使用 ./scripts/launch_tv_debug.bat 启动TradigView，将 02382.HK,02276.HK,02498.HK 这些股票加入 港股可交易 这个watchlist
 
 ## 分析ReView
 分析 ./reports/YYYY-MM-dd 下所有 cn_review.json, cn_review.md 统计涨幅共同特征，跌幅共同特征，权重调整建议 ，未分类特征。分析出最值得的权重调整建议，最值得增加未分类特征 

@@ -2,7 +2,7 @@ import CDP from 'chrome-remote-interface';
 
 let client = null;
 let targetInfo = null;
-const CDP_HOST = 'localhost';
+const CDP_HOST = '127.0.0.1';
 const CDP_PORT = 9222;
 const MAX_RETRIES = 5;
 const BASE_DELAY = 500;
@@ -50,10 +50,15 @@ export function requireFinite(value, name) {
 export async function getClient() {
   if (client) {
     try {
-      // Quick liveness check
-      await client.Runtime.evaluate({ expression: '1', returnByValue: true });
+      // Liveness check with 2s timeout — a half-dead WebSocket accepts the
+      // request but never responds, hanging the entire MCP call.
+      await Promise.race([
+        client.Runtime.evaluate({ expression: '1', returnByValue: true }),
+        new Promise((_, reject) => setTimeout(() => reject(new Error('liveness timeout')), 2000)),
+      ]);
       return client;
     } catch {
+      try { await client.close(); } catch {}
       client = null;
       targetInfo = null;
     }
@@ -72,10 +77,15 @@ export async function connect() {
       targetInfo = target;
       client = await CDP({ host: CDP_HOST, port: CDP_PORT, target: target.id });
 
-      // Enable required domains
-      await client.Runtime.enable();
-      await client.Page.enable();
-      await client.DOM.enable();
+      // Deliberately NOT calling Runtime.enable / Page.enable / DOM.enable.
+      // Runtime.enable causes TV to forward every console.debug() through CDP socket,
+      // and when TV closes, late events on a half-closed socket cause EPIPE errors.
+      // Runtime.evaluate, Input, and Page.captureScreenshot all work without domain enables.
+
+      client.on('disconnect', () => { client = null; targetInfo = null; });
+
+      // Keep chart canvas painting even when tab is backgrounded
+      try { await client.Emulation.setFocusEmulationEnabled({ enabled: true }); } catch {}
 
       return client;
     } catch (err) {
@@ -129,6 +139,9 @@ export async function evaluateAsync(expression) {
 
 export async function disconnect() {
   if (client) {
+    try { await client.Runtime.disable(); } catch {}
+    try { await client.Page.disable(); } catch {}
+    try { await client.DOM.disable(); } catch {}
     try { await client.close(); } catch {}
     client = null;
     targetInfo = null;

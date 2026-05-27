@@ -1,79 +1,215 @@
 /**
  * Core alert logic.
  */
-import { evaluate, evaluateAsync, getClient, safeString } from '../connection.js';
+import { evaluate, evaluateAsync, getClient, safeString, requireFinite } from '../connection.js';
+import { setSymbol as setChartSymbol } from './chart.js';
 
-export async function create({ condition, price, message }) {
-  const opened = await evaluate(`
+const sleep = (ms) => new Promise((r) => setTimeout(r, ms));
+
+async function waitFor(predicateExpr, timeoutMs = 5000, intervalMs = 200) {
+  const deadline = Date.now() + timeoutMs;
+  while (Date.now() < deadline) {
+    const ok = await evaluate(`(function(){ try { return !!(${predicateExpr}); } catch(e){ return false; } })()`);
+    if (ok) return true;
+    await sleep(intervalMs);
+  }
+  return false;
+}
+
+const PRICE_INPUT_FINDER = `
+  (function() {
+    var inputs = document.querySelectorAll('input[type="text"], input[type="number"]');
+    for (var i = 0; i < inputs.length; i++) {
+      var el = inputs[i];
+      if (el.offsetParent === null) continue;
+      var ph = el.placeholder || '';
+      if (/查找|search|find/i.test(ph)) continue;
+      var v = (el.value || '').trim();
+      if (/^-?\\d+(\\.\\d+)?$/.test(v)) return el;
+    }
+    return null;
+  })()
+`;
+
+async function sendEscape() {
+  const c = await getClient();
+  await c.Input.dispatchKeyEvent({ type: 'keyDown', key: 'Escape', code: 'Escape', windowsVirtualKeyCode: 27 });
+  await c.Input.dispatchKeyEvent({ type: 'keyUp', key: 'Escape', code: 'Escape', windowsVirtualKeyCode: 27 });
+}
+
+export async function create({ symbol, price, condition = 'crossing', message } = {}) {
+  const validPrice = requireFinite(price, 'price');
+  if (condition !== 'crossing') {
+    throw new Error(`Unsupported condition: ${condition}. Only "crossing" is supported.`);
+  }
+
+  if (symbol) {
+    await setChartSymbol({ symbol });
+    await sleep(300);
+  }
+
+  const resolvedSymbol = await evaluate(`
     (function() {
-      var btn = document.querySelector('[aria-label="Create Alert"]')
-        || document.querySelector('[data-name="alerts"]');
-      if (btn) { btn.click(); return true; }
-      return false;
+      try { return window.TradingViewApi._activeChartWidgetWV.value().symbol(); }
+      catch(e) { return null; }
     })()
   `);
 
-  if (!opened) {
-    const client = await getClient();
-    await client.Input.dispatchKeyEvent({ type: 'keyDown', modifiers: 1, key: 'a', code: 'KeyA', windowsVirtualKeyCode: 65 });
-    await client.Input.dispatchKeyEvent({ type: 'keyUp', key: 'a', code: 'KeyA' });
+  const dialogAlreadyOpen = await evaluate(`!!(${PRICE_INPUT_FINDER})`);
+  if (dialogAlreadyOpen) {
+    await sendEscape();
+    await sleep(300);
   }
 
-  await new Promise(r => setTimeout(r, 1000));
-
-  const priceSet = await evaluate(`
+  const widgetbarVisible = await evaluate(`
     (function() {
-      var inputs = document.querySelectorAll('[class*="alert"] input[type="text"], [class*="alert"] input[type="number"]');
-      for (var i = 0; i < inputs.length; i++) {
-        var label = inputs[i].closest('[class*="row"]')?.querySelector('[class*="label"]');
-        if (label && /value|price/i.test(label.textContent)) {
-          var nativeSet = Object.getOwnPropertyDescriptor(HTMLInputElement.prototype, 'value').set;
-          nativeSet.call(inputs[i], ${safeString(String(price))});
-          inputs[i].dispatchEvent(new Event('input', { bubbles: true }));
-          inputs[i].dispatchEvent(new Event('change', { bubbles: true }));
-          return true;
+      var w = document.querySelector('.widgetbar-widget-alerts');
+      return !!(w && w.offsetParent);
+    })()
+  `);
+  if (!widgetbarVisible) {
+    const opened = await evaluate(`
+      (function() {
+        var btn = document.querySelector('[data-name="alerts"]');
+        if (!btn) return false;
+        btn.click();
+        return true;
+      })()
+    `);
+    if (!opened) throw new Error('Could not find right-toolbar alerts button [data-name="alerts"]');
+    const appeared = await waitFor(`(function(){ var w = document.querySelector('.widgetbar-widget-alerts'); return w && w.offsetParent; })()`, 3000);
+    if (!appeared) throw new Error('Alerts widgetbar did not open within 3s');
+  }
+
+  const createBtnClicked = await evaluate(`
+    (function() {
+      var widget = document.querySelector('.widgetbar-widget-alerts');
+      if (!widget) return { ok: false, reason: 'widget_missing' };
+      var els = widget.querySelectorAll('[title]');
+      for (var i = 0; i < els.length; i++) {
+        var t = els[i].getAttribute('title') || '';
+        if (t === 'Create Alert' || t === '创建警报') {
+          els[i].click();
+          return { ok: true, title: t };
         }
       }
-      if (inputs.length > 0) {
-        var nativeSet = Object.getOwnPropertyDescriptor(HTMLInputElement.prototype, 'value').set;
-        nativeSet.call(inputs[0], ${safeString(String(price))});
-        inputs[0].dispatchEvent(new Event('input', { bubbles: true }));
-        return true;
+      return { ok: false, reason: 'button_missing', titles: Array.from(els).map(function(b){return b.getAttribute('title');}) };
+    })()
+  `);
+  if (!createBtnClicked || !createBtnClicked.ok) {
+    throw new Error(`Could not click "Create Alert" button (reason: ${createBtnClicked?.reason}, titles seen: ${JSON.stringify(createBtnClicked?.titles)})`);
+  }
+
+  const inputAppeared = await waitFor(PRICE_INPUT_FINDER, 3000);
+  if (!inputAppeared) throw new Error('Alert dialog price input did not appear within 3s');
+
+  const rect = await evaluate(`
+    (function() {
+      var el = ${PRICE_INPUT_FINDER};
+      if (!el) return null;
+      var r = el.getBoundingClientRect();
+      return { x: r.x + r.width / 2, y: r.y + r.height / 2 };
+    })()
+  `);
+  if (!rect) throw new Error('Could not locate price input rect');
+
+  const c = await getClient();
+  for (let i = 1; i <= 3; i++) {
+    await c.Input.dispatchMouseEvent({ type: 'mousePressed',  x: rect.x, y: rect.y, button: 'left', clickCount: i });
+    await c.Input.dispatchMouseEvent({ type: 'mouseReleased', x: rect.x, y: rect.y, button: 'left', clickCount: i });
+  }
+  await sleep(50);
+  await c.Input.insertText({ text: String(validPrice) });
+  await sleep(100);
+
+  await evaluate(`
+    (function() {
+      var el = ${PRICE_INPUT_FINDER};
+      if (el) {
+        el.dispatchEvent(new Event('input', { bubbles: true }));
+        el.dispatchEvent(new Event('change', { bubbles: true }));
       }
-      return false;
     })()
   `);
 
   if (message) {
     await evaluate(`
       (function() {
-        var textarea = document.querySelector('[class*="alert"] textarea')
-          || document.querySelector('textarea[placeholder*="message"]');
-        if (textarea) {
+        var textareas = document.querySelectorAll('textarea');
+        for (var i = 0; i < textareas.length; i++) {
+          var ta = textareas[i];
+          if (ta.offsetParent === null) continue;
           var nativeSet = Object.getOwnPropertyDescriptor(HTMLTextAreaElement.prototype, 'value').set;
-          nativeSet.call(textarea, ${JSON.stringify(message)});
-          textarea.dispatchEvent(new Event('input', { bubbles: true }));
+          nativeSet.call(ta, ${safeString(message)});
+          ta.dispatchEvent(new Event('input', { bubbles: true }));
+          ta.dispatchEvent(new Event('change', { bubbles: true }));
+          return true;
         }
+        return false;
       })()
     `);
   }
 
-  await new Promise(r => setTimeout(r, 500));
-  const created = await evaluate(`
+  const beforeList = await list();
+  const beforeIds = new Set((beforeList.alerts || []).map((a) => a.alert_id));
+
+  const submitRect = await evaluate(`
     (function() {
-      var btns = document.querySelectorAll('button[data-name="submit"], button');
+      var btns = document.querySelectorAll('button');
       for (var i = 0; i < btns.length; i++) {
-        if (/^create$/i.test(btns[i].textContent.trim())) { btns[i].click(); return true; }
+        var b = btns[i];
+        if (b.offsetParent === null) continue;
+        var t = (b.textContent || '').trim();
+        if (t === '创建订单' || t === 'Create' || t === 'Create Alert') {
+          var r = b.getBoundingClientRect();
+          return { x: r.x + r.width / 2, y: r.y + r.height / 2, text: t };
+        }
       }
-      return false;
+      return null;
     })()
   `);
+  if (!submitRect) throw new Error('Could not find submit button (expected 创建订单 / Create / Create Alert)');
 
-  return { success: !!created, price, condition, message: message || '(none)', price_set: !!priceSet, source: 'dom_fallback' };
+  await c.Input.dispatchMouseEvent({ type: 'mouseMoved',    x: submitRect.x, y: submitRect.y });
+  await c.Input.dispatchMouseEvent({ type: 'mousePressed',  x: submitRect.x, y: submitRect.y, button: 'left', clickCount: 1 });
+  await c.Input.dispatchMouseEvent({ type: 'mouseReleased', x: submitRect.x, y: submitRect.y, button: 'left', clickCount: 1 });
+
+  const closed = await waitFor(`!(${PRICE_INPUT_FINDER})`, 3000);
+
+  let newAlertId = null;
+  const verifyDeadline = Date.now() + 3000;
+  while (Date.now() < verifyDeadline) {
+    const cur = await list();
+    const candidate = (cur.alerts || []).find((a) => !beforeIds.has(a.alert_id));
+    if (candidate) { newAlertId = candidate.alert_id; break; }
+    await sleep(500);
+  }
+
+  if (!newAlertId) {
+    return {
+      success: false,
+      error: 'Alert dialog submitted but no new alert appeared in API within 3s',
+      symbol: resolvedSymbol,
+      price: validPrice,
+      condition,
+      message: message || null,
+      dialog_closed: !!closed,
+      source: 'ui_click',
+    };
+  }
+
+  return {
+    success: true,
+    symbol: resolvedSymbol,
+    price: validPrice,
+    condition,
+    message: message || null,
+    alert_id: newAlertId,
+    source: 'ui_click',
+  };
 }
 
 export async function list() {
-  // Use pricealerts REST API — returns structured data with alert_id, symbol, price, conditions
   const result = await evaluateAsync(`
     fetch('https://pricealerts.tradingview.com/list_alerts', { credentials: 'include' })
       .then(function(r) { return r.json(); })

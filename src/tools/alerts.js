@@ -1,15 +1,25 @@
 import { z } from 'zod';
 import { jsonResult } from './_format.js';
 import * as core from '../core/alerts.js';
+import { getClient } from '../connection.js';
 
 export function registerAlertTools(server) {
-  server.tool('alert_create', 'Create a price alert via the TradingView alert dialog', {
-    condition: z.string().describe('Alert condition (e.g., "crossing", "greater_than", "less_than")'),
-    price: z.coerce.number().describe('Price level for the alert'),
-    message: z.string().optional().describe('Alert message'),
-  }, async ({ condition, price, message }) => {
-    try { return jsonResult(await core.create({ condition, price, message })); }
-    catch (err) { return jsonResult({ success: false, error: err.message }, true); }
+  server.tool('alert_create', 'Create a price-crossing alert on a TradingView chart. Optionally switches the chart to the given symbol first.', {
+    symbol: z.string().optional().describe('Optional: switch chart to this symbol first (e.g., NASDAQ:RKLB, SZSE:300308)'),
+    price: z.coerce.number().describe('Price level to trigger the alert'),
+    condition: z.enum(['crossing']).default('crossing').describe('Trigger condition (only "crossing" supported)'),
+    message: z.string().optional().describe('Alert message text shown when triggered'),
+  }, async ({ symbol, price, condition, message }) => {
+    try {
+      return jsonResult(await core.create({ symbol, price, condition, message }));
+    } catch (err) {
+      try {
+        const c = await getClient();
+        await c.Input.dispatchKeyEvent({ type: 'keyDown', key: 'Escape', code: 'Escape', windowsVirtualKeyCode: 27 });
+        await c.Input.dispatchKeyEvent({ type: 'keyUp', key: 'Escape', code: 'Escape', windowsVirtualKeyCode: 27 });
+      } catch (_) {}
+      return jsonResult({ success: false, error: err.message }, true);
+    }
   });
 
   server.tool('alert_list', 'List active alerts', {}, async () => {
