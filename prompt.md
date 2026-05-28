@@ -121,15 +121,9 @@ npm run combined:us
 
 
 
-
-
-
-
-
-
 ## 港股
 ### 港股 30分钟左右
-使用 `./scripts/launch_tv_debug.bat` 启动TradingView，请使用策略名为：HK Market SQZMOM PRO v1.0 , 设置图表周期为天。然后执行：
+使用 `./scripts/launch_tv_debug.bat` 启动TradingView，请使用策略名为：HK SQZMOM Institutional FINAL , 设置图表周期为天。然后执行：
 
 ```bash
 npm run scan:hk
@@ -186,16 +180,16 @@ npm run combined:hk
 
 > 💡 一键全跑：`npm run full:us`
  ## 单只股票涨跌分析                                          
-使用 `./scripts/launch_tv_debug.bat` 启动TradingView， 只分析A股票：002156，分析这一只股票历史K线情况: 1D, 4H，1H，30m，1m情况，根据技术形态，分析主力意图，预测明日及之后一周内的涨跌预期，目前持仓成本为： 73.114，300股，并请详细说明后续的操作方法
+使用 `./scripts/launch_tv_debug.bat` 启动TradingView， 只分析A股票：002156，分析这一只股票历史K线情况: 1D, 4H，1H，30m，1m情况，根据技术形态，分析主力意图，预测明日及之后一周内的涨跌预期，目前持仓成本为： 73.033，300股，并请详细说明后续的操作方法
 
 
-使用 `./scripts/launch_tv_debug.bat` 启动TradingView， 只分析A股票：600114 ，分析这一只股票历史K线情况: 1D, 4H，1H，30m，1m情况，根据技术形态，分析主力意图，预测明日及之后一周内的涨跌预期，目前持仓成本为：37.211 ,300股，并请详细说明后续的操作方法
+使用 `./scripts/launch_tv_debug.bat` 启动TradingView， 只分析A股票：600138 ，分析这一只股票历史K线情况: 1D, 4H，1H，30m，1m情况，根据技术形态，分析主力意图，预测明日及之后一周内的涨跌预期，目前持仓成本为：72.926 ,200股，并请详细说明后续的操作方法
 
 
 使用 `./scripts/launch_tv_debug.bat` 启动TradingView， 只分析A股票：002452 ，分析这一只股票历史K线情况: 1D, 4H，1H，30m，1m情况，根据技术形态，分析主力意图，预测明日及之后一周内的涨跌预期，目前持仓成本为：12.145, 200股，并请详细说明后续的操作方法
 
 
-使用 `./scripts/launch_tv_debug.bat` 启动TradingView， 分析A股票：江海股份、江波龙、紫光国微、 北方华创、 东睦股份、申菱环境、长高电新、恒立液压、华工科技、科士达、通富微电、领益智造、深科技 、海通发展、华天科技、中国巨石、快克智能 分析这几只股票历史K线情况: 1D, 4H，1H，30m，1m情况，根据技术形态，分析主力意图，预测明日是否是介入的好时刻，并请详细说明后续的操作方法
+使用 `./scripts/launch_tv_debug.bat` 启动TradingView， 分析A股票：600114,601138,300037,002916,002185,002056,002056 分析这几只股票历史K线情况: 1D, 4H，1H，30m，1m情况，根据技术形态，分析主力意图，预测明日是否是介入的好时刻，并请详细说明后续的操作方法
 
 
 
@@ -230,12 +224,16 @@ npm run combined:hk
 ### 使用 ./scripts/launch_tv_debug.bat 启动TradigView，请使用策略：US Stock SQZMOM Daily PRO v4 (ATR + EMA20 Stop)，请分析这个策略，有没有可以提高的地方, 先列出可能优化的点，并制定优化计划，在日线上进行回测并分析交易清单，对策略进行改进，提高交易信号同时，也需要提高胜率，提高收益, 优化策略后，请使用 ../watchlist/us.txt 中的股票列表做回测，根据回测结果特别是交易清单，研究亏损的订单，总结规律，不断优化策略，并回测，做对比，对策略进行改进，提高交易信号同时，也需要提高胜率提高胜率，提高收益，持续优化，直到不能持续优化为止
 
 ## 添加Wathlist
-使用 ./scripts/launch_tv_debug.bat 启动TradigView，将 300308.SZ,002273.SZ,300502.SZ,002222.SZ,300394.SZ,301479.SZ,603297.SH 这些股票加入 A股可交易 这个watchlist
+使用 ./scripts/launch_tv_debug.bat 启动TradigView，将 601689,300750,002050,300207,603728,603019,002261,300308,002594,300274,300124,002747,600875,159869,
+  562500,512480,159819,515030  这些股票加入 A股可交易 这个watchlist
 
-使用 ./scripts/launch_tv_debug.bat 启动TradigView，将 LITE,COHR,AAOI,FN,CRDO,HSAI 这些股票加入 美股可交易 这个watchlist
+使用 ./scripts/launch_tv_debug.bat 启动TradigView，将 NBIS,AMD,VRT,TSM,NVDA,BE,LLY,CRDO,CRWV,AVGO,MRVL,ASML,AMAT,KLAC,GEV,ETN,PWR,MOD,ALAB,COHR,LITE,NVO,VKTX  这些股票加入 美股可交易 这个watchlist
 
-使用 ./scripts/launch_tv_debug.bat 启动TradigView，将 02382.HK,02276.HK,02498.HK 这些股票加入 港股可交易 这个watchlist
+使用 ./scripts/launch_tv_debug.bat 启动TradigView，将 9880,9868,3750 这些股票加入 港股可交易 这个watchlist
 
 ## 分析ReView
 分析 ./reports/YYYY-MM-dd 下所有 cn_review.json, cn_review.md 统计涨幅共同特征，跌幅共同特征，权重调整建议 ，未分类特征。分析出最值得的权重调整建议，最值得增加未分类特征 
+
+## 总结成cli，mcp
+请将上面的功能，改写成cli，mcp，参考 ./src/server.js
 
