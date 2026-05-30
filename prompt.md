@@ -119,8 +119,6 @@ npm run combined:us
 
 
 
-
-
 ## 港股
 ### 港股 30分钟左右
 使用 `./scripts/launch_tv_debug.bat` 启动TradingView，请使用策略名为：HK SQZMOM Institutional FINAL , 设置图表周期为天。然后执行：
@@ -136,7 +134,7 @@ npm run scan:hk
 
 ```bash
 npm run news:hk
-# 产物：watchlist/us_news_signals.md + watchlist/us_news_signals.json
+# 产物：watchlist/hk_news_signals.md + watchlist/hk_news_signals.json
 ```
 
 脚本内置规则：
@@ -149,20 +147,17 @@ npm run news:hk
 
 ## 技术面分析
 使用 `./scripts/launch_tv_debug.bat` 启动TradingView。直接执行：
-
 ```bash
 npm run tech:hk
-# 产物：watchlist/us_tech_signals.md + watchlist/us_tech_signals.json
+# 产物：watchlist/hk_tech_signals.md + watchlist/hk_tech_signals.json
 ```
-
 【交易信号】结论（Long/Short/Wait）+ 类型（Breakout/Pullback/Reversal/Trend/Overheat）+ 是否追涨 + 关键风险（压力位/动能衰/诱多/假突）。
 
 ## 合并分析
 直接执行：
-
 ```bash
 npm run combined:hk
-# 产物：watchlist/us_combined_signals.md + 自动快照到 reports/<YYYY-MM-DD>/
+# 产物：watchlist/hk_combined_signals.md + 自动快照到 reports/<YYYY-MM-DD>/
 ```
 请单独出一份股票列表,名单需要满足如下三个条件：
 1. 等级为：🟢A 
@@ -180,18 +175,17 @@ npm run combined:hk
 
 > 💡 一键全跑：`npm run full:us`
  ## 单只股票涨跌分析                                          
-使用 `./scripts/launch_tv_debug.bat` 启动TradingView， 只分析A股票：002156，分析这一只股票历史K线情况: 1D, 4H，1H，30m，1m情况，根据技术形态，分析主力意图，预测明日及之后一周内的涨跌预期，目前持仓成本为： 73.033，300股，并请详细说明后续的操作方法
+使用 `./scripts/launch_tv_debug.bat` 启动TradingView， 只分析A股票：600114，分析这一只股票历史K线情况: 1D, 4H，1H，30m，1m情况，根据技术形态，分析主力意图，预测明日及之后一周内的涨跌预期，目前持仓成本为： 38.176，400股，并请详细说明后续的操作方法
 
 
-使用 `./scripts/launch_tv_debug.bat` 启动TradingView， 只分析A股票：600138 ，分析这一只股票历史K线情况: 1D, 4H，1H，30m，1m情况，根据技术形态，分析主力意图，预测明日及之后一周内的涨跌预期，目前持仓成本为：72.926 ,200股，并请详细说明后续的操作方法
+使用 `./scripts/launch_tv_debug.bat` 启动TradingView， 只分析A股票：600138 ，分析这一只股票历史K线情况: 1D, 4H，1H，30m，1m情况，根据技术形态，分析主力意图，预测明日及之后一周内的涨跌预期，目前持仓成本为：70.997 ,200股，并请详细说明后续的操作方法
+对于入场，止盈、止损价格，设置警报
 
-
-使用 `./scripts/launch_tv_debug.bat` 启动TradingView， 只分析A股票：002452 ，分析这一只股票历史K线情况: 1D, 4H，1H，30m，1m情况，根据技术形态，分析主力意图，预测明日及之后一周内的涨跌预期，目前持仓成本为：12.145, 200股，并请详细说明后续的操作方法
-
+使用 `./scripts/launch_tv_debug.bat` 启动TradingView， 只分析A股票：002452 ，分析这一只股票历史K线情况: 1D, 4H，1H，30m，1m情况，根据技术形态，分析主力意图，预测明日及之后一周内的涨跌预期，目前持仓成本为：12.055, 200股，并请详细说明后续的操作方法
+对于入场，止盈、止损价格，设置警报
 
 使用 `./scripts/launch_tv_debug.bat` 启动TradingView， 分析A股票：600114,601138,300037,002916,002185,002056,002056 分析这几只股票历史K线情况: 1D, 4H，1H，30m，1m情况，根据技术形态，分析主力意图，预测明日是否是介入的好时刻，并请详细说明后续的操作方法
-
-
+对于入场，止盈、止损价格，设置警报
 
 ## 自选股分析
 目前有如下股票：江海股份、江波龙、紫光国微、 北方华创、 东睦股份、申菱环境、长高电新、恒立液压、华工科技、科士达、通富微电、领益智造、深科技 、海通发展、华天科技、中国巨石、快克智能
@@ -200,11 +194,6 @@ npm run combined:hk
 ## 评估体系优化
 需要需要分析一个原因：今天是5月6日，昨日的股票分析结果在 ./reports/2026-05-05 
 下。今天5月6日，市场的结果：603162,002245,301165,600176 大涨，能否分析出这些大涨的股票在5月5日分析中有没有公共特征，如果有看需要增加这些特征的权重
-
-使用 ./scripts/launch_tv_debug.bat, 启动TradigView 运行如下:     
-    npm review:cn
-    npm review:us
-两个命令依次执行
 
 ## 设置报警
 设置RKLB 股票，到达 $111 的报警
@@ -224,12 +213,12 @@ npm run combined:hk
 ### 使用 ./scripts/launch_tv_debug.bat 启动TradigView，请使用策略：US Stock SQZMOM Daily PRO v4 (ATR + EMA20 Stop)，请分析这个策略，有没有可以提高的地方, 先列出可能优化的点，并制定优化计划，在日线上进行回测并分析交易清单，对策略进行改进，提高交易信号同时，也需要提高胜率，提高收益, 优化策略后，请使用 ../watchlist/us.txt 中的股票列表做回测，根据回测结果特别是交易清单，研究亏损的订单，总结规律，不断优化策略，并回测，做对比，对策略进行改进，提高交易信号同时，也需要提高胜率提高胜率，提高收益，持续优化，直到不能持续优化为止
 
 ## 添加Wathlist
-使用 ./scripts/launch_tv_debug.bat 启动TradigView，将 601689,300750,002050,300207,603728,603019,002261,300308,002594,300274,300124,002747,600875,159869,
-  562500,512480,159819,515030  这些股票加入 A股可交易 这个watchlist
+使用 ./scripts/launch_tv_debug.bat 启动TradigView，将 601138.SH,002371.SZ,301269.SZ,300750.SZ,300274.SZ,002594.SZ,000333.SZ
+  ,300308.SZ,300394.SZ,601668.SH  这些股票加入 A股可交易 这个watchlist
 
-使用 ./scripts/launch_tv_debug.bat 启动TradigView，将 NBIS,AMD,VRT,TSM,NVDA,BE,LLY,CRDO,CRWV,AVGO,MRVL,ASML,AMAT,KLAC,GEV,ETN,PWR,MOD,ALAB,COHR,LITE,NVO,VKTX  这些股票加入 美股可交易 这个watchlist
+使用 ./scripts/launch_tv_debug.bat 启动TradigView，将 NBIS,IONQ,RELY,RXRX,AMBA,AEHR,TMC,QBTS,SOUN,SERV  这些股票加入 美股可交易 这个watchlist
 
-使用 ./scripts/launch_tv_debug.bat 启动TradigView，将 9880,9868,3750 这些股票加入 港股可交易 这个watchlist
+使用 ./scripts/launch_tv_debug.bat 启动TradigView，将  1211.HK,1810.HK,2128.HK 这些股票加入 港股可交易 这个watchlist
 
 ## 分析ReView
 分析 ./reports/YYYY-MM-dd 下所有 cn_review.json, cn_review.md 统计涨幅共同特征，跌幅共同特征，权重调整建议 ，未分类特征。分析出最值得的权重调整建议，最值得增加未分类特征 
