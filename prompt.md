@@ -213,12 +213,11 @@ npm run combined:hk
 ### 使用 ./scripts/launch_tv_debug.bat 启动TradigView，请使用策略：US Stock SQZMOM Daily PRO v4 (ATR + EMA20 Stop)，请分析这个策略，有没有可以提高的地方, 先列出可能优化的点，并制定优化计划，在日线上进行回测并分析交易清单，对策略进行改进，提高交易信号同时，也需要提高胜率，提高收益, 优化策略后，请使用 ../watchlist/us.txt 中的股票列表做回测，根据回测结果特别是交易清单，研究亏损的订单，总结规律，不断优化策略，并回测，做对比，对策略进行改进，提高交易信号同时，也需要提高胜率提高胜率，提高收益，持续优化，直到不能持续优化为止
 
 ## 添加Wathlist
-使用 ./scripts/launch_tv_debug.bat 启动TradigView，将 601138.SH,002371.SZ,301269.SZ,300750.SZ,300274.SZ,002594.SZ,000333.SZ
-  ,300308.SZ,300394.SZ,601668.SH  这些股票加入 A股可交易 这个watchlist
+使用 ./scripts/launch_tv_debug.bat 启动TradigView，将 002371,300274,002271 这些股票加入 A股可交易 这个watchlist
 
-使用 ./scripts/launch_tv_debug.bat 启动TradigView，将 NBIS,IONQ,RELY,RXRX,AMBA,AEHR,TMC,QBTS,SOUN,SERV  这些股票加入 美股可交易 这个watchlist
+使用 ./scripts/launch_tv_debug.bat 启动TradigView，将 NBIS,ALAB,AMD,VRT,TSM,GEV,BE,RKLB,TEM,CRWV,VKTX,IONQ  这些股票加入 美股可交易 这个watchlist
 
-使用 ./scripts/launch_tv_debug.bat 启动TradigView，将  1211.HK,1810.HK,2128.HK 这些股票加入 港股可交易 这个watchlist
+使用 ./scripts/launch_tv_debug.bat 启动TradigView，将   0285.HK,9988.HK 这些股票加入 港股可交易 这个watchlist
 
 ## 分析ReView
 分析 ./reports/YYYY-MM-dd 下所有 cn_review.json, cn_review.md 统计涨幅共同特征，跌幅共同特征，权重调整建议 ，未分类特征。分析出最值得的权重调整建议，最值得增加未分类特征 
