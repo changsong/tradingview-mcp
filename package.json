@@ -36,7 +36,9 @@
     "review:cn": "node pipeline/5-review/review_cn.mjs",
     "review:us": "node pipeline/5-review/review_us.mjs",
     "review:hk": "node pipeline/5-review/review_hk.mjs",
-    "full:cn": "npm run news:cn && npm run tech:cn && npm run combined:cn",
+    "industry:update": "node scripts/update_industry_map.mjs",
+    "limup:cn": "node pipeline/3.5-limup/predict_cn_limup.mjs",
+    "full:cn": "npm run news:cn && npm run tech:cn && npm run limup:cn && npm run combined:cn",
     "full:us": "npm run news:us && npm run tech:us && npm run combined:us",
     "full:hk": "npm run news:hk && npm run tech:hk && npm run combined:hk"
   },
