@@ -1,6 +1,6 @@
 # 工作流
 1. 打开clash， vpn软件，可以访问外网
-2. 打开 cursor, 找到prompt.md, 在Termial 输入：，开始依次输入一下内容claude --dangerously-skip-permissions
+2. 打开 cursor, 找到prompt.md, 在Termial 输入：，开始依次输入一下内容claude -dangerously-skip-permissions
 3. A股跑完之后，Ctrl +c 连续2次退出，重新输入：claude --dangerously-skip-permissions，开始进行美股操作
 
 > ⚠️ **重要：流水线已固化**。每个段落对应**唯一固定的脚本路径**，请直接执行下面给出的命令，**不要重新生成脚本文件**。
@@ -111,6 +111,7 @@ npm run combined:us
 1. 等级为：🟢A 
 2. 2. 多周期对齐：3/4 (75%) 或 4/4 (100%) 
 3. News Signal是：GREEN Long (Strong)
+输出到: us_grade_a_picks.md
 
 ### 评估模型结果 10分钟
 使用 ./scripts/launch_tv_debug.bat, 启动TradigView 运行如下命令:     
@@ -175,7 +176,7 @@ npm run combined:hk
 
 > 💡 一键全跑：`npm run full:us`
  ## 单只股票涨跌分析                                          
-使用 `./scripts/launch_tv_debug.bat` 启动TradingView， 只分析A股票： 603296，分析这一只股票历史K线情况: 1D, 4H，1H，30m，1m情况，根据技术形态，分析主力意图，预测明日及之后一周内的涨跌预期，目前持仓成本为： 122.955，300股，并请详细说明后续的操作方法
+使用 `./scripts/launch_tv_debug.bat` 启动TradingView， 只分析A股票： 603296，分析这一只股票历史K线情况: 1D, 4H，1H，30m，1m情况，根据技术形态，分析主力意图，预测明日及之后一周内的涨跌预期，目前持仓成本为： 603656，500股，并请详细说明后续的操作方法
 对于入场，止盈、止损价格，设置警报
 
 使用 `./scripts/launch_tv_debug.bat` 启动TradingView， 只分析A股票：000727 ，分析这一只股票历史K线情况: 1D, 4H，1H，30m，1m情况，根据技术形态，分析主力意图，预测明日及之后一周内的涨跌预期，目前持仓成本为：2.919 ,600股，并请详细说明后续的操作方法
@@ -184,12 +185,7 @@ npm run combined:hk
 使用 `./scripts/launch_tv_debug.bat` 启动TradingView， 只分析A股票：002463 ，分析这一只股票历史K线情况: 1D, 4H，1H，30m，1m情况，根据技术形态，分析主力意图，预测明日及之后一周内的涨跌预期，目前持仓成本为：12.055, 200股，并请详细说明后续的操作方法
 对于入场，止盈、止损价格，设置警报
 
-使用 `./scripts/launch_tv_debug.bat` 启动TradingView， 分析A股票：600114,601138,300037,002916,002185,002056,002056 分析这几只股票历史K线情况: 1D, 4H，1H，30m，1m情况，根据技术形态，分析主力意图，预测明日是否是介入的好时刻，并请详细说明后续的操作方法
-对于入场，止盈、止损价格，设置警报
-
-## 自选股分析
-目前有如下股票：江海股份、江波龙、紫光国微、 北方华创、 东睦股份、申菱环境、长高电新、恒立液压、华工科技、科士达、通富微电、领益智造、深科技 、海通发展、华天科技、中国巨石、快克智能
-这些股票，有1000000的本金，结合大盘情况，怎么买入，分配比例预期收益最大，并分析明日及之后一周内的涨跌预期，请详细说明后续的操作方法
+使用 `./scripts/launch_tv_debug.bat` 启动TradingView， 有1000000的本金，结合上证指数大盘情况，分析A股票：300763，601126，000021，002384 分析这几只股票历史K线情况: 1D, 4H，1H，30m，1m情况，根据技术形态，分析主力意图，以及怎么分配买入，预测明日是否是介入的好时刻，并请详细说明后续的操作方法，对于可以介入的股票设置入场，止盈、止损价格警报
 
 ## 评估体系优化
 需要需要分析一个原因：今天是5月6日，昨日的股票分析结果在 ./reports/2026-05-05 
@@ -215,9 +211,9 @@ npm run combined:hk
 ### 使用 ./scripts/launch_tv_debug.bat 启动TradigView，请使用策略：US Stock SQZMOM Daily PRO v4 (ATR + EMA20 Stop)，请分析这个策略，有没有可以提高的地方, 先列出可能优化的点，并制定优化计划，在日线上进行回测并分析交易清单，对策略进行改进，提高交易信号同时，也需要提高胜率，提高收益, 优化策略后，请使用 ../watchlist/us.txt 中的股票列表做回测，根据回测结果特别是交易清单，研究亏损的订单，总结规律，不断优化策略，并回测，做对比，对策略进行改进，提高交易信号同时，也需要提高胜率提高胜率，提高收益，持续优化，直到不能持续优化为止
 
 ## 添加Wathlist
-使用 ./scripts/launch_tv_debug.bat 启动TradigView，将 002371,300274,002271 这些股票加入 A股可交易 这个watchlist
+使用 ./scripts/launch_tv_debug.bat 启动TradigView，将 600720, 601138，301236, 002837, 002230 这些股票加入 A股可交易 这个watchlist
 
-使用 ./scripts/launch_tv_debug.bat 启动TradigView，将 NBIS,ALAB,AMD,VRT,TSM,GEV,BE,RKLB,TEM,CRWV,VKTX,IONQ  这些股票加入 美股可交易 这个watchlist
+使用 ./scripts/launch_tv_debug.bat 启动TradigView，将 纽约证券交易所 (NYSE)：J, TT, VRT, DELL, HPE, NGG, STM  这些股票加入 美股可交易 这个watchlist
 
 使用 ./scripts/launch_tv_debug.bat 启动TradigView，将   0285.HK,9988.HK 这些股票加入 港股可交易 这个watchlist
 
@@ -228,8 +224,8 @@ npm run combined:hk
 请将上面的功能，改写成cli，mcp，参考 ./src/server.js
 claude --dangerously-skip-permissions
 
-## 筛选热门股票
-用 wudao-a-shares 这个mcp server，来查一下 今天 A 股连板梯队，最高板是谁，1板及以上有哪些，情绪是升温还是降温
-提供一下电力的业绩好，低估值的股票供一下
-将涉及的股票跑一下全流程
+
+## 市场热门股票 
+用 wudao-a-shares 这个mcp server 找到A股今日所有在10:00之前涨停，并今日后续时间都没有破板，并且是首板的股票,将股票代码以逗号分割提供出来
+将上面涉及的股票跑一下全流程：`npm run full:cn`
 
