@@ -11,8 +11,11 @@
 
 ## 上升趋势股票过滤
 ### A股 40分钟左右
-使用 `./scripts/launch_tv_debug.bat` 启动TradingView，请使用策略名为：A Share SQZMOM PRO v27 (Daily), 设置图表周期为天。然后执行：
-
+使用 `./scripts/launch_tv_debug.bat` 启动TradingView，请切换布局为A股，执行以下命令:
+```bash
+node src/cli/index.js layout switch "A股"
+```
+设置图表周期为天。然后执行：
 ```bash
 npm run scan:cn
 # 等价：node pipeline/1-scan/scan_stocks.js --symbols=filepath=./watchlist/cn.txt --output=./watchlist/cn_selected.txt
@@ -58,6 +61,7 @@ npm run combined:cn
 1. 等级为：🟢A
 2. 多周期对齐：3/4 (75%) 或 4/4 (100%)
 3. 类型是：🟢 Long (强)
+输出到: cn_gr_grade_a_picks.md
 
 ### 评估模型结果 10分钟
 使用 ./scripts/launch_tv_debug.bat, 启动TradigView 运行如下命令:     
@@ -185,7 +189,7 @@ npm run combined:hk
 使用 `./scripts/launch_tv_debug.bat` 启动TradingView， 只分析A股票：002463 ，分析这一只股票历史K线情况: 1D, 4H，1H，30m，1m情况，根据技术形态，分析主力意图，预测明日及之后一周内的涨跌预期，目前持仓成本为：12.055, 200股，并请详细说明后续的操作方法
 对于入场，止盈、止损价格，设置警报
 
-使用 `./scripts/launch_tv_debug.bat` 启动TradingView， 有1000000的本金，结合上证指数大盘情况，分析A股票：300763，601126，000021，002384 分析这几只股票历史K线情况: 1D, 4H，1H，30m，1m情况，根据技术形态，分析主力意图，以及怎么分配买入，预测明日是否是介入的好时刻，并请详细说明后续的操作方法，对于可以介入的股票设置入场，止盈、止损价格警报
+使用 `./scripts/launch_tv_debug.bat` 启动TradingView， 有1000000的本金，结合上证指数大盘情况，分析A股票：300763，601126，000021，002384 分析这几只股票历史K线情况: 1D, 4H，1H，30m，1m情况，根据技术形态，最近7日内新闻动态来分析主力意图，以及怎么分配买入，预测明日是否是介入的好时刻，并请详细说明后续的操作方法，对于可以介入的股票设置入场，止盈、止损价格警报
 
 ## 评估体系优化
 需要需要分析一个原因：今天是5月6日，昨日的股票分析结果在 ./reports/2026-05-05 
@@ -213,7 +217,7 @@ npm run combined:hk
 ## 添加Wathlist
 使用 ./scripts/launch_tv_debug.bat 启动TradigView，将 600720, 601138，301236, 002837, 002230 这些股票加入 A股可交易 这个watchlist
 
-使用 ./scripts/launch_tv_debug.bat 启动TradigView，将 纽约证券交易所 (NYSE)：J, TT, VRT, DELL, HPE, NGG, STM  这些股票加入 美股可交易 这个watchlist
+使用 ./scripts/launch_tv_debug.bat 启动TradigView，将 NBIS, PLTR, BE, AMD, AVGO, TSM, MU, GEV, VRT, NVDA, LLY, CIEN, CRWD, ISRG, KTOS, ZS, CEG, CRCL  这些股票加入 美股可交易 这个watchlist
 
 使用 ./scripts/launch_tv_debug.bat 启动TradigView，将   0285.HK,9988.HK 这些股票加入 港股可交易 这个watchlist
 

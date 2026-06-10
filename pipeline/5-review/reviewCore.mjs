@@ -72,7 +72,7 @@ export async function runReview(market) {
   const prevTech = JSON.parse(readFileSync(join(prevDir, `${market}_tech_signals.json`), 'utf8'));
 
   // ── 3. Health check on TradingView ───────────────────────────────────────
-  const hc = runCli('status');
+  const hc = await runCli('status');
   if (!hc?.cdp_connected) {
     throw new Error(`TradingView 未连接 — 请先 scripts\\launch_tv_debug.bat 启动 (CDP 9222)`);
   }
@@ -84,7 +84,7 @@ export async function runReview(market) {
     const sym = symbols[i];
     process.stdout.write(`  [${String(i + 1).padStart(3)}/${symbols.length}] ${sym.padEnd(18)} `);
 
-    const sw = runCli(`symbol ${sym}`);
+    const sw = await runCli(`symbol ${sym}`);
     if (!sw?.success) {
       console.log('✗ symbol 切换失败');
       changes.push({ sym, ok: false, reason: 'switch_fail' });
@@ -93,10 +93,10 @@ export async function runReview(market) {
     await sleep(SWITCH_DELAY_MS);
 
     // Force daily TF — tech stage may have left chart on 4H/1H
-    runCli('timeframe D');
+    await runCli('timeframe D');
     await sleep(TF_SETTLE_MS);
 
-    const o = runCli('ohlcv -n 2');
+    const o = await runCli('ohlcv -n 2');
     if (!o?.success || !Array.isArray(o.bars) || o.bars.length < 2) {
       console.log('✗ ohlcv 失败');
       changes.push({ sym, ok: false, reason: 'ohlcv_fail' });

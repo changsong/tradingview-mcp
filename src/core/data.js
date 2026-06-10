@@ -50,6 +50,20 @@ function buildGraphicsJS(collectionName, mapKey, filter) {
                 }
               }
             } catch(e) {}
+            if (items.length === 0) {
+              try {
+                var tblOuter = pc.dwgtables;
+                if (tblOuter) {
+                  var tblInner = tblOuter.get('tables');
+                  if (tblInner) {
+                    var tblColl = tblInner.get(false);
+                    if (tblColl && tblColl._primitivesDataById && tblColl._primitivesDataById.size > 0) {
+                      tblColl._primitivesDataById.forEach(function(v, id) { items.push({id: id, raw: v}); });
+                    }
+                  }
+                }
+              } catch(e) {}
+            }
           }
           if (items.length > 0) results.push({name: name, count: items.length, items: items});
         } catch(e) {}

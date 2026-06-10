@@ -123,7 +123,7 @@ export async function layoutSwitch({ name }) {
     new Promise(function(resolve) {
       try {
         var target = ${escaped};
-        if (/^\\d+$/.test(target)) { window.TradingViewApi.loadChartFromServer(target); resolve({success: true, method: 'loadChartFromServer', id: target, source: 'internal_api'}); return; }
+        if (/^\\d+$/.test(target)) { window.TradingViewApi.loadChartFromServer(target); setTimeout(function() { resolve({success: true, method: 'loadChartFromServer', id: target, source: 'internal_api'}); }, 2000); return; }
         window.TradingViewApi.getSavedCharts(function(charts) {
           if (!charts || !Array.isArray(charts)) { resolve({success: false, error: 'getSavedCharts returned no data', source: 'internal_api'}); return; }
           var match = null;
@@ -132,7 +132,7 @@ export async function layoutSwitch({ name }) {
           if (!match) { resolve({success: false, error: 'Layout "' + target + '" not found.', source: 'internal_api'}); return; }
           var chartId = match.id || match.chartId;
           window.TradingViewApi.loadChartFromServer(chartId);
-          resolve({success: true, method: 'loadChartFromServer', id: chartId, name: match.name || match.title, source: 'internal_api'});
+          setTimeout(function() { resolve({success: true, method: 'loadChartFromServer', id: chartId, name: match.name || match.title, source: 'internal_api'}); }, 2000);
         });
         setTimeout(function() { resolve({success: false, error: 'getSavedCharts timed out', source: 'internal_api'}); }, 5000);
       } catch(e) { resolve({success: false, error: e.message, source: 'internal_api'}); }

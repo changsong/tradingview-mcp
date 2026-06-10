@@ -134,11 +134,15 @@ async function scanStocks() {
       continue;
     }
 
-    // 等待图表加载
-    await sleep(2000);
+    // 等待图表加载（给 Pine 表格更多渲染时间）
+    await sleep(3000);
 
-    // 获取表格数据
-    const tableData = runCommand('data tables');
+    // 获取表格数据（带重试：表格可能还在渲染中）
+    let tableData = runCommand('data tables');
+    if (tableData && tableData.success && tableData.studies.length === 0) {
+      await sleep(2000);
+      tableData = runCommand('data tables');
+    }
 
     if (tableData && tableData.success && tableData.studies.length > 0) {
       const study = tableData.studies.find(s => s.name.includes('SQZMOM'));

@@ -26,15 +26,16 @@
  *   node analyze_tech_cn_mtf.mjs --no-bench               # 跳过相对大盘计算
  */
 
-import { execSync } from 'child_process';
 import { readFileSync, writeFileSync, existsSync } from 'fs';
 import { fileURLToPath } from 'url';
 import { dirname, resolve } from 'path';
+import { connect, disconnect } from '../../src/connection.js';
+import * as coreChart from '../../src/core/chart.js';
+import * as coreData from '../../src/core/data.js';
 
 // 锁定 CWD 为项目根，使 ./watchlist 等相对路径稳定
 process.chdir(resolve(dirname(fileURLToPath(import.meta.url)), '../..'));
 
-const CLI       = 'node src/cli/index.js';
 const OUT_MD    = './watchlist/cn_tech_signals.md';
 const OUT_JSON  = './watchlist/cn_tech_signals.json';
 const SEL_TXT   = './watchlist/cn_selected.txt';
@@ -107,12 +108,28 @@ function loadNewsScores() {
   return map;
 }
 
-function run(cmd, ms = 12000) {
-  try {
-    return JSON.parse(execSync(`${CLI} ${cmd}`, { encoding: 'utf8', cwd: process.cwd(), timeout: ms }));
-  } catch { return null; }
-}
 const sleep = ms => new Promise(r => setTimeout(r, ms));
+
+// Direct CDP wrappers — replace execSync CLI calls so symbol/timeframe switches
+// persist across operations in the same WebSocket session.
+async function cdpSwitchSymbol(sym) {
+  try { return await coreChart.setSymbol({ symbol: sym }); } catch { return null; }
+}
+async function cdpSwitchTf(tf) {
+  try { return await coreChart.setTimeframe({ timeframe: tf }); } catch { return null; }
+}
+async function cdpOhlcv(n) {
+  try { return await coreData.getOhlcv({ count: n }); } catch { return null; }
+}
+async function cdpStudyValues() {
+  try { return await coreData.getStudyValues(); } catch { return null; }
+}
+async function cdpTables(filter) {
+  try { return await coreData.getPineTables({ study_filter: filter || '' }); } catch { return null; }
+}
+async function cdpQuote(sym) {
+  try { return await coreData.getQuote({ symbol: sym || '' }); } catch { return null; }
+}
 
 function r1(v) { return Math.round(v * 10) / 10; }
 function r2(v) { return Math.round(v * 100) / 100; }
@@ -380,8 +397,8 @@ function detectLimit(bars, symbol) {
 //  Hybrid: 从 chart values 拉实时 RSI/MACD
 // ═══════════════════════════════════════════════════════════════
 
-function readLiveValues() {
-  const v = run('values');
+async function readLiveValues() {
+  const v = await cdpStudyValues();
   if (!v?.success || !Array.isArray(v.studies)) return {};
   const rec = {};
   for (const s of v.studies) {
@@ -778,12 +795,12 @@ const TF_LIST = [
 
 async function fetchBenchBars() {
   process.stdout.write(`  抓取基准 ${BENCH_SYM} ...`);
-  const sw = run(`symbol ${BENCH_SYM}`);
-  if (!sw?.success) { process.stdout.write(' ❌ 失败\n'); return null; }
+  const sw = await cdpSwitchSymbol(BENCH_SYM);
+  if (!sw?.success) { process.stdout.write(' ❌ 切换失败\n'); return null; }
   await sleep(1500);
-  run('timeframe D');
+  await cdpSwitchTf('D');
   await sleep(800);
-  const o = run('ohlcv -n 60');
+  const o = await cdpOhlcv(60);
   const bars = (o?.success && o.bars) ? o.bars : null;
   process.stdout.write(bars ? ` ✓ ${bars.length} 根\n` : ' ❌ 无数据\n');
   return bars;
@@ -793,7 +810,7 @@ async function analyzeStock(meta, opts, benchBars) {
   const { symbol, newsScore, newsSignal, newsName } = meta;
   process.stdout.write(`  ${symbol.padEnd(16)} `);
 
-  const sw = run(`symbol ${symbol}`);
+  const sw = await cdpSwitchSymbol(symbol);
   if (!sw?.success) { process.stdout.write('❌ 切换失败\n'); return null; }
   await sleep(1100);
 
@@ -801,18 +818,18 @@ async function analyzeStock(meta, opts, benchBars) {
   let dailyBars = null;
 
   for (const { key, tf, bars } of TF_LIST) {
-    const sw2 = run(`timeframe ${tf}`);
+    const sw2 = await cdpSwitchTf(tf);
     if (!sw2?.success) { process.stdout.write('!'); continue; }
     await sleep(600);
 
-    const ohlcv = run(`ohlcv -n ${bars}`);
+    const ohlcv = await cdpOhlcv(bars);
     if (!ohlcv?.success || !ohlcv.bars?.length || ohlcv.bars.length < 20) {
       process.stdout.write('○');
       continue;
     }
 
     let live = {};
-    if (!opts.noLive) live = readLiveValues();
+    if (!opts.noLive) live = await readLiveValues();
 
     if (key === '1D') dailyBars = ohlcv.bars;
 
@@ -824,14 +841,14 @@ async function analyzeStock(meta, opts, benchBars) {
     process.stdout.write(live.rsi != null ? '+' : '▪');
   }
 
-  const q = run(`quote ${symbol}`);
+  const q = await cdpQuote(symbol);
   let stockName = newsName || symbol;
-  if (q?.success) stockName = q.name || stockName;
+  if (q?.success) stockName = q.description || q.name || stockName;
 
   // SQZMOM 表
-  run('timeframe D');
+  await cdpSwitchTf('D');
   await sleep(400);
-  const tbl = run('data tables');
+  const tbl = await cdpTables('SQZMOM');
   let sqzmom = 'UNKNOWN';
   if (tbl?.studies) {
     const s = tbl.studies.find(x => /sqzmom|squeeze/i.test(x.name || ''));
@@ -1122,6 +1139,10 @@ async function main() {
     top: args.top ? parseInt(args.top, 10) : null,
   };
 
+  console.log('🔗 连接 CDP (localhost:9222) ...');
+  await connect();
+  console.log('✅ CDP 已连接\n');
+
   const symbols = loadSymbols(args);
   const newsMap = loadNewsScores();
   const haveNews = Object.keys(newsMap).length > 0;
@@ -1304,6 +1325,9 @@ async function main() {
   };
   writeFileSync(OUT_JSON, JSON.stringify(techJson, null, 2), 'utf8');
   console.log(`✅ 下游契约 JSON 已保存: ${OUT_JSON}\n`);
+
+  await disconnect();
+  console.log('🔌 CDP 已断开\n');
 }
 
-main().catch(console.error);
+main().catch(e => { console.error(e); process.exit(1); });

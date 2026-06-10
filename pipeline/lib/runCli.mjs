@@ -1,28 +1,72 @@
 /**
- * Shared CLI runner — extracted from pipeline/1-scan/scan_stocks.js
- *
- * Invokes `node src/cli/index.js <cmd>` and parses the JSON stdout.
- * Returns the parsed object (typically `{ success: true, ... }`) or `null` on failure.
+ * Shared CLI/CDP runner — uses direct CDP WebSocket calls via core modules.
+ * Replaces execSync-based approach that couldn't persist CDP state across calls.
  *
  * Usage:
  *   import { runCli, sleep } from '../lib/runCli.mjs';
- *   runCli('symbol SSE:600519');
- *   await sleep(1800);
- *   const o = runCli('ohlcv -n 2');
+ *   const hc = await runCli('status');
+ *   const sw = await runCli('symbol SSE:600519');
  */
 
-import { execSync } from 'child_process';
+import { connect } from '../../src/connection.js';
+import * as coreChart from '../../src/core/chart.js';
+import * as coreData from '../../src/core/data.js';
 
-const CLI = 'node src/cli/index.js';
+let _connected = false;
 
-export function runCli(cmd) {
+async function ensureConnected() {
+  if (!_connected) {
+    await connect();
+    _connected = true;
+  }
+}
+
+/**
+ * Execute a CLI command via direct CDP (no execSync).
+ * Supports: status, symbol, timeframe, ohlcv, data tables, quote, values
+ * Returns the same { success: true, ... } shape as the CLI.
+ */
+export async function runCli(cmd) {
   try {
-    const out = execSync(`${CLI} ${cmd}`, {
-      encoding: 'utf8',
-      maxBuffer: 32 * 1024 * 1024,
-      stdio: ['ignore', 'pipe', 'pipe'],
-    });
-    return JSON.parse(out);
+    await ensureConnected();
+    const parts = cmd.trim().split(/\s+/);
+    const action = parts[0];
+
+    switch (action) {
+      case 'status':
+        return { success: true, cdp_connected: true };
+
+      case 'symbol':
+        return await coreChart.setSymbol({ symbol: parts.slice(1).join(' ') });
+
+      case 'timeframe':
+        return await coreChart.setTimeframe({ timeframe: parts[1] });
+
+      case 'ohlcv': {
+        const nIdx = parts.indexOf('-n');
+        const count = nIdx >= 0 ? parseInt(parts[nIdx + 1], 10) : 100;
+        return await coreData.getOhlcv({ count });
+      }
+
+      case 'data': {
+        if (parts[1] === 'tables') {
+          const fIdx = parts.indexOf('--study_filter');
+          const filter = fIdx >= 0 ? parts[fIdx + 1] : '';
+          return await coreData.getPineTables({ study_filter: filter });
+        }
+        return null;
+      }
+
+      case 'values':
+        return await coreData.getStudyValues();
+
+      case 'quote':
+        return await coreData.getQuote({ symbol: parts[1] || '' });
+
+      default:
+        console.warn(`[runCli] 不支持的命令: ${cmd}`);
+        return null;
+    }
   } catch {
     return null;
   }
