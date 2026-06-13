@@ -46,7 +46,7 @@ const UA_POOL = [
 let _uaCursor = 0;
 function pickUA() { return UA_POOL[_uaCursor++ % UA_POOL.length]; }
 
-const DEFAULT_TIMEOUT_MS = 10000;
+const DEFAULT_TIMEOUT_MS = 8000;
 
 async function fetchWithTimeout(url, options = {}, timeoutMs = DEFAULT_TIMEOUT_MS) {
   const controller = new AbortController();
@@ -73,8 +73,8 @@ function createLimiter(maxConcurrent) {
     dequeue();
   });
 }
-const limit = createLimiter(6);
-const articleLimit = createLimiter(3);
+const limit = createLimiter(15);
+const articleLimit = createLimiter(10);
 
 // LRU cache for stock name lookups
 class LRUCache {

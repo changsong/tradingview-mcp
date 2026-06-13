@@ -24,7 +24,7 @@ function createLimiter(maxConcurrent) {
     dequeue();
   });
 }
-const browserLimit = createLimiter(4);
+const browserLimit = createLimiter(6);
 
 // English sentiment keywords for US stocks
 const SENTIMENT_KEYWORDS = {

@@ -18,7 +18,7 @@ import { performance } from 'node:perf_hooks';
 import { searchUSNews } from '../../src/core/usNews.js';
 import { analyzeStockData } from './lib/analyze.mjs';
 import { filterRelevantCandidates } from './lib/relevance.mjs';
-import { isLLMEnabled } from './lib/llm_common.mjs';
+import { isLLMEnabled, MODEL } from './lib/llm_common.mjs';
 
 process.chdir(resolve(dirname(fileURLToPath(import.meta.url)), '../..'));
 
@@ -283,7 +283,7 @@ function buildReport(results) {
   h('| Divergence | Black swan present but mostly bullish | Avoid first, wait for clarity |');
   h('');
   h('---');
-  h(`*Generated: ${new Date().toISOString()} | Sources: Yahoo / Finnhub / MarketWatch / NewsAPI / Seeking Alpha${llmFlag ? ' + DeepSeek' : ''}*`);
+  h(`*Generated: ${new Date().toISOString()} | Sources: Yahoo / Finnhub / MarketWatch / NewsAPI / Seeking Alpha${llmFlag ? ` + ${MODEL}` : ''}*`);
 
   return lines.join('\n');
 }
@@ -294,7 +294,7 @@ async function main() {
   console.log('================================================================');
   console.log('  US Stock News Sentiment Analysis -> Tradeable Signals (v2)');
   console.log(`  Window: ${cutoffStr} ~ ${todayStr}`);
-  console.log(`  LLM Rerate: ${llmFlag ? (isLLMEnabled() ? 'enabled (DeepSeek)' : 'requested but no DEEPSEEK_API_KEY') : 'disabled'}`);
+  console.log(`  LLM Rerate: ${llmFlag ? (isLLMEnabled() ? `enabled (${MODEL})` : 'requested but no DEEPSEEK_API_KEY') : 'disabled'}`);
   console.log('================================================================');
   console.log('');
 
