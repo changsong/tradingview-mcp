@@ -4,6 +4,7 @@
  */
 
 import { scrapeOne, fetchArticleContent } from './browserScraper.js';
+import { performance } from 'node:perf_hooks';
 
 // Concurrency limiter for browser-based fetchers (avoids too many headless browsers at once)
 function createLimiter(maxConcurrent) {
@@ -591,8 +592,21 @@ async function enrichWithContent(items) {
   );
 }
 
+function msSince(start) {
+  return Math.round(performance.now() - start);
+}
+
 // Main function: search US stock news and community data
-export async function searchUSNews({ symbol, name, source = 'all', count = 10 }) {
+export async function searchUSNews({
+  symbol,
+  name,
+  source = 'all',
+  count = 10,
+  enrich = 'all',
+  candidateFilterFn,
+  enrichTopN = count,
+  forumEnrichTopN = Math.ceil(count / 3),
+}) {
   // Clean symbol (remove exchange prefix if present)
   const cleanSymbol = symbol.replace(/^(NASDAQ:|NYSE:)/, '').toUpperCase();
 
@@ -606,6 +620,18 @@ export async function searchUSNews({ symbol, name, source = 'all', count = 10 })
     forum: [],
     sources_status: {},
     search_time: new Date().toISOString(),
+    performance: {
+      list_fetch_ms: 0,
+      candidate_filter_ms: 0,
+      enrichment_ms: 0,
+      raw_news_count: 0,
+      raw_forum_count: 0,
+      candidate_news_count: 0,
+      candidate_forum_count: 0,
+      enriched_news_count: 0,
+      enriched_forum_count: 0,
+      candidate_reasons: {},
+    },
   };
 
   const trackSource = (srcName, fn) =>
@@ -623,6 +649,7 @@ export async function searchUSNews({ symbol, name, source = 'all', count = 10 })
       return [];
     });
 
+  const listFetchStart = performance.now();
   const promises = [];
 
   // Fetch news from Yahoo Finance + Finnhub + MarketWatch RSS + NewsAPI + Seeking Alpha (parallel, deduplicated by URL)
@@ -679,19 +706,47 @@ export async function searchUSNews({ symbol, name, source = 'all', count = 10 })
 
   // Fetch all data in parallel
   await Promise.all(promises);
+  result.performance.list_fetch_ms = msSince(listFetchStart);
 
   // Filter out errors
   result.news = result.news.filter(item => !item.error);
   result.social = result.social.filter(item => !item.error);
   result.forum = result.forum.filter(item => !item.error);
+  result.performance.raw_news_count = result.news.length;
+  result.performance.raw_forum_count = result.forum.length;
+
+  if (enrich === 'candidate' && typeof candidateFilterFn === 'function') {
+    const candidateStart = performance.now();
+    const filterCtx = { symbol: cleanSymbol, name: name || cleanSymbol, market: 'us' };
+    const newsCandidates = candidateFilterFn(result.news, { ...filterCtx, bucket: 'news' });
+    const forumCandidates = candidateFilterFn(result.forum, { ...filterCtx, bucket: 'forum' });
+    result.news = Array.isArray(newsCandidates?.kept) ? newsCandidates.kept : result.news;
+    result.forum = Array.isArray(forumCandidates?.kept) ? forumCandidates.kept : result.forum;
+    result.performance.candidate_filter_ms = msSince(candidateStart);
+    result.performance.candidate_news_count = result.news.length;
+    result.performance.candidate_forum_count = result.forum.length;
+    result.performance.candidate_reasons = {
+      news: newsCandidates?.reasons || {},
+      forum: forumCandidates?.reasons || {},
+    };
+  } else {
+    result.performance.candidate_news_count = result.news.length;
+    result.performance.candidate_forum_count = result.forum.length;
+  }
 
   // Second-pass: fetch full article content for news + all forum items
   // (Reddit link-only posts have empty selftext; the <200 char filter in
   // enrichWithContent decides whether to actually refetch.)
+  const enrichmentStart = performance.now();
+  const newsToEnrich = enrich === 'candidate' ? result.news.slice(0, enrichTopN) : result.news;
+  const forumToEnrich = enrich === 'candidate' ? result.forum.slice(0, forumEnrichTopN) : result.forum;
   await Promise.all([
-    enrichWithContent(result.news),
-    enrichWithContent(result.forum),
+    enrichWithContent(newsToEnrich),
+    enrichWithContent(forumToEnrich),
   ]);
+  result.performance.enrichment_ms = msSince(enrichmentStart);
+  result.performance.enriched_news_count = newsToEnrich.length;
+  result.performance.enriched_forum_count = forumToEnrich.length;
 
   result.total_count = result.news.length + result.social.length + result.forum.length;
 
