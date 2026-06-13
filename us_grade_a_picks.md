@@ -1,75 +1,65 @@
-# US Grade A Picks — Triple Filter (2026-06-05)
+# US Grade A Picks — Triple Confirmed (2026-06-10)
 
 **筛选条件：**
-1. 等级: 🟢A
-2. 多周期对齐: 3/4 (75%) 或 4/4 (100%)
+1. Grade: 🟢A
+2. MTF 多周期对齐: 3/4 (75%) 或 4/4 (100%)
 3. News Signal: GREEN Long (Strong)
 
-**数据来源:** `npm run combined:us` → `watchlist/us_combined_signals.md`
+**筛选结果：53 只候选 → 2 只通过**
 
 ---
 
-## 符合条件的股票 (2/79)
+## 1. NASDAQ:ASML
 
-| # | Symbol | Combined | Tech | News | News Signal | MTF | Type | Entry | Stop | Target | R/R |
-|---|--------|----------|------|------|-------------|-----|------|-------|------|--------|-----|
-| 1 | **NYSE:JCI** | 60.6 | 49.0 | 78 | GREEN Long (Strong) | **4/4 (100%)** | Reversal (Bullish RSI Divergence) | 147.40 | 140.77 | 156.24 | 1.3:1 |
-| 2 | **NYSE:AIR** | 58.3 | 36.2 | 79 | GREEN Long (Strong) | **3/4 (75%)** | Trend Continuation | 300.06 | 272.60 | 340.33 | 1.5:1 |
-
----
-
-## 详情
-
-### 1. NYSE:JCI — Johnson Controls International
-
-| Field | Value |
-|-------|-------|
-| Combined Score | 60.6 |
-| Tech Score | 49.0 |
-| News Score | 78 |
-| News Signal | GREEN Long (Strong) |
-| Type | Reversal (Bullish RSI Divergence) |
-| Current Price | 147.40 |
-| Entry | 147.40 |
-| Stop | 140.77 (ATR x 1.5) |
-| Target | 156.24 |
-| R/R | 1.3:1 |
-| RSI | 61.6 |
-| ATR% | 3.0% |
-| Dist EMA20 | 5.1% |
-| Chase OK | NO |
-| MTF Alignment | 4/4 (100%) |
-| Risk Flags | near_resist, chop |
-
-### 2. NYSE:AIR — AAR Corp
-
-| Field | Value |
-|-------|-------|
-| Combined Score | 58.3 |
-| Tech Score | 36.2 |
-| News Score | 79 |
-| News Signal | GREEN Long (Strong) |
-| Type | Trend Continuation |
-| Current Price | 300.06 |
-| Entry | 300.06 |
-| Stop | 272.60 (ATR x 1.5) |
-| Target | 340.33 |
+| 指标 | 数值 |
+|------|------|
+| Combined | **70.2** |
+| Tech | 58.6 (Trend Follow / HH-HL Intact) |
+| News | 75 → GREEN Long (Strong) |
+| MTF 对齐 | **4/4 (100%)** |
+| 当前价格 | 1777.77 |
+| 入场 | 1777.77 |
+| 止损 | 1657.77 (ATR × 1.5) |
+| 目标 | 1953.77 |
 | R/R | 1.5:1 |
-| RSI | 60.7 |
-| ATR% | 6.1% |
-| Dist EMA20 | 4.9% |
-| Chase OK | NO |
-| MTF Alignment | 3/4 (75%) |
-| Risk Flags | mom_decay, low_rr |
+| RSI | 65 |
+| ATR% | 4.5% |
+| Dist EMA20 | 8.8% |
+| 追涨 | NO |
+| 风险 | near_resist |
+
+**信号解读：** 技术面 4/4 多周期共振向上，新闻面强看多(Strong)，无情绪过热。唯一风险是接近阻力位(near_resist)，建议等回调至支撑位入场而非追涨。
 
 ---
 
-## 被排除的 A 级股票
+## 2. NYSE:JHG
 
-| Symbol | MTF | News Signal | 排除原因 |
-|--------|-----|-------------|----------|
-| NASDAQ:PANW | 0/4 (0%) | GREEN Long (Mid) | MTF + News 均不满足 |
-| NASDAQ:TTMI | 2/4 (50%) | WARN Long (Cautious) | MTF + News 均不满足 |
-| NYSE:FCX | 2/4 (50%) | GREEN Long (Mid) | MTF + News 均不满足 |
+| 指标 | 数值 |
+|------|------|
+| Combined | **68.9** |
+| Tech | 53.1 (Breakout / Squeeze Release) |
+| News | 80 → GREEN Long (Strong) |
+| MTF 对齐 | **4/4 (100%)** |
+| 当前价格 | 51.87 |
+| 入场 | 52.03 |
+| 止损 | 51.68 (ATR × 1.8) |
+| 目标 | 52.13 |
+| R/R | 0.3:1 |
+| RSI | 63.4 |
+| ATR% | 0.2% |
+| Dist EMA20 | 0.2% |
+| 追涨 | NO |
+| 风险 | fake_break / mom_decay / near_resist / low_rr |
 
-*Generated: 2026-06-05*
+**信号解读：** 技术面和新闻面双确认，但严重警告 — R/R 仅 0.3:1 极低，且存在 fake_break（假突破）和动量衰减(mom_decay)风险。ATR 仅 0.2% 说明波动极窄，突破空间有限。**不推荐立即入场，等待更明确的突破确认后再考虑。**
+
+---
+
+## 总结
+
+53 只候选股中，仅 ASML 和 JHG 同时满足 🟢A + 4/4对齐 + GREEN Long (Strong) 三项条件。但：
+
+- **ASML** 是唯一可操作的标的，技术+新闻双确认，R/R 1.5:1，建议等回调入场
+- **JHG** 虽然信号满分，但 R/R 过低(0.3:1)且有假突破风险，暂时观望
+
+*Generated: 2026-06-10 | Source: ./watchlist/us_combined_signals.md*

@@ -38,7 +38,7 @@
     "review:hk": "node pipeline/5-review/review_hk.mjs",
     "industry:update": "node scripts/update_industry_map.mjs",
     "limup:cn": "node pipeline/3.5-limup/predict_cn_limup.mjs",
-    "full:cn": "npm run news:cn && npm run tech:cn && npm run limup:cn && npm run combined:cn",
+    "full:cn": "node scripts/run_full_cn.mjs",
     "full:us": "npm run news:us && npm run tech:us && npm run combined:us",
     "full:hk": "npm run news:hk && npm run tech:hk && npm run combined:hk"
   },
@@ -50,5 +50,8 @@
     "pdf-parse": "^2.4.5",
     "playwright": "^1.59.1",
     "puppeteer": "^24.40.0"
+  },
+  "devDependencies": {
+    "concurrently": "^10.0.3"
   }
 }

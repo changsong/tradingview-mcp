@@ -141,7 +141,7 @@ async function main() {
     const levels    = calcLevels(td.price, td.atr_pct, td.type);
     const grade     = gradeOf(techScore, cls);
     rows.push({
-      sym, name: td.name || nd.name || sym,
+      sym, name: nd.name || td.name || sym,
       td, nd, cls, techScore, newsScore, combined, levels, grade,
     });
   }

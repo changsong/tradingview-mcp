@@ -26,7 +26,7 @@
  *   node analyze_tech_cn_mtf.mjs --no-bench               # 跳过相对大盘计算
  */
 
-import { readFileSync, writeFileSync, existsSync } from 'fs';
+import { readFileSync, writeFileSync, existsSync, mkdirSync } from 'fs';
 import { fileURLToPath } from 'url';
 import { dirname, resolve } from 'path';
 import { connect, disconnect } from '../../src/connection.js';
@@ -123,9 +123,6 @@ async function cdpOhlcv(n) {
 }
 async function cdpStudyValues() {
   try { return await coreData.getStudyValues(); } catch { return null; }
-}
-async function cdpTables(filter) {
-  try { return await coreData.getPineTables({ study_filter: filter || '' }); } catch { return null; }
 }
 async function cdpQuote(sym) {
   try { return await coreData.getQuote({ symbol: sym || '' }); } catch { return null; }
@@ -327,6 +324,110 @@ function squeezeStreak(bars) {
     else break;
   }
   return streak;
+}
+
+// ── 线性回归（复制 Pine ta.linreg）──
+function linreg(src, len, offset) {
+  const xSum = (len - 1) * len / 2;
+  const x2Sum = (len - 1) * len * (2 * len - 1) / 6;
+  const ySum = src.reduce((s, v) => s + v, 0);
+  let xySum = 0;
+  for (let i = 0; i < len; i++) xySum += i * src[i];
+  const slope = (len * xySum - xSum * ySum) / (len * x2Sum - xSum * xSum);
+  const intercept = (ySum - slope * xSum) / len;
+  return intercept + slope * (len - 1 - offset);
+}
+
+// ── 本地 SQZMOM（替代 Pine table CDP 读取）──
+function localSqzmom(bars) {
+  if (!bars || bars.length < 60) return 'UNKNOWN';
+  const C = bars.map(b => b.close);
+  const H = bars.map(b => b.high);
+  const L = bars.map(b => b.low);
+  const V = bars.map(b => b.volume);
+  const n = bars.length;
+
+  // Squeeze: BB width < KC width * 0.8 (Pine identical)
+  const bb = bbandsCalc(C, 20, 2);
+  const kc = keltnerCalc(C, H, L, 20, 1.5);
+  const bbWidth = bb.upper - bb.lower;
+  const kcWidth = kc.upper - kc.lower;
+  const sqz = bbWidth < kcWidth * 0.8;
+
+  // Squeeze count (consecutive)
+  let sqzCount = 0;
+  for (let i = n - 1; i >= 21; i--) {
+    const sC = C.slice(0, i + 1), sH = H.slice(0, i + 1), sL = L.slice(0, i + 1);
+    const bbI = bbandsCalc(sC, 20, 2), kcI = keltnerCalc(sC, sH, sL, 20, 1.5);
+    if ((bbI.upper - bbI.lower) < (kcI.upper - kcI.lower) * 0.8) sqzCount++;
+    else break;
+  }
+
+  // Val momentum: linreg(close - mid, 20, 0) where mid = (hhv(20) + llv(20)) / 2
+  const sliceC = C.slice(n - 20);
+  const sliceH = H.slice(n - 20);
+  const sliceL = L.slice(n - 20);
+  const mid = (Math.max(...sliceH) + Math.min(...sliceL)) / 2;
+  const srcMinusMid = sliceC.map(c => c - mid);
+  const val = linreg(srcMinusMid, 20, 0);
+  const valPrev = linreg(srcMinusMid.slice(0, -1).concat(srcMinusMid[srcMinusMid.length - 2] || srcMinusMid[0]), 20, 0);
+
+  // Trend: EMA20 > EMA60 > EMA200, close > EMA20
+  const ema20 = ema(C, 20), ema60 = ema(C, 60), ema200 = ema(C, 200);
+  const ema20Prev5 = ema(C.slice(0, -5), 20);
+  const trendUp = ema20 > ema60 && ema60 > ema200 && C[n - 1] > ema20;
+  const ema20Rising = ema20 > ema20Prev5;
+
+  // Volume checks
+  const volMA20 = sma(V, 20);
+  const vol5 = sma(V, 5);
+  const vol20High = Math.max(...V.slice(n - 20));
+  const volOK = V[n - 1] > volMA20 * 1.2 || (V[n - 1] > vol20High * 0.5 && sqz && trendUp);
+  const volMomentum = vol5 > volMA20;
+
+  // RSI
+  const rsi = rsiCalc(C, 14);
+  const rsiOK = rsi > 50 && rsi < 75;
+
+  // Valid compression
+  const validCompression = sqzCount >= 3 && sqzCount <= 15;
+
+  // Fake break
+  const hhv5 = Math.max(...H.slice(n - 5));
+  const fakeBreak = H[n - 1] > hhv5 && C[n - 1] < C[n - 2] && V[n - 1] > volMA20 && (H[n - 1] - C[n - 1]) / (H[n - 1] - L[n - 1]) > 0.6;
+
+  // Val accel & new high
+  const valAccel = val > valPrev;
+  const valRecent5 = [];
+  for (let i = n - 5; i < n; i++) {
+    const sc = C.slice(i - 19, i + 1), sh = H.slice(i - 19, i + 1), sl = L.slice(i - 19, i + 1);
+    const m = (Math.max(...sh) + Math.min(...sl)) / 2;
+    const src = sc.map(c => c - m);
+    valRecent5.push(linreg(src, 20, 0));
+  }
+  const valNewHigh = val > Math.max(...valRecent5.slice(0, -1));
+
+  // Bar strength
+  const barRange = H[n - 1] - L[n - 1] + 0.0001;
+  const barStrength = (C[n - 1] - L[n - 1]) / barRange;
+  const strongCloseBar = barStrength > 0.55;
+
+  // Score (Pine identical)
+  let score = 0;
+  score += sqz && val > 0 ? 30 : 0;
+  score += validCompression ? 15 : 0;
+  score += val > 0 && valPrev <= 0 ? 20 : 0;  // crossover(val, 0)
+  score += volOK ? 15 : 0;
+  score += trendUp ? 10 : 0;
+  score += !fakeBreak ? 10 : 0;
+  score += volMomentum ? 10 : 0;
+  score += valAccel ? 10 : 0;
+  score += rsiOK ? 10 : 0;
+  score += ema20Rising ? 10 : 0;
+  score += valNewHigh ? 15 : 0;
+  score += strongCloseBar ? 15 : 0;
+
+  return score >= 72 ? 'GO' : 'WAIT';
 }
 
 // ── 收益加速度 ──
@@ -786,22 +887,40 @@ function genSignal(tfs, sqzmom, meta, alignment) {
 //  单股流水线
 // ═══════════════════════════════════════════════════════════════
 
+// SQZMOM 本地计算，1D 最后处理便于 RS/涨跌停计算
 const TF_LIST = [
   { key: '1W', tf: 'W',   bars:  65 },
-  { key: '1D', tf: 'D',   bars: 250 },
   { key: '4H', tf: '240', bars: 120 },
   { key: '1H', tf: '60',  bars: 100 },
+  { key: '1D', tf: 'D',   bars: 250 },
 ];
 
 async function fetchBenchBars() {
+  // Try cache first (valid for today, bench data changes slowly)
+  const cachePath = `./watchlist/.cache/bench_${BENCH_SYM.replace(':', '_')}.json`;
+  try {
+    const raw = readFileSync(cachePath, 'utf8');
+    const cache = JSON.parse(raw);
+    const today = new Date().toISOString().slice(0, 10);
+    if (cache.date === today && Array.isArray(cache.bars) && cache.bars.length >= 50) {
+      process.stdout.write(`  基准 ${BENCH_SYM} → 缓存 ✓ ${cache.bars.length} 根\n`);
+      return cache.bars;
+    }
+  } catch {}
+
   process.stdout.write(`  抓取基准 ${BENCH_SYM} ...`);
   const sw = await cdpSwitchSymbol(BENCH_SYM);
   if (!sw?.success) { process.stdout.write(' ❌ 切换失败\n'); return null; }
-  await sleep(1500);
   await cdpSwitchTf('D');
-  await sleep(800);
   const o = await cdpOhlcv(60);
   const bars = (o?.success && o.bars) ? o.bars : null;
+  if (bars) {
+    try {
+      const dir = dirname(cachePath);
+      if (!existsSync(dir)) mkdirSync(dir, { recursive: true });
+      writeFileSync(cachePath, JSON.stringify({ date: new Date().toISOString().slice(0, 10), symbol: BENCH_SYM, bars }));
+    } catch {}
+  }
   process.stdout.write(bars ? ` ✓ ${bars.length} 根\n` : ' ❌ 无数据\n');
   return bars;
 }
@@ -812,7 +931,6 @@ async function analyzeStock(meta, opts, benchBars) {
 
   const sw = await cdpSwitchSymbol(symbol);
   if (!sw?.success) { process.stdout.write('❌ 切换失败\n'); return null; }
-  await sleep(1100);
 
   const tfMap = {};
   let dailyBars = null;
@@ -820,7 +938,6 @@ async function analyzeStock(meta, opts, benchBars) {
   for (const { key, tf, bars } of TF_LIST) {
     const sw2 = await cdpSwitchTf(tf);
     if (!sw2?.success) { process.stdout.write('!'); continue; }
-    await sleep(600);
 
     const ohlcv = await cdpOhlcv(bars);
     if (!ohlcv?.success || !ohlcv.bars?.length || ohlcv.bars.length < 20) {
@@ -843,20 +960,10 @@ async function analyzeStock(meta, opts, benchBars) {
 
   const q = await cdpQuote(symbol);
   let stockName = newsName || symbol;
-  if (q?.success) stockName = q.description || q.name || stockName;
+  if (q?.success) stockName = stockName || q.description || q.name;
 
-  // SQZMOM 表
-  await cdpSwitchTf('D');
-  await sleep(400);
-  const tbl = await cdpTables('SQZMOM');
-  let sqzmom = 'UNKNOWN';
-  if (tbl?.studies) {
-    const s = tbl.studies.find(x => /sqzmom|squeeze/i.test(x.name || ''));
-    if (s?.tables?.[0]?.rows?.[0]) {
-      const raw = JSON.stringify(s.tables[0].rows[0]).toUpperCase();
-      sqzmom = raw.includes('GO') ? 'GO' : raw.includes('WAIT') ? 'WAIT' : raw.includes('STOP') ? 'STOP' : 'UNKNOWN';
-    }
-  }
+  // SQZMOM — 本地计算，无需 CDP 读取 Pine table
+  const sqzmom = dailyBars ? localSqzmom(dailyBars) : 'UNKNOWN';
 
   const align = trendAlignment(tfMap);
   const cs = composite(tfMap);
@@ -1134,7 +1241,7 @@ function detail(r, rank) {
 async function main() {
   const args = parseArgs();
   const opts = {
-    noLive: !!args['no-live'],
+    noLive: !args['live'],  // 默认关闭实时校准，传 --live 开启
     noBench: !!args['no-bench'],
     top: args.top ? parseInt(args.top, 10) : null,
   };
@@ -1178,7 +1285,6 @@ async function main() {
   for (const meta of candidates) {
     const r = await analyzeStock(meta, opts, benchBars);
     if (r) results.push(r);
-    await sleep(200);
   }
 
   results.sort((a, b) => b.finalScore - a.finalScore);

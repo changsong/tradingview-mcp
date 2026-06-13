@@ -19,11 +19,16 @@ import {
   readCache,
   writeCache,
 } from './llm_common.mjs';
+import { createLimiter } from '../../../src/core/concurrency.js';
 
 // deepseek-reasoner: each item needs ~120 tokens for JSON output (5 fields).
 // max_tokens for the call is 2500, so keep batch ≤ 20 items to avoid truncation.
 // Using 10 as a safe margin: 10 × 120 = 1200 tokens, well within budget.
 const BATCH_SIZE = 10;
+
+// Limit concurrent LLM API calls to avoid overwhelming the DeepSeek API
+const LLM_CONCURRENCY = parseInt(process.env.LLM_CONCURRENCY) || 6;
+const llmLimiter = createLimiter(LLM_CONCURRENCY);
 
 // ─── 类型 taxonomy（与 lib/dictionaries.mjs 中规则严格一致） ────────────────
 const CN_TYPES = ['黑天鹅', '财报', '分析师动作', '并购', '政策', '回购', '传闻', '行业'];
@@ -157,6 +162,28 @@ function buildUserMessage(items, symbol, name, market) {
   return `${head}\n\n${list}${tail}`;
 }
 
+// ─── Per-chunk retry helper ───────────────────────────────────────────────────
+async function classifyChunkWithRetry(chunk, { symbol, name, market, chunkIdx }) {
+  for (let attempt = 0; attempt < 2; attempt++) {
+    if (attempt > 0) await new Promise(r => setTimeout(r, 2000));
+    let raw;
+    try {
+      raw = await callChat({
+        system: buildSystemPrompt(market),
+        user:   buildUserMessage(chunk, symbol, name, market),
+        max_tokens: 2500,
+      });
+    } catch (err) {
+      process.stderr.write(`  [LLM-classify] ${symbol} chunk${chunkIdx} fail (attempt ${attempt + 1}): ${err.message}\n`);
+      continue;
+    }
+    const parsed = safeParseJsonArray(raw);
+    if (parsed) return parsed;
+    process.stderr.write(`  [LLM-classify] ${symbol} chunk${chunkIdx} bad JSON (attempt ${attempt + 1}), retry\n`);
+  }
+  return null;
+}
+
 // ─── 主入口 ──────────────────────────────────────────────────────────────────
 /**
  * Classify a list of news items via LLM.
@@ -179,33 +206,20 @@ export async function classifyByLLM(items, { symbol, name, market }) {
     chunks.push(items.slice(i, i + BATCH_SIZE));
   }
 
-  const merged = [];
-  for (const chunk of chunks) {
-    let parsed = null;
-    // Retry once on failure (handles transient timeouts / empty-content from reasoner model)
-    for (let attempt = 0; attempt < 2; attempt++) {
-      if (attempt > 0) await new Promise(r => setTimeout(r, 2000));
-      let raw;
-      try {
-        raw = await callChat({
-          system: buildSystemPrompt(market),
-          user:   buildUserMessage(chunk, symbol, name, market),
-          max_tokens: 2500,
-        });
-      } catch (err) {
-        process.stderr.write(`  [LLM-classify] ${symbol} fail (attempt ${attempt + 1}): ${err.message}\n`);
-        continue;
-      }
-      parsed = safeParseJsonArray(raw);
-      if (parsed) break;
-      process.stderr.write(`  [LLM-classify] ${symbol} bad JSON (attempt ${attempt + 1}), retry\n`);
-    }
-    if (!parsed) {
-      process.stderr.write(`  [LLM-classify] ${symbol} failed after retries, skipping\n`);
-      return null;
-    }
-    merged.push(...parsed);
+  // Process all chunks in parallel (with LLM API concurrency limit)
+  const chunkResults = await Promise.all(
+    chunks.map((chunk, chunkIdx) =>
+      llmLimiter(() => classifyChunkWithRetry(chunk, { symbol, name, market, chunkIdx }))
+    )
+  );
+
+  // If any chunk failed, the whole stock fails
+  if (chunkResults.some(r => r === null)) {
+    process.stderr.write(`  [LLM-classify] ${symbol} one or more chunks failed, skipping\n`);
+    return null;
   }
+
+  const merged = chunkResults.flat();
 
   writeCache(cachePath, merged);
   return alignResults(items, merged, market);

@@ -3,10 +3,8 @@
  * Provides scrapeOne() for single-URL browser fetches with:
  *  - Anti-bot browser context (UA, viewport, locale, headers)
  *  - System Chrome preferred (avoids downloading extra binaries)
+ *  - Persistent shared browser (reused across calls, isolated contexts)
  *  - Graceful [] return on any error or timeout
- *
- * Uses raw Playwright (chromium.launch) instead of Crawlee's
- * launchPersistentContext, which is slow on Windows with system Chrome.
  */
 
 import { chromium } from 'playwright';
@@ -15,6 +13,7 @@ import { readFile, writeFile, mkdir, stat } from 'node:fs/promises';
 import { dirname, resolve } from 'node:path';
 import { fileURLToPath } from 'node:url';
 import { PDFParse } from 'pdf-parse';
+import { createLimiter } from './concurrency.js';
 
 // PDF disk cache lives at <repo-root>/pdf/. Derived from this module's path so it
 // works regardless of CWD.
@@ -35,6 +34,50 @@ function findChrome() {
 }
 
 const CHROME_EXECUTABLE = findChrome();
+
+// Persistent browser singleton — avoids per-call launch/close overhead (3-8s on Windows).
+// Each call creates an isolated context (browser.newContext) and closes only the context.
+let _sharedBrowser = null;
+let _browserInitPromise = null;
+
+// Max concurrent browser contexts to prevent memory exhaustion.
+const MAX_CONTEXTS = parseInt(process.env.BROWSER_MAX_CONTEXTS) || 8;
+const contextLimiter = createLimiter(MAX_CONTEXTS);
+
+async function getSharedBrowser() {
+  if (_sharedBrowser?.isConnected()) return _sharedBrowser;
+  if (_browserInitPromise) return _browserInitPromise;
+
+  _browserInitPromise = (async () => {
+    const launchOptions = {
+      headless: true,
+      args: [
+        '--no-sandbox',
+        '--disable-setuid-sandbox',
+        '--disable-blink-features=AutomationControlled',
+        '--disable-infobars',
+      ],
+    };
+    if (CHROME_EXECUTABLE) {
+      launchOptions.executablePath = CHROME_EXECUTABLE;
+    }
+    _sharedBrowser = await chromium.launch(launchOptions);
+    return _sharedBrowser;
+  })();
+
+  try {
+    return await _browserInitPromise;
+  } finally {
+    _browserInitPromise = null;
+  }
+}
+
+// Clean up on exit
+process.on('exit', () => {
+  if (_sharedBrowser) {
+    _sharedBrowser.close().catch(() => {});
+  }
+});
 
 // Prioritized selectors for article body extraction (English + Chinese sites)
 const ARTICLE_SELECTORS = [
@@ -198,6 +241,8 @@ export async function fetchPdfText(url, { timeoutMs = 60000 } = {}) {
 
 /**
  * Scrape a single URL using Playwright with anti-bot browser settings.
+ * Uses a persistent shared browser — each call creates an isolated context
+ * and closes only the context, not the browser.
  *
  * @param {string} url
  * @param {(page: import('playwright').Page) => Promise<any>} handler
@@ -216,24 +261,9 @@ export async function scrapeOne(url, handler, options = {}) {
   } = options;
 
   const isZhCN = locale === 'zh-CN';
-  let browser = null;
 
-  try {
-    const launchOptions = {
-      headless: true,
-      args: [
-        '--no-sandbox',
-        '--disable-setuid-sandbox',
-        '--disable-blink-features=AutomationControlled',
-        '--disable-infobars',
-      ],
-    };
-    if (CHROME_EXECUTABLE) {
-      launchOptions.executablePath = CHROME_EXECUTABLE;
-    }
-
-    browser = await chromium.launch(launchOptions);
-
+  return contextLimiter(async () => {
+    const browser = await getSharedBrowser();
     const context = await browser.newContext({
       locale,
       userAgent: isZhCN
@@ -246,19 +276,21 @@ export async function scrapeOne(url, handler, options = {}) {
       },
     });
 
-    // Mask automation indicators
-    await context.addInitScript(() => {
-      Object.defineProperty(navigator, 'webdriver', { get: () => undefined });
-    });
+    try {
+      // Mask automation indicators
+      await context.addInitScript(() => {
+        Object.defineProperty(navigator, 'webdriver', { get: () => undefined });
+      });
 
-    const page = await context.newPage();
-    await page.goto(url, { waitUntil, timeout: timeoutSecs * 1000 });
+      const page = await context.newPage();
+      await page.goto(url, { waitUntil, timeout: timeoutSecs * 1000 });
 
-    const result = await handler(page);
-    return result ?? [];
-  } catch (_) {
-    return [];
-  } finally {
-    if (browser) await browser.close().catch(() => {});
-  }
+      const result = await handler(page);
+      return result ?? [];
+    } catch (_) {
+      return [];
+    } finally {
+      await context.close().catch(() => {});
+    }
+  });
 }

@@ -106,6 +106,8 @@ async function findChartTarget() {
     || targets.find(t => t.type === 'page' && /^https?:\/\/.+tradingview/i.test(t.url))
     // Priority 3: any page mentioning tradingview (fallback, avoids file:// toast windows)
     || targets.find(t => t.type === 'page' && /tradingview/i.test(t.url) && t.url.startsWith('http'))
+    // Priority 4: TradingView Desktop (Electron) — file:// URLs with "tabbed-window" main window
+    || targets.find(t => t.type === 'page' && /tabbed-window/i.test(t.url))
     || null;
 }
 

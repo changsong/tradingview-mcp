@@ -111,7 +111,7 @@ export async function runReview(market) {
     const pct = (last.close - prev.close) / prev.close * 100;
     const techRec = prevTech.stocks?.[sym];
     const newsRec = prevNews.stocks?.[sym];
-    const name = techRec?.name || newsRec?.name || sym;
+    const name = newsRec?.name || techRec?.name || sym;
     changes.push({
       sym, name, ok: true,
       prev_close: prev.close,

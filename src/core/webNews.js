@@ -6,6 +6,8 @@
 
 import { fetchXueqiuPosts as fetchXueqiuWithPuppeteer } from './xueqiu.js';
 import { scrapeOne, fetchArticleContent } from './browserScraper.js';
+import { createLimiter, LRUCache } from './concurrency.js';
+import { hasCookies } from './xueqiuCookies.js';
 
 // UA 池：轮换降低被 Eastmoney/Sina 限流概率
 const UA_POOL = [
@@ -36,50 +38,10 @@ async function fetchWithTimeout(url, options = {}, timeoutMs = DEFAULT_TIMEOUT_M
   }
 }
 
-// 简易并发限制器（限制同时进行的 fetch 数，避免触发限流）
-function createLimiter(maxConcurrent) {
-  let active = 0;
-  const queue = [];
-  const dequeue = () => {
-    if (active >= maxConcurrent || queue.length === 0) return;
-    const { fn, resolve, reject } = queue.shift();
-    active++;
-    Promise.resolve()
-      .then(fn)
-      .then(resolve, reject)
-      .finally(() => {
-        active--;
-        dequeue();
-      });
-  };
-  return (fn) => new Promise((resolve, reject) => {
-    queue.push({ fn, resolve, reject });
-    dequeue();
-  });
-}
-
 // 全局并发限制：同时最多 6 个 fetch 在飞，平衡速度和限流风险
 const limit = createLimiter(6);
 
 // 简易 LRU：缓存 fetchStockInfo 结果（同一 symbol 重复查询时直接命中）
-class LRUCache {
-  constructor(max = 200) {
-    this.max = max;
-    this.map = new Map();
-  }
-  get(key) {
-    if (!this.map.has(key)) return undefined;
-    const v = this.map.get(key);
-    this.map.delete(key);
-    this.map.set(key, v);
-    return v;
-  }
-  set(key, value) {
-    if (this.map.has(key)) this.map.delete(key);
-    this.map.set(key, value);
-    if (this.map.size > this.max) this.map.delete(this.map.keys().next().value);
-  }
-}
 const _stockInfoCache = new LRUCache(500);
 
 // 情绪关键词字典
@@ -517,7 +479,11 @@ async function fetchCninfoAnnouncements(code, count = 10) {
 
 // 获取雪球讨论
 // 使用Puppeteer绕过WAF限制；用 Promise.race 强制 30 秒硬超时，避免无限挂起
+// 无有效 cookie 时直接跳过（无 cookie 必然触发 WAF 验证码，浪费 30s）
 async function fetchXueqiuPosts(code, count = 10) {
+  if (!hasCookies() || process.env.SKIP_XUEQIU === 'true') {
+    return [];
+  }
   const timeoutMs = 30000;
   try {
     return await Promise.race([

@@ -18,6 +18,7 @@ import { dirname, resolve } from 'path';
 import { searchNews, extractCode } from '../../src/core/webNews.js';
 import { analyzeStockData } from './lib/analyze.mjs';
 import { isLLMEnabled } from './lib/llm_common.mjs';
+import { createLimiter } from '../../src/core/concurrency.js';
 
 // 锁定 CWD 为项目根，使 ./watchlist 等相对路径稳定
 process.chdir(resolve(dirname(fileURLToPath(import.meta.url)), '../..'));
@@ -28,7 +29,7 @@ const OUTPUT_MD    = './watchlist/cn_news_signals.md';
 const OUTPUT_JSON  = './watchlist/cn_news_signals.json';
 const DAYS_BACK    = 7;
 const NEWS_COUNT   = 20;
-const BATCH_SIZE   = 5;
+const STOCK_CONCURRENCY = parseInt(process.env.NEWS_CN_CONCURRENCY) || 8;
 const MARKET       = 'cn';
 
 const llmFlag = !process.argv.includes('--no-llm');
@@ -220,25 +221,26 @@ async function main() {
 
   const content = readFileSync(SYMBOLS_FILE, 'utf8').trim();
   const symbols = content.split(',').map(s => s.trim()).filter(Boolean);
-  console.log(`✅ 加载 ${symbols.length} 只股票\n`);
+  console.log(`✅ 加载 ${symbols.length} 只股票 (并发=${STOCK_CONCURRENCY})\n`);
 
   const results = [];
-  const batches  = Math.ceil(symbols.length / BATCH_SIZE);
+  const stockLimiter = createLimiter(STOCK_CONCURRENCY);
+  let completed = 0;
 
-  for (let i = 0; i < symbols.length; i += BATCH_SIZE) {
-    const batch = symbols.slice(i, i + BATCH_SIZE);
-    console.log(`\n┌── 批次 ${Math.floor(i / BATCH_SIZE) + 1}/${batches} [${batch.length}只] ─────────────────────────`);
-
-    const settled = await Promise.allSettled(batch.map(s => analyzeStock(s)));
-    settled.forEach(r => {
-      if (r.status === 'fulfilled') results.push(r.value);
-      else console.warn('  ⚠ 异常:', r.reason?.message);
-    });
-
-    console.log('└──────────────────────────────────────────────────────────');
-
-    if (i + BATCH_SIZE < symbols.length) await new Promise(r => setTimeout(r, 800));
-  }
+  const settled = await Promise.allSettled(
+    symbols.map((s) =>
+      stockLimiter(async () => {
+        const r = await analyzeStock(s);
+        completed++;
+        process.stdout.write(`  [${completed}/${symbols.length}] ${s} 完成\n`);
+        return r;
+      })
+    )
+  );
+  settled.forEach(r => {
+    if (r.status === 'fulfilled') results.push(r.value);
+    else console.warn('  ⚠ 异常:', r.reason?.message);
+  });
 
   // 按归一化分降序
   results.sort((a, b) => b.score - a.score);

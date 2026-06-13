@@ -179,39 +179,45 @@ async function fetchXueqiuPostsTraditional(code, count) {
     });
 
     // 加载保存的Cookie
+    let cookiesLoaded = false;
     if (hasCookies()) {
       const cookies = loadCookies();
       if (cookies && Array.isArray(cookies)) {
         await context.addCookies(cookies);
+        cookiesLoaded = true;
         console.log('✅ Loaded saved cookies for Xueqiu');
       }
     }
 
     const page = await context.newPage();
 
-    // 先访问首页建立会话
-    console.log('🌐 正在访问雪球首页...');
-    await page.goto('https://xueqiu.com', {
-      waitUntil: 'networkidle',
-      timeout: 30000,
-    }).catch(err => {
-      console.log('⚠️  首页加载超时，继续...');
-    });
-
-    await page.waitForTimeout(2000);
+    // Only visit homepage if cookies were just loaded (needs to establish session)
+    // or if no cookies exist. Otherwise cookies already carry the session.
+    if (!cookiesLoaded && !hasCookies()) {
+      console.log('🌐 正在访问雪球首页...');
+      await page.goto('https://xueqiu.com', {
+        waitUntil: 'domcontentloaded',
+        timeout: 15000,
+      }).catch(() => {});
+      await page.waitForTimeout(1000);
+    } else if (cookiesLoaded) {
+      // Visit homepage once quickly to warm the session
+      await page.goto('https://xueqiu.com', {
+        waitUntil: 'domcontentloaded',
+        timeout: 15000,
+      }).catch(() => {});
+      await page.waitForTimeout(1000);
+    }
 
     // 访问股票页面
     console.log(`🌐 正在访问股票页面: ${xqCode}...`);
-    const response = await page.goto(url, {
-      waitUntil: 'networkidle',
-      timeout: 60000,
-    }).catch(err => {
-      console.log('⚠️  页面加载超时，尝试继续...');
-      return null;
-    });
+    await page.goto(url, {
+      waitUntil: 'domcontentloaded',
+      timeout: 30000,
+    }).catch(() => {});
 
     // 等待内容加载
-    await page.waitForTimeout(5000);
+    await page.waitForTimeout(2000);
 
     // 提取数据
     const posts = await extractPostsFromPage(page, count);

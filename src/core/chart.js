@@ -44,7 +44,7 @@ export async function setSymbol({ symbol, _deps }) {
       var chart = ${CHART_API};
       return new Promise(function(resolve) {
         chart.setSymbol(${safeString(symbol)}, {});
-        setTimeout(resolve, 500);
+        setTimeout(resolve, 50);
       });
     })()
   `);
