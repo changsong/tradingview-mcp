@@ -933,11 +933,12 @@ function genSignal(tfs, sqzmom, meta, alignment) {
 
 // SQZMOM 本地计算。1D 先行：节省一次 chart 默认-TF→首TF 的渲染，
 // 且 dailyBars 尽早就位供下游 RS/涨跌停计算。
+// cacheable: 仅 D/W（日内 bar 不可变）；4H/1H 有实时 OHLC 变动，始终从 CDP 拉取。
 const TF_LIST = [
-  { key: '1D', tf: 'D',   bars: 250 },
-  { key: '1W', tf: 'W',   bars:  65 },
-  { key: '4H', tf: '240', bars: 120 },
-  { key: '1H', tf: '60',  bars: 100 },
+  { key: '1D', tf: 'D',   bars: 250, cacheable: true },
+  { key: '1W', tf: 'W',   bars:  65, cacheable: true },
+  { key: '4H', tf: '240', bars: 120, cacheable: false },
+  { key: '1H', tf: '60',  bars: 100, cacheable: false },
 ];
 
 async function fetchBenchBars() {
@@ -983,10 +984,10 @@ async function analyzeStock(meta, opts, benchBars) {
   const tfMap = {};
   let dailyBars = null;
 
-  for (const { key, tf, bars } of TF_LIST) {
-    // Try cache first — OHLCV immutable within a trading day
+  for (const { key, tf, bars, cacheable } of TF_LIST) {
     let ohlcv = null;
-    const cachedBars = readOhlcvCache(symbol, tf, bars);
+    // Only cache D/W (intraday bars immutable); 4H/1H always fetch fresh
+    const cachedBars = cacheable ? readOhlcvCache(symbol, tf, bars) : null;
     if (cachedBars) {
       ohlcv = { success: true, bar_count: cachedBars.length, bars: cachedBars };
       process.stdout.write('c');
