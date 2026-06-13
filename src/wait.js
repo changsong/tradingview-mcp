@@ -1,4 +1,4 @@
-import { evaluate } from './connection.js';
+import { evaluate, safeString } from './connection.js';
 
 const DEFAULT_TIMEOUT = 10000;
 const POLL_INTERVAL = 60;
@@ -11,6 +11,21 @@ export async function waitForChartReady(expectedSymbol = null, expectedTf = null
   while (Date.now() - start < timeout) {
     const state = await evaluate(`
       (function() {
+        var expectedSymbol = ${expectedSymbol ? safeString(expectedSymbol) : 'null'};
+
+        // Fast functional check via chart API — no DOM dependency
+        var chartApi = window.TradingViewApi._activeChartWidgetWV.value();
+        if (chartApi) {
+          try {
+            var currentSym = chartApi.symbol();
+            var barsSize = chartApi._chartWidget.model().mainSeries().bars().size();
+            if (barsSize > 0 && (expectedSymbol == null || currentSym.toUpperCase().indexOf(expectedSymbol.toUpperCase()) !== -1)) {
+              return { ready: true, method: 'api', currentSymbol: currentSym, barCount: barsSize };
+            }
+          } catch {}
+        }
+
+        // Fallback: DOM-based detection
         var spinner = document.querySelector('[class*="loader"]')
           || document.querySelector('[class*="loading"]')
           || document.querySelector('[data-name="loading"]');
@@ -18,7 +33,6 @@ export async function waitForChartReady(expectedSymbol = null, expectedTf = null
 
         var barCount = -1;
         try {
-          var chartApi = window.TradingViewApi._activeChartWidgetWV.value();
           if (chartApi) {
             var bars = chartApi._chartWidget.model().mainSeries().bars();
             barCount = bars ? bars.size() : -1;
@@ -36,6 +50,11 @@ export async function waitForChartReady(expectedSymbol = null, expectedTf = null
     if (!state) {
       await new Promise(r => setTimeout(r, pollInterval));
       continue;
+    }
+
+    // Functional check passed — chart is ready
+    if (state.ready) {
+      return true;
     }
 
     if (state.isLoading) {

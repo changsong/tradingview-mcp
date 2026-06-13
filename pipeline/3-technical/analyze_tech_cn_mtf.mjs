@@ -113,7 +113,7 @@ const sleep = ms => new Promise(r => setTimeout(r, ms));
 
 // Direct CDP wrappers — replace execSync CLI calls so symbol/timeframe switches
 // persist across operations in the same WebSocket session.
-const CDP_DEPS = { pollInterval: 60, timeout: 5000 };
+const CDP_DEPS = { pollInterval: 60, timeout: 2000 };
 async function cdpSwitchSymbol(sym) {
   try { return await coreChart.setSymbol({ symbol: sym, _deps: CDP_DEPS }); } catch { return null; }
 }
