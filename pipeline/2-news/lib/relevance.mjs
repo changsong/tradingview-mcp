@@ -91,6 +91,37 @@ export function isRelevant(item, symbol, name, opts = {}) {
 }
 
 /**
+ * Lightweight pre-enrichment relevance check.
+ * Uses only fields returned by list APIs, so callers can avoid browser/PDF
+ * body fetches for obvious noise, cross-stock pollution, and duplicates.
+ *
+ * Final analysis should still call filterRelevant() after enrichment because
+ * full article content can recover some weak-title items.
+ */
+export function isRelevantCandidate(item, symbol, name, opts = {}) {
+  const title = (item.title || '').trim();
+  if (!title) return { ok: false, reason: 'empty-title' };
+
+  const market = opts.market || 'cn';
+  const noise  = market === 'cn' ? CN.NOISE : US.NOISE;
+  for (const re of noise) {
+    if (re.test(title)) return { ok: false, reason: 'noise:' + re.source.slice(0, 30) };
+  }
+
+  if (!opts.skipMentionCheck && item.type !== 'research' && item.type !== 'announcement') {
+    const haystack = [title, item.snippet, item.digest, item.summary, item.description]
+      .filter(Boolean)
+      .join(' ')
+      .toLowerCase();
+    const keys = normalizeKeys(symbol, name);
+    const hit = keys.some(k => mentions(haystack, k));
+    if (!hit) return { ok: false, reason: 'no-subject-mention' };
+  }
+
+  return { ok: true };
+}
+
+/**
  * 跨源去重：按 title 前 30 字 + date 合并，留权重最大的源
  *   该函数是纯函数；调用方需先用 sourceAuthority 排序或在合并时比较
  * @param {object[]} items 已通过 isRelevant 的列表
@@ -124,6 +155,23 @@ export function filterRelevant(items, symbol, name, opts = {}) {
   const kept = [];
   for (const it of items) {
     const r = isRelevant(it, symbol, name, opts);
+    if (r.ok) kept.push(it);
+    else reasons[r.reason] = (reasons[r.reason] || 0) + 1;
+  }
+  const dedup = dedupBySimilarTitle(kept);
+  reasons['dedup'] = kept.length - dedup.length;
+  return { kept: dedup, dropped: items.length - dedup.length, reasons };
+}
+
+/**
+ * One-stop pre-enrichment candidate filter.
+ * @returns {{ kept: object[], dropped: number, reasons: Record<string, number> }}
+ */
+export function filterRelevantCandidates(items, symbol, name, opts = {}) {
+  const reasons = {};
+  const kept = [];
+  for (const it of items) {
+    const r = isRelevantCandidate(it, symbol, name, opts);
     if (r.ok) kept.push(it);
     else reasons[r.reason] = (reasons[r.reason] || 0) + 1;
   }

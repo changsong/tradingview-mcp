@@ -15,8 +15,10 @@
 import { readFileSync, writeFileSync } from 'fs';
 import { fileURLToPath } from 'url';
 import { dirname, resolve } from 'path';
+import { performance } from 'node:perf_hooks';
 import { searchNews, extractCode } from '../../src/core/webNews.js';
 import { analyzeStockData } from './lib/analyze.mjs';
+import { filterRelevantCandidates } from './lib/relevance.mjs';
 import { isLLMEnabled } from './lib/llm_common.mjs';
 import { createLimiter } from '../../src/core/concurrency.js';
 
@@ -30,6 +32,8 @@ const OUTPUT_JSON  = './watchlist/cn_news_signals.json';
 const DAYS_BACK    = 7;
 const NEWS_COUNT   = 20;
 const STOCK_CONCURRENCY = parseInt(process.env.NEWS_CN_CONCURRENCY) || 8;
+const NEWS_ENRICH_TOP_N = parseInt(process.env.NEWS_CN_ENRICH_TOP_N) || NEWS_COUNT;
+const RESEARCH_ENRICH_TOP_N = parseInt(process.env.NEWS_CN_RESEARCH_ENRICH_TOP_N) || Math.ceil(NEWS_COUNT / 2);
 const MARKET       = 'cn';
 
 const llmFlag = !process.argv.includes('--no-llm');
@@ -40,13 +44,76 @@ cutoff.setDate(today.getDate() - DAYS_BACK);
 const cutoffStr = cutoff.toISOString().split('T')[0];
 const todayStr  = today.toISOString().split('T')[0];
 
+const msSince = start => Math.round(performance.now() - start);
+
+function isInWindow(dateStr) {
+  if (!dateStr) return false;
+  const d = new Date(String(dateStr).slice(0, 10));
+  return !Number.isNaN(d.getTime()) && d >= cutoff && d <= today;
+}
+
+function filterCandidatesForEnrichment(items, ctx) {
+  const recent = (items || []).filter(item => isInWindow(item.date));
+  const outOfWindow = (items || []).length - recent.length;
+  const filtered = filterRelevantCandidates(recent, ctx.symbol, ctx.name, { market: MARKET });
+  return {
+    ...filtered,
+    dropped: filtered.dropped + outOfWindow,
+    reasons: {
+      ...filtered.reasons,
+      ...(outOfWindow ? { out_of_window: outOfWindow } : {}),
+    },
+  };
+}
+
+function sumPerformance(results, reportWriteMs = 0) {
+  const totals = {
+    list_fetch_ms: 0,
+    enrichment_ms: 0,
+    relevance_ms: 0,
+    llm_ms: 0,
+    report_write_ms: reportWriteMs,
+  };
+  for (const r of results) {
+    const p = r.performance || {};
+    totals.list_fetch_ms += p.list_fetch_ms || 0;
+    totals.enrichment_ms += p.enrichment_ms || 0;
+    totals.relevance_ms += p.relevance_ms || 0;
+    totals.llm_ms += p.llm_ms || 0;
+  }
+  const divisor = Math.max(1, results.length);
+  return {
+    totals_ms: totals,
+    avg_ms: Object.fromEntries(Object.entries(totals).map(([k, v]) => [k, Math.round(v / divisor)])),
+  };
+}
+
+function logPerformanceSummary(perf) {
+  const t = perf.totals_ms;
+  const a = perf.avg_ms;
+  console.log('\nPerformance summary (ms):');
+  console.log(`  list_fetch   total=${t.list_fetch_ms} avg=${a.list_fetch_ms}`);
+  console.log(`  enrichment   total=${t.enrichment_ms} avg=${a.enrichment_ms}`);
+  console.log(`  relevance    total=${t.relevance_ms} avg=${a.relevance_ms}`);
+  console.log(`  llm          total=${t.llm_ms} avg=${a.llm_ms}`);
+  console.log(`  report_write total=${t.report_write_ms}`);
+}
+
 // ─── 单股分析 ─────────────────────────────────────────────────────────────────
 async function analyzeStock(symbol) {
   const code = extractCode(symbol);
   process.stdout.write(`  [${symbol}] 抓取中...`);
 
   try {
-    const result = await searchNews({ symbol, source: 'news', count: NEWS_COUNT });
+    const result = await searchNews({
+      symbol,
+      source: 'news',
+      count: NEWS_COUNT,
+      enrich: 'candidate',
+      candidateFilterFn: filterCandidatesForEnrichment,
+      enrichTopN: NEWS_ENRICH_TOP_N,
+      researchEnrichTopN: RESEARCH_ENRICH_TOP_N,
+    });
 
     // 合并新闻 + 研报
     const allNews = [
@@ -69,6 +136,10 @@ async function analyzeStock(symbol) {
       name: result.name || code,
       ...r,
       sources_status: result.sources_status,
+      performance: {
+        ...(result.performance || {}),
+        ...(r.performance || {}),
+      },
     };
   } catch (err) {
     process.stdout.write(` ❌ 错误: ${err.message}\n`);
@@ -269,6 +340,7 @@ async function main() {
   console.log(`🔴 规避股票: ${shorts.map(r => r.name || r.symbol).join(', ') || '无'}`);
 
   // ── 写报告 ──
+  const reportWriteStart = performance.now();
   writeFileSync(OUTPUT_MD, buildReport(results), 'utf8');
   console.log(`\n✅ 详细报告已保存: ${OUTPUT_MD}`);
 
@@ -280,6 +352,7 @@ async function main() {
     score_scale: '0-100 normalized (neutral=50)',
     window: { from: cutoffStr, to: todayStr, days: DAYS_BACK },
     llm_used: llmFlag,
+    performance: sumPerformance(results, 0),
     stocks: Object.fromEntries(results.map(r => [r.symbol, {
       name: r.name,
       score: r.score,
@@ -294,6 +367,7 @@ async function main() {
       negative_factors: r.negative_factors ?? [],
       news_count: r.news_count,
       news_dropped: r.news_dropped,
+      performance: r.performance || {},
       top_news: (r.tagged ?? []).slice(0, 5).map(t => ({
         date: t.date || null,
         title: (t.title || '').slice(0, 100),
@@ -315,6 +389,10 @@ async function main() {
     }])),
   };
   writeFileSync(OUTPUT_JSON, JSON.stringify(json, null, 2), 'utf8');
+  const reportWriteMs = msSince(reportWriteStart);
+  json.performance = sumPerformance(results, reportWriteMs);
+  writeFileSync(OUTPUT_JSON, JSON.stringify(json, null, 2), 'utf8');
+  logPerformanceSummary(json.performance);
   console.log(`✅ 下游契约 JSON 已保存: ${OUTPUT_JSON}\n`);
 }
 

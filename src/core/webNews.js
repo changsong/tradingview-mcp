@@ -8,6 +8,7 @@ import { fetchXueqiuPosts as fetchXueqiuWithPuppeteer } from './xueqiu.js';
 import { scrapeOne, fetchArticleContent } from './browserScraper.js';
 import { createLimiter, LRUCache } from './concurrency.js';
 import { hasCookies } from './xueqiuCookies.js';
+import { performance } from 'node:perf_hooks';
 
 // UA 池：轮换降低被 Eastmoney/Sina 限流概率
 const UA_POOL = [
@@ -520,7 +521,20 @@ async function enrichWithContent(items, locale = 'zh-CN') {
 }
 
 // 主函数：获取新闻
-export async function searchNews({ symbol, name, source = 'all', count = 10 }) {
+function msSince(start) {
+  return Math.round(performance.now() - start);
+}
+
+export async function searchNews({
+  symbol,
+  name,
+  source = 'all',
+  count = 10,
+  enrich = 'all',
+  candidateFilterFn,
+  enrichTopN = count,
+  researchEnrichTopN = Math.ceil(count / 2),
+}) {
   const marketType = detectMarket(symbol);
   const marketName = marketType === 'CN' ? 'A股' : marketType === 'HK' ? '港股' : '美股';
   const code = extractCode(symbol);
@@ -535,6 +549,18 @@ export async function searchNews({ symbol, name, source = 'all', count = 10 }) {
     research: [],
     forum: [],
     search_time: new Date().toISOString(),
+    performance: {
+      list_fetch_ms: 0,
+      candidate_filter_ms: 0,
+      enrichment_ms: 0,
+      raw_news_count: 0,
+      raw_research_count: 0,
+      candidate_news_count: 0,
+      candidate_research_count: 0,
+      enriched_news_count: 0,
+      enriched_research_count: 0,
+      candidate_reasons: {},
+    },
   };
 
   // 如果没有提供名称，尝试获取
@@ -548,6 +574,7 @@ export async function searchNews({ symbol, name, source = 'all', count = 10 }) {
   const keyword = result.name || code;
   // 多关键词命中：公司名 + 6位代码 都匹配，提升快讯命中率
   const kuaixunKeywords = [result.name, code].filter(Boolean);
+  const listFetchStart = performance.now();
   const promises = [];
 
   // 每源状态追踪：调用者可以看到哪些源失败/超时
@@ -622,18 +649,46 @@ export async function searchNews({ symbol, name, source = 'all', count = 10 }) {
 
   // 并行获取所有数据
   await Promise.all(promises);
+  result.performance.list_fetch_ms = msSince(listFetchStart);
 
   // 过滤错误项
   result.news = result.news.filter(item => !item.error);
   result.research = result.research.filter(item => !item.error);
   result.forum = result.forum.filter(item => !item.error);
+  result.performance.raw_news_count = result.news.length;
+  result.performance.raw_research_count = result.research.length;
+
+  if (enrich === 'candidate' && typeof candidateFilterFn === 'function') {
+    const candidateStart = performance.now();
+    const filterCtx = { symbol, name: result.name || code, market: 'cn' };
+    const newsCandidates = candidateFilterFn(result.news, { ...filterCtx, bucket: 'news' });
+    const researchCandidates = candidateFilterFn(result.research, { ...filterCtx, bucket: 'research' });
+    result.news = Array.isArray(newsCandidates?.kept) ? newsCandidates.kept : result.news;
+    result.research = Array.isArray(researchCandidates?.kept) ? researchCandidates.kept : result.research;
+    result.performance.candidate_filter_ms = msSince(candidateStart);
+    result.performance.candidate_news_count = result.news.length;
+    result.performance.candidate_research_count = result.research.length;
+    result.performance.candidate_reasons = {
+      news: newsCandidates?.reasons || {},
+      research: researchCandidates?.reasons || {},
+    };
+  } else {
+    result.performance.candidate_news_count = result.news.length;
+    result.performance.candidate_research_count = result.research.length;
+  }
 
   // 二次抓取：为 news / research / forum 补全正文内容
+  const enrichmentStart = performance.now();
+  const newsToEnrich = enrich === 'candidate' ? result.news.slice(0, enrichTopN) : result.news;
+  const researchToEnrich = enrich === 'candidate' ? result.research.slice(0, researchEnrichTopN) : result.research;
   await Promise.all([
-    enrichWithContent(result.news, 'zh-CN'),
-    enrichWithContent(result.research, 'zh-CN'),
+    enrichWithContent(newsToEnrich, 'zh-CN'),
+    enrichWithContent(researchToEnrich, 'zh-CN'),
     enrichWithContent(result.forum, 'zh-CN'),
   ]);
+  result.performance.enrichment_ms = msSince(enrichmentStart);
+  result.performance.enriched_news_count = newsToEnrich.length;
+  result.performance.enriched_research_count = researchToEnrich.length;
 
   result.total_count = result.news.length + result.research.length + result.forum.length;
 

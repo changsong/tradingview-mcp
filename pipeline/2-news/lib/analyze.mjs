@@ -18,6 +18,7 @@ import { detectPatterns }   from './patterns.mjs';
 import { generateSignal }   from './signal.mjs';
 import { classifyByLLM }    from './llm_classify.mjs';
 import { mapLLMSentiment }  from './llm_common.mjs';
+import { performance } from 'node:perf_hooks';
 
 /**
  * @param {object[]} rawItems   合并后的新闻列表（每条至少含 title/date/source/type）
@@ -34,12 +35,18 @@ export async function analyzeStockData(rawItems, ctx) {
   const { symbol, name, today, cutoff, market, classifierFn } = ctx;
   const initialCount = rawItems?.length || 0;
   const isCn = market === 'cn';
+  const performanceMetrics = { date_filter_ms: 0, relevance_ms: 0, llm_ms: 0, scoring_ms: 0 };
+  const msSince = start => Math.round(performance.now() - start);
 
   // ── 1) 日期窗口过滤 ──
+  const dateFilterStart = performance.now();
   const recent = (rawItems || []).filter(n => isInWindow(n.date, cutoff, today));
+  performanceMetrics.date_filter_ms = msSince(dateFilterStart);
 
   // ── 2) 相关性 + 噪音 + 去重 ──
+  const relevanceStart = performance.now();
   const { kept, dropped, reasons } = filterRelevant(recent, symbol, name, { market });
+  performanceMetrics.relevance_ms = msSince(relevanceStart);
 
   if (kept.length === 0) {
     return noDataResult({
@@ -47,12 +54,15 @@ export async function analyzeStockData(rawItems, ctx) {
       news_dropped: dropped + (initialCount - recent.length),
       drop_reasons: reasons,
       market,
+      performance: performanceMetrics,
     });
   }
 
   // ── 3) LLM 分类 + 情绪 + 催化标记 ──
   const classifier = classifierFn || classifyByLLM;
+  const llmStart = performance.now();
   const llmResults = await classifier(kept, { symbol, name, market });
+  performanceMetrics.llm_ms = msSince(llmStart);
 
   if (!llmResults) {
     // LLM 失败 / 未启用：按设计走 No Data，不退回关键字
@@ -61,10 +71,12 @@ export async function analyzeStockData(rawItems, ctx) {
       news_dropped: dropped + (initialCount - recent.length),
       drop_reasons: reasons,
       market,
+      performance: performanceMetrics,
     });
   }
 
   // ── 4) 组装 tagged：LLM 出 type/sentiment，weight 仍走确定性公式 ──
+  const scoringStart = performance.now();
   const tagged = kept.map((item, i) => {
     const r = llmResults[i] || {};
     const type = r.type;                                  // 已在 alignResults 里 normalize
@@ -114,6 +126,7 @@ export async function analyzeStockData(rawItems, ctx) {
     .sort((a, b) => b.finalWeight - a.finalWeight)
     .slice(0, 3)
     .map(fmt);
+  performanceMetrics.scoring_ms = msSince(scoringStart);
 
   return {
     tagged,
@@ -135,10 +148,11 @@ export async function analyzeStockData(rawItems, ctx) {
     confidence: sig.confidence,
     positive_factors,
     negative_factors,
+    performance: performanceMetrics,
   };
 }
 
-function noDataResult({ reason, news_dropped, drop_reasons, market }) {
+function noDataResult({ reason, news_dropped, drop_reasons, market, performance }) {
   const isCn = market === 'cn';
   return {
     tagged: [],
@@ -153,6 +167,7 @@ function noDataResult({ reason, news_dropped, drop_reasons, market }) {
     confidence: '-',
     positive_factors: [],
     negative_factors: [],
+    performance,
   };
 }
 

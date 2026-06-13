@@ -5,7 +5,14 @@
 
 import { describe, it } from 'node:test';
 import assert from 'node:assert/strict';
-import { isRelevant, dedupBySimilarTitle, filterRelevant, normalizeKeys } from '../relevance.mjs';
+import {
+  isRelevant,
+  isRelevantCandidate,
+  dedupBySimilarTitle,
+  filterRelevant,
+  filterRelevantCandidates,
+  normalizeKeys,
+} from '../relevance.mjs';
 
 describe('normalizeKeys', () => {
   it('strips exchange prefix and keeps clean code', () => {
@@ -16,6 +23,46 @@ describe('normalizeKeys', () => {
   });
   it('returns empty array for null inputs', () => {
     assert.deepEqual(normalizeKeys(null, null), []);
+  });
+});
+
+describe('filterRelevantCandidates', () => {
+  it('uses title/list fields only before enrichment', () => {
+    const r = isRelevantCandidate(
+      { title: 'Component Maker Reports Strong Quarter', content: 'FN saw record revenues this quarter', type: 'news' },
+      'NYSE:FN', 'FN', { market: 'us' }
+    );
+    assert.equal(r.ok, false);
+    assert.equal(r.reason, 'no-subject-mention');
+  });
+
+  it('keeps subject mentions from summaries without requiring body content', () => {
+    const r = isRelevantCandidate(
+      { title: 'Component Maker Reports Strong Quarter', summary: 'FN saw record revenues this quarter', type: 'news' },
+      'NYSE:FN', 'FN', { market: 'us' }
+    );
+    assert.equal(r.ok, true);
+  });
+
+  it('keeps symbol-keyed research and announcements', () => {
+    const items = [
+      { title: 'Industry deep dive', type: 'research' },
+      { title: 'Annual meeting resolution', type: 'announcement' },
+    ];
+    const r = filterRelevantCandidates(items, 'NYSE:FN', 'FN', { market: 'us' });
+    assert.equal(r.kept.length, 2);
+  });
+
+  it('drops noise and dedupes before enrichment', () => {
+    const items = [
+      { title: '/DISREGARD RELEASE: Foo/', type: 'news' },
+      { title: 'FN Inc Reports Q1 Earnings In-Line With Estimates', date: '2026-05-01', type: 'news' },
+      { title: 'FN Inc Reports Q1 Earnings In-Line With Estimates And Details', date: '2026-05-01', type: 'news' },
+    ];
+    const r = filterRelevantCandidates(items, 'NYSE:FN', 'FN', { market: 'us' });
+    assert.equal(r.kept.length, 1);
+    assert.ok(Object.keys(r.reasons).some(k => k.startsWith('noise:')));
+    assert.equal(r.reasons.dedup, 1);
   });
 });
 

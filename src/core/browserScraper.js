@@ -12,12 +12,16 @@ import { existsSync } from 'fs';
 import { readFile, writeFile, mkdir, stat } from 'node:fs/promises';
 import { dirname, resolve } from 'node:path';
 import { fileURLToPath } from 'node:url';
+import { createHash } from 'node:crypto';
 import { PDFParse } from 'pdf-parse';
 import { createLimiter } from './concurrency.js';
 
 // PDF disk cache lives at <repo-root>/pdf/. Derived from this module's path so it
 // works regardless of CWD.
 const PDF_CACHE_DIR = resolve(dirname(fileURLToPath(import.meta.url)), '../../pdf');
+const ARTICLE_CACHE_DIR = resolve(dirname(fileURLToPath(import.meta.url)), '../../article_cache');
+const ARTICLE_CACHE_ENABLED = process.env.NEWS_ARTICLE_CACHE !== '0';
+const ARTICLE_CACHE_TTL_HOURS = Number.parseFloat(process.env.NEWS_ARTICLE_CACHE_TTL_HOURS || '72');
 
 // System Chrome candidates — same search order as xueqiu.js
 const CHROME_PATHS = [
@@ -103,6 +107,57 @@ const ARTICLE_SELECTORS = [
   'main',
 ];
 
+function articleCachePaths(url) {
+  let parsed;
+  try {
+    parsed = new URL(url);
+  } catch (_) {
+    return null;
+  }
+  if (!/^https?:$/.test(parsed.protocol)) return null;
+  parsed.hash = '';
+  const normalized = parsed.toString();
+  const hash = createHash('sha256').update(normalized).digest('hex');
+  const host = parsed.hostname.replace(/[^A-Za-z0-9.-]/g, '_') || 'unknown';
+  return {
+    text: resolve(ARTICLE_CACHE_DIR, host, `${hash}.txt`),
+    meta: resolve(ARTICLE_CACHE_DIR, host, `${hash}.json`),
+    normalized,
+  };
+}
+
+async function readArticleCache(url) {
+  if (!ARTICLE_CACHE_ENABLED || ARTICLE_CACHE_TTL_HOURS <= 0) return '';
+  const paths = articleCachePaths(url);
+  if (!paths) return '';
+  try {
+    const s = await stat(paths.text);
+    const ageMs = Date.now() - s.mtimeMs;
+    if (ageMs > ARTICLE_CACHE_TTL_HOURS * 60 * 60 * 1000) return '';
+    const text = await readFile(paths.text, 'utf8');
+    return text.trim();
+  } catch (_) {
+    return '';
+  }
+}
+
+async function writeArticleCache(url, text) {
+  if (!ARTICLE_CACHE_ENABLED || !text || text.length < 150) return;
+  const paths = articleCachePaths(url);
+  if (!paths) return;
+  try {
+    await mkdir(dirname(paths.text), { recursive: true });
+    await writeFile(paths.text, text, 'utf8');
+    await writeFile(paths.meta, JSON.stringify({
+      url: paths.normalized,
+      cached_at: new Date().toISOString(),
+      chars: text.length,
+    }, null, 2), 'utf8');
+  } catch (_) {
+    // Cache failures should never affect scraping.
+  }
+}
+
 /**
  * Fetch the full article body text from a news URL via headless browser.
  * Tries ARTICLE_SELECTORS in priority order, falls back to aggregating <p> tags.
@@ -119,6 +174,9 @@ export async function fetchArticleContent(url, locale = 'en-US') {
   if (lower.endsWith('.pdf') || lower.includes('.pdf?')) {
     return fetchPdfText(url);
   }
+
+  const cached = await readArticleCache(url);
+  if (cached) return cached;
 
   const text = await scrapeOne(url, (page) =>
     page.evaluate((sels) => {
@@ -140,7 +198,9 @@ export async function fetchArticleContent(url, locale = 'en-US') {
     { locale, timeoutSecs: 20 }
   );
 
-  return typeof text === 'string' ? text : '';
+  const body = typeof text === 'string' ? text.trim() : '';
+  if (body) await writeArticleCache(url, body);
+  return body;
 }
 
 /**
