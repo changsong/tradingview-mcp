@@ -2,6 +2,7 @@ import CDP from 'chrome-remote-interface';
 
 let client = null;
 let targetInfo = null;
+let _skipLiveness = false;
 const CDP_HOST = '127.0.0.1';
 const CDP_PORT = 9222;
 const MAX_RETRIES = 5;
@@ -29,6 +30,16 @@ const KNOWN_PATHS = {
 export { KNOWN_PATHS };
 
 /**
+ * Disable the liveness check in getClient(). Use in batch pipelines that hold
+ * a persistent CDP connection for the entire run. If the connection dies, the
+ * very next Runtime.evaluate() will throw and the pipeline's error handling
+ * will catch it.
+ */
+export function setSkipLiveness(val) {
+  _skipLiveness = val;
+}
+
+/**
  * Sanitize a string for safe interpolation into JavaScript code evaluated via CDP.
  * Uses JSON.stringify to produce a properly escaped JS string literal (with quotes).
  * Prevents injection via quotes, backticks, template literals, or control chars.
@@ -49,6 +60,7 @@ export function requireFinite(value, name) {
 
 export async function getClient() {
   if (client) {
+    if (_skipLiveness) return client;
     try {
       // Liveness check with 2s timeout — a half-dead WebSocket accepts the
       // request but never responds, hanging the entire MCP call.

@@ -29,7 +29,8 @@
 import { readFileSync, writeFileSync, existsSync, mkdirSync } from 'fs';
 import { fileURLToPath } from 'url';
 import { dirname, resolve } from 'path';
-import { connect, disconnect } from '../../src/connection.js';
+import { performance } from 'node:perf_hooks';
+import { connect, disconnect, setSkipLiveness } from '../../src/connection.js';
 import * as coreChart from '../../src/core/chart.js';
 import * as coreData from '../../src/core/data.js';
 
@@ -112,11 +113,12 @@ const sleep = ms => new Promise(r => setTimeout(r, ms));
 
 // Direct CDP wrappers — replace execSync CLI calls so symbol/timeframe switches
 // persist across operations in the same WebSocket session.
+const CDP_DEPS = { pollInterval: 60, timeout: 5000 };
 async function cdpSwitchSymbol(sym) {
-  try { return await coreChart.setSymbol({ symbol: sym }); } catch { return null; }
+  try { return await coreChart.setSymbol({ symbol: sym, _deps: CDP_DEPS }); } catch { return null; }
 }
 async function cdpSwitchTf(tf) {
-  try { return await coreChart.setTimeframe({ timeframe: tf }); } catch { return null; }
+  try { return await coreChart.setTimeframe({ timeframe: tf, _deps: CDP_DEPS }); } catch { return null; }
 }
 async function cdpOhlcv(n) {
   try { return await coreData.getOhlcv({ count: n }); } catch { return null; }
@@ -130,6 +132,48 @@ async function cdpQuote(sym) {
 
 function r1(v) { return Math.round(v * 10) / 10; }
 function r2(v) { return Math.round(v * 100) / 100; }
+
+// CDP retry wrapper — catches transient CDP errors so a single hiccup
+// doesn't skip the entire stock.
+async function withRetry(fn, { maxRetries = 2, baseDelay = 300, label = '' } = {}) {
+  for (let attempt = 0; attempt <= maxRetries; attempt++) {
+    const result = await fn();
+    if (result?.success) return result;
+    if (attempt < maxRetries) {
+      const delay = baseDelay * Math.pow(2, attempt);
+      if (label) process.stderr.write(`  [retry] ${label} att${attempt+1}/${maxRetries} in ${delay}ms\n`);
+      await sleep(delay);
+    }
+  }
+  return null;
+}
+
+// OHLCV disk cache — bars for a given symbol+timeframe+date are immutable
+// within a trading day. Follows fetchBenchBars() cache pattern.
+const OHLCV_CACHE_DIR = './watchlist/.cache';
+function ohlcvCachePath(symbol, tf) {
+  const safe = symbol.replace(/[^a-zA-Z0-9]/g, '_');
+  return `${OHLCV_CACHE_DIR}/ohlcv_${safe}_${tf.replace(/\//g, '_')}.json`;
+}
+function readOhlcvCache(symbol, tf, minBars) {
+  try {
+    const raw = readFileSync(ohlcvCachePath(symbol, tf), 'utf8');
+    const cache = JSON.parse(raw);
+    const today = new Date().toISOString().slice(0, 10);
+    if (cache.date === today && Array.isArray(cache.bars) && cache.bars.length >= minBars) {
+      return cache.bars;
+    }
+  } catch {}
+  return null;
+}
+function writeOhlcvCache(symbol, tf, bars) {
+  try {
+    if (!existsSync(OHLCV_CACHE_DIR)) mkdirSync(OHLCV_CACHE_DIR, { recursive: true });
+    writeFileSync(ohlcvCachePath(symbol, tf), JSON.stringify({
+      date: new Date().toISOString().slice(0, 10), symbol, tf, count: bars.length, bars,
+    }));
+  } catch {}
+}
 
 // ═══════════════════════════════════════════════════════════════
 //  指标库
@@ -887,12 +931,13 @@ function genSignal(tfs, sqzmom, meta, alignment) {
 //  单股流水线
 // ═══════════════════════════════════════════════════════════════
 
-// SQZMOM 本地计算，1D 最后处理便于 RS/涨跌停计算
+// SQZMOM 本地计算。1D 先行：节省一次 chart 默认-TF→首TF 的渲染，
+// 且 dailyBars 尽早就位供下游 RS/涨跌停计算。
 const TF_LIST = [
+  { key: '1D', tf: 'D',   bars: 250 },
   { key: '1W', tf: 'W',   bars:  65 },
   { key: '4H', tf: '240', bars: 120 },
   { key: '1H', tf: '60',  bars: 100 },
-  { key: '1D', tf: 'D',   bars: 250 },
 ];
 
 async function fetchBenchBars() {
@@ -927,22 +972,34 @@ async function fetchBenchBars() {
 
 async function analyzeStock(meta, opts, benchBars) {
   const { symbol, newsScore, newsSignal, newsName } = meta;
+  const tStart = performance.now();
+  const tPts = {};
   process.stdout.write(`  ${symbol.padEnd(16)} `);
 
-  const sw = await cdpSwitchSymbol(symbol);
+  const sw = await withRetry(() => cdpSwitchSymbol(symbol), { label: `${symbol} switch` });
   if (!sw?.success) { process.stdout.write('❌ 切换失败\n'); return null; }
+  tPts.sw = Math.round(performance.now() - tStart);
 
   const tfMap = {};
   let dailyBars = null;
 
   for (const { key, tf, bars } of TF_LIST) {
-    const sw2 = await cdpSwitchTf(tf);
-    if (!sw2?.success) { process.stdout.write('!'); continue; }
+    // Try cache first — OHLCV immutable within a trading day
+    let ohlcv = null;
+    const cachedBars = readOhlcvCache(symbol, tf, bars);
+    if (cachedBars) {
+      ohlcv = { success: true, bar_count: cachedBars.length, bars: cachedBars };
+      process.stdout.write('c');
+    } else {
+      const sw2 = await withRetry(() => cdpSwitchTf(tf), { label: `${symbol} tf=${tf}` });
+      if (!sw2?.success) { process.stdout.write('!'); continue; }
 
-    const ohlcv = await cdpOhlcv(bars);
-    if (!ohlcv?.success || !ohlcv.bars?.length || ohlcv.bars.length < 20) {
-      process.stdout.write('○');
-      continue;
+      ohlcv = await cdpOhlcv(bars);
+      if (!ohlcv?.success || !ohlcv.bars?.length || ohlcv.bars.length < 20) {
+        process.stdout.write('○');
+        continue;
+      }
+      writeOhlcvCache(symbol, tf, ohlcv.bars);
     }
 
     let live = {};
@@ -955,12 +1012,14 @@ async function analyzeStock(meta, opts, benchBars) {
     if (key === '1D')              extra.limitInfo = detectLimit(ohlcv.bars, symbol);
 
     tfMap[key] = scoreTF(ohlcv.bars, key, live, extra);
-    process.stdout.write(live.rsi != null ? '+' : '▪');
+    if (!cachedBars) process.stdout.write(live.rsi != null ? '+' : '▪');
+    tPts[`tf${key}`] = Math.round(performance.now() - tStart);
   }
 
   const q = await cdpQuote(symbol);
   let stockName = newsName || symbol;
   if (q?.success) stockName = stockName || q.description || q.name;
+  tPts.quote = Math.round(performance.now() - tStart);
 
   // SQZMOM — 本地计算，无需 CDP 读取 Pine table
   const sqzmom = dailyBars ? localSqzmom(dailyBars) : 'UNKNOWN';
@@ -969,12 +1028,14 @@ async function analyzeStock(meta, opts, benchBars) {
   const cs = composite(tfMap);
   const sig = genSignal(tfMap, sqzmom, meta, align);
   const finalScore = r1(sig.adjScore + sig.newsBonus);
+  tPts.score = Math.round(performance.now() - tStart);
 
   const dD = tfMap['1D']?.details;
   const adxStr = dD?.ADX ? `ADX${dD.ADX.adx}` : 'ADX:-';
   const rsStr = dD?.rs != null ? `RS${dD.rs >= 0 ? '+' : ''}${dD.rs}` : '';
   const limStr = dD?.limitInfo?.upLimit ? `🔥${dD.limitInfo.upStreak}板` : dD?.limitInfo?.downLimit ? '❄跌停' : '';
 
+  const timings = Object.entries(tPts).map(([k, v]) => `${k}:${v}ms`).join(' ');
   process.stdout.write(
     ` 综:${(cs >= 0 ? '+' + cs : cs).toString().padStart(5)}` +
     `  ${adxStr.padEnd(8)}` +
@@ -982,7 +1043,8 @@ async function analyzeStock(meta, opts, benchBars) {
     (limStr ? `  ${limStr.padEnd(8)}` : '') +
     `  对齐:${align.label.padEnd(11)}` +
     (newsScore != null ? `  闻:${newsScore >= 0 ? '+' : ''}${newsScore}` : '') +
-    `  ${sig.bias} [${sig.confidence}]\n`
+    `  ${sig.bias} [${sig.confidence}]` +
+    `  ⌛ ${timings}\n`
   );
 
   return {
@@ -1248,6 +1310,7 @@ async function main() {
 
   console.log('🔗 连接 CDP (localhost:9222) ...');
   await connect();
+  setSkipLiveness(true);
   console.log('✅ CDP 已连接\n');
 
   const symbols = loadSymbols(args);
@@ -1281,13 +1344,19 @@ async function main() {
 
   const benchBars = opts.noBench ? null : await fetchBenchBars();
 
+  const tPipelineStart = performance.now();
   const results = [];
   for (const meta of candidates) {
     const r = await analyzeStock(meta, opts, benchBars);
     if (r) results.push(r);
   }
+  const tPipelineMs = Math.round(performance.now() - tPipelineStart);
+  const tPipelineSec = (tPipelineMs / 1000).toFixed(1);
 
   results.sort((a, b) => b.finalScore - a.finalScore);
+
+  const avgPerStock = (tPipelineSec / results.length).toFixed(1);
+  console.log(`\n⏱  Pipeline: ${tPipelineSec}s total, ${avgPerStock}s/stock (${results.length} stocks)`);
 
   console.log('\n' + '═'.repeat(120));
   console.log('多周期综合技术排名 (v2)');

@@ -48,7 +48,7 @@ export async function setSymbol({ symbol, _deps }) {
       });
     })()
   `);
-  const ready = await waitForChartReady(symbol);
+  const ready = await waitForChartReady(symbol, null, _deps?.timeout, _deps?.pollInterval);
   return { success: true, symbol, chart_ready: ready };
 }
 
@@ -60,7 +60,7 @@ export async function setTimeframe({ timeframe, _deps }) {
       chart.setResolution(${safeString(timeframe)}, {});
     })()
   `);
-  const ready = await waitForChartReady(null, timeframe);
+  const ready = await waitForChartReady(null, timeframe, _deps?.timeout, _deps?.pollInterval);
   return { success: true, timeframe, chart_ready: ready };
 }
 

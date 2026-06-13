@@ -1,9 +1,9 @@
 import { evaluate } from './connection.js';
 
 const DEFAULT_TIMEOUT = 10000;
-const POLL_INTERVAL = 100;
+const POLL_INTERVAL = 60;
 
-export async function waitForChartReady(expectedSymbol = null, expectedTf = null, timeout = DEFAULT_TIMEOUT) {
+export async function waitForChartReady(expectedSymbol = null, expectedTf = null, timeout = DEFAULT_TIMEOUT, pollInterval = POLL_INTERVAL) {
   const start = Date.now();
   let lastBarCount = -1;
   let stableCount = 0;
@@ -34,19 +34,19 @@ export async function waitForChartReady(expectedSymbol = null, expectedTf = null
     `);
 
     if (!state) {
-      await new Promise(r => setTimeout(r, POLL_INTERVAL));
+      await new Promise(r => setTimeout(r, pollInterval));
       continue;
     }
 
     if (state.isLoading) {
       stableCount = 0;
-      await new Promise(r => setTimeout(r, POLL_INTERVAL));
+      await new Promise(r => setTimeout(r, pollInterval));
       continue;
     }
 
     if (expectedSymbol && state.currentSymbol && !state.currentSymbol.toUpperCase().includes(expectedSymbol.toUpperCase())) {
       stableCount = 0;
-      await new Promise(r => setTimeout(r, POLL_INTERVAL));
+      await new Promise(r => setTimeout(r, pollInterval));
       continue;
     }
 
@@ -61,7 +61,7 @@ export async function waitForChartReady(expectedSymbol = null, expectedTf = null
       return true;
     }
 
-    await new Promise(r => setTimeout(r, POLL_INTERVAL));
+    await new Promise(r => setTimeout(r, pollInterval));
   }
 
   return false;
