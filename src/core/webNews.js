@@ -25,7 +25,7 @@ function pickUA() {
   return ua;
 }
 
-const DEFAULT_TIMEOUT_MS = 10000;
+const DEFAULT_TIMEOUT_MS = 8000;
 
 // 带超时 + UA 轮换的 fetch。任何源卡住都不会拖垮整个 Promise.all。
 async function fetchWithTimeout(url, options = {}, timeoutMs = DEFAULT_TIMEOUT_MS) {
@@ -39,8 +39,8 @@ async function fetchWithTimeout(url, options = {}, timeoutMs = DEFAULT_TIMEOUT_M
   }
 }
 
-// 全局并发限制：同时最多 6 个 fetch 在飞，平衡速度和限流风险
-const limit = createLimiter(6);
+// 全局并发限制：同时最多 15 个源端请求在飞（涵盖 HTTP + 浏览器抓取）
+const limit = createLimiter(15);
 
 // 简易 LRU：缓存 fetchStockInfo 结果（同一 symbol 重复查询时直接命中）
 const _stockInfoCache = new LRUCache(500);
@@ -500,7 +500,7 @@ async function fetchXueqiuPosts(code, count = 10) {
 }
 
 // Separate browser concurrency limit for article enrichment (heavier than plain HTTP)
-const articleLimit = createLimiter(3);
+const articleLimit = createLimiter(10);
 
 // Enrich items with full article content via secondary browser fetch.
 // fetchArticleContent itself skips PDF URLs (cninfo announcements), so we don't

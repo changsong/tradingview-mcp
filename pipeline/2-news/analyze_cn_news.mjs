@@ -19,7 +19,7 @@ import { performance } from 'node:perf_hooks';
 import { searchNews, extractCode } from '../../src/core/webNews.js';
 import { analyzeStockData } from './lib/analyze.mjs';
 import { filterRelevantCandidates } from './lib/relevance.mjs';
-import { isLLMEnabled } from './lib/llm_common.mjs';
+import { isLLMEnabled, MODEL } from './lib/llm_common.mjs';
 import { createLimiter } from '../../src/core/concurrency.js';
 
 // 锁定 CWD 为项目根，使 ./watchlist 等相对路径稳定
@@ -164,7 +164,7 @@ function buildReport(results) {
   h(`# A股新闻情绪分析 · 交易信号报告 (v2 LLM)`);
   h(`**分析日期:** ${todayStr}　　**新闻窗口:** ${cutoffStr} ~ ${todayStr}（最近7天）`);
   h(`**股票池:** cn_selected.txt (${results.length}只)　　**评分:** 0-100 归一化 (中性=50)`);
-  h(`**LLM 主分类:** ${llmFlag ? (isLLMEnabled() ? '已启用 (DeepSeek-reasoner)' : '⚠ 无 API Key，全部 No Data') : '已关闭，全部 No Data'}`);
+  h(`**LLM 主分类:** ${llmFlag ? (isLLMEnabled() ? `已启用 (${MODEL})` : '⚠ 无 API Key，全部 No Data') : '已关闭，全部 No Data'}`);
   h('');
 
   // ── 汇总表 ──
@@ -286,7 +286,7 @@ async function main() {
   console.log('╔══════════════════════════════════════════════════════════╗');
   console.log('║   A股新闻情绪量化分析 → 可交易信号  v2 (LLM 主分类)     ║');
   console.log(`║   分析窗口: ${cutoffStr} ~ ${todayStr}                    ║`);
-  console.log(`║   LLM 分类: ${llmFlag ? (isLLMEnabled() ? '已启用 (DeepSeek-reasoner)' : '⚠ 无 API Key') : '已关闭'}            ║`);
+  console.log(`║   LLM 分类: ${llmFlag ? (isLLMEnabled() ? `已启用 (${MODEL})` : '⚠ 无 API Key') : '已关闭'}            ║`);
   console.log('╚══════════════════════════════════════════════════════════╝');
   console.log('');
 

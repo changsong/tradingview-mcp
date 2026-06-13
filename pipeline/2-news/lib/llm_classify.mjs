@@ -76,10 +76,16 @@ export function normalizeType(rawType, market = 'cn') {
 
 // ─── System prompts ─────────────────────────────────────────────────────────
 function buildSystemPrompt(market) {
-  if (market === 'cn') {
-    return `你是一位严谨的中国股市新闻分析师。对每条新闻给出 5 个字段的判断：
+  const jsonOnly = market === 'cn'
+    ? `【关键规则】你的回复必须是纯 JSON 数组，不得包含任何其他内容——没有前缀、后缀、解释、markdown 标记。违反此规则将导致解析失败。`
+    : `【CRITICAL】Your response MUST be a raw JSON array and nothing else — no preamble, no explanation, no markdown fences. Any extra text will cause a parse failure.`;
 
-1. type: 必须从以下 8 个类型中**严格选 1 个**，不能创造新类型：
+  if (market === 'cn') {
+    return `${jsonOnly}
+
+你是一位严谨的中国股市新闻分析师。对每条新闻给出 5 个字段：
+
+1. type: 必须从以下 8 个类型中**严格选 1 个**：
    - 黑天鹅: 诉讼/处罚/召回/造假/欺诈/被立案/被调查/重大违约/强制退市
    - 财报: 业绩/营收/利润/净利/财报/年报/季报/预告/扭亏/同比环比
    - 分析师动作: 评级上下调/目标价上下调/首次覆盖/调研报告/深度报告
@@ -90,53 +96,35 @@ function buildSystemPrompt(market) {
    - 行业: 行业/板块/赛道/产业链/供应链/新能源/半导体/光伏 等
    优先级：黑天鹅 > 财报 > 分析师动作 > 并购 > 政策 > 回购 > 传闻 > 行业
 
-2. sentiment: -2(严重利空) -1(利空) 0(中性) 1(利好) 2(严重利好)。
-   - 标题/正文未明确提及目标股票本身 → sentiment=0；
-   - 利好语句被否定（未/否/没有/未能/无法/不及）→ 反向；
-   - "股价大涨/融资买入X亿" 是结果不是原因，常对应中性或低权重利好。
+2. sentiment: -2 -1 0 1 2。标题/正文未提及目标股票→0；否定句式→反向。
 
-3. is_real_catalyst: true 仅当含可量化、可执行的硬催化（财报数据、官方公告、政策落地、并购批复、重大订单）；
-   纯估值/行业观点/价格复述/融资数据/传闻 → false。
+3. is_real_catalyst: 含可量化硬催化(财报数据/官方公告/政策落地/并购批复/重大订单)→true；观点/价格复述/传闻→false。
 
-4. confidence: 0-1 浮点数，表示你对 sentiment 判断的把握。
-   - 标题/正文与目标股票关联弱 → confidence 给低；
-   - 文本短/含糊 → confidence ≤ 0.5。
+4. confidence: 0-1 浮点数。关联弱→低；文本含糊→≤0.5。
 
-5. reasoning: ≤30 字的中文短句，说明你的判断依据（用于人工审计）。
+5. reasoning: ≤30字中文短句。
 
-回复必须是合法 JSON 数组（不要 markdown 包裹），长度严格等于输入条数，按输入顺序：
-[{"idx":0,"type":"财报","sentiment":1,"is_real_catalyst":true,"confidence":0.9,"reasoning":"Q3 净利同比+50%"},...]`;
+输出示例（严格按此格式）：
+[{"idx":0,"type":"财报","sentiment":1,"is_real_catalyst":true,"confidence":0.9,"reasoning":"Q3净利同比+50%"}]`;
   }
 
-  return `You are a rigorous US equity news analyst. For each news item, return 5 fields:
+  return `${jsonOnly}
 
-1. type: pick **exactly one** from the following 8 categories (do NOT invent new types):
-   - Black Swan: fraud/lawsuit/SEC probe/recall/fine/penalty/DOJ/bankruptcy/scandal/restatement/delisting
-   - Earnings: earnings/revenue/EPS/guidance/beat/miss/quarterly/outlook/margin/results
-   - Analyst Action: upgrade/downgrade/raise or lower target/initiate coverage/reiterate buy-sell-hold
-   - M&A: acquisition/merger/buyout/takeover/divest/spin-off/JV/strategic alliance/tender offer
-   - Policy: Fed/rate decision/tariff/regulation/legislation/FDA approval/FTC/antitrust/sanctions/subsidy
-   - Buyback: buyback/repurchase program/insider buy/stock split/dividend hike
-   - Rumor: reportedly/sources say/rumored/speculation/unconfirmed/people familiar
-   - Industry: sector/industry/market share/competitor/supply chain/AI/semiconductor/biotech etc.
-   Priority: Black Swan > Earnings > Analyst Action > M&A > Policy > Buyback > Rumor > Industry.
+You are a rigorous US equity news analyst. For each news item, return 5 fields:
 
-2. sentiment: -2 (very bearish) -1 (bearish) 0 (neutral) 1 (bullish) 2 (very bullish).
-   - If headline/body never names the target ticker → sentiment=0;
-   - Bullish words inside negation ("not outperforming", "fail to beat", "no deal") → flip sign;
-   - "Stock surged X%" / "buying flows" describe outcomes, not catalysts.
+1. type: pick one from (priority: Black Swan > Earnings > Analyst Action > M&A > Policy > Buyback > Rumor > Industry):
+   Black Swan | Earnings | Analyst Action | M&A | Policy | Buyback | Rumor | Industry
 
-3. is_real_catalyst: true only when the news has a hard, quantifiable trigger (earnings beat/miss with numbers, official guidance, FDA decision, M&A close, regulatory action, contract win).
-   Generic commentary, analyst color, sector takes, price-action recaps, "DISREGARD RELEASE" sponsored wraps → false.
+2. sentiment: -2 -1 0 1 2. No ticker mention→0; negation→flip sign; price moves describe outcomes.
 
-4. confidence: 0-1 float reflecting certainty in the sentiment label.
-   - Weak link between headline and target ticker → low;
-   - Short or vague text → confidence ≤ 0.5.
+3. is_real_catalyst: true only with hard quantifiable trigger. Commentary/color/sector-takes→false.
 
-5. reasoning: ≤30 chars (English), one-sentence justification (for audit).
+4. confidence: 0-1 float. Weak ticker link→low; vague→≤0.5.
 
-Return strict JSON only (no markdown). Length must exactly match input count, in input order:
-[{"idx":0,"type":"Earnings","sentiment":1,"is_real_catalyst":true,"confidence":0.9,"reasoning":"Q3 EPS beat +12%"},...]`;
+5. reasoning: ≤30 char English.
+
+Output format (strict):
+[{"idx":0,"type":"Earnings","sentiment":1,"is_real_catalyst":true,"confidence":0.9,"reasoning":"Q3 EPS beat +12%"}]`;
 }
 
 function pickBody(it) {
@@ -156,8 +144,8 @@ function buildUserMessage(items, symbol, name, market) {
   }).join('\n\n');
 
   const tail = isCn
-    ? `\n\n仅返回长度为 ${items.length} 的 JSON 数组，每条带 idx/type/sentiment/is_real_catalyst/confidence/reasoning。`
-    : `\n\nReturn only a JSON array of length ${items.length} with idx/type/sentiment/is_real_catalyst/confidence/reasoning per item.`;
+    ? `\n\n直接输出 JSON 数组（不要任何前缀/后缀/markdown），长度=${items.length}，按 [0]~[${items.length - 1}] 顺序。`
+    : `\n\nOutput raw JSON array only (no prefix/suffix/markdown), length=${items.length}, in [0]~[${items.length - 1}] order.`;
 
   return `${head}\n\n${list}${tail}`;
 }
@@ -172,6 +160,7 @@ async function classifyChunkWithRetry(chunk, { symbol, name, market, chunkIdx })
         system: buildSystemPrompt(market),
         user:   buildUserMessage(chunk, symbol, name, market),
         max_tokens: 2500,
+        temperature: 0,
       });
     } catch (err) {
       process.stderr.write(`  [LLM-classify] ${symbol} chunk${chunkIdx} fail (attempt ${attempt + 1}): ${err.message}\n`);
