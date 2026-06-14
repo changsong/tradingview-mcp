@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-06-13T06:36:37.327Z",
+  "generated_at": "2026-06-13T14:40:07.435Z",
   "market": "cn",
   "source": "src/core/webNews.js",
   "score_scale": "0-100 normalized (neutral=50)",
@@ -11,515 +11,64 @@
   "llm_used": true,
   "performance": {
     "totals_ms": {
-      "list_fetch_ms": 781392,
-      "enrichment_ms": 4150264,
-      "relevance_ms": 8,
-      "llm_ms": 0,
-      "report_write_ms": 11
+      "list_fetch_ms": 100904,
+      "enrichment_ms": 103330,
+      "relevance_ms": 0,
+      "llm_ms": 34077,
+      "report_write_ms": 15
     },
     "avg_ms": {
-      "list_fetch_ms": 24419,
-      "enrichment_ms": 129696,
+      "list_fetch_ms": 3153,
+      "enrichment_ms": 3229,
       "relevance_ms": 0,
-      "llm_ms": 0,
+      "llm_ms": 1065,
       "report_write_ms": 0
     }
   },
   "stocks": {
-    "SSE:600688": {
-      "name": "上海石化",
-      "score": 50,
-      "score_raw": 0,
+    "SZSE:002281": {
+      "name": "002281",
+      "score": 100,
+      "score_raw": 21.94,
       "score_components": {
-        "positive_weight_sum": 0,
-        "negative_weight_sum": 0
+        "positive_weight_sum": 21.94,
+        "negative_weight_sum": 0,
+        "news_effective_count": 7,
+        "news_dropped_count": 0
       },
-      "signal": "⚪ No Trade (无数据)",
-      "strategy": "LLM 不可用或调用失败（不走关键字降级）",
-      "suitable_for": "观望",
-      "confidence": "-",
-      "patterns": [],
-      "positive_factors": [],
+      "signal": "⚠️ No Trade (情绪过热)",
+      "strategy": "情绪分过高但出现过热信号，等待回调低吸，不追高",
+      "suitable_for": "低吸(等回调)",
+      "confidence": "低(风险压制)",
+      "patterns": [
+        "情绪持续增强↑(trend)",
+        "⚠️情绪过热(单边乐观,注意回调)"
+      ],
+      "positive_factors": [
+        "[并购|w3.78] 光迅科技:武汉光迅科技股份有限公司向特定对象发行股票并在主板上市之上市公告书",
+        "[并购|w3.78] 光迅科技:武汉光迅科技股份有限公司关于向特定对象发行A股股票上市公告书披露的提示性公告",
+        "[并购|w3.78] 光迅科技:申万宏源证券承销保荐有限责任公司关于武汉光迅科技股份有限公司向特定对象发行股票并在主板上市之上市保荐书"
+      ],
       "negative_factors": [],
-      "news_count": 0,
+      "news_count": 7,
       "news_dropped": 0,
       "performance": {
-        "list_fetch_ms": 32726,
-        "candidate_filter_ms": 21,
-        "enrichment_ms": 19339,
+        "list_fetch_ms": 2426,
+        "candidate_filter_ms": 0,
+        "enrichment_ms": 3498,
         "raw_news_count": 40,
         "raw_research_count": 10,
-        "candidate_news_count": 9,
-        "candidate_research_count": 0,
-        "enriched_news_count": 9,
-        "enriched_research_count": 0,
-        "candidate_reasons": {
-          "news": {
-            "no-subject-mention": 2,
-            "noise:\\d{1,2}月\\d{1,2}日(快速上涨|快速回调|涨停|": 1,
-            "noise:融资净(买入|卖出)": 1,
-            "dedup": 0,
-            "out_of_window": 27
-          },
-          "research": {
-            "dedup": 0,
-            "out_of_window": 10
-          }
-        },
-        "date_filter_ms": 0,
-        "relevance_ms": 1,
-        "llm_ms": 0,
-        "scoring_ms": 0
-      },
-      "top_news": []
-    },
-    "SSE:601798": {
-      "name": "蓝科高新",
-      "score": 50,
-      "score_raw": 0,
-      "score_components": {
-        "positive_weight_sum": 0,
-        "negative_weight_sum": 0
-      },
-      "signal": "⚪ No Trade (无数据)",
-      "strategy": "LLM 不可用或调用失败（不走关键字降级）",
-      "suitable_for": "观望",
-      "confidence": "-",
-      "patterns": [],
-      "positive_factors": [],
-      "negative_factors": [],
-      "news_count": 0,
-      "news_dropped": 0,
-      "performance": {
-        "list_fetch_ms": 33676,
-        "candidate_filter_ms": 2,
-        "enrichment_ms": 29551,
-        "raw_news_count": 30,
-        "raw_research_count": 2,
         "candidate_news_count": 7,
         "candidate_research_count": 0,
         "enriched_news_count": 7,
         "enriched_research_count": 0,
         "candidate_reasons": {
           "news": {
-            "noise:\\d{1,2}月\\d{1,2}日(快速上涨|快速回调|涨停|": 4,
-            "no-subject-mention": 1,
-            "dedup": 0,
-            "out_of_window": 18
-          },
-          "research": {
-            "dedup": 0,
-            "out_of_window": 2
-          }
-        },
-        "date_filter_ms": 0,
-        "relevance_ms": 0,
-        "llm_ms": 0,
-        "scoring_ms": 0
-      },
-      "top_news": []
-    },
-    "SSE:603120": {
-      "name": "肯特催化",
-      "score": 50,
-      "score_raw": 0,
-      "score_components": {
-        "positive_weight_sum": 0,
-        "negative_weight_sum": 0
-      },
-      "signal": "⚪ No Trade (无数据)",
-      "strategy": "LLM 不可用或调用失败（不走关键字降级）",
-      "suitable_for": "观望",
-      "confidence": "-",
-      "patterns": [],
-      "positive_factors": [],
-      "negative_factors": [],
-      "news_count": 0,
-      "news_dropped": 0,
-      "performance": {
-        "list_fetch_ms": 33761,
-        "candidate_filter_ms": 1,
-        "enrichment_ms": 31797,
-        "raw_news_count": 30,
-        "raw_research_count": 1,
-        "candidate_news_count": 9,
-        "candidate_research_count": 0,
-        "enriched_news_count": 9,
-        "enriched_research_count": 0,
-        "candidate_reasons": {
-          "news": {
-            "noise:龙虎榜|大宗交易|盘口异动": 1,
-            "noise:\\d{1,2}月\\d{1,2}日(快速上涨|快速回调|涨停|": 5,
-            "noise:融资净(买入|卖出)": 2,
-            "no-subject-mention": 3,
-            "dedup": 0,
-            "out_of_window": 10
-          },
-          "research": {
-            "dedup": 0,
-            "out_of_window": 1
-          }
-        },
-        "date_filter_ms": 0,
-        "relevance_ms": 0,
-        "llm_ms": 0,
-        "scoring_ms": 0
-      },
-      "top_news": []
-    },
-    "SSE:600198": {
-      "name": "大唐电信",
-      "score": 50,
-      "score_raw": 0,
-      "score_components": {
-        "positive_weight_sum": 0,
-        "negative_weight_sum": 0
-      },
-      "signal": "⚪ No Trade (无数据)",
-      "strategy": "LLM 不可用或调用失败（不走关键字降级）",
-      "suitable_for": "观望",
-      "confidence": "-",
-      "patterns": [],
-      "positive_factors": [],
-      "negative_factors": [],
-      "news_count": 0,
-      "news_dropped": 0,
-      "performance": {
-        "list_fetch_ms": 34884,
-        "candidate_filter_ms": 0,
-        "enrichment_ms": 56141,
-        "raw_news_count": 40,
-        "raw_research_count": 0,
-        "candidate_news_count": 8,
-        "candidate_research_count": 0,
-        "enriched_news_count": 8,
-        "enriched_research_count": 0,
-        "candidate_reasons": {
-          "news": {
-            "no-subject-mention": 1,
+            "no-subject-mention": 16,
+            "noise:融资净(买入|卖出)": 3,
             "noise:\\d{1,2}月\\d{1,2}日(快速上涨|快速回调|涨停|": 1,
             "dedup": 0,
-            "out_of_window": 30
-          },
-          "research": {
-            "dedup": 0
-          }
-        },
-        "date_filter_ms": 0,
-        "relevance_ms": 1,
-        "llm_ms": 0,
-        "scoring_ms": 0
-      },
-      "top_news": []
-    },
-    "SZSE:001223": {
-      "name": "欧克科技",
-      "score": 50,
-      "score_raw": 0,
-      "score_components": {
-        "positive_weight_sum": 0,
-        "negative_weight_sum": 0
-      },
-      "signal": "⚪ No Trade (无数据)",
-      "strategy": "LLM 不可用或调用失败（不走关键字降级）",
-      "suitable_for": "观望",
-      "confidence": "-",
-      "patterns": [],
-      "positive_factors": [],
-      "negative_factors": [],
-      "news_count": 0,
-      "news_dropped": 0,
-      "performance": {
-        "list_fetch_ms": 33982,
-        "candidate_filter_ms": 0,
-        "enrichment_ms": 39127,
-        "raw_news_count": 30,
-        "raw_research_count": 4,
-        "candidate_news_count": 6,
-        "candidate_research_count": 0,
-        "enriched_news_count": 6,
-        "enriched_research_count": 0,
-        "candidate_reasons": {
-          "news": {
-            "noise:\\d{1,2}月\\d{1,2}日(快速上涨|快速回调|涨停|": 4,
-            "dedup": 0,
-            "out_of_window": 20
-          },
-          "research": {
-            "dedup": 0,
-            "out_of_window": 4
-          }
-        },
-        "date_filter_ms": 0,
-        "relevance_ms": 1,
-        "llm_ms": 0,
-        "scoring_ms": 0
-      },
-      "top_news": []
-    },
-    "SSE:603135": {
-      "name": "中重科技",
-      "score": 50,
-      "score_raw": 0,
-      "score_components": {
-        "positive_weight_sum": 0,
-        "negative_weight_sum": 0
-      },
-      "signal": "⚪ No Trade (无数据)",
-      "strategy": "LLM 不可用或调用失败（不走关键字降级）",
-      "suitable_for": "观望",
-      "confidence": "-",
-      "patterns": [],
-      "positive_factors": [],
-      "negative_factors": [],
-      "news_count": 0,
-      "news_dropped": 0,
-      "performance": {
-        "list_fetch_ms": 60412,
-        "candidate_filter_ms": 1,
-        "enrichment_ms": 12697,
-        "raw_news_count": 40,
-        "raw_research_count": 1,
-        "candidate_news_count": 15,
-        "candidate_research_count": 0,
-        "enriched_news_count": 15,
-        "enriched_research_count": 0,
-        "candidate_reasons": {
-          "news": {
-            "noise:融资净(买入|卖出)": 2,
-            "no-subject-mention": 3,
-            "noise:龙虎榜|大宗交易|盘口异动": 1,
-            "noise:开盘价|收盘价": 1,
-            "noise:\\d{1,2}月\\d{1,2}日(快速上涨|快速回调|涨停|": 1,
-            "dedup": 0,
-            "out_of_window": 17
-          },
-          "research": {
-            "dedup": 0,
-            "out_of_window": 1
-          }
-        },
-        "date_filter_ms": 0,
-        "relevance_ms": 1,
-        "llm_ms": 0,
-        "scoring_ms": 0
-      },
-      "top_news": []
-    },
-    "SZSE:002965": {
-      "name": "祥鑫科技",
-      "score": 50,
-      "score_raw": 0,
-      "score_components": {
-        "positive_weight_sum": 0,
-        "negative_weight_sum": 0
-      },
-      "signal": "⚪ No Trade (无数据)",
-      "strategy": "LLM 不可用或调用失败（不走关键字降级）",
-      "suitable_for": "观望",
-      "confidence": "-",
-      "patterns": [],
-      "positive_factors": [],
-      "negative_factors": [],
-      "news_count": 0,
-      "news_dropped": 0,
-      "performance": {
-        "list_fetch_ms": 43079,
-        "candidate_filter_ms": 0,
-        "enrichment_ms": 30067,
-        "raw_news_count": 40,
-        "raw_research_count": 10,
-        "candidate_news_count": 8,
-        "candidate_research_count": 0,
-        "enriched_news_count": 8,
-        "enriched_research_count": 0,
-        "candidate_reasons": {
-          "news": {
-            "noise:\\d{1,2}月\\d{1,2}日(快速上涨|快速回调|涨停|": 2,
-            "noise:融资净(买入|卖出)": 1,
-            "no-subject-mention": 1,
-            "dedup": 0,
-            "out_of_window": 28
-          },
-          "research": {
-            "dedup": 0,
-            "out_of_window": 10
-          }
-        },
-        "date_filter_ms": 0,
-        "relevance_ms": 1,
-        "llm_ms": 0,
-        "scoring_ms": 0
-      },
-      "top_news": []
-    },
-    "SSE:605162": {
-      "name": "新中港",
-      "score": 50,
-      "score_raw": 0,
-      "score_components": {
-        "positive_weight_sum": 0,
-        "negative_weight_sum": 0
-      },
-      "signal": "⚪ No Trade (无数据)",
-      "strategy": "LLM 不可用或调用失败（不走关键字降级）",
-      "suitable_for": "观望",
-      "confidence": "-",
-      "patterns": [],
-      "positive_factors": [],
-      "negative_factors": [],
-      "news_count": 0,
-      "news_dropped": 0,
-      "performance": {
-        "list_fetch_ms": 33686,
-        "candidate_filter_ms": 0,
-        "enrichment_ms": 22266,
-        "raw_news_count": 30,
-        "raw_research_count": 0,
-        "candidate_news_count": 7,
-        "candidate_research_count": 0,
-        "enriched_news_count": 7,
-        "enriched_research_count": 0,
-        "candidate_reasons": {
-          "news": {
-            "noise:\\d{1,2}月\\d{1,2}日(快速上涨|快速回调|涨停|": 2,
-            "dedup": 0,
-            "out_of_window": 21
-          },
-          "research": {
-            "dedup": 0
-          }
-        },
-        "date_filter_ms": 0,
-        "relevance_ms": 1,
-        "llm_ms": 0,
-        "scoring_ms": 0
-      },
-      "top_news": []
-    },
-    "SZSE:002875": {
-      "name": "安奈儿",
-      "score": 50,
-      "score_raw": 0,
-      "score_components": {
-        "positive_weight_sum": 0,
-        "negative_weight_sum": 0
-      },
-      "signal": "⚪ No Trade (无数据)",
-      "strategy": "LLM 不可用或调用失败（不走关键字降级）",
-      "suitable_for": "观望",
-      "confidence": "-",
-      "patterns": [],
-      "positive_factors": [],
-      "negative_factors": [],
-      "news_count": 0,
-      "news_dropped": 0,
-      "performance": {
-        "list_fetch_ms": 23187,
-        "candidate_filter_ms": 0,
-        "enrichment_ms": 18693,
-        "raw_news_count": 40,
-        "raw_research_count": 4,
-        "candidate_news_count": 2,
-        "candidate_research_count": 0,
-        "enriched_news_count": 2,
-        "enriched_research_count": 0,
-        "candidate_reasons": {
-          "news": {
-            "noise:\\d{1,2}月\\d{1,2}日(快速上涨|快速回调|涨停|": 1,
-            "dedup": 0,
-            "out_of_window": 37
-          },
-          "research": {
-            "dedup": 0,
-            "out_of_window": 4
-          }
-        },
-        "date_filter_ms": 0,
-        "relevance_ms": 0,
-        "llm_ms": 0,
-        "scoring_ms": 0
-      },
-      "top_news": []
-    },
-    "SSE:603656": {
-      "name": "泰禾智能",
-      "score": 50,
-      "score_raw": 0,
-      "score_components": {
-        "positive_weight_sum": 0,
-        "negative_weight_sum": 0
-      },
-      "signal": "⚪ No Trade (无数据)",
-      "strategy": "LLM 不可用或调用失败（不走关键字降级）",
-      "suitable_for": "观望",
-      "confidence": "-",
-      "patterns": [],
-      "positive_factors": [],
-      "negative_factors": [],
-      "news_count": 0,
-      "news_dropped": 0,
-      "performance": {
-        "list_fetch_ms": 19403,
-        "candidate_filter_ms": 0,
-        "enrichment_ms": 31779,
-        "raw_news_count": 40,
-        "raw_research_count": 1,
-        "candidate_news_count": 5,
-        "candidate_research_count": 0,
-        "enriched_news_count": 5,
-        "enriched_research_count": 0,
-        "candidate_reasons": {
-          "news": {
-            "dedup": 0,
-            "out_of_window": 35
-          },
-          "research": {
-            "dedup": 0,
-            "out_of_window": 1
-          }
-        },
-        "date_filter_ms": 0,
-        "relevance_ms": 0,
-        "llm_ms": 0,
-        "scoring_ms": 0
-      },
-      "top_news": []
-    },
-    "SSE:603203": {
-      "name": "快克智能",
-      "score": 50,
-      "score_raw": 0,
-      "score_components": {
-        "positive_weight_sum": 0,
-        "negative_weight_sum": 0
-      },
-      "signal": "⚪ No Trade (无数据)",
-      "strategy": "LLM 不可用或调用失败（不走关键字降级）",
-      "suitable_for": "观望",
-      "confidence": "-",
-      "patterns": [],
-      "positive_factors": [],
-      "negative_factors": [],
-      "news_count": 0,
-      "news_dropped": 0,
-      "performance": {
-        "list_fetch_ms": 19409,
-        "candidate_filter_ms": 1,
-        "enrichment_ms": 83554,
-        "raw_news_count": 40,
-        "raw_research_count": 10,
-        "candidate_news_count": 9,
-        "candidate_research_count": 0,
-        "enriched_news_count": 9,
-        "enriched_research_count": 0,
-        "candidate_reasons": {
-          "news": {
-            "noise:龙虎榜|大宗交易|盘口异动": 2,
-            "noise:\\d{1,2}月\\d{1,2}日(快速上涨|快速回调|涨停|": 4,
-            "no-subject-mention": 4,
-            "dedup": 0,
-            "out_of_window": 21
+            "out_of_window": 13
           },
           "research": {
             "dedup": 0,
@@ -528,32 +77,121 @@
         },
         "date_filter_ms": 0,
         "relevance_ms": 0,
-        "llm_ms": 0,
+        "llm_ms": 1,
         "scoring_ms": 0
       },
-      "top_news": []
+      "top_news": [
+        {
+          "date": "2026-06-11",
+          "title": "光迅科技:武汉光迅科技股份有限公司向特定对象发行股票并在主板上市之上市公告书",
+          "content": "信息科技领域光、电器件技术及产品的研制、生产、销售和相关技术服务;信息系统的工程设计、施工、系统集成;信息咨询服务;计算机软、硬件研制、开发、系统集成;网络及数据通信产品的开发、生产、销售;软件开发与技术服务;安全技术防范产品的生产、销售;货物进出口、技术进出口、代理进出口。(依法须经批准的项目,经相关部门批准后方可开展经营活动)\n郑重声明：东方财富网发布此信息的目的在于传播更多信息，与本站立场无关。东方财富网不保证该信息（包括但不限于文字、视频、音频、数据及图表）全部或者部分内容的准确性、真实性、完整性、有效性、及时性、原创性等。相关信息并未经过本网站证实，不对您构成任何投资建议，据此操作，风险自担。",
+          "type": "并购",
+          "sentiment": 1,
+          "weight": 4,
+          "final_weight": 3.78,
+          "source_authority": 4.5,
+          "recency_factor": 0.6,
+          "source": "东方财富公告",
+          "llm_reviewed": true,
+          "llm_confidence": 0.8,
+          "llm_is_real_catalyst": true,
+          "llm_reasoning": "向特定对象发行股票完成，实质融资落地"
+        },
+        {
+          "date": "2026-06-11",
+          "title": "光迅科技:武汉光迅科技股份有限公司关于向特定对象发行A股股票上市公告书披露的提示性公告",
+          "content": "信息科技领域光、电器件技术及产品的研制、生产、销售和相关技术服务;信息系统的工程设计、施工、系统集成;信息咨询服务;计算机软、硬件研制、开发、系统集成;网络及数据通信产品的开发、生产、销售;软件开发与技术服务;安全技术防范产品的生产、销售;货物进出口、技术进出口、代理进出口。(依法须经批准的项目,经相关部门批准后方可开展经营活动)\n郑重声明：东方财富网发布此信息的目的在于传播更多信息，与本站立场无关。东方财富网不保证该信息（包括但不限于文字、视频、音频、数据及图表）全部或者部分内容的准确性、真实性、完整性、有效性、及时性、原创性等。相关信息并未经过本网站证实，不对您构成任何投资建议，据此操作，风险自担。",
+          "type": "并购",
+          "sentiment": 1,
+          "weight": 4,
+          "final_weight": 3.78,
+          "source_authority": 4.5,
+          "recency_factor": 0.6,
+          "source": "东方财富公告",
+          "llm_reviewed": true,
+          "llm_confidence": 0.8,
+          "llm_is_real_catalyst": true,
+          "llm_reasoning": "提示性公告确认增发上市，催化明确"
+        },
+        {
+          "date": "2026-06-11",
+          "title": "光迅科技:申万宏源证券承销保荐有限责任公司关于武汉光迅科技股份有限公司向特定对象发行股票并在主板上市之上市保荐书",
+          "content": "信息科技领域光、电器件技术及产品的研制、生产、销售和相关技术服务;信息系统的工程设计、施工、系统集成;信息咨询服务;计算机软、硬件研制、开发、系统集成;网络及数据通信产品的开发、生产、销售;软件开发与技术服务;安全技术防范产品的生产、销售;货物进出口、技术进出口、代理进出口。(依法须经批准的项目,经相关部门批准后方可开展经营活动)\n郑重声明：东方财富网发布此信息的目的在于传播更多信息，与本站立场无关。东方财富网不保证该信息（包括但不限于文字、视频、音频、数据及图表）全部或者部分内容的准确性、真实性、完整性、有效性、及时性、原创性等。相关信息并未经过本网站证实，不对您构成任何投资建议，据此操作，风险自担。",
+          "type": "并购",
+          "sentiment": 1,
+          "weight": 4,
+          "final_weight": 3.78,
+          "source_authority": 4.5,
+          "recency_factor": 0.6,
+          "source": "东方财富公告",
+          "llm_reviewed": true,
+          "llm_confidence": 0.8,
+          "llm_is_real_catalyst": true,
+          "llm_reasoning": "保荐书确认增发上市，实质进展"
+        },
+        {
+          "date": "2026-06-09",
+          "title": "光迅科技:武汉光迅科技股份有限公司关于以募集资金置换预先已投入募投项目及支付发行费用的自筹资金的公告",
+          "content": "信息科技领域光、电器件技术及产品的研制、生产、销售和相关技术服务;信息系统的工程设计、施工、系统集成;信息咨询服务;计算机软、硬件研制、开发、系统集成;网络及数据通信产品的开发、生产、销售;软件开发与技术服务;安全技术防范产品的生产、销售;货物进出口、技术进出口、代理进出口。(依法须经批准的项目,经相关部门批准后方可开展经营活动)\n郑重声明：东方财富网发布此信息的目的在于传播更多信息，与本站立场无关。东方财富网不保证该信息（包括但不限于文字、视频、音频、数据及图表）全部或者部分内容的准确性、真实性、完整性、有效性、及时性、原创性等。相关信息并未经过本网站证实，不对您构成任何投资建议，据此操作，风险自担。",
+          "type": "并购",
+          "sentiment": 1,
+          "weight": 3,
+          "final_weight": 2.65,
+          "source_authority": 4.5,
+          "recency_factor": 0.42,
+          "source": "东方财富公告",
+          "llm_reviewed": true,
+          "llm_confidence": 0.7,
+          "llm_is_real_catalyst": true,
+          "llm_reasoning": "募集资金置换自筹资金，资金到位"
+        },
+        {
+          "date": "2026-06-09",
+          "title": "光迅科技:关于武汉光迅科技股份有限公司使用募集资金置换预先已投入募投项目及支付发行费用的自筹资金专项说明的鉴证报告",
+          "content": "信息科技领域光、电器件技术及产品的研制、生产、销售和相关技术服务;信息系统的工程设计、施工、系统集成;信息咨询服务;计算机软、硬件研制、开发、系统集成;网络及数据通信产品的开发、生产、销售;软件开发与技术服务;安全技术防范产品的生产、销售;货物进出口、技术进出口、代理进出口。(依法须经批准的项目,经相关部门批准后方可开展经营活动)\n郑重声明：东方财富网发布此信息的目的在于传播更多信息，与本站立场无关。东方财富网不保证该信息（包括但不限于文字、视频、音频、数据及图表）全部或者部分内容的准确性、真实性、完整性、有效性、及时性、原创性等。相关信息并未经过本网站证实，不对您构成任何投资建议，据此操作，风险自担。",
+          "type": "并购",
+          "sentiment": 1,
+          "weight": 3,
+          "final_weight": 2.65,
+          "source_authority": 4.5,
+          "recency_factor": 0.42,
+          "source": "东方财富公告",
+          "llm_reviewed": true,
+          "llm_confidence": 0.7,
+          "llm_is_real_catalyst": true,
+          "llm_reasoning": "鉴证报告确认资金置换，财务操作完成"
+        }
+      ]
     },
     "SSE:600114": {
       "name": "600114",
-      "score": 50,
-      "score_raw": 0,
+      "score": 90,
+      "score_raw": 15.43,
       "score_components": {
-        "positive_weight_sum": 0,
-        "negative_weight_sum": 0
+        "positive_weight_sum": 15.43,
+        "negative_weight_sum": 0,
+        "news_effective_count": 8,
+        "news_dropped_count": 0
       },
-      "signal": "⚪ No Trade (无数据)",
-      "strategy": "LLM 不可用或调用失败（不走关键字降级）",
-      "suitable_for": "观望",
-      "confidence": "-",
-      "patterns": [],
-      "positive_factors": [],
+      "signal": "🟢 Long (强)",
+      "strategy": "多重利好共振，基本面+情绪双支撑，适合追涨或持有",
+      "suitable_for": "追涨 / 持有",
+      "confidence": "高",
+      "patterns": [
+        "情绪持续增强↑(trend)"
+      ],
+      "positive_factors": [
+        "[并购|w5.35] 东睦股份:东睦股份关于延长发行股份及支付现金购买资产并募集配套资金暨关联交易股东会决议有效期及相关授权期限的公告",
+        "[并购|w5.04] 东睦股份第九届董事会第十次会议决议公告",
+        "[并购|w5.04] 东睦股份关于延长发行股份及支付现金购买资产并募集配套资金暨关联交易股东会决议有效期及相关授权期限的公告"
+      ],
       "negative_factors": [],
-      "news_count": 0,
+      "news_count": 8,
       "news_dropped": 0,
       "performance": {
-        "list_fetch_ms": 27248,
-        "candidate_filter_ms": 1,
-        "enrichment_ms": 85085,
+        "list_fetch_ms": 2158,
+        "candidate_filter_ms": 0,
+        "enrichment_ms": 4475,
         "raw_news_count": 40,
         "raw_research_count": 10,
         "candidate_news_count": 8,
@@ -578,31 +216,259 @@
         "llm_ms": 0,
         "scoring_ms": 0
       },
-      "top_news": []
+      "top_news": [
+        {
+          "date": "2026-06-13",
+          "title": "东睦股份:东睦股份关于聘任证券事务代表的公告",
+          "content": "一般项目:锻件及粉末冶金制品制造;锻件及粉末冶金制品销售;新材料技术研发;新材料技术推广服务;磁性材料销售;磁性材料生产;电子元器件制造;变压器、整流器和电感器制造;金属制品销售;金属材料销售;金属基复合材料和陶瓷基复合材料销售;电机制造;微特电机及组件制造;微特电机及组件销售;齿轮及齿轮减、变速箱制造;齿轮及齿轮减、变速箱销售;智能机器人的研发;智能机器人销售;技术服务、技术开发、技术咨询、技术交流、技术转让、技术推广;货物进出口;住房租赁;非居住房地产租赁(除依法须经批准的项目外,凭营业执照依法自主开展经营活动)\n郑重声明：东方财富网发布此信息的目的在于传播更多信息，与本站立场无关。东方财富网不保证该信息（包括但不限于文字、视频、音频、数据及图表）全部或者部分内容的准确性、真实性、完整性、有效性、及时性、原创性等。相关信息并未经过本网站证实，不对您构成任何投资建议，据此操作，风险自担。",
+          "type": "行业",
+          "sentiment": 0,
+          "weight": 1,
+          "final_weight": 0.76,
+          "source_authority": 4.5,
+          "recency_factor": 0.85,
+          "source": "东方财富公告",
+          "llm_reviewed": true,
+          "llm_confidence": 0.1,
+          "llm_is_real_catalyst": false,
+          "llm_reasoning": "聘任证券事务代表，常规人事变动"
+        },
+        {
+          "date": "2026-06-13",
+          "title": "东睦股份:东睦股份关于延长发行股份及支付现金购买资产并募集配套资金暨关联交易股东会决议有效期及相关授权期限的公告",
+          "content": "",
+          "type": "并购",
+          "sentiment": 1,
+          "weight": 5,
+          "final_weight": 5.35,
+          "source_authority": 4.5,
+          "recency_factor": 0.85,
+          "source": "东方财富公告",
+          "llm_reviewed": true,
+          "llm_confidence": 0.8,
+          "llm_is_real_catalyst": true,
+          "llm_reasoning": "延长并购决议有效期，交易推进中"
+        },
+        {
+          "date": "2026-06-13",
+          "title": "东睦股份:东睦股份关于召开2026年第一次临时股东会的通知",
+          "content": "",
+          "type": "行业",
+          "sentiment": 0,
+          "weight": 1,
+          "final_weight": 0.76,
+          "source_authority": 4.5,
+          "recency_factor": 0.85,
+          "source": "东方财富公告",
+          "llm_reviewed": true,
+          "llm_confidence": 0.1,
+          "llm_is_real_catalyst": false,
+          "llm_reasoning": "召开临时股东会通知，程序性事项"
+        },
+        {
+          "date": "2026-06-13",
+          "title": "东睦股份:东睦股份第九届董事会第十次会议决议公告",
+          "content": "一般项目:锻件及粉末冶金制品制造;锻件及粉末冶金制品销售;新材料技术研发;新材料技术推广服务;磁性材料销售;磁性材料生产;电子元器件制造;变压器、整流器和电感器制造;金属制品销售;金属材料销售;金属基复合材料和陶瓷基复合材料销售;电机制造;微特电机及组件制造;微特电机及组件销售;齿轮及齿轮减、变速箱制造;齿轮及齿轮减、变速箱销售;智能机器人的研发;智能机器人销售;技术服务、技术开发、技术咨询、技术交流、技术转让、技术推广;货物进出口;住房租赁;非居住房地产租赁(除依法须经批准的项目外,凭营业执照依法自主开展经营活动)\n郑重声明：东方财富网发布此信息的目的在于传播更多信息，与本站立场无关。东方财富网不保证该信息（包括但不限于文字、视频、音频、数据及图表）全部或者部分内容的准确性、真实性、完整性、有效性、及时性、原创性等。相关信息并未经过本网站证实，不对您构成任何投资建议，据此操作，风险自担。",
+          "type": "行业",
+          "sentiment": 0,
+          "weight": 1,
+          "final_weight": 0.76,
+          "source_authority": 4.5,
+          "recency_factor": 0.85,
+          "source": "东方财富公告",
+          "llm_reviewed": true,
+          "llm_confidence": 0.1,
+          "llm_is_real_catalyst": false,
+          "llm_reasoning": "董事会决议公告，内容重复无新增信息"
+        },
+        {
+          "date": "2026-06-12",
+          "title": "东睦股份第九届董事会第十次会议决议公告",
+          "content": "证券代码：600114 \t股票简称：东睦股份 \t编号：2026-044\n1\n东睦新材料集团股份有限公司\nNBTM \tNEW \tMATERIALS \tGROUP \tCo., \tLtd.\n第九届董事会第十次会议决议公告\n一、董事会会议召开情况\n东睦新材料集团股份有限公司（以下简称“公司”）于2026年6月5日\n以书面等形式向公司全体董事发出召开第九届董事会第十次会议的通知。\n公司第九届董事会第十次会议于2026年6月12日以通讯表决方式召开，应\n参加表决董事9人，实际参加表决董事9人。会议的召开符合《中华人民共\n和国公司法》和《东睦新材料集团股份有限公司章程》的有关规定。\n二、董事会会议审议情况\n全体董事对本次董事会会议的议案进行了审议，经表决形成如下决\n议：\n（一）审议通过《关于延长公司本次发行股份及支付现金购买资产并\n募集配套资金暨关联交易股东会决议有效期的议案》\n公司拟通过发行股份及支付现金的方式向深圳市远致星火私募股权投\n资基金合伙企业（有限合伙）、钟伟、上海创精投资咨询合伙企业（有限\n合伙）、宁波华莞企业管理合伙企业（有限合伙）、宁波富精企业管理合\n伙企业（有限合伙）共5名交易对方购买其合计持有的上海富驰高科技股\n份有限公司34.75%股权，并募集配套资金（以下简称“本次交易”）。\n鉴于审议本次交易的2025年第一次临时股东会决议有效期即将届满，\n本次交易已经上海证券交易所（以下简称“上交所”）审核通过，但尚未\n经中国证监会注册，为保证本次交易的持续、顺利进行，公司拟将本次交\n易的股东会决议有效期自原有效期届满之日起延长12个月，即延长至2027\n本公司董事会及全体董事保证本公告内容不存在任何虚假记\n载、误导性陈述或者重大遗漏，并对其内容的真实性、准确性和\n完整性承担个别及连带责任。\n\n-- 1 of 3 --\n\n证券代码：600114 \t股票简称：东睦股份 \t编号：2026-044\n2\n年6月23日。若公司于该有效期内取得中国证监会对本次交易的同意注册\n批复，则该有效期自动延长至本次交易实施完成日。除延长前述有效期事\n项外，本次交易方案的其他事项保持不变。\n公司董事会决定于2026年6月29日召开公司2026年第一次临时股东会\n审议上述事项，董事会同意并确认自2025年第一次临时股东会决议有效期\n届满之日至2026年第一次临时股东会审议通过之日期间董事会在原授权范\n围内的全部行为有效。\n此项议案涉及关联交易，关联董事朱志荣、芦德宝、郭灵光回避表\n决。\n表决结果：赞成6票，反对0票，弃权0票，表决通过。\n本议案已经公司第九届董事会审计委员会第九次会议审议通过，并经\n第九届董事会独立董事专门会议第八次会议审议通过。具体内容详见公司\n于2026年6月13日在上海证券交易所网站（www.sse.com.cn）披露的相关\n信息。本议案尚需提交公司2026年第一次临时股东会审议。\n（二）审议通过《关于提请股东会延长授权董事会及其授权人士全权\n办理本次交易相关事宜有效期的议案》\n鉴于公司2025年第一次临时股东会授权董事会及其授权人士办理本次\n交易相关事宜的有效期即将届满，本次交易已经上交所审核通过，但尚未\n经中国证监会注册，公司尚未完成本次交易的实施，为保证本次交易的持\n续、顺利进行，公司拟将股东会授权董事会及其授权人士办理本次交易相\n关事宜的有效期自原授权有效期届满之日起延长12个月，即延长至2027年\n6月23日。若公司于该有效期内取得中国证监会对本次交易的同意注册批\n复，则该有效期自动延长至本次交易实施完成日。除前述延长授权有效期\n外，其他授权事项和内容均保持不变。\n此项议案涉及关联交易，关联董事朱志荣、芦德宝、郭灵光回避表\n决。\n表决结果：赞成6票，反对0票，弃权0票，表决通过。\n\n-- 2 of 3 --\n\n证券代码：600114 \t股票简称：东睦股份 \t编号：2026-044\n3\n本议案已经公司第九届董事会独立董事专门会议第八次会议审议通\n过 。 具 体 内 容 详 见 公 司 于 \t2026 \t年 \t6 \t月 \t13 \t日 \t在 上 海 证 券 交 易 所 网 站\n（www.sse.com.cn）披露的相关信息。本议案尚需提交公司2026年第一次\n临时股东会审议。\n（三）审议通过《关于提请召开2026年第一次临时股东会的议案》\n公司董事会决定于2026年6月29日（星期一）下午14时30分，在公司\n（浙江省宁波市鄞州工业园区景江路1508号）会议室召开公司2026年第一\n次临时股东会审议相关议案。\n此项议案涉及关联交易，关联董事朱志荣、芦德宝、郭灵光回避表\n决。\n表决结果：赞成6票，反对0票，弃权0票，表决通过。\n（四）审议通过《关于聘任公司证券事务代表的议案》\n根据董事长提名，董事会同意聘任徐璐瑶女士为公司证券事务代表，\n任期自本次董事会审议通过之日起至公司第九届董事会届满之日止。\n表决结果：赞成9票，反对0票，弃权0票，表决通过。\n特此公告。\n东睦新材料集团股份有限公司\n董 \t事 \t会\n2026 \t年 \t6 \t月 \t12 \t日\n报备文件：\n1、公司第九届董事会第十次会议决议；\n2、公司第九届董事会审计委员会第九次会议决议；\n3、公司第九届董事会独立董事专门会议第八次会议决议。\n\n-- 3 of 3 --",
+          "type": "并购",
+          "sentiment": 1,
+          "weight": 5,
+          "final_weight": 5.04,
+          "source_authority": 5,
+          "recency_factor": 0.72,
+          "source": "巨潮资讯",
+          "llm_reviewed": true,
+          "llm_confidence": 0.8,
+          "llm_is_real_catalyst": true,
+          "llm_reasoning": "董事会审议通过延长并购有效期，交易继续"
+        }
+      ]
+    },
+    "SZSE:000657": {
+      "name": "000657",
+      "score": 87,
+      "score_raw": 10.39,
+      "score_components": {
+        "positive_weight_sum": 10.39,
+        "negative_weight_sum": 0,
+        "news_effective_count": 6,
+        "news_dropped_count": 0
+      },
+      "signal": "🟢 Long (强)",
+      "strategy": "多重利好共振，基本面+情绪双支撑，适合追涨或持有",
+      "suitable_for": "追涨 / 持有",
+      "confidence": "高",
+      "patterns": [
+        "情绪持续增强↑(trend)"
+      ],
+      "positive_factors": [
+        "[并购|w5.35] 中钨高新:关于调整2026年度与中国五矿日常关联交易预计的公告",
+        "[并购|w5.04] 关于调整2026年度与中国五矿日常关联交易预计的公告"
+      ],
+      "negative_factors": [],
+      "news_count": 6,
+      "news_dropped": 0,
+      "performance": {
+        "list_fetch_ms": 5529,
+        "candidate_filter_ms": 0,
+        "enrichment_ms": 4946,
+        "raw_news_count": 40,
+        "raw_research_count": 10,
+        "candidate_news_count": 6,
+        "candidate_research_count": 0,
+        "enriched_news_count": 6,
+        "enriched_research_count": 0,
+        "candidate_reasons": {
+          "news": {
+            "no-subject-mention": 17,
+            "noise:\\d{1,2}月\\d{1,2}日(快速上涨|快速回调|涨停|": 2,
+            "noise:融资净(买入|卖出)": 1,
+            "dedup": 0,
+            "out_of_window": 14
+          },
+          "research": {
+            "dedup": 0,
+            "out_of_window": 10
+          }
+        },
+        "date_filter_ms": 0,
+        "relevance_ms": 0,
+        "llm_ms": 2622,
+        "scoring_ms": 0
+      },
+      "top_news": [
+        {
+          "date": "2026-06-13",
+          "title": "中钨高新:关于召开2026年第二次临时股东会的通知",
+          "content": "硬质合金和钨、钼、钽、铌等有色金属及其深加工产品和装备的研制、开发、生产、销售及贸易业务;钢材、稀贵金属、化工产品及原料(专营除外)、矿产品、建材、五金工具、仪器仪表、电器器材、汽车配件、纺织品的贸易业务;旅游项目开发;进出口贸易按[1997]琼贸企审字第C166号文经营。\n郑重声明：东方财富网发布此信息的目的在于传播更多信息，与本站立场无关。东方财富网不保证该信息（包括但不限于文字、视频、音频、数据及图表）全部或者部分内容的准确性、真实性、完整性、有效性、及时性、原创性等。相关信息并未经过本网站证实，不对您构成任何投资建议，据此操作，风险自担。",
+          "type": "政策",
+          "sentiment": 0,
+          "weight": 1,
+          "final_weight": 0.92,
+          "source_authority": 4.5,
+          "recency_factor": 0.85,
+          "source": "东方财富公告",
+          "llm_reviewed": true,
+          "llm_confidence": 0.3,
+          "llm_is_real_catalyst": false,
+          "llm_reasoning": "仅为召开股东会通知，无实质影响"
+        },
+        {
+          "date": "2026-06-13",
+          "title": "中钨高新:第十一届董事会第十二次(临时)会议决议公告",
+          "content": "硬质合金和钨、钼、钽、铌等有色金属及其深加工产品和装备的研制、开发、生产、销售及贸易业务;钢材、稀贵金属、化工产品及原料(专营除外)、矿产品、建材、五金工具、仪器仪表、电器器材、汽车配件、纺织品的贸易业务;旅游项目开发;进出口贸易按[1997]琼贸企审字第C166号文经营。\n郑重声明：东方财富网发布此信息的目的在于传播更多信息，与本站立场无关。东方财富网不保证该信息（包括但不限于文字、视频、音频、数据及图表）全部或者部分内容的准确性、真实性、完整性、有效性、及时性、原创性等。相关信息并未经过本网站证实，不对您构成任何投资建议，据此操作，风险自担。",
+          "type": "政策",
+          "sentiment": 0,
+          "weight": 1,
+          "final_weight": 0.92,
+          "source_authority": 4.5,
+          "recency_factor": 0.85,
+          "source": "东方财富公告",
+          "llm_reviewed": true,
+          "llm_confidence": 0.3,
+          "llm_is_real_catalyst": false,
+          "llm_reasoning": "董事会决议公告，内容常规无催化"
+        },
+        {
+          "date": "2026-06-13",
+          "title": "中钨高新:关于调整2026年度与中国五矿日常关联交易预计的公告",
+          "content": "硬质合金和钨、钼、钽、铌等有色金属及其深加工产品和装备的研制、开发、生产、销售及贸易业务;钢材、稀贵金属、化工产品及原料(专营除外)、矿产品、建材、五金工具、仪器仪表、电器器材、汽车配件、纺织品的贸易业务;旅游项目开发;进出口贸易按[1997]琼贸企审字第C166号文经营。\n郑重声明：东方财富网发布此信息的目的在于传播更多信息，与本站立场无关。东方财富网不保证该信息（包括但不限于文字、视频、音频、数据及图表）全部或者部分内容的准确性、真实性、完整性、有效性、及时性、原创性等。相关信息并未经过本网站证实，不对您构成任何投资建议，据此操作，风险自担。",
+          "type": "并购",
+          "sentiment": 1,
+          "weight": 5,
+          "final_weight": 5.35,
+          "source_authority": 4.5,
+          "recency_factor": 0.85,
+          "source": "东方财富公告",
+          "llm_reviewed": true,
+          "llm_confidence": 0.8,
+          "llm_is_real_catalyst": true,
+          "llm_reasoning": "调增关联交易预计，金额大幅增加"
+        },
+        {
+          "date": "2026-06-12",
+          "title": "关于调整2026年度与中国五矿日常关联交易预计的公告",
+          "content": "- \t1 \t-\n证券代码：000657 \t证券简称：中钨高新 \t公告编号：2026-47\n中钨高新材料股份有限公司\n关于调整 \t2026 \t年度与中国五矿日常关联交易预计的公告\n本公司及董事会全体成员保证信息披露的内容真实、准确、完整，没有虚\n假记载、误导性陈述或重大遗漏。\n一、日常关联交易概述\n中钨高新材料股份有限公司（以下简称中钨高新或公司）分别于\n2025 \t年 \t12 \t月 \t15 \t日、2026 \t年 \t1 \t月 \t5 \t日召开第十一届董事会第七次会\n议和 \t2026 \t年第一次临时股东会，审议通过了《关于 \t2026 \t年度日常关\n联交易预计的议案》。公司预计 \t2026 \t年度将与中国五矿及其直接或\n间接控制的公司发生采购原材料及产品、销售产品、房屋租赁等日常\n关联交易总金额不超过 \t619,000 \t万元，其中采购原材料及产品和劳务\n513,000 \t万元，销售产品 \t39,000 \t万元，项目建设 \t66,500 \t万元，房屋\n租赁 \t500 \t万元。具体内容详见公司在《中国证券报》、巨潮资讯网\n（www.cninfo.com.cn）上披露的《关于 \t2026 \t年度日常关联交易预计\n的公告》（公告编号：2025-125）。\n由于 \t2026 \t年一季度钨原料等相关产品价格出现较大幅度上涨，\n现根据生产经营需要，公司拟调增 \t2026 \t年度与中国五矿及其直接或\n间接控制的公司发生采购原材料及产品、销售产品、房屋租赁等日常\n关联交易总金额，由不超过 \t619,000 \t万元调整至 \t1,307,000 \t万元。本\n次调整已经公司独立董事专门会议审议通过，同意提交公司董事会审\n议。公司已于 \t2026 \t年 \t6 \t月 \t12 \t日召开了第十一届董事会第十二次（临\n\n-- 1 of 12 --\n\n- \t2 \t-\n时）会议审议通过该议案。关联董事徐加夫先生、樊玉雯女士回避表\n决，6 \t名非关联董事一致表决通过。\n根据相关规定，此议案尚需提交公司股东会审议批准，关联股东\n中国五矿股份有限公司、五矿钨业集团有限公司及其关联方（如持有\n公司股份）在股东会上对该议案回避表决。\n二、本次调整日常关联交易预计的类别和金额\n单位：万元\n关联交\n易类别 关联人 关联交易\n内容\n关联交易\n定价原则\n2026 \t年\n预计金额\n本 次 拟 调\n整金额\n调整后\n2026 \t年预\n计金额\n2026 \t年\n1-5 \t月发\n生金额\n采购原\n材料及\n产品和\n劳务\n中国五矿\n钨精矿、钼\n精矿、仲钨\n酸铵、钨钼\n及其化合\n物；技术服\n务和劳务\n等\n市场价定价 \t5,000 \t1,000 \t6,000 \t2,711\n江西省修水赣北\n钨业有限公司 市场价定价 \t200,000 \t408,000 \t608,000 \t264,458\n湖南有色新田岭\n钨业有限公司 市场价定价 \t82,000 \t54,000 \t136,000 \t56,994\n湖南瑶岗仙矿业\n有限责任公司 市场价定价 \t88,000 \t42,000 \t130,000 \t66,258\n江西省修水香炉\n山钨业有限责任\n公司\n市场价定价 \t130,000 \t132,000 \t262,000 \t85,243\n洛杉矶矿产金属\n有限公司 市场价定价 \t8,000 \t0 \t8,000 \t2,431\n小计 \t513,000 \t637,000 \t1,150,000 \t478,094\n销售\n产品\n中国五矿\n钨钼及其\n化合物、萤\n石产品、硬\n质合金制\n品等\n市场价定价 \t6,000 \t-4,000 \t2,000 \t444\n江西省修水赣北\n钨业有限公司 市场价定价 \t8,500 \t74,500 \t83,000 \t31,607\n湖南有色郴州氟\n化学有限公司 市场价定价 \t17,500 \t-3,500 \t14,000 \t6,440\n湖南有色郴州萤\n石球团有限公司 市场价定价 \t7,000 \t-3,000 \t4,000 \t1,500\n小计 \t39,000 \t64,000 \t103,000 \t39,990\n项目\n建设\n中国五矿\n项目建设\n市场价定价 \t4,000 \t1,400 \t5,400 \t343\n五矿二十三冶建\n设集团有限公司 市场价定价 \t4,500 \t-3,500 \t1,000 \t0\n中国京冶工程技\n术有限公司 市场价定价 \t11,000 \t-1,900 \t9,100 \t3,202\n中冶长天国际工\n程有限责任公司 市场价定价 \t23,000 \t-3,000 \t20,000 \t3,076\n\n-- 2 of 12 --\n\n- \t3 \t-\n长沙矿冶研究院\n有限责任公司 市场价定价 \t24,000 \t-6,000 \t18,000 \t1,853\n小计 \t66,500 \t-13,000 \t53,500 \t8,475\n房屋\n租赁\n中国五矿 \t房屋租赁 \t市场价定价 \t500 \t0 \t500 \t40\n小计 \t500 \t0 \t500 \t40\n合计 \t619,000 \t688,000 \t1,307,000 \t526,599\n注 \t1：因预计关联人数量较多，且预计交易金额较小，未达到单独披露标准，\n简化披露为同一实际控制人“中国五矿”，因此表格数据中，与中国五矿的日常\n关联交易预计发生金额包括除单独披露外的所有与中国五矿及其直接或间接控\n制的公司之间的发生额。\n注 \t2：上表中 \t1-5 \t月发生金额为公司财务部门统计的数据，尚未经会计师事\n务所审计。\n三、关联人介绍和关联关系\n（一）基本情况\n1.中国五矿集团有限公司\n法定代表人：陈得信\n注册资本：1,020,000 \t万元\n注册地址：北京市海淀区三里河路五号\n经营范围：黑色金属、有色金属、矿产品及非金属矿产品的投资、\n销售；新能源的开发和投资管理；金融、证券、信托、租赁、保险、\n基金、期货领域的投资管理；投资与资产管理；各种工程技术咨询服\n务及工程设备租赁；与工程建筑相关的新材料、新工艺、新产品技术\n开发、技术服务、技术交流和技术转让；冶金工业所需设备的开发、\n销售；承担国外各类工业、民用建筑工程咨询、勘察、设计和设备租\n赁；机电产品、小轿车、建筑材料、仪器仪表、五金交电、机械设备\n的销售；建筑及机电设备安装工程技术研究、规划勘察、设计、监理\n服务；房地产开发与经营；物业管理；进出口业务；招标、投标及招\n标代理；承办展览展示活动；设计、制作、代理、发布国内外广告；\n\n-- 3 of 12 --\n\n- \t4 \t-\n经济贸易咨询；技术服务、技术交流；自有房屋租赁。（市场主体依\n法自主选择经营项目，开展经营活动；依法须经批准的项目，经相关\n部门批准后依批准的内容开展经营活动；不得从事国家和本市产业政\n策禁止和限制类项目的经营活动。）\n截至 \t2026 \t年 \t3 \t月末，资产总额 \t15,202 \t亿元，所有者权益 \t4,184\n亿元，营业收入 \t1,793 \t亿元，净利润 \t60 \t亿元。\n关联关系：为公司实际控制人。\n2.江西省修水赣北钨业有限公司\n法定代表人：丁伟\n注册资本：15,989.690722 \t万元\n注册地址：江西省九江市修水县吴都工业园\n经营范围：矿产品经营、加工选矿、研发、冶炼、销售（国家有\n专项规定除外）；化工原料（除危险化学品）销售；矿山机械及配件、\n建筑材料销售；自营商品的进出口贸易；道路货运站（场）经营。\n截至 \t2026 \t年 \t3 \t月末，\t资产总额 \t173,724 \t万元，所有者权益 \t18,605\n万元，营业收入 \t100,570 \t万元，净利润 \t770 \t万元。\n关联关系：与公司属同一实际控制人。\n3.湖南有色新田岭钨业有限公司\n法定代表人：石志中\n注册资本：89,400 \t万元\n注册地址：湖南省郴州市北湖区石盖塘镇小溪村\n经营范围：许可项目：非煤矿山矿产资源开采；测绘服务。（依\n法须经批准的项目，经相关部门批准后方可开展经营活动，具体经营\n项目以相关部门批准文件或许可证件为准）一般项目：选矿；金属矿\n石销售；非金属矿及制品销售；租赁服务（不含许可类租赁服务）；\n\n-- 4 of 12 --\n\n- \t5 \t-\n技术服务、技术开发、技术咨询、技术交流、技术转让、技术推广。\n截至 \t2026 \t年 \t3 \t月末，\t资产总额 \t200,668 \t万元，所有者权益 \t133,394\n万元，营业收入 \t68,524 \t万元，净利润 \t46,636 \t万元。\n关联关系：与公司属同一实际控制人。\n4.湖南瑶岗仙矿业有限责任公司\n法定代表人：李军\n注册资本：18,801 \t万元\n注册地址：湖南省郴州市宜章县瑶岗仙镇\n经营范围：许可项目：矿产资源（非煤矿山）开采；矿产资源勘\n查；道路货物运输（不含危险货物）；测绘服务（依法须经批准的项\n目，经相关部门批准后方可开展经营活动，具体经营项目以相关部门\n批准文件或许可证件为准）一般项目：选矿；矿物洗选加工；金属矿\n石销售；固体废物治理；非金属废料和碎屑加工处理（除依法须经批\n准的项目外，凭营业执照依法自主开展经营活动）。\n截至 \t2026 \t年 \t3 \t月末，\t资产总额 \t225,683 \t万元，所有者权益 \t104,297\n万元，营业收入 \t79,601 \t万元，净利润 \t50,291 \t万元。\n关联关系：与公司属同一实际控制人。\n5.江西省修水香炉山钨业有限责任公司\n法定代表人：徐凤平\n注册资本：29,687.93 \t万元\n注册地址：江西省九江市修水县吴都工业园\n经营范围：矿产品开采、经营、加工、选矿、研发、冶炼、销售；\n化工原料（化学危险品除外）、矿山机械及配件、建筑材料销售；对\n外贸易经营。\n截至 \t2026 \t年 \t3 \t月末，\t资产总额 \t166,909 \t万元，所有者权益 \t102,588\n\n-- 5 of 12 --\n\n- \t6 \t-\n万元，营业收入 \t50,395 \t万元，净利润 \t28,861 \t万元。\n关联关系：与公司属同一实际控制人。\n6.洛杉矶矿产金属有限公司\n法定代表人：王旭\n注册资本：60 \t万美元\n注册地址：美国洛杉矶\n经营范围：有色金属贸易。\n截至 \t2026 \t年 \t3 \t月末，资产总额 \t17,409 \t万元，所有者权益 \t11,997\n万元，营业收入 \t11,386 \t万元，净利润 \t48 \t万元。\n关联关系：与公司属同一实际控制人。\n7.湖南有色郴州氟化学有限公司\n法定代表人：张振华\n注册资本：11,000 \t万元\n注册地址：湖南省郴州市苏仙区飞天山镇幸福村\n经营范围：萤石、石榴子石、石膏、无水氟化氢、有水氟化氢、\n氟硅酸、有机氟化物、无机氟化盐等氟化工的新工艺、新技术的研发、\n设计及相关的可行性报告的咨询服务及其它氟制品的生产、销售；煤\n炭销售；货物的进出口业务。\n截至 \t2026 \t年 \t3 \t月末，资产总额 \t44,369 \t万元，所有者权益 \t22,341\n万元，营业收入 \t12,075 \t万元，净利润-1,367 \t万元。\n关联关系：与公司属同一实际控制人。\n8.湖南有色郴州萤石球团有限公司\n法定代表人：邓泽贤\n注册资本：500 \t万元\n注册地址：中国（湖南）自由贸易试验区郴州片区白露塘镇湖南\n\n-- 6 of 12 --\n\n- \t7 \t-\n柿竹园有色金属有限责任公司白沙区 \t4 \t栋 \t101 \t房\n经营范围：萤石球团的生产、销售萤石精矿的销售。\n截至 \t2026 \t年 \t3 \t月末，资产总额 \t1,984 \t万元，所有者权益 \t1,291\n万元，营业收入 \t1,388 \t万元，净利润 \t17 \t万元。\n关联关系：与公司属同一实际控制人。\n9.五矿二十三冶建设集团有限公司\n法定代表人：胡建军\n注册资本：229,237.43 \t万元\n注册地址：湖南省长沙市雨花区湘府东路二段 \t208 \t号万境财智中\n心北栋 \t24 \t层\n经营范围：建筑工程、铁路工程、石油化工工程、电力工程、公\n路工程、市政公用工程、冶金工程、机电工程、矿山工程、水利水电\n工程、机电安装各类别工程的施工总承包、工程总承包和项目管理业\n务；建筑装修装饰工程、特种专业工程、环保工程、城市轨道交通设\n施工程、地基与基础工程、园林绿化工程、人防工程、消防设施工程、\n钢结构工程的专业承包；房地产开发经营；铁路、道路、隧道和桥梁\n工程建筑施工；土石方工程服务；压力管道、机电设备、起重设备、\n建筑工程材料安装服务；环境综合治理项目咨询、设计、施工及运营；\n建筑装饰工程、环保工程、建筑行业建筑工程、人防工程设计；工程\n项目管理服务；工程建设项目技术咨询服务；承包境内国际招标工程；\n对外承包工程业务；计算机网络平台的开发、建设及系统工程服务、\n信息技术咨询服务；自动化控制系统的研发、安装、销售及服务；物\n业管理；职工餐饮服务；便利店经营和便利店连锁经营；货物仓储（不\n含危化品和监控品）；场地、机械设备租赁；建材批发；货物或技术\n进出口（国家禁止或涉及行政审批的货物和技术进出口除外）；以自\n\n-- 7 of 12 --\n\n- \t8 \t-\n有合法资产进行基础设施、能源、房地产项目的投资及非上市类股权\n投资活动及相关咨询服务（不得从事吸收存款、集资收款、受托贷款、\n发行票据、发放贷款等国家金融监管及财政信用业务）。\n截至 \t2026 \t年 \t3 \t月末，资产总额 \t317 \t亿元，所有者权益 \t53 \t亿元，\n营业收入 \t32 \t亿元，净利润 \t3,443 \t万元。\n关联关系：与公司属同一实际控制人。\n10.中国京冶工程技术有限公司\n法定代表人：张剑\n注册资本：69,000 \t万元\n注册地址：北京市海淀区西土城路 \t33 \t号\n经营范围：许可项目：演出经纪；建设工程施工；建设工程设计；\n人防工程设计；文物保护工程施工；电气安装服务；人防工程防护设\n备制造；人防工程防护设备安装；建设工程勘察；地质灾害治理工程\n勘查；文物保护工程勘察；演出场所经营；舞台工程施工。（依法须\n经批准的项目，经相关部门批准后方可开展经营活动，具体经营项目\n以相关部门批准文件或许可证件为准）一般项目：技术服务、技术开\n发、技术咨询、技术交流、技术转让、技术推广；对外承包工程；工\n程管理服务；普通机械设备安装服务；金属结构制造；砼结构构件制\n造；工程技术服务（规划管理、勘察、设计、监理除外）；新材料技\n术研发；环境保护专用设备销售；环保咨询服务；工程和技术研究和\n试验发展；业务培训（不含教育培训、职业技能培训等需取得许可的\n培训）；园林绿化工程施工；技术进出口。\n截至 \t2026 \t年 \t3 \t月末，\t资产总额 \t532,068 \t万元，所有者权益 \t108,519\n万元，营业收入 \t113,933 \t万元，净利润-1,318 \t万元。\n关联关系：与公司属同一实际控制人。\n\n-- 8 of 12 --\n\n- \t9 \t-\n11.中冶长天国际工程有限责任公司\n法定代表人：乐文毅\n注册资本：67,730.12 \t万元\n注册地址：长沙市高新区麓松路 \t480 \t号\n经营范围：承担国内工程的勘察、咨询、设计、监理和总承包及\n相关工程的设备、材料的进出口、转口贸易、三来一补加工贸易；承\n包与其实力、规模、业绩相适应的国外工程项目，对外派遣实施上述\n境外工程所需的劳务人员；城市规划编制；建设项目环境影响评价；\n制造、销售机械、电气、自动化设备及软件；销售工具、模具、模型；\n承接复印及晒图业务；矿产品加工、销售和进出口贸易；\t《烧结球团》\t、\n《工程建设》的出版（按许可证已核定的期限与范围从事经营）；期\n刊广告的设计、制作及发布；自有房屋租赁。\n截至 \t2026 \t年 \t3 \t月末，\t资产总额 \t649,918 \t万元，所有者权益 \t309,449\n万元，营业收入 \t142,250 \t万元，净利润 \t2,021 \t万元。\n关联关系：与公司属同一实际控制人。\n12.长沙矿冶研究院有限责任公司\n法定代表人：卓晓军\n注册资本：292,797.9822 \t万元\n注册地址：湖南省长沙市麓山南路 \t966 \t号\n经营范围：矿产资源及二次资源开发利用技术的研发、咨询、转\n让及推广服务；选矿药剂、环保药剂及精细化工产品（不含危险化学\n品和监控品）、矿冶装备、海工装备、环保装备（含仪器仪表）的研\n发、制造、销售；再生资源收集技术开发、转让、培训、咨询及服务，\n废旧动力蓄电池及含有镍、钴、铜、锂的有色金属废物的回收、暂存、\n处置与销售（以上不含危险废物等需经相关部门批准的项目）；电池\n\n-- 9 of 12 --\n\n- \t10 \t-\n及电池材料的研发、生产、销售；电化学储能及退役电池梯次利用技\n术研发、生产、销售、服务；新能源微电网、能源互联网等技术开发、\n应用与服务；金属制品加工、生产、销售；智能技术及信息化系统、\n仪器仪表的开发、集成、销售；智慧城市、地理信息的软硬件及平台\n的开发、集成、转让、销售；土地测绘、国土空间规划；地质实验测\n试；新材料技术的研发、咨询、转让及推广服务；新材料产品及相关\n仪器仪表、非标准装备的研发、制造、销售；工业废水及废弃物的处\n理及利用；土壤及水体修复；环境影响评价、安全评价、节能评价、\n清洁生产评价、职业健康评价；工农业原辅材料与产品、生产生活水\n质与土壤等的分析检测、分析检测标准物质研制与生产销售；以自有\n合法资金进行高新技术产业投资、创业投资等（不得从事吸收存款、\n集资收款、受托贷款、发行票据、发放贷款等国家金融监管及财政信\n用业务）；创业投资咨询、创业管理服务；自营和代理各类商品和技\n术的进出口；自有房屋租赁；物业运营与管理；科技信息咨询服务；\n工程咨询（规划）、工程设计、工程监理、工程承包；经营增值电信\n业务；广告经营。\n截至 \t2026 \t年 \t3 \t月末，\t资产总额 \t554,414 \t万元，所有者权益 \t392,752\n万元，营业收入 \t34,002 \t万元，净利润 \t188 \t万元。\n关联关系：与公司属同一实际控制人。\n（二）履约能力分析\n上述关联方依法持续经营，均能遵守合同约定，按正常的商业条\n件进行结算，不存在其他潜在影响其履约的重大情形。经查，上述公\n司均不是失信责任主体。\n四、关联交易主要内容\n（一）定价原则和依据\n\n-- 10 of 12 --\n\n- \t11 \t-\n本公司及下属子公司与关联公司之间的业务往来按一般市场经\n营规则进行，定价以市场价格为基本准则，原则上不偏离独立第三方\n的价格或收费标准，遵照公平、公正的市场原则确定交易价格；交货、\n付款均按签订的合同相关条款执行。\n（二）关联交易协议签署情况\n为进一步规范公司日常关联交易执行情况，公司已与中国五矿签\n署有关框架协议，对公司与中国五矿（包括中国五矿直接或间接控股\n公司）之间的日常关联交易类型、交易总量确定、交易定价原则、付\n款方式等予以约定，协议有效期 \t3 \t年，有效期自 \t2026 \t年 \t1 \t月 \t1 \t日起。\n五、关联交易目的和对上市公司的影响\n为确保公司日常生产经营的正常运行，公司及下属企业需要与中\n国五矿及其直接或间接控股公司进行原辅材料采购和产品销售等关\n联交易。该等关联交易是公司日常经营过程中持续发生的、正常合理\n的行为，通过这些日常关联交易，有利于促进公司日常经营业务的开\n展。\n上述关联交易的定价参照市场价格，遵循公允原则，不存在损害\n上市公司利益的情形，对公司本期以及未来财务状况、经营成果无不\n利影响，交易双方可随时根据自身需要及市场价格，决定是否进行交\n易，因此不会影响公司的独立性。\n六、独立董事专门会议审查意见\n经公司独立董事专门会议审查认为：公司对 \t2026 \t年度中国五矿\n及其直接或间接控股公司的预计日常关联交易情况进行适当调整符\n合实际生产经营需要，日常关联交易事项遵循公开、公平、公正的原\n则，交易价格公允，不存在损害公司及全体股东，特别是中小股东利\n益的情形，不会对公司独立性产生影响。符合《中华人民共和国公司\n\n-- 11 of 12 --\n\n- \t12 \t-\n法》《中华人民共和国证券法》《深圳证券交易所股票上市规则》及\n其他有关法律法规、规范性文件的规定。\n特此公告。\n中钨高新材料股份有限公司董事会\n二〇二六年六月十三日\n\n-- 12 of 12 --",
+          "type": "并购",
+          "sentiment": 1,
+          "weight": 5,
+          "final_weight": 5.04,
+          "source_authority": 5,
+          "recency_factor": 0.72,
+          "source": "巨潮资讯",
+          "llm_reviewed": true,
+          "llm_confidence": 0.9,
+          "llm_is_real_catalyst": true,
+          "llm_reasoning": "关联交易调增至130.7亿，因钨价上涨"
+        },
+        {
+          "date": "2026-06-12",
+          "title": "关于召开2026年第二次临时股东会的通知",
+          "content": "- \t1 \t-\n证券代码：000657 \t证券简称：中钨高新 \t公告编号：2026-48\n中钨高新材料股份有限公司\n关于召开 \t2026 \t年第二次临时股东会的通知\n本公司及董事会全体成员保证信息披露的内容真实、准确、完整，没有虚\n假记载、误导性陈述或重大遗漏。\n一、召开会议的基本情况\n1、股东会届次：2026 \t年第二次临时股东会\n2、股东会的召集人：董事会\n3、本次会议的召集、召开符合《中华人民共和国公司法》\n《深圳证券交易所股票上市规则》《深圳证券交易所上市公司自律\n监管指引第 \t1 \t号——主板上市公司规范运作》等法律、行政法规、\n部门规章、规范性文件及《公司章程》的有关规定。\n4、会议时间：\n（1）现场会议时间：2026 \t年 \t6 \t月 \t29 \t日 \t14:30\n（2）网络投票时间：通过深圳证券交易所系统进行网络投票\n的具体时间为 \t2026 \t年 \t6 \t月 \t29 \t日 \t9:15-9:25，9:30-11:30，13:00-\n15:00；通过深圳证券交易所互联网投票系统投票的具体时间为\n2026 \t年 \t6 \t月 \t29 \t日 \t9:15 \t至 \t15:00 \t的任意时间。\n5、会议的召开方式：现场表决与网络投票相结合。\n6、会议的股权登记日：2026 \t年 \t6 \t月 \t18 \t日\n7、出席对象：\n\n-- 1 of 6 --\n\n- \t2 \t-\n（1）在股权登记日持有公司股份的普通股股东或其代理人，\n即于 \t2026 \t年 \t6 \t月 \t18 \t日下午收市时在中国证券登记结算有限责任公\n司深圳分公司登记在册的公司全体股东均有权出席股东会，并可以\n以书面形式委托代理人出席会议和参加表决，该股东代理人不必是\n公司股东。\n（2）公司董事和高级管理人员。\n（3）公司聘请的律师。\n（4）根据相关法规应当出席股东会的其他人员。\n8、会议地点：湖南省株洲市荷塘区钻石路 \t288 \t号钻石大厦\n1006 \t会议室。\n二、会议审议事项\n1、本次股东会提案编码表\n提案编码 \t提案名称 \t提案类型\n备注\n该列打勾的栏目可\n以投票\n100\n总议案：除累积投票提案外的 \t所有\n提案\n非累积投票提案 \t√\n1.00 关于选举齐申先生为公司第十一届\n董事会非独立董事的议案 \t非累积投票提案 \t√\n2.00 关于调整 \t2026 \t年度与中国五矿日常\n关联交易预计的议案 \t非累积投票提案 \t√\n2、提案的具体内容\n本次股东会提案已经公司第十一届董事会第十一次（临时）会\n议和第十二次（临时）会议审议通过，内容详见本公司于 \t2026 \t年 \t6\n月 \t6 \t日披露在巨潮资讯网的《关于提名董事候选人的公告》（公告\n编号：2026-44）、2026 \t年 \t6 \t月 \t13 \t日披露在巨潮资讯网的《关于调\n\n-- 2 of 6 --\n\n- \t3 \t-\n整 \t2026 \t年度与中国五矿日常关联交易预计的公告》（公告编号：\n2026-47）\n3、特别提示\n（1）议案 \t1 \t仅选举一名董事，不适用累积投票制；\n（2）议案 \t2 \t涉及关联交易，关联股东中国五矿股份有限公司、\n五矿钨业集团有限公司及其关联公司（如持有公司股份）对议案回\n避表决；\n（3）本次股东会审议的议案将对中小投资者的表决结果进行\n单独计票并予以披露。中小投资者是指除上市公司董事、高级管理\n人员以及单独或者合计持有公司 \t5%以上股份的股东以外的其他股东。\n三、会议登记等事项\n1、登记方式：现场登记，异地股东可通过电子邮件或传真方\n式登记；\n2、登记时间：2026 \t年 \t6 \t月 \t25 \t日 \t9:00-11:30，14:00-17:00；\n3、登记地点：湖南省株洲市荷塘区钻石路 \t288 \t号钻石大厦\n1101 \t室；\n4、登记时提供资料：出席会议的个人股东持本人身份证、股\n东账户卡和持股凭证；委托代理人持本人身份证、授权委托书、授\n权人股东账户卡和持股凭证；法人股东持营业执照复印件、股东账\n户卡、法人授权委托书、出席人身份证办理登记手续。授权委托书\n详见附件 \t2。\n5、其他事项\n（1）会议联系方式：\n联系人：刘文婕 \t罗媚月\n\n-- 3 of 6 --\n\n- \t4 \t-\n电话：0731-28265386 \t0731-28265901\n传真：0731-28265500\n电子邮箱：zwgx000657@126.com\n（2）会议费用：会期半天，与会股东食宿及交通费自理。\n（3）网络投票系统异常情况的处理方式：网络投票期间，如\n网络投票系统遇突发重大事件的影响，则本次股东会的进程按当日\n通知进行。\n四、参加网络投票的具体操作流程\n本公司将向全体股东提供网络形式的投票平台，本公司股东可\n以通过深交所交易系统和互联网投票系统（http://wltp.cninfo.c\nom.cn）参加网络投票。参加网络投票的具体操作流程详见附件 \t1。\n五、备查文件\n1、第十一届董事会第十一次（临时）会议决议；\n2、第十一届董事会第十二次（临时）会议决议；\n3、深交所要求的其他文件。\n附件：1.授权委托书\n2.参加网络投票的具体操作流程\n特此公告。\n中钨高新材料股份有限公司董事会\n二〇二六年六月十三日\n\n-- 4 of 6 --\n\n- \t5 \t-\n附件 \t1：\n参加网络投票的具体操作流程\n一、网络投票的程序\n1．普通股的投票代码与投票简称：投票代码为“360657”，投票简称为\n“中钨投票”。\n2．填报表决意见或选举票数。\n对于非累积投票提案，填报表决意见：同意、反对、弃权。\n3．股东对总议案进行投票，视为对除累积投票提案外的其他所有提案表\n达相同意见。\n股东对总议案与具体提案重复投票时，以第一次有效投票为准。如股东先\n对具体提案投票表决，再对总议案投票表决，则以已投票表决的具体提案的表\n决意见为准，其他未表决的提案以总议案的表决意见为准；如先对总议案投票\n表决，再对具体提案投票表决，则以总议案的表决意见为准。\n二、通过深交所交易系统投票的程序\n1．投票时间：2026 \t年 \t6 \t月 \t29 \t日的交易时间，即 \t9:15—9:25，9:30—\n11:30 \t和 \t13:00—15:00。\n2．股东可以登录证券公司交易客户端通过交易系统投票。\n三、通过深交所互联网投票系统投票的程序\n1．互联网投票系统开始投票的时间为 \t2026 \t年 \t6 \t月 \t29 \t日，9:15—15:00。\n2．股东通过互联网投票系统进行网络投票，需按照《深圳证券交易所上\n市公司股东会网络投票实施细则》《深圳证券交易所互联网投票业务股东身份\n认证操作说明》的规定办理身份认证，取得“深交所数字证书”或“深交所投\n资 者 服 务 密 码 \t” \t。 具 体 的 身 份 认 证 流 程 可 登 录 互 联 网 投 票 系 统\nhttps://wltp.cninfo.com.cn \t规则指引栏目查阅。\n3 \t． 股 东 根 据 获 取 的 服 务 密 码 或 数 字 证 书 ， 可 登 录\nhttps://wltp.cninfo.com.cn \t在规定时间内通过深交所互联网投票系统进行\n投票。\n\n-- 5 of 6 --\n\n- \t6 \t-\n附件 \t2：\n中钨高新材料股份有限公司\n2026 \t年第二次临时股东会授权委托书\n兹委托__________先生（女士）代表本人（或本单位）出席中钨高新材料\n股份有限公司于 \t2026 \t年 \t06 \t月 \t29 \t日召开的 \t2026 \t年第二次临时股东会，并代表\n本人（或本单位）按以下方式行使表决权：\n本次股东会提案表决意见表\n提案编\n码 提案名称 备\n注\n同\n意\n反\n对\n弃\n权\n100 \t总议案：除累积投票提案外的所有提案 \t√\n非累积投票提案\n1.00 关于选举齐申先生为公司第十一届董事会非独立董事的\n议案 \t√\n2.00 关于调整 \t2026 \t年度与中国五矿日常关联交易预计的议\n案 \t√\n委托人名称（盖章）：\n委托人身份证号码（社会信用代码）：\n（委托人为法人股东，应加盖法人单位印章。）\n委托人股东账号： \t持股数量：\n受托人： \t受托人身份证号码：\n签发日期： \t委托有效期：\n\n-- 6 of 6 --",
+          "type": "政策",
+          "sentiment": 0,
+          "weight": 1,
+          "final_weight": 0.86,
+          "source_authority": 5,
+          "recency_factor": 0.72,
+          "source": "巨潮资讯",
+          "llm_reviewed": true,
+          "llm_confidence": 0.3,
+          "llm_is_real_catalyst": false,
+          "llm_reasoning": "股东会通知，含选举董事及关联交易议案"
+        }
+      ]
     },
     "SZSE:002056": {
       "name": "横店东磁",
-      "score": 50,
-      "score_raw": 0,
+      "score": 82,
+      "score_raw": 9.05,
       "score_components": {
-        "positive_weight_sum": 0,
-        "negative_weight_sum": 0
+        "positive_weight_sum": 11.05,
+        "negative_weight_sum": 2,
+        "news_effective_count": 14,
+        "news_dropped_count": 0
       },
-      "signal": "⚪ No Trade (无数据)",
-      "strategy": "LLM 不可用或调用失败（不走关键字降级）",
-      "suitable_for": "观望",
-      "confidence": "-",
-      "patterns": [],
-      "positive_factors": [],
-      "negative_factors": [],
-      "news_count": 0,
+      "signal": "🟢 Long (强)",
+      "strategy": "多重利好共振，基本面+情绪双支撑，适合追涨或持有",
+      "suitable_for": "追涨 / 持有",
+      "confidence": "高",
+      "patterns": [
+        "情绪持续增强↑(trend)"
+      ],
+      "positive_factors": [
+        "[财报|w3.51] 横店东磁:2025年年度权益分派实施公告",
+        "[财报|w1.95] 横店东磁：2025年年度权益分派实施公告",
+        "[财报|w1.95] 横店东磁：每10股派6.00元，股权登记日为6月17日"
+      ],
+      "negative_factors": [
+        "[行业|w0.5] 横店东磁：融资净偿还5164.61万元，融资余额9.64亿元",
+        "[行业|w0.5] 横店东磁6月10日加速下跌",
+        "[行业|w0.5] 横店东磁6月10日盘中跌幅达5%"
+      ],
+      "news_count": 14,
       "news_dropped": 0,
       "performance": {
-        "list_fetch_ms": 30474,
-        "candidate_filter_ms": 1,
-        "enrichment_ms": 110095,
+        "list_fetch_ms": 1710,
+        "candidate_filter_ms": 0,
+        "enrichment_ms": 7343,
         "raw_news_count": 40,
-        "raw_research_count": 0,
+        "raw_research_count": 10,
         "candidate_news_count": 14,
         "candidate_research_count": 0,
         "enriched_news_count": 14,
@@ -616,85 +482,126 @@
             "out_of_window": 19
           },
           "research": {
-            "dedup": 0
-          }
-        },
-        "date_filter_ms": 0,
-        "relevance_ms": 1,
-        "llm_ms": 0,
-        "scoring_ms": 0
-      },
-      "top_news": []
-    },
-    "SZSE:002281": {
-      "name": "光迅科技",
-      "score": 50,
-      "score_raw": 0,
-      "score_components": {
-        "positive_weight_sum": 0,
-        "negative_weight_sum": 0
-      },
-      "signal": "⚪ No Trade (无数据)",
-      "strategy": "LLM 不可用或调用失败（不走关键字降级）",
-      "suitable_for": "观望",
-      "confidence": "-",
-      "patterns": [],
-      "positive_factors": [],
-      "negative_factors": [],
-      "news_count": 0,
-      "news_dropped": 0,
-      "performance": {
-        "list_fetch_ms": 30140,
-        "candidate_filter_ms": 1,
-        "enrichment_ms": 130345,
-        "raw_news_count": 40,
-        "raw_research_count": 10,
-        "candidate_news_count": 17,
-        "candidate_research_count": 0,
-        "enriched_news_count": 17,
-        "enriched_research_count": 0,
-        "candidate_reasons": {
-          "news": {
-            "noise:融资净(买入|卖出)": 3,
-            "no-subject-mention": 6,
-            "noise:\\d{1,2}月\\d{1,2}日(快速上涨|快速回调|涨停|": 1,
-            "dedup": 0,
-            "out_of_window": 13
-          },
-          "research": {
             "dedup": 0,
             "out_of_window": 10
           }
         },
         "date_filter_ms": 0,
-        "relevance_ms": 1,
-        "llm_ms": 0,
+        "relevance_ms": 0,
+        "llm_ms": 3557,
         "scoring_ms": 0
       },
-      "top_news": []
+      "top_news": [
+        {
+          "date": "2026-06-12 10:37:34",
+          "title": "横店东磁6月12日盘中涨幅达5%",
+          "content": "以下是横店东磁在北京时间6月12日10:37分盘口异动快照：\n\n　　炒股第一步，先开个股票账户\n\n分笔\n\n10:37:21 25.99 1161↑\n10:37:18 25.95 968↑\n10:37:15 25.89 1362↑\n10:37:12 25.89 302↑\n10:37:09 25.84 1184↑\n \n10:37:06 25.83 4625↓\n10:37:03 25.85 1688↓\n10:37:00 25.85 2062↓\n10:36:57 25.87 621↑\n10:36:54 25.85 1506↑\n \n报价\n\n卖五 \n\n26.04\n\n 4\n卖四 \n\n26.03\n\n 35\n卖三 \n\n26.02\n\n 32\n卖二 \n\n26.01\n\n 10\n卖一 \n\n26\n\n 898\n\n买一 \n\n25.99\n\n 348\n买二 \n\n25.96\n\n 13\n买三 \n\n25.92\n\n 7\n买四 \n\n25.91\n\n 164\n买五 \n\n25.9\n\n 25\n\n最新：25.99\n涨幅：5.14%\n涨跌：1.27\n换手率：2.43%\n成交量：39.43万手\n成交额：9.83亿元\n主力净流入：\n-781.65万元\n\n  6月12日，横店东磁盘中涨幅达5%，截至10点37分，报25.99元，成交9.83亿元，换手率2.43%。\n注：以上信息仅供参考，不对您构成任何投资建议。",
+          "type": "行业",
+          "sentiment": 1,
+          "weight": 1,
+          "final_weight": 0.5,
+          "source_authority": 3,
+          "recency_factor": 0.72,
+          "source": "东方财富资讯",
+          "llm_reviewed": true,
+          "llm_confidence": 0.3,
+          "llm_is_real_catalyst": false,
+          "llm_reasoning": "盘中涨幅达5%，属价格波动，无硬催化"
+        },
+        {
+          "date": "2026-06-12 10:33:08",
+          "title": "横店东磁6月12日快速反弹",
+          "content": "以下是横店东磁在北京时间6月12日10:33分盘口异动快照：\n\n　　全新妙想投研助理，立即体验\n\n分笔\n\n10:33:03 25.07 315↑\n10:33:00 25.02 107↑\n10:32:57 25.01 183↑\n10:32:54 24.99 342↑\n10:32:51 24.98 1116↓\n \n10:32:48 24.99 533↑\n10:32:45 24.98 127↑\n10:32:42 24.96 939↑\n10:32:39 24.96 89↓\n10:32:36 24.98 520↑\n \n报价\n\n卖五 \n\n25.13\n\n 1\n卖四 \n\n25.11\n\n 1\n卖三 \n\n25.1\n\n 10\n卖二 \n\n25.09\n\n 54\n卖一 \n\n25.08\n\n 15\n\n买一 \n\n25.07\n\n 1\n买二 \n\n25.06\n\n 126\n买三 \n\n25.05\n\n 1\n买四 \n\n25.04\n\n 42\n买五 \n\n25.03\n\n 9\n\n最新：25.07\n涨幅：1.42%\n涨跌：0.35\n换手率：1.88%\n成交量：30.51万手\n成交额：7.55亿元\n主力净流入：\n-4059.45万元\n\n  6月12日，横店东磁盘中快速反弹，5分钟内涨幅超过2%，截至10点33分，报25.07元，成交7.55亿元，换手率1.88%。\n注：以上信息仅供参考，不对您构成任何投资建议。",
+          "type": "行业",
+          "sentiment": 1,
+          "weight": 1,
+          "final_weight": 0.5,
+          "source_authority": 3,
+          "recency_factor": 0.72,
+          "source": "东方财富资讯",
+          "llm_reviewed": true,
+          "llm_confidence": 0.3,
+          "llm_is_real_catalyst": false,
+          "llm_reasoning": "快速反弹，属价格波动，无硬催化"
+        },
+        {
+          "date": "2026-06-11 09:03:53",
+          "title": "横店东磁：融资净偿还5164.61万元，融资余额9.64亿元",
+          "content": "炒股第一步，先开个股票账户\n\n交易所最新数据显示，横店东磁于2026年6月10日获融资买入1.70亿元，融资偿还2.22亿元，当日融资净偿还5164.61万元。目前，该股融资余额9.64亿，占流通市值比例为2.33%。\n\n该股当日融券卖出2.23万股，融券偿还1.41万股，融券净卖出8200股。目前，该股融券余量46.54万股，融券余额1185.84万元。\n\n免责声明：本文基于AI生产，仅供参考，不构成任何投资建议，据此操作风险自担。东方财富发布此内容旨在传播更多信息，与本平台立场无关。东方财富力求但不保证数据的完全准确，如有错漏请以中国证监会指定上市公司信息披露媒体为准，东方财富不对因该资料全部或部分内容而引致的盈亏承担任何责任。用户个人对服务的使用承担风险，东方财富对此不作任何类型的担保。",
+          "type": "行业",
+          "sentiment": -1,
+          "weight": 1,
+          "final_weight": 0.5,
+          "source_authority": 3,
+          "recency_factor": 0.6,
+          "source": "东方财富资讯",
+          "llm_reviewed": true,
+          "llm_confidence": 0.4,
+          "llm_is_real_catalyst": false,
+          "llm_reasoning": "融资净偿还，资金面偏空，但非硬催化"
+        },
+        {
+          "date": "2026-06-11",
+          "title": "横店东磁:2025年年度权益分派实施公告",
+          "content": "一般项目:磁性材料生产;磁性材料销售;光伏设备及元器件制造;光伏设备及元器件销售;电子元器件与机电组件设备制造;电子元器件与机电组件设备销售;电池制造;电池销售;有色金属合金制造;有色金属合金销售;电子元器件制造;电力电子元器件销售;机械零件、零部件加工;技术服务、技术开发、技术咨询、技术交流、技术转让、技术推广;货物进出口;技术进出口(除依法须经批准的项目外,凭营业执照依法自主开展经营活动)。许可项目:电气安装服务(依法须经批准的项目,经相关部门批准后方可开展经营活动,具体经营项目以审批结果为准)\n郑重声明：东方财富网发布此信息的目的在于传播更多信息，与本站立场无关。东方财富网不保证该信息（包括但不限于文字、视频、音频、数据及图表）全部或者部分内容的准确性、真实性、完整性、有效性、及时性、原创性等。相关信息并未经过本网站证实，不对您构成任何投资建议，据此操作，风险自担。",
+          "type": "财报",
+          "sentiment": 1,
+          "weight": 4,
+          "final_weight": 3.51,
+          "source_authority": 4.5,
+          "recency_factor": 0.6,
+          "source": "东方财富公告",
+          "llm_reviewed": true,
+          "llm_confidence": 0.9,
+          "llm_is_real_catalyst": true,
+          "llm_reasoning": "年度权益分派实施公告，官方公告"
+        },
+        {
+          "date": "2026-06-10 21:09:00",
+          "title": "横店东磁：2025年年度权益分派实施公告",
+          "content": "全新妙想投研助理，立即体验\n\n　　证券日报网讯 6月10日，横店东磁发布2025年年度权益分派实施公告称，公司2025年年度权益分派方案为：以公司现有总股本1，626，712，074股剔除已回购股份25，375，578股后的1，601，336，496股为基数，向可参与分配的股东每10股派发现金红利6.00元（含税），现金红利分配总额为960，801，897.60元（含税）。股权登记日为2026年6月17日，除权除息日为2026年6月18日。",
+          "type": "财报",
+          "sentiment": 1,
+          "weight": 2,
+          "final_weight": 1.95,
+          "source_authority": 3,
+          "recency_factor": 0.5,
+          "source": "东方财富资讯",
+          "llm_reviewed": true,
+          "llm_confidence": 0.9,
+          "llm_is_real_catalyst": true,
+          "llm_reasoning": "每10股派6元，分红方案明确"
+        }
+      ]
     },
-    "SZSE:300620": {
-      "name": "光库科技",
-      "score": 50,
-      "score_raw": 0,
+    "SZSE:002938": {
+      "name": "002938",
+      "score": 69,
+      "score_raw": 4.54,
       "score_components": {
-        "positive_weight_sum": 0,
-        "negative_weight_sum": 0
+        "positive_weight_sum": 4.54,
+        "negative_weight_sum": 0,
+        "news_effective_count": 1,
+        "news_dropped_count": 0
       },
-      "signal": "⚪ No Trade (无数据)",
-      "strategy": "LLM 不可用或调用失败（不走关键字降级）",
-      "suitable_for": "观望",
-      "confidence": "-",
-      "patterns": [],
-      "positive_factors": [],
+      "signal": "🟢 Long (中)",
+      "strategy": "情绪偏多，适合低吸或轻仓参与",
+      "suitable_for": "低吸 / 轻仓追",
+      "confidence": "中",
+      "patterns": [
+        "情绪持续增强↑(trend)"
+      ],
+      "positive_factors": [
+        "[并购|w4.54] 鹏鼎控股:鹏鼎控股(深圳)股份有限公司关于全资子公司与专业投资机构共同投资的公告"
+      ],
       "negative_factors": [],
-      "news_count": 0,
+      "news_count": 1,
       "news_dropped": 0,
       "performance": {
-        "list_fetch_ms": 25544,
+        "list_fetch_ms": 5363,
         "candidate_filter_ms": 0,
-        "enrichment_ms": 77951,
-        "raw_news_count": 30,
+        "enrichment_ms": 8052,
+        "raw_news_count": 40,
         "raw_research_count": 10,
         "candidate_news_count": 1,
         "candidate_research_count": 0,
@@ -702,8 +609,830 @@
         "enriched_research_count": 0,
         "candidate_reasons": {
           "news": {
+            "no-subject-mention": 15,
+            "noise:\\d{1,2}月\\d{1,2}日(快速上涨|快速回调|涨停|": 2,
+            "noise:融资净(买入|卖出)": 3,
             "dedup": 0,
-            "out_of_window": 29
+            "out_of_window": 19
+          },
+          "research": {
+            "dedup": 0,
+            "out_of_window": 10
+          }
+        },
+        "date_filter_ms": 0,
+        "relevance_ms": 0,
+        "llm_ms": 0,
+        "scoring_ms": 0
+      },
+      "top_news": [
+        {
+          "date": "2026-06-12",
+          "title": "鹏鼎控股:鹏鼎控股(深圳)股份有限公司关于全资子公司与专业投资机构共同投资的公告",
+          "content": "生产经营新型电子元器件、自动化设备及其零配件、精密模具及其零件、各类印刷电路板、电子信息产品板卡。从事电子信息产品及其板卡的批发、进出口及相关配套业务;自有房屋租赁;仓储服务;从事A002-0061宗地(即“鹏鼎时代大厦”)的房地产开发、经营、租赁、销售;物业管理;经营性机动车停车场。\n郑重声明：东方财富网发布此信息的目的在于传播更多信息，与本站立场无关。东方财富网不保证该信息（包括但不限于文字、视频、音频、数据及图表）全部或者部分内容的准确性、真实性、完整性、有效性、及时性、原创性等。相关信息并未经过本网站证实，不对您构成任何投资建议，据此操作，风险自担。",
+          "type": "并购",
+          "sentiment": 1,
+          "weight": 5,
+          "final_weight": 4.54,
+          "source_authority": 4.5,
+          "recency_factor": 0.72,
+          "source": "东方财富公告",
+          "llm_reviewed": true,
+          "llm_confidence": 0.8,
+          "llm_is_real_catalyst": true,
+          "llm_reasoning": "子公司与专业投资机构共同投资，属于战略合作/资产注入类并购"
+        }
+      ]
+    },
+    "SSE:600584": {
+      "name": "长电科技",
+      "score": 65,
+      "score_raw": 3.52,
+      "score_components": {
+        "positive_weight_sum": 3.52,
+        "negative_weight_sum": 0,
+        "news_effective_count": 8,
+        "news_dropped_count": 0
+      },
+      "signal": "🟢 Long (中)",
+      "strategy": "情绪偏多，适合低吸或轻仓参与",
+      "suitable_for": "低吸 / 轻仓追",
+      "confidence": "中",
+      "patterns": [],
+      "positive_factors": [
+        "[行业|w1.26] 长电科技：长电微电子已投产",
+        "[行业|w1.26] 长电科技推出新一代电源模组封测解决方案",
+        "[行业|w0.5] 长电科技：公司与大多数领先的国内外半导体企业有开展不同层次的合作"
+      ],
+      "negative_factors": [],
+      "news_count": 8,
+      "news_dropped": 0,
+      "performance": {
+        "list_fetch_ms": 1836,
+        "candidate_filter_ms": 0,
+        "enrichment_ms": 6823,
+        "raw_news_count": 40,
+        "raw_research_count": 10,
+        "candidate_news_count": 8,
+        "candidate_research_count": 0,
+        "enriched_news_count": 8,
+        "enriched_research_count": 0,
+        "candidate_reasons": {
+          "news": {
+            "no-subject-mention": 9,
+            "noise:融资净(买入|卖出)": 1,
+            "noise:\\d{1,2}月\\d{1,2}日(快速上涨|快速回调|涨停|": 2,
+            "dedup": 0,
+            "out_of_window": 20
+          },
+          "research": {
+            "dedup": 0,
+            "out_of_window": 10
+          }
+        },
+        "date_filter_ms": 0,
+        "relevance_ms": 0,
+        "llm_ms": 3243,
+        "scoring_ms": 0
+      },
+      "top_news": [
+        {
+          "date": "2026-06-13 07:31:41",
+          "title": "长电科技：融资净偿还64.99万元，融资余额67.89亿元",
+          "content": "在东方财富看资讯行情，选东方财富证券一站式开户交易>>\n\n交易所最新数据显示，长电科技于2026年6月12日获融资买入13.03亿元，融资偿还13.04亿元，当日融资净偿还64.99万元。目前，该股融资余额67.89亿，占流通市值比例为5.50%。\n\n该股当日融券卖出3600股，融券偿还9500股，融券净偿还5900股。目前，该股融券余量18.22万股，融券余额1255.72万元。\n\n免责声明：本文基于AI生产，仅供参考，不构成任何投资建议，据此操作风险自担。东方财富发布此内容旨在传播更多信息，与本平台立场无关。东方财富力求但不保证数据的完全准确，如有错漏请以中国证监会指定上市公司信息披露媒体为准，东方财富不对因该资料全部或部分内容而引致的盈亏承担任何责任。用户个人对服务的使用承担风险，东方财富对此不作任何类型的担保。",
+          "type": "行业",
+          "sentiment": 0,
+          "weight": 1,
+          "final_weight": 0.51,
+          "source_authority": 3,
+          "recency_factor": 0.85,
+          "source": "东方财富资讯",
+          "llm_reviewed": true,
+          "llm_confidence": 0.3,
+          "llm_is_real_catalyst": false,
+          "llm_reasoning": "融资净偿还数据，无实质影响"
+        },
+        {
+          "date": "2026-06-11 07:38:33",
+          "title": "长电科技：融资净偿还1.39亿元，融资余额66.86亿元",
+          "content": "专业金融数据，下一代智能终端\n\n交易所最新数据显示，长电科技于2026年6月10日获融资买入9.98亿元，融资偿还11.36亿元，当日融资净偿还1.39亿元。目前，该股融资余额66.86亿，占流通市值比例为5.05%。\n\n该股当日融券卖出7100股，融券偿还2.92万股，融券净偿还2.21万股。目前，该股融券余量18.96万股，融券余额1403.99万元。\n\n免责声明：本文基于AI生产，仅供参考，不构成任何投资建议，据此操作风险自担。东方财富发布此内容旨在传播更多信息，与本平台立场无关。东方财富力求但不保证数据的完全准确，如有错漏请以中国证监会指定上市公司信息披露媒体为准，东方财富不对因该资料全部或部分内容而引致的盈亏承担任何责任。用户个人对服务的使用承担风险，东方财富对此不作任何类型的担保。",
+          "type": "行业",
+          "sentiment": 0,
+          "weight": 1,
+          "final_weight": 0.5,
+          "source_authority": 3,
+          "recency_factor": 0.6,
+          "source": "东方财富资讯",
+          "llm_reviewed": true,
+          "llm_confidence": 0.3,
+          "llm_is_real_catalyst": false,
+          "llm_reasoning": "融资净偿还数据，无实质影响"
+        },
+        {
+          "date": "2026-06-10 07:43:54",
+          "title": "长电科技：融资净偿还2727.31万元，融资余额68.25亿元",
+          "content": "全新妙想投研助理，立即体验\n\n交易所最新数据显示，长电科技于2026年6月9日获融资买入11.03亿元，融资偿还11.31亿元，当日融资净偿还2727.31万元。目前，该股融资余额68.25亿，占流通市值比例为5.07%。\n\n该股当日融券卖出4.96万股，融券偿还2.86万股，融券净卖出2.1万股。目前，该股融券余量21.17万股，融券余额1593.89万元。\n\n免责声明：本文基于AI生产，仅供参考，不构成任何投资建议，据此操作风险自担。东方财富发布此内容旨在传播更多信息，与本平台立场无关。东方财富力求但不保证数据的完全准确，如有错漏请以中国证监会指定上市公司信息披露媒体为准，东方财富不对因该资料全部或部分内容而引致的盈亏承担任何责任。用户个人对服务的使用承担风险，东方财富对此不作任何类型的担保。",
+          "type": "行业",
+          "sentiment": 0,
+          "weight": 1,
+          "final_weight": 0.5,
+          "source_authority": 3,
+          "recency_factor": 0.5,
+          "source": "东方财富资讯",
+          "llm_reviewed": true,
+          "llm_confidence": 0.3,
+          "llm_is_real_catalyst": false,
+          "llm_reasoning": "融资净偿还数据，无实质影响"
+        },
+        {
+          "date": "2026-06-09 21:13:00",
+          "title": "长电科技：公司与大多数领先的国内外半导体企业有开展不同层次的合作",
+          "content": "",
+          "type": "行业",
+          "sentiment": 1,
+          "weight": 1,
+          "final_weight": 0.5,
+          "source_authority": 3,
+          "recency_factor": 0.42,
+          "source": "东方财富资讯",
+          "llm_reviewed": true,
+          "llm_confidence": 0.5,
+          "llm_is_real_catalyst": false,
+          "llm_reasoning": "与领先半导体企业合作，利好但无细节"
+        },
+        {
+          "date": "2026-06-09 20:03:00",
+          "title": "长电科技：长电微电子已投产",
+          "content": "",
+          "type": "行业",
+          "sentiment": 1,
+          "weight": 1,
+          "final_weight": 1.26,
+          "source_authority": 3,
+          "recency_factor": 0.42,
+          "source": "东方财富资讯",
+          "llm_reviewed": true,
+          "llm_confidence": 0.7,
+          "llm_is_real_catalyst": true,
+          "llm_reasoning": "长电微电子已投产，产能落地"
+        }
+      ]
+    },
+    "SSE:600549": {
+      "name": "600549",
+      "score": 61,
+      "score_raw": 2.52,
+      "score_components": {
+        "positive_weight_sum": 2.52,
+        "negative_weight_sum": 0,
+        "news_effective_count": 4,
+        "news_dropped_count": 0
+      },
+      "signal": "🟢 Long (中)",
+      "strategy": "情绪偏多，适合低吸或轻仓参与",
+      "suitable_for": "低吸 / 轻仓追",
+      "confidence": "中",
+      "patterns": [],
+      "positive_factors": [
+        "[并购|w2.52] 厦门钨业2026年第三次临时股东会会议资料"
+      ],
+      "negative_factors": [],
+      "news_count": 4,
+      "news_dropped": 0,
+      "performance": {
+        "list_fetch_ms": 2123,
+        "candidate_filter_ms": 0,
+        "enrichment_ms": 214,
+        "raw_news_count": 40,
+        "raw_research_count": 10,
+        "candidate_news_count": 4,
+        "candidate_research_count": 0,
+        "enriched_news_count": 4,
+        "enriched_research_count": 0,
+        "candidate_reasons": {
+          "news": {
+            "no-subject-mention": 14,
+            "noise:\\d{1,2}月\\d{1,2}日(快速上涨|快速回调|涨停|": 4,
+            "noise:融资净(买入|卖出)": 2,
+            "dedup": 0,
+            "out_of_window": 16
+          },
+          "research": {
+            "dedup": 0,
+            "out_of_window": 10
+          }
+        },
+        "date_filter_ms": 0,
+        "relevance_ms": 0,
+        "llm_ms": 1,
+        "scoring_ms": 0
+      },
+      "top_news": [
+        {
+          "date": "2026-06-11",
+          "title": "厦门钨业:厦门钨业关于使用闲置募集资金进行现金管理部分到期赎回的公告",
+          "content": "一般项目:选矿;矿物洗选加工;金属矿石销售;常用有色金属冶炼;稀有稀土金属冶炼;金属材料制造;金属材料销售;有色金属合金制造;有色金属合金销售;锻件及粉末冶金制品制造;锻件及粉末冶金制品销售;金属丝绳及其制品销售;新型陶瓷材料销售;特种陶瓷制品制造;特种陶瓷制品销售;高性能有色金属及合金材料销售;表面功能材料销售;新型金属功能材料销售;金属基复合材料和陶瓷基复合材料销售;稀土功能材料销售;磁性材料生产;磁性材料销售;金属切削加工服务;金属工具制造;金属工具销售;储能技术服务;新兴能源技术研发;机械设备研发;机械设备销售;专用设备制造(不含许可类专业设备制造);冶金专用设备制造;冶金专用设备销售;金属切削机床制造;金属切削机床销售;金属加工机械制造;金属成形机床制造;矿山机械制造;通用设备制造(不含特种设备制造);机床功能部件及附件销售;智能基础制造装备销售;互联网销售(除销售需要许可的商品);模具制造;模具销售;以自有资金从事投资活动;新材料技术研发;新材料技术推广服务;技术服务、技术开发、技术咨询、技术交流、技术转让、技术推广;技术推广服务;资源再生利用技术研发;再生资源销售;货物进出口;技术进出口;软件开发;软件销售;软件外包服务;人工智能基础软件开发;信息技术咨询服务;信息咨询服务(不含许可类信息咨询服务);网络技术服务;企业管理咨询;法律咨询(不含依法须律师事务所执业许可的业务);人力资源服务(不含职业中介活动、劳务派遣服务);电子专用材料制造;电子专用材料研发;电子专用材料销售;电工仪器仪表制造;电工仪器仪表销售;机械电气设备销售;机械电气设备制造;电子元器件制造;电子元器件批发;电机及其控制系统研发;电机制造;电动机制造;发电机及发电机组制造;输配电及控制设备制造;微特电机及组件销售;伺服控制机构销售;特殊作业机器人制造;工业机器人安装、维修;服务消费机器人制造;智能机器人销售;工业机器人销售;智能基础制造装备制造;物料搬运装备制造;物料搬运装备销售;第二类医疗器械销售。(除依法须经批准的项目外,凭营业执照依法自主开展经营活动)许可项目:非煤矿山矿产资源开采;检验检测服务;第二类医疗器械生产。(依法须经批准的项目,经相关部门批准后方可开展经营活动,具体经营项目以相关部门批准文件或许可证件为准)\n郑重声明：东方财富网发布此信息的目的在于传播更多信息，与本站立场无关。东方财富网不保证该信息（包括但不限于文字、视频、音频、数据及图表）全部或者部分内容的准确性、真实性、完整性、有效性、及时性、原创性等。相关信息并未经过本网站证实，不对您构成任何投资建议，据此操作，风险自担。",
+          "type": "行业",
+          "sentiment": 0,
+          "weight": 1,
+          "final_weight": 0.54,
+          "source_authority": 4.5,
+          "recency_factor": 0.6,
+          "source": "东方财富公告",
+          "llm_reviewed": true,
+          "llm_confidence": 0.1,
+          "llm_is_real_catalyst": false,
+          "llm_reasoning": "仅为闲置资金现金管理到期赎回，无实质影响"
+        },
+        {
+          "date": "2026-06-10",
+          "title": "厦门钨业关于使用闲置募集资金进行现金管理部分到期赎回的公告",
+          "content": "证券代码：600549 \t证券简称：厦门钨业 \t公告编号：临-2026-072\n厦门钨业股份有限公司\n关于使用闲置募集资金进行现金管理部分到期赎回\n的公告\n本公司董事会及全体董事保证本公告内容不存在任何虚假记载、误导性陈述\n或者重大遗漏，并对其内容的真实性、准确性和完整性承担法律责任。\n厦门钨业股份有限公司（以下简称“公司”）于 \t2025 \t年 \t11 \t月 \t25 \t日召开第\n十届董事会第二十一次会议，审议通过了《关于公司及权属公司继续使用部分闲\n置募集资金进行现金管理的议案》，同意公司使用额度不超过人民币 \t21 \t亿元的\n闲置募集资金进行现金管理，用于购买安全性高、流动性好、单项产品期限最长\n不超过 \t12 \t个月的各类保本型现金管理产品，包括存款、理财产品或中国证监会\n认可的其他投资品种等（包括但不限于结构性存款、大额存单、国债逆回购、银\n行理财产品等），且该等投资产品不得用于质押，不用于以证券投资为目的的投\n资行为。本次现金管理决议的有效期限自公司董事会审议通过之日起的 \t12 \t个月\n内有效，在上述额度和期限范围内，资金可以滚动使用。具体内容详见公司于\n2025 \t年 \t11 \t月 \t26 \t日披露于上海证券交易所网站（www.sse.com.cn）的《关于公\n司及权属公司继续使用部分闲置募集资金进行现金管理的公告》\t（临-2025-107）。\n一、本次使用闲置募集资金进行现金管理到期赎回情况\n2026 \t年 \t4 \t月 \t30 \t日和 \t2026 \t年 \t5 \t月 \t8 \t日，公司购买了兴业银行股份有限公司\n发行的“7 \t天通知存款”和“人民币结构性存款产品”。上述产品已于近日到期\n赎回，收回本金 \t6,600.00 \t万元，获得收益 \t8.88 \t万元，具体情况如下：\n受托方名称 \t产品名称\n金额\n（万\n元）\n收益类\n型\n产品起\n息日\n产品到\n期日\n预期年\n化收益\n率\n赎回情况\n实际赎\n回日\n赎回金额\n（万元）\n实际收益\n（万元）\n兴业银行股\n份有限公司\n7 \t天通知存\n款 800.00 保本固\n定收益\n2026 \t年 \t4\n月 \t30 \t日\n2026 \t年 \t6\n月 \t8 \t日 0.75% 2026 \t年 \t6\n月 \t8 \t日 800.00 \t0.65\n兴业银行股\n份有限公司\n人民币结构\n性存款产品 1,700.00 保本浮\n动收益\n2026 \t年 \t5\n月 \t6 \t日\n2026 \t年 \t6\n月 \t8 \t日 1%-1.95% 2026 \t年 \t6\n月 \t8 \t日 1,700.00 \t3.00\n兴业银行股\n份有限公司\n7 \t天通知存\n款 800.00 保本固\n定收益\n2026 \t年 \t5\n月 \t8 \t日\n2026 \t年 \t6\n月 \t10 \t日 0.75% 2026 \t年 \t6\n月 \t10 \t日 800.00 \t0.53\n\n-- 1 of 5 --\n\n兴业银行股\n份有限公司\n人民币结构\n性存款产品 1,800.00 保本浮\n动收益\n2026 \t年 \t5\n月 \t11 \t日\n2026 \t年 \t6\n月 \t10 \t日 1%-1.9% 2026 \t年 \t6\n月 \t10 \t日 1,800.00 \t2.81\n兴业银行股\n份有限公司\n7 \t天通知存\n款 500.00 保本固\n定收益\n2026 \t年 \t5\n月 \t8 \t日\n2026 \t年 \t6\n月 \t10 \t日 0.75% 2026 \t年 \t6\n月 \t10 \t日 500.00 \t0.33\n兴业银行股\n份有限公司\n人民币结构\n性存款产品 1,000.00 保本浮\n动收益\n2026 \t年 \t5\n月 \t11 \t日\n2026 \t年 \t6\n月 \t10 \t日 1%-1.9% 2026 \t年 \t6\n月 \t10 \t日 1,000.00 \t1.56\n以上产品赎回后，本金及收益均已划至公司募集资金专户，公司将在授权的\n期限和额度内再次开展现金管理。\n二、截至本公告日，公司最近12个月使用暂时闲置募集资金进行现金管理\n的情况\n截至本公告日，公司最近12个月使用暂时闲置募集资金进行现金管理的情\n况如下：\n序\n号 现金管理类型 实际投入金额\n（万元）\n实际收回本金\n（万元）\n实际收益\n（万元）\n尚未收回本金\n金额（万元）\n1 \t农业银行结构性存款 \t40,000.00 \t40,000.00 \t151.41 \t0\n2 \t工商银行结构性存款 \t50,000.00 \t50,000.00 \t544.11 \t0\n3 \t兴业银行 \t7 \t天通知存款 \t5,000.00 \t5,000.00 \t34.58 \t0\n4 \t兴业银行结构性存款 \t25,000.00 \t25,000.00 \t501.78 \t0\n5 \t农业银行结构性存款 \t10,000.00 \t10,000.00 \t34.15 \t0\n6 \t兴业银行结构性存款 \t16,500.00 \t16,500.00 \t273.97 \t0\n7 \t兴业银行 \t7 \t天通知存款 \t3,500.00 \t3,500.00 \t20.13 \t0\n8 \t农业银行结构性存款 \t9,000.00 \t9,000.00 \t15.83 \t0\n9 \t农业银行结构性存款 \t15,000.00 \t15,000.00 \t13.17 \t0\n10 \t农业银行结构性存款 \t7,000.00 \t7,000.00 \t8.10 \t0\n11 \t兴业银行 \t7 \t天通知存款 \t1,000.00 \t1,000.00 \t3.81 \t0\n12 \t兴业银行结构性存款 \t6,500.00 \t6,500.00 \t70.66 \t0\n13 \t兴业银行 \t7 \t天通知存款 \t800.00 \t800.00 \t0.64 \t0\n14 \t兴业银行结构性存款 \t3,000.00 \t3,000.00 \t5.25 \t0\n15 \t兴业银行结构性存款 \t1,600.00 \t1,600.00 \t5.39 \t0\n16 \t兴业银行 \t7 \t天通知存款 \t400.00 \t400.00 \t0.59 \t0\n17 \t兴业银行 \t7 \t天通知存款 \t800.00 \t800.00 \t2.10 \t0\n18 \t兴业银行结构性存款 \t3,200.00 \t3,200.00 \t21.89 \t0\n19 \t兴业银行 \t7 \t天通知存款 \t800.00 \t800.00 \t3.62 \t0\n\n-- 2 of 5 --\n\n20 \t兴业银行结构性存款 \t3,200.00 \t3,200.00 \t38.65 \t0\n21 \t兴业银行 \t7 \t天通知存款 \t3,000.00 \t3,000.00 \t13.56 \t0\n22 \t兴业银行结构性存款 \t12,000.00 \t12,000.00 \t144.93 \t0\n23 \t兴业银行 \t7 \t天通知存款 \t200.00 \t200.00 \t0.64 \t0\n24 \t兴业银行结构性存款 \t1,800.00 \t1,800.00 \t14.34 \t0\n25 \t建设银行结构性存款 \t42,000.00 \t42,000.00 \t120.69 \t0\n26 \t建设银行结构性存款 \t7,000.00 \t7,000.00 \t39.25 \t0\n27 \t建设银行结构性存款 \t2,000.00 \t2,000.00 \t11.21 \t0\n28 \t农业银行结构性存款 \t9,000.00 \t9,000.00 \t74.59 \t0\n29 \t农业银行结构性存款 \t15,000.00 \t15,000.00 \t106.85 \t0\n30 \t兴业银行 \t7 \t天通知存款 \t3,500.00 \t3,500.00 \t5.40 \t0\n31 \t兴业银行结构性存款 \t16,500.00 \t16,500.00 \t55.77 \t0\n32 \t农业银行结构性存款 \t6,000.00 \t6,000.00 \t7.40 \t0\n33 \t兴业银行大额存单 \t3,500.00 \t3,500.00 \t22.75 \t0\n34 \t兴业银行结构性存款 \t4,000.00 \t4,000.00 \t38.89 \t0\n35 \t兴业银行 \t7 \t天通知存款 \t3,000.00 \t3,000.00 \t3.00 \t0\n36 \t兴业银行结构性存款 \t32,000.00 \t32,000.00 \t63.12 \t0\n37 \t农业银行结构性存款 \t7,000.00 \t7,000.00 \t20.14 \t0\n38 \t兴业银行 \t7 \t天通知存款 \t5,000.00 \t5,000.00 \t2.08 \t0\n39 \t兴业银行结构性存款 \t25,000.00 \t25,000.00 \t20.82 \t0\n40 \t工商银行结构性存款 \t7,000.00 \t7,000.00 \t23.01 \t0\n41 \t工商银行结构性存款 \t5,000.00 \t5,000.00 \t36.00 \t0\n42 \t工商银行结构性存款 \t36,000.00 \t/ \t/ \t36,000.00\n43 \t兴业银行结构性存款 \t800.00 \t/ \t/ \t800.00\n44 \t兴业银行大额存单 \t1,200.00 \t/ \t/ \t1,200.00\n45 \t兴业银行 \t7 \t天通知存款 \t1,400.00 \t1,400.00 \t1.95 \t0\n46 \t兴业银行结构性存款 \t2,600.00 \t2,600.00 \t9.03 \t0\n47 \t兴业银行大额存单 \t7,800.00 \t/ \t/ \t7,800.00\n48 \t兴业银行结构性存款 \t5,200.00 \t/ \t/ \t5,200.00\n49 \t兴业银行 \t7 \t天通知存款 \t17,500.00 \t17,500.00 \t23.70 \t0\n50 \t兴业银行结构性存款 \t32,500.00 \t32,500.00 \t109.41 \t0\n51 \t农业银行结构性存款 \t3,600.00 \t3,600.00 \t18.53 \t0\n52 \t农业银行结构性存款 \t49,000.00 \t49,000.00 \t252.16 \t0\n\n-- 3 of 5 --\n\n53 \t农业银行结构性存款 \t2,500.00 \t2,500.00 \t3.48 \t0\n54 \t农业银行结构性存款 \t3,000.00 \t3,000.00 \t11.08 \t0\n55 \t农业银行结构性存款 \t2,900.00 \t2,900.00 \t2.11 \t0\n56 \t兴业银行结构性存款 \t3,000.00 \t/ \t/ \t3,000.00\n57 \t兴业银行大额存单 \t4,200.00 \t/ \t/ \t4,200.00\n58 \t兴业银行 \t7 \t天通知存款 \t400.00 \t400.00 \t0.53 \t0\n59 \t兴业银行结构性存款 \t700.00 \t700.00 \t2.32 \t0\n60 \t兴业银行 \t7 \t天通知存款 \t14,000.00 \t14,000.00 \t5.25 \t0\n61 \t兴业银行结构性存款 \t36,000.00 \t36,000.00 \t30.18 \t0\n62 \t兴业银行 \t7 \t天通知存款 \t1,400.00 \t/ \t/ \t1,400.00\n63 \t兴业银行结构性存款 \t2,600.00 \t/ \t/ \t2,600.00\n64 \t兴业银行 \t7 \t天通知存款 \t1,800.00 \t1,800.00 \t1.73 \t0\n65 \t兴业银行结构性存款 \t3,200.00 \t3,200.00 \t7.69 \t0\n66 \t兴业银行 \t7 \t天通知存款 \t800.00 \t/ \t/ \t800.00\n67 \t兴业银行结构性存款 \t4,200.00 \t/ \t/ \t4,200.00\n68 \t农业银行结构性存款 \t44,600.00 \t/ \t/ \t44,600.00\n69 \t农业银行结构性存款 \t3,000.00 \t3,000.00 \t5.75 \t0\n70 \t兴业银行 \t7 \t天通知存款 \t1,600.00 \t/ \t/ \t1,600.00\n71 \t兴业银行结构性存款 \t2,900.00 \t/ \t/ \t2,900.00\n72 \t兴业银行 \t7 \t天通知存款 \t800.00 \t800.00 \t0.65 \t0\n73 \t兴业银行结构性存款 \t1,700.00 \t1,700.00 \t3.00 \t0\n74 \t兴业银行 \t7 \t天通知存款 \t7,500.00 \t/ \t/ \t7,500.00\n75 \t兴业银行结构性存款 \t14,500.00 \t/ \t/ \t14,500.00\n76 \t兴业银行 \t7 \t天通知存款 \t4,000.00 \t/ \t/ \t4,000.00\n77 \t兴业银行结构性存款 \t12,000.00 \t/ \t/ \t12,000.00\n78 \t建设银行结构性存款 \t9,600.00 \t/ \t/ \t9,600.00\n79 \t兴业银行 \t7 \t天通知存款 \t800.00 \t800.00 \t0.53 \t0\n80 \t兴业银行结构性存款 \t1,800.00 \t1,800.00 \t2.81 \t0\n81 \t兴业银行 \t7 \t天通知存款 \t500.00 \t500.00 \t0.33 \t0\n82 \t兴业银行结构性存款 \t1,000.00 \t1,000.00 \t1.56 \t0\n83 \t兴业银行 \t7 \t天通知存款 \t1,200.00 \t/ \t/ \t1,200.00\n84 \t兴业银行结构性存款 \t3,600.00 \t/ \t/ \t3,600.00\n合计 \t3,068.05 \t168,700.00\n\n-- 4 of 5 --\n\n最近 \t12 \t个月内单日最高投入金额(万元) \t217,300.00\n最近 \t12 \t个月内单日最高投入金额/最近一年净资产（%） \t12.63\n最近 \t12 \t个月内单日最高投入金额/最近一年净利润（%） \t94.09\n募集资金总现金管理额度（万元） \t210,000.00\n目前已使用的现金管理额度（万元） \t168,700.00\n尚未使用的现金管理额度（万元） \t41,300.00\n注 \t1：上表中“尚未收回本金金额”为未到期的现金管理金额；“单日最高投入金额”为现金\n管理单日最高余额；“最近一年净资产”为 \t2025 \t年经审计合并报表归母净资产；“最近一年\n净利润”为 \t2025 \t年经审计合并报表归母净利润。\n注 \t2：上表中“募集资金总现金管理额度”和“尚未使用的现金管理额度”为 \t2025 \t年 \t11 \t月\n25 \t日公司第十届董事会第二十一次会议最新审议额度，在此之前董事会审议授权额度为 \t22\n亿元。\n截至本公告日，公司使用暂时闲置募集资金进行现金管理的余额为人民币\n168,700 \t万元。公司使用闲置募集资金进行现金管理的单日最高余额及使用期限\n均未超过公司董事会授权范围。公司使用部分闲置募集资金购买的产品不存在逾\n期未收回的情况。\n特此公告。\n厦门钨业股份有限公司董事会\n2026 \t年 \t6 \t月 \t11 \t日\n\n-- 5 of 5 --",
+          "type": "行业",
+          "sentiment": 0,
+          "weight": 1,
+          "final_weight": 0.5,
+          "source_authority": 5,
+          "recency_factor": 0.5,
+          "source": "巨潮资讯",
+          "llm_reviewed": true,
+          "llm_confidence": 0.1,
+          "llm_is_real_catalyst": false,
+          "llm_reasoning": "同上，常规资金管理操作，无催化作用"
+        },
+        {
+          "date": "2026-06-09",
+          "title": "厦门钨业:厦门钨业2026年第三次临时股东会会议资料",
+          "content": "一般项目:选矿;矿物洗选加工;金属矿石销售;常用有色金属冶炼;稀有稀土金属冶炼;金属材料制造;金属材料销售;有色金属合金制造;有色金属合金销售;锻件及粉末冶金制品制造;锻件及粉末冶金制品销售;金属丝绳及其制品销售;新型陶瓷材料销售;特种陶瓷制品制造;特种陶瓷制品销售;高性能有色金属及合金材料销售;表面功能材料销售;新型金属功能材料销售;金属基复合材料和陶瓷基复合材料销售;稀土功能材料销售;磁性材料生产;磁性材料销售;金属切削加工服务;金属工具制造;金属工具销售;储能技术服务;新兴能源技术研发;机械设备研发;机械设备销售;专用设备制造(不含许可类专业设备制造);冶金专用设备制造;冶金专用设备销售;金属切削机床制造;金属切削机床销售;金属加工机械制造;金属成形机床制造;矿山机械制造;通用设备制造(不含特种设备制造);机床功能部件及附件销售;智能基础制造装备销售;互联网销售(除销售需要许可的商品);模具制造;模具销售;以自有资金从事投资活动;新材料技术研发;新材料技术推广服务;技术服务、技术开发、技术咨询、技术交流、技术转让、技术推广;技术推广服务;资源再生利用技术研发;再生资源销售;货物进出口;技术进出口;软件开发;软件销售;软件外包服务;人工智能基础软件开发;信息技术咨询服务;信息咨询服务(不含许可类信息咨询服务);网络技术服务;企业管理咨询;法律咨询(不含依法须律师事务所执业许可的业务);人力资源服务(不含职业中介活动、劳务派遣服务);电子专用材料制造;电子专用材料研发;电子专用材料销售;电工仪器仪表制造;电工仪器仪表销售;机械电气设备销售;机械电气设备制造;电子元器件制造;电子元器件批发;电机及其控制系统研发;电机制造;电动机制造;发电机及发电机组制造;输配电及控制设备制造;微特电机及组件销售;伺服控制机构销售;特殊作业机器人制造;工业机器人安装、维修;服务消费机器人制造;智能机器人销售;工业机器人销售;智能基础制造装备制造;物料搬运装备制造;物料搬运装备销售;第二类医疗器械销售。(除依法须经批准的项目外,凭营业执照依法自主开展经营活动)许可项目:非煤矿山矿产资源开采;检验检测服务;第二类医疗器械生产。(依法须经批准的项目,经相关部门批准后方可开展经营活动,具体经营项目以相关部门批准文件或许可证件为准)\n郑重声明：东方财富网发布此信息的目的在于传播更多信息，与本站立场无关。东方财富网不保证该信息（包括但不限于文字、视频、音频、数据及图表）全部或者部分内容的准确性、真实性、完整性、有效性、及时性、原创性等。相关信息并未经过本网站证实，不对您构成任何投资建议，据此操作，风险自担。",
+          "type": "行业",
+          "sentiment": 0,
+          "weight": 1,
+          "final_weight": 0.5,
+          "source_authority": 4.5,
+          "recency_factor": 0.42,
+          "source": "东方财富公告",
+          "llm_reviewed": true,
+          "llm_confidence": 0.1,
+          "llm_is_real_catalyst": false,
+          "llm_reasoning": "股东会会议资料，内容未涉及业绩或重大变化"
+        },
+        {
+          "date": "2026-06-08",
+          "title": "厦门钨业2026年第三次临时股东会会议资料",
+          "content": "2026 \t年第三次临时股东会会议资料\n厦门钨业股份有限公司\n2026 \t年第三次临时股东会\n会议资料\n董秘办编制\n2026 \t年 \t6 \t月\n\n-- 1 of 17 --\n\n2026 \t年第三次临时股东会会议资料\n目 \t录\n关于召开 \t2026 \t年第三次临时股东会的通知 \t............................................................. \t1\n议案一：关于控股子公司金龙稀土拟申请向不特定合格投资者公开发行股票并在\n北京证券交易所上市的议案 \t....................................................................................... \t8\n议案二：关于选举第十届董事会非独立董事的议案 \t............................................. \t14\n\n-- 2 of 17 --\n\n2026 \t年第三次临时股东会会议资料\n1 \t/ \t15\n厦门钨业股份有限公司\n关于召开 \t2026 \t年第三次临时股东会的通知\n一、 \t召开会议的基本情况\n(一) \t股东会类型和届次\n2026年第三次临时股东会\n(二) \t股东会召集人：董事会\n(三) \t投票方式：本次股东会所采用的表决方式是现场投票和网络投票相\n结合的方式\n(四) \t现场会议召开的日期、时间和地点\n召开的日期时间：2026 \t年 \t6 \t月 \t16 \t日 \t14 \t点 \t30 \t分\n召开地点：厦门市思明区展鸿路 \t81 \t号翔业国际大厦 \t21 \t层本公司 \t1 \t号会议室\n(五) \t网络投票的系统、起止日期和投票时间。\n网络投票系统：上海证券交易所股东会网络投票系统\n网络投票起止时间：自2026 \t年 \t6 \t月 \t16 \t日\n至2026 \t年 \t6 \t月 \t16 \t日\n采用上海证券交易所网络投票系统，通过交易系统投票平台的投票时间为股\n东会召开当日的交易时间段，即 \t9:15-9:25，9:30-11:30，13:00-15:00；通过互联\n网投票平台的投票时间为股东会召开当日的 \t9:15-15:00。\n(六) \t融资融券、转融通、约定购回业务账户和沪股通投资者的投票程序\n涉及融资融券、转融通业务、约定购回业务相关账户以及沪股通投资者的投\n票，应按照《上海证券交易所上市公司自律监管指引第 \t1 \t号——规范运作》等有\n关规定执行。\n(七) \t涉及公开征集股东投票权\n不涉及\n二、 \t会议审议事项\n本次股东会审议议案及投票股东类型\n序号 \t议案名称 \t投票股东类型\n\n-- 3 of 17 --\n\n2026 \t年第三次临时股东会会议资料\n2 \t/ \t15\nA \t股股东\n非累积投票议案\n1 《关于控股子公司金龙稀土拟申请向不特定合格投资\n者公开发行股票并在北京证券交易所上市的议案》 √\n累积投票议案\n2.00 \t关于选举第十届董事会非独立董事的议案 \t应选董事（1）人\n2.01 \t李翔 \t√\n（一） \t各议案已披露的时间和披露媒体\n以上议案已经公司第十届董事会第二十九次会议审议通过，相关公告已于\n2026 \t年 \t5 \t月 \t30 \t日刊载于上海证券交易所网站及《中国证券报》《上海证券报》。\n（二） \t特别决议议案：议案 \t1。\n（三） \t对中小投资者单独计票的议案：议案 \t1、议案 \t2。\n（四） \t涉及关联股东回避表决的议案：不涉及。\n（五） \t涉及优先股股东参与表决的议案：不涉及。\n三、 \t股东会投票注意事项\n(一) \t本公司股东通过上海证券交易所股东会网络投票系统行使表决权的，\n既可以登陆交易系统投票平台（通过指定交易的证券公司交易终端）进行投票，\n也可以登陆互联网投票平台（网址：vote.sseinfo.com）进行投票。首次登陆互联\n网投票平台进行投票的，投资者需要完成股东身份认证。具体操作请见互联网投\n票平台网站说明。\n(二) \t持有多个股东账户的股东，可行使的表决权数量是其名下全部股东\n账户所持相同类别普通股和相同品种优先股的数量总和。\n持有多个股东账户的股东通过本所网络投票系统参与股东会网络投票的，可\n以通过其任一股东账户参加。投票后，视为其全部股东账户下的相同类别普通股\n和相同品种优先股均已分别投出同一意见的表决票。\n持有多个股东账户的股东，通过多个股东账户重复进行表决的，其全部股东\n账户下的相同类别普通股和相同品种优先股的表决意见，分别以各类别和品种股\n票的第一次投票结果为准。\n(三) \t股东所投选举票数超过其拥有的选举票数的，或者在差额选举中投\n票超过应选人数的，其对该项议案所投的选举票视为无效投票。\n(四) \t同一表决权通过现场、本所网络投票平台或其他方式重复进行表决\n\n-- 4 of 17 --\n\n2026 \t年第三次临时股东会会议资料\n3 \t/ \t15\n的，以第一次投票结果为准。\n(五) \t股东对所有议案均表决完毕才能提交。\n(六) \t采用累积投票制选举董事和独立董事的投票方式，详见附件 \t2。\n四、 \t会议出席对象\n(一) \t股权登记日下午收市时在中国证券登记结算有限责任公司上海分公\n司登记在册的公司股东有权出席股东会（具体情况详见下表），并可以以书面形\n式委托代理人出席会议和参加表决。该代理人不必是公司股东。\n股份类别 \t股票代码 \t股票简称 \t股权登记日\nＡ股 \t600549 \t厦门钨业 \t2026/6/9\n(二) \t公司董事和高级管理人员。\n(三) \t公司聘请的律师。\n(四) \t其他人员\n五、 \t会议登记方法\n为便于会议安排，请有意参加的股东提前办理会议登记。\n（一）登记手续：符合上述条件的国有股、法人股股东持营业执照复印件、\n法定代表人授权委托书、出席人身份证办理登记手续；符合上述条件的个人股东\n持本人身份证办理登记手续；委托代理人持授权委托书、代理人本人身份证、委\n托人身份证复印件办理登记手续。股东可直接到公司或通过信函或传真方式办理\n登记。\n（二）登记时间：2026 \t年 \t6 \t月 \t10 \t日-6 \t月 \t15 \t日期间（工作日上午 \t9:00-12:00，\n下午 \t14:00-17:00）。\n（三）登记地点：本公司董秘办公室\n地址：厦门市思明区展鸿路 \t81 \t号翔业国际大厦 \t21 \t层董秘办公室\n邮编：361009\n联系人：苏丽玉\n联系电话：0592-5363856 \t传真：0592-5363857\n六、 \t其他事项\n（一）本次股东会现场会议的会期半天，拟出席现场会议的股东自行安排食\n宿、交通费用。\n\n-- 5 of 17 --\n\n2026 \t年第三次临时股东会会议资料\n4 \t/ \t15\n（二）出席现场会议人员请于会议开始前半个小时至会议地点，并携带身份\n证明、授权委托书等原件，以便验证入场。\n特此公告。\n厦门钨业股份有限公司董事会\n2026 \t年 \t5 \t月 \t30 \t日\n附件 \t1：授权委托书\n附件 \t2：采用累积投票制选举董事和独立董事的投票方式说明\n\n-- 6 of 17 --\n\n2026 \t年第三次临时股东会会议资料\n5 \t/ \t15\n附件 \t1：授权委托书\n授权委托书\n厦门钨业股份有限公司：\n兹委托 \t先生（女士）代表本单位（或本人）出席2026 \t年 \t6 \t月 \t16\n日召开的贵公司2026年第三次临时股东会，并代为行使表决权。\n委托人持普通股数：\n委托人持优先股数：\n委托人股东账户号：\n序号 \t非累积投票议案名称 \t同意 \t反对 \t弃权\n1\n《关于控股子公司金龙稀土拟申请向不特\n定合格投资者公开发行股票并在北京证券\n交易所上市的议案》\n序号 \t累积投票议案名称 \t投票数\n2.00 \t关于选举第十届董事会非独立董事的议案 \t应选董事（1）人\n2.01 \t李翔\n委托人签名（盖章）： \t受托人签名：\n委托人身份证号/ \t受托人身份证号/\n统一社会信用代码： \t统一社会信用代码：\n委托日期： \t年 \t月 \t日\n备注：委托人应当在委托书中“同意”、“反对”或“弃权”意向中选择一个并\n打“√”，对于委托人在本授权委托书中未作具体指示的，受托人有权按自己的\n意愿进行表决。\n\n-- 7 of 17 --\n\n2026 \t年第三次临时股东会会议资料\n6 \t/ \t15\n附件 \t2：采用累积投票制选举董事和独立董事的投票方式说明\n一、股东会董事候选人选举、独立董事候选人选举作为议案组分别进行编号。\n投资者应当针对各议案组下每位候选人进行投票。\n二、申报股数代表选举票数。对于每个议案组，股东每持有一股即拥有与该\n议案组下应选董事人数相等的投票总数。如某股东持有上市公司 \t100 \t股股票，该\n次股东会应选董事 \t10 \t名，董事候选人有 \t12 \t名，则该股东对于董事会选举议案\n组，拥有 \t1000 \t股的选举票数。\n三、股东应当以每个议案组的选举票数为限进行投票。股东根据自己的意愿\n进行投票，既可以把选举票数集中投给某一候选人，也可以按照任意组合投给不\n同的候选人。投票结束后，对每一项议案分别累积计算得票数。\n四、示例：\n某上市公司召开股东会采用累积投票制对董事会进行改选，应选董事 \t5 \t名，\n董事候选人有 \t6 \t名；应选独立董事 \t2 \t名，独立董事候选人有 \t3 \t名。需投票表决的\n事项如下：\n累积投票议案\n4.00 \t关于选举董事的议案 \t投票数\n4.01 \t例：陈××\n4.02 \t例：赵××\n4.03 \t例：蒋××\n…… \t……\n4.06 \t例：宋××\n5.00 \t关于选举独立董事的议案 \t投票数\n5.01 \t例：张××\n5.02 \t例：王××\n5.03 \t例：杨××\n某投资者在股权登记日收盘时持有该公司 \t100 \t股股票，采用累积投票制，他\n（她）在议案 \t4.00“关于选举董事的议案”就有 \t500 \t票的表决权，在议案 \t5.00“关\n于选举独立董事的议案”有 \t200 \t票的表决权。\n该投资者可以以 \t500 \t票为限，对议案 \t4.00 \t按自己的意愿表决。他（她）既可\n以把 \t500 \t票集中投给某一位候选人，也可以按照任意组合分散投给任意候选人。\n如表所示：\n序号 \t议案名称 投票票数\n方式一 \t方式二 \t方式三 \t方式…\n4.00 \t关于选举董事的议案 \t- \t- \t- \t-\n\n-- 8 of 17 --\n\n2026 \t年第三次临时股东会会议资料\n7 \t/ \t15\n4.01 \t例：陈×× \t500 \t100 \t100\n4.02 \t例：赵×× \t0 \t100 \t50\n4.03 \t例：蒋×× \t0 \t100 \t200\n…… \t…… \t… \t… \t…\n4.06 \t例：宋×× \t0 \t100 \t50\n\n-- 9 of 17 --\n\n2026 \t年第三次临时股东会会议资料\n8 \t/ \t15\n厦门钨业股份有限公司\n议案一：关于控股子公司金龙稀土拟申请向不特定合\n格投资者公开发行股票并在北京证券交易所上市的\n议案\n各位股东及股东代表：\n厦门钨业股份有限公司（以下简称“公司”）于 \t2026 \t年 \t5 \t月 \t29 \t日召开第十\n届董事会第二十九次会议，审议通过了《关于控股子公司金龙稀土拟申请向不特\n定合格投资者公开发行股票并在北京证券交易所上市的议案》，同意公司控股子\n公司福建省金龙稀土股份有限公司（以下简称“金龙稀土”）申请向不特定合格\n投资者公开发行股票并在北京证券交易所上市（以下简称“本次发行”）。\n一、金龙稀土基本情况\n1、公司名称：福建省金龙稀土股份有限公司\n2、公司类型：其他股份有限公司（非上市）\n3、成立日期：2000 \t年 \t3 \t月 \t3 \t日\n4、注册地址：福建省龙岩市长汀县策武镇汀州大道南路 \t31 \t号\n5、法定代表人：钟可祥\n6、注册资本：250,168.00 \t万元\n7、经营范围：稀土化合物及稀土金属产品、发光材料、钕铁硼磁铁合金、\n钕铁硼磁体以及其他稀土深加工产品、钛酸钡及其相应的电子材料、新材料生产、\n加工与销售；稀土高科技应用产品及相应设备的开发、生产与销售；经营本企业\n生产所需的原辅料、仪器仪表、机械设备、零配件及技术的进口业务（国家限定\n公司经营和国家禁止出口的商品除外）；技术咨询；电镀、电镀加工；电镀、检\n测等化工原料（除危险化学品）销售；稀土、环境、化工材料、废料及产品的检\n验；稀土类检测技术咨询及培训服务。（依法须经批准的项目，经相关部门批准\n后方可开展经营活动）\n8、股权结构\n序号 \t股东名称 \t持股数量（股） \t持股比例\n1 \t厦门钨业股份有限公司 \t1,631,095,360 \t65.2000%\n\n-- 10 of 17 --\n\n2026 \t年第三次临时股东会会议资料\n9 \t/ \t15\n序号 \t股东名称 \t持股数量（股） \t持股比例\n2 \t福建省冶控私募基金管理有限公司 \t137,592,400 \t5.5000%\n3 \t汀龙稀材（长汀）投资合伙企业（有限合伙） \t107,422,240 \t4.2940%\n4 \t福建省海丝一号股权投资有限公司 \t100,067,200 \t4.0000%\n5 \t中国北方稀土（集团）高科技股份有限公司 \t75,050,400 \t3.0000%\n6 \t嘉兴颀安企业管理合伙企业（有限合伙） \t75,050,400 \t3.0000%\n7 \t比亚迪股份有限公司 \t75,050,400 \t3.0000%\n8 \t长汀县国有投资集团有限公司 \t62,542,000 \t2.5000%\n9 创合鑫材（厦门）制造业转型升级基金合伙企业\n（有限合伙） 50,033,600 \t2.0000%\n10 \t嘉泰绿能（长汀）投资合伙企业（有限合伙） \t50,033,600 \t2.0000%\n11 \t汀润（长汀）投资合伙企业（有限合伙） \t38,171,695 \t1.5258%\n12 \t厦门创新兴科股权投资合伙企业（有限合伙） \t25,016,800 \t1.0000%\n13 \t汀鹭稀材（长汀）投资合伙企业（有限合伙） \t21,039,988 \t0.8410%\n14 \t汀创（长汀）投资合伙企业（有限合伙） \t18,387,601 \t0.7350%\n15 \t汀茂（长汀）投资合伙企业（有限合伙） \t17,706,537 \t0.7078%\n16 \t汀荣（长汀）投资合伙企业（有限合伙） \t17,419,779 \t0.6963%\n合计 \t2,501,680,000 \t100.0000%\n9、最近两年的主要财务数据（金龙稀土合并口径）：\n单位：万元\n项目 \t2025 \t年 \t12 \t月 \t31 \t日 \t2024 \t年 \t12 \t月 \t31 \t日\n总资产 \t635,117.36 \t493,637.46\n负债 \t249,754.39 \t122,064.31\n净资产 \t385,362.97 \t371,573.15\n项目 \t2025 \t年 \t1-12 \t月 \t2024 \t年 \t1-12 \t月\n营业收入 \t579,118.86 \t429,832.32\n净利润 \t23,759.31 \t22,958.31\n10、其他情况说明：\n金龙稀土（证券代码：874673）于 \t2025 \t年 \t2 \t月 \t28 \t日起在全国中小企业股份\n转让系统（以下简称“全国股转系统”）基础层挂牌，并于 \t2026 \t年 \t4 \t月 \t17 \t日调\n入全国股转系统创新层；金龙稀土已按照有关法律、法规和规范性文件的规定建\n\n-- 11 of 17 --\n\n2026 \t年第三次临时股东会会议资料\n10 \t/ \t15\n立了规范的公司治理体系，制定并完善各项内部管理制度，并参照《中华人民共\n和国证券法》《北京证券交易所股票上市规则》等有关法律、法规和规范性文件\n对拟上市公司的要求进行规范运作，具备相应的规范运作能力。\n二、金龙稀土本次发行方案的主要内容\n1、发行股票种类：中国境内上市的人民币普通股。\n2、发行股票面值：每股面值为 \t1.00 \t元人民币。\n3、发行股数：本次发行均为新股，不涉及金龙稀土股东公开发售股份。金\n龙稀土拟向不特定合格投资者公开发行股票不超过 \t27,800 \t万股（含本数，未考\n虑超额配售选择权的情况下）；金龙稀土及主承销商可以根据具体发行情况择机\n采用超额配售选择权，采用超额配售选择权发行的股票数量不超过本次发行股票\n数量的 \t15%，即不超过 \t4,170 \t万股（含本数），全额行使超额配售选择权时，本\n次拟公开发行股票的数量不超过 \t31,970 \t万股。本次发行前金龙稀土总股本为\n250,168 \t万股，本次公开发行后公众股东持股比例不低于金龙稀土本次发行后总\n股本的 \t10.00%。最终发行数量及是否安排超额配售由金龙稀土董事会根据其股\n东会授权，按照国家法律法规和监管机构规定的条件及市场情况与主承销商协商\n确定。\n4、定价方式：通过金龙稀土和主承销商自主协商选择直接定价、合格投资\n者网上竞价或网下询价等中国证券监督管理委员会（以下简称中国证监会）及北\n京证券交易所认可的方式确定发行价格。最终定价方式由金龙稀土股东会授权其\n董事会与主承销商根据具体情况及监管要求协商确定。\n5、发行底价：以后续的询价或定价结果作为发行底价。最终发行价格由金\n龙稀土股东会授权其董事会与主承销商在发行时，综合考虑市场情况、金龙稀土\n成长性等因素或询价结果，并参考发行前一定期间的交易价格协商确定。\n6、发行对象：已开通北京证券交易所上市公司股票交易权限的合格投资者，\n法律、法规和规范性文件禁止认购的除外。\n7、发行方式：本次发行将采取网下向询价对象申购配售和网上向社会公众\n合格投资者定价发行相结合的发行方式，或证券监管部门认可的其他发行方式。\n8、募集资金用途：本次发行拟募集资金在扣除相关发行费用后的净额将按\n照轻重缓急顺序投入以下项目：\n\n-- 12 of 17 --\n\n2026 \t年第三次临时股东会会议资料\n11 \t/ \t15\n序号 \t募集资金投资项目 项目投资总额\n（万元）\n拟投入募集资金\n金额（万元）\n1 金龙稀土长汀基地高性能稀土永磁材料\n产线设备更新与智能化升级项目 43,357.24 \t35,500.00\n2\n建设年产 \t5000\n吨高性能钕铁硼\n磁性材料项目\n（二期）\n金龙稀土新材料（包\n头）有限公司年产\n5000 \t吨高性能钕铁硼\n磁性材料项目（二\n期）\n37,180.00 \t21,386.98\n金龙稀土新材料（包\n头）有限公司年产\n5000 \t吨高性能钕铁硼\n磁性材料项目（二\n期）（后处理部分）\n20,000.00 \t13,113.02\n合计 \t100,537.24 \t70,000.00\n在本次发行募集资金到位前，金龙稀土可根据上述项目的实施进度和资金需\n求，通过自有资金或自筹资金先行投入。在本次发行募集资金到位后，金龙稀土\n将按照有关募集资金使用管理的相关规定置换本次发行前已先期投入的资金。\n若本次实际募集资金净额不能满足上述项目所需资金，缺口部分将通过金龙\n稀土自有或自筹资金解决。若实际募集资金净额大于上述项目投资资金需求，则\n由金龙稀土将按照国家法律、法规及中国证监会和北京证券交易所的有关规定履\n行相应法定程序后合理使用。\n9、本次发行前滚存利润的分配方案：在本次发行完成后，由金龙稀土全体\n新老股东按照本次发行后的股权比例共同享有金龙稀土本次发行之日前所滚存\n的未分配利润。\n10、发行完成后股票上市的相关安排：本次发行完成后金龙稀土股票将在北\n京证券交易所上市，上市当日金龙稀土股票即在全国股转系统终止挂牌，并根据\n北京证券交易所的有关规定对本次股票在北京证券交易所上市后股票限售等事\n项作出安排。\n11、决议有效期限：有效期限为 \t12 \t个月，自金龙稀土股东会审议通过之日\n起计算。若金龙稀土本次发行于该有效期内取得中国证监会同意注册，则有效期\n自动延长至本次发行上市完成日。\n\n-- 13 of 17 --\n\n2026 \t年第三次临时股东会会议资料\n12 \t/ \t15\n12、其他事项说明：\n（1）承销方式：本次发行采用余额包销的方式承销；\n（2）战略配售：本次发行或将实施战略配售，具体配售比例、配售对象等\n由金龙稀土股东会授权其董事会与主承销商根据届时法律、法规和规范性文件的\n规定以及市场状况确定。\n金龙稀土本次发行上市在经金龙稀土股东会审议通过后尚需经北京证券交\n易所审核同意及中国证监会同意注册后方可实施。\n三、相关承诺事项\n公司将结合金龙稀土本次发行进度、相关法律法规及规范性文件要求出具\n《关于股份限售、持股及减持意向的承诺函》《关于福建省金龙稀土股份有限公\n司向不特定合格投资者公开发行股票并上市后稳定股价的预案及承诺》《关于避\n免同业竞争的承诺函》《关于减少和规范关联交易的承诺函》等相关承诺。\n四、金龙稀土本次发行对公司的影响\n金龙稀土本次申请向不特定合格投资者公开发行股票并在北京证券交易所\n上市，有利于进一步提升公司的产能和综合实力，进一步增强金龙稀土和公司的\n持续盈利能力，借力资本市场实现金龙稀土和公司整体价值提升，符合公司整体\n战略规划。本次发行完成后，公司仍为金龙稀土的控股股东，不影响公司对金龙\n稀土的实际控制权，并且公司及金龙稀土均能够继续保持独立性及持续经营能力。\n五、关于提请股东会授权董事会办理金龙稀土本次发行相关事宜\n为保障公司控股子公司金龙稀土本次发行相关事项的顺利推进，公司董事会\n拟提请股东会授权董事会及董事会授权代表全权办理金龙稀土本次发行的各项\n事宜，具体包括但不限于：\n1、授权公司董事会代表公司全权行使在金龙稀土中的股东权利，包括但不\n限于：就金龙稀土本次发行相关事宜作出决议，参与金龙稀土本次发行相关的股\n东会，签署发行上市相关决议、上市申报文件及声明承诺等文件，法律法规规定\n须由股东会作出决议的事项除外。\n2、授权公司董事会依据实际情况，对金龙稀土本次发行相关的各项事宜及\n方案进行调整、变更或补充完善，或决定终止本次发行。\n\n-- 14 of 17 --\n\n2026 \t年第三次临时股东会会议资料\n13 \t/ \t15\n3、授权公司董事会就金龙稀土本次发行的各项事宜，全权办理向中国证监\n会及其派出机构、北京证券交易所等相关部门提交申请等相关事宜，包括但不限\n于向北京证券交易所提交上市申请，就该上市申请事宜与北京证券交易所、证券\n监管机构进行沟通，并根据北京证券交易所及证券监管机构的要求，对金龙稀土\n本次发行涉及的各项申报文件、声明承诺等文件及相关事宜进行调整、变更或补\n充完善。\n4、授权公司董事会决定与金龙稀土本次发行各项事宜相关的其他具体事项，\n包括但不限于签署、递交、接收必要的协议和法律文件，依据适用的监管规则开\n展相关信息披露工作等。\n5、公司提请股东会同意公司董事会在获得上述授权的前提下，除非有关法\n律、法规、规章及规范性文件另有规定，将上述授权可转授予公司董事长以及董\n事长所授权之人士行使。\n6、授权公司董事长或其授权代表签署上述事项中需由公司出具的相关法律\n文件。\n上述授权的有效期为 \t12 \t个月，自本次发行经公司股东会审议通过之日起计\n算。若金龙稀土本次发行于该有效期内取得中国证监会同意注册的决定，授权期\n限则自动延长至本次发行上市完成。\n六、风险提示\n1、截至目前，金龙稀土向不特定合格投资者公开发行股票并在北京证券交\n易所上市的辅导工作正在按计划推进中。\n2、金龙稀土向不特定合格投资者公开发行股票并在北京证券交易所上市的\n申请存在无法通过北京证券交易所发行上市审核或中国证监会注册的风险。\n3、金龙稀土存在因公开发行失败而无法在北京证券交易所上市的风险。\n以上议案，请股东会审议。\n\n-- 15 of 17 --\n\n2026 \t年第三次临时股东会会议资料\n14 \t/ \t15\n厦门钨业股份有限公司\n议案二：关于选举第十届董事会非独立董事的议案\n各位股东及股东代表：\n公司于 \t2026 \t年 \t5 \t月 \t29 \t日召开了第十届董事会第二十九次会议，审议通过了\n《关于向股东会提名第十届董事会非独立董事候选人的议案》。会议同意公司董\n事会向股东会提名李翔先生为公司第十届董事会非独立董事候选人（简历见附\n件），并提请公司股东会选举，拟任任期自公司股东会审议通过之日起至第十届\n董事会任期届满之日止。\n以上议案，请股东会审议。\n\n-- 16 of 17 --\n\n2026 \t年第三次临时股东会会议资料\n15 \t/ \t15\n附件：董事候选人简历\n李翔，男，汉族，1967 \t年 \t10 \t月生，本科学历，教授级高级工程师。现任福\n建省工业控股集团有限公司党委委员、副总经理。\n截至目前，李翔未持有公司股票，除在公司间接控股股东单位任职以外，与\n公司控股股东及实际控制人、持有公司 \t5%以上的股东及其他董事、高级管理人\n员之间不存在关联关系。李翔未受到过中国证监会及其他有关部门的处罚和证券\n交易所惩戒，也不存在因涉嫌犯罪被司法机关立案侦查或者涉嫌违法违规被中国\n证监会立案稽查，尚未有明确结论的情形；不存在《上海证券交易所上市公司自\n律监管指引第 \t1 \t号——规范运作》第 \t3.2.2 \t条所规定的情形，亦未曾被中国证监\n会在证券期货市场违法失信信息公开查询平台或者被人民法院纳入失信被执行\n人名单。符合《公司法》等相关法律法规规定的任职条件。\n\n-- 17 of 17 --",
+          "type": "并购",
+          "sentiment": 1,
+          "weight": 3,
+          "final_weight": 2.52,
+          "source_authority": 5,
+          "recency_factor": 0.36,
+          "source": "巨潮资讯",
+          "llm_reviewed": true,
+          "llm_confidence": 0.8,
+          "llm_is_real_catalyst": true,
+          "llm_reasoning": "子公司金龙稀土拟申请北交所上市，属分拆上市利好"
+        }
+      ]
+    },
+    "SZSE:300037": {
+      "name": "300037",
+      "score": 59,
+      "score_raw": 2.27,
+      "score_components": {
+        "positive_weight_sum": 2.27,
+        "negative_weight_sum": 0,
+        "news_effective_count": 8,
+        "news_dropped_count": 0
+      },
+      "signal": "⚪ No Trade (微多)",
+      "strategy": "情绪轻微偏多，信号不足，以观望为主",
+      "suitable_for": "观望",
+      "confidence": "低",
+      "patterns": [],
+      "positive_factors": [
+        "[并购|w2.27] 新宙邦:关于签订《电解液合作协议》的公告"
+      ],
+      "negative_factors": [],
+      "news_count": 8,
+      "news_dropped": 0,
+      "performance": {
+        "list_fetch_ms": 4241,
+        "candidate_filter_ms": 0,
+        "enrichment_ms": 14513,
+        "raw_news_count": 40,
+        "raw_research_count": 10,
+        "candidate_news_count": 8,
+        "candidate_research_count": 0,
+        "enriched_news_count": 8,
+        "enriched_research_count": 0,
+        "candidate_reasons": {
+          "news": {
+            "no-subject-mention": 14,
+            "noise:\\d{1,2}月\\d{1,2}日(快速上涨|快速回调|涨停|": 3,
+            "noise:融资净(买入|卖出)": 3,
+            "dedup": 0,
+            "out_of_window": 12
+          },
+          "research": {
+            "dedup": 0,
+            "out_of_window": 10
+          }
+        },
+        "date_filter_ms": 0,
+        "relevance_ms": 0,
+        "llm_ms": 4094,
+        "scoring_ms": 0
+      },
+      "top_news": [
+        {
+          "date": "2026-06-11",
+          "title": "新宙邦:第七届董事会第五次会议决议公告",
+          "content": "",
+          "type": "财报",
+          "sentiment": 0,
+          "weight": 1,
+          "final_weight": 0.7,
+          "source_authority": 4.5,
+          "recency_factor": 0.6,
+          "source": "东方财富公告",
+          "llm_reviewed": true,
+          "llm_confidence": 0.3,
+          "llm_is_real_catalyst": false,
+          "llm_reasoning": "仅为董事会决议公告，无实质内容"
+        },
+        {
+          "date": "2026-06-11",
+          "title": "新宙邦:关于增加2026年度日常关联交易预计额度的公告",
+          "content": "",
+          "type": "财报",
+          "sentiment": 0,
+          "weight": 1,
+          "final_weight": 0.7,
+          "source_authority": 4.5,
+          "recency_factor": 0.6,
+          "source": "东方财富公告",
+          "llm_reviewed": true,
+          "llm_confidence": 0.3,
+          "llm_is_real_catalyst": false,
+          "llm_reasoning": "日常关联交易额度调整，影响中性"
+        },
+        {
+          "date": "2026-06-11",
+          "title": "新宙邦:关于召开2026年第二次临时股东会的通知",
+          "content": "铝电解电容器、锂离子二级电池专用电子化学材料的开发和产销(以上不含限制项目);经营进出口业务(按深贸管登字第2003-0939号文执行)。普通货运(凭《道路运输经营许可证》经营);氨溶液[含氨>10%](35)、2-丙醇(111)、丙酸甲酯(128)、次磷酸(161)、丁二腈(222)、2-丁氧基乙醇(249)、N,N-二甲基甲酰胺(460)、氟代苯(737)、氟化铵(744)、硅酸四乙酯(845)、已二腈(991)、甲醇(1022)、硫酸(1302)、硼酸(1609)、氢氟酸(1650)、氢氧化钠(1669)、三乙胺(1915)、碳酸二甲酯(2110)、碳酸二乙酯(2111)、4-硝基苯酚(2235)、2-硝基苯甲醚(2239)、亚磷酸(2444)、盐酸(2507)、乙醇[无水](2568)、乙腈(2622)、乙酸[含量>80%](2630)、乙酸甲酯(2638)、乙酸乙酯(2651)、乙酸正丙脂(2656)、乙酸正丁酯(2657)、正丁醇(2761)、正磷酸(2790)、对甲基苯磺酸铁溶液(2828)、双电层电容器电解液(2828)、锂离子电池电解液(2828)、碳酸甲乙脂(2828)、一次锂电池电解液(2828)、钠电池电解液(2828)、三(三甲基硅基)磷酸酯、LCD蚀刻液(凭《危险化学品经营许可证》经营)。自有房屋租赁。集装箱销售、集装箱租赁服务。\n郑重声明：东方财富网发布此信息的目的在于传播更多信息，与本站立场无关。东方财富网不保证该信息（包括但不限于文字、视频、音频、数据及图表）全部或者部分内容的准确性、真实性、完整性、有效性、及时性、原创性等。相关信息并未经过本网站证实，不对您构成任何投资建议，据此操作，风险自担。",
+          "type": "财报",
+          "sentiment": 0,
+          "weight": 1,
+          "final_weight": 0.7,
+          "source_authority": 4.5,
+          "recency_factor": 0.6,
+          "source": "东方财富公告",
+          "llm_reviewed": true,
+          "llm_confidence": 0.2,
+          "llm_is_real_catalyst": false,
+          "llm_reasoning": "仅为召开股东会通知，无实质催化"
+        },
+        {
+          "date": "2026-06-11",
+          "title": "新宙邦:关于为合营企业提供担保暨关联交易的公告",
+          "content": "铝电解电容器、锂离子二级电池专用电子化学材料的开发和产销(以上不含限制项目);经营进出口业务(按深贸管登字第2003-0939号文执行)。普通货运(凭《道路运输经营许可证》经营);氨溶液[含氨>10%](35)、2-丙醇(111)、丙酸甲酯(128)、次磷酸(161)、丁二腈(222)、2-丁氧基乙醇(249)、N,N-二甲基甲酰胺(460)、氟代苯(737)、氟化铵(744)、硅酸四乙酯(845)、已二腈(991)、甲醇(1022)、硫酸(1302)、硼酸(1609)、氢氟酸(1650)、氢氧化钠(1669)、三乙胺(1915)、碳酸二甲酯(2110)、碳酸二乙酯(2111)、4-硝基苯酚(2235)、2-硝基苯甲醚(2239)、亚磷酸(2444)、盐酸(2507)、乙醇[无水](2568)、乙腈(2622)、乙酸[含量>80%](2630)、乙酸甲酯(2638)、乙酸乙酯(2651)、乙酸正丙脂(2656)、乙酸正丁酯(2657)、正丁醇(2761)、正磷酸(2790)、对甲基苯磺酸铁溶液(2828)、双电层电容器电解液(2828)、锂离子电池电解液(2828)、碳酸甲乙脂(2828)、一次锂电池电解液(2828)、钠电池电解液(2828)、三(三甲基硅基)磷酸酯、LCD蚀刻液(凭《危险化学品经营许可证》经营)。自有房屋租赁。集装箱销售、集装箱租赁服务。\n郑重声明：东方财富网发布此信息的目的在于传播更多信息，与本站立场无关。东方财富网不保证该信息（包括但不限于文字、视频、音频、数据及图表）全部或者部分内容的准确性、真实性、完整性、有效性、及时性、原创性等。相关信息并未经过本网站证实，不对您构成任何投资建议，据此操作，风险自担。",
+          "type": "财报",
+          "sentiment": 0,
+          "weight": 1,
+          "final_weight": 0.7,
+          "source_authority": 4.5,
+          "recency_factor": 0.6,
+          "source": "东方财富公告",
+          "llm_reviewed": true,
+          "llm_confidence": 0.3,
+          "llm_is_real_catalyst": false,
+          "llm_reasoning": "为合营企业担保，关联交易，影响中性"
+        },
+        {
+          "date": "2026-06-11",
+          "title": "新宙邦:《董事及高级管理人员薪酬、津贴管理制度》(2026年6月)",
+          "content": "",
+          "type": "财报",
+          "sentiment": 0,
+          "weight": 1,
+          "final_weight": 0.7,
+          "source_authority": 4.5,
+          "recency_factor": 0.6,
+          "source": "东方财富公告",
+          "llm_reviewed": true,
+          "llm_confidence": 0.2,
+          "llm_is_real_catalyst": false,
+          "llm_reasoning": "薪酬管理制度修订，无实质影响"
+        }
+      ]
+    },
+    "SZSE:002463": {
+      "name": "沪电股份",
+      "score": 56,
+      "score_raw": 1.35,
+      "score_components": {
+        "positive_weight_sum": 3.15,
+        "negative_weight_sum": 1.8,
+        "news_effective_count": 10,
+        "news_dropped_count": 0
+      },
+      "signal": "⚪ No Trade (微多)",
+      "strategy": "情绪轻微偏多，信号不足，以观望为主",
+      "suitable_for": "观望",
+      "confidence": "低",
+      "patterns": [],
+      "positive_factors": [
+        "[并购|w2.65] 沪电股份:关于向香港联交所递交H股发行上市申请并刊发申请资料的进展公告",
+        "[行业|w0.5] 沪电股份6月12日盘中涨幅达5%"
+      ],
+      "negative_factors": [
+        "[行业|w0.6] 电子行业资金流出榜：沪电股份、京东方A等净流出资金居前",
+        "[行业|w0.6] 主力复盘：12.93亿抢筹海光信息 25.38亿出逃沪电股份",
+        "[行业|w0.6] 主力资金监控：沪电股份净卖出超19亿"
+      ],
+      "news_count": 10,
+      "news_dropped": 0,
+      "performance": {
+        "list_fetch_ms": 5028,
+        "candidate_filter_ms": 0,
+        "enrichment_ms": 5212,
+        "raw_news_count": 40,
+        "raw_research_count": 10,
+        "candidate_news_count": 10,
+        "candidate_research_count": 0,
+        "enriched_news_count": 10,
+        "enriched_research_count": 0,
+        "candidate_reasons": {
+          "news": {
+            "noise:\\d{1,2}月\\d{1,2}日(快速上涨|快速回调|涨停|": 1,
+            "no-subject-mention": 10,
+            "noise:融资净(买入|卖出)": 1,
+            "dedup": 0,
+            "out_of_window": 18
+          },
+          "research": {
+            "dedup": 0,
+            "out_of_window": 10
+          }
+        },
+        "date_filter_ms": 0,
+        "relevance_ms": 0,
+        "llm_ms": 3736,
+        "scoring_ms": 0
+      },
+      "top_news": [
+        {
+          "date": "2026-06-12 09:47:33",
+          "title": "沪电股份6月12日盘中涨幅达5%",
+          "content": "以下是沪电股份在北京时间6月12日09:36分盘口异动快照：\n\n　　专业金融数据，下一代智能终端\n\n分笔\n\n09:36:12 133.33 1081↑\n09:36:09 133.15 1890↑\n09:36:06 132.99 1225↑\n09:36:03 132.98 5938↑\n09:36:00 132.69 659↑\n \n09:35:57 132.65 904↓\n09:35:54 132.70 748↓\n09:35:51 132.75 331↓\n09:35:48 132.75 762↓\n09:35:45 132.79 623↓\n \n报价\n\n卖五 \n\n133.43\n\n 96\n卖四 \n\n133.42\n\n 3\n卖三 \n\n133.4\n\n 75\n卖二 \n\n133.39\n\n 10\n卖一 \n\n133.38\n\n 5\n\n买一 \n\n133.33\n\n 36\n买二 \n\n133.29\n\n 1\n买三 \n\n133.28\n\n 9\n买四 \n\n133.27\n\n 88\n买五 \n\n133.25\n\n 2\n\n最新：133.33\n涨幅：5.06%\n涨跌：6.42\n换手率：0.78%\n成交量：15.00万手\n成交额：19.79亿元\n主力净流入：\n2.75亿元\n\n  6月12日，沪电股份盘中涨幅达5%，截至9点36分，报133.33元，成交19.79亿元，换手率0.78%。\n注：以上信息仅供参考，不对您构成任何投资建议。",
+          "type": "行业",
+          "sentiment": 1,
+          "weight": 1,
+          "final_weight": 0.5,
+          "source_authority": 3,
+          "recency_factor": 0.72,
+          "source": "东方财富资讯",
+          "llm_reviewed": true,
+          "llm_confidence": 0.3,
+          "llm_is_real_catalyst": false,
+          "llm_reasoning": "盘中涨幅5%，仅为价格波动，无实质催化"
+        },
+        {
+          "date": "2026-06-12 09:02:40",
+          "title": "沪电股份：融资净偿还3.07亿元，融资余额62.32亿元",
+          "content": "专业金融数据，下一代智能终端\n\n交易所最新数据显示，沪电股份于2026年6月11日获融资买入10.28亿元，融资偿还13.36亿元，当日融资净偿还3.07亿元。目前，该股融资余额62.32亿，占流通市值比例为2.55%。\n\n该股当日融券卖出4600股，融券偿还2.84万股，融券净偿还2.38万股。目前，该股融券余量16.54万股，融券余额2099.09万元。\n\n免责声明：本文基于AI生产，仅供参考，不构成任何投资建议，据此操作风险自担。东方财富发布此内容旨在传播更多信息，与本平台立场无关。东方财富力求但不保证数据的完全准确，如有错漏请以中国证监会指定上市公司信息披露媒体为准，东方财富不对因该资料全部或部分内容而引致的盈亏承担任何责任。用户个人对服务的使用承担风险，东方财富对此不作任何类型的担保。",
+          "type": "行业",
+          "sentiment": 0,
+          "weight": 1,
+          "final_weight": 0.5,
+          "source_authority": 3,
+          "recency_factor": 0.72,
+          "source": "东方财富资讯",
+          "llm_reviewed": true,
+          "llm_confidence": 0.4,
+          "llm_is_real_catalyst": false,
+          "llm_reasoning": "融资净偿还，反映资金面变化，非硬催化"
+        },
+        {
+          "date": "2026-06-11 09:21:16",
+          "title": "沪电股份：融资净偿还3.3亿元，融资余额65.39亿元",
+          "content": "炒股第一步，先开个股票账户\n\n交易所最新数据显示，沪电股份于2026年6月10日获融资买入16.63亿元，融资偿还19.94亿元，当日融资净偿还3.3亿元。目前，该股融资余额65.39亿，占流通市值比例为2.60%。\n\n该股当日融券卖出1.49万股，融券偿还6600股，融券净卖出8300股。目前，该股融券余量18.92万股，融券余额2470.95万元。\n\n免责声明：本文基于AI生产，仅供参考，不构成任何投资建议，据此操作风险自担。东方财富发布此内容旨在传播更多信息，与本平台立场无关。东方财富力求但不保证数据的完全准确，如有错漏请以中国证监会指定上市公司信息披露媒体为准，东方财富不对因该资料全部或部分内容而引致的盈亏承担任何责任。用户个人对服务的使用承担风险，东方财富对此不作任何类型的担保。",
+          "type": "行业",
+          "sentiment": 0,
+          "weight": 1,
+          "final_weight": 0.5,
+          "source_authority": 3,
+          "recency_factor": 0.6,
+          "source": "东方财富资讯",
+          "llm_reviewed": true,
+          "llm_confidence": 0.4,
+          "llm_is_real_catalyst": false,
+          "llm_reasoning": "融资净偿还，类似前日数据，无新增信息"
+        },
+        {
+          "date": "2026-06-10 21:47:00",
+          "title": "电子行业资金流出榜：沪电股份、京东方A等净流出资金居前",
+          "content": "炒股第一步，先开个股票账户\n\n　　沪指6月10日下跌0.42%，申万所属行业中，今日上涨的有8个，涨幅居前的行业为银行、食品饮料，涨幅分别为1.51%、1.20%。跌幅居前的行业为煤炭、机械设备，跌幅分别为3.24%、3.00%。电子行业今日下跌2.23%。\n\n　　资金面上看，两市主力资金全天净流出883.19亿元，今日有5个行业主力资金净流入，非银金融行业主力资金净流入规模居首，该行业今日上涨0.78%，全天净流入资金20.66亿元，其次是基础化工行业，日涨幅为0.65%，净流入资金为7.52亿元。\n\n　　主力资金净流出的行业有26个，电子行业主力资金净流出规模居首，全天净流出资金340.18亿元，其次是通信行业，净流出资金为135.26亿元，净流出资金较多的还有电力设备、机械设备、公用事业等行业。\n\n　　电子行业今日下跌2.23%，全天主力资金净流出340.18亿元，该行业所属的个股共481只，今日上涨的有130只，涨停的有11只；下跌的有349只，跌停的有6只。以资金流向数据进行统计，该行业资金净流入的个股有164只，其中，净流入资金超亿元的有33只，净流入资金居首的是海光信息，今日净流入资金14.44亿元，紧随其后的是雅克科技、有研新材，净流入资金分别为8.65亿元、5.99亿元。电子行业资金净流出个股中，资金净流出超亿元的有82只，净流出资金居前的有沪电股份、京东方A、兆易创新，净流出资金分别为23.29亿元、20.99亿元、20.08亿元。\n\n　　电子行业资金流入榜\n\n代码 简称 今日涨跌幅（%） 今日换手率（%） 主力资金流量（万元）\n688041 海光信息 6.20 2.78 144386.16\n002409 雅克科技 10.00 10.50 86533.72\n600206 有研新材 10.00 13.57 59864.52\n300666 江丰电子 8.36 12.60 58957.96\n688012 中微公司 1.43 3.16 50007.16\n002119 康强电子 10.01 13.72 46929.48\n300604 长川科技 6.59 7.42 39208.07\n688256 寒武纪 -3.07 2.20 38207.33\n688072 拓荆科技 3.52 3.63 32108.79\n688347 华虹宏力 -2.46 5.91 28257.45\n300398 飞凯材料 1.04 18.57 27937.99\n002371 北方华创 0.34 1.48 27618.43\n688268 华特气体 0.71 13.39 26278.55\n688110 东芯股份 -0.07 4.26 19778.57\n001309 德明利 0.35 5.84 19013.84\n688702 盛科通信-U 2.34 4.50 18507.84\n300475 香农芯创 2.82 7.59 18024.34\n300857 协创数据 0.33 3.18 17653.80\n603160 汇顶科技 9.99 2.10 17366.95\n688662 富信科技 20.00 12.66 16435.08\n\n　　电子行业资金流出榜\n\n代码 简称 今日涨跌幅（%） 今日换手率（%） 主力资金流量（万元）\n002463 沪电股份 -7.43 5.47 -232881.55\n000725 京东方A -7.52 9.13 -209891.47\n603986 兆易创新 -3.93 4.94 -200817.26\n601138 工业富联 -4.83 0.74 -190503.31\n002475 立讯精密 -5.52 1.85 -126616.67\n000636 风华高科 -2.08 14.92 -123673.75\n600703 三安光电 -10.00 7.70 -122285.28\n301666 大普微 -15.67 29.50 -121609.36\n300476 胜宏科技 -3.59 3.46 -121193.71\n002384 东山精密 -5.41 4.95 -105845.12\n300136 信维通信 -6.42 9.01 -105186.70\n600183 生益科技 -0.39 4.01 -97916.20\n300433 蓝思科技 -5.96 3.62 -83521.03\n600584 长电科技 -1.65 8.40 -79568.19\n002156 通富微电 -4.64 7.38 -79489.47\n688195 腾景科技 -11.06 8.39 -77826.92\n688126 沪硅产业 2.90 10.88 -77429.79\n300223 北京君正 -6.84 8.40 -72918.90\n688008 澜起科技 -2.28 3.75 -63505.15\n002600 领益智造 -6.46 3.00 -63024.44\n\n　　全新妙想投研助理，立即体验",
+          "type": "行业",
+          "sentiment": -1,
+          "weight": 1,
+          "final_weight": 0.6,
+          "source_authority": 3,
+          "recency_factor": 0.5,
+          "source": "东方财富资讯",
+          "llm_reviewed": true,
+          "llm_confidence": 0.5,
+          "llm_is_real_catalyst": false,
+          "llm_reasoning": "电子行业资金流出，沪电股份净流出居前，偏负面"
+        },
+        {
+          "date": "2026-06-10 17:12:41",
+          "title": "【调研快报】沪电股份接待Generation Investment Management调研",
+          "content": "全新妙想投研助理，立即体验\n\n　　沪电股份6月10日公告称，6月10日接待Generation Investment Management调研。接待人员包括钱元君。\n\n　　公司就以下问题进行了回复：投资者关系活动主要内容介绍: (一)公司经营策略及市场 1、数据通讯市场情况 AI 已从大规模预训练,全面拓展至以推理应用、商业化落地及全球化扩张的新阶段,大模型训练与推理需求双双迅速上升,AI 已成为数据中心基础设施的关键基石,大规模云数据中心向人工智能与高性能计算集群演变,促使全球主要云服务...\n\n点击查看PDF原文\n\n免责声明：本文基于AI生产，仅供参考，不构成任何投资建议，据此操作风险自担。东方财富发布此内容旨在传播更多信息，与本平台立场无关。东方财富力求但不保证数据的完全准确，如有错漏请以中国证监会指定上市公司信息披露媒体为准，东方财富不对因该资料全部或部分内容而引致的盈亏承担任何责任。用户个人对服务的使用承担风险，东方财富对此不作任何类型的担保。",
+          "type": "分析师动作",
+          "sentiment": 0,
+          "weight": 1,
+          "final_weight": 0.72,
+          "source_authority": 3,
+          "recency_factor": 0.5,
+          "source": "东方财富资讯",
+          "llm_reviewed": true,
+          "llm_confidence": 0.6,
+          "llm_is_real_catalyst": false,
+          "llm_reasoning": "接待机构调研，但内容为常规经营策略，无评级变化"
+        }
+      ]
+    },
+    "SZSE:002916": {
+      "name": "002916",
+      "score": 55,
+      "score_raw": 2.42,
+      "score_components": {
+        "positive_weight_sum": 8.16,
+        "negative_weight_sum": 5.74,
+        "news_effective_count": 11,
+        "news_dropped_count": 0
+      },
+      "signal": "🔴 No Trade / Short",
+      "strategy": "黑天鹅事件规避，等待事件明朗化再评估",
+      "suitable_for": "反转(等底部确认)",
+      "confidence": "高",
+      "patterns": [
+        "⚠️情绪背离(黑天鹅被掩盖)"
+      ],
+      "positive_factors": [
+        "[回购|w4.59] 深南电路:未来三年(2026-2028年)股东回报规划",
+        "[并购|w3.57] 002916，拟巨资扩产高端PCB"
+      ],
+      "negative_factors": [
+        "[黑天鹅|w5.74] 深南电路:关于最近五年被证券监管部门和交易所采取监管措施或处罚情况的公告"
+      ],
+      "news_count": 11,
+      "news_dropped": 0,
+      "performance": {
+        "list_fetch_ms": 5268,
+        "candidate_filter_ms": 0,
+        "enrichment_ms": 2323,
+        "raw_news_count": 40,
+        "raw_research_count": 10,
+        "candidate_news_count": 11,
+        "candidate_research_count": 0,
+        "enriched_news_count": 11,
+        "enriched_research_count": 0,
+        "candidate_reasons": {
+          "news": {
+            "no-subject-mention": 15,
+            "noise:^.{0,8}重要公告集锦": 1,
+            "noise:\\d{1,2}月\\d{1,2}日(快速上涨|快速回调|涨停|": 1,
+            "noise:融资净(买入|卖出)": 2,
+            "dedup": 0,
+            "out_of_window": 10
+          },
+          "research": {
+            "dedup": 0,
+            "out_of_window": 10
+          }
+        },
+        "date_filter_ms": 0,
+        "relevance_ms": 0,
+        "llm_ms": 3925,
+        "scoring_ms": 0
+      },
+      "top_news": [
+        {
+          "date": "2026-06-13 18:04:00",
+          "title": "002916，拟巨资扩产高端PCB",
+          "content": "在东方财富看资讯行情，选东方财富证券一站式开户交易>>\n\n　　6月12日晚，PCB龙头深南电路（002916）公告，拟向特定对象发行股票募集资金总额不超过48.82亿元，扣除发行费用后用于无锡深南电路AI算力电子电路产品项目及补充流动资金。项目主要生产高速高密高多层PCB产品，用于AI服务器、交换机等领域。\n\n　　截至6月12日收盘，深南电路报379.5元/股，涨0.89%，总市值约2585亿元。\n\n募资扩大高速高密高多层PCB产品产能\n\n　　根据预案，无锡深南电路AI算力电子电路产品项目由无锡深南电路有限公司实施，建设地点位于江苏省无锡市新吴区，总投资额为45.36亿元，建设周期为1年。\n\n　　深南电路表示，本次募投项目将进一步加强公司在AI算力相关产品和技术的布局，助力公司紧抓行业发展机遇。公司PCB产品已广泛应用于AI服务器及交换机领域，深度配套AI服务器与交换机头部厂商。公司相关产品产能利用率高，通过本次募投项目扩大高速高密高多层PCB产品产能，以满足下游客户日益增长的需求。\n\n　　目前，该方案已于6月12日召开的公司第四届董事会第十七次会议审议通过，尚需获得有权国资监管单位批准、公司股东会审议通过、深圳证券交易所审核通过并经中国证监会作出同意注册决定后方可实施。\n\n　　近年来，深南电路经营与生产规模稳步扩张，新增产能陆续落地。公司持续以自有资金投入产线建设与技术研发，资金支出相应增加，整体资金需求明显上升。截至2026年3月31日，深南电路资产负债率为47.24%。通过本次向特定对象发行股票，公司将有效增强资本实力，优化资产负债结构，降低财务费用与财务风险，为公司后续业务发展提供充足的资金保障。\n\n　　作为国内PCB龙头，深南电路在AI服务器、交换机PCB等领域已建立起核心竞争力。高端AI算力PCB领域客户认证壁垒较高，进入全球头部厂商供应链需经过严格审核，涵盖质量体系、产品可靠性、批量交付能力、技术研发实力等多维度验证，一旦通过认证便形成较强的客户黏性，合作关系长期稳定。\n\n　　深南电路表示，公司已与多家头部AI服务器厂商、交换机厂商、云服务商及芯片企业建立了深度战略合作关系。公司现有AI算力PCB产品订单饱满，核心客户产能需求意向明确，为本次募投项目建成后的产能消化提供了坚实保障。\n\n抢抓AI算力发展机遇\n\n　　除无锡项目外，深南电路近年来持续推进高端PCB产能布局。\n\n　　其中，南通四期项目聚焦AI服务器、交换机等领域所需的高速高密度PCB产品，已于2025年下半年正式连线投产，目前处于产能爬坡初期阶段。该项目计划总投资18.6亿元，达产后可新增HDI及FPC印制电路板产能66万平方米/年。\n\n　　海外布局方面，深南电路泰国工厂总投资12.74亿元，同样于2025年下半年实现连线投产，目前正处于产能稳步爬坡阶段。作为公司在东南亚的重要生产基地，该工厂具备高多层板、HDI等高端PCB产品制造能力。\n\n　　深南电路缘何加码布局高端PCB产能？\n\n　　深南电路在公告中表示，高端AI服务器、交换机PCB产品技术迭代显著快于传统PCB，且对高速信号完整性、多层压合精度、散热性能等要求呈指数级提升，具有较高的技术壁垒和客户认证壁垒，先发优势和技术积累是企业核心竞争力的关键，持续投入研发与产能建设是维系行业地位的重要保障。\n\n　　从行业层面看，AI算力基础设施建设持续推进，正推动高端PCB需求快速增长。根据Prismark数据，2025年全球PCB产值为851.52亿美元，同比增长15.80%，预计2025年至2030年全球PCB产值年复合增长率将达到7.7%，至2030年，全球PCB市场规模将达到1233.48亿美元。\n\n　　在行业景气度提升背景下，PCB企业扩产步伐明显加快。据不完全统计，截至6月12日，年内已有13家PCB制造企业宣布扩产，投资金额超600亿元（含意向）。\n\n　　全新妙想投研助理，立即体验",
+          "type": "并购",
+          "sentiment": 1,
+          "weight": 4,
+          "final_weight": 3.57,
+          "source_authority": 3,
+          "recency_factor": 0.85,
+          "source": "东方财富资讯",
+          "llm_reviewed": true,
+          "llm_confidence": 0.9,
+          "llm_is_real_catalyst": true,
+          "llm_reasoning": "定增募资48.82亿扩产高端PCB，官方公告"
+        },
+        {
+          "date": "2026-06-13",
+          "title": "深南电路:2026年度向特定对象发行股票募集资金使用的可行性分析报告",
+          "content": "印刷电路板、封装基板产品、模块模组封装产品、电子装联产品、电子元器件、网络通讯科技产品、通信设备的研制、生产、加工、服务、销售;工业自动化设备、电信终端设备、信息技术类设备、LED产品、电路开关及保护或连接用电器装置、低压电器、安防产品的设计、生产、加工、销售;电镀、鉴证咨询、不动产租赁服务、经营进出口业务、技术研发及信息技术咨询、物业管理、计算机软硬件及外围设备制造,计算机软硬件及辅助设备批发、计算机软硬件及辅助设备零售(除依法须经批准的项目外,凭营业执照依法自主开展经营活动)。以市场监督管理机关核定的经营范围为准。\n郑重声明：东方财富网发布此信息的目的在于传播更多信息，与本站立场无关。东方财富网不保证该信息（包括但不限于文字、视频、音频、数据及图表）全部或者部分内容的准确性、真实性、完整性、有效性、及时性、原创性等。相关信息并未经过本网站证实，不对您构成任何投资建议，据此操作，风险自担。",
+          "type": "并购",
+          "sentiment": 0,
+          "weight": 1,
+          "final_weight": 1.07,
+          "source_authority": 4.5,
+          "recency_factor": 0.85,
+          "source": "东方财富公告",
+          "llm_reviewed": true,
+          "llm_confidence": 0.3,
+          "llm_is_real_catalyst": false,
+          "llm_reasoning": "仅为募集资金可行性分析报告，无新增信息"
+        },
+        {
+          "date": "2026-06-13",
+          "title": "深南电路:关于向特定对象发行股票不存在直接或通过利益相关方向参与认购的投资者提供财务资助或补偿的公告",
+          "content": "",
+          "type": "并购",
+          "sentiment": 0,
+          "weight": 1,
+          "final_weight": 1.07,
+          "source_authority": 4.5,
+          "recency_factor": 0.85,
+          "source": "东方财富公告",
+          "llm_reviewed": true,
+          "llm_confidence": 0.2,
+          "llm_is_real_catalyst": false,
+          "llm_reasoning": "合规性公告，无实质催化"
+        },
+        {
+          "date": "2026-06-13",
+          "title": "深南电路:关于前次募集资金使用情况的报告",
+          "content": "印刷电路板、封装基板产品、模块模组封装产品、电子装联产品、电子元器件、网络通讯科技产品、通信设备的研制、生产、加工、服务、销售;工业自动化设备、电信终端设备、信息技术类设备、LED产品、电路开关及保护或连接用电器装置、低压电器、安防产品的设计、生产、加工、销售;电镀、鉴证咨询、不动产租赁服务、经营进出口业务、技术研发及信息技术咨询、物业管理、计算机软硬件及外围设备制造,计算机软硬件及辅助设备批发、计算机软硬件及辅助设备零售(除依法须经批准的项目外,凭营业执照依法自主开展经营活动)。以市场监督管理机关核定的经营范围为准。\n郑重声明：东方财富网发布此信息的目的在于传播更多信息，与本站立场无关。东方财富网不保证该信息（包括但不限于文字、视频、音频、数据及图表）全部或者部分内容的准确性、真实性、完整性、有效性、及时性、原创性等。相关信息并未经过本网站证实，不对您构成任何投资建议，据此操作，风险自担。",
+          "type": "并购",
+          "sentiment": 0,
+          "weight": 1,
+          "final_weight": 1.07,
+          "source_authority": 4.5,
+          "recency_factor": 0.85,
+          "source": "东方财富公告",
+          "llm_reviewed": true,
+          "llm_confidence": 0.2,
+          "llm_is_real_catalyst": false,
+          "llm_reasoning": "前次募集资金使用报告，无新增影响"
+        },
+        {
+          "date": "2026-06-13",
+          "title": "深南电路:董事会审计委员会关于公司2026年度向特定对象发行股票相关事项的书面审核意见",
+          "content": "印刷电路板、封装基板产品、模块模组封装产品、电子装联产品、电子元器件、网络通讯科技产品、通信设备的研制、生产、加工、服务、销售;工业自动化设备、电信终端设备、信息技术类设备、LED产品、电路开关及保护或连接用电器装置、低压电器、安防产品的设计、生产、加工、销售;电镀、鉴证咨询、不动产租赁服务、经营进出口业务、技术研发及信息技术咨询、物业管理、计算机软硬件及外围设备制造,计算机软硬件及辅助设备批发、计算机软硬件及辅助设备零售(除依法须经批准的项目外,凭营业执照依法自主开展经营活动)。以市场监督管理机关核定的经营范围为准。\n郑重声明：东方财富网发布此信息的目的在于传播更多信息，与本站立场无关。东方财富网不保证该信息（包括但不限于文字、视频、音频、数据及图表）全部或者部分内容的准确性、真实性、完整性、有效性、及时性、原创性等。相关信息并未经过本网站证实，不对您构成任何投资建议，据此操作，风险自担。",
+          "type": "并购",
+          "sentiment": 0,
+          "weight": 1,
+          "final_weight": 1.07,
+          "source_authority": 4.5,
+          "recency_factor": 0.85,
+          "source": "东方财富公告",
+          "llm_reviewed": true,
+          "llm_confidence": 0.2,
+          "llm_is_real_catalyst": false,
+          "llm_reasoning": "董事会审核意见，程序性文件"
+        }
+      ]
+    },
+    "SSE:600198": {
+      "name": "600198",
+      "score": 52,
+      "score_raw": 0.5,
+      "score_components": {
+        "positive_weight_sum": 0.5,
+        "negative_weight_sum": 0,
+        "news_effective_count": 3,
+        "news_dropped_count": 0
+      },
+      "signal": "⚪ No Trade (微多)",
+      "strategy": "情绪轻微偏多，信号不足，以观望为主",
+      "suitable_for": "观望",
+      "confidence": "低",
+      "patterns": [],
+      "positive_factors": [
+        "[行业|w0.5] 600198，3分钟涨停！"
+      ],
+      "negative_factors": [],
+      "news_count": 3,
+      "news_dropped": 0,
+      "performance": {
+        "list_fetch_ms": 1888,
+        "candidate_filter_ms": 0,
+        "enrichment_ms": 123,
+        "raw_news_count": 40,
+        "raw_research_count": 0,
+        "candidate_news_count": 3,
+        "candidate_research_count": 0,
+        "enriched_news_count": 3,
+        "enriched_research_count": 0,
+        "candidate_reasons": {
+          "news": {
+            "no-subject-mention": 6,
+            "noise:\\d{1,2}月\\d{1,2}日(快速上涨|快速回调|涨停|": 1,
+            "dedup": 0,
+            "out_of_window": 30
+          },
+          "research": {
+            "dedup": 0
+          }
+        },
+        "date_filter_ms": 0,
+        "relevance_ms": 0,
+        "llm_ms": 1,
+        "scoring_ms": 1
+      },
+      "top_news": [
+        {
+          "date": "2026-06-12",
+          "title": "大唐电信:大唐电信科技股份有限公司关于召开2025年年度暨2026年第一季度业绩说明会的公告",
+          "content": "许可经营项目:制造电子及通信设备、移动电话机、仪器仪表、文化办公设备;第二类增值电信业务中的信息服务业务、第二类基础电信业务中的网络托管业务(不含固定网电话信息服务和互联网信息服务)。物业管理。一般经营项目:制造电子计算机软硬件及外部设备;技术开发、技术转让、技术咨询、技术服务;销售电子及通信设备、移动电话机、仪器仪表、文化办公设备、电子计算机软硬件及外部设备、系统集成、光电缆、微电子器件、机械设备、电气设备、空调设备、通信基站机房节能设备、专业作业车辆;安装机械设备、电气设备、空调设备;通信及信息系统工程设计;信息服务;技术进出口、货物进出口、代理进出口。\n郑重声明：东方财富网发布此信息的目的在于传播更多信息，与本站立场无关。东方财富网不保证该信息（包括但不限于文字、视频、音频、数据及图表）全部或者部分内容的准确性、真实性、完整性、有效性、及时性、原创性等。相关信息并未经过本网站证实，不对您构成任何投资建议，据此操作，风险自担。",
+          "type": "财报",
+          "sentiment": 0,
+          "weight": 1,
+          "final_weight": 0.84,
+          "source_authority": 4.5,
+          "recency_factor": 0.72,
+          "source": "东方财富公告",
+          "llm_reviewed": true,
+          "llm_confidence": 0.3,
+          "llm_is_real_catalyst": false,
+          "llm_reasoning": "仅公告召开业绩说明会，无具体数据"
+        },
+        {
+          "date": "2026-06-11",
+          "title": "大唐电信科技股份有限公司关于召开2025年年度暨2026年第一季度业绩说明会的公告",
+          "content": "证券代码：600198 \t证券简称：大唐电信 \t公告编号：2026-017\n大唐电信科技股份有限公司\n关于召开 \t2025 \t年年度暨 \t2026 \t年第一季度业绩说明\n会的公告\n本公司董事会及全体董事保证本公告内容不存在任何虚假记载、误导性陈述\n或者重大遗漏，并对其内容的真实性、准确性和完整性承担法律责任。\n重要内容提示：\n \t会议召开时间：2026 \t年 \t6 \t月 \t22 \t日（星期一）14:00-15:00\n \t会 议 召 开 地 点 ： 上 海 证 券 交 易 所 上 证 路 演 中 心 （ 网 址 ：\nhttps://roadshow.sseinfo.com/）\n \t会议召开方式：上证路演中心网络互动\n \t投资者可于 \t2026 \t年 \t6 \t月 \t12 \t日（星期五）至 \t6 \t月 \t18 \t日（星期四）16:00\n前登录上证路演中心网站首页点击“提问预征集”栏目或通过公司邮箱\ndt600198@datang.com \t进行提问。公司将在说明会上对投资者普遍关注\n的问题进行回答。\n大唐电信科技股份有限公司（以下简称“公司”）已于 \t2026 \t年 \t4 \t月 \t23 \t日\n和 \t2026 \t年 \t4 \t月 \t28 \t日分别发布公司《2025 \t年年度报告》和《2026 \t年第一季度\n报告》，为便于广大投资者更全面深入地了解公司 \t2025 \t年年度、2026 \t年第一季\n度经营成果、财务状况，公司计划于 \t2026 \t年 \t6 \t月 \t22 \t日（星期一）14:00-15:00\n举行 \t2025 \t年年度暨 \t2026 \t年第一季度业绩说明会，就投资者关心的问题进行交\n流。\n一、说明会类型\n本次投资者说明会以网络互动形式召开，公司将针对 \t2025 \t年年度、2026\n年第一季度的经营成果及财务指标的具体情况与投资者进行互动交流和沟通，\n在信息披露允许的范围内就投资者普遍关注的问题进行回答。\n\n-- 1 of 3 --\n\n二、说明会召开的时间、地点\n（一）会议召开时间：2026 \t年 \t6 \t月 \t22 \t日（星期一）14:00-15:00\n（ 二 ） 会 议 召 开 地 点 ： 上 海 证 券 交 易 所 上 证 路 演 中 心 （ 网 址 ：\nhttps://roadshow.sseinfo.com/）\n（三）会议召开方式：上证路演中心网络互动\n三、参加人员\n董事长：刘欣先生\n董事、总经理：冉会娟女士\n独立董事：胡军统先生\n财务总监：马红霞女士\n董事会秘书：王韶莉女士\n（注：如有特殊情况，参会人员将可能进行调整）。\n四、投资者参加方式\n（一）投资者可在 \t2026 \t年 \t6 \t月 \t22 \t日（星期一）14:00-15:00，通过互联网\n登录上证路演中心（https://roadshow.sseinfo.com/），在线参与本次业绩说明会，\n公司将及时回答投资者的提问。\n（二）投资者可于 \t2026 \t年 \t6 \t月 \t12 \t日（星期五）至 \t6 \t月 \t18 \t日（星期四）\n16:00 \t前 登 录 上 证 路 演 中 心 网 站 首 页 ， 点 击 \t“ \t提 问 预 征 集 \t” \t栏 目\n（https://roadshow.sseinfo.com/preCallQa），根据活动时间，选中本次活动或通\n过公司邮箱 \tdt600198@datang.com \t向公司提问，公司将在说明会上对投资者普\n遍关注的问题进行回答。\n五、联系人及咨询办法\n联系人：王清宇 \t张瑾\n电 \t话：010-58919172\n邮 \t箱：dt600198@datang.com\n六、其他事项\n\n-- 2 of 3 --\n\n本 次 投 资 者 说 明 会 召 开 后 ， 投 资 者 可 以 通 过 上 证 路 演 中 心\n（https://roadshow.sseinfo.com/）查看本次投资者说明会的召开情况及主要内容。\n特此公告。\n大唐电信科技股份有限公司\n2026 \t年 \t6 \t月 \t12 \t日\n\n-- 3 of 3 --",
+          "type": "财报",
+          "sentiment": 0,
+          "weight": 1,
+          "final_weight": 0.78,
+          "source_authority": 5,
+          "recency_factor": 0.6,
+          "source": "巨潮资讯",
+          "llm_reviewed": true,
+          "llm_confidence": 0.3,
+          "llm_is_real_catalyst": false,
+          "llm_reasoning": "同上，仅为会议通知，无业绩内容"
+        },
+        {
+          "date": "2026-06-09 10:37:00",
+          "title": "600198，3分钟涨停！",
+          "content": "专业金融数据，下一代智能终端\n\n　　【导读】通信设备、半导体、电子元器件等方向涨幅居前，多股涨停\n\n　　中国基金报记者李智\n\n　　一起来看下最新的市场情况及资讯。\n\n　　6月9日早盘，A股三大指数集体高开，创业板指一度涨逾2%。截至发稿，沪指涨0.22%，深成指涨0.98%，创业板指涨1.56%，科创综指涨1.42%。\n\n　　从板块来看，通信设备、半导体、电子元器件等方向涨幅居前；而煤炭、油气、房地产等板块震荡下挫。\n\n　　港股方面，恒生科技指数率先翻红，腾讯控股、京东健康、蔚来等涨幅居前。\n\nPCB概念股反复走强\n\n　　PCB概念股反复走强，雅葆轩实现30cm涨停，金安国纪实现2连板，华塑控股、贤丰控股均直线拉升涨停。\n\n　　消息面上，据央视财经报道，今年以来，算力需求爆发，带动电子布价格大幅上涨。截至6月初，市场上常用规格的电子布已经完成年内5轮提价，均价达7.4元/米；与去年三季度的低点相比，涨幅达到100%。\n\n通信概念股集体走强\n\n　　隔夜美股市场中，光通信概念股集体走强，带动A股市场相关概念股上涨。其中，太辰光、长信博创、联特科技涨幅居前，大唐电信、海能达涨停，新易盛、长飞光纤、天孚通信等跟涨。\n\n　　此外，半导体板块表现活跃，杰华特录得20cm涨停，富信科技、美芯晟、宏微科技等跟涨。\n\n　　国信证券指出，紧凑型通用光子引擎 COUPE（Compact Universal Photonic Engine）是台积电提出的针对硅光子集成与光电共封装（CPO）的通用解决方案。该技术跳过传统的微凸块封装，直接采用3D SoIC-X混合键合工艺，实现光子集成电路（PIC）与电子集成电路（EIC）的原子级高密度互连。\n\n　　目前以COUPE为代表的3D光电共封装技术正处于产业化加速落地的关键拐点。随着头部算力客户订单的持续导入，掌握极微间距三维键合设备、亚微米级主动对准设备以及具备CPO先进封装与精密无源器件制造能力的厂商将率先迎来业绩爆发。\n\n煤炭板块震荡下挫\n\n　　煤炭板块震荡下挫。郑州煤电跌停，大有能源、安泰集团、陕西黑猫等跌幅居前。\n\n　　消息面上，焦煤期货主力合约触及跌停，报1340.50元/吨。\n\n　　山西证券表示，近期煤矿安全形势紧张，叠加迎峰度夏期间，部分地区煤矿存在保供任务，在下游需求尚存的情况下，短期内炼焦煤市场价格将持续上涨。\n\n　　全新妙想投研助理，立即体验",
+          "type": "行业",
+          "sentiment": 1,
+          "weight": 1,
+          "final_weight": 0.5,
+          "source_authority": 3,
+          "recency_factor": 0.42,
+          "source": "东方财富资讯",
+          "llm_reviewed": true,
+          "llm_confidence": 0.5,
+          "llm_is_real_catalyst": false,
+          "llm_reasoning": "涨停因通信板块走强，非公司自身催化"
+        }
+      ]
+    },
+    "SSE:600688": {
+      "name": "600688",
+      "score": 50,
+      "score_raw": 0,
+      "score_components": {
+        "positive_weight_sum": 0,
+        "negative_weight_sum": 0
+      },
+      "signal": "⚪ No Trade (无数据)",
+      "strategy": "近期无相关有效新闻",
+      "suitable_for": "观望",
+      "confidence": "-",
+      "patterns": [],
+      "positive_factors": [],
+      "negative_factors": [],
+      "news_count": 0,
+      "news_dropped": 0,
+      "performance": {
+        "list_fetch_ms": 2025,
+        "candidate_filter_ms": 0,
+        "enrichment_ms": 0,
+        "raw_news_count": 40,
+        "raw_research_count": 10,
+        "candidate_news_count": 0,
+        "candidate_research_count": 0,
+        "enriched_news_count": 0,
+        "enriched_research_count": 0,
+        "candidate_reasons": {
+          "news": {
+            "no-subject-mention": 11,
+            "noise:\\d{1,2}月\\d{1,2}日(快速上涨|快速回调|涨停|": 1,
+            "noise:融资净(买入|卖出)": 1,
+            "dedup": 0,
+            "out_of_window": 27
           },
           "research": {
             "dedup": 0,
@@ -717,8 +1446,105 @@
       },
       "top_news": []
     },
-    "SSE:603986": {
-      "name": "兆易创新",
+    "SSE:601798": {
+      "name": "601798",
+      "score": 50,
+      "score_raw": 0,
+      "score_components": {
+        "positive_weight_sum": 0,
+        "negative_weight_sum": 0,
+        "news_effective_count": 3,
+        "news_dropped_count": 0
+      },
+      "signal": "⚪ No Trade (微多)",
+      "strategy": "情绪轻微偏多，信号不足，以观望为主",
+      "suitable_for": "观望",
+      "confidence": "低",
+      "patterns": [],
+      "positive_factors": [],
+      "negative_factors": [],
+      "news_count": 3,
+      "news_dropped": 0,
+      "performance": {
+        "list_fetch_ms": 1746,
+        "candidate_filter_ms": 0,
+        "enrichment_ms": 1810,
+        "raw_news_count": 40,
+        "raw_research_count": 2,
+        "candidate_news_count": 3,
+        "candidate_research_count": 0,
+        "enriched_news_count": 3,
+        "enriched_research_count": 0,
+        "candidate_reasons": {
+          "news": {
+            "no-subject-mention": 5,
+            "noise:\\d{1,2}月\\d{1,2}日(快速上涨|快速回调|涨停|": 4,
+            "dedup": 0,
+            "out_of_window": 28
+          },
+          "research": {
+            "dedup": 0,
+            "out_of_window": 2
+          }
+        },
+        "date_filter_ms": 0,
+        "relevance_ms": 0,
+        "llm_ms": 2717,
+        "scoring_ms": 0
+      },
+      "top_news": [
+        {
+          "date": "2026-06-12",
+          "title": "蓝科高新:蓝科高新第六届董事会第十七次会议决议的公告",
+          "content": "机械设备研发;机械设备销售;特种设备设计;特种设备制造;特种设备销售;专用设备制造(不含许可类专业设备制造);通用设备制造(不含特种设备制造);民用核安全设备设计;工程管理服务;建设工程设计;建设工程施工;工业工程设计服务;工业设计服务;海洋工程装备研发;海洋工程关键配套系统开发;海洋工程设计和模块设计制造服务;海洋工程装备制造;水下系统和作业装备制造;船用配套设备制造;石油天然气技术服务;普通机械设备安装服务;特种设备安装改造修理;民用核安全设备安装;专用设备修理;金属制品修理;检验检测服务;安全生产检验检测;特种设备检验检测;标准化服务;软件开发;工程和技术研究和试验发展;技术服务、技术开发、技术咨询、技术交流、技术转让、技术推广;对外承包工程;道路货物运输(不含危险货物);广告设计、代理;版权代理;科技中介服务;进出口商品检验鉴定;技术进出口;进出口代理;国内贸易代理。\n郑重声明：东方财富网发布此信息的目的在于传播更多信息，与本站立场无关。东方财富网不保证该信息（包括但不限于文字、视频、音频、数据及图表）全部或者部分内容的准确性、真实性、完整性、有效性、及时性、原创性等。相关信息并未经过本网站证实，不对您构成任何投资建议，据此操作，风险自担。",
+          "type": "财报",
+          "sentiment": 0,
+          "weight": 1,
+          "final_weight": 0.84,
+          "source_authority": 4.5,
+          "recency_factor": 0.72,
+          "source": "东方财富公告",
+          "llm_reviewed": true,
+          "llm_confidence": 0.1,
+          "llm_is_real_catalyst": false,
+          "llm_reasoning": "仅为董事会决议公告，无实质内容"
+        },
+        {
+          "date": "2026-06-12",
+          "title": "蓝科高新:蓝科高新关于召开2026年第一次临时股东会的通知",
+          "content": "机械设备研发;机械设备销售;特种设备设计;特种设备制造;特种设备销售;专用设备制造(不含许可类专业设备制造);通用设备制造(不含特种设备制造);民用核安全设备设计;工程管理服务;建设工程设计;建设工程施工;工业工程设计服务;工业设计服务;海洋工程装备研发;海洋工程关键配套系统开发;海洋工程设计和模块设计制造服务;海洋工程装备制造;水下系统和作业装备制造;船用配套设备制造;石油天然气技术服务;普通机械设备安装服务;特种设备安装改造修理;民用核安全设备安装;专用设备修理;金属制品修理;检验检测服务;安全生产检验检测;特种设备检验检测;标准化服务;软件开发;工程和技术研究和试验发展;技术服务、技术开发、技术咨询、技术交流、技术转让、技术推广;对外承包工程;道路货物运输(不含危险货物);广告设计、代理;版权代理;科技中介服务;进出口商品检验鉴定;技术进出口;进出口代理;国内贸易代理。\n郑重声明：东方财富网发布此信息的目的在于传播更多信息，与本站立场无关。东方财富网不保证该信息（包括但不限于文字、视频、音频、数据及图表）全部或者部分内容的准确性、真实性、完整性、有效性、及时性、原创性等。相关信息并未经过本网站证实，不对您构成任何投资建议，据此操作，风险自担。",
+          "type": "财报",
+          "sentiment": 0,
+          "weight": 1,
+          "final_weight": 0.84,
+          "source_authority": 4.5,
+          "recency_factor": 0.72,
+          "source": "东方财富公告",
+          "llm_reviewed": true,
+          "llm_confidence": 0.1,
+          "llm_is_real_catalyst": false,
+          "llm_reasoning": "仅为召开股东会通知，无实质影响"
+        },
+        {
+          "date": "2026-06-12",
+          "title": "蓝科高新:蓝科高新关于开展应收账款保理业务暨关联交易的公告",
+          "content": "机械设备研发;机械设备销售;特种设备设计;特种设备制造;特种设备销售;专用设备制造(不含许可类专业设备制造);通用设备制造(不含特种设备制造);民用核安全设备设计;工程管理服务;建设工程设计;建设工程施工;工业工程设计服务;工业设计服务;海洋工程装备研发;海洋工程关键配套系统开发;海洋工程设计和模块设计制造服务;海洋工程装备制造;水下系统和作业装备制造;船用配套设备制造;石油天然气技术服务;普通机械设备安装服务;特种设备安装改造修理;民用核安全设备安装;专用设备修理;金属制品修理;检验检测服务;安全生产检验检测;特种设备检验检测;标准化服务;软件开发;工程和技术研究和试验发展;技术服务、技术开发、技术咨询、技术交流、技术转让、技术推广;对外承包工程;道路货物运输(不含危险货物);广告设计、代理;版权代理;科技中介服务;进出口商品检验鉴定;技术进出口;进出口代理;国内贸易代理。\n郑重声明：东方财富网发布此信息的目的在于传播更多信息，与本站立场无关。东方财富网不保证该信息（包括但不限于文字、视频、音频、数据及图表）全部或者部分内容的准确性、真实性、完整性、有效性、及时性、原创性等。相关信息并未经过本网站证实，不对您构成任何投资建议，据此操作，风险自担。",
+          "type": "财报",
+          "sentiment": 0,
+          "weight": 1,
+          "final_weight": 0.84,
+          "source_authority": 4.5,
+          "recency_factor": 0.72,
+          "source": "东方财富公告",
+          "llm_reviewed": true,
+          "llm_confidence": 0.2,
+          "llm_is_real_catalyst": false,
+          "llm_reasoning": "开展保理业务，关联交易但无具体数据"
+        }
+      ]
+    },
+    "SSE:603120": {
+      "name": "603120",
       "score": 50,
       "score_raw": 0,
       "score_components": {
@@ -735,10 +1561,251 @@
       "news_count": 0,
       "news_dropped": 0,
       "performance": {
-        "list_fetch_ms": 34081,
+        "list_fetch_ms": 2098,
         "candidate_filter_ms": 0,
         "enrichment_ms": 0,
-        "raw_news_count": 20,
+        "raw_news_count": 40,
+        "raw_research_count": 1,
+        "candidate_news_count": 0,
+        "candidate_research_count": 0,
+        "enriched_news_count": 0,
+        "enriched_research_count": 0,
+        "candidate_reasons": {
+          "news": {
+            "no-subject-mention": 12,
+            "noise:龙虎榜|大宗交易|盘口异动": 1,
+            "noise:\\d{1,2}月\\d{1,2}日(快速上涨|快速回调|涨停|": 5,
+            "noise:融资净(买入|卖出)": 2,
+            "dedup": 0,
+            "out_of_window": 20
+          },
+          "research": {
+            "dedup": 0,
+            "out_of_window": 1
+          }
+        },
+        "date_filter_ms": 0,
+        "relevance_ms": 0,
+        "llm_ms": 0,
+        "scoring_ms": 0
+      },
+      "top_news": []
+    },
+    "SZSE:001223": {
+      "name": "001223",
+      "score": 50,
+      "score_raw": 0,
+      "score_components": {
+        "positive_weight_sum": 0,
+        "negative_weight_sum": 0
+      },
+      "signal": "⚪ No Trade (无数据)",
+      "strategy": "近期无相关有效新闻",
+      "suitable_for": "观望",
+      "confidence": "-",
+      "patterns": [],
+      "positive_factors": [],
+      "negative_factors": [],
+      "news_count": 0,
+      "news_dropped": 0,
+      "performance": {
+        "list_fetch_ms": 1424,
+        "candidate_filter_ms": 1,
+        "enrichment_ms": 0,
+        "raw_news_count": 40,
+        "raw_research_count": 4,
+        "candidate_news_count": 0,
+        "candidate_research_count": 0,
+        "enriched_news_count": 0,
+        "enriched_research_count": 0,
+        "candidate_reasons": {
+          "news": {
+            "no-subject-mention": 6,
+            "noise:\\d{1,2}月\\d{1,2}日(快速上涨|快速回调|涨停|": 4,
+            "dedup": 0,
+            "out_of_window": 30
+          },
+          "research": {
+            "dedup": 0,
+            "out_of_window": 4
+          }
+        },
+        "date_filter_ms": 0,
+        "relevance_ms": 0,
+        "llm_ms": 0,
+        "scoring_ms": 0
+      },
+      "top_news": []
+    },
+    "SSE:603135": {
+      "name": "603135",
+      "score": 50,
+      "score_raw": 0,
+      "score_components": {
+        "positive_weight_sum": 0,
+        "negative_weight_sum": 0,
+        "news_effective_count": 3,
+        "news_dropped_count": 0
+      },
+      "signal": "⚪ No Trade (微多)",
+      "strategy": "情绪轻微偏多，信号不足，以观望为主",
+      "suitable_for": "观望",
+      "confidence": "低",
+      "patterns": [],
+      "positive_factors": [],
+      "negative_factors": [],
+      "news_count": 3,
+      "news_dropped": 0,
+      "performance": {
+        "list_fetch_ms": 2092,
+        "candidate_filter_ms": 0,
+        "enrichment_ms": 9,
+        "raw_news_count": 40,
+        "raw_research_count": 1,
+        "candidate_news_count": 3,
+        "candidate_research_count": 0,
+        "enriched_news_count": 3,
+        "enriched_research_count": 0,
+        "candidate_reasons": {
+          "news": {
+            "noise:融资净(买入|卖出)": 2,
+            "no-subject-mention": 15,
+            "noise:龙虎榜|大宗交易|盘口异动": 1,
+            "noise:开盘价|收盘价": 1,
+            "noise:\\d{1,2}月\\d{1,2}日(快速上涨|快速回调|涨停|": 1,
+            "dedup": 0,
+            "out_of_window": 17
+          },
+          "research": {
+            "dedup": 0,
+            "out_of_window": 1
+          }
+        },
+        "date_filter_ms": 0,
+        "relevance_ms": 0,
+        "llm_ms": 0,
+        "scoring_ms": 0
+      },
+      "top_news": [
+        {
+          "date": "2026-06-13",
+          "title": "中重科技:中重科技关于指定募集资金现金管理专用结算账户的公告",
+          "content": "冶金专用设备制造;通用设备制造(不含特种设备制造);智能基础制造装备制造;工业自动控制系统装置制造;工业控制计算机及系统制造;伺服控制机构制造;机械电气设备制造;输配电及控制设备制造;液压动力机械及元件制造;环境保护专用设备制造;除尘技术装备制造;污水处理及其再生利用;工业机器人制造;技术服务、技术开发、技术咨询、技术交流、技术转让、技术推广;机械设备研发;软件开发;电机及其控制系统研发;智能控制系统集成;人工智能应用软件开发;信息系统运行维护服务;新材料技术研发;工业工程设计服务;环保咨询服务;冶金专用设备销售;特种设备销售;普通机械设备安装服务;电子、机械设备维护;专用设备修理;许可项目:道路货物运输(不含危险货物)。(依法须经批准的项目,经相关部门批准后方可开展经营活动,具体经营项目以相关部门批准文件或许可证件为准)\n郑重声明：东方财富网发布此信息的目的在于传播更多信息，与本站立场无关。东方财富网不保证该信息（包括但不限于文字、视频、音频、数据及图表）全部或者部分内容的准确性、真实性、完整性、有效性、及时性、原创性等。相关信息并未经过本网站证实，不对您构成任何投资建议，据此操作，风险自担。",
+          "type": "行业",
+          "sentiment": 0,
+          "weight": 1,
+          "final_weight": 0.76,
+          "source_authority": 4.5,
+          "recency_factor": 0.85,
+          "source": "东方财富公告",
+          "llm_reviewed": true,
+          "llm_confidence": 0.1,
+          "llm_is_real_catalyst": false,
+          "llm_reasoning": "仅公告资金管理账户，无实质影响"
+        },
+        {
+          "date": "2026-06-13",
+          "title": "中重科技:关于股票交易异常波动公告",
+          "content": "冶金专用设备制造;通用设备制造(不含特种设备制造);智能基础制造装备制造;工业自动控制系统装置制造;工业控制计算机及系统制造;伺服控制机构制造;机械电气设备制造;输配电及控制设备制造;液压动力机械及元件制造;环境保护专用设备制造;除尘技术装备制造;污水处理及其再生利用;工业机器人制造;技术服务、技术开发、技术咨询、技术交流、技术转让、技术推广;机械设备研发;软件开发;电机及其控制系统研发;智能控制系统集成;人工智能应用软件开发;信息系统运行维护服务;新材料技术研发;工业工程设计服务;环保咨询服务;冶金专用设备销售;特种设备销售;普通机械设备安装服务;电子、机械设备维护;专用设备修理;许可项目:道路货物运输(不含危险货物)。(依法须经批准的项目,经相关部门批准后方可开展经营活动,具体经营项目以相关部门批准文件或许可证件为准)\n郑重声明：东方财富网发布此信息的目的在于传播更多信息，与本站立场无关。东方财富网不保证该信息（包括但不限于文字、视频、音频、数据及图表）全部或者部分内容的准确性、真实性、完整性、有效性、及时性、原创性等。相关信息并未经过本网站证实，不对您构成任何投资建议，据此操作，风险自担。",
+          "type": "行业",
+          "sentiment": 0,
+          "weight": 1,
+          "final_weight": 0.76,
+          "source_authority": 4.5,
+          "recency_factor": 0.85,
+          "source": "东方财富公告",
+          "llm_reviewed": true,
+          "llm_confidence": 0.2,
+          "llm_is_real_catalyst": false,
+          "llm_reasoning": "异常波动公告，未披露具体原因"
+        },
+        {
+          "date": "2026-06-09",
+          "title": "中重科技:关于股票交易异常波动公告",
+          "content": "冶金专用设备制造;通用设备制造(不含特种设备制造);智能基础制造装备制造;工业自动控制系统装置制造;工业控制计算机及系统制造;伺服控制机构制造;机械电气设备制造;输配电及控制设备制造;液压动力机械及元件制造;环境保护专用设备制造;除尘技术装备制造;污水处理及其再生利用;工业机器人制造;技术服务、技术开发、技术咨询、技术交流、技术转让、技术推广;机械设备研发;软件开发;电机及其控制系统研发;智能控制系统集成;人工智能应用软件开发;信息系统运行维护服务;新材料技术研发;工业工程设计服务;环保咨询服务;冶金专用设备销售;特种设备销售;普通机械设备安装服务;电子、机械设备维护;专用设备修理;许可项目:道路货物运输(不含危险货物)。(依法须经批准的项目,经相关部门批准后方可开展经营活动,具体经营项目以相关部门批准文件或许可证件为准)\n郑重声明：东方财富网发布此信息的目的在于传播更多信息，与本站立场无关。东方财富网不保证该信息（包括但不限于文字、视频、音频、数据及图表）全部或者部分内容的准确性、真实性、完整性、有效性、及时性、原创性等。相关信息并未经过本网站证实，不对您构成任何投资建议，据此操作，风险自担。",
+          "type": "行业",
+          "sentiment": 0,
+          "weight": 1,
+          "final_weight": 0.5,
+          "source_authority": 4.5,
+          "recency_factor": 0.42,
+          "source": "东方财富公告",
+          "llm_reviewed": true,
+          "llm_confidence": 0.2,
+          "llm_is_real_catalyst": false,
+          "llm_reasoning": "重复异常波动公告，无新增信息"
+        }
+      ]
+    },
+    "SZSE:002965": {
+      "name": "002965",
+      "score": 50,
+      "score_raw": 0,
+      "score_components": {
+        "positive_weight_sum": 0,
+        "negative_weight_sum": 0
+      },
+      "signal": "⚪ No Trade (无数据)",
+      "strategy": "近期无相关有效新闻",
+      "suitable_for": "观望",
+      "confidence": "-",
+      "patterns": [],
+      "positive_factors": [],
+      "negative_factors": [],
+      "news_count": 0,
+      "news_dropped": 0,
+      "performance": {
+        "list_fetch_ms": 1299,
+        "candidate_filter_ms": 0,
+        "enrichment_ms": 0,
+        "raw_news_count": 40,
+        "raw_research_count": 10,
+        "candidate_news_count": 0,
+        "candidate_research_count": 0,
+        "enriched_news_count": 0,
+        "enriched_research_count": 0,
+        "candidate_reasons": {
+          "news": {
+            "noise:\\d{1,2}月\\d{1,2}日(快速上涨|快速回调|涨停|": 2,
+            "no-subject-mention": 9,
+            "noise:融资净(买入|卖出)": 1,
+            "dedup": 0,
+            "out_of_window": 28
+          },
+          "research": {
+            "dedup": 0,
+            "out_of_window": 10
+          }
+        },
+        "date_filter_ms": 0,
+        "relevance_ms": 0,
+        "llm_ms": 0,
+        "scoring_ms": 0
+      },
+      "top_news": []
+    },
+    "SSE:605162": {
+      "name": "605162",
+      "score": 50,
+      "score_raw": 0,
+      "score_components": {
+        "positive_weight_sum": 0,
+        "negative_weight_sum": 0
+      },
+      "signal": "⚪ No Trade (无数据)",
+      "strategy": "近期无相关有效新闻",
+      "suitable_for": "观望",
+      "confidence": "-",
+      "patterns": [],
+      "positive_factors": [],
+      "negative_factors": [],
+      "news_count": 0,
+      "news_dropped": 0,
+      "performance": {
+        "list_fetch_ms": 1506,
+        "candidate_filter_ms": 0,
+        "enrichment_ms": 0,
+        "raw_news_count": 40,
         "raw_research_count": 0,
         "candidate_news_count": 0,
         "candidate_research_count": 0,
@@ -746,8 +1813,10 @@
         "enriched_research_count": 0,
         "candidate_reasons": {
           "news": {
+            "noise:\\d{1,2}月\\d{1,2}日(快速上涨|快速回调|涨停|": 2,
+            "no-subject-mention": 7,
             "dedup": 0,
-            "out_of_window": 20
+            "out_of_window": 31
           },
           "research": {
             "dedup": 0
@@ -760,8 +1829,8 @@
       },
       "top_news": []
     },
-    "SSE:600584": {
-      "name": "长电科技",
+    "SZSE:002875": {
+      "name": "002875",
       "score": 50,
       "score_raw": 0,
       "score_components": {
@@ -778,22 +1847,281 @@
       "news_count": 0,
       "news_dropped": 0,
       "performance": {
-        "list_fetch_ms": 33547,
+        "list_fetch_ms": 1238,
         "candidate_filter_ms": 0,
         "enrichment_ms": 0,
-        "raw_news_count": 30,
-        "raw_research_count": 0,
+        "raw_news_count": 40,
+        "raw_research_count": 4,
         "candidate_news_count": 0,
         "candidate_research_count": 0,
         "enriched_news_count": 0,
         "enriched_research_count": 0,
         "candidate_reasons": {
           "news": {
+            "noise:\\d{1,2}月\\d{1,2}日(快速上涨|快速回调|涨停|": 1,
+            "no-subject-mention": 2,
             "dedup": 0,
-            "out_of_window": 30
+            "out_of_window": 37
           },
           "research": {
-            "dedup": 0
+            "dedup": 0,
+            "out_of_window": 4
+          }
+        },
+        "date_filter_ms": 0,
+        "relevance_ms": 0,
+        "llm_ms": 0,
+        "scoring_ms": 0
+      },
+      "top_news": []
+    },
+    "SSE:603656": {
+      "name": "603656",
+      "score": 50,
+      "score_raw": 0,
+      "score_components": {
+        "positive_weight_sum": 0,
+        "negative_weight_sum": 0,
+        "news_effective_count": 3,
+        "news_dropped_count": 0
+      },
+      "signal": "⚪ No Trade (微多)",
+      "strategy": "情绪轻微偏多，信号不足，以观望为主",
+      "suitable_for": "观望",
+      "confidence": "低",
+      "patterns": [],
+      "positive_factors": [],
+      "negative_factors": [],
+      "news_count": 3,
+      "news_dropped": 0,
+      "performance": {
+        "list_fetch_ms": 1856,
+        "candidate_filter_ms": 0,
+        "enrichment_ms": 2,
+        "raw_news_count": 40,
+        "raw_research_count": 1,
+        "candidate_news_count": 3,
+        "candidate_research_count": 0,
+        "enriched_news_count": 3,
+        "enriched_research_count": 0,
+        "candidate_reasons": {
+          "news": {
+            "no-subject-mention": 2,
+            "dedup": 0,
+            "out_of_window": 35
+          },
+          "research": {
+            "dedup": 0,
+            "out_of_window": 1
+          }
+        },
+        "date_filter_ms": 0,
+        "relevance_ms": 0,
+        "llm_ms": 0,
+        "scoring_ms": 0
+      },
+      "top_news": [
+        {
+          "date": "2026-06-12",
+          "title": "泰禾智能:泰禾智能关于开展外汇套期保值业务的公告",
+          "content": "光电、软件、人工智能视觉、控制技术、机器人及系统、自动化仓储物流设备的研发与转让;分选设备及配件、机器人及配件、自动化仓储物流设备及配件、智能包装设备及配件的制造、销售、服务(含农业机械、工业机械);上述产品成套生产线工程的设计、制造、销售、服务;经营上述产品及技术的出口业务和本企业所需的技术及机械设备、零配件、原辅材料进出口业务;机械加工;房屋、产品租赁。(依法须经批准的项目,经相关部门批准后方可开展经营活动)\n郑重声明：东方财富网发布此信息的目的在于传播更多信息，与本站立场无关。东方财富网不保证该信息（包括但不限于文字、视频、音频、数据及图表）全部或者部分内容的准确性、真实性、完整性、有效性、及时性、原创性等。相关信息并未经过本网站证实，不对您构成任何投资建议，据此操作，风险自担。",
+          "type": "行业",
+          "sentiment": 0,
+          "weight": 1,
+          "final_weight": 0.65,
+          "source_authority": 4.5,
+          "recency_factor": 0.72,
+          "source": "东方财富公告",
+          "llm_reviewed": true,
+          "llm_confidence": 0.3,
+          "llm_is_real_catalyst": false,
+          "llm_reasoning": "外汇套期保值属常规风控，无实质影响"
+        },
+        {
+          "date": "2026-06-12",
+          "title": "泰禾智能:泰禾智能关于开展外汇套期保值业务的可行性分析报告",
+          "content": "光电、软件、人工智能视觉、控制技术、机器人及系统、自动化仓储物流设备的研发与转让;分选设备及配件、机器人及配件、自动化仓储物流设备及配件、智能包装设备及配件的制造、销售、服务(含农业机械、工业机械);上述产品成套生产线工程的设计、制造、销售、服务;经营上述产品及技术的出口业务和本企业所需的技术及机械设备、零配件、原辅材料进出口业务;机械加工;房屋、产品租赁。(依法须经批准的项目,经相关部门批准后方可开展经营活动)\n郑重声明：东方财富网发布此信息的目的在于传播更多信息，与本站立场无关。东方财富网不保证该信息（包括但不限于文字、视频、音频、数据及图表）全部或者部分内容的准确性、真实性、完整性、有效性、及时性、原创性等。相关信息并未经过本网站证实，不对您构成任何投资建议，据此操作，风险自担。",
+          "type": "行业",
+          "sentiment": 0,
+          "weight": 1,
+          "final_weight": 0.65,
+          "source_authority": 4.5,
+          "recency_factor": 0.72,
+          "source": "东方财富公告",
+          "llm_reviewed": true,
+          "llm_confidence": 0.3,
+          "llm_is_real_catalyst": false,
+          "llm_reasoning": "可行性分析报告，无新增催化信息"
+        },
+        {
+          "date": "2026-06-10",
+          "title": "泰禾智能:泰禾智能关于部分厂房对外出租暨关联交易的进展公告",
+          "content": "光电、软件、人工智能视觉、控制技术、机器人及系统、自动化仓储物流设备的研发与转让;分选设备及配件、机器人及配件、自动化仓储物流设备及配件、智能包装设备及配件的制造、销售、服务(含农业机械、工业机械);上述产品成套生产线工程的设计、制造、销售、服务;经营上述产品及技术的出口业务和本企业所需的技术及机械设备、零配件、原辅材料进出口业务;机械加工;房屋、产品租赁。(依法须经批准的项目,经相关部门批准后方可开展经营活动)\n郑重声明：东方财富网发布此信息的目的在于传播更多信息，与本站立场无关。东方财富网不保证该信息（包括但不限于文字、视频、音频、数据及图表）全部或者部分内容的准确性、真实性、完整性、有效性、及时性、原创性等。相关信息并未经过本网站证实，不对您构成任何投资建议，据此操作，风险自担。",
+          "type": "行业",
+          "sentiment": 0,
+          "weight": 1,
+          "final_weight": 0.5,
+          "source_authority": 4.5,
+          "recency_factor": 0.5,
+          "source": "东方财富公告",
+          "llm_reviewed": true,
+          "llm_confidence": 0.4,
+          "llm_is_real_catalyst": false,
+          "llm_reasoning": "厂房出租关联交易进展，影响有限"
+        }
+      ]
+    },
+    "SSE:603203": {
+      "name": "603203",
+      "score": 50,
+      "score_raw": 0,
+      "score_components": {
+        "positive_weight_sum": 0,
+        "negative_weight_sum": 0
+      },
+      "signal": "⚪ No Trade (无数据)",
+      "strategy": "近期无相关有效新闻",
+      "suitable_for": "观望",
+      "confidence": "-",
+      "patterns": [],
+      "positive_factors": [],
+      "negative_factors": [],
+      "news_count": 0,
+      "news_dropped": 0,
+      "performance": {
+        "list_fetch_ms": 1207,
+        "candidate_filter_ms": 1,
+        "enrichment_ms": 0,
+        "raw_news_count": 40,
+        "raw_research_count": 10,
+        "candidate_news_count": 0,
+        "candidate_research_count": 0,
+        "enriched_news_count": 0,
+        "enriched_research_count": 0,
+        "candidate_reasons": {
+          "news": {
+            "noise:龙虎榜|大宗交易|盘口异动": 2,
+            "no-subject-mention": 13,
+            "noise:\\d{1,2}月\\d{1,2}日(快速上涨|快速回调|涨停|": 4,
+            "dedup": 0,
+            "out_of_window": 21
+          },
+          "research": {
+            "dedup": 0,
+            "out_of_window": 10
+          }
+        },
+        "date_filter_ms": 0,
+        "relevance_ms": 0,
+        "llm_ms": 0,
+        "scoring_ms": 0
+      },
+      "top_news": []
+    },
+    "SZSE:300620": {
+      "name": "300620",
+      "score": 50,
+      "score_raw": 0,
+      "score_components": {
+        "positive_weight_sum": 0,
+        "negative_weight_sum": 0,
+        "news_effective_count": 1,
+        "news_dropped_count": 0
+      },
+      "signal": "⚪ No Trade (微多)",
+      "strategy": "情绪轻微偏多，信号不足，以观望为主",
+      "suitable_for": "观望",
+      "confidence": "低",
+      "patterns": [],
+      "positive_factors": [],
+      "negative_factors": [],
+      "news_count": 1,
+      "news_dropped": 0,
+      "performance": {
+        "list_fetch_ms": 1951,
+        "candidate_filter_ms": 0,
+        "enrichment_ms": 2668,
+        "raw_news_count": 40,
+        "raw_research_count": 10,
+        "candidate_news_count": 1,
+        "candidate_research_count": 0,
+        "enriched_news_count": 1,
+        "enriched_research_count": 0,
+        "candidate_reasons": {
+          "news": {
+            "no-subject-mention": 16,
+            "noise:\\d{1,2}月\\d{1,2}日(快速上涨|快速回调|涨停|": 1,
+            "noise:融资净(买入|卖出)": 1,
+            "dedup": 0,
+            "out_of_window": 21
+          },
+          "research": {
+            "dedup": 0,
+            "out_of_window": 10
+          }
+        },
+        "date_filter_ms": 0,
+        "relevance_ms": 0,
+        "llm_ms": 0,
+        "scoring_ms": 0
+      },
+      "top_news": [
+        {
+          "date": "2026-06-09",
+          "title": "光库科技:关于部分募集资金专用账户注销完成的公告",
+          "content": "",
+          "type": "行业",
+          "sentiment": 0,
+          "weight": 1,
+          "final_weight": 0.5,
+          "source_authority": 4.5,
+          "recency_factor": 0.42,
+          "source": "东方财富公告",
+          "llm_reviewed": true,
+          "llm_confidence": 0.3,
+          "llm_is_real_catalyst": false,
+          "llm_reasoning": "账户注销公告，无实质业务影响"
+        }
+      ]
+    },
+    "SSE:603986": {
+      "name": "603986",
+      "score": 50,
+      "score_raw": 0,
+      "score_components": {
+        "positive_weight_sum": 0,
+        "negative_weight_sum": 0
+      },
+      "signal": "⚪ No Trade (无数据)",
+      "strategy": "近期无相关有效新闻",
+      "suitable_for": "观望",
+      "confidence": "-",
+      "patterns": [],
+      "positive_factors": [],
+      "negative_factors": [],
+      "news_count": 0,
+      "news_dropped": 0,
+      "performance": {
+        "list_fetch_ms": 3845,
+        "candidate_filter_ms": 0,
+        "enrichment_ms": 0,
+        "raw_news_count": 40,
+        "raw_research_count": 10,
+        "candidate_news_count": 0,
+        "candidate_research_count": 0,
+        "enriched_news_count": 0,
+        "enriched_research_count": 0,
+        "candidate_reasons": {
+          "news": {
+            "noise:融资净(买入|卖出)": 2,
+            "no-subject-mention": 17,
+            "noise:龙虎榜|大宗交易|盘口异动": 1,
+            "dedup": 0,
+            "out_of_window": 20
+          },
+          "research": {
+            "dedup": 0,
+            "out_of_window": 10
           }
         },
         "date_filter_ms": 0,
@@ -821,7 +2149,7 @@
       "news_count": 0,
       "news_dropped": 0,
       "performance": {
-        "list_fetch_ms": 21668,
+        "list_fetch_ms": 1516,
         "candidate_filter_ms": 0,
         "enrichment_ms": 0,
         "raw_news_count": 40,
@@ -850,54 +2178,8 @@
       },
       "top_news": []
     },
-    "SZSE:000657": {
-      "name": "中钨高新",
-      "score": 50,
-      "score_raw": 0,
-      "score_components": {
-        "positive_weight_sum": 0,
-        "negative_weight_sum": 0
-      },
-      "signal": "⚪ No Trade (无数据)",
-      "strategy": "LLM 不可用或调用失败（不走关键字降级）",
-      "suitable_for": "观望",
-      "confidence": "-",
-      "patterns": [],
-      "positive_factors": [],
-      "negative_factors": [],
-      "news_count": 0,
-      "news_dropped": 0,
-      "performance": {
-        "list_fetch_ms": 18524,
-        "candidate_filter_ms": 1,
-        "enrichment_ms": 94628,
-        "raw_news_count": 40,
-        "raw_research_count": 0,
-        "candidate_news_count": 13,
-        "candidate_research_count": 0,
-        "enriched_news_count": 13,
-        "enriched_research_count": 0,
-        "candidate_reasons": {
-          "news": {
-            "no-subject-mention": 10,
-            "noise:\\d{1,2}月\\d{1,2}日(快速上涨|快速回调|涨停|": 2,
-            "noise:融资净(买入|卖出)": 1,
-            "dedup": 0,
-            "out_of_window": 14
-          },
-          "research": {
-            "dedup": 0
-          }
-        },
-        "date_filter_ms": 0,
-        "relevance_ms": 0,
-        "llm_ms": 0,
-        "scoring_ms": 0
-      },
-      "top_news": []
-    },
-    "SZSE:002938": {
-      "name": "鹏鼎控股",
+    "SSE:600522": {
+      "name": "600522",
       "score": 50,
       "score_raw": 0,
       "score_components": {
@@ -914,206 +2196,22 @@
       "news_count": 0,
       "news_dropped": 0,
       "performance": {
-        "list_fetch_ms": 18790,
+        "list_fetch_ms": 4693,
         "candidate_filter_ms": 0,
         "enrichment_ms": 0,
-        "raw_news_count": 20,
-        "raw_research_count": 0,
+        "raw_news_count": 40,
+        "raw_research_count": 10,
         "candidate_news_count": 0,
         "candidate_research_count": 0,
         "enriched_news_count": 0,
         "enriched_research_count": 0,
         "candidate_reasons": {
           "news": {
-            "dedup": 0,
-            "out_of_window": 20
-          },
-          "research": {
-            "dedup": 0
-          }
-        },
-        "date_filter_ms": 0,
-        "relevance_ms": 0,
-        "llm_ms": 0,
-        "scoring_ms": 0
-      },
-      "top_news": []
-    },
-    "SZSE:002463": {
-      "name": "沪电股份",
-      "score": 50,
-      "score_raw": 0,
-      "score_components": {
-        "positive_weight_sum": 0,
-        "negative_weight_sum": 0
-      },
-      "signal": "⚪ No Trade (无数据)",
-      "strategy": "LLM 不可用或调用失败（不走关键字降级）",
-      "suitable_for": "观望",
-      "confidence": "-",
-      "patterns": [],
-      "positive_factors": [],
-      "negative_factors": [],
-      "news_count": 0,
-      "news_dropped": 0,
-      "performance": {
-        "list_fetch_ms": 26130,
-        "candidate_filter_ms": 1,
-        "enrichment_ms": 95044,
-        "raw_news_count": 40,
-        "raw_research_count": 0,
-        "candidate_news_count": 10,
-        "candidate_research_count": 0,
-        "enriched_news_count": 10,
-        "enriched_research_count": 0,
-        "candidate_reasons": {
-          "news": {
-            "noise:\\d{1,2}月\\d{1,2}日(快速上涨|快速回调|涨停|": 1,
-            "no-subject-mention": 10,
-            "noise:融资净(买入|卖出)": 1,
-            "dedup": 0,
-            "out_of_window": 18
-          },
-          "research": {
-            "dedup": 0
-          }
-        },
-        "date_filter_ms": 0,
-        "relevance_ms": 0,
-        "llm_ms": 0,
-        "scoring_ms": 0
-      },
-      "top_news": []
-    },
-    "SSE:600522": {
-      "name": "中天科技",
-      "score": 50,
-      "score_raw": 0,
-      "score_components": {
-        "positive_weight_sum": 0,
-        "negative_weight_sum": 0
-      },
-      "signal": "⚪ No Trade (无数据)",
-      "strategy": "LLM 不可用或调用失败（不走关键字降级）",
-      "suitable_for": "观望",
-      "confidence": "-",
-      "patterns": [],
-      "positive_factors": [],
-      "negative_factors": [],
-      "news_count": 0,
-      "news_dropped": 0,
-      "performance": {
-        "list_fetch_ms": 11698,
-        "candidate_filter_ms": 1,
-        "enrichment_ms": 110741,
-        "raw_news_count": 40,
-        "raw_research_count": 10,
-        "candidate_news_count": 7,
-        "candidate_research_count": 0,
-        "enriched_news_count": 7,
-        "enriched_research_count": 0,
-        "candidate_reasons": {
-          "news": {
-            "no-subject-mention": 8,
+            "no-subject-mention": 15,
             "noise:\\d{1,2}月\\d{1,2}日(快速上涨|快速回调|涨停|": 2,
             "noise:融资净(买入|卖出)": 3,
             "dedup": 0,
             "out_of_window": 20
-          },
-          "research": {
-            "dedup": 0,
-            "out_of_window": 10
-          }
-        },
-        "date_filter_ms": 0,
-        "relevance_ms": 0,
-        "llm_ms": 0,
-        "scoring_ms": 0
-      },
-      "top_news": []
-    },
-    "SZSE:300037": {
-      "name": "新宙邦",
-      "score": 50,
-      "score_raw": 0,
-      "score_components": {
-        "positive_weight_sum": 0,
-        "negative_weight_sum": 0
-      },
-      "signal": "⚪ No Trade (无数据)",
-      "strategy": "LLM 不可用或调用失败（不走关键字降级）",
-      "suitable_for": "观望",
-      "confidence": "-",
-      "patterns": [],
-      "positive_factors": [],
-      "negative_factors": [],
-      "news_count": 0,
-      "news_dropped": 0,
-      "performance": {
-        "list_fetch_ms": 10878,
-        "candidate_filter_ms": 1,
-        "enrichment_ms": 134352,
-        "raw_news_count": 40,
-        "raw_research_count": 10,
-        "candidate_news_count": 17,
-        "candidate_research_count": 0,
-        "enriched_news_count": 17,
-        "enriched_research_count": 0,
-        "candidate_reasons": {
-          "news": {
-            "no-subject-mention": 5,
-            "noise:\\d{1,2}月\\d{1,2}日(快速上涨|快速回调|涨停|": 3,
-            "noise:融资净(买入|卖出)": 3,
-            "dedup": 0,
-            "out_of_window": 12
-          },
-          "research": {
-            "dedup": 0,
-            "out_of_window": 10
-          }
-        },
-        "date_filter_ms": 0,
-        "relevance_ms": 0,
-        "llm_ms": 0,
-        "scoring_ms": 0
-      },
-      "top_news": []
-    },
-    "SZSE:002851": {
-      "name": "麦格米特",
-      "score": 50,
-      "score_raw": 0,
-      "score_components": {
-        "positive_weight_sum": 0,
-        "negative_weight_sum": 0
-      },
-      "signal": "⚪ No Trade (无数据)",
-      "strategy": "LLM 不可用或调用失败（不走关键字降级）",
-      "suitable_for": "观望",
-      "confidence": "-",
-      "patterns": [],
-      "positive_factors": [],
-      "negative_factors": [],
-      "news_count": 0,
-      "news_dropped": 0,
-      "performance": {
-        "list_fetch_ms": 10312,
-        "candidate_filter_ms": 1,
-        "enrichment_ms": 189341,
-        "raw_news_count": 40,
-        "raw_research_count": 10,
-        "candidate_news_count": 15,
-        "candidate_research_count": 0,
-        "enriched_news_count": 15,
-        "enriched_research_count": 0,
-        "candidate_reasons": {
-          "news": {
-            "noise:\\d{1,2}月\\d{1,2}日(快速上涨|快速回调|涨停|": 2,
-            "no-subject-mention": 6,
-            "noise:融资净(买入|卖出)": 1,
-            "noise:龙虎榜|大宗交易|盘口异动": 6,
-            "dedup": 0,
-            "out_of_window": 10
           },
           "research": {
             "dedup": 0,
@@ -1128,37 +2226,39 @@
       "top_news": []
     },
     "SSE:600160": {
-      "name": "巨化股份",
+      "name": "600160",
       "score": 50,
       "score_raw": 0,
       "score_components": {
         "positive_weight_sum": 0,
-        "negative_weight_sum": 0
+        "negative_weight_sum": 0,
+        "news_effective_count": 3,
+        "news_dropped_count": 0
       },
-      "signal": "⚪ No Trade (无数据)",
-      "strategy": "LLM 不可用或调用失败（不走关键字降级）",
+      "signal": "⚪ No Trade (微多)",
+      "strategy": "情绪轻微偏多，信号不足，以观望为主",
       "suitable_for": "观望",
-      "confidence": "-",
+      "confidence": "低",
       "patterns": [],
       "positive_factors": [],
       "negative_factors": [],
-      "news_count": 0,
+      "news_count": 3,
       "news_dropped": 0,
       "performance": {
-        "list_fetch_ms": 14329,
-        "candidate_filter_ms": 1,
-        "enrichment_ms": 220654,
+        "list_fetch_ms": 7085,
+        "candidate_filter_ms": 0,
+        "enrichment_ms": 3798,
         "raw_news_count": 40,
         "raw_research_count": 10,
-        "candidate_news_count": 11,
+        "candidate_news_count": 3,
         "candidate_research_count": 0,
-        "enriched_news_count": 11,
+        "enriched_news_count": 3,
         "enriched_research_count": 0,
         "candidate_reasons": {
           "news": {
             "noise:融资净(买入|卖出)": 2,
+            "no-subject-mention": 15,
             "noise:\\d{1,2}月\\d{1,2}日(快速上涨|快速回调|涨停|": 3,
-            "no-subject-mention": 7,
             "dedup": 0,
             "out_of_window": 17
           },
@@ -1172,38 +2272,89 @@
         "llm_ms": 0,
         "scoring_ms": 0
       },
-      "top_news": []
+      "top_news": [
+        {
+          "date": "2026-06-13",
+          "title": "巨化股份:巨化股份关于为控股子公司提供担保进展的公告",
+          "content": "化工原料及化工产品生产与销售(涉及危险化学品生产的范围详见《安全生产许可证》、涉及危险化学品批发的范围详见《中华人民共和国危险化学品经营许可证》),食品添加剂的生产(《全国工业产品生产许可证》),气瓶检验(《中华人民共和国特种设备检验检测机构核准证》)。提供有关技术服务、咨询和技术转让,经营进出口业务。(上述经营范围不含国家法律法规规定禁止、限制和许可经营的项目)\n郑重声明：东方财富网发布此信息的目的在于传播更多信息，与本站立场无关。东方财富网不保证该信息（包括但不限于文字、视频、音频、数据及图表）全部或者部分内容的准确性、真实性、完整性、有效性、及时性、原创性等。相关信息并未经过本网站证实，不对您构成任何投资建议，据此操作，风险自担。",
+          "type": "财报",
+          "sentiment": 0,
+          "weight": 1,
+          "final_weight": 0.99,
+          "source_authority": 4.5,
+          "recency_factor": 0.85,
+          "source": "东方财富公告",
+          "llm_reviewed": true,
+          "llm_confidence": 0.1,
+          "llm_is_real_catalyst": false,
+          "llm_reasoning": "公告仅为担保进展，无业绩数据"
+        },
+        {
+          "date": "2026-06-12",
+          "title": "巨化股份关于为控股子公司提供担保进展的公告",
+          "content": "1 \t/ \t5\n证券代码：600160 \t证券简称：巨化股份 \t公告编号：临 \t2026-31\n浙江巨化股份有限公司\n关于为控股子公司提供担保进展的公告\n本公司董事会及全体董事保证本公告内容不存在任何虚假记载、误导性陈述\n或者重大遗漏，并对其内容的真实性、准确性和完整性承担法律责任。\n重要内容提示：\n担保对象及基本情况\n被担保人名称 \t本次担保金额\n实际为其提供的担\n保余额（不含本次\n担保金额）\n是否在前\n期预计额\n度内\n本次担保\n是否有反\n担保\n甘肃巨化新材料有限公司\n（以下简称“甘肃巨化公\n司”）\n34,953.43 \t万元 \t140,504.30 \t万元 \t是 \t否\n累计担保情况\n对外担保逾期的累计金额（万元） \t0\n截至本公告日上市公司及其控股子公司对外担保实际发生\n余额（万元） 241,857.32\n截至本公告日上市公司及其控股子公司对外担保总额（万\n元）(担保总额指已批准的担保额度内尚未使用额度与担保\n实际发生余额之和)\n1,109,975.60\n对外担保总额占上市公司最近一期经审计净资产的比例（%） \t47.22\n一、担保情况概述\n（一）担保的基本情况\n1.甘肃巨化公司\n为满足子公司日常经营发展需要，根据公司与中国银行股份有限公司衢州市\n分行等构成的银团签署的《中国银行业协会银团贷款保证合同》之授权，2026 \t年\n5 \t月公司为甘肃巨化公司提供担保金额 \t34,953.43 \t万元，担保期限 \t12 \t年的连带\n责任保证担保。\n\n-- 1 of 5 --\n\n2 \t/ \t5\n银团组成由中国银行股份有限公司衢州市分行(作为牵头行)、中国建设银行\n股份有限公司衢州衢化支行(作为联合牵头行)、中国银行股份有限公司衢州市衢\n化支行（作为代理行）和中国银行股份有限公司衢州市衢化支行、中国银行股份\n有限公司酒泉分行、中国建设银行股份有限公司衢州衢化支行、中国农业银行股\n份有限公司酒泉分行、中国工商银行股份有限公司甘肃省分行、中国进出口银行\n浙江省分行、交通银行股份有限公司衢州分行、上海浦东发展银行股份有限公司\n衢州支行、中国民生银行股份有限公司杭州分行、甘肃银行股份有限公司酒泉分\n行、浙商银行股份有限公司兰州分行（作为贷款人）。\n（二）内部决策程序\n经公司董事会九届十五次会议和公司 \t2024 \t年年度股东会审议通过计划为控\n股子公司甘肃巨化公司融资提供连带责任担保，担保额度为不超过 \t42 \t亿元（担\n保期限 \t8-12 \t年）；经公司董事会九届二十五次会议和公司 \t2025 \t年年度股东会审\n议通过计划为控股子公司甘肃巨化公司融资提供连带责任担保，担保额度为不超\n过 \t530,180.00 \t万元（担保期限 \t8-12 \t年）。\n（三）担保预计基本情况\n担\n保\n方\n被\n担\n保\n方\n担保方\n持股比\n例\n被担保\n方最近\n一期资\n产负债\n率\n截 至 目 前\n担 保 余 额\n（万元）\n本 次 新 增\n担 保 额 度\n（万元）\n担保余\n额占上\n市公司\n最近一\n期经审\n计净资\n产比例\n本次\n新增\n担保\n预计\n有效\n期\n是\n否\n关\n联\n担\n保\n是 否\n有 反\n担保\n一、对控股子公司\n被担保方资产负债率未超过 \t70%\n公\n司\n甘\n肃\n巨\n化\n公\n司\n70% \t30.75% \t175,457.73 \t34,953.43 \t7.46% \t12 \t年 \t否 \t否\n二、被担保人基本情况\n（一）基本情况\n被担保人类型 \t法人\n被担保人名称 \t甘肃巨化新材料有限公司\n\n-- 2 of 5 --\n\n3 \t/ \t5\n被担保人类型及上市\n公司持股情况 控股子公司\n主要股东及持股比例 \t本公司持股 \t70%，巨化集团公司持股 \t30%\n法定代表人 \t王爱国\n统一社会信用代码 \t91620981MACBXU3MXT\n成立时间 \t2023 \t年 \t3 \t月 \t15 \t日\n注册地 甘肃省酒泉市玉门市新市区铁人大道 \t41 \t号市民中心三\n楼\n注册资本 \t陆拾亿元整\n公司类型 \t其他有限责任公司\n经营范围\n许可项目：发电业务、输电业务、供（配）电业务；道\n路货物运输（不含危险货物）。（依法须经批准的项目，\n经相关部门批准后方可开展经营活动，具体经营项目以\n相关部门批准文件或许可证件为准）一般项目：化工产\n品生产（不含许可类化工产品）；化工产品销售（不含\n许可类化工产品）；储能技术服务；电力行业高效节能\n技术研发；新材料技术研发；新兴能源技术研发。（除\n依法须经批准的项目外，凭营业执照依法自主开展经营\n活动）\n主要财务指标（万元）\n项目 2026 \t年 \t3 \t月 \t31 \t日\n（未经审计） 2025 \t年度（经审计）\n资产总额 \t685,124.27 \t600,082.92\n负债总额 \t210,681.75 \t144,677.73\n资产净额 \t474,442.52 \t455,405.19\n营业收入 \t- \t1.89\n净利润 \t-970.79 \t-2,992.95\n三、担保协议的主要内容\n（一）被担保人：甘肃巨化新材料有限公司\n银行：中国银行股份有限公司衢州市分行等构成的银团\n担保金额：34,953.43万元人民币\n被担保主债权发生期限：12年\n担保方式：连带责任保证\n担保范围：贷款合同项下本金及利息（包括复利和罚息），贷款合同及相应\n\n-- 3 of 5 --\n\n4 \t/ \t5\n融资文件项下的违约金、赔偿金、判决书或调解书等生效法律文书迟延履行期间\n应加倍支付的债务利息、借款人应向银团成员行支付的其他款项（包括但不限于\n有关手续费、电讯费、杂费等）、贷款人实现债权与担保权利而发生的费用（包\n括但不限于诉讼费、仲裁费、财产保全费、差旅费、执行费、评估费、拍卖费、\n公证费、送达费、公告费、律师费等）。\n四、担保的必要性和合理性\n上述被担保人为纳入本公司合并报表范围内的控股子公司。公司本次担保是\n为满足上述公司的日常经营、项目建设等业务开展需要而提供融资担保支持，有\n利于上述被担保人正常经营和良性发展，符合公司的整体利益。不会损害本公司\n和全体股东的利益，不会对公司的正常运作和业务发展造成不利影响。上述被担\n保人生产经营正常，资信良好，公司为其提供担保的风险可控。\n五、董事会意见\n2026 \t年 \t4 \t月 \t21 \t日，公司董事会九届二十五次会议以 \t12 \t票同意、0 \t票反对、\n0 \t票弃权，通过《关于为子公司申请银行（金融机构）贷款提供担保的议案》。同\n意公司为上述被担保人的贷款融资提供上述连带责任担保。同意将为甘肃巨化公\n司的担保事项提交公司股东会审议。\n上述担保经董事会或股东会有效批准后，授权公司总经理代表本公司签署上\n述担保有关协议，并根据金融市场以及上述子公司对融资品种需求的变化等情况，\n在上述担保额度内进行担保调整，包括但不限于担保金额、贷款银行、贷款种类\n的调整。\n六、累计对外担保数量及逾期担保的数量\n截止本公告日，本公司及子公司的对外担保实际发生余额为 \t241,857.32 \t万\n元，占本公司 \t2025 \t年末经审计净资产的 \t10.29%。公司及子公司对外担保总额（担\n保总额指已批准的担保额度内尚未使用额度与担保实际发生余额之和）为\n1,109,975.60 \t万元（涉及的美元汇率按 \t6.9 \t折算），占本公司 \t2025 \t年末经审计\n净资产的 \t47.22%，上述担保全部为公司对全资子公司及控制子公司提供的担保，\n公司未发生其他对外担保情况，无逾期担保。\n特此公告。\n\n-- 4 of 5 --\n\n5 \t/ \t5\n浙江巨化股份有限公司董事会\n2026 \t年 \t6 \t月 \t13 \t日\n\n-- 5 of 5 --",
+          "type": "财报",
+          "sentiment": 0,
+          "weight": 1,
+          "final_weight": 0.94,
+          "source_authority": 5,
+          "recency_factor": 0.72,
+          "source": "巨潮资讯",
+          "llm_reviewed": true,
+          "llm_confidence": 0.1,
+          "llm_is_real_catalyst": false,
+          "llm_reasoning": "担保公告，无业绩或催化信息"
+        },
+        {
+          "date": "2026-06-11",
+          "title": "巨化股份:投资者关系活动记录表(2026年6月9日)",
+          "content": "化工原料及化工产品生产与销售(涉及危险化学品生产的范围详见《安全生产许可证》、涉及危险化学品批发的范围详见《中华人民共和国危险化学品经营许可证》),食品添加剂的生产(《全国工业产品生产许可证》),气瓶检验(《中华人民共和国特种设备检验检测机构核准证》)。提供有关技术服务、咨询和技术转让,经营进出口业务。(上述经营范围不含国家法律法规规定禁止、限制和许可经营的项目)\n郑重声明：东方财富网发布此信息的目的在于传播更多信息，与本站立场无关。东方财富网不保证该信息（包括但不限于文字、视频、音频、数据及图表）全部或者部分内容的准确性、真实性、完整性、有效性、及时性、原创性等。相关信息并未经过本网站证实，不对您构成任何投资建议，据此操作，风险自担。",
+          "type": "财报",
+          "sentiment": 0,
+          "weight": 1,
+          "final_weight": 0.7,
+          "source_authority": 4.5,
+          "recency_factor": 0.6,
+          "source": "东方财富公告",
+          "llm_reviewed": true,
+          "llm_confidence": 0.1,
+          "llm_is_real_catalyst": false,
+          "llm_reasoning": "投资者关系记录，无实质内容"
+        }
+      ]
     },
     "SZSE:300308": {
-      "name": "中际旭创",
+      "name": "300308",
       "score": 50,
       "score_raw": 0,
       "score_components": {
         "positive_weight_sum": 0,
-        "negative_weight_sum": 0
+        "negative_weight_sum": 0,
+        "news_effective_count": 7,
+        "news_dropped_count": 0
       },
-      "signal": "⚪ No Trade (无数据)",
-      "strategy": "LLM 不可用或调用失败（不走关键字降级）",
+      "signal": "⚪ No Trade (微多)",
+      "strategy": "情绪轻微偏多，信号不足，以观望为主",
       "suitable_for": "观望",
-      "confidence": "-",
+      "confidence": "低",
       "patterns": [],
       "positive_factors": [],
       "negative_factors": [],
-      "news_count": 0,
+      "news_count": 7,
       "news_dropped": 0,
       "performance": {
-        "list_fetch_ms": 17615,
-        "candidate_filter_ms": 1,
-        "enrichment_ms": 279855,
+        "list_fetch_ms": 4240,
+        "candidate_filter_ms": 0,
+        "enrichment_ms": 7571,
         "raw_news_count": 40,
         "raw_research_count": 10,
-        "candidate_news_count": 19,
+        "candidate_news_count": 7,
         "candidate_research_count": 0,
-        "enriched_news_count": 19,
+        "enriched_news_count": 7,
         "enriched_research_count": 0,
         "candidate_reasons": {
           "news": {
-            "no-subject-mention": 7,
+            "no-subject-mention": 19,
             "noise:龙虎榜|大宗交易|盘口异动": 1,
             "dedup": 0,
             "out_of_window": 13
@@ -1215,108 +2366,94 @@
         },
         "date_filter_ms": 0,
         "relevance_ms": 0,
-        "llm_ms": 0,
+        "llm_ms": 3565,
         "scoring_ms": 0
       },
-      "top_news": []
-    },
-    "SSE:603638": {
-      "name": "艾迪精密",
-      "score": 50,
-      "score_raw": 0,
-      "score_components": {
-        "positive_weight_sum": 0,
-        "negative_weight_sum": 0
-      },
-      "signal": "⚪ No Trade (无数据)",
-      "strategy": "LLM 不可用或调用失败（不走关键字降级）",
-      "suitable_for": "观望",
-      "confidence": "-",
-      "patterns": [],
-      "positive_factors": [],
-      "negative_factors": [],
-      "news_count": 0,
-      "news_dropped": 0,
-      "performance": {
-        "list_fetch_ms": 8232,
-        "candidate_filter_ms": 0,
-        "enrichment_ms": 321451,
-        "raw_news_count": 40,
-        "raw_research_count": 10,
-        "candidate_news_count": 9,
-        "candidate_research_count": 0,
-        "enriched_news_count": 9,
-        "enriched_research_count": 0,
-        "candidate_reasons": {
-          "news": {
-            "noise:融资净(买入|卖出)": 4,
-            "no-subject-mention": 4,
-            "noise:\\d{1,2}月\\d{1,2}日(快速上涨|快速回调|涨停|": 2,
-            "dedup": 0,
-            "out_of_window": 21
-          },
-          "research": {
-            "dedup": 0,
-            "out_of_window": 10
-          }
+      "top_news": [
+        {
+          "date": "2026-06-12",
+          "title": "中际旭创:第六届董事会第一次会议决议公告",
+          "content": "一般项目:通信设备制造;光通信设备制造;光通信设备销售;电子元器件制造;电子元器件零售;光电子器件制造;光电子器件销售;集成电路芯片及产品制造;技术服务、技术开发、技术咨询、技术交流、技术转让、技术推广;货物进出口;以自有资金从事投资活动;企业管理;非居住房地产租赁。(除依法须经批准的项目外,凭营业执照依法自主开展经营活动)\n郑重声明：东方财富网发布此信息的目的在于传播更多信息，与本站立场无关。东方财富网不保证该信息（包括但不限于文字、视频、音频、数据及图表）全部或者部分内容的准确性、真实性、完整性、有效性、及时性、原创性等。相关信息并未经过本网站证实，不对您构成任何投资建议，据此操作，风险自担。",
+          "type": "财报",
+          "sentiment": 0,
+          "weight": 1,
+          "final_weight": 0.84,
+          "source_authority": 4.5,
+          "recency_factor": 0.72,
+          "source": "东方财富公告",
+          "llm_reviewed": true,
+          "llm_confidence": 0.1,
+          "llm_is_real_catalyst": false,
+          "llm_reasoning": "仅为董事会决议公告，无实质影响"
         },
-        "date_filter_ms": 0,
-        "relevance_ms": 0,
-        "llm_ms": 0,
-        "scoring_ms": 0
-      },
-      "top_news": []
-    },
-    "SSE:600186": {
-      "name": "莲花控股",
-      "score": 50,
-      "score_raw": 0,
-      "score_components": {
-        "positive_weight_sum": 0,
-        "negative_weight_sum": 0
-      },
-      "signal": "⚪ No Trade (无数据)",
-      "strategy": "LLM 不可用或调用失败（不走关键字降级）",
-      "suitable_for": "观望",
-      "confidence": "-",
-      "patterns": [],
-      "positive_factors": [],
-      "negative_factors": [],
-      "news_count": 0,
-      "news_dropped": 0,
-      "performance": {
-        "list_fetch_ms": 13868,
-        "candidate_filter_ms": 0,
-        "enrichment_ms": 365865,
-        "raw_news_count": 40,
-        "raw_research_count": 10,
-        "candidate_news_count": 13,
-        "candidate_research_count": 0,
-        "enriched_news_count": 13,
-        "enriched_research_count": 0,
-        "candidate_reasons": {
-          "news": {
-            "noise:融资净(买入|卖出)": 3,
-            "noise:\\d{1,2}月\\d{1,2}日(快速上涨|快速回调|涨停|": 4,
-            "no-subject-mention": 1,
-            "noise:龙虎榜|大宗交易|盘口异动": 1,
-            "dedup": 0,
-            "out_of_window": 18
-          },
-          "research": {
-            "dedup": 0,
-            "out_of_window": 10
-          }
+        {
+          "date": "2026-06-12",
+          "title": "中际旭创:关于董事会完成换届选举暨聘任高级管理人员和证券事务代表的公告",
+          "content": "一般项目:通信设备制造;光通信设备制造;光通信设备销售;电子元器件制造;电子元器件零售;光电子器件制造;光电子器件销售;集成电路芯片及产品制造;技术服务、技术开发、技术咨询、技术交流、技术转让、技术推广;货物进出口;以自有资金从事投资活动;企业管理;非居住房地产租赁。(除依法须经批准的项目外,凭营业执照依法自主开展经营活动)\n郑重声明：东方财富网发布此信息的目的在于传播更多信息，与本站立场无关。东方财富网不保证该信息（包括但不限于文字、视频、音频、数据及图表）全部或者部分内容的准确性、真实性、完整性、有效性、及时性、原创性等。相关信息并未经过本网站证实，不对您构成任何投资建议，据此操作，风险自担。",
+          "type": "财报",
+          "sentiment": 0,
+          "weight": 1,
+          "final_weight": 0.84,
+          "source_authority": 4.5,
+          "recency_factor": 0.72,
+          "source": "东方财富公告",
+          "llm_reviewed": true,
+          "llm_confidence": 0.1,
+          "llm_is_real_catalyst": false,
+          "llm_reasoning": "换届选举及聘任公告，常规事项"
         },
-        "date_filter_ms": 0,
-        "relevance_ms": 0,
-        "llm_ms": 0,
-        "scoring_ms": 0
-      },
-      "top_news": []
+        {
+          "date": "2026-06-12",
+          "title": "中际旭创:北京中银(苏州)律师事务所关于公司2026年第二次临时股东会之法律意见书",
+          "content": "",
+          "type": "财报",
+          "sentiment": 0,
+          "weight": 1,
+          "final_weight": 0.84,
+          "source_authority": 4.5,
+          "recency_factor": 0.72,
+          "source": "东方财富公告",
+          "llm_reviewed": true,
+          "llm_confidence": 0.1,
+          "llm_is_real_catalyst": false,
+          "llm_reasoning": "法律意见书，无实质内容"
+        },
+        {
+          "date": "2026-06-12",
+          "title": "中际旭创:2026年第二次临时股东会决议公告",
+          "content": "一般项目:通信设备制造;光通信设备制造;光通信设备销售;电子元器件制造;电子元器件零售;光电子器件制造;光电子器件销售;集成电路芯片及产品制造;技术服务、技术开发、技术咨询、技术交流、技术转让、技术推广;货物进出口;以自有资金从事投资活动;企业管理;非居住房地产租赁。(除依法须经批准的项目外,凭营业执照依法自主开展经营活动)\n郑重声明：东方财富网发布此信息的目的在于传播更多信息，与本站立场无关。东方财富网不保证该信息（包括但不限于文字、视频、音频、数据及图表）全部或者部分内容的准确性、真实性、完整性、有效性、及时性、原创性等。相关信息并未经过本网站证实，不对您构成任何投资建议，据此操作，风险自担。",
+          "type": "财报",
+          "sentiment": 0,
+          "weight": 1,
+          "final_weight": 0.84,
+          "source_authority": 4.5,
+          "recency_factor": 0.72,
+          "source": "东方财富公告",
+          "llm_reviewed": true,
+          "llm_confidence": 0.1,
+          "llm_is_real_catalyst": false,
+          "llm_reasoning": "临时股东会决议，常规程序"
+        },
+        {
+          "date": "2026-06-12",
+          "title": "中际旭创:关于选举第六届董事会职工代表董事的公告",
+          "content": "一般项目:通信设备制造;光通信设备制造;光通信设备销售;电子元器件制造;电子元器件零售;光电子器件制造;光电子器件销售;集成电路芯片及产品制造;技术服务、技术开发、技术咨询、技术交流、技术转让、技术推广;货物进出口;以自有资金从事投资活动;企业管理;非居住房地产租赁。(除依法须经批准的项目外,凭营业执照依法自主开展经营活动)\n郑重声明：东方财富网发布此信息的目的在于传播更多信息，与本站立场无关。东方财富网不保证该信息（包括但不限于文字、视频、音频、数据及图表）全部或者部分内容的准确性、真实性、完整性、有效性、及时性、原创性等。相关信息并未经过本网站证实，不对您构成任何投资建议，据此操作，风险自担。",
+          "type": "财报",
+          "sentiment": 0,
+          "weight": 1,
+          "final_weight": 0.84,
+          "source_authority": 4.5,
+          "recency_factor": 0.72,
+          "source": "东方财富公告",
+          "llm_reviewed": true,
+          "llm_confidence": 0.1,
+          "llm_is_real_catalyst": false,
+          "llm_reasoning": "职工代表董事选举，常规事项"
+        }
+      ]
     },
     "SSE:600176": {
-      "name": "中国巨石",
+      "name": "600176",
       "score": 50,
       "score_raw": 0,
       "score_components": {
@@ -1324,7 +2461,7 @@
         "negative_weight_sum": 0
       },
       "signal": "⚪ No Trade (无数据)",
-      "strategy": "LLM 不可用或调用失败（不走关键字降级）",
+      "strategy": "近期无相关有效新闻",
       "suitable_for": "观望",
       "confidence": "-",
       "patterns": [],
@@ -1333,20 +2470,20 @@
       "news_count": 0,
       "news_dropped": 0,
       "performance": {
-        "list_fetch_ms": 13534,
+        "list_fetch_ms": 5726,
         "candidate_filter_ms": 0,
-        "enrichment_ms": 380290,
+        "enrichment_ms": 0,
         "raw_news_count": 40,
         "raw_research_count": 10,
-        "candidate_news_count": 7,
+        "candidate_news_count": 0,
         "candidate_research_count": 0,
-        "enriched_news_count": 7,
+        "enriched_news_count": 0,
         "enriched_research_count": 0,
         "candidate_reasons": {
           "news": {
+            "no-subject-mention": 13,
             "noise:\\d{1,2}月\\d{1,2}日(快速上涨|快速回调|涨停|": 4,
             "noise:融资净(买入|卖出)": 3,
-            "no-subject-mention": 6,
             "dedup": 0,
             "out_of_window": 20
           },
@@ -1363,36 +2500,38 @@
       "top_news": []
     },
     "SSE:601665": {
-      "name": "齐鲁银行",
+      "name": "601665",
       "score": 50,
       "score_raw": 0,
       "score_components": {
         "positive_weight_sum": 0,
-        "negative_weight_sum": 0
+        "negative_weight_sum": 0,
+        "news_effective_count": 2,
+        "news_dropped_count": 0
       },
-      "signal": "⚪ No Trade (无数据)",
-      "strategy": "LLM 不可用或调用失败（不走关键字降级）",
+      "signal": "⚪ No Trade (微多)",
+      "strategy": "情绪轻微偏多，信号不足，以观望为主",
       "suitable_for": "观望",
-      "confidence": "-",
+      "confidence": "低",
       "patterns": [],
       "positive_factors": [],
       "negative_factors": [],
-      "news_count": 0,
+      "news_count": 2,
       "news_dropped": 0,
       "performance": {
-        "list_fetch_ms": 17755,
+        "list_fetch_ms": 5085,
         "candidate_filter_ms": 0,
-        "enrichment_ms": 385302,
+        "enrichment_ms": 2664,
         "raw_news_count": 40,
         "raw_research_count": 10,
-        "candidate_news_count": 7,
+        "candidate_news_count": 2,
         "candidate_research_count": 0,
-        "enriched_news_count": 7,
+        "enriched_news_count": 2,
         "enriched_research_count": 0,
         "candidate_reasons": {
           "news": {
+            "no-subject-mention": 11,
             "noise:融资净(买入|卖出)": 2,
-            "no-subject-mention": 6,
             "dedup": 0,
             "out_of_window": 25
           },
@@ -1406,90 +2545,81 @@
         "llm_ms": 0,
         "scoring_ms": 0
       },
-      "top_news": []
-    },
-    "SZSE:002916": {
-      "name": "深南电路",
-      "score": 50,
-      "score_raw": 0,
-      "score_components": {
-        "positive_weight_sum": 0,
-        "negative_weight_sum": 0
-      },
-      "signal": "⚪ No Trade (无数据)",
-      "strategy": "LLM 不可用或调用失败（不走关键字降级）",
-      "suitable_for": "观望",
-      "confidence": "-",
-      "patterns": [],
-      "positive_factors": [],
-      "negative_factors": [],
-      "news_count": 0,
-      "news_dropped": 0,
-      "performance": {
-        "list_fetch_ms": 16516,
-        "candidate_filter_ms": 1,
-        "enrichment_ms": 416493,
-        "raw_news_count": 40,
-        "raw_research_count": 10,
-        "candidate_news_count": 21,
-        "candidate_research_count": 0,
-        "enriched_news_count": 20,
-        "enriched_research_count": 0,
-        "candidate_reasons": {
-          "news": {
-            "no-subject-mention": 5,
-            "noise:^.{0,8}重要公告集锦": 1,
-            "noise:\\d{1,2}月\\d{1,2}日(快速上涨|快速回调|涨停|": 1,
-            "noise:融资净(买入|卖出)": 2,
-            "dedup": 0,
-            "out_of_window": 10
-          },
-          "research": {
-            "dedup": 0,
-            "out_of_window": 10
-          }
+      "top_news": [
+        {
+          "date": "2026-06-13",
+          "title": "齐鲁银行:齐鲁银行股份有限公司关于董事辞任的公告",
+          "content": "",
+          "type": "传闻",
+          "sentiment": 0,
+          "weight": 1,
+          "final_weight": 0.5,
+          "source_authority": 4.5,
+          "recency_factor": 0.85,
+          "source": "东方财富公告",
+          "llm_reviewed": true,
+          "llm_confidence": 0.3,
+          "llm_is_real_catalyst": false,
+          "llm_reasoning": "董事辞任属常规人事变动，无实质影响"
         },
-        "date_filter_ms": 0,
-        "relevance_ms": 0,
-        "llm_ms": 0,
-        "scoring_ms": 0
-      },
-      "top_news": []
+        {
+          "date": "2026-06-12",
+          "title": "齐鲁银行:齐鲁银行股份有限公司2026年6月10日投资者关系活动记录表2026-006",
+          "content": "",
+          "type": "行业",
+          "sentiment": 0,
+          "weight": 1,
+          "final_weight": 0.65,
+          "source_authority": 4.5,
+          "recency_factor": 0.72,
+          "source": "东方财富公告",
+          "llm_reviewed": true,
+          "llm_confidence": 0.2,
+          "llm_is_real_catalyst": false,
+          "llm_reasoning": "投资者关系活动记录，内容未披露具体催化"
+        }
+      ]
     },
-    "SSE:600549": {
-      "name": "厦门钨业",
-      "score": 50,
-      "score_raw": 0,
+    "SSE:603638": {
+      "name": "603638",
+      "score": 46,
+      "score_raw": -0.92,
       "score_components": {
-        "positive_weight_sum": 0,
-        "negative_weight_sum": 0
+        "positive_weight_sum": 2.46,
+        "negative_weight_sum": 3.38,
+        "news_effective_count": 3,
+        "news_dropped_count": 0
       },
-      "signal": "⚪ No Trade (无数据)",
-      "strategy": "LLM 不可用或调用失败（不走关键字降级）",
-      "suitable_for": "观望",
-      "confidence": "-",
+      "signal": "🔴 No Trade / Short",
+      "strategy": "黑天鹅事件规避，等待事件明朗化再评估",
+      "suitable_for": "反转(等底部确认)",
+      "confidence": "高",
       "patterns": [],
-      "positive_factors": [],
-      "negative_factors": [],
-      "news_count": 0,
+      "positive_factors": [
+        "[财报|w2.46] 艾迪精密:艾迪精密2025年度权益分派实施公告"
+      ],
+      "negative_factors": [
+        "[黑天鹅|w3.38] 艾迪精密:艾迪精密关于公司持股5%以上股东部分股份质押的公告"
+      ],
+      "news_count": 3,
       "news_dropped": 0,
       "performance": {
-        "list_fetch_ms": 12304,
-        "candidate_filter_ms": 1,
-        "enrichment_ms": 377761,
+        "list_fetch_ms": 5184,
+        "candidate_filter_ms": 0,
+        "enrichment_ms": 9289,
         "raw_news_count": 40,
         "raw_research_count": 10,
-        "candidate_news_count": 8,
+        "candidate_news_count": 3,
         "candidate_research_count": 0,
-        "enriched_news_count": 8,
+        "enriched_news_count": 3,
         "enriched_research_count": 0,
         "candidate_reasons": {
           "news": {
+            "noise:融资净(买入|卖出)": 4,
             "no-subject-mention": 10,
-            "noise:\\d{1,2}月\\d{1,2}日(快速上涨|快速回调|涨停|": 4,
-            "noise:融资净(买入|卖出)": 2,
-            "dedup": 1,
-            "out_of_window": 15
+            "noise:\\d{1,2}月\\d{1,2}日(快速上涨|快速回调|涨停|": 2,
+            "dedup": 0,
+            "out_of_window": 21
           },
           "research": {
             "dedup": 0,
@@ -1501,7 +2631,275 @@
         "llm_ms": 0,
         "scoring_ms": 0
       },
-      "top_news": []
+      "top_news": [
+        {
+          "date": "2026-06-10",
+          "title": "艾迪精密:艾迪精密关于公司持股5%以上股东部分股份质押的公告",
+          "content": "",
+          "type": "黑天鹅",
+          "sentiment": -1,
+          "weight": 3,
+          "final_weight": 3.38,
+          "source_authority": 4.5,
+          "recency_factor": 0.5,
+          "source": "东方财富公告",
+          "llm_reviewed": true,
+          "llm_confidence": 0.7,
+          "llm_is_real_catalyst": true,
+          "llm_reasoning": "大股东股份质押，可能引发资金风险担忧"
+        },
+        {
+          "date": "2026-06-09",
+          "title": "艾迪精密:艾迪精密关于因实施2025年度权益分派调整可转债转股价格的公告",
+          "content": "一般项目:建筑工程用机械制造;建筑工程用机械销售;液压动力机械及元件制造;液压动力机械及元件销售;金属工具制造;金属工具销售;机床功能部件及附件制造;机床功能部件及附件销售;工业机器人制造;工业机器人销售;工业机器人安装、维修;机械设备研发;智能机器人的研发;新材料技术研发;技术服务、技术开发、技术咨询、技术交流、技术转让、技术推广;有色金属铸造;有色金属合金制造;有色金属合金销售;锻件及粉末冶金制品制造;锻件及粉末冶金制品销售;金属材料制造;金属材料销售;轴承、齿轮和传动部件制造;轴承、齿轮和传动部件销售;机械零件、零部件加工;机械零件、零部件销售;通用零部件制造;汽车零部件及配件制造;货物进出口;技术进出口。(除依法须经批准的项目外,凭营业执照依法自主开展经营活动)许可项目:道路货物运输(不含危险货物)。(依法须经批准的项目,经相关部门批准后方可开展经营活动,具体经营项目以相关部门批准文件或许可证件为准)。\n郑重声明：东方财富网发布此信息的目的在于传播更多信息，与本站立场无关。东方财富网不保证该信息（包括但不限于文字、视频、音频、数据及图表）全部或者部分内容的准确性、真实性、完整性、有效性、及时性、原创性等。相关信息并未经过本网站证实，不对您构成任何投资建议，据此操作，风险自担。",
+          "type": "财报",
+          "sentiment": 0,
+          "weight": 2,
+          "final_weight": 2.46,
+          "source_authority": 4.5,
+          "recency_factor": 0.42,
+          "source": "东方财富公告",
+          "llm_reviewed": true,
+          "llm_confidence": 0.6,
+          "llm_is_real_catalyst": true,
+          "llm_reasoning": "权益分派调整可转债转股价，属常规操作"
+        },
+        {
+          "date": "2026-06-09",
+          "title": "艾迪精密:艾迪精密2025年度权益分派实施公告",
+          "content": "",
+          "type": "财报",
+          "sentiment": 1,
+          "weight": 2,
+          "final_weight": 2.46,
+          "source_authority": 4.5,
+          "recency_factor": 0.42,
+          "source": "东方财富公告",
+          "llm_reviewed": true,
+          "llm_confidence": 0.8,
+          "llm_is_real_catalyst": true,
+          "llm_reasoning": "权益分派实施，直接利好股东"
+        }
+      ]
+    },
+    "SZSE:002851": {
+      "name": "002851",
+      "score": 40,
+      "score_raw": -2.7,
+      "score_components": {
+        "positive_weight_sum": 0,
+        "negative_weight_sum": 2.7,
+        "news_effective_count": 10,
+        "news_dropped_count": 0
+      },
+      "signal": "⚪ No Trade (中性)",
+      "strategy": "情绪中性，无明显方向，观望",
+      "suitable_for": "观望",
+      "confidence": "低",
+      "patterns": [],
+      "positive_factors": [],
+      "negative_factors": [
+        "[回购|w2.7] 麦格米特:关于2022年股票期权激励计划注销部分股票期权的公告"
+      ],
+      "news_count": 10,
+      "news_dropped": 0,
+      "performance": {
+        "list_fetch_ms": 3293,
+        "candidate_filter_ms": 0,
+        "enrichment_ms": 10983,
+        "raw_news_count": 40,
+        "raw_research_count": 10,
+        "candidate_news_count": 10,
+        "candidate_research_count": 0,
+        "enriched_news_count": 10,
+        "enriched_research_count": 0,
+        "candidate_reasons": {
+          "news": {
+            "no-subject-mention": 11,
+            "noise:\\d{1,2}月\\d{1,2}日(快速上涨|快速回调|涨停|": 2,
+            "noise:融资净(买入|卖出)": 1,
+            "noise:龙虎榜|大宗交易|盘口异动": 6,
+            "dedup": 0,
+            "out_of_window": 10
+          },
+          "research": {
+            "dedup": 0,
+            "out_of_window": 10
+          }
+        },
+        "date_filter_ms": 0,
+        "relevance_ms": 0,
+        "llm_ms": 4362,
+        "scoring_ms": 0
+      },
+      "top_news": [
+        {
+          "date": "2026-06-10",
+          "title": "麦格米特:募集资金管理办法(草案)(H股上市后适用)",
+          "content": "研究、开发、设计、生产和销售(生产由分支机构经营)电力电子产品、电气产品、机电一体化设备、家用电器及其零部件,包括家用电器电源、工业与通信电源、节能灯及高频镇流器、便携式设备电源、医疗设备电源、电机及变频驱动器和可编程逻辑控制器、触摸屏、工业自动化软件、智能型电力电子模块,并为经营上述产品及业务提供必要的工程服务、技术咨询服务,售后维修服务、电池采购并配套销售服务;经营上述各项产品及系统的采购、零售(不设店铺)、批发、进出口(法律、行政法规、国务院决定禁止的项目除外,限制的项目须取得许可后方可经营)。\n郑重声明：东方财富网发布此信息的目的在于传播更多信息，与本站立场无关。东方财富网不保证该信息（包括但不限于文字、视频、音频、数据及图表）全部或者部分内容的准确性、真实性、完整性、有效性、及时性、原创性等。相关信息并未经过本网站证实，不对您构成任何投资建议，据此操作，风险自担。",
+          "type": "政策",
+          "sentiment": 0,
+          "weight": 1,
+          "final_weight": 0.54,
+          "source_authority": 4.5,
+          "recency_factor": 0.5,
+          "source": "东方财富公告",
+          "llm_reviewed": true,
+          "llm_confidence": 0.3,
+          "llm_is_real_catalyst": false,
+          "llm_reasoning": "仅为制度草案，无实质影响"
+        },
+        {
+          "date": "2026-06-10",
+          "title": "麦格米特:境外发行证券与上市相关保密和档案管理工作制度",
+          "content": "研究、开发、设计、生产和销售(生产由分支机构经营)电力电子产品、电气产品、机电一体化设备、家用电器及其零部件,包括家用电器电源、工业与通信电源、节能灯及高频镇流器、便携式设备电源、医疗设备电源、电机及变频驱动器和可编程逻辑控制器、触摸屏、工业自动化软件、智能型电力电子模块,并为经营上述产品及业务提供必要的工程服务、技术咨询服务,售后维修服务、电池采购并配套销售服务;经营上述各项产品及系统的采购、零售(不设店铺)、批发、进出口(法律、行政法规、国务院决定禁止的项目除外,限制的项目须取得许可后方可经营)。\n郑重声明：东方财富网发布此信息的目的在于传播更多信息，与本站立场无关。东方财富网不保证该信息（包括但不限于文字、视频、音频、数据及图表）全部或者部分内容的准确性、真实性、完整性、有效性、及时性、原创性等。相关信息并未经过本网站证实，不对您构成任何投资建议，据此操作，风险自担。",
+          "type": "政策",
+          "sentiment": 0,
+          "weight": 1,
+          "final_weight": 0.54,
+          "source_authority": 4.5,
+          "recency_factor": 0.5,
+          "source": "东方财富公告",
+          "llm_reviewed": true,
+          "llm_confidence": 0.3,
+          "llm_is_real_catalyst": false,
+          "llm_reasoning": "保密制度草案，无实质催化"
+        },
+        {
+          "date": "2026-06-10",
+          "title": "麦格米特:内幕信息知情人登记管理制度(草案)(H股上市后适用)",
+          "content": "研究、开发、设计、生产和销售(生产由分支机构经营)电力电子产品、电气产品、机电一体化设备、家用电器及其零部件,包括家用电器电源、工业与通信电源、节能灯及高频镇流器、便携式设备电源、医疗设备电源、电机及变频驱动器和可编程逻辑控制器、触摸屏、工业自动化软件、智能型电力电子模块,并为经营上述产品及业务提供必要的工程服务、技术咨询服务,售后维修服务、电池采购并配套销售服务;经营上述各项产品及系统的采购、零售(不设店铺)、批发、进出口(法律、行政法规、国务院决定禁止的项目除外,限制的项目须取得许可后方可经营)。\n郑重声明：东方财富网发布此信息的目的在于传播更多信息，与本站立场无关。东方财富网不保证该信息（包括但不限于文字、视频、音频、数据及图表）全部或者部分内容的准确性、真实性、完整性、有效性、及时性、原创性等。相关信息并未经过本网站证实，不对您构成任何投资建议，据此操作，风险自担。",
+          "type": "政策",
+          "sentiment": 0,
+          "weight": 1,
+          "final_weight": 0.54,
+          "source_authority": 4.5,
+          "recency_factor": 0.5,
+          "source": "东方财富公告",
+          "llm_reviewed": true,
+          "llm_confidence": 0.3,
+          "llm_is_real_catalyst": false,
+          "llm_reasoning": "内幕信息管理制度草案，无实质影响"
+        },
+        {
+          "date": "2026-06-10",
+          "title": "麦格米特:公司制度修订对照汇总表",
+          "content": "",
+          "type": "政策",
+          "sentiment": 0,
+          "weight": 1,
+          "final_weight": 0.54,
+          "source_authority": 4.5,
+          "recency_factor": 0.5,
+          "source": "东方财富公告",
+          "llm_reviewed": true,
+          "llm_confidence": 0.2,
+          "llm_is_real_catalyst": false,
+          "llm_reasoning": "制度修订对照表，无实质内容"
+        },
+        {
+          "date": "2026-06-10",
+          "title": "麦格米特:关于聘请H股发行上市审计机构的公告",
+          "content": "",
+          "type": "政策",
+          "sentiment": 0,
+          "weight": 3,
+          "final_weight": 2.7,
+          "source_authority": 4.5,
+          "recency_factor": 0.5,
+          "source": "东方财富公告",
+          "llm_reviewed": true,
+          "llm_confidence": 0.6,
+          "llm_is_real_catalyst": true,
+          "llm_reasoning": "聘请H股审计机构，推进上市进程"
+        }
+      ]
+    },
+    "SSE:600186": {
+      "name": "600186",
+      "score": 34,
+      "score_raw": -3.83,
+      "score_components": {
+        "positive_weight_sum": 0,
+        "negative_weight_sum": 3.83,
+        "news_effective_count": 2,
+        "news_dropped_count": 0
+      },
+      "signal": "🔴 No Trade / Short",
+      "strategy": "黑天鹅事件规避，等待事件明朗化再评估",
+      "suitable_for": "反转(等底部确认)",
+      "confidence": "高",
+      "patterns": [],
+      "positive_factors": [],
+      "negative_factors": [
+        "[黑天鹅|w3.15] 莲花控股股份有限公司关于股票交易异常波动的公告",
+        "[黑天鹅|w0.68] 莲花控股:莲花控股股份有限公司关于股票交易异常波动的公告"
+      ],
+      "news_count": 2,
+      "news_dropped": 0,
+      "performance": {
+        "list_fetch_ms": 4225,
+        "candidate_filter_ms": 0,
+        "enrichment_ms": 7014,
+        "raw_news_count": 40,
+        "raw_research_count": 10,
+        "candidate_news_count": 2,
+        "candidate_research_count": 0,
+        "enriched_news_count": 2,
+        "enriched_research_count": 0,
+        "candidate_reasons": {
+          "news": {
+            "noise:融资净(买入|卖出)": 3,
+            "no-subject-mention": 12,
+            "noise:\\d{1,2}月\\d{1,2}日(快速上涨|快速回调|涨停|": 4,
+            "noise:龙虎榜|大宗交易|盘口异动": 1,
+            "dedup": 0,
+            "out_of_window": 18
+          },
+          "research": {
+            "dedup": 0,
+            "out_of_window": 10
+          }
+        },
+        "date_filter_ms": 0,
+        "relevance_ms": 0,
+        "llm_ms": 2253,
+        "scoring_ms": 0
+      },
+      "top_news": [
+        {
+          "date": "2026-06-10",
+          "title": "莲花控股:莲花控股股份有限公司关于股票交易异常波动的公告",
+          "content": "许可项目:肥料生产(依法须经批准的项目,经相关部门批准后方可开展经营活动,具体经营项目以相关部门批准文件或许可证件为准)一般项目:企业总部管理;食品销售(仅销售预包装食品);食品互联网销售(仅销售预包装食品);饲料原料销售;新鲜水果批发;食用农产品批发;化工产品生产(不含许可类化工产品);化工产品销售(不含许可类化工产品);食品进出口;货物进出口;技术进出口;计算机系统服务;数据处理服务;水产品批发;肥料销售;技术服务、技术开发、技术咨询、技术交流、技术转让、技术推广(除依法须经批准的项目外,凭营业执照依法自主开展经营活动)。\n郑重声明：东方财富网发布此信息的目的在于传播更多信息，与本站立场无关。东方财富网不保证该信息（包括但不限于文字、视频、音频、数据及图表）全部或者部分内容的准确性、真实性、完整性、有效性、及时性、原创性等。相关信息并未经过本网站证实，不对您构成任何投资建议，据此操作，风险自担。",
+          "type": "黑天鹅",
+          "sentiment": -1,
+          "weight": 1,
+          "final_weight": 0.68,
+          "source_authority": 4.5,
+          "recency_factor": 0.5,
+          "source": "东方财富公告",
+          "llm_reviewed": true,
+          "llm_confidence": 0.3,
+          "llm_is_real_catalyst": false,
+          "llm_reasoning": "异常波动公告，内容为业务范围说明，无实质利空"
+        },
+        {
+          "date": "2026-06-09",
+          "title": "莲花控股股份有限公司关于股票交易异常波动的公告",
+          "content": "1\n证券代码：600186 \t证券简称：莲花控股 \t公告编号：2026-039\n莲花控股股份有限公司\n关于股票交易异常波动的公告\n本公司董事会及全体董事保证本公告内容不存在任何虚假记载、误导性陈述或\n者重大遗漏，并对其内容的真实性、准确性和完整性承担法律责任。\n重要风险提示：\n1、截至本公告披露日，公司近期投资标的上海阶跃星辰智能科技股份有\n限公司处于大额亏损状态。标的公司在未来经营过程中有可能面临市场风\n险、政策风险、经营管理风险等，从而可能导致公司投资出现亏损风险。\n2、公司主营调味品业务，2025 \t年度公司服务器租赁业务收入占比较小且持\n续处于亏损状态，2025 \t年服务器租赁业务收入 \t12,187.63 \t万元，占公司营业总\n收入仅为 \t3.53%，净利润为-2,857.86 \t万元。2025 \t年度存在签订大额合同短期内\n终止的情况，业务开展不及预期，未来发展存在不确定性。\n3、上述投资占标的公司股份比例较小，对公司整体业务不构成重大影响。\n敬请广大投资者理性投资，注意投资风险。\n4、经自查，本次交易不存在上市公司与控股股东、实控人共同投资或其他\n特殊利益安排的情形。\n重要内容提示：\n \t莲花控股股份有限公司（以下简称“公司”）股票价格于 \t2026 \t年 \t6 \t月 \t5\n日、6 \t月 \t8 \t日、6 \t月 \t9 \t日连续三个交易日内日收盘价格涨幅偏离值累计达到\n20%，根据上海证券交易所的相关规定，属于股票交易异常波动的情况。\n\n-- 1 of 3 --\n\n2\n \t经公司自查，并征询公司控股股东及实际控制人，截至本公告披露日，\n除已披露的信息外，公司、控股股东及实际控制人不存在应予披露而未披露的重\n大事项。\n \t公司目前经营正常，内外部经营环境未发生重大变化，敬请广大投资者\n注意二级市场交易风险，审慎决策，理性投资。\n一、股票交易异常波动的具体情况\n公司股票价格于 \t2026 \t年 \t6 \t月 \t5 \t日、6 \t月 \t8 \t日、6 \t月 \t9 \t日连续三个交易日内日\n收盘价格涨幅偏离值累计达到 \t20%，根据上海证券交易所的相关规定，属于股票\n交易异常波动。\n二、公司关注并核实的相关情况\n针对公司本次股票交易异常波动情况，公司对有关事项进行了核查，并征询\n了公司控股股东及实际控制人，现将有关情况说明如下：\n（一）生产经营情况\n经公司自查，公司目前生产经营正常，内外部经营环境未发生重大变化，不\n存在影响公司股票交易价格异常波动的重大事项。\n（二）重大事项情况\n经公司自查，并向公司控股股东及实际控制人核实，截至本公告披露日，公\n司、控股股东及实际控制人均不存在根据有关规定应予披露而未披露的事项，包\n括但不限于重大资产重组、股份发行、重大交易类事项、业务重组、股份回购、\n股权激励、破产重整、重大业务合作、引进战略投资者等可能对公司股票交易价\n格产生较大影响的重大事项。\n（三）媒体报道、市场传闻、热点概念情况\n经自查，公司未发现其他可能对公司股价产生较大影响的重大事件。未发现\n对公司股票交易价格产生影响的需要澄清或回应的媒体报道或市场传闻，亦未涉\n及热点概念事项。\n（四）其他股价敏感信息\n经公司自查，公司董事、高级管理人员、控股股东及其一致行动人、其他重\n要股东在公司本次股票交易异常波动期间不存在买卖公司股票的情况。\n三、相关风险提示\n\n-- 2 of 3 --\n\n3\n公司股票价格于 \t2026 \t年 \t6 \t月 \t5 \t日、6 \t月 \t8 \t日、6 \t月 \t9 \t日连续三个交易日内日\n收盘价格涨幅偏离值累计达到 \t20%，根据上海证券交易所的相关规定，属于股票\n交易异常波动的情况。敬请广大投资者注意二级市场交易风险，审慎决策，理性\n投资。\n公司指定信息披露媒体为《中国证券报》《上海证券报》《证券日报》和上\n海证券交易所网站，公司有关信息均以上述指定媒体发布的公告为准。\n四、董事会声明\n公司董事会确认，截至本公告披露日，除已按规定披露的事项外，公司不存\n在根据《上海证券交易所股票上市规则》等有关规定应披露而未披露的事项或与\n该事项有关的筹划、商谈、意向、协议等，董事会也未获悉本公司有根据《上海\n证券交易所股票上市规则》等有关规定应予以披露而未披露的、对本公司股票及\n其衍生品种交易价格产生较大影响的信息；公司前期披露的信息不存在需要更\n正、补充之处。\n公司郑重提醒广大投资者，有关公司信息以公司在上海证券交易所网站和法\n定信息披露媒体刊登的相关公告为准，公司将严格按照有关法律法规的规定和要\n求，认真履行信息披露义务，及时做好信息披露工作。敬请广大投资者理性投\n资，注意投资风险。\n特此公告。\n莲花控股股份有限公司董事会\n2026 \t年 \t6 \t月 \t10 \t日\n\n-- 3 of 3 --",
+          "type": "黑天鹅",
+          "sentiment": -1,
+          "weight": 3,
+          "final_weight": 3.15,
+          "source_authority": 5,
+          "recency_factor": 0.42,
+          "source": "巨潮资讯",
+          "llm_reviewed": true,
+          "llm_confidence": 0.9,
+          "llm_is_real_catalyst": true,
+          "llm_reasoning": "公告提示投资标的亏损及服务器业务亏损风险"
+        }
+      ]
     }
   }
 }

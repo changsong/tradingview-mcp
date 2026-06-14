@@ -11,7 +11,7 @@
 
 ## 上升趋势股票过滤
 ### A股 40分钟左右
-使用 `./scripts/launch_tv_debug.bat` 启动TradingView，请切换布局为A股，执行以下命令:
+使用 `./scripts/launch_tv_debug.bat` 启动TradingView，请切换布局名为:A股，执行以下命令:
 ```bash
 node src/cli/index.js layout switch "A股"
 ```
