@@ -4,6 +4,12 @@ import { writeFileSync, readFileSync } from 'fs';
 
 const CLI_PATH = 'src/cli/index.js';
 
+async function fetchPE(symbols) {
+  // Dynamic import — avoids loading when not needed
+  const { filterByPE } = await import('../../src/core/fundamental.js');
+  return filterByPE(symbols, 100);
+}
+
 function runCommand(cmd) {
   try {
     const result = execSync(`node ${CLI_PATH} ${cmd}`, {
@@ -121,9 +127,29 @@ async function scanStocks() {
     console.log(`✅ 从观察列表获取 ${symbols.length} 个股票\n`);
   }
 
+  // ── Stage 0: Fundamental pre-filter (PE < 100) ──
+  console.log(`\n📊 获取PE数据 (${symbols.length} 只股票)...`);
+  const peFilter = await fetchPE(symbols.map(s => s.symbol));
+  console.log(`  PE < 100 (通过): ${peFilter.passed.length}`);
+  console.log(`  PE >= 100 (排除): ${peFilter.excluded.length}`);
+  console.log(`  PE 缺失: ${peFilter.missing.length} (仍会扫描)`);
+
+  const skipSet = new Set(peFilter.excluded);
+
+  if (peFilter.excluded.length > 0) {
+    console.log(`\n  ❌ PE >= 100 排除:`);
+    for (const sym of peFilter.excluded) {
+      const f = peFilter.fundamentals.get(sym);
+      console.log(`    - ${sym}  PE: ${f?.pe ?? 'N/A'}`);
+    }
+  }
+  console.log(`\n  🔍 PE过滤后扫描 ${peFilter.passed.length + peFilter.missing.length}/${symbols.length} 只股票\n`);
+
   const results = [];
 
   for (let i = 0; i < symbols.length; i++) {
+    // Skip symbols excluded by PE filter
+    if (skipSet.has(symbols[i].symbol)) continue;
     const symbol = symbols[i].symbol;
     console.log(`[${i + 1}/${symbols.length}] 正在分析 ${symbol}...`);
 

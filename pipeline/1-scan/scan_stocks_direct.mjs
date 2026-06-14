@@ -16,6 +16,7 @@ const root = resolve(__dirname, '..', '..');
 
 // ── CDP connection (reuse the same module) ──
 import { evaluate, evaluateAsync, getClient, connect, safeString } from '../../src/connection.js';
+import { filterByPE } from '../../src/core/fundamental.js';
 
 // ── Helpers ──
 function sleep(ms) {
@@ -183,12 +184,35 @@ async function main() {
     process.exit(1);
   }
 
+  // ── Stage 0: Fundamental pre-filter (PE < 100) ──
+  console.log(`\nFetching PE data for ${symbols.length} symbols...`);
+  const peFilter = await filterByPE(symbols.map(s => s.symbol), 100);
+  console.log(`  PE < 100 (pass):  ${peFilter.passed.length}`);
+  console.log(`  PE >= 100 (skip): ${peFilter.excluded.length}`);
+  console.log(`  PE missing:        ${peFilter.missing.length} (will still scan)`);
+
+  // PE-missing symbols still get scanned (could be ETFs, non-standard codes)
+  const scanSymbols = [...peFilter.passed, ...peFilter.missing];
+  const skipSet = new Set(peFilter.excluded);
+
+  if (peFilter.excluded.length > 0) {
+    console.log(`\n  Excluded (PE >= 100):`);
+    for (const sym of peFilter.excluded) {
+      const f = peFilter.fundamentals.get(sym);
+      console.log(`    - ${sym}  PE: ${f?.pe ?? 'N/A'}`);
+    }
+  }
+  console.log(`\n  Scanning ${scanSymbols.length}/${symbols.length} symbols after PE filter.\n`);
+
   const results = [];
   let okCount = 0;
   let failCount = 0;
 
   for (let i = 0; i < symbols.length; i++) {
     const symbol = symbols[i].symbol;
+
+    // Skip symbols excluded by PE filter
+    if (skipSet.has(symbol)) continue;
     process.stdout.write(`[${i + 1}/${symbols.length}] ${symbol} ... `);
 
     try {
@@ -233,7 +257,8 @@ async function main() {
   );
 
   console.log(`\n=== Scan Complete ===`);
-  console.log(`Total: ${symbols.length}, Data OK: ${okCount}, No Data: ${failCount}`);
+  console.log(`Total symbols: ${symbols.length}, PE excluded: ${peFilter.excluded.length}, Scanned: ${okCount + failCount}`);
+  console.log(`Data OK: ${okCount}, No Data: ${failCount}`);
   console.log(`Qualified (LONG + trend extension): ${qualified.length}`);
   if (trendDown.size > 0) console.log(`TrendDown (removed): ${trendDown.size}`);
 
