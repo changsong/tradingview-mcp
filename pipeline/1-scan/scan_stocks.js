@@ -251,6 +251,21 @@ async function scanStocks() {
     existingSymbols = existingSymbols.filter(s => !trendDown.has(s));
     const nRemoved = removedCount - existingSymbols.length;
 
+    // PE 回检：剔除已有列表中 PE >= 100 的股票（PE 缺失的保留，可能是 ETF/新股/指数）
+    if (existingSymbols.length > 0) {
+      const existingPE = await fetchPE(existingSymbols);
+      const peExcludeSet = new Set(existingPE.excluded);
+      const beforePE = existingSymbols.length;
+      existingSymbols = existingSymbols.filter(s => !peExcludeSet.has(s));
+      const peRemoved = beforePE - existingSymbols.length;
+      if (peRemoved > 0) {
+        const details = existingPE.excluded
+          .map(s => `${s} PE:${existingPE.fundamentals.get(s)?.pe ?? 'N/A'}`)
+          .join(', ');
+        console.log(`   剔除PE>=100: ${peRemoved} (${details})`);
+      }
+    }
+
     const newSymbols = qualified.map(s => s.symbol);
     const mergedSymbols = [...new Set([...existingSymbols, ...newSymbols])];
 

@@ -11,11 +11,7 @@
 
 ## 上升趋势股票过滤
 ### A股 40分钟左右
-使用 `./scripts/launch_tv_debug.bat` 启动TradingView，请切换布局名为:A股，执行以下命令:
-```bash
-node src/cli/index.js layout switch "A股"
-```
-设置图表周期为天。然后执行：
+使用 `./scripts/launch_tv_debug.bat` 启动TradingView，设置图表周期为天。然后执行：
 ```bash
 npm run scan:cn
 # 等价：node pipeline/1-scan/scan_stocks.js --symbols=filepath=./watchlist/cn.txt --output=./watchlist/cn_selected.txt
@@ -27,7 +23,7 @@ npm run scan:cn
 
 ```bash
 npm run news:cn
-# 产物：watchlist/cn_news_signals.md（人看） + watchlist/cn_news_signals.json（下游契约）
+# 产物：watchlist/cn_news_signals.md（人看） + watchlist/cn_news_signals.json（下游契约）2
 ```
 1. 抓取并筛选高影响力新闻（去噪）
 2. 对每条新闻打标签：类型（政策/财报/并购/行业/黑天鹅/传闻）+ 情绪（+1/0/-1）+ 权
@@ -180,8 +176,7 @@ npm run combined:hk
 
 > 💡 一键全跑：`npm run full:us`
  ## 单只股票涨跌分析                                          
-使用 `./scripts/launch_tv_debug.bat` 启动TradingView， 只分析A股票： 603296，分析这一只股票历史K线情况: 1D, 4H，1H，30m，1m情况，根据技术形态，分析主力意图，预测明日及之后一周内的涨跌预期，目前持仓成本为： 603656，500股，并请详细说明后续的操作方法
-对于入场，止盈、止损价格，设置警报
+使用 `./scripts/launch_tv_debug.bat` 启动TradingView， 只分析A股票： 002364，分析这一只股票历史K线情况: 1D, 4H，1H，30m，1m情况，根据最近一周新闻及技术形态，分析主力意图，预测明日及之后一周内的涨跌预期，目前持仓成本为： 52.543，500股，并请详细说明后续的操作方法，对于入场，止盈、止损价格，设置警报
 
 使用 `./scripts/launch_tv_debug.bat` 启动TradingView， 只分析A股票：000727 ，分析这一只股票历史K线情况: 1D, 4H，1H，30m，1m情况，根据技术形态，分析主力意图，预测明日及之后一周内的涨跌预期，目前持仓成本为：2.919 ,600股，并请详细说明后续的操作方法
 对于入场，止盈、止损价格，设置警报
