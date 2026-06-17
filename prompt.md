@@ -210,11 +210,11 @@ npm run combined:hk
 ### 使用 ./scripts/launch_tv_debug.bat 启动TradigView，请使用策略：US Stock SQZMOM Daily PRO v4 (ATR + EMA20 Stop)，请分析这个策略，有没有可以提高的地方, 先列出可能优化的点，并制定优化计划，在日线上进行回测并分析交易清单，对策略进行改进，提高交易信号同时，也需要提高胜率，提高收益, 优化策略后，请使用 ../watchlist/us.txt 中的股票列表做回测，根据回测结果特别是交易清单，研究亏损的订单，总结规律，不断优化策略，并回测，做对比，对策略进行改进，提高交易信号同时，也需要提高胜率提高胜率，提高收益，持续优化，直到不能持续优化为止
 
 ## 添加Wathlist
-使用 ./scripts/launch_tv_debug.bat 启动TradigView，将 600720, 601138，301236, 002837, 002230 这些股票加入 A股可交易 这个watchlist
+使用 ./scripts/launch_tv_debug.bat 启动TradigView，将 300308,300502,300394,000988,002222,300620,000636,300408,603678,300285,300476,002384,002916,002463,000725,603890,300331,920190,601138,000977,000938,603019,603986,001309,301308,002156,600584,002185,603005,601869,600487,600522,600498,002475,002281,600172,920725,605580,300179,301217,600110,301511,601208,605589,300586,603002,603256,600176,002080,301526,002837,300499,301018,002364,002580,300870,002851,300442,300017,300383,603881,001896,002015,600726,000601,603629,600589,605168,600666,300014,600584,000833,300567,601869,300054,300346 这些股票加入 A股可交易 这个watchlist
 
-使用 ./scripts/launch_tv_debug.bat 启动TradigView，将 NBIS, PLTR, BE, AMD, AVGO, TSM, MU, GEV, VRT, NVDA, LLY, CIEN, CRWD, ISRG, KTOS, ZS, CEG, CRCL  这些股票加入 美股可交易 这个watchlist
+使用 ./scripts/launch_tv_debug.bat 启动TradigView，将 AVGO,NVDA,MRVL,LITE,COHR,VSH,TTMI,ELTK,DELL,MSFT,AMD,CBRS,SMCI,CLS,MU,WDC,STX,SNDK,AMKR,GLW,FN,CIEN,CRDO,JEWL,HUN,ASIX,WLK,CE,LYB,VRT,ETN,MOD,JCI,ON,POWI,VICR,MPWR,VNET,EQIX,DGXX,NBIS,CRWV,IREN,APLD  这些股票加入 美股可交易 这个watchlist
 
-使用 ./scripts/launch_tv_debug.bat 启动TradigView，将   0285.HK,9988.HK 这些股票加入 港股可交易 这个watchlist
+使用 ./scripts/launch_tv_debug.bat 启动TradigView，将   06166,01729,06088,06869,00117,01888,00148,02476,01989,00992,03296,03396,09611,02487,02886,06675,01396,01347,03986,06809,00981,01385,00522,02631,01300,06613,09981,00116,03323,00425,01651,02722,00842,01979,02577,06960,00259,00179,00991,03996,00412,09698,03896,01686 这些股票加入 港股可交易 这个watchlist
 
 ## 分析ReView
 分析 ./reports/YYYY-MM-dd 下所有 cn_review.json, cn_review.md 统计涨幅共同特征，跌幅共同特征，权重调整建议 ，未分类特征。分析出最值得的权重调整建议，最值得增加未分类特征 

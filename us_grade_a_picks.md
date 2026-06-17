@@ -1,118 +1,111 @@
-# US Grade A 精选 — 三条件过滤结果
+# US Grade A Picks — Triple Confirmed
 
-**生成时间:** 2026-06-15  
-**数据源:** `watchlist/us_combined_signals.md` (combined:us)  
-**过滤条件:**
+**Generated:** 2026-06-17  |  **Criteria:** Grade 🟢A + MTF Align ≥3/4 + News GREEN Long (Strong)
 
-| # | 条件 | 阈值 |
-|---|------|------|
-| 1 | 等级 | 🟢A |
-| 2 | 多周期对齐 | 3/4 (75%) 或 4/4 (100%) |
-| 3 | News Signal | 🟢 Long (强) |
+> Formula: Combined = TechScore × 0.6 + NewsScore × 0.4 + (trendy ? +5 : 0)  
+> Grade A threshold: Tech ≥ 30 + News Long (not overheated)  
+> Source: `npm run combined:us` → `watchlist/us_combined_signals.md`
 
 ---
 
-## 结论：2 只股票同时满足三项条件
+## 🟢 Grade A Pick (1 / 79)
 
-60 只候选股中，**6 只**获🟢A等级，**2 只**同时命中全部三项条件。
+Only **1 stock** out of 79 passes all three gates simultaneously.  
+Yesterday HPE was included but today its news signal flipped to WARN Overheated.
 
----
+### 1. NYSE:C (Citigroup) — Combined 58.7
 
-## 🏆 ASML (NASDAQ:ASML) — 综合分: 62.6
+| Field | Value |
+|-------|-------|
+| **Combined Score** | **58.7** |
+| Tech Score | 36.1 (Trend Follow — HH/HL Intact) |
+| News Score | 80 → GREEN Long (Strong) |
+| MTF Alignment | **4/4 (100%)** ← 1W↑ 1D↑ 4H↑ 1H↑ |
+| Current Price | $142.99 |
+| **Entry** | **$142.99** |
+| **Stop** | **$137.20** (ATR × 1.5) |
+| **Target** | **$151.48** |
+| **R/R** | **1.5 : 1** |
+| RSI | 72.9 (near overbought) |
+| ADX | 33.4 (trend established) |
+| ATR% | 2.7% |
+| Dist from EMA20 | +7.4% |
+| RS vs SPY | +15.2 |
+| Chase OK | **NO** |
 
-| 维度 | 内容 |
-|------|------|
-| 综合分 | **62.6** (全场最高) |
-| 技术分 | 38.6 (看多 · 趋势追涨:HH/HL完好) |
-| 新闻分 | 86 → 🟢 Long (强) |
-| 多周期对齐 | **4/4 (100%)** 1W↑ 1D↑ 4H↑ 1H↑ |
-| 当前价 | 1879.16 |
-| 入场价 | 1879.16 |
-| 止损价 | 1749.50 (ATR×1.5) |
-| 目标价 | 2069.33 |
-| 盈亏比 | 1.5:1 |
-| ADX(14) | 29.1 (接近强趋势) |
-| RSI(14) | 66.6 (健康) |
-| EMA20偏离 | 10.2% (温和) |
-| RS vs SPY | +11.0% |
-| 风险标签 | ⚠假突 ⚠压力位 ⚠看空背离 |
+**📰 Key Catalysts (last 7 days):**
 
-**利好:** 回购计划执行中 + Mistral AI股权投资拓宽护城河 + 情绪持续增强趋势 (12条有效新闻, confidence:High)
+| Date | Type | Weight | Headline |
+|------|------|--------|----------|
+| 2026-06-15 | M&A | 3.53 | C Sheds Polish Arm — Final Exit From Non-Core Consumer Business |
+| 2026-06-15 | Analyst | 3.02 | CFO Growth Outlook + Blockchain Trading Expansion |
+| 2026-06-16 | Industry | 0.60 | C Ascends While Market Falls (Zacks, no real catalyst) |
 
-**注意:** 存在RSI看空背离(1D级别)，入场价距EMA20偏离10.2%不算过热但也不算低吸，假突风险需警惕
+**Sentiment:** All 3 kept news items are bullish (zero bearish). 25 raw news fetched, 22 filtered as irrelevant. High confidence signal.
 
----
+**⚠️ Risk Flags:**
 
-## 🏆 HPE (NYSE:HPE) — 综合分: 59.4
+| Flag | Detail |
+|------|--------|
+| **BULL-TRAP** | RSI 72.9 (overbought zone) + near 4H/1H resistance at $143.50 |
+| **NEAR-RESIST** | 4H resistance at $143.53, 1H resistance at $143.50 |
+| **Stoch RSI** | 100 on 1D + 94.7 on 4H — extreme overbought momentum |
+| **1H Bear Div** | RSI bearish divergence on 1H, MACD histogram negative |
+| **+7.4% from EMA20** | Extended from mean, pullback risk elevated |
 
-| 维度 | 内容 |
-|------|------|
-| 综合分 | **59.4** |
-| 技术分 | 40.0 (看多 · 趋势追涨:HH/HL完好) |
-| 新闻分 | 76 → 🟢 Long (强) |
-| 多周期对齐 | **3/4 (75%)** 1W↑ 1D↑ 4H↑ 1H→ |
-| 当前价 | 48.48 |
-| 入场价 | 48.48 |
-| 止损价 | 42.00 (ATR×1.5) |
-| 目标价 | 57.97 |
-| 盈亏比 | 1.5:1 |
-| ADX(14) | 52.0 (极强趋势) |
-| RSI(14) | 63.9 (健康) |
-| EMA20偏离 | 9.6% (温和) |
-| RS vs SPY | +32.4% (远超大盘) |
-| 风险标签 | ⚠动能衰减 ⚠RR不足 |
+**📊 Verdict:** 
+- 唯一三条件全满足标的。4/4完美多周期EMA多头排列，ADX 33.4确认趋势强劲
+- 但 BULL-TRAP + RSI 72.9 + Stoch RSI 100 = 短期很可能冲高回落
+- CFO增长指引超预期（+区块链交易扩展）提供基本面支撑
+- 波兰消费者业务剥离完成是长期利好（资本释放+聚焦机构业务）
+- **建议：等 $137-139 回调（EMA20=133 附近）入场，不追高。止损 $137.20。**
 
-**利好:** AI基础设施网络增长 + 分析师看多 + 私有云AI赢得Sky合作 (7条有效新闻, confidence:High)
+### Multi-Timeframe Detail
 
-**注意:** 1H级别方向横盘（3/4对齐），周线RSI 87.6 严重超买但日线RSI 63.9健康，ADX 52极强趋势有支撑，关注1H恢复上行
-
----
-
-## 筛选统计
-
-| 筛选步 | 通过数 | 淘汰数 | 淘汰原因 |
-|--------|--------|--------|----------|
-| 总候选 | 60 | — | — |
-| 🟢A 等级 | 6 | 54 | 技术分<门槛 或 C/B/D 级 |
-| 对齐 ≥3/4 | 6 | 0 | 6只A级全部满足对齐条件 |
-| 🟢Long(强) | **2** | 4 | 见下表 |
-
-## 被淘汰的 A 级标的
-
-| 股票 | 综合分 | 对齐 | 新闻信号 | 淘汰原因 |
-|------|--------|------|---------|----------|
-| DOV | 52.9 | 4/4 ✅ | 🟢 Long (中) | 新闻信号"中"非"强" + 震荡风险 |
-| C | 52.1 | 4/4 ✅ | 🟢 Long (中) | 新闻信号"中"非"强" + 假突/诱多双标签 |
-| ARM | 51.8 | 4/4 ✅ | 🟢 Long (中) | 新闻信号"中"非"强" + 过热/EMA偏离18.8% |
-| DELL | 46.4 | 4/4 ✅ | 🟢 Long (中) | 新闻信号"中"非"强" + 过热追涨/EMA偏离14.6% |
-
-## 其他值得关注的 B 级 + Strong Long (不满足条件1)
-
-| 股票 | 综合分 | 等级 | 对齐 | 新闻信号 | 淘汰原因 |
-|------|--------|------|------|---------|----------|
-| AMD | 48.0 | 🔵B | 4/4 ✅ | 🟢 Long (强) | B级 — 过热追涨(高风险) + 假突/动能衰/压力 |
-| INTC | 47.7 | 🔵B | 4/4 ✅ | 🟢 Long (强) | B级 — 过热追涨(高风险) + 动能衰/RR不足 |
+| TF | Score | RSI | MACD | ADX | Stoch RSI | Key |
+|----|-------|-----|------|-----|-----------|-----|
+| 1W | 23 | 71.5 | Hist +1.47 (bull) | 29.4 | 100 | EMA多头, bear div on weekly RSI |
+| 1D | 52 | 72.9 | Hist +1.27 (bull) | 33.4 | 100 | 趋势最强, 距EMA20 +7.4% |
+| 4H | 35 | 74.0 | Hist +0.61 (bull) | 36.8 | 94.7 | near_resist $143.53 |
+| 1H | 28 | 70.5 | Hist -0.12 (bear) | 55.5 | 55.1 | MACD转负, bear div, near_resist $143.50 |
 
 ---
 
-## 与 CN 对比 (2026-06-15)
+## 🔄 Change from Yesterday (2026-06-16)
 
-| 指标 | CN | US |
-|------|-----|-----|
-| 候选股 | 28 | 60 |
-| 🟢A 数 | 6 | 6 |
-| 命中数 | **2** | **2** |
-| Top 分 | 81.4 (东睦) | 62.6 (ASML) |
-| 命中率 | 7.1% | 3.3% |
-
-> US 池子更大(60 vs 28)但命中数相同(2)，主要瓶颈是新闻信号强度 — 4/6 只A级股票新闻信号为"中"而非"强"。US 市场新闻情绪整体偏弱，半数以上(32/60)新闻分=50无显著信号。
+| Stock | Yesterday | Today | Reason |
+|-------|-----------|-------|--------|
+| **NYSE:C** | ✅ Grade A (3/4 align, 65.2) | ✅ Grade A (4/4 align, 58.7) | Alignment improved 3/4→4/4; combined score recalculated |
+| **NYSE:HPE** | ✅ Grade A (4/4 align, 60.8) | ❌ Demoted to C+ | News flipped to WARN Overheated (90→overheat penalty) |
 
 ---
 
-## 建议
+## Near-Miss Candidates (7 stocks that missed by ONE criterion)
 
-1. **ASML**: 优先关注 — 综合分全场最高，RSI健康(66.6)，EMA偏离温和(10.2%)，但需注意看空背离信号，建议等回调至EMA20(1704)附近再入场以改善R/R
-2. **HPE**: 可关注但需等1H恢复上行 — ADX 52趋势极强有支撑，日线RSI健康，止损位距当前价13.4%空间充裕，等1H方向确认后入场
-3. 两只均可作为 `reports/2026-06-15/` 快照的复盘基准，明日执行 `npm run review:us` 验证信号准确性
+| Stock | Combined | Grade | Align | News Signal | Missed By |
+|-------|----------|-------|-------|-------------|-----------|
+| **NASDAQ:AMAT** | 61.2 | A | 2/4 ❌ | GREEN Long (Strong) | Align only 50% |
+| **NYSE:DELL** | 58.7 | A | 2/4 ❌ | GREEN Long (Strong) | Align only 50% |
+| **NYSE:DOV** | 55.3 | A | 3/4 ✅ | GREEN Long (Mid) | News not "Strong" |
+| **NASDAQ:EQIX** | 54.6 | A | 3/4 ✅ | GREEN Long (Mid) | News not "Strong" |
+| **NYSE:GE** | 52.6 | A | 4/4 ✅ | GREEN Long (Mid) | News not "Strong" |
+| **NASDAQ:ASML** | 52.6 | A | 1/4 ❌ | GREEN Long (Strong) | Align only 25% |
+| **NYSE:APH** | 44.2 | B | 3/4 ✅ | GREEN Long (Strong) | Tech 20.4 < 30 |
 
-*筛选时间: 2026-06-15 22:51 UTC+8 | 数据源: us_combined_signals.md + us_tech_signals.json + us_news_signals.json*
+- **DELL/AMAT**: 新闻最强但多周期不一致，情绪-技术背离
+- **GE**: 4/4全对齐，差一步（News Mid→Strong），最值得继续跟踪
+- **DOV**: 3/4对齐+Tech 48.2，回踩买入型，等新闻催化升级
+
+---
+
+## Position Sizing & Risk Management
+
+| Stock | Max Position | Stop Loss % | Notes |
+|-------|-------------|-------------|-------|
+| NYSE:C | 25% | -4.0% | RSI 72.9 高温，等回调至 $137-139 再入场 |
+
+**Discipline:**
+1. No chasing — `chase: NO`
+2. Close on daily close below stop ($137.20), no exceptions
+3. Better entry: wait for pullback to EMA20 (~$133) or at least break of $137 support test
+4. 1H MACD已转负，Stoch RSI极端超买，短期回调概率高
