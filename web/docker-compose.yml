@@ -1,0 +1,30 @@
+services:
+  db:
+    image: postgres:16-alpine
+    restart: unless-stopped
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: postgres
+      POSTGRES_DB: tradingview_mcp_web
+    ports:
+      - "5432:5432"
+    volumes:
+      - tv-web-db:/var/lib/postgresql/data
+
+  web:
+    build: .
+    restart: unless-stopped
+    depends_on:
+      - db
+    environment:
+      DATABASE_URL: postgresql://postgres:postgres@db:5432/tradingview_mcp_web
+      WEB_ADMIN_PASSWORD_HASH: ${WEB_ADMIN_PASSWORD_HASH}
+      WEB_SESSION_SECRET: ${WEB_SESSION_SECRET}
+      REPORTS_DIR: /reports
+    ports:
+      - "3000:3000"
+    volumes:
+      - ../reports:/reports:ro
+
+volumes:
+  tv-web-db:

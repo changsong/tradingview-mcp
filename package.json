@@ -40,7 +40,12 @@
     "limup:cn": "node pipeline/3.5-limup/predict_cn_limup.mjs",
     "full:cn": "node scripts/run_full_cn.mjs",
     "full:us": "npm run news:us && npm run tech:us && npm run combined:us",
-    "full:hk": "npm run news:hk && npm run tech:hk && npm run combined:hk"
+    "full:hk": "npm run news:hk && npm run tech:hk && npm run combined:hk",
+    "web:dev": "yarn --cwd web dev",
+    "web:build": "yarn --cwd web build",
+    "web:import": "yarn --cwd web import",
+    "web:import:all": "yarn --cwd web import:all",
+    "web:prisma:generate": "yarn --cwd web prisma:generate"
   },
   "dependencies": {
     "@crawlee/playwright": "^3.16.0",
