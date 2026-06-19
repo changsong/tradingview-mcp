@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-06-17T06:31:28.081Z",
+  "generated_at": "2026-06-17T14:10:08.192Z",
   "market": "cn",
   "source": "src/core/webNews.js",
   "score_scale": "0-100 normalized (neutral=50)",
@@ -11,17 +11,17 @@
   "llm_used": true,
   "performance": {
     "totals_ms": {
-      "list_fetch_ms": 85125,
-      "enrichment_ms": 291655,
-      "relevance_ms": 0,
-      "llm_ms": 46302,
-      "report_write_ms": 14
+      "list_fetch_ms": 104452,
+      "enrichment_ms": 182157,
+      "relevance_ms": 1,
+      "llm_ms": 42934,
+      "report_write_ms": 15
     },
     "avg_ms": {
-      "list_fetch_ms": 4054,
-      "enrichment_ms": 13888,
+      "list_fetch_ms": 4748,
+      "enrichment_ms": 8280,
       "relevance_ms": 0,
-      "llm_ms": 2205,
+      "llm_ms": 1952,
       "report_write_ms": 1
     }
   },
@@ -29,9 +29,9 @@
     "SZSE:002916": {
       "name": "002916",
       "score": 96,
-      "score_raw": 24.75,
+      "score_raw": 20.82,
       "score_components": {
-        "positive_weight_sum": 24.75,
+        "positive_weight_sum": 20.82,
         "negative_weight_sum": 0,
         "news_effective_count": 10,
         "news_dropped_count": 0
@@ -45,17 +45,17 @@
         "⚠️情绪过热(单边乐观,注意回调)"
       ],
       "positive_factors": [
-        "[并购|w3.15] 深南电路:2026年度向特定对象发行股票募集资金使用的可行性分析报告",
-        "[并购|w3.15] 深南电路:关于向特定对象发行股票不存在直接或通过利益相关方向参与认购的投资者提供财务资助或补偿的公告",
-        "[并购|w3.15] 深南电路:董事会审计委员会关于公司2026年度向特定对象发行股票相关事项的书面审核意见"
+        "[并购|w2.65] 深南电路:2026年度向特定对象发行股票募集资金使用的可行性分析报告",
+        "[并购|w2.65] 深南电路:关于向特定对象发行股票不存在直接或通过利益相关方向参与认购的投资者提供财务资助或补偿的公告",
+        "[并购|w2.65] 深南电路:董事会审计委员会关于公司2026年度向特定对象发行股票相关事项的书面审核意见"
       ],
       "negative_factors": [],
       "news_count": 10,
       "news_dropped": 0,
       "performance": {
-        "list_fetch_ms": 3868,
+        "list_fetch_ms": 6181,
         "candidate_filter_ms": 0,
-        "enrichment_ms": 22087,
+        "enrichment_ms": 14275,
         "raw_news_count": 40,
         "raw_research_count": 10,
         "candidate_news_count": 10,
@@ -65,8 +65,7 @@
         "candidate_reasons": {
           "news": {
             "no-subject-mention": 18,
-            "noise:\\d{1,2}月\\d{1,2}日(快速上涨|快速回调|涨停|": 1,
-            "noise:融资净(买入|卖出)": 1,
+            "noise:龙虎榜|大宗交易|盘口异动": 2,
             "dedup": 0,
             "out_of_window": 10
           },
@@ -77,7 +76,7 @@
         },
         "date_filter_ms": 0,
         "relevance_ms": 0,
-        "llm_ms": 3974,
+        "llm_ms": 3066,
         "scoring_ms": 0
       },
       "top_news": [
@@ -88,9 +87,9 @@
           "type": "行业",
           "sentiment": 0,
           "weight": 1,
-          "final_weight": 0.76,
+          "final_weight": 0.65,
           "source_authority": 4.5,
-          "recency_factor": 0.85,
+          "recency_factor": 0.72,
           "source": "东方财富公告",
           "llm_reviewed": true,
           "llm_confidence": 0.3,
@@ -104,14 +103,14 @@
           "type": "并购",
           "sentiment": 1,
           "weight": 3,
-          "final_weight": 3.15,
+          "final_weight": 2.65,
           "source_authority": 4.5,
-          "recency_factor": 0.5,
+          "recency_factor": 0.42,
           "source": "东方财富公告",
           "llm_reviewed": true,
           "llm_confidence": 0.8,
           "llm_is_real_catalyst": true,
-          "llm_reasoning": "定增募资可行性报告，明确融资计划"
+          "llm_reasoning": "定增募资方案披露，属重大资本运作"
         },
         {
           "date": "2026-06-13",
@@ -120,30 +119,30 @@
           "type": "并购",
           "sentiment": 1,
           "weight": 3,
-          "final_weight": 3.15,
+          "final_weight": 2.65,
           "source_authority": 4.5,
-          "recency_factor": 0.5,
+          "recency_factor": 0.42,
           "source": "东方财富公告",
           "llm_reviewed": true,
           "llm_confidence": 0.7,
           "llm_is_real_catalyst": true,
-          "llm_reasoning": "定增相关合规公告，确认无利益输送"
+          "llm_reasoning": "定增合规性公告，强化方案可信度"
         },
         {
           "date": "2026-06-13",
           "title": "深南电路:关于前次募集资金使用情况的报告",
           "content": "",
-          "type": "财报",
+          "type": "并购",
           "sentiment": 0,
           "weight": 1,
-          "final_weight": 1.17,
+          "final_weight": 1.06,
           "source_authority": 4.5,
-          "recency_factor": 0.5,
+          "recency_factor": 0.42,
           "source": "东方财富公告",
           "llm_reviewed": true,
           "llm_confidence": 0.5,
           "llm_is_real_catalyst": false,
-          "llm_reasoning": "前次募集资金使用报告，历史信息"
+          "llm_reasoning": "前次募资使用报告，常规披露"
         },
         {
           "date": "2026-06-13",
@@ -152,9 +151,9 @@
           "type": "并购",
           "sentiment": 1,
           "weight": 3,
-          "final_weight": 3.15,
+          "final_weight": 2.65,
           "source_authority": 4.5,
-          "recency_factor": 0.5,
+          "recency_factor": 0.42,
           "source": "东方财富公告",
           "llm_reviewed": true,
           "llm_confidence": 0.7,
@@ -163,98 +162,12 @@
         }
       ]
     },
-    "SSE:600176": {
-      "name": "600176",
-      "score": 87,
-      "score_raw": 8.91,
+    "SSE:600114": {
+      "name": "600114",
+      "score": 82,
+      "score_raw": 7.69,
       "score_components": {
-        "positive_weight_sum": 8.91,
-        "negative_weight_sum": 0,
-        "news_effective_count": 2,
-        "news_dropped_count": 0
-      },
-      "signal": "🟢 Long (强)",
-      "strategy": "多重利好共振，基本面+情绪双支撑，适合追涨或持有",
-      "suitable_for": "追涨 / 持有",
-      "confidence": "高",
-      "patterns": [
-        "情绪持续增强↑(trend)"
-      ],
-      "positive_factors": [
-        "[回购|w4.59] 中国巨石:中国巨石董事会薪酬与考核委员会关于公司2025年限制性股票激励计划预留授予激励对象名单的公示情况说明及核查意见",
-        "[回购|w4.32] 中国巨石董事会薪酬与考核委员会关于公司2025年限制性股票激励计划预留授予激励对象名单的公示情况说明及核查意见"
-      ],
-      "negative_factors": [],
-      "news_count": 2,
-      "news_dropped": 0,
-      "performance": {
-        "list_fetch_ms": 5433,
-        "candidate_filter_ms": 0,
-        "enrichment_ms": 19307,
-        "raw_news_count": 40,
-        "raw_research_count": 10,
-        "candidate_news_count": 2,
-        "candidate_research_count": 0,
-        "enriched_news_count": 2,
-        "enriched_research_count": 0,
-        "candidate_reasons": {
-          "news": {
-            "no-subject-mention": 19,
-            "noise:\\d{1,2}月\\d{1,2}日(快速上涨|快速回调|涨停|": 1,
-            "dedup": 0,
-            "out_of_window": 18
-          },
-          "research": {
-            "dedup": 0,
-            "out_of_window": 10
-          }
-        },
-        "date_filter_ms": 0,
-        "relevance_ms": 0,
-        "llm_ms": 15,
-        "scoring_ms": 0
-      },
-      "top_news": [
-        {
-          "date": "2026-06-16",
-          "title": "中国巨石:中国巨石董事会薪酬与考核委员会关于公司2025年限制性股票激励计划预留授予激励对象名单的公示情况说明及核查意见",
-          "content": "一般项目:新材料技术推广服务;新材料技术研发;玻璃纤维及制品制造;高性能纤维及复合材料销售;建筑材料销售;化工产品销售(不含许可类化工产品);机械设备销售;非居住房地产租赁;普通机械设备安装服务;信息技术咨询服务;企业管理咨询;自有资金投资的资产管理服务。(除依法须经批准的项目外,凭营业执照依法自主开展经营活动)许可项目:危险化学品经营。(依法须经批准的项目,经相关部门批准后方可开展经营活动,具体经营项目以相关部门批准文件或许可证件为准)\n郑重声明：东方财富网发布此信息的目的在于传播更多信息，与本站立场无关。东方财富网不保证该信息（包括但不限于文字、视频、音频、数据及图表）全部或者部分内容的准确性、真实性、完整性、有效性、及时性、原创性等。相关信息并未经过本网站证实，不对您构成任何投资建议，据此操作，风险自担。",
-          "type": "回购",
-          "sentiment": 1,
-          "weight": 5,
-          "final_weight": 4.59,
-          "source_authority": 4.5,
-          "recency_factor": 0.85,
-          "source": "东方财富公告",
-          "llm_reviewed": true,
-          "llm_confidence": 0.8,
-          "llm_is_real_catalyst": true,
-          "llm_reasoning": "股权激励计划预留授予，属回购类型利好"
-        },
-        {
-          "date": "2026-06-15",
-          "title": "中国巨石董事会薪酬与考核委员会关于公司2025年限制性股票激励计划预留授予激励对象名单的公示情况说明及核查意见",
-          "content": "证券代码：600176 \t证券简称：中国巨石 \t公告编号：2026-049\n中国巨石股份有限公司董事会薪酬与考核委员会\n关于公司 \t2025 \t年限制性股票激励计划预留授予激励对象名单的\n公示情况说明及核查意见\n本公司董事会及全体董事保证本公告内容不存在任何虚假记载、误导性陈述或者重\n大遗漏，并对其内容的真实性、准确性和完整性承担法律责任。\n中国巨石股份有限公司（以下简称\"公司\"）于 \t2026 \t年 \t5 \t月 \t29 \t日召开第七届董事会第\n三十二次会议，审议通过了《关于向公司 \t2025 \t年限制性股票激励计划激励对象预留授予\n限制性股票的议案》等相关议案。根据《中华人民共和国公司法》、《中华人民共和国证\n券法》、《上市公司股权激励管理办法》等相关法律法规和《中国巨石股份有限公司章程》\n的有关规定，公司对《2025 \t年限制性股票激励计划》（以下简称《激励计划》）预留授\n予激励对象名单在公司内部进行公示，公司董事会薪酬与考核委员会结合公示情况对预留\n授予激励对象名单进行核查，相关公示情况及核查情况如下：\n一、公示情况及核查方式\n（一）公司对预留授予激励对象的内部公示情况\n1. \t公示内容：本激励计划预留授予激励对象姓名及职务。\n2. \t公示时间：2026 \t年 \t5 \t月 \t30 \t日至 \t2026 \t年 \t6 \t月 \t8 \t日，共计 \t10 \t天。\n3. \t公示方式：公司公示栏公示。\n4. \t反馈方式：以书面方式或邮件方式收集反馈，并对相关反馈进行记录。\n5. \t公示结果：截至公示期满，未收到员工对本次公示的相关内容存有异议，无反馈记\n录。\n（二）公司董事会薪酬与考核委员会对拟激励对象的核查方式\n公司董事会薪酬与考核委员会核查了本次拟激励对象的名单、身份证件、拟激励对象\n与公司（含控股子公司）签订的劳动合同或聘用合同、拟激励对象在公司担任的职务等资\n料。\n二、董事会薪酬与考核委员会核查意见\n董事会薪酬与考核委员会在充分听取公示意见后，根据《上市公司股权激励管理办\n法》、《中国巨石股份有限公司章程》、《激励计划》的规定，对《激励计划》激励对象\n名单进行核查，并发表核查意见如下：\n（一）列入本激励计划预留授予激励对象名单的人员具备《公司法》、《证券法》、\n《上市公司股权激励管理办法》、《国有控股上市公司（境内）实施股权激励试行办法》\n等法律法规和规范性文件及《公司章程》规定的任职资格。\n（二）激励对象不存在《上市公司股权激励管理办法》规定的不得成为激励对象的情\n形。\n（三）本激励计划的激励对象不包括公司独立董事、单独或合计持有公司 \t5%以上股\n份的股东或实际控制人及其配偶、父母、子女。列入本激励计划预留授予激励对象名单的\n\n-- 1 of 2 --\n\n人员符合相关法律、法规及规范性文件及《激励计划》规定的激励对象范围，其作为公司\n本激励计划激励对象的主体资格合法、有效。\n（四）列入本激励计划激励对象名单的人员基本情况属实，不存在虚假、故意隐瞒或\n引起重大误解之处。\n综上，董事会薪酬与考核委员会认为，列入公司《2025 \t年限制性股票激励计划预留\n授予激励对象名单》的人员均符合相关法律、法规及规范性文件所规定的条件，符合《激\n励计划》规定的激励对象条件，其作为本激励计划预留授予激励对象合法、有效。\n中国巨石股份有限公司董事会薪酬与考核委员会\n2026 \t年 \t6 \t月 \t15 \t日\n\n-- 2 of 2 --",
-          "type": "回购",
-          "sentiment": 1,
-          "weight": 4,
-          "final_weight": 4.32,
-          "source_authority": 5,
-          "recency_factor": 0.72,
-          "source": "巨潮资讯",
-          "llm_reviewed": true,
-          "llm_confidence": 0.8,
-          "llm_is_real_catalyst": true,
-          "llm_reasoning": "股权激励计划预留授予，属回购类型利好"
-        }
-      ]
-    },
-    "SSE:605162": {
-      "name": "新中港",
-      "score": 77,
-      "score_raw": 9.17,
-      "score_components": {
-        "positive_weight_sum": 9.17,
+        "positive_weight_sum": 7.69,
         "negative_weight_sum": 0,
         "news_effective_count": 8,
         "news_dropped_count": 0
@@ -263,164 +176,29 @@
       "strategy": "多重利好共振，基本面+情绪双支撑，适合追涨或持有",
       "suitable_for": "追涨 / 持有",
       "confidence": "高",
-      "patterns": [
-        "情绪持续增强↑(trend)"
-      ],
+      "patterns": [],
       "positive_factors": [
-        "[财报|w5.85] 新中港:2025年年度权益分派实施公告",
-        "[财报|w3.32] 新中港：每股派0.16元，股权登记日为6月24日"
+        "[并购|w2.65] 东睦股份:东睦股份关于延长发行股份及支付现金购买资产并募集配套资金暨关联交易股东会决议有效期及相关授权期限的公告",
+        "[并购|w2.52] 东睦股份第九届董事会第十次会议决议公告",
+        "[并购|w2.52] 东睦股份关于延长发行股份及支付现金购买资产并募集配套资金暨关联交易股东会决议有效期及相关授权期限的公告"
       ],
       "negative_factors": [],
       "news_count": 8,
       "news_dropped": 0,
       "performance": {
-        "list_fetch_ms": 2477,
+        "list_fetch_ms": 5467,
         "candidate_filter_ms": 0,
-        "enrichment_ms": 8005,
+        "enrichment_ms": 6785,
         "raw_news_count": 40,
-        "raw_research_count": 0,
+        "raw_research_count": 10,
         "candidate_news_count": 8,
         "candidate_research_count": 0,
         "enriched_news_count": 8,
         "enriched_research_count": 0,
         "candidate_reasons": {
           "news": {
-            "noise:\\d{1,2}月\\d{1,2}日(快速上涨|快速回调|涨停|": 3,
-            "dedup": 0,
-            "out_of_window": 29
-          },
-          "research": {
-            "dedup": 0
-          }
-        },
-        "date_filter_ms": 0,
-        "relevance_ms": 0,
-        "llm_ms": 2729,
-        "scoring_ms": 1
-      },
-      "top_news": [
-        {
-          "date": "2026-06-17 10:54:47",
-          "title": "新中港6月17日快速反弹",
-          "content": "",
-          "type": "行业",
-          "sentiment": 0,
-          "weight": 1,
-          "final_weight": 0.6,
-          "source_authority": 3,
-          "recency_factor": 1,
-          "source": "东方财富资讯",
-          "llm_reviewed": true,
-          "llm_confidence": 0.1,
-          "llm_is_real_catalyst": false,
-          "llm_reasoning": "仅描述股价反弹，无实质信息"
-        },
-        {
-          "date": "2026-06-17 09:41:58",
-          "title": "新中港6月17日加速下跌",
-          "content": "",
-          "type": "行业",
-          "sentiment": 0,
-          "weight": 1,
-          "final_weight": 0.6,
-          "source_authority": 3,
-          "recency_factor": 1,
-          "source": "东方财富资讯",
-          "llm_reviewed": true,
-          "llm_confidence": 0.1,
-          "llm_is_real_catalyst": false,
-          "llm_reasoning": "仅描述股价下跌，无实质信息"
-        },
-        {
-          "date": "2026-06-17",
-          "title": "新中港:北京市中伦律师事务所关于浙江新中港热电股份有限公司差异化分红事项的专项法律意见书",
-          "content": "",
-          "type": "政策",
-          "sentiment": 0,
-          "weight": 5,
-          "final_weight": 5.4,
-          "source_authority": 4.5,
-          "recency_factor": 1,
-          "source": "东方财富公告",
-          "llm_reviewed": true,
-          "llm_confidence": 0.8,
-          "llm_is_real_catalyst": true,
-          "llm_reasoning": "法律意见书涉及分红事项，属正式公告"
-        },
-        {
-          "date": "2026-06-17",
-          "title": "新中港:2025年年度权益分派实施公告",
-          "content": "",
-          "type": "财报",
-          "sentiment": 1,
-          "weight": 6,
-          "final_weight": 5.85,
-          "source_authority": 4.5,
-          "recency_factor": 1,
-          "source": "东方财富公告",
-          "llm_reviewed": true,
-          "llm_confidence": 0.9,
-          "llm_is_real_catalyst": true,
-          "llm_reasoning": "年度权益分派实施公告，明确分红方案"
-        },
-        {
-          "date": "2026-06-16 19:09:00",
-          "title": "新中港：每股派0.16元，股权登记日为6月24日",
-          "content": "",
-          "type": "财报",
-          "sentiment": 1,
-          "weight": 3,
-          "final_weight": 3.32,
-          "source_authority": 3,
-          "recency_factor": 0.85,
-          "source": "东方财富资讯",
-          "llm_reviewed": true,
-          "llm_confidence": 0.9,
-          "llm_is_real_catalyst": true,
-          "llm_reasoning": "每股派0.16元，股权登记日明确"
-        }
-      ]
-    },
-    "SSE:600114": {
-      "name": "东睦股份",
-      "score": 76,
-      "score_raw": 9.53,
-      "score_components": {
-        "positive_weight_sum": 11.14,
-        "negative_weight_sum": 1.61,
-        "news_effective_count": 17,
-        "news_dropped_count": 0
-      },
-      "signal": "🟢 Long (强)",
-      "strategy": "多重利好共振，基本面+情绪双支撑，适合追涨或持有",
-      "suitable_for": "追涨 / 持有",
-      "confidence": "高",
-      "patterns": [],
-      "positive_factors": [
-        "[并购|w3.15] 东睦股份:东睦股份关于延长发行股份及支付现金购买资产并募集配套资金暨关联交易股东会决议有效期及相关授权期限的公告",
-        "[并购|w2.94] 东睦股份第九届董事会第十次会议决议公告",
-        "[并购|w2.94] 东睦股份关于延长发行股份及支付现金购买资产并募集配套资金暨关联交易股东会决议有效期及相关授权期限的公告"
-      ],
-      "negative_factors": [
-        "[行业|w0.6] 东睦股份：融资净偿还5620.63万元，融资余额17.96亿元",
-        "[行业|w0.51] 东睦股份：融资净偿还9496.49万元，融资余额18.52亿元",
-        "[行业|w0.5] 东睦股份：融资净偿还3150.94万元，融资余额19.47亿元"
-      ],
-      "news_count": 17,
-      "news_dropped": 0,
-      "performance": {
-        "list_fetch_ms": 5573,
-        "candidate_filter_ms": 0,
-        "enrichment_ms": 19800,
-        "raw_news_count": 40,
-        "raw_research_count": 10,
-        "candidate_news_count": 17,
-        "candidate_research_count": 0,
-        "enriched_news_count": 17,
-        "enriched_research_count": 0,
-        "candidate_reasons": {
-          "news": {
             "noise:\\d{1,2}月\\d{1,2}日(快速上涨|快速回调|涨停|": 6,
+            "no-subject-mention": 9,
             "noise:融资净(买入|卖出)": 1,
             "dedup": 0,
             "out_of_window": 16
@@ -432,402 +210,129 @@
         },
         "date_filter_ms": 0,
         "relevance_ms": 0,
-        "llm_ms": 4015,
+        "llm_ms": 3742,
         "scoring_ms": 0
       },
       "top_news": [
         {
-          "date": "2026-06-17 09:57:21",
-          "title": "东睦股份6月17日盘中涨幅达5%",
-          "content": "",
-          "type": "行业",
-          "sentiment": 1,
-          "weight": 1,
-          "final_weight": 0.6,
-          "source_authority": 3,
-          "recency_factor": 1,
-          "source": "东方财富资讯",
-          "llm_reviewed": true,
-          "llm_confidence": 0.3,
-          "llm_is_real_catalyst": false,
-          "llm_reasoning": "仅描述股价盘中涨幅，无实质催化"
-        },
-        {
-          "date": "2026-06-17 07:42:27",
-          "title": "东睦股份：融资净偿还5620.63万元，融资余额17.96亿元",
-          "content": "炒股第一步，先开个股票账户\n\n交易所最新数据显示，东睦股份于2026年6月16日获融资买入1.38亿元，融资偿还1.94亿元，当日融资净偿还5620.63万元。目前，该股融资余额17.96亿，占流通市值比例为6.88%。\n\n该股当日融券卖出1100股，融券偿还4.65万股，融券净偿还4.54万股。目前，该股融券余量9.84万股，融券余额416.72万元。\n\n免责声明：本文基于AI生产，仅供参考，不构成任何投资建议，据此操作风险自担。东方财富发布此内容旨在传播更多信息，与本平台立场无关。东方财富力求但不保证数据的完全准确，如有错漏请以中国证监会指定上市公司信息披露媒体为准，东方财富不对因该资料全部或部分内容而引致的盈亏承担任何责任。用户个人对服务的使用承担风险，东方财富对此不作任何类型的担保。",
-          "type": "行业",
-          "sentiment": -1,
-          "weight": 1,
-          "final_weight": 0.6,
-          "source_authority": 3,
-          "recency_factor": 1,
-          "source": "东方财富资讯",
-          "llm_reviewed": true,
-          "llm_confidence": 0.4,
-          "llm_is_real_catalyst": false,
-          "llm_reasoning": "融资净偿还显示资金流出，但属常规交易数据"
-        },
-        {
-          "date": "2026-06-16 10:26:08",
-          "title": "东睦股份6月16日快速反弹",
-          "content": "",
-          "type": "行业",
-          "sentiment": 1,
-          "weight": 1,
-          "final_weight": 0.51,
-          "source_authority": 3,
-          "recency_factor": 0.85,
-          "source": "东方财富资讯",
-          "llm_reviewed": true,
-          "llm_confidence": 0.3,
-          "llm_is_real_catalyst": false,
-          "llm_reasoning": "仅描述股价快速反弹，无实质信息"
-        },
-        {
-          "date": "2026-06-16 07:38:22",
-          "title": "东睦股份：融资净偿还9496.49万元，融资余额18.52亿元",
-          "content": "炒股第一步，先开个股票账户\n\n交易所最新数据显示，东睦股份于2026年6月15日获融资买入1.34亿元，融资偿还2.29亿元，当日融资净偿还9496.49万元。目前，该股融资余额18.52亿，占流通市值比例为7.12%。\n\n该股当日融券卖出1.11万股，融券偿还3.58万股，融券净偿还2.47万股。目前，该股融券余量14.38万股，融券余额607.12万元。\n\n免责声明：本文基于AI生产，仅供参考，不构成任何投资建议，据此操作风险自担。东方财富发布此内容旨在传播更多信息，与本平台立场无关。东方财富力求但不保证数据的完全准确，如有错漏请以中国证监会指定上市公司信息披露媒体为准，东方财富不对因该资料全部或部分内容而引致的盈亏承担任何责任。用户个人对服务的使用承担风险，东方财富对此不作任何类型的担保。",
-          "type": "行业",
-          "sentiment": -1,
-          "weight": 1,
-          "final_weight": 0.51,
-          "source_authority": 3,
-          "recency_factor": 0.85,
-          "source": "东方财富资讯",
-          "llm_reviewed": true,
-          "llm_confidence": 0.4,
-          "llm_is_real_catalyst": false,
-          "llm_reasoning": "融资净偿还金额较大，资金面偏空"
-        },
-        {
-          "date": "2026-06-15 10:19:42",
-          "title": "东睦股份6月15日盘中涨幅达5%",
-          "content": "",
-          "type": "行业",
-          "sentiment": 1,
-          "weight": 1,
-          "final_weight": 0.5,
-          "source_authority": 3,
-          "recency_factor": 0.72,
-          "source": "东方财富资讯",
-          "llm_reviewed": true,
-          "llm_confidence": 0.3,
-          "llm_is_real_catalyst": false,
-          "llm_reasoning": "仅描述股价盘中涨幅，无实质催化"
-        }
-      ]
-    },
-    "SSE:600522": {
-      "name": "中天科技",
-      "score": 76,
-      "score_raw": 6.19,
-      "score_components": {
-        "positive_weight_sum": 6.19,
-        "negative_weight_sum": 0,
-        "news_effective_count": 8,
-        "news_dropped_count": 0
-      },
-      "signal": "⚠️ No Trade (情绪过热)",
-      "strategy": "情绪分过高但出现过热信号，等待回调低吸，不追高",
-      "suitable_for": "低吸(等回调)",
-      "confidence": "低(风险压制)",
-      "patterns": [
-        "情绪持续增强↑(trend)",
-        "⚠️情绪过热(单边乐观,注意回调)"
-      ],
-      "positive_factors": [
-        "[行业|w2.55] 【概念速递】中天科技新增“PCB”概念",
-        "[行业|w0.6] 中天科技6月17日快速反弹",
-        "[行业|w0.51] 中天科技成交额超上一日全天"
-      ],
-      "negative_factors": [],
-      "news_count": 8,
-      "news_dropped": 0,
-      "performance": {
-        "list_fetch_ms": 4359,
-        "candidate_filter_ms": 0,
-        "enrichment_ms": 24406,
-        "raw_news_count": 40,
-        "raw_research_count": 10,
-        "candidate_news_count": 8,
-        "candidate_research_count": 0,
-        "enriched_news_count": 8,
-        "enriched_research_count": 0,
-        "candidate_reasons": {
-          "news": {
-            "no-subject-mention": 7,
-            "noise:\\d{1,2}月\\d{1,2}日(快速上涨|快速回调|涨停|": 3,
-            "noise:融资净(买入|卖出)": 2,
-            "dedup": 0,
-            "out_of_window": 20
-          },
-          "research": {
-            "dedup": 0,
-            "out_of_window": 10
-          }
-        },
-        "date_filter_ms": 0,
-        "relevance_ms": 0,
-        "llm_ms": 2910,
-        "scoring_ms": 0
-      },
-      "top_news": [
-        {
-          "date": "2026-06-17 09:49:40",
-          "title": "中天科技6月17日快速反弹",
-          "content": "",
-          "type": "行业",
-          "sentiment": 1,
-          "weight": 1,
-          "final_weight": 0.6,
-          "source_authority": 3,
-          "recency_factor": 1,
-          "source": "东方财富资讯",
-          "llm_reviewed": true,
-          "llm_confidence": 0.3,
-          "llm_is_real_catalyst": false,
-          "llm_reasoning": "仅描述股价反弹，无实质催化"
-        },
-        {
-          "date": "2026-06-16 16:53:50",
-          "title": "【概念速递】中天科技新增“PCB”概念",
-          "content": "专业金融数据，下一代智能终端\n\n2026年6月16日，中天科技新增“PCB”概念。\n\n入选理由：2025年年报显示，公司 PCB 铜箔围绕高频高速、超厚、定制化方向实现技术与业绩双突破，在高端产品进口替代中抢占先机。报告期内标箔总出货量突破两万吨，位居国内前十。超厚铜箔性能稳定，加速高端进口替代；高端系列产品已批量供货，适配高端服务器、工业控制、精密通讯等高频场景。公司与国内头部 CCL 厂商建立长期稳定合作，客户覆盖消费电子、汽车电子、AI 服务器、AIDC电源、车载板、光模块、交换机等领域，高端产品客户认证稳步推进。\n\n公司涉及的其他概念：光纤概念、通信技术、电网概念、电池技术、碳纤维、铜缆高速连接、可控核聚变、液冷概念、固态电池、光通信模块、东数西算、6G概念、CPO概念、海洋经济、储能概念、大数据、数据中心、创投、超级电容、物联网、半导体概念、海工装备、3D打印、OLED、新材料、风能、充电桩、新能源车、工业互联、铁路基建、华为概念、特高压、量子科技、石墨烯、超导概念、智能电网、锂电池概念、新能源、5G概念、一带一路、光伏概念。\n\n免责声明：本文基于AI生产，仅供参考，不构成任何投资建议，据此操作风险自担。东方财富发布此内容旨在传播更多信息，与本平台立场无关。东方财富力求但不保证数据的完全准确，如有错漏请以中国证监会指定上市公司信息披露媒体为准，东方财富不对因该资料全部或部分内容而引致的盈亏承担任何责任。用户个人对服务的使用承担风险，东方财富对此不作任何类型的担保。",
-          "type": "行业",
-          "sentiment": 1,
-          "weight": 3,
-          "final_weight": 2.55,
-          "source_authority": 3,
-          "recency_factor": 0.85,
-          "source": "东方财富资讯",
-          "llm_reviewed": true,
-          "llm_confidence": 0.7,
-          "llm_is_real_catalyst": true,
-          "llm_reasoning": "新增PCB概念，年报披露铜箔业务突破"
-        },
-        {
-          "date": "2026-06-16 15:05:00",
-          "title": "中天科技成交额超上一日全天",
-          "content": "在东方财富看资讯行情，选东方财富证券一站式开户交易>>\n\n　　数据宝统计，截至14:34，中天科技成交额154.56亿元，超上一日全天。最新股价上涨5.51%，换手率8.44%。上一交易日该股全天成交额为154.23亿元。\n\n　　据天眼查APP显示，江苏中天科技股份有限公司成立于1996年02月09日，注册资本341294.9652万人民币。（数据宝）\n\n　　注：本文系新闻报道，不构成投资建议，股市有风险，投资需谨慎。",
-          "type": "行业",
-          "sentiment": 1,
-          "weight": 1,
-          "final_weight": 0.51,
-          "source_authority": 3,
-          "recency_factor": 0.85,
-          "source": "东方财富资讯",
-          "llm_reviewed": true,
-          "llm_confidence": 0.4,
-          "llm_is_real_catalyst": false,
-          "llm_reasoning": "成交额超上一日，量价异动但无实质催化"
-        },
-        {
-          "date": "2026-06-16 11:32:00",
-          "title": "中天科技成交额超100亿元",
-          "content": "全新妙想投研助理，立即体验\n\n　　数据宝统计，截至10:58，中天科技成交额101.05亿元，超100亿元。最新股价上涨4.93%，换手率5.54%。上一交易日该股全天成交额为154.23亿元。\n\n　　据天眼查APP显示，江苏中天科技股份有限公司成立于1996年02月09日，注册资本341294.9652万人民币。（数据宝）",
-          "type": "行业",
-          "sentiment": 1,
-          "weight": 1,
-          "final_weight": 0.51,
-          "source_authority": 3,
-          "recency_factor": 0.85,
-          "source": "东方财富资讯",
-          "llm_reviewed": true,
-          "llm_confidence": 0.3,
-          "llm_is_real_catalyst": false,
-          "llm_reasoning": "成交额超百亿，仅描述交易数据"
-        },
-        {
-          "date": "2026-06-16 10:00:37",
-          "title": "中天科技6月16日盘中涨幅达5%",
-          "content": "以下是中天科技在北京时间6月16日09:43分盘口异动快照：\n\n　　在东方财富看资讯行情，选东方财富证券一站式开户交易>>\n\n分笔\n\n09:43:53 53.92 1101↑\n09:43:50 53.90 978↑\n09:43:47 53.85 3070↑\n09:43:44 53.84 7993↑\n09:43:41 53.70 1501↑\n \n09:43:38 53.64 1431↓\n09:43:35 53.66 1663↓\n09:43:32 53.66 2438↓\n09:43:29 53.67 1765↓\n09:43:26 53.70 827↑\n \n报价\n\n卖五 \n\n53.96\n\n 264\n卖四 \n\n53.95\n\n 395\n卖三 \n\n53.94\n\n 463\n卖二 \n\n53.93\n\n 426\n卖一 \n\n53.92\n\n 479\n\n买一 \n\n53.91\n\n 14\n买二 \n\n53.9\n\n 8\n买三 \n\n53.89\n\n 137\n买四 \n\n53.88\n\n 532\n买五 \n\n53.87\n\n 9\n\n最新：53.92\n涨幅：5.00%\n涨跌：2.57\n换手率：2.08%\n成交量：71.14万手\n成交额：37.42亿元\n主力净流入：\n1.78亿元\n\n  6月16日，中天科技盘中涨幅达5%，截至9点43分，报53.92元，成交37.42亿元，换手率2.08%。\n注：以上信息仅供参考，不对您构成任何投资建议。",
-          "type": "行业",
-          "sentiment": 1,
-          "weight": 1,
-          "final_weight": 0.51,
-          "source_authority": 3,
-          "recency_factor": 0.85,
-          "source": "东方财富资讯",
-          "llm_reviewed": true,
-          "llm_confidence": 0.3,
-          "llm_is_real_catalyst": false,
-          "llm_reasoning": "盘中涨幅达5%，仅盘口异动"
-        }
-      ]
-    },
-    "SSE:600549": {
-      "name": "厦门钨业",
-      "score": 75,
-      "score_raw": 11.65,
-      "score_components": {
-        "positive_weight_sum": 11.65,
-        "negative_weight_sum": 0,
-        "news_effective_count": 19,
-        "news_dropped_count": 0
-      },
-      "signal": "⚠️ No Trade (情绪过热)",
-      "strategy": "情绪分过高但出现过热信号，等待回调低吸，不追高",
-      "suitable_for": "低吸(等回调)",
-      "confidence": "低(风险压制)",
-      "patterns": [
-        "情绪持续增强↑(trend)",
-        "⚠️情绪过热(单边乐观,注意回调)"
-      ],
-      "positive_factors": [
-        "[并购|w5.95] 厦门钨业2026年第三次临时股东会决议公告",
-        "[财报|w3.9] 厦门钨业涨3.41%，股价创历史新高",
-        "[行业|w0.6] 厦门钨业成交额创上市以来新高"
-      ],
-      "negative_factors": [],
-      "news_count": 19,
-      "news_dropped": 0,
-      "performance": {
-        "list_fetch_ms": 5471,
-        "candidate_filter_ms": 0,
-        "enrichment_ms": 18922,
-        "raw_news_count": 40,
-        "raw_research_count": 10,
-        "candidate_news_count": 19,
-        "candidate_research_count": 0,
-        "enriched_news_count": 19,
-        "enriched_research_count": 0,
-        "candidate_reasons": {
-          "news": {
-            "noise:\\d{1,2}月\\d{1,2}日(快速上涨|快速回调|涨停|": 2,
-            "no-subject-mention": 8,
-            "dedup": 0,
-            "out_of_window": 11
-          },
-          "research": {
-            "dedup": 0,
-            "out_of_window": 10
-          }
-        },
-        "date_filter_ms": 0,
-        "relevance_ms": 0,
-        "llm_ms": 3392,
-        "scoring_ms": 0
-      },
-      "top_news": [
-        {
-          "date": "2026-06-17 14:17:00",
-          "title": "厦门钨业成交额创上市以来新高",
-          "content": "在东方财富看资讯行情，选东方财富证券一站式开户交易>>\n\n　　数据宝统计，截至13:56，厦门钨业成交额110.86亿元，创上市以来新高。最新股价上涨1.71%，换手率8.93%。上一交易日该股全天成交额为48.20亿元。\n\n　　据天眼查APP显示，厦门钨业股份有限公司成立于1997年12月30日，注册资本158758.5826万人民币。（数据宝）",
-          "type": "行业",
-          "sentiment": 1,
-          "weight": 1,
-          "final_weight": 0.6,
-          "source_authority": 3,
-          "recency_factor": 1,
-          "source": "东方财富资讯",
-          "llm_reviewed": true,
-          "llm_confidence": 0.3,
-          "llm_is_real_catalyst": false,
-          "llm_reasoning": "成交额创新高，但无实质催化"
-        },
-        {
-          "date": "2026-06-17 10:42:29",
-          "title": "厦门钨业6月17日盘中涨幅达5%",
-          "content": "",
-          "type": "行业",
-          "sentiment": 1,
-          "weight": 1,
-          "final_weight": 0.6,
-          "source_authority": 3,
-          "recency_factor": 1,
-          "source": "东方财富资讯",
-          "llm_reviewed": true,
-          "llm_confidence": 0.2,
-          "llm_is_real_catalyst": false,
-          "llm_reasoning": "仅盘中涨幅，无具体信息"
-        },
-        {
-          "date": "2026-06-17 10:30:00",
-          "title": "厦门钨业涨3.41%，股价创历史新高",
-          "content": "专业金融数据，下一代智能终端\n\n　　厦门钨业股价创出历史新高，截至10:22，该股上涨3.41%，股价报81.08元，成交量8499.54万股，成交金额67.21亿元，换手率5.47%，该股最新A股总市值达1287.21亿元，该股A股流通市值1259.93亿元。\n\n　　证券时报·数据宝统计显示，厦门钨业所属的有色金属行业，目前整体涨幅为0.42%，行业内，目前股价上涨的有63只，涨幅居前的有海星股份、永杰新材、常铝股份等，涨幅分别为10.00%、8.51%、6.32%。股价下跌的有79只，跌幅居前的有华阳新材、章源钨业、翔鹭钨业等，跌幅分别为5.05%、4.96%、4.70%。\n\n　　两融数据显示，该股最新（6月16日）两融余额为31.70亿元，其中，融资余额为31.34亿元，近10日增加1.84亿元，环比增长6.25%。\n\n　　公司发布的一季报数据显示，一季度公司共实现营业收入157.43亿元，同比增长86.99%，实现净利润11.07亿元，同比增长189.14%，基本每股收益为0.6972元，加权平均净资产收益率6.24%。",
-          "type": "财报",
-          "sentiment": 1,
-          "weight": 4,
-          "final_weight": 3.9,
-          "source_authority": 3,
-          "recency_factor": 1,
-          "source": "东方财富资讯",
-          "llm_reviewed": true,
-          "llm_confidence": 0.9,
-          "llm_is_real_catalyst": true,
-          "llm_reasoning": "一季报净利同比增189%，业绩强劲"
-        },
-        {
-          "date": "2026-06-17 10:28:50",
-          "title": "厦门钨业股价创新高",
-          "content": "",
-          "type": "行业",
-          "sentiment": 1,
-          "weight": 1,
-          "final_weight": 0.6,
-          "source_authority": 3,
-          "recency_factor": 1,
-          "source": "东方财富资讯",
-          "llm_reviewed": true,
-          "llm_confidence": 0.2,
-          "llm_is_real_catalyst": false,
-          "llm_reasoning": "仅股价创新高，无实质内容"
-        },
-        {
-          "date": "2026-06-17 09:48:10",
-          "title": "厦门钨业6月17日快速反弹",
-          "content": "以下是厦门钨业在北京时间6月17日09:38分盘口异动快照：\n\n　　专业金融数据，下一代智能终端\n\n分笔\n\n09:38:04 79.34 785↓\n09:38:01 79.48 1557↓\n09:37:58 79.62 1475↓\n09:37:55 79.63 1197↓\n09:37:52 79.73 975↓\n \n09:37:49 79.83 367↑\n09:37:46 79.78 438↑\n09:37:43 79.67 628↑\n09:37:40 79.53 918↑\n09:37:37 79.50 1394↑\n \n报价\n\n卖五 \n\n79.44\n\n 123\n卖四 \n\n79.43\n\n 122\n卖三 \n\n79.38\n\n 4\n卖二 \n\n79.37\n\n 3\n卖一 \n\n79.34\n\n 517\n\n买一 \n\n79.33\n\n 1\n买二 \n\n79.31\n\n 350\n买三 \n\n79.3\n\n 54\n买四 \n\n79.29\n\n 74\n买五 \n\n79.28\n\n 3\n\n最新：79.34\n涨幅：1.19%\n涨跌：0.93\n换手率：2.25%\n成交量：34.99万手\n成交额：27.72亿元\n主力净流入：\n-8063.59万元\n\n  6月17日，厦门钨业盘中快速反弹，5分钟内涨幅超过2%，截至9点38分，报79.34元，成交27.72亿元，换手率2.25%。\n注：以上信息仅供参考，不对您构成任何投资建议。",
+          "date": "2026-06-13",
+          "title": "东睦股份:东睦股份关于聘任证券事务代表的公告",
+          "content": "一般项目:锻件及粉末冶金制品制造;锻件及粉末冶金制品销售;新材料技术研发;新材料技术推广服务;磁性材料销售;磁性材料生产;电子元器件制造;变压器、整流器和电感器制造;金属制品销售;金属材料销售;金属基复合材料和陶瓷基复合材料销售;电机制造;微特电机及组件制造;微特电机及组件销售;齿轮及齿轮减、变速箱制造;齿轮及齿轮减、变速箱销售;智能机器人的研发;智能机器人销售;技术服务、技术开发、技术咨询、技术交流、技术转让、技术推广;货物进出口;住房租赁;非居住房地产租赁(除依法须经批准的项目外,凭营业执照依法自主开展经营活动)\n郑重声明：东方财富网发布此信息的目的在于传播更多信息，与本站立场无关。东方财富网不保证该信息（包括但不限于文字、视频、音频、数据及图表）全部或者部分内容的准确性、真实性、完整性、有效性、及时性、原创性等。相关信息并未经过本网站证实，不对您构成任何投资建议，据此操作，风险自担。",
           "type": "行业",
           "sentiment": 0,
           "weight": 1,
-          "final_weight": 0.6,
-          "source_authority": 3,
-          "recency_factor": 1,
-          "source": "东方财富资讯",
+          "final_weight": 0.5,
+          "source_authority": 4.5,
+          "recency_factor": 0.42,
+          "source": "东方财富公告",
           "llm_reviewed": true,
-          "llm_confidence": 0.3,
+          "llm_confidence": 0.1,
           "llm_is_real_catalyst": false,
-          "llm_reasoning": "盘中异动，无明确催化"
+          "llm_reasoning": "仅为聘任证券事务代表，无实质影响"
+        },
+        {
+          "date": "2026-06-13",
+          "title": "东睦股份:东睦股份关于延长发行股份及支付现金购买资产并募集配套资金暨关联交易股东会决议有效期及相关授权期限的公告",
+          "content": "",
+          "type": "并购",
+          "sentiment": 1,
+          "weight": 3,
+          "final_weight": 2.65,
+          "source_authority": 4.5,
+          "recency_factor": 0.42,
+          "source": "东方财富公告",
+          "llm_reviewed": true,
+          "llm_confidence": 0.8,
+          "llm_is_real_catalyst": true,
+          "llm_reasoning": "延长并购决议有效期，交易推进中"
+        },
+        {
+          "date": "2026-06-13",
+          "title": "东睦股份:东睦股份关于召开2026年第一次临时股东会的通知",
+          "content": "",
+          "type": "行业",
+          "sentiment": 0,
+          "weight": 1,
+          "final_weight": 0.5,
+          "source_authority": 4.5,
+          "recency_factor": 0.42,
+          "source": "东方财富公告",
+          "llm_reviewed": true,
+          "llm_confidence": 0.1,
+          "llm_is_real_catalyst": false,
+          "llm_reasoning": "仅为召开股东会通知，无实质内容"
+        },
+        {
+          "date": "2026-06-13",
+          "title": "东睦股份:东睦股份第九届董事会第十次会议决议公告",
+          "content": "",
+          "type": "行业",
+          "sentiment": 0,
+          "weight": 1,
+          "final_weight": 0.5,
+          "source_authority": 4.5,
+          "recency_factor": 0.42,
+          "source": "东方财富公告",
+          "llm_reviewed": true,
+          "llm_confidence": 0.1,
+          "llm_is_real_catalyst": false,
+          "llm_reasoning": "董事会决议公告，内容需看具体议案"
+        },
+        {
+          "date": "2026-06-12",
+          "title": "东睦股份第九届董事会第十次会议决议公告",
+          "content": "证券代码：600114 \t股票简称：东睦股份 \t编号：2026-044\n1\n东睦新材料集团股份有限公司\nNBTM \tNEW \tMATERIALS \tGROUP \tCo., \tLtd.\n第九届董事会第十次会议决议公告\n一、董事会会议召开情况\n东睦新材料集团股份有限公司（以下简称“公司”）于2026年6月5日\n以书面等形式向公司全体董事发出召开第九届董事会第十次会议的通知。\n公司第九届董事会第十次会议于2026年6月12日以通讯表决方式召开，应\n参加表决董事9人，实际参加表决董事9人。会议的召开符合《中华人民共\n和国公司法》和《东睦新材料集团股份有限公司章程》的有关规定。\n二、董事会会议审议情况\n全体董事对本次董事会会议的议案进行了审议，经表决形成如下决\n议：\n（一）审议通过《关于延长公司本次发行股份及支付现金购买资产并\n募集配套资金暨关联交易股东会决议有效期的议案》\n公司拟通过发行股份及支付现金的方式向深圳市远致星火私募股权投\n资基金合伙企业（有限合伙）、钟伟、上海创精投资咨询合伙企业（有限\n合伙）、宁波华莞企业管理合伙企业（有限合伙）、宁波富精企业管理合\n伙企业（有限合伙）共5名交易对方购买其合计持有的上海富驰高科技股\n份有限公司34.75%股权，并募集配套资金（以下简称“本次交易”）。\n鉴于审议本次交易的2025年第一次临时股东会决议有效期即将届满，\n本次交易已经上海证券交易所（以下简称“上交所”）审核通过，但尚未\n经中国证监会注册，为保证本次交易的持续、顺利进行，公司拟将本次交\n易的股东会决议有效期自原有效期届满之日起延长12个月，即延长至2027\n本公司董事会及全体董事保证本公告内容不存在任何虚假记\n载、误导性陈述或者重大遗漏，并对其内容的真实性、准确性和\n完整性承担个别及连带责任。\n\n-- 1 of 3 --\n\n证券代码：600114 \t股票简称：东睦股份 \t编号：2026-044\n2\n年6月23日。若公司于该有效期内取得中国证监会对本次交易的同意注册\n批复，则该有效期自动延长至本次交易实施完成日。除延长前述有效期事\n项外，本次交易方案的其他事项保持不变。\n公司董事会决定于2026年6月29日召开公司2026年第一次临时股东会\n审议上述事项，董事会同意并确认自2025年第一次临时股东会决议有效期\n届满之日至2026年第一次临时股东会审议通过之日期间董事会在原授权范\n围内的全部行为有效。\n此项议案涉及关联交易，关联董事朱志荣、芦德宝、郭灵光回避表\n决。\n表决结果：赞成6票，反对0票，弃权0票，表决通过。\n本议案已经公司第九届董事会审计委员会第九次会议审议通过，并经\n第九届董事会独立董事专门会议第八次会议审议通过。具体内容详见公司\n于2026年6月13日在上海证券交易所网站（www.sse.com.cn）披露的相关\n信息。本议案尚需提交公司2026年第一次临时股东会审议。\n（二）审议通过《关于提请股东会延长授权董事会及其授权人士全权\n办理本次交易相关事宜有效期的议案》\n鉴于公司2025年第一次临时股东会授权董事会及其授权人士办理本次\n交易相关事宜的有效期即将届满，本次交易已经上交所审核通过，但尚未\n经中国证监会注册，公司尚未完成本次交易的实施，为保证本次交易的持\n续、顺利进行，公司拟将股东会授权董事会及其授权人士办理本次交易相\n关事宜的有效期自原授权有效期届满之日起延长12个月，即延长至2027年\n6月23日。若公司于该有效期内取得中国证监会对本次交易的同意注册批\n复，则该有效期自动延长至本次交易实施完成日。除前述延长授权有效期\n外，其他授权事项和内容均保持不变。\n此项议案涉及关联交易，关联董事朱志荣、芦德宝、郭灵光回避表\n决。\n表决结果：赞成6票，反对0票，弃权0票，表决通过。\n\n-- 2 of 3 --\n\n证券代码：600114 \t股票简称：东睦股份 \t编号：2026-044\n3\n本议案已经公司第九届董事会独立董事专门会议第八次会议审议通\n过 。 具 体 内 容 详 见 公 司 于 \t2026 \t年 \t6 \t月 \t13 \t日 \t在 上 海 证 券 交 易 所 网 站\n（www.sse.com.cn）披露的相关信息。本议案尚需提交公司2026年第一次\n临时股东会审议。\n（三）审议通过《关于提请召开2026年第一次临时股东会的议案》\n公司董事会决定于2026年6月29日（星期一）下午14时30分，在公司\n（浙江省宁波市鄞州工业园区景江路1508号）会议室召开公司2026年第一\n次临时股东会审议相关议案。\n此项议案涉及关联交易，关联董事朱志荣、芦德宝、郭灵光回避表\n决。\n表决结果：赞成6票，反对0票，弃权0票，表决通过。\n（四）审议通过《关于聘任公司证券事务代表的议案》\n根据董事长提名，董事会同意聘任徐璐瑶女士为公司证券事务代表，\n任期自本次董事会审议通过之日起至公司第九届董事会届满之日止。\n表决结果：赞成9票，反对0票，弃权0票，表决通过。\n特此公告。\n东睦新材料集团股份有限公司\n董 \t事 \t会\n2026 \t年 \t6 \t月 \t12 \t日\n报备文件：\n1、公司第九届董事会第十次会议决议；\n2、公司第九届董事会审计委员会第九次会议决议；\n3、公司第九届董事会独立董事专门会议第八次会议决议。\n\n-- 3 of 3 --",
+          "type": "并购",
+          "sentiment": 1,
+          "weight": 3,
+          "final_weight": 2.52,
+          "source_authority": 5,
+          "recency_factor": 0.36,
+          "source": "巨潮资讯",
+          "llm_reviewed": true,
+          "llm_confidence": 0.8,
+          "llm_is_real_catalyst": true,
+          "llm_reasoning": "董事会审议通过延长并购决议有效期"
         }
       ]
     },
-    "SSE:600160": {
-      "name": "巨化股份",
-      "score": 74,
-      "score_raw": 5.81,
+    "SSE:600176": {
+      "name": "600176",
+      "score": 81,
+      "score_raw": 7.49,
       "score_components": {
-        "positive_weight_sum": 5.81,
+        "positive_weight_sum": 7.49,
         "negative_weight_sum": 0,
-        "news_effective_count": 12,
+        "news_effective_count": 3,
         "news_dropped_count": 0
       },
-      "signal": "🟢 Long (中)",
-      "strategy": "情绪偏多，适合低吸或轻仓参与",
-      "suitable_for": "低吸 / 轻仓追",
-      "confidence": "中",
+      "signal": "🟢 Long (强)",
+      "strategy": "多重利好共振，基本面+情绪双支撑，适合追涨或持有",
+      "suitable_for": "追涨 / 持有",
+      "confidence": "高",
       "patterns": [],
       "positive_factors": [
-        "[行业|w3] 制冷剂价格飙涨至近十年峰值 千亿龙头巨化股份股价创新高",
-        "[财报|w2.81] 巨化股份涨3.51%，股价创历史新高"
+        "[回购|w3.89] 中国巨石:中国巨石董事会薪酬与考核委员会关于公司2025年限制性股票激励计划预留授予激励对象名单的公示情况说明及核查意见",
+        "[回购|w3.6] 中国巨石董事会薪酬与考核委员会关于公司2025年限制性股票激励计划预留授予激励对象名单的公示情况说明及核查意见"
       ],
       "negative_factors": [],
-      "news_count": 12,
+      "news_count": 3,
       "news_dropped": 0,
       "performance": {
-        "list_fetch_ms": 5018,
+        "list_fetch_ms": 6189,
         "candidate_filter_ms": 0,
-        "enrichment_ms": 30508,
+        "enrichment_ms": 8502,
         "raw_news_count": 40,
         "raw_research_count": 10,
-        "candidate_news_count": 12,
+        "candidate_news_count": 3,
         "candidate_research_count": 0,
-        "enriched_news_count": 12,
+        "enriched_news_count": 3,
         "enriched_research_count": 0,
         "candidate_reasons": {
           "news": {
-            "no-subject-mention": 5,
-            "noise:\\d{1,2}月\\d{1,2}日(快速上涨|快速回调|涨停|": 4,
-            "noise:融资净(买入|卖出)": 2,
+            "no-subject-mention": 17,
+            "noise:龙虎榜|大宗交易|盘口异动": 2,
+            "noise:开盘价|收盘价": 1,
             "dedup": 0,
             "out_of_window": 17
           },
@@ -838,7 +343,324 @@
         },
         "date_filter_ms": 0,
         "relevance_ms": 0,
-        "llm_ms": 4200,
+        "llm_ms": 3435,
+        "scoring_ms": 0
+      },
+      "top_news": [
+        {
+          "date": "2026-06-17",
+          "title": "中国巨石关于股票交易异常波动的公告",
+          "content": "1\n证券代码：600176 \t证券简称：中国巨石 \t公告编号：2026-050\n中国巨石股份有限公司\n关于股票交易异常波动的公告\n本公司董事会及全体董事保证本公告内容不存在任何虚假记载、误导性陈\n述或者重大遗漏，并对其内容的真实性、准确性和完整性承担个别及连带责任。\n重要内容提示：\n \t中国巨石股份有限公司（以下简称“公司”）股票交易于 \t2026 \t年 \t6 \t月 \t15\n日、6 \t月 \t16 \t日、6 \t月 \t17 \t日连续 \t3 \t个交易日内日收盘价格涨幅偏离值累计超过 \t20%。\n根据《上海证券交易所交易规则》相关规定，属于股票异常波动情况。\n \t经公司自查并向控股股东、实际控制人书面发函查证，截至本公告披露日，\n确认公司不存在应披露而未披露的重大事项或重要信息。\n一、股票交易异常波动的具体情况\n公司股票于 \t2026 \t年 \t6 \t月 \t15 \t日、6 \t月 \t16 \t日、6 \t月 \t17 \t日连续 \t3 \t个交易日内收\n盘价格涨幅偏离值累计超过 \t20%，根据《上海证券交易所交易规则》的有关规定，\n属于股票交易异常波动情况。\n二、公司关注并核实的相关情况\n针对公司股票交易异常波动的情况，公司对有关事项进行了核查，并发函向\n控股股东、实际控制人核实，现将有关情况说明如下：\n（一）生产经营情况\n经公司自查，公司目前生产经营正常。市场环境、行业政策没有发生重大调\n整，生产和销售等情况一切正常，内部经营秩序稳定。\n（二）重大事项情况\n经公司自查，并向公司控股股东、实际控制人核实，截至本公告披露日，公\n司及其控股股东、实际控制人均不存在应披露而未披露的重大信息，或处于筹划\n阶段的重大事项，包括但不限于重大资产重组、发行股份、上市公司收购、债务\n重组、业务重组、资产剥离和资产注入等重大事项。\n（三）媒体报道、市场传闻、热点概念情况\n公司近期关注到公司生产的电子布产品关注度较高，将公司列为“PCB \t概\n念”，公司生产的电子布产品主要是普通布、薄布系列。2025 \t年，公司实现电\n子布销量 \t10.62 \t亿米，占营业收入的 \t17.77%。低介电等特种电子布产品未形成\n订单及收入。公司在此特别提醒广大投资者注意热点概念炒作风险，理性决策。\n除此之外，公司未发现其他对公司股票交易价格可能产生重大影响的媒体报\n道或市场传闻。敬请广大投资者理性投资，注意投资风险。\n（四）其他股价敏感信息\n经核实，未发现其他有可能对公司股价产生较大影响的重大事件，公司董事、\n高级管理人员、控股股东及其一致行动人在公司本次股票交易异常波动期间不存\n在买卖公司股票的情况。\n\n-- 1 of 2 --\n\n2\n三、董事会声明\n公司董事会确认，公司没有任何根据《上海证券交易所股票上市规则》等有\n关规定应披露而未披露的事项或与该等事项有关的筹划、商谈、意向、协议等，\n董事会也未获悉根据《上海证券交易所股票上市规则》等有关规定应披露而未披\n露的、对公司股票交易价格产生较大影响的信息；公司前期披露的信息不存在需\n要更正、补充之处。\n四、相关风险提示\n公司目前生产经营活动正常，内外部经营环境未发生重大变化。\n公司股票于 \t2026 \t年 \t6 \t月 \t15 \t日、6 \t月 \t16 \t日、6 \t月 \t17 \t日连续 \t3 \t个交易日内日\n收盘价格涨幅偏离值累计超过 \t20%，股价波动幅度较大，属于股票交易异常波动\n情形。公司郑重提醒广大投资者注意二级市场交易风险，理性决策，审慎投资。\n公司郑重提醒广大投资者，有关公司信息以公司在上海证券交易所网站\n（www.sse.com.cn）和公司指定信息披露媒体《中国证券报》、《上海证券报》、\n《证券日报》、《证券时报》上刊登的相关公告为准，敬请广大投资者理性投资、\n注意投资风险。\n特此公告。\n中国巨石股份有限公司董事会\n2026 \t年 \t6 \t月 \t17 \t日\n\n-- 2 of 2 --",
+          "type": "传闻",
+          "sentiment": 0,
+          "weight": 1,
+          "final_weight": 0.51,
+          "source_authority": 5,
+          "recency_factor": 0.85,
+          "source": "巨潮资讯",
+          "llm_reviewed": true,
+          "llm_confidence": 0.3,
+          "llm_is_real_catalyst": false,
+          "llm_reasoning": "异常波动公告澄清无未披露事项，提示概念炒作风险"
+        },
+        {
+          "date": "2026-06-16",
+          "title": "中国巨石:中国巨石董事会薪酬与考核委员会关于公司2025年限制性股票激励计划预留授予激励对象名单的公示情况说明及核查意见",
+          "content": "一般项目:新材料技术推广服务;新材料技术研发;玻璃纤维及制品制造;高性能纤维及复合材料销售;建筑材料销售;化工产品销售(不含许可类化工产品);机械设备销售;非居住房地产租赁;普通机械设备安装服务;信息技术咨询服务;企业管理咨询;自有资金投资的资产管理服务。(除依法须经批准的项目外,凭营业执照依法自主开展经营活动)许可项目:危险化学品经营。(依法须经批准的项目,经相关部门批准后方可开展经营活动,具体经营项目以相关部门批准文件或许可证件为准)\n郑重声明：东方财富网发布此信息的目的在于传播更多信息，与本站立场无关。东方财富网不保证该信息（包括但不限于文字、视频、音频、数据及图表）全部或者部分内容的准确性、真实性、完整性、有效性、及时性、原创性等。相关信息并未经过本网站证实，不对您构成任何投资建议，据此操作，风险自担。",
+          "type": "回购",
+          "sentiment": 1,
+          "weight": 4,
+          "final_weight": 3.89,
+          "source_authority": 4.5,
+          "recency_factor": 0.72,
+          "source": "东方财富公告",
+          "llm_reviewed": true,
+          "llm_confidence": 0.7,
+          "llm_is_real_catalyst": true,
+          "llm_reasoning": "股权激励预留授予核查通过，属正向激励"
+        },
+        {
+          "date": "2026-06-15",
+          "title": "中国巨石董事会薪酬与考核委员会关于公司2025年限制性股票激励计划预留授予激励对象名单的公示情况说明及核查意见",
+          "content": "证券代码：600176 \t证券简称：中国巨石 \t公告编号：2026-049\n中国巨石股份有限公司董事会薪酬与考核委员会\n关于公司 \t2025 \t年限制性股票激励计划预留授予激励对象名单的\n公示情况说明及核查意见\n本公司董事会及全体董事保证本公告内容不存在任何虚假记载、误导性陈述或者重\n大遗漏，并对其内容的真实性、准确性和完整性承担法律责任。\n中国巨石股份有限公司（以下简称\"公司\"）于 \t2026 \t年 \t5 \t月 \t29 \t日召开第七届董事会第\n三十二次会议，审议通过了《关于向公司 \t2025 \t年限制性股票激励计划激励对象预留授予\n限制性股票的议案》等相关议案。根据《中华人民共和国公司法》、《中华人民共和国证\n券法》、《上市公司股权激励管理办法》等相关法律法规和《中国巨石股份有限公司章程》\n的有关规定，公司对《2025 \t年限制性股票激励计划》（以下简称《激励计划》）预留授\n予激励对象名单在公司内部进行公示，公司董事会薪酬与考核委员会结合公示情况对预留\n授予激励对象名单进行核查，相关公示情况及核查情况如下：\n一、公示情况及核查方式\n（一）公司对预留授予激励对象的内部公示情况\n1. \t公示内容：本激励计划预留授予激励对象姓名及职务。\n2. \t公示时间：2026 \t年 \t5 \t月 \t30 \t日至 \t2026 \t年 \t6 \t月 \t8 \t日，共计 \t10 \t天。\n3. \t公示方式：公司公示栏公示。\n4. \t反馈方式：以书面方式或邮件方式收集反馈，并对相关反馈进行记录。\n5. \t公示结果：截至公示期满，未收到员工对本次公示的相关内容存有异议，无反馈记\n录。\n（二）公司董事会薪酬与考核委员会对拟激励对象的核查方式\n公司董事会薪酬与考核委员会核查了本次拟激励对象的名单、身份证件、拟激励对象\n与公司（含控股子公司）签订的劳动合同或聘用合同、拟激励对象在公司担任的职务等资\n料。\n二、董事会薪酬与考核委员会核查意见\n董事会薪酬与考核委员会在充分听取公示意见后，根据《上市公司股权激励管理办\n法》、《中国巨石股份有限公司章程》、《激励计划》的规定，对《激励计划》激励对象\n名单进行核查，并发表核查意见如下：\n（一）列入本激励计划预留授予激励对象名单的人员具备《公司法》、《证券法》、\n《上市公司股权激励管理办法》、《国有控股上市公司（境内）实施股权激励试行办法》\n等法律法规和规范性文件及《公司章程》规定的任职资格。\n（二）激励对象不存在《上市公司股权激励管理办法》规定的不得成为激励对象的情\n形。\n（三）本激励计划的激励对象不包括公司独立董事、单独或合计持有公司 \t5%以上股\n份的股东或实际控制人及其配偶、父母、子女。列入本激励计划预留授予激励对象名单的\n\n-- 1 of 2 --\n\n人员符合相关法律、法规及规范性文件及《激励计划》规定的激励对象范围，其作为公司\n本激励计划激励对象的主体资格合法、有效。\n（四）列入本激励计划激励对象名单的人员基本情况属实，不存在虚假、故意隐瞒或\n引起重大误解之处。\n综上，董事会薪酬与考核委员会认为，列入公司《2025 \t年限制性股票激励计划预留\n授予激励对象名单》的人员均符合相关法律、法规及规范性文件所规定的条件，符合《激\n励计划》规定的激励对象条件，其作为本激励计划预留授予激励对象合法、有效。\n中国巨石股份有限公司董事会薪酬与考核委员会\n2026 \t年 \t6 \t月 \t15 \t日\n\n-- 2 of 2 --",
+          "type": "回购",
+          "sentiment": 1,
+          "weight": 4,
+          "final_weight": 3.6,
+          "source_authority": 5,
+          "recency_factor": 0.6,
+          "source": "巨潮资讯",
+          "llm_reviewed": true,
+          "llm_confidence": 0.7,
+          "llm_is_real_catalyst": true,
+          "llm_reasoning": "股权激励预留授予名单公示无异议，激励计划推进"
+        }
+      ]
+    },
+    "SSE:605162": {
+      "name": "605162",
+      "score": 71,
+      "score_raw": 4.97,
+      "score_components": {
+        "positive_weight_sum": 4.97,
+        "negative_weight_sum": 0,
+        "news_effective_count": 2,
+        "news_dropped_count": 0
+      },
+      "signal": "🟢 Long (中)",
+      "strategy": "情绪偏多，适合低吸或轻仓参与",
+      "suitable_for": "低吸 / 轻仓追",
+      "confidence": "中",
+      "patterns": [],
+      "positive_factors": [
+        "[财报|w4.97] 新中港:2025年年度权益分派实施公告"
+      ],
+      "negative_factors": [],
+      "news_count": 2,
+      "news_dropped": 0,
+      "performance": {
+        "list_fetch_ms": 2637,
+        "candidate_filter_ms": 0,
+        "enrichment_ms": 5451,
+        "raw_news_count": 40,
+        "raw_research_count": 0,
+        "candidate_news_count": 2,
+        "candidate_research_count": 0,
+        "enriched_news_count": 2,
+        "enriched_research_count": 0,
+        "candidate_reasons": {
+          "news": {
+            "no-subject-mention": 6,
+            "noise:\\d{1,2}月\\d{1,2}日(快速上涨|快速回调|涨停|": 3,
+            "dedup": 0,
+            "out_of_window": 29
+          },
+          "research": {
+            "dedup": 0
+          }
+        },
+        "date_filter_ms": 0,
+        "relevance_ms": 0,
+        "llm_ms": 2554,
+        "scoring_ms": 0
+      },
+      "top_news": [
+        {
+          "date": "2026-06-17",
+          "title": "新中港:北京市中伦律师事务所关于浙江新中港热电股份有限公司差异化分红事项的专项法律意见书",
+          "content": "",
+          "type": "财报",
+          "sentiment": 0,
+          "weight": 1,
+          "final_weight": 0.99,
+          "source_authority": 4.5,
+          "recency_factor": 0.85,
+          "source": "东方财富公告",
+          "llm_reviewed": true,
+          "llm_confidence": 0.3,
+          "llm_is_real_catalyst": false,
+          "llm_reasoning": "法律意见书，无实质业绩信息"
+        },
+        {
+          "date": "2026-06-17",
+          "title": "新中港:2025年年度权益分派实施公告",
+          "content": "",
+          "type": "财报",
+          "sentiment": 1,
+          "weight": 5,
+          "final_weight": 4.97,
+          "source_authority": 4.5,
+          "recency_factor": 0.85,
+          "source": "东方财富公告",
+          "llm_reviewed": true,
+          "llm_confidence": 0.8,
+          "llm_is_real_catalyst": true,
+          "llm_reasoning": "年度权益分派实施，明确分红方案"
+        }
+      ]
+    },
+    "SSE:603986": {
+      "name": "兆易创新",
+      "score": 71,
+      "score_raw": 5.1,
+      "score_components": {
+        "positive_weight_sum": 5.1,
+        "negative_weight_sum": 0,
+        "news_effective_count": 9,
+        "news_dropped_count": 0
+      },
+      "signal": "⚠️ Long (谨慎)",
+      "strategy": "情绪偏多但有风险信号，建议小仓位低吸",
+      "suitable_for": "低吸(控仓)",
+      "confidence": "中(有风险)",
+      "patterns": [
+        "⚠️情绪过热(单边乐观,注意回调)"
+      ],
+      "positive_factors": [
+        "[行业|w1.02] 成交额第一！603986 尾盘大单封涨停",
+        "[行业|w1.02] 尾盘异动！兆易创新强势涨停！近70亿主力资金净流入！存储芯片集体拉升！",
+        "[行业|w1.02] 存储概念集体爆发 香农芯创、兆易创新等创新高"
+      ],
+      "negative_factors": [],
+      "news_count": 9,
+      "news_dropped": 0,
+      "performance": {
+        "list_fetch_ms": 6190,
+        "candidate_filter_ms": 0,
+        "enrichment_ms": 10298,
+        "raw_news_count": 40,
+        "raw_research_count": 10,
+        "candidate_news_count": 9,
+        "candidate_research_count": 0,
+        "enriched_news_count": 9,
+        "enriched_research_count": 0,
+        "candidate_reasons": {
+          "news": {
+            "no-subject-mention": 13,
+            "dedup": 0,
+            "out_of_window": 18
+          },
+          "research": {
+            "dedup": 0,
+            "out_of_window": 10
+          }
+        },
+        "date_filter_ms": 0,
+        "relevance_ms": 0,
+        "llm_ms": 2771,
+        "scoring_ms": 0
+      },
+      "top_news": [
+        {
+          "date": "2026-06-17 16:55:00",
+          "title": "成交额第一！603986 尾盘大单封涨停",
+          "content": "炒股第一步，先开个股票账户\n\n　　6月17日，A股主要股指午后全线走高，沪指收复4100点，科创综指大涨超3%；港股表现相对疲软，恒生指数跌近1%。\n\n　　具体来看，沪指盘中窄幅震荡，尾盘发力拉升；创业板指亦走高。截至收盘，沪指涨0.4%报4108.08点，深证成指涨1.31%，创业板指涨1.56%，科创综指涨3.21%，沪深北三市合计成交约3.11万亿元，较此前一日增加277亿元。\n\n　　A股市场超3700股飘绿，煤炭、钢铁、地产、酿酒、电力等板块走低。半导体板块午后大幅飙升，普冉股份、盛美上海、香农芯创20%涨停，均创历史新高；兆易创新（603986）尾盘涨停，收盘封单仍超1.5万手，全日成交316亿元，位居A股成交额首位。玻璃基板概念爆发，美迪凯、长信科技20%涨停，沃格光电两连板再创新高，市值超2400亿元的京东方A亦涨停。PCB概念持续活跃，光华科技、中材科技、宏昌电子、华正新材等斩获3连板，市值超3000亿元的深南电路涨停，创历史新高。\n\n　　港股方面，截至收盘，建滔集团涨超17%，兆易创新涨超14%，智谱涨超12%，华虹宏力涨超8%。\n\n　　\n\n半导体板块爆发\n\n　　半导体板块午后大幅飙升，存储、先进封装概念表现亮眼。截至收盘，普冉股份、盛美上海、科翔股份、香农芯创等20%涨停，西测测试涨超17%，拓荆科技、协创数据等涨超10%，兆易创新亦涨停。值得注意的是，普冉股份、盛美上海、香农芯创、兆易创新等均创历史新高。\n\n　　摩根士丹利16日发布研报称，受AI数据中心需求持续增长推动，硬盘及存储全产业链供需紧张程度超出预期，短缺局面或至少持续至2028年，打破此前“2027年缓解”预期，资金回流带动板块走强。需求端看，AI服务器DRAM单台用量为普通服务器8—10倍，NAND及企业级硬盘用量超3倍；大模型推理与AIAgent规模化将推动存储需求爆炸式增长。\n\n　　另据媒体报道，三星电子考虑在韩国光州建设先进半导体封装工厂，以满足全球芯片需求。韩国媒体指出，这一投资动向可能表明，韩国芯片巨头企业迫切希望加快支出，以赶上人工智能需求推动的芯片行业复苏浪潮。\n\n　　东海证券指出，全球半导体需求持续改善，AI资本开支快速增长，2026年全球9大CSP合计资本支出上调至8300亿美元，年增率提升至79%；TWS耳机、腕带设备、AI服务器快速增长，6月需求或将继续复苏；供给端看，AI相关细分市场需求旺盛，上游晶圆代工厂产能偏紧甚至挤压其他行业，晶圆端价格进而上升，预计半导体6月供需格局将持续偏紧。价格端看，5月部分存储价格持续上涨，且涨价已从存储、CPU、消费电子蔓延至功率、模拟、MCU等其他半导体行业；AI仍为未来的主线叙事，相关产业链国产化率持续上升。\n\n　　\n\nPCB概念活跃\n\n　　PCB概念再度走强，截至收盘，中一科技、南亚新材涨超10%，光华科技、宏昌电子、华正新材、深南电路、中国巨石等均涨停，值得注意的是，光华科技、中材科技、宏昌电子、华正新材等已连续3个交易日涨停。\n\n　　消息面上，有报道称，6月16日，覆铜板龙头再次发布涨价函，由于目前铜价高企，玻璃布价格持续上涨且供应十分紧张，导致覆铜板成本急剧上升，公司对所有FR-4、PP提价15%。\n\n　　机构表示，目前CCL（覆铜板层压板）涨价已成为常态，主流厂商均积极向下游传导涨价，后续涨价频率/幅度有望全面超预期。CCL涨价是明显的强预期叠加强现实涨价环节，不仅持续涨价将带动CCL厂商利润率显著修复，且由于需求旺盛，CCL已全面进入卖方市场，上游CCL厂商议价能力极强，PCB厂商接受度高，在上游成本持续上涨及需求旺盛带动下，CCL预计将持续涨价，带动厂商利润率持续上升。\n\n　　国信证券近日指出，AI产业落地提速、全球科技巨头持续加码算力资本开支，AI服务器出货量稳步高增成为板块核心驱动。英伟达Vera Rubin架构迭代重塑PCB产业定位，PCB从传统线路连接载体升级为机架高速互联核心介质，行业开启\"PCB半导体化\"，大量铜缆、连接器价值向PCB转移，直接带动覆铜板由M8/M9材料体系向Rubin Ultra对应的M10高端体系升级，CCL单位价值量持续抬升。细分原料端全面迎来量价共振：其一，特种电子树脂作为CCL配方中关键可改性有机原料，低Dk/Df是高端化核心指标，PPO聚苯醚、碳氢、PTFE聚四氟乙烯三类树脂适配新一代高速板材需求，国产替代加速落地；其二，低介电玻纤电子布受高端织机产能约束、工艺壁垒限制，供需持续偏紧，是当前CCL产业链卡脖子环节；其三，功能性硅微粉从常规填充辅料升级为决定板材介电性能的核心主材，产品向超细粒径、低损耗、高填充方向迭代，单品附加值显著上行。\n\n　　想炒股，先开户！选东方财富证券，行情交易一个APP搞定>>",
+          "type": "行业",
+          "sentiment": 1,
+          "weight": 1,
+          "final_weight": 1.02,
+          "source_authority": 3,
+          "recency_factor": 0.85,
+          "source": "东方财富资讯",
+          "llm_reviewed": true,
+          "llm_confidence": 0.6,
+          "llm_is_real_catalyst": false,
+          "llm_reasoning": "板块涨停但无公司直接催化"
+        },
+        {
+          "date": "2026-06-17 16:44:41",
+          "title": "尾盘异动！兆易创新强势涨停！近70亿主力资金净流入！存储芯片集体拉升！",
+          "content": "专业金融数据，下一代智能终端\n\n　　今日（6月17日），A股整体小幅走强，科创综指表现最佳，大涨3.21%突破2200点，并逼近历史最高，上证指数临近收盘的时候发力上攻收复4100点，深证成指、创业板指、北证50等均稳步上扬。下跌个股远多于上涨个股，成交小幅放大至3.11万亿元。\n\n　　盘面上，芯片、百元股、消费电子、次新股等板块涨幅居前，煤炭、影视院线、世界杯概念、房地产等板块跌幅居前。\n\n　　数据显示，电子行业一枝独秀，获得逾790亿元主力资金净流入，超过其他行业净流入总和，建筑材料获得逾80亿元净流入，机械设备获得逾70亿元净流入，计算机获得逾49亿元净流入，建筑装饰、通信等也获得超30亿元净流入，基础化工、轻工制造则连续13日获得净流入。有色金属遭主力资金净流出逾38亿元，银行净流出逾23亿元，商贸零售净流出逾10亿元。\n\n　　概念板块方面，消费电子获得433亿元净流入，华为概念、半导体等板块也获得超300亿元净流入，5G、芯片、先进制造、数字经济等亦获得超200亿元净流入。小金属板块遭主力资金净流出逾50亿元，大消费、虚拟电厂、白酒等板块均净流出超10亿元。\n\n　　个股方面，兆易创新获得逾68亿元主力资金净流入，京东方A获得逾42亿元净流入，香农芯创、中国巨石均获得超30亿元净流入，TCL科技、兴森科技等获得超20亿元净流入。\n\n　　芯片股全日保持强势，存储芯片在午后进一步走强，板块指数创历史新高。普冉股份临近收盘20%涨停，香农芯创、盛美上海等多股午间亦强势“20cm”封板，兆易创新尾盘涨停并创历史新高。\n\n　　第三代半导体、光刻机、玻璃玻纤、工业气体等芯片产业链细分板块指数也纷纷创历史新高，再升科技、深南电路、旭光电子等批量涨停。\n\n　　TrendForce集邦咨询预计，高容量NOR Flash有车用电子与边缘AI需求支撑，下半年价格仍有60%—65%以上的调涨空间；SLC NAND虽然多数产品需求未明显增加，供应来源却持续减少，预估2026年下半年价格涨势虽将收敛，但仍有70%—75%的上涨空间，工业、车规级产品涨势可能更强。\n\n　　华泰证券表示，在上游成本全面上涨与本土算力供需失衡的双重驱动下，国产AI芯片正迎来涨价窗口。建议重点关注AI+通胀投资主线，包括存储、MLCC、CCL等。\n\n　　百元股午后也全线走强，昀冢科技临近收盘20%涨停，亚翔集成、西测测试等近30股涨停或涨超10%。联讯仪器大涨6.68%，历史首次收在2300元以上，进一步巩固第一高价股地位，华峰测控、和林微纳等批量创历史新高（复权）。\n\n　　展望后市，华龙证券认为，近期内外市场迎多起规模较大IPO，市场资金担心形成“虹吸效应”，扰动市场情绪面，但整体影响可能有限，中长期产业趋势是关键因素。美伊谈判传递出重大进展，缓解市场对通胀担忧和降低市场对加息的押注，市场预期有积极改善。关注电子、计算机、通信服务、电力设备、国防军工、机械设备等。\n\n　　东莞证券称，2026年下半年市场在风格转换、高低切换的变局中需“变中求进”，锚定新质生产力、AI产业周期等主线窗口，挖掘低位盈利改善板块机会。下半年市场虽有短期反复，但中长期向上趋势未改，宜以攻守平衡思路把握结构性机会。建议超配金融、电力设备、机械设备、基础化工、有色金属和TMT等行业。\n\n　　想炒股，先开户！选东方财富证券，行情交易一个APP搞定>>",
+          "type": "行业",
+          "sentiment": 1,
+          "weight": 1,
+          "final_weight": 1.02,
+          "source_authority": 3,
+          "recency_factor": 0.85,
+          "source": "东方财富资讯",
+          "llm_reviewed": true,
+          "llm_confidence": 0.5,
+          "llm_is_real_catalyst": false,
+          "llm_reasoning": "主力资金流入但属板块联动"
+        },
+        {
+          "date": "2026-06-17 16:34:46",
+          "title": "半导体、大模型概念股走强，兆易创新涨超14%，建滔集团涨超17%，智谱涨超12%丨港股收盘",
+          "content": "炒股第一步，先开个股票账户\n\n　　6月17日，香港恒生指数收跌0.74%，恒生科技指数涨0.22%。芯片、半导体板块多数上涨，兆易创新涨超14%，澜起科技涨超11%，华虹宏力涨超8%。PCB概念上涨，大模型概念股走强，智谱涨超12%，MiniMax涨超6%。\n\n　　大型科网股方面，腾讯控股跌0.45%，阿里巴巴跌0.09%。热门股方面，小米集团跌0.78%，泡泡玛特跌1.54%，建滔积层板涨超3%。\n\n　　南向资金今日净卖出额为32.22亿港元。\n\n　　值得一提的是，建滔积层板的母公司建滔集团涨超17%。\n\n　　消息面上，建滔集团突然宣布大手笔套现计划。建滔集团拟通过大宗交易方式配售建滔积层板1.55亿股股份，套现约117.66亿港元。\n\n　　建滔集团表示，套现出来的钱主要投向四个方向，其中核心是投资印刷线路板业务，以提升多层及高密度互连（HDI）印刷线路板产品的生产能力。此外，还有扩大产能以及推动产品升级创新等。\n\n　　据中国基金报，6月16日，全球覆铜板行业龙头企业建滔积层板正式发布新一轮产品涨价函，宣布旗下所有规格FR-4覆铜板、PP半固化片统一上调价格，涨幅达15%，本次调价自新订单接单之日起正式执行。\n\n　　今年以来，建滔积层板累计涨幅近600%。\n\n　　（免责声明：本文内容与数据仅供参考，不构成投资建议，使用前请核实。据此操作，风险自担。）",
+          "type": "行业",
+          "sentiment": 1,
+          "weight": 1,
+          "final_weight": 0.51,
+          "source_authority": 3,
+          "recency_factor": 0.85,
+          "source": "东方财富资讯",
+          "llm_reviewed": true,
+          "llm_confidence": 0.4,
+          "llm_is_real_catalyst": false,
+          "llm_reasoning": "港股涨幅但非公司公告"
+        },
+        {
+          "date": "2026-06-17 16:29:34",
+          "title": "活跃个股：兆易创新成交316亿元 金戈新材换手率78%",
+          "content": "专业金融数据，下一代智能终端\n\n　　6月17日，上证指数涨0.4%，收报4108.08点；深证成指涨1.31%，收报15880.95点；创业板指涨1.56%，收报4167.05点。\n\n　　沪深两市成交额3.09万亿元，较上一交易日放量271亿元。个股方面，兆易创新当日成交315.99亿元。中际旭创当日成交272.72亿元。\n\n　　当天换手率最高的个股为金戈新材，全天换手率77.59%。盛龙股份紧随其后，全天换手率63.15%。",
+          "type": "行业",
+          "sentiment": 1,
+          "weight": 1,
+          "final_weight": 0.51,
+          "source_authority": 3,
+          "recency_factor": 0.85,
+          "source": "东方财富资讯",
+          "llm_reviewed": true,
+          "llm_confidence": 0.3,
+          "llm_is_real_catalyst": false,
+          "llm_reasoning": "成交额数据无实质催化"
+        },
+        {
+          "date": "2026-06-17 15:08:25",
+          "title": "沪深两市今日成交额合计3.09万亿元，兆易创新成交额居首",
+          "content": "在东方财富看资讯行情，选东方财富证券一站式开户交易>>\n\n　　6月17日，沪深两市成交额合计3.09万亿元，较上一交易日放量约270.68亿元。其中，沪市成交额1.4万亿元，深市成交额1.69万亿元。兆易创新成交额居首，为315.99亿元。其后是中际旭创、东山精密、亨通光电、新易盛，成交额分别为272.72亿元、251.96亿元、232.7亿元、213.5亿元。",
+          "type": "行业",
+          "sentiment": 1,
+          "weight": 1,
+          "final_weight": 0.51,
+          "source_authority": 3,
+          "recency_factor": 0.85,
+          "source": "东方财富资讯",
+          "llm_reviewed": true,
+          "llm_confidence": 0.3,
+          "llm_is_real_catalyst": false,
+          "llm_reasoning": "成交额居首无实质催化"
+        }
+      ]
+    },
+    "SSE:600160": {
+      "name": "巨化股份",
+      "score": 70,
+      "score_raw": 4.89,
+      "score_components": {
+        "positive_weight_sum": 4.89,
+        "negative_weight_sum": 0,
+        "news_effective_count": 13,
+        "news_dropped_count": 0
+      },
+      "signal": "🟢 Long (中)",
+      "strategy": "情绪偏多，适合低吸或轻仓参与",
+      "suitable_for": "低吸 / 轻仓追",
+      "confidence": "中",
+      "patterns": [],
+      "positive_factors": [
+        "[行业|w2.55] 制冷剂价格飙涨至近十年峰值 千亿龙头巨化股份股价创新高",
+        "[财报|w2.34] 巨化股份涨3.51%，股价创历史新高"
+      ],
+      "negative_factors": [],
+      "news_count": 13,
+      "news_dropped": 0,
+      "performance": {
+        "list_fetch_ms": 6267,
+        "candidate_filter_ms": 0,
+        "enrichment_ms": 20921,
+        "raw_news_count": 40,
+        "raw_research_count": 10,
+        "candidate_news_count": 13,
+        "candidate_research_count": 0,
+        "enriched_news_count": 13,
+        "enriched_research_count": 0,
+        "candidate_reasons": {
+          "news": {
+            "no-subject-mention": 5,
+            "noise:\\d{1,2}月\\d{1,2}日(快速上涨|快速回调|涨停|": 4,
+            "noise:融资净(买入|卖出)": 2,
+            "dedup": 0,
+            "out_of_window": 16
+          },
+          "research": {
+            "dedup": 0,
+            "out_of_window": 10
+          }
+        },
+        "date_filter_ms": 0,
+        "relevance_ms": 0,
+        "llm_ms": 3626,
         "scoring_ms": 0
       },
       "top_news": [
@@ -849,9 +671,9 @@
           "type": "行业",
           "sentiment": 0,
           "weight": 1,
-          "final_weight": 0.6,
+          "final_weight": 0.51,
           "source_authority": 3,
-          "recency_factor": 1,
+          "recency_factor": 0.85,
           "source": "东方财富资讯",
           "llm_reviewed": true,
           "llm_confidence": 0.1,
@@ -865,14 +687,14 @@
           "type": "行业",
           "sentiment": 0,
           "weight": 1,
-          "final_weight": 0.6,
+          "final_weight": 0.51,
           "source_authority": 3,
-          "recency_factor": 1,
+          "recency_factor": 0.85,
           "source": "东方财富资讯",
           "llm_reviewed": true,
-          "llm_confidence": 0.1,
+          "llm_confidence": 0.2,
           "llm_is_real_catalyst": false,
-          "llm_reasoning": "融资净偿还，属常规资金面数据"
+          "llm_reasoning": "融资净偿还，属常规资金变动"
         },
         {
           "date": "2026-06-17 05:27:17",
@@ -881,35 +703,35 @@
           "type": "行业",
           "sentiment": 1,
           "weight": 3,
-          "final_weight": 3,
+          "final_weight": 2.55,
           "source_authority": 3,
-          "recency_factor": 1,
+          "recency_factor": 0.85,
           "source": "东方财富资讯",
           "llm_reviewed": true,
           "llm_confidence": 0.9,
           "llm_is_real_catalyst": true,
-          "llm_reasoning": "制冷剂价格创近十年新高，配额制利好龙头"
+          "llm_reasoning": "制冷剂价格创近十年新高，巨化配额占比高"
+        },
+        {
+          "date": "2026-06-17",
+          "title": "巨化股份关于举办投资者接待日活动的公告",
+          "content": "1\n证券代码：600160 \t证券简称：巨化股份 \t公告编号：临 \t2026-32\n浙江巨化股份有限公司\n关于举办投资者接待日活动的公告\n本公司董事会及全体董事保证本公告内容不存在任何虚假记载、误导性陈述或者重大遗\n漏，并对其内容的真实性、准确性和完整性承担个别及连带责任。\n为进一步加强与投资者沟通交流，解答投资者关心的各类问题，倾听投资者\n的意见和建议，便于广大投资者全面、深入地了解浙江巨化股份有限公司（以下\n简称“公司”）的生产经营情况，公司定于 \t2026 \t年 \t6 \t月 \t26 \t日以现场方式举行投\n资者接待日活动。现将有关事项公告如下：\n一、活动召开时间及地点\n活动时间：2026 \t年 \t6 \t月 \t26 \t日下午 \t14:30-17:00\n活动地点：浙江省衢州市柯城区衢化宾馆二号楼（柯城区北苑村 \t1 \t号）\n二、出席人员\n公司总经理韩金铭先生，董事会秘书、财务负责人王笑明先生。\n三、活动安排\n投资者与公司领导座谈交流。\n四、投资者参加方式\n为了更好地安排本次活动，请有意参与本次活动的投资者于 \t2026 \t年 \t6 \t月 \t24\n日 \t17:30 \t前，扫描下列二维码预约登记。由于接待规模限制，本次现场参观活动\n名额仅限 \t100 \t人，公司将依据报名顺序进行审核，敬请谅解。\n\n-- 1 of 2 --\n\n2\n公司收到来访投资者发送的报名信息，核实后将向报名成功的投资者以短信\n形式予以确认，该回执将作为投资者参加活动凭证。\n1、请来访个人投资者携带个人身份证原件及复印件；机构投资者代表携带\n相关身份证明原件及复印件，公司将对来访投资者的上述证明性文件进行查验并\n存档复印件，以备监管机构查阅。\n2、公司将按照相关法律法规的规定，做好活动接待的登记及安排投资者签\n署《承诺书》。\n五、联系方式\n联系人：郑科炜\n联系电话：0570-3090892\n邮箱：jhgf@juhua.com\n六、其他事项\n1、预约成功参加活动的投资者请携带身份证明文件提前 \t15 \t分钟到达活动\n现场签到登记。\n2、公司将在本次投资者接待日活动召开后通过指定的信息披露媒体《中国\n证券报》《上海证券报》和上海证券交易所网站（www.sse.com.cn）公告本次\n活动的召开情况及主要内容。\n特此公告。\n浙江巨化股份有限公司董事会\n2026 \t年 \t6 \t月 \t18 \t日\n\n-- 2 of 2 --",
+          "type": "行业",
+          "sentiment": 0,
+          "weight": 1,
+          "final_weight": 0.85,
+          "source_authority": 5,
+          "recency_factor": 0.85,
+          "source": "巨潮资讯",
+          "llm_reviewed": true,
+          "llm_confidence": 0.3,
+          "llm_is_real_catalyst": false,
+          "llm_reasoning": "投资者接待日活动，无实质影响"
         },
         {
           "date": "2026-06-16 10:08:31",
           "title": "巨化股份6月16日快速反弹",
           "content": "以下是巨化股份在北京时间6月16日09:53分盘口异动快照：\n\n　　炒股第一步，先开个股票账户\n\n分笔\n\n09:53:03 45.85 191↑\n09:53:00 45.81 160↑\n09:52:57 45.80 640↑\n09:52:54 45.78 529↑\n09:52:51 45.78 699↓\n \n09:52:48 45.78 1188↑\n09:52:45 45.74 390↑\n09:52:42 45.69 619↑\n09:52:39 45.60 579↓\n09:52:36 45.68 278↑\n \n报价\n\n卖五 \n\n45.9\n\n 197\n卖四 \n\n45.89\n\n 69\n卖三 \n\n45.88\n\n 302\n卖二 \n\n45.87\n\n 25\n卖一 \n\n45.86\n\n 42\n\n买一 \n\n45.85\n\n 8\n买二 \n\n45.82\n\n 2\n买三 \n\n45.81\n\n 98\n买四 \n\n45.8\n\n 407\n买五 \n\n45.79\n\n 28\n\n最新：45.85\n涨幅：-1.59%\n涨跌：-0.74\n换手率：1.86%\n成交量：50.15万手\n成交额：22.89亿元\n主力净流入：\n-1.07亿元\n\n  6月16日，巨化股份盘中快速反弹，5分钟内涨幅超过2%，截至9点53分，报45.85元，成交22.89亿元，换手率1.86%。\n注：以上信息仅供参考，不对您构成任何投资建议。",
-          "type": "行业",
-          "sentiment": 0,
-          "weight": 1,
-          "final_weight": 0.51,
-          "source_authority": 3,
-          "recency_factor": 0.85,
-          "source": "东方财富资讯",
-          "llm_reviewed": true,
-          "llm_confidence": 0.1,
-          "llm_is_real_catalyst": false,
-          "llm_reasoning": "仅描述盘中股价反弹，无实质催化"
-        },
-        {
-          "date": "2026-06-15 13:37:42",
-          "title": "巨化股份6月15日打开涨停",
-          "content": "以下是巨化股份在北京时间6月15日13:37分盘口异动快照：\n\n　　全新妙想投研助理，立即体验\n\n分笔\n\n13:37:33 46.53 1846↓\n13:37:30 46.63 300↓\n13:37:27 46.63 889↓\n13:37:24 46.63 466↓\n13:37:21 46.63 1422↓\n \n13:37:18 46.63 1397↓\n13:37:15 46.63 427↓\n13:37:12 46.63 3968↓\n13:37:09 46.63 892↓\n13:37:06 46.63 1499↑\n \n报价\n\n卖五 - 0\n卖四 - 0\n卖三 \n\n46.63\n\n 8799\n卖二 \n\n46.62\n\n 123\n卖一 \n\n46.58\n\n 2\n\n买一 \n\n46.53\n\n 2\n买二 \n\n46.52\n\n 14\n买三 \n\n46.51\n\n 14\n买四 \n\n46.5\n\n 68\n买五 \n\n46.49\n\n 6\n\n最新：46.53\n涨幅：9.77%\n涨跌：4.14\n换手率：4.49%\n成交量：121.32万手\n成交额：54.53亿元\n主力净流入：\n4.61亿元\n\n  6月15日13点37分，巨化股份盘中打开涨停，现报46.53元，成交54.53亿元，换手率4.49%。该股之前于13点37分涨停。\n注：以上信息仅供参考，不对您构成任何投资建议。",
           "type": "行业",
           "sentiment": 0,
           "weight": 1,
@@ -920,18 +742,18 @@
           "llm_reviewed": true,
           "llm_confidence": 0.1,
           "llm_is_real_catalyst": false,
-          "llm_reasoning": "仅描述盘中打开涨停，无实质催化"
+          "llm_reasoning": "盘中快速反弹，无实质催化"
         }
       ]
     },
     "SZSE:000657": {
-      "name": "中钨高新",
-      "score": 71,
-      "score_raw": 5.16,
+      "name": "000657",
+      "score": 60,
+      "score_raw": 2.34,
       "score_components": {
-        "positive_weight_sum": 5.76,
-        "negative_weight_sum": 0.6,
-        "news_effective_count": 15,
+        "positive_weight_sum": 2.34,
+        "negative_weight_sum": 0,
+        "news_effective_count": 6,
         "news_dropped_count": 0
       },
       "signal": "🟢 Long (中)",
@@ -940,28 +762,24 @@
       "confidence": "中",
       "patterns": [],
       "positive_factors": [
-        "[财报|w2.73] 关于调整2026年度与中国五矿日常关联交易预计的公告",
-        "[行业|w0.51] 中钨高新成交额超上一日全天",
-        "[行业|w0.51] 中钨高新成交额超100亿元"
+        "[财报|w2.34] 关于调整2026年度与中国五矿日常关联交易预计的公告"
       ],
-      "negative_factors": [
-        "[行业|w0.6] 中钨高新：融资净偿还2.38亿元，融资余额25.06亿元"
-      ],
-      "news_count": 15,
+      "negative_factors": [],
+      "news_count": 6,
       "news_dropped": 0,
       "performance": {
-        "list_fetch_ms": 4179,
+        "list_fetch_ms": 6268,
         "candidate_filter_ms": 0,
-        "enrichment_ms": 23388,
+        "enrichment_ms": 7795,
         "raw_news_count": 40,
         "raw_research_count": 10,
-        "candidate_news_count": 15,
+        "candidate_news_count": 6,
         "candidate_research_count": 0,
-        "enriched_news_count": 15,
+        "enriched_news_count": 6,
         "enriched_research_count": 0,
         "candidate_reasons": {
           "news": {
-            "no-subject-mention": 9,
+            "no-subject-mention": 18,
             "noise:\\d{1,2}月\\d{1,2}日(快速上涨|快速回调|涨停|": 1,
             "noise:融资净(买入|卖出)": 1,
             "dedup": 0,
@@ -974,233 +792,100 @@
         },
         "date_filter_ms": 0,
         "relevance_ms": 0,
-        "llm_ms": 3432,
+        "llm_ms": 3975,
         "scoring_ms": 0
       },
       "top_news": [
         {
-          "date": "2026-06-17 09:47:50",
-          "title": "中钨高新6月17日快速反弹",
-          "content": "以下是中钨高新在北京时间6月17日09:37分盘口异动快照：\n\n　　专业金融数据，下一代智能终端\n\n分笔\n\n09:37:54 90.30 937↑\n09:37:51 90.15 188↑\n09:37:48 90.12 231↑\n09:37:45 90.00 214↓\n09:37:42 90.01 247↑\n \n09:37:39 89.99 453↓\n09:37:36 90.00 563↑\n09:37:33 89.96 634↑\n09:37:30 89.95 530↑\n09:37:27 89.95 350↑\n \n报价\n\n卖五 \n\n90.37\n\n 12\n卖四 \n\n90.36\n\n 1\n卖三 \n\n90.35\n\n 3\n卖二 \n\n90.34\n\n 4\n卖一 \n\n90.33\n\n 4\n\n买一 \n\n90.32\n\n 2\n买二 \n\n90.3\n\n 869\n买三 \n\n90.2\n\n 6\n买四 \n\n90.19\n\n 520\n买五 \n\n90.18\n\n 16\n\n最新：90.3\n涨幅：-2.38%\n涨跌：-2.2\n换手率：1.25%\n成交量：18.14万手\n成交额：16.20亿元\n主力净流入：\n-7029.79万元\n\n  6月17日，中钨高新盘中快速反弹，5分钟内涨幅超过2%，截至9点37分，报90.3元，成交16.20亿元，换手率1.25%。\n注：以上信息仅供参考，不对您构成任何投资建议。",
-          "type": "行业",
+          "date": "2026-06-13",
+          "title": "中钨高新:关于召开2026年第二次临时股东会的通知",
+          "content": "",
+          "type": "政策",
           "sentiment": 0,
           "weight": 1,
-          "final_weight": 0.6,
-          "source_authority": 3,
-          "recency_factor": 1,
-          "source": "东方财富资讯",
+          "final_weight": 0.5,
+          "source_authority": 4.5,
+          "recency_factor": 0.42,
+          "source": "东方财富公告",
           "llm_reviewed": true,
           "llm_confidence": 0.3,
           "llm_is_real_catalyst": false,
-          "llm_reasoning": "仅描述盘中异动，无基本面催化"
+          "llm_reasoning": "仅为召开股东会的通知，无实质影响"
         },
         {
-          "date": "2026-06-17 09:05:58",
-          "title": "中钨高新：融资净偿还2.38亿元，融资余额25.06亿元",
-          "content": "全新妙想投研助理，立即体验\n\n交易所最新数据显示，中钨高新于2026年6月16日获融资买入9.80亿元，融资偿还12.18亿元，当日融资净偿还2.38亿元。目前，该股融资余额25.06亿，占流通市值比例为1.86%。\n\n该股当日融券卖出1.12万股，融券偿还1.08万股，融券净卖出400股。目前，该股融券余量40.28万股，融券余额3725.9万元。\n\n免责声明：本文基于AI生产，仅供参考，不构成任何投资建议，据此操作风险自担。东方财富发布此内容旨在传播更多信息，与本平台立场无关。东方财富力求但不保证数据的完全准确，如有错漏请以中国证监会指定上市公司信息披露媒体为准，东方财富不对因该资料全部或部分内容而引致的盈亏承担任何责任。用户个人对服务的使用承担风险，东方财富对此不作任何类型的担保。",
-          "type": "行业",
-          "sentiment": -1,
-          "weight": 1,
-          "final_weight": 0.6,
-          "source_authority": 3,
-          "recency_factor": 1,
-          "source": "东方财富资讯",
-          "llm_reviewed": true,
-          "llm_confidence": 0.4,
-          "llm_is_real_catalyst": false,
-          "llm_reasoning": "融资净偿还，但属常规资金面数据"
-        },
-        {
-          "date": "2026-06-16 14:18:00",
-          "title": "中钨高新成交额超上一日全天",
-          "content": "专业金融数据，下一代智能终端\n\n　　数据宝统计，截至14:07，中钨高新成交额100.62亿元，超上一日全天。最新股价上涨7.01%，换手率7.57%。上一交易日该股全天成交额为99.67亿元。\n\n　　据天眼查APP显示，中钨高新材料股份有限公司成立于1993年03月18日，注册资本227860.44万人民币。（数据宝）\n\n　　注：本文系新闻报道，不构成投资建议，股市有风险，投资需谨慎。",
-          "type": "行业",
-          "sentiment": 1,
-          "weight": 1,
-          "final_weight": 0.51,
-          "source_authority": 3,
-          "recency_factor": 0.85,
-          "source": "东方财富资讯",
-          "llm_reviewed": true,
-          "llm_confidence": 0.3,
-          "llm_is_real_catalyst": false,
-          "llm_reasoning": "成交额超上一日，仅反映交易活跃"
-        },
-        {
-          "date": "2026-06-16 14:18:00",
-          "title": "中钨高新成交额超100亿元",
-          "content": "专业金融数据，下一代智能终端\n\n　　数据宝统计，截至14:07，中钨高新成交额100.62亿元，超100亿元。最新股价上涨7.01%，换手率7.57%。上一交易日该股全天成交额为99.67亿元。\n\n　　据天眼查APP显示，中钨高新材料股份有限公司成立于1993年03月18日，注册资本227860.44万人民币。（数据宝）\n\n　　注：本文系新闻报道，不构成投资建议，股市有风险，投资需谨慎。",
-          "type": "行业",
-          "sentiment": 1,
-          "weight": 1,
-          "final_weight": 0.51,
-          "source_authority": 3,
-          "recency_factor": 0.85,
-          "source": "东方财富资讯",
-          "llm_reviewed": true,
-          "llm_confidence": 0.3,
-          "llm_is_real_catalyst": false,
-          "llm_reasoning": "成交额超百亿，无实质催化"
-        },
-        {
-          "date": "2026-06-16 09:37:20",
-          "title": "中钨高新6月16日盘中涨幅达5%",
+          "date": "2026-06-13",
+          "title": "中钨高新:第十一届董事会第十二次(临时)会议决议公告",
           "content": "",
-          "type": "行业",
-          "sentiment": 1,
+          "type": "政策",
+          "sentiment": 0,
           "weight": 1,
-          "final_weight": 0.51,
-          "source_authority": 3,
-          "recency_factor": 0.85,
-          "source": "东方财富资讯",
+          "final_weight": 0.5,
+          "source_authority": 4.5,
+          "recency_factor": 0.42,
+          "source": "东方财富公告",
           "llm_reviewed": true,
-          "llm_confidence": 0.2,
+          "llm_confidence": 0.3,
           "llm_is_real_catalyst": false,
-          "llm_reasoning": "盘中涨幅达5%，无具体原因"
+          "llm_reasoning": "董事会决议公告，内容常规无催化"
+        },
+        {
+          "date": "2026-06-13",
+          "title": "中钨高新:关于调整2026年度与中国五矿日常关联交易预计的公告",
+          "content": "",
+          "type": "政策",
+          "sentiment": 0,
+          "weight": 1,
+          "final_weight": 0.5,
+          "source_authority": 4.5,
+          "recency_factor": 0.42,
+          "source": "东方财富公告",
+          "llm_reviewed": true,
+          "llm_confidence": 0.3,
+          "llm_is_real_catalyst": false,
+          "llm_reasoning": "标题为关联交易调整，但正文未提供细节"
+        },
+        {
+          "date": "2026-06-12",
+          "title": "关于调整2026年度与中国五矿日常关联交易预计的公告",
+          "content": "- \t1 \t-\n证券代码：000657 \t证券简称：中钨高新 \t公告编号：2026-47\n中钨高新材料股份有限公司\n关于调整 \t2026 \t年度与中国五矿日常关联交易预计的公告\n本公司及董事会全体成员保证信息披露的内容真实、准确、完整，没有虚\n假记载、误导性陈述或重大遗漏。\n一、日常关联交易概述\n中钨高新材料股份有限公司（以下简称中钨高新或公司）分别于\n2025 \t年 \t12 \t月 \t15 \t日、2026 \t年 \t1 \t月 \t5 \t日召开第十一届董事会第七次会\n议和 \t2026 \t年第一次临时股东会，审议通过了《关于 \t2026 \t年度日常关\n联交易预计的议案》。公司预计 \t2026 \t年度将与中国五矿及其直接或\n间接控制的公司发生采购原材料及产品、销售产品、房屋租赁等日常\n关联交易总金额不超过 \t619,000 \t万元，其中采购原材料及产品和劳务\n513,000 \t万元，销售产品 \t39,000 \t万元，项目建设 \t66,500 \t万元，房屋\n租赁 \t500 \t万元。具体内容详见公司在《中国证券报》、巨潮资讯网\n（www.cninfo.com.cn）上披露的《关于 \t2026 \t年度日常关联交易预计\n的公告》（公告编号：2025-125）。\n由于 \t2026 \t年一季度钨原料等相关产品价格出现较大幅度上涨，\n现根据生产经营需要，公司拟调增 \t2026 \t年度与中国五矿及其直接或\n间接控制的公司发生采购原材料及产品、销售产品、房屋租赁等日常\n关联交易总金额，由不超过 \t619,000 \t万元调整至 \t1,307,000 \t万元。本\n次调整已经公司独立董事专门会议审议通过，同意提交公司董事会审\n议。公司已于 \t2026 \t年 \t6 \t月 \t12 \t日召开了第十一届董事会第十二次（临\n\n-- 1 of 12 --\n\n- \t2 \t-\n时）会议审议通过该议案。关联董事徐加夫先生、樊玉雯女士回避表\n决，6 \t名非关联董事一致表决通过。\n根据相关规定，此议案尚需提交公司股东会审议批准，关联股东\n中国五矿股份有限公司、五矿钨业集团有限公司及其关联方（如持有\n公司股份）在股东会上对该议案回避表决。\n二、本次调整日常关联交易预计的类别和金额\n单位：万元\n关联交\n易类别 关联人 关联交易\n内容\n关联交易\n定价原则\n2026 \t年\n预计金额\n本 次 拟 调\n整金额\n调整后\n2026 \t年预\n计金额\n2026 \t年\n1-5 \t月发\n生金额\n采购原\n材料及\n产品和\n劳务\n中国五矿\n钨精矿、钼\n精矿、仲钨\n酸铵、钨钼\n及其化合\n物；技术服\n务和劳务\n等\n市场价定价 \t5,000 \t1,000 \t6,000 \t2,711\n江西省修水赣北\n钨业有限公司 市场价定价 \t200,000 \t408,000 \t608,000 \t264,458\n湖南有色新田岭\n钨业有限公司 市场价定价 \t82,000 \t54,000 \t136,000 \t56,994\n湖南瑶岗仙矿业\n有限责任公司 市场价定价 \t88,000 \t42,000 \t130,000 \t66,258\n江西省修水香炉\n山钨业有限责任\n公司\n市场价定价 \t130,000 \t132,000 \t262,000 \t85,243\n洛杉矶矿产金属\n有限公司 市场价定价 \t8,000 \t0 \t8,000 \t2,431\n小计 \t513,000 \t637,000 \t1,150,000 \t478,094\n销售\n产品\n中国五矿\n钨钼及其\n化合物、萤\n石产品、硬\n质合金制\n品等\n市场价定价 \t6,000 \t-4,000 \t2,000 \t444\n江西省修水赣北\n钨业有限公司 市场价定价 \t8,500 \t74,500 \t83,000 \t31,607\n湖南有色郴州氟\n化学有限公司 市场价定价 \t17,500 \t-3,500 \t14,000 \t6,440\n湖南有色郴州萤\n石球团有限公司 市场价定价 \t7,000 \t-3,000 \t4,000 \t1,500\n小计 \t39,000 \t64,000 \t103,000 \t39,990\n项目\n建设\n中国五矿\n项目建设\n市场价定价 \t4,000 \t1,400 \t5,400 \t343\n五矿二十三冶建\n设集团有限公司 市场价定价 \t4,500 \t-3,500 \t1,000 \t0\n中国京冶工程技\n术有限公司 市场价定价 \t11,000 \t-1,900 \t9,100 \t3,202\n中冶长天国际工\n程有限责任公司 市场价定价 \t23,000 \t-3,000 \t20,000 \t3,076\n\n-- 2 of 12 --\n\n- \t3 \t-\n长沙矿冶研究院\n有限责任公司 市场价定价 \t24,000 \t-6,000 \t18,000 \t1,853\n小计 \t66,500 \t-13,000 \t53,500 \t8,475\n房屋\n租赁\n中国五矿 \t房屋租赁 \t市场价定价 \t500 \t0 \t500 \t40\n小计 \t500 \t0 \t500 \t40\n合计 \t619,000 \t688,000 \t1,307,000 \t526,599\n注 \t1：因预计关联人数量较多，且预计交易金额较小，未达到单独披露标准，\n简化披露为同一实际控制人“中国五矿”，因此表格数据中，与中国五矿的日常\n关联交易预计发生金额包括除单独披露外的所有与中国五矿及其直接或间接控\n制的公司之间的发生额。\n注 \t2：上表中 \t1-5 \t月发生金额为公司财务部门统计的数据，尚未经会计师事\n务所审计。\n三、关联人介绍和关联关系\n（一）基本情况\n1.中国五矿集团有限公司\n法定代表人：陈得信\n注册资本：1,020,000 \t万元\n注册地址：北京市海淀区三里河路五号\n经营范围：黑色金属、有色金属、矿产品及非金属矿产品的投资、\n销售；新能源的开发和投资管理；金融、证券、信托、租赁、保险、\n基金、期货领域的投资管理；投资与资产管理；各种工程技术咨询服\n务及工程设备租赁；与工程建筑相关的新材料、新工艺、新产品技术\n开发、技术服务、技术交流和技术转让；冶金工业所需设备的开发、\n销售；承担国外各类工业、民用建筑工程咨询、勘察、设计和设备租\n赁；机电产品、小轿车、建筑材料、仪器仪表、五金交电、机械设备\n的销售；建筑及机电设备安装工程技术研究、规划勘察、设计、监理\n服务；房地产开发与经营；物业管理；进出口业务；招标、投标及招\n标代理；承办展览展示活动；设计、制作、代理、发布国内外广告；\n\n-- 3 of 12 --\n\n- \t4 \t-\n经济贸易咨询；技术服务、技术交流；自有房屋租赁。（市场主体依\n法自主选择经营项目，开展经营活动；依法须经批准的项目，经相关\n部门批准后依批准的内容开展经营活动；不得从事国家和本市产业政\n策禁止和限制类项目的经营活动。）\n截至 \t2026 \t年 \t3 \t月末，资产总额 \t15,202 \t亿元，所有者权益 \t4,184\n亿元，营业收入 \t1,793 \t亿元，净利润 \t60 \t亿元。\n关联关系：为公司实际控制人。\n2.江西省修水赣北钨业有限公司\n法定代表人：丁伟\n注册资本：15,989.690722 \t万元\n注册地址：江西省九江市修水县吴都工业园\n经营范围：矿产品经营、加工选矿、研发、冶炼、销售（国家有\n专项规定除外）；化工原料（除危险化学品）销售；矿山机械及配件、\n建筑材料销售；自营商品的进出口贸易；道路货运站（场）经营。\n截至 \t2026 \t年 \t3 \t月末，\t资产总额 \t173,724 \t万元，所有者权益 \t18,605\n万元，营业收入 \t100,570 \t万元，净利润 \t770 \t万元。\n关联关系：与公司属同一实际控制人。\n3.湖南有色新田岭钨业有限公司\n法定代表人：石志中\n注册资本：89,400 \t万元\n注册地址：湖南省郴州市北湖区石盖塘镇小溪村\n经营范围：许可项目：非煤矿山矿产资源开采；测绘服务。（依\n法须经批准的项目，经相关部门批准后方可开展经营活动，具体经营\n项目以相关部门批准文件或许可证件为准）一般项目：选矿；金属矿\n石销售；非金属矿及制品销售；租赁服务（不含许可类租赁服务）；\n\n-- 4 of 12 --\n\n- \t5 \t-\n技术服务、技术开发、技术咨询、技术交流、技术转让、技术推广。\n截至 \t2026 \t年 \t3 \t月末，\t资产总额 \t200,668 \t万元，所有者权益 \t133,394\n万元，营业收入 \t68,524 \t万元，净利润 \t46,636 \t万元。\n关联关系：与公司属同一实际控制人。\n4.湖南瑶岗仙矿业有限责任公司\n法定代表人：李军\n注册资本：18,801 \t万元\n注册地址：湖南省郴州市宜章县瑶岗仙镇\n经营范围：许可项目：矿产资源（非煤矿山）开采；矿产资源勘\n查；道路货物运输（不含危险货物）；测绘服务（依法须经批准的项\n目，经相关部门批准后方可开展经营活动，具体经营项目以相关部门\n批准文件或许可证件为准）一般项目：选矿；矿物洗选加工；金属矿\n石销售；固体废物治理；非金属废料和碎屑加工处理（除依法须经批\n准的项目外，凭营业执照依法自主开展经营活动）。\n截至 \t2026 \t年 \t3 \t月末，\t资产总额 \t225,683 \t万元，所有者权益 \t104,297\n万元，营业收入 \t79,601 \t万元，净利润 \t50,291 \t万元。\n关联关系：与公司属同一实际控制人。\n5.江西省修水香炉山钨业有限责任公司\n法定代表人：徐凤平\n注册资本：29,687.93 \t万元\n注册地址：江西省九江市修水县吴都工业园\n经营范围：矿产品开采、经营、加工、选矿、研发、冶炼、销售；\n化工原料（化学危险品除外）、矿山机械及配件、建筑材料销售；对\n外贸易经营。\n截至 \t2026 \t年 \t3 \t月末，\t资产总额 \t166,909 \t万元，所有者权益 \t102,588\n\n-- 5 of 12 --\n\n- \t6 \t-\n万元，营业收入 \t50,395 \t万元，净利润 \t28,861 \t万元。\n关联关系：与公司属同一实际控制人。\n6.洛杉矶矿产金属有限公司\n法定代表人：王旭\n注册资本：60 \t万美元\n注册地址：美国洛杉矶\n经营范围：有色金属贸易。\n截至 \t2026 \t年 \t3 \t月末，资产总额 \t17,409 \t万元，所有者权益 \t11,997\n万元，营业收入 \t11,386 \t万元，净利润 \t48 \t万元。\n关联关系：与公司属同一实际控制人。\n7.湖南有色郴州氟化学有限公司\n法定代表人：张振华\n注册资本：11,000 \t万元\n注册地址：湖南省郴州市苏仙区飞天山镇幸福村\n经营范围：萤石、石榴子石、石膏、无水氟化氢、有水氟化氢、\n氟硅酸、有机氟化物、无机氟化盐等氟化工的新工艺、新技术的研发、\n设计及相关的可行性报告的咨询服务及其它氟制品的生产、销售；煤\n炭销售；货物的进出口业务。\n截至 \t2026 \t年 \t3 \t月末，资产总额 \t44,369 \t万元，所有者权益 \t22,341\n万元，营业收入 \t12,075 \t万元，净利润-1,367 \t万元。\n关联关系：与公司属同一实际控制人。\n8.湖南有色郴州萤石球团有限公司\n法定代表人：邓泽贤\n注册资本：500 \t万元\n注册地址：中国（湖南）自由贸易试验区郴州片区白露塘镇湖南\n\n-- 6 of 12 --\n\n- \t7 \t-\n柿竹园有色金属有限责任公司白沙区 \t4 \t栋 \t101 \t房\n经营范围：萤石球团的生产、销售萤石精矿的销售。\n截至 \t2026 \t年 \t3 \t月末，资产总额 \t1,984 \t万元，所有者权益 \t1,291\n万元，营业收入 \t1,388 \t万元，净利润 \t17 \t万元。\n关联关系：与公司属同一实际控制人。\n9.五矿二十三冶建设集团有限公司\n法定代表人：胡建军\n注册资本：229,237.43 \t万元\n注册地址：湖南省长沙市雨花区湘府东路二段 \t208 \t号万境财智中\n心北栋 \t24 \t层\n经营范围：建筑工程、铁路工程、石油化工工程、电力工程、公\n路工程、市政公用工程、冶金工程、机电工程、矿山工程、水利水电\n工程、机电安装各类别工程的施工总承包、工程总承包和项目管理业\n务；建筑装修装饰工程、特种专业工程、环保工程、城市轨道交通设\n施工程、地基与基础工程、园林绿化工程、人防工程、消防设施工程、\n钢结构工程的专业承包；房地产开发经营；铁路、道路、隧道和桥梁\n工程建筑施工；土石方工程服务；压力管道、机电设备、起重设备、\n建筑工程材料安装服务；环境综合治理项目咨询、设计、施工及运营；\n建筑装饰工程、环保工程、建筑行业建筑工程、人防工程设计；工程\n项目管理服务；工程建设项目技术咨询服务；承包境内国际招标工程；\n对外承包工程业务；计算机网络平台的开发、建设及系统工程服务、\n信息技术咨询服务；自动化控制系统的研发、安装、销售及服务；物\n业管理；职工餐饮服务；便利店经营和便利店连锁经营；货物仓储（不\n含危化品和监控品）；场地、机械设备租赁；建材批发；货物或技术\n进出口（国家禁止或涉及行政审批的货物和技术进出口除外）；以自\n\n-- 7 of 12 --\n\n- \t8 \t-\n有合法资产进行基础设施、能源、房地产项目的投资及非上市类股权\n投资活动及相关咨询服务（不得从事吸收存款、集资收款、受托贷款、\n发行票据、发放贷款等国家金融监管及财政信用业务）。\n截至 \t2026 \t年 \t3 \t月末，资产总额 \t317 \t亿元，所有者权益 \t53 \t亿元，\n营业收入 \t32 \t亿元，净利润 \t3,443 \t万元。\n关联关系：与公司属同一实际控制人。\n10.中国京冶工程技术有限公司\n法定代表人：张剑\n注册资本：69,000 \t万元\n注册地址：北京市海淀区西土城路 \t33 \t号\n经营范围：许可项目：演出经纪；建设工程施工；建设工程设计；\n人防工程设计；文物保护工程施工；电气安装服务；人防工程防护设\n备制造；人防工程防护设备安装；建设工程勘察；地质灾害治理工程\n勘查；文物保护工程勘察；演出场所经营；舞台工程施工。（依法须\n经批准的项目，经相关部门批准后方可开展经营活动，具体经营项目\n以相关部门批准文件或许可证件为准）一般项目：技术服务、技术开\n发、技术咨询、技术交流、技术转让、技术推广；对外承包工程；工\n程管理服务；普通机械设备安装服务；金属结构制造；砼结构构件制\n造；工程技术服务（规划管理、勘察、设计、监理除外）；新材料技\n术研发；环境保护专用设备销售；环保咨询服务；工程和技术研究和\n试验发展；业务培训（不含教育培训、职业技能培训等需取得许可的\n培训）；园林绿化工程施工；技术进出口。\n截至 \t2026 \t年 \t3 \t月末，\t资产总额 \t532,068 \t万元，所有者权益 \t108,519\n万元，营业收入 \t113,933 \t万元，净利润-1,318 \t万元。\n关联关系：与公司属同一实际控制人。\n\n-- 8 of 12 --\n\n- \t9 \t-\n11.中冶长天国际工程有限责任公司\n法定代表人：乐文毅\n注册资本：67,730.12 \t万元\n注册地址：长沙市高新区麓松路 \t480 \t号\n经营范围：承担国内工程的勘察、咨询、设计、监理和总承包及\n相关工程的设备、材料的进出口、转口贸易、三来一补加工贸易；承\n包与其实力、规模、业绩相适应的国外工程项目，对外派遣实施上述\n境外工程所需的劳务人员；城市规划编制；建设项目环境影响评价；\n制造、销售机械、电气、自动化设备及软件；销售工具、模具、模型；\n承接复印及晒图业务；矿产品加工、销售和进出口贸易；\t《烧结球团》\t、\n《工程建设》的出版（按许可证已核定的期限与范围从事经营）；期\n刊广告的设计、制作及发布；自有房屋租赁。\n截至 \t2026 \t年 \t3 \t月末，\t资产总额 \t649,918 \t万元，所有者权益 \t309,449\n万元，营业收入 \t142,250 \t万元，净利润 \t2,021 \t万元。\n关联关系：与公司属同一实际控制人。\n12.长沙矿冶研究院有限责任公司\n法定代表人：卓晓军\n注册资本：292,797.9822 \t万元\n注册地址：湖南省长沙市麓山南路 \t966 \t号\n经营范围：矿产资源及二次资源开发利用技术的研发、咨询、转\n让及推广服务；选矿药剂、环保药剂及精细化工产品（不含危险化学\n品和监控品）、矿冶装备、海工装备、环保装备（含仪器仪表）的研\n发、制造、销售；再生资源收集技术开发、转让、培训、咨询及服务，\n废旧动力蓄电池及含有镍、钴、铜、锂的有色金属废物的回收、暂存、\n处置与销售（以上不含危险废物等需经相关部门批准的项目）；电池\n\n-- 9 of 12 --\n\n- \t10 \t-\n及电池材料的研发、生产、销售；电化学储能及退役电池梯次利用技\n术研发、生产、销售、服务；新能源微电网、能源互联网等技术开发、\n应用与服务；金属制品加工、生产、销售；智能技术及信息化系统、\n仪器仪表的开发、集成、销售；智慧城市、地理信息的软硬件及平台\n的开发、集成、转让、销售；土地测绘、国土空间规划；地质实验测\n试；新材料技术的研发、咨询、转让及推广服务；新材料产品及相关\n仪器仪表、非标准装备的研发、制造、销售；工业废水及废弃物的处\n理及利用；土壤及水体修复；环境影响评价、安全评价、节能评价、\n清洁生产评价、职业健康评价；工农业原辅材料与产品、生产生活水\n质与土壤等的分析检测、分析检测标准物质研制与生产销售；以自有\n合法资金进行高新技术产业投资、创业投资等（不得从事吸收存款、\n集资收款、受托贷款、发行票据、发放贷款等国家金融监管及财政信\n用业务）；创业投资咨询、创业管理服务；自营和代理各类商品和技\n术的进出口；自有房屋租赁；物业运营与管理；科技信息咨询服务；\n工程咨询（规划）、工程设计、工程监理、工程承包；经营增值电信\n业务；广告经营。\n截至 \t2026 \t年 \t3 \t月末，\t资产总额 \t554,414 \t万元，所有者权益 \t392,752\n万元，营业收入 \t34,002 \t万元，净利润 \t188 \t万元。\n关联关系：与公司属同一实际控制人。\n（二）履约能力分析\n上述关联方依法持续经营，均能遵守合同约定，按正常的商业条\n件进行结算，不存在其他潜在影响其履约的重大情形。经查，上述公\n司均不是失信责任主体。\n四、关联交易主要内容\n（一）定价原则和依据\n\n-- 10 of 12 --\n\n- \t11 \t-\n本公司及下属子公司与关联公司之间的业务往来按一般市场经\n营规则进行，定价以市场价格为基本准则，原则上不偏离独立第三方\n的价格或收费标准，遵照公平、公正的市场原则确定交易价格；交货、\n付款均按签订的合同相关条款执行。\n（二）关联交易协议签署情况\n为进一步规范公司日常关联交易执行情况，公司已与中国五矿签\n署有关框架协议，对公司与中国五矿（包括中国五矿直接或间接控股\n公司）之间的日常关联交易类型、交易总量确定、交易定价原则、付\n款方式等予以约定，协议有效期 \t3 \t年，有效期自 \t2026 \t年 \t1 \t月 \t1 \t日起。\n五、关联交易目的和对上市公司的影响\n为确保公司日常生产经营的正常运行，公司及下属企业需要与中\n国五矿及其直接或间接控股公司进行原辅材料采购和产品销售等关\n联交易。该等关联交易是公司日常经营过程中持续发生的、正常合理\n的行为，通过这些日常关联交易，有利于促进公司日常经营业务的开\n展。\n上述关联交易的定价参照市场价格，遵循公允原则，不存在损害\n上市公司利益的情形，对公司本期以及未来财务状况、经营成果无不\n利影响，交易双方可随时根据自身需要及市场价格，决定是否进行交\n易，因此不会影响公司的独立性。\n六、独立董事专门会议审查意见\n经公司独立董事专门会议审查认为：公司对 \t2026 \t年度中国五矿\n及其直接或间接控股公司的预计日常关联交易情况进行适当调整符\n合实际生产经营需要，日常关联交易事项遵循公开、公平、公正的原\n则，交易价格公允，不存在损害公司及全体股东，特别是中小股东利\n益的情形，不会对公司独立性产生影响。符合《中华人民共和国公司\n\n-- 11 of 12 --\n\n- \t12 \t-\n法》《中华人民共和国证券法》《深圳证券交易所股票上市规则》及\n其他有关法律法规、规范性文件的规定。\n特此公告。\n中钨高新材料股份有限公司董事会\n二〇二六年六月十三日\n\n-- 12 of 12 --",
+          "type": "财报",
+          "sentiment": 1,
+          "weight": 2,
+          "final_weight": 2.34,
+          "source_authority": 5,
+          "recency_factor": 0.36,
+          "source": "巨潮资讯",
+          "llm_reviewed": true,
+          "llm_confidence": 0.8,
+          "llm_is_real_catalyst": true,
+          "llm_reasoning": "因原料涨价调增关联交易额度，反映业务增长"
+        },
+        {
+          "date": "2026-06-12",
+          "title": "关于召开2026年第二次临时股东会的通知",
+          "content": "- \t1 \t-\n证券代码：000657 \t证券简称：中钨高新 \t公告编号：2026-48\n中钨高新材料股份有限公司\n关于召开 \t2026 \t年第二次临时股东会的通知\n本公司及董事会全体成员保证信息披露的内容真实、准确、完整，没有虚\n假记载、误导性陈述或重大遗漏。\n一、召开会议的基本情况\n1、股东会届次：2026 \t年第二次临时股东会\n2、股东会的召集人：董事会\n3、本次会议的召集、召开符合《中华人民共和国公司法》\n《深圳证券交易所股票上市规则》《深圳证券交易所上市公司自律\n监管指引第 \t1 \t号——主板上市公司规范运作》等法律、行政法规、\n部门规章、规范性文件及《公司章程》的有关规定。\n4、会议时间：\n（1）现场会议时间：2026 \t年 \t6 \t月 \t29 \t日 \t14:30\n（2）网络投票时间：通过深圳证券交易所系统进行网络投票\n的具体时间为 \t2026 \t年 \t6 \t月 \t29 \t日 \t9:15-9:25，9:30-11:30，13:00-\n15:00；通过深圳证券交易所互联网投票系统投票的具体时间为\n2026 \t年 \t6 \t月 \t29 \t日 \t9:15 \t至 \t15:00 \t的任意时间。\n5、会议的召开方式：现场表决与网络投票相结合。\n6、会议的股权登记日：2026 \t年 \t6 \t月 \t18 \t日\n7、出席对象：\n\n-- 1 of 6 --\n\n- \t2 \t-\n（1）在股权登记日持有公司股份的普通股股东或其代理人，\n即于 \t2026 \t年 \t6 \t月 \t18 \t日下午收市时在中国证券登记结算有限责任公\n司深圳分公司登记在册的公司全体股东均有权出席股东会，并可以\n以书面形式委托代理人出席会议和参加表决，该股东代理人不必是\n公司股东。\n（2）公司董事和高级管理人员。\n（3）公司聘请的律师。\n（4）根据相关法规应当出席股东会的其他人员。\n8、会议地点：湖南省株洲市荷塘区钻石路 \t288 \t号钻石大厦\n1006 \t会议室。\n二、会议审议事项\n1、本次股东会提案编码表\n提案编码 \t提案名称 \t提案类型\n备注\n该列打勾的栏目可\n以投票\n100\n总议案：除累积投票提案外的 \t所有\n提案\n非累积投票提案 \t√\n1.00 关于选举齐申先生为公司第十一届\n董事会非独立董事的议案 \t非累积投票提案 \t√\n2.00 关于调整 \t2026 \t年度与中国五矿日常\n关联交易预计的议案 \t非累积投票提案 \t√\n2、提案的具体内容\n本次股东会提案已经公司第十一届董事会第十一次（临时）会\n议和第十二次（临时）会议审议通过，内容详见本公司于 \t2026 \t年 \t6\n月 \t6 \t日披露在巨潮资讯网的《关于提名董事候选人的公告》（公告\n编号：2026-44）、2026 \t年 \t6 \t月 \t13 \t日披露在巨潮资讯网的《关于调\n\n-- 2 of 6 --\n\n- \t3 \t-\n整 \t2026 \t年度与中国五矿日常关联交易预计的公告》（公告编号：\n2026-47）\n3、特别提示\n（1）议案 \t1 \t仅选举一名董事，不适用累积投票制；\n（2）议案 \t2 \t涉及关联交易，关联股东中国五矿股份有限公司、\n五矿钨业集团有限公司及其关联公司（如持有公司股份）对议案回\n避表决；\n（3）本次股东会审议的议案将对中小投资者的表决结果进行\n单独计票并予以披露。中小投资者是指除上市公司董事、高级管理\n人员以及单独或者合计持有公司 \t5%以上股份的股东以外的其他股东。\n三、会议登记等事项\n1、登记方式：现场登记，异地股东可通过电子邮件或传真方\n式登记；\n2、登记时间：2026 \t年 \t6 \t月 \t25 \t日 \t9:00-11:30，14:00-17:00；\n3、登记地点：湖南省株洲市荷塘区钻石路 \t288 \t号钻石大厦\n1101 \t室；\n4、登记时提供资料：出席会议的个人股东持本人身份证、股\n东账户卡和持股凭证；委托代理人持本人身份证、授权委托书、授\n权人股东账户卡和持股凭证；法人股东持营业执照复印件、股东账\n户卡、法人授权委托书、出席人身份证办理登记手续。授权委托书\n详见附件 \t2。\n5、其他事项\n（1）会议联系方式：\n联系人：刘文婕 \t罗媚月\n\n-- 3 of 6 --\n\n- \t4 \t-\n电话：0731-28265386 \t0731-28265901\n传真：0731-28265500\n电子邮箱：zwgx000657@126.com\n（2）会议费用：会期半天，与会股东食宿及交通费自理。\n（3）网络投票系统异常情况的处理方式：网络投票期间，如\n网络投票系统遇突发重大事件的影响，则本次股东会的进程按当日\n通知进行。\n四、参加网络投票的具体操作流程\n本公司将向全体股东提供网络形式的投票平台，本公司股东可\n以通过深交所交易系统和互联网投票系统（http://wltp.cninfo.c\nom.cn）参加网络投票。参加网络投票的具体操作流程详见附件 \t1。\n五、备查文件\n1、第十一届董事会第十一次（临时）会议决议；\n2、第十一届董事会第十二次（临时）会议决议；\n3、深交所要求的其他文件。\n附件：1.授权委托书\n2.参加网络投票的具体操作流程\n特此公告。\n中钨高新材料股份有限公司董事会\n二〇二六年六月十三日\n\n-- 4 of 6 --\n\n- \t5 \t-\n附件 \t1：\n参加网络投票的具体操作流程\n一、网络投票的程序\n1．普通股的投票代码与投票简称：投票代码为“360657”，投票简称为\n“中钨投票”。\n2．填报表决意见或选举票数。\n对于非累积投票提案，填报表决意见：同意、反对、弃权。\n3．股东对总议案进行投票，视为对除累积投票提案外的其他所有提案表\n达相同意见。\n股东对总议案与具体提案重复投票时，以第一次有效投票为准。如股东先\n对具体提案投票表决，再对总议案投票表决，则以已投票表决的具体提案的表\n决意见为准，其他未表决的提案以总议案的表决意见为准；如先对总议案投票\n表决，再对具体提案投票表决，则以总议案的表决意见为准。\n二、通过深交所交易系统投票的程序\n1．投票时间：2026 \t年 \t6 \t月 \t29 \t日的交易时间，即 \t9:15—9:25，9:30—\n11:30 \t和 \t13:00—15:00。\n2．股东可以登录证券公司交易客户端通过交易系统投票。\n三、通过深交所互联网投票系统投票的程序\n1．互联网投票系统开始投票的时间为 \t2026 \t年 \t6 \t月 \t29 \t日，9:15—15:00。\n2．股东通过互联网投票系统进行网络投票，需按照《深圳证券交易所上\n市公司股东会网络投票实施细则》《深圳证券交易所互联网投票业务股东身份\n认证操作说明》的规定办理身份认证，取得“深交所数字证书”或“深交所投\n资 者 服 务 密 码 \t” \t。 具 体 的 身 份 认 证 流 程 可 登 录 互 联 网 投 票 系 统\nhttps://wltp.cninfo.com.cn \t规则指引栏目查阅。\n3 \t． 股 东 根 据 获 取 的 服 务 密 码 或 数 字 证 书 ， 可 登 录\nhttps://wltp.cninfo.com.cn \t在规定时间内通过深交所互联网投票系统进行\n投票。\n\n-- 5 of 6 --\n\n- \t6 \t-\n附件 \t2：\n中钨高新材料股份有限公司\n2026 \t年第二次临时股东会授权委托书\n兹委托__________先生（女士）代表本人（或本单位）出席中钨高新材料\n股份有限公司于 \t2026 \t年 \t06 \t月 \t29 \t日召开的 \t2026 \t年第二次临时股东会，并代表\n本人（或本单位）按以下方式行使表决权：\n本次股东会提案表决意见表\n提案编\n码 提案名称 备\n注\n同\n意\n反\n对\n弃\n权\n100 \t总议案：除累积投票提案外的所有提案 \t√\n非累积投票提案\n1.00 关于选举齐申先生为公司第十一届董事会非独立董事的\n议案 \t√\n2.00 关于调整 \t2026 \t年度与中国五矿日常关联交易预计的议\n案 \t√\n委托人名称（盖章）：\n委托人身份证号码（社会信用代码）：\n（委托人为法人股东，应加盖法人单位印章。）\n委托人股东账号： \t持股数量：\n受托人： \t受托人身份证号码：\n签发日期： \t委托有效期：\n\n-- 6 of 6 --",
+          "type": "政策",
+          "sentiment": 0,
+          "weight": 1,
+          "final_weight": 0.5,
+          "source_authority": 5,
+          "recency_factor": 0.36,
+          "source": "巨潮资讯",
+          "llm_reviewed": true,
+          "llm_confidence": 0.3,
+          "llm_is_real_catalyst": false,
+          "llm_reasoning": "股东会通知，内容常规无催化"
         }
       ]
     },
-    "SZSE:300308": {
-      "name": "中际旭创",
-      "score": 64,
-      "score_raw": 3.24,
+    "SSE:603203": {
+      "name": "快克智能",
+      "score": 58,
+      "score_raw": 2.01,
       "score_components": {
-        "positive_weight_sum": 3.24,
-        "negative_weight_sum": 0,
+        "positive_weight_sum": 3.51,
+        "negative_weight_sum": 1.5,
         "news_effective_count": 11,
-        "news_dropped_count": 0
-      },
-      "signal": "🟢 Long (中)",
-      "strategy": "情绪偏多，适合低吸或轻仓参与",
-      "suitable_for": "低吸 / 轻仓追",
-      "confidence": "中",
-      "patterns": [],
-      "positive_factors": [
-        "[行业|w1.2] 中际旭创、兆易创新、东山精密获融资资金买入排名前三丨资金流向日报",
-        "[行业|w1.02] 中际旭创获融资资金买入超67亿元丨资金流向日报",
-        "[行业|w0.51] 活跃个股：中际旭创成交291亿元 永大股份换手率55%"
-      ],
-      "negative_factors": [],
-      "news_count": 11,
-      "news_dropped": 0,
-      "performance": {
-        "list_fetch_ms": 3594,
-        "candidate_filter_ms": 0,
-        "enrichment_ms": 31980,
-        "raw_news_count": 40,
-        "raw_research_count": 10,
-        "candidate_news_count": 11,
-        "candidate_research_count": 0,
-        "enriched_news_count": 11,
-        "enriched_research_count": 0,
-        "candidate_reasons": {
-          "news": {
-            "no-subject-mention": 10,
-            "noise:融资净(买入|卖出)": 4,
-            "dedup": 0,
-            "out_of_window": 15
-          },
-          "research": {
-            "dedup": 0,
-            "out_of_window": 10
-          }
-        },
-        "date_filter_ms": 0,
-        "relevance_ms": 0,
-        "llm_ms": 4140,
-        "scoring_ms": 0
-      },
-      "top_news": [
-        {
-          "date": "2026-06-17 14:17:00",
-          "title": "中际旭创成交额超200亿元",
-          "content": "",
-          "type": "行业",
-          "sentiment": 0,
-          "weight": 1,
-          "final_weight": 0.6,
-          "source_authority": 3,
-          "recency_factor": 1,
-          "source": "东方财富资讯",
-          "llm_reviewed": true,
-          "llm_confidence": 0.3,
-          "llm_is_real_catalyst": false,
-          "llm_reasoning": "仅提及成交额，无实质催化"
-        },
-        {
-          "date": "2026-06-17 10:45:00",
-          "title": "中际旭创成交额超100亿元",
-          "content": "",
-          "type": "行业",
-          "sentiment": 0,
-          "weight": 1,
-          "final_weight": 0.6,
-          "source_authority": 3,
-          "recency_factor": 1,
-          "source": "东方财富资讯",
-          "llm_reviewed": true,
-          "llm_confidence": 0.3,
-          "llm_is_real_catalyst": false,
-          "llm_reasoning": "仅提及成交额，无实质催化"
-        },
-        {
-          "date": "2026-06-17 10:34:00",
-          "title": "中际旭创、兆易创新、东山精密获融资资金买入排名前三丨资金流向日报",
-          "content": "在东方财富看资讯行情，选东方财富证券一站式开户交易>>\n\n一、证券市场回顾\n\n　　南财金融终端数据显示，昨日(6月16日，下同)上证综指日内下跌0.11%，收于4091.89点，最高4103.93点；深证成指日内上涨0.93%，收于15675.25点，最高15761.0点；创业板指日内上涨1.72%，收于4102.94点，最高4142.43点。\n\n二、融资融券情况\n\n　　昨日沪深两市的融资融券余额为29158.06亿元，其中融资余额28938.39亿元，融券余额219.67亿元。两市融资融券余额较前一交易日增加267.68亿元。分市场来看，沪市两融余额为14879.96亿元，相较前一交易日增加121.64亿元；深市两融余额14278.11亿元，相较前一交易日增加146.05亿元。\n\n　　两市共有3465只个股有融资资金买入，其中中际旭创、兆易创新、东山精密排名前三，买入金额分别50.46亿元、38.52亿元、38.27亿元。融资买入额前10个股详情见下表：\n\n三、基金发行情况\n\n　　昨日有6只新基金发行，分别为：招商智信优选6个月持有期混合(FOF)C、招商智信优选6个月持有期混合(FOF)A、富国裕丰回报混合A、富国裕丰回报混合C、富兰克林国海港股通核心增益混合A、富兰克林国海港股通核心增益混合C，详情见下表：\n\n四、龙虎榜情况\n\n　　昨日龙虎榜营业部净买入额前10详情见下表：",
-          "type": "行业",
-          "sentiment": 1,
-          "weight": 1,
-          "final_weight": 1.2,
-          "source_authority": 3,
-          "recency_factor": 1,
-          "source": "东方财富资讯",
-          "llm_reviewed": true,
-          "llm_confidence": 0.5,
-          "llm_is_real_catalyst": false,
-          "llm_reasoning": "融资买入排名前三，资金关注度高"
-        },
-        {
-          "date": "2026-06-16 18:13:09",
-          "title": "活跃个股：中际旭创成交291亿元 永大股份换手率55%",
-          "content": "在东方财富看资讯行情，选东方财富证券一站式开户交易>>\n\n　　6月16日，上证指数跌0.11%，收报4091.89点；深证成指涨0.93%，收报15675.25点；创业板指涨1.72%，收报4102.94点。\n\n　　沪深两市成交额3.06万亿元，较上一交易日放量335亿元。个股方面，中际旭创当日成交290.92亿元。东山精密当日成交249.39亿元。\n\n \n\n　　当天换手率最高的个股为永大股份，全天换手率54.81%。金戈新材紧随其后，全天换手率48.08%。",
-          "type": "行业",
-          "sentiment": 1,
-          "weight": 1,
-          "final_weight": 0.51,
-          "source_authority": 3,
-          "recency_factor": 0.85,
-          "source": "东方财富资讯",
-          "llm_reviewed": true,
-          "llm_confidence": 0.4,
-          "llm_is_real_catalyst": false,
-          "llm_reasoning": "成交额大，但无业绩或公告支撑"
-        },
-        {
-          "date": "2026-06-16 15:06:34",
-          "title": "沪深两市今日成交额合计3.06万亿元，中际旭创成交额居首",
-          "content": "专业金融数据，下一代智能终端\n\n　　6月16日，沪深两市成交额合计3.06万亿元，较上一交易日放量约334.97亿元。其中，沪市成交额1.37万亿元，深市成交额1.7万亿元。中际旭创成交额居首，为290.92亿元。其后是东山精密、亨通光电、兆易创新、新易盛，成交额分别为249.39亿元、237.7亿元、226.74亿元、222.45亿元。",
-          "type": "行业",
-          "sentiment": 1,
-          "weight": 1,
-          "final_weight": 0.51,
-          "source_authority": 3,
-          "recency_factor": 0.85,
-          "source": "东方财富资讯",
-          "llm_reviewed": true,
-          "llm_confidence": 0.4,
-          "llm_is_real_catalyst": false,
-          "llm_reasoning": "成交额居首，市场活跃但非硬催化"
-        }
-      ]
-    },
-    "SSE:603986": {
-      "name": "兆易创新",
-      "score": 56,
-      "score_raw": 1.71,
-      "score_components": {
-        "positive_weight_sum": 1.71,
-        "negative_weight_sum": 0,
-        "news_effective_count": 8,
         "news_dropped_count": 0
       },
       "signal": "⚪ No Trade (微多)",
@@ -1209,30 +894,33 @@
       "confidence": "低",
       "patterns": [],
       "positive_factors": [
-        "[行业|w0.6] 兆易创新6月17日盘中涨幅达5%",
-        "[行业|w0.6] 中际旭创、兆易创新、东山精密获融资资金买入排名前三丨资金流向日报",
-        "[行业|w0.51] 兆易创新成交额超200亿元"
+        "[行业|w0.51] 快克智能6月17日盘中涨幅达5%",
+        "[行业|w0.5] 快克智能6月16日盘中涨幅达5%",
+        "[行业|w0.5] 快克智能6月16日快速反弹"
       ],
-      "negative_factors": [],
-      "news_count": 8,
+      "negative_factors": [
+        "[行业|w0.5] 快克智能6月16日加速下跌",
+        "[行业|w0.5] 快克智能6月12日盘中跌幅达5%",
+        "[行业|w0.5] 快克智能6月12日加速下跌"
+      ],
+      "news_count": 11,
       "news_dropped": 0,
       "performance": {
-        "list_fetch_ms": 5017,
+        "list_fetch_ms": 6840,
         "candidate_filter_ms": 0,
-        "enrichment_ms": 12544,
+        "enrichment_ms": 17263,
         "raw_news_count": 40,
         "raw_research_count": 10,
-        "candidate_news_count": 8,
+        "candidate_news_count": 11,
         "candidate_research_count": 0,
-        "enriched_news_count": 8,
+        "enriched_news_count": 11,
         "enriched_research_count": 0,
         "candidate_reasons": {
           "news": {
-            "no-subject-mention": 14,
-            "noise:\\d{1,2}月\\d{1,2}日(快速上涨|快速回调|涨停|": 2,
-            "noise:融资净(买入|卖出)": 2,
+            "noise:\\d{1,2}月\\d{1,2}日(快速上涨|快速回调|涨停|": 7,
+            "noise:龙虎榜|大宗交易|盘口异动": 2,
             "dedup": 0,
-            "out_of_window": 14
+            "out_of_window": 20
           },
           "research": {
             "dedup": 0,
@@ -1241,99 +929,234 @@
         },
         "date_filter_ms": 0,
         "relevance_ms": 0,
-        "llm_ms": 2648,
+        "llm_ms": 3628,
         "scoring_ms": 0
       },
       "top_news": [
         {
-          "date": "2026-06-17 14:17:00",
-          "title": "兆易创新成交额超250亿元",
-          "content": "",
-          "type": "行业",
-          "sentiment": 0,
-          "weight": 1,
-          "final_weight": 0.6,
-          "source_authority": 3,
-          "recency_factor": 1,
-          "source": "东方财富资讯",
-          "llm_reviewed": true,
-          "llm_confidence": 0.1,
-          "llm_is_real_catalyst": false,
-          "llm_reasoning": "仅提及成交额，无实质信息"
-        },
-        {
-          "date": "2026-06-17 11:13:00",
-          "title": "兆易创新成交额超150亿元",
-          "content": "",
-          "type": "行业",
-          "sentiment": 0,
-          "weight": 1,
-          "final_weight": 0.6,
-          "source_authority": 3,
-          "recency_factor": 1,
-          "source": "东方财富资讯",
-          "llm_reviewed": true,
-          "llm_confidence": 0.1,
-          "llm_is_real_catalyst": false,
-          "llm_reasoning": "仅提及成交额，无实质信息"
-        },
-        {
-          "date": "2026-06-17 10:34:59",
-          "title": "兆易创新6月17日盘中涨幅达5%",
-          "content": "",
+          "date": "2026-06-17 11:05:12",
+          "title": "快克智能6月17日盘中涨幅达5%",
+          "content": "以下是快克智能在北京时间6月17日11:05分盘口异动快照：\n\n　　在东方财富看资讯行情，选东方财富证券一站式开户交易>>\n\n分笔\n\n11:05:08 61.94 64↑\n11:05:05 61.81 767↑\n11:05:02 61.75 38↑\n11:04:59 61.71 46↓\n11:04:56 61.75 36↑\n \n11:04:53 61.75 43↑\n11:04:50 61.75 55↓\n11:04:47 61.75 14↓\n11:04:44 61.77 25↓\n11:04:41 61.77 25↑\n \n报价\n\n卖五 \n\n61.99\n\n 224\n卖四 \n\n61.98\n\n 25\n卖三 \n\n61.97\n\n 18\n卖二 \n\n61.96\n\n 9\n卖一 \n\n61.95\n\n 2\n\n买一 \n\n61.94\n\n 10\n买二 \n\n61.86\n\n 1\n买三 \n\n61.81\n\n 124\n买四 \n\n61.75\n\n 19\n买五 \n\n61.72\n\n 5\n\n最新：61.94\n涨幅：5.09%\n涨跌：3\n换手率：3.79%\n成交量：12.26万手\n成交额：7.29亿元\n主力净流入：\n775.03万元\n\n  6月17日，快克智能盘中涨幅达5%，截至11点05分，报61.94元，成交7.29亿元，换手率3.79%。\n注：以上信息仅供参考，不对您构成任何投资建议。",
           "type": "行业",
           "sentiment": 1,
           "weight": 1,
-          "final_weight": 0.6,
+          "final_weight": 0.51,
           "source_authority": 3,
-          "recency_factor": 1,
-          "source": "东方财富资讯",
-          "llm_reviewed": true,
-          "llm_confidence": 0.2,
-          "llm_is_real_catalyst": false,
-          "llm_reasoning": "盘中涨幅5%，但无具体原因"
-        },
-        {
-          "date": "2026-06-17 10:34:00",
-          "title": "中际旭创、兆易创新、东山精密获融资资金买入排名前三丨资金流向日报",
-          "content": "在东方财富看资讯行情，选东方财富证券一站式开户交易>>\n\n一、证券市场回顾\n\n　　南财金融终端数据显示，昨日(6月16日，下同)上证综指日内下跌0.11%，收于4091.89点，最高4103.93点；深证成指日内上涨0.93%，收于15675.25点，最高15761.0点；创业板指日内上涨1.72%，收于4102.94点，最高4142.43点。\n\n二、融资融券情况\n\n　　昨日沪深两市的融资融券余额为29158.06亿元，其中融资余额28938.39亿元，融券余额219.67亿元。两市融资融券余额较前一交易日增加267.68亿元。分市场来看，沪市两融余额为14879.96亿元，相较前一交易日增加121.64亿元；深市两融余额14278.11亿元，相较前一交易日增加146.05亿元。\n\n　　两市共有3465只个股有融资资金买入，其中中际旭创、兆易创新、东山精密排名前三，买入金额分别50.46亿元、38.52亿元、38.27亿元。融资买入额前10个股详情见下表：\n\n三、基金发行情况\n\n　　昨日有6只新基金发行，分别为：招商智信优选6个月持有期混合(FOF)C、招商智信优选6个月持有期混合(FOF)A、富国裕丰回报混合A、富国裕丰回报混合C、富兰克林国海港股通核心增益混合A、富兰克林国海港股通核心增益混合C，详情见下表：\n\n四、龙虎榜情况\n\n　　昨日龙虎榜营业部净买入额前10详情见下表：",
-          "type": "行业",
-          "sentiment": 1,
-          "weight": 1,
-          "final_weight": 0.6,
-          "source_authority": 3,
-          "recency_factor": 1,
+          "recency_factor": 0.85,
           "source": "东方财富资讯",
           "llm_reviewed": true,
           "llm_confidence": 0.3,
           "llm_is_real_catalyst": false,
-          "llm_reasoning": "融资买入排名前三，资金面积极"
+          "llm_reasoning": "仅描述盘中涨幅，无基本面催化"
         },
         {
-          "date": "2026-06-17 10:30:00",
-          "title": "兆易创新成交额超100亿元",
+          "date": "2026-06-16 14:12:39",
+          "title": "快克智能6月16日盘中涨幅达5%",
           "content": "",
           "type": "行业",
-          "sentiment": 0,
+          "sentiment": 1,
           "weight": 1,
-          "final_weight": 0.6,
+          "final_weight": 0.5,
           "source_authority": 3,
-          "recency_factor": 1,
+          "recency_factor": 0.72,
           "source": "东方财富资讯",
           "llm_reviewed": true,
-          "llm_confidence": 0.1,
+          "llm_confidence": 0.3,
           "llm_is_real_catalyst": false,
-          "llm_reasoning": "仅提及成交额，无实质信息"
+          "llm_reasoning": "仅描述盘中涨幅，无基本面催化"
+        },
+        {
+          "date": "2026-06-16 09:57:18",
+          "title": "快克智能6月16日快速反弹",
+          "content": "以下是快克智能在北京时间6月16日09:41分盘口异动快照：\n\n　　在东方财富看资讯行情，选东方财富证券一站式开户交易>>\n\n \n\n  6月16日，快克智能盘中快速反弹，5分钟内涨幅超过2%，截至9点41分，报56.21元，成交1.95亿元，换手率1.08%。\n注：以上信息仅供参考，不对您构成任何投资建议。",
+          "type": "行业",
+          "sentiment": 1,
+          "weight": 1,
+          "final_weight": 0.5,
+          "source_authority": 3,
+          "recency_factor": 0.72,
+          "source": "东方财富资讯",
+          "llm_reviewed": true,
+          "llm_confidence": 0.3,
+          "llm_is_real_catalyst": false,
+          "llm_reasoning": "仅描述快速反弹，无基本面催化"
+        },
+        {
+          "date": "2026-06-16 09:49:11",
+          "title": "快克智能6月16日加速下跌",
+          "content": "",
+          "type": "行业",
+          "sentiment": -1,
+          "weight": 1,
+          "final_weight": 0.5,
+          "source_authority": 3,
+          "recency_factor": 0.72,
+          "source": "东方财富资讯",
+          "llm_reviewed": true,
+          "llm_confidence": 0.3,
+          "llm_is_real_catalyst": false,
+          "llm_reasoning": "仅描述加速下跌，无基本面催化"
+        },
+        {
+          "date": "2026-06-15 10:01:05",
+          "title": "快克智能6月15日快速反弹",
+          "content": "以下是快克智能在北京时间6月15日09:39分盘口异动快照：\n\n　　在东方财富看资讯行情，选东方财富证券一站式开户交易>>\n\n \n\n  6月15日，快克智能盘中快速反弹，5分钟内涨幅超过2%，截至9点39分，报54.5元，成交2.96亿元，换手率1.72%。\n注：以上信息仅供参考，不对您构成任何投资建议。",
+          "type": "行业",
+          "sentiment": 1,
+          "weight": 1,
+          "final_weight": 0.5,
+          "source_authority": 3,
+          "recency_factor": 0.6,
+          "source": "东方财富资讯",
+          "llm_reviewed": true,
+          "llm_confidence": 0.3,
+          "llm_is_real_catalyst": false,
+          "llm_reasoning": "仅描述快速反弹，无基本面催化"
+        }
+      ]
+    },
+    "SSE:600549": {
+      "name": "600549",
+      "score": 58,
+      "score_raw": 2.49,
+      "score_components": {
+        "positive_weight_sum": 5.04,
+        "negative_weight_sum": 2.55,
+        "news_effective_count": 11,
+        "news_dropped_count": 0
+      },
+      "signal": "🔴 No Trade / Short",
+      "strategy": "黑天鹅事件规避，等待事件明朗化再评估",
+      "suitable_for": "反转(等底部确认)",
+      "confidence": "高",
+      "patterns": [],
+      "positive_factors": [
+        "[并购|w5.04] 厦门钨业2026年第三次临时股东会决议公告"
+      ],
+      "negative_factors": [
+        "[黑天鹅|w2.55] 厦门钨业关于股票交易异常波动的公告"
+      ],
+      "news_count": 11,
+      "news_dropped": 0,
+      "performance": {
+        "list_fetch_ms": 6585,
+        "candidate_filter_ms": 0,
+        "enrichment_ms": 5638,
+        "raw_news_count": 40,
+        "raw_research_count": 10,
+        "candidate_news_count": 11,
+        "candidate_research_count": 0,
+        "enriched_news_count": 11,
+        "enriched_research_count": 0,
+        "candidate_reasons": {
+          "news": {
+            "no-subject-mention": 14,
+            "noise:龙虎榜|大宗交易|盘口异动": 2,
+            "noise:开盘价|收盘价": 1,
+            "noise:\\d{1,2}月\\d{1,2}日(快速上涨|快速回调|涨停|": 2,
+            "dedup": 0,
+            "out_of_window": 10
+          },
+          "research": {
+            "dedup": 0,
+            "out_of_window": 10
+          }
+        },
+        "date_filter_ms": 0,
+        "relevance_ms": 0,
+        "llm_ms": 2973,
+        "scoring_ms": 0
+      },
+      "top_news": [
+        {
+          "date": "2026-06-17",
+          "title": "厦门钨业:厦门钨业关于非独立董事离任暨选举非独立董事的公告",
+          "content": "",
+          "type": "并购",
+          "sentiment": 0,
+          "weight": 1,
+          "final_weight": 1.07,
+          "source_authority": 4.5,
+          "recency_factor": 0.85,
+          "source": "东方财富公告",
+          "llm_reviewed": true,
+          "llm_confidence": 0.3,
+          "llm_is_real_catalyst": false,
+          "llm_reasoning": "董事离任选举，属常规人事变动"
+        },
+        {
+          "date": "2026-06-17",
+          "title": "厦门钨业:厦门钨业关于使用闲置募集资金进行现金管理部分到期赎回的公告",
+          "content": "",
+          "type": "财报",
+          "sentiment": 0,
+          "weight": 1,
+          "final_weight": 0.99,
+          "source_authority": 4.5,
+          "recency_factor": 0.85,
+          "source": "东方财富公告",
+          "llm_reviewed": true,
+          "llm_confidence": 0.2,
+          "llm_is_real_catalyst": false,
+          "llm_reasoning": "募集资金现金管理到期赎回，常规操作"
+        },
+        {
+          "date": "2026-06-17",
+          "title": "厦门钨业:厦门钨业2026年第三次临时股东会决议公告",
+          "content": "",
+          "type": "并购",
+          "sentiment": 0,
+          "weight": 1,
+          "final_weight": 1.07,
+          "source_authority": 4.5,
+          "recency_factor": 0.85,
+          "source": "东方财富公告",
+          "llm_reviewed": true,
+          "llm_confidence": 0.3,
+          "llm_is_real_catalyst": false,
+          "llm_reasoning": "临时股东会决议，含子公司上市议案"
+        },
+        {
+          "date": "2026-06-17",
+          "title": "厦门钨业:福建至理律师事务所关于厦门钨业股份有限公司2026年第三次临时股东会的法律意见书",
+          "content": "一般项目:选矿;矿物洗选加工;金属矿石销售;常用有色金属冶炼;稀有稀土金属冶炼;金属材料制造;金属材料销售;有色金属合金制造;有色金属合金销售;锻件及粉末冶金制品制造;锻件及粉末冶金制品销售;金属丝绳及其制品销售;新型陶瓷材料销售;特种陶瓷制品制造;特种陶瓷制品销售;高性能有色金属及合金材料销售;表面功能材料销售;新型金属功能材料销售;金属基复合材料和陶瓷基复合材料销售;稀土功能材料销售;磁性材料生产;磁性材料销售;金属切削加工服务;金属工具制造;金属工具销售;储能技术服务;新兴能源技术研发;机械设备研发;机械设备销售;专用设备制造(不含许可类专业设备制造);冶金专用设备制造;冶金专用设备销售;金属切削机床制造;金属切削机床销售;金属加工机械制造;金属成形机床制造;矿山机械制造;通用设备制造(不含特种设备制造);机床功能部件及附件销售;智能基础制造装备销售;互联网销售(除销售需要许可的商品);模具制造;模具销售;以自有资金从事投资活动;新材料技术研发;新材料技术推广服务;技术服务、技术开发、技术咨询、技术交流、技术转让、技术推广;技术推广服务;资源再生利用技术研发;再生资源销售;货物进出口;技术进出口;软件开发;软件销售;软件外包服务;人工智能基础软件开发;信息技术咨询服务;信息咨询服务(不含许可类信息咨询服务);网络技术服务;企业管理咨询;法律咨询(不含依法须律师事务所执业许可的业务);人力资源服务(不含职业中介活动、劳务派遣服务);电子专用材料制造;电子专用材料研发;电子专用材料销售;电工仪器仪表制造;电工仪器仪表销售;机械电气设备销售;机械电气设备制造;电子元器件制造;电子元器件批发;电机及其控制系统研发;电机制造;电动机制造;发电机及发电机组制造;输配电及控制设备制造;微特电机及组件销售;伺服控制机构销售;特殊作业机器人制造;工业机器人安装、维修;服务消费机器人制造;智能机器人销售;工业机器人销售;智能基础制造装备制造;物料搬运装备制造;物料搬运装备销售;第二类医疗器械销售。(除依法须经批准的项目外,凭营业执照依法自主开展经营活动)许可项目:非煤矿山矿产资源开采;检验检测服务;第二类医疗器械生产。(依法须经批准的项目,经相关部门批准后方可开展经营活动,具体经营项目以相关部门批准文件或许可证件为准)\n郑重声明：东方财富网发布此信息的目的在于传播更多信息，与本站立场无关。东方财富网不保证该信息（包括但不限于文字、视频、音频、数据及图表）全部或者部分内容的准确性、真实性、完整性、有效性、及时性、原创性等。相关信息并未经过本网站证实，不对您构成任何投资建议，据此操作，风险自担。",
+          "type": "并购",
+          "sentiment": 0,
+          "weight": 1,
+          "final_weight": 1.07,
+          "source_authority": 4.5,
+          "recency_factor": 0.85,
+          "source": "东方财富公告",
+          "llm_reviewed": true,
+          "llm_confidence": 0.3,
+          "llm_is_real_catalyst": false,
+          "llm_reasoning": "法律意见书，确认股东会程序合法"
+        },
+        {
+          "date": "2026-06-17",
+          "title": "厦门钨业关于股票交易异常波动的公告",
+          "content": "1\n证券代码：600549 \t证券简称：厦门钨业 \t公告编号：临-2026-076\n厦门钨业股份有限公司\n关于股票交易异常波动的公告\n本公司董事会及全体董事保证本公告内容不存在任何虚假记载、误导性陈述或者\n重大遗漏，并对其内容的真实性、准确性和完整性承担法律责任。\n重要内容提示：\n \t厦门钨业股份有限公司（以下简称“公司”）股票于2026年6月15日、6月16日、\n6月17日连续三个交易日内收盘价格涨幅偏离值累计超过20%，属于股票交易异\n常波动情形。\n \t经公司自查，并书面征询控股股东，截至本公告披露日，公司及控股股东均不\n存在影响公司股票交易异常波动的重大事项，不存在应披露而未披露的重大信\n息。\n \t敬请广大投资者注意二级市场交易风险，理性决策，审慎投资。\n一、股票交易异常波动的具体情况\n股票于2026年6月15日、6月16日、6月17日连续三个交易日内收盘价格涨幅\n偏离值累计超过20%，根据《上海证券交易所交易规则》的有关规定，属于股票\n交易异常波动情形。\n二、公司关注并核实的相关情况\n针对公司股票交易异常波动的情况，经公司自查并发函问询了本公司控股股东，\n现将有关情况说明如下：\n（一）生产经营情况\n经公司自查，公司目前生产经营活动一切正常，市场环境、行业政策没有发生重\n大调整。\n（二）重大事项情况\n经公司自查，并向本公司控股股东福建省稀有稀土（集团）有限公司、间接控股\n股东福建省冶金（控股）有限责任公司和福建省工业控股集团有限公司书面发函查证\n\n-- 1 of 2 --\n\n2\n确认，截至本公告披露日，除了在指定媒体上已公开披露的信息外，公司及公司控股\n股东、间接控股股东不存在影响公司股票交易价格异常波动的重大事宜；不存在其他\n涉及公司应披露而未披露的重大信息，包括且不限于与公司相关的重大资产重组、股\n份发行、业务重组、股份回购、股权激励、破产重整、重大业务合作、引进战略投资\n者等重大事项。\n（三）媒体报道、市场传闻、热点概念情况\n经公司自查，截至目前公司尚未发现对公司股票交易价格可能产生重大影响的需\n要澄清或回应的媒体报道或市场传闻。\n（四）其他股价敏感信息\n1、经公司自查核实，本次股票异常波动期间，公司实际控制人、控股股东、董事、\n高级管理人员不存在买卖公司股票的情况。\n2、公司未发现其他可能对公司股票价格产生较大影响的重大事项。\n三、相关风险提示\n公司股票于2026年6月15日、6月16日和6月17日连续三个交易日收盘价格涨幅偏离\n值累计超过20%，波动幅度较大，敬请广大投资者注意二级市场交易风险，理性决策，\n审慎投资。\n公司郑重提醒广大投资者，《中国证券报》《上海证券报》及上海证券交易所网\n站（www.sse.com.cn）为公司指定的信息披露媒体。公司所有信息以在上述指定媒体\n刊登的信息为准。本公司将严格按照有关法律法规的规定和要求，认真履行信息披露\n义务，及时做好信息披露工作。敬请广大投资者理性投资，注意风险。\n四、董事会声明及相关方承诺\n本公司董事会确认，截至本公告日，本公司没有任何根据《上海证券交易所股票\n上市规则》等有关规定应披露而未披露的事项或与该等事项有关的筹划、商谈、意向、\n协议等，董事会也未获悉根据《上海证券交易所股票上市规则》等有关规定应披露而\n未披露的、对本公司股票及其衍生品种交易价格可能产生较大影响的信息；公司前期\n披露的信息不存在需要更正、补充之处。\n特此公告。\n厦门钨业股份有限公司董事会\n2026年6月18日\n\n-- 2 of 2 --",
+          "type": "黑天鹅",
+          "sentiment": -1,
+          "weight": 3,
+          "final_weight": 2.55,
+          "source_authority": 5,
+          "recency_factor": 0.85,
+          "source": "巨潮资讯",
+          "llm_reviewed": true,
+          "llm_confidence": 0.7,
+          "llm_is_real_catalyst": false,
+          "llm_reasoning": "股票异常波动公告，提示风险但无实质利空"
         }
       ]
     },
     "SZSE:300037": {
       "name": "新宙邦",
       "score": 56,
-      "score_raw": 1.51,
+      "score_raw": 1.5,
       "score_components": {
-        "positive_weight_sum": 2.71,
-        "negative_weight_sum": 1.2,
+        "positive_weight_sum": 2.52,
+        "negative_weight_sum": 1.02,
         "news_effective_count": 14,
         "news_dropped_count": 0
       },
@@ -1343,19 +1166,19 @@
       "confidence": "低",
       "patterns": [],
       "positive_factors": [
-        "[行业|w0.6] 新宙邦6月17日盘中涨幅达5%",
-        "[行业|w0.6] 新宙邦6月17日快速反弹",
-        "[行业|w0.51] 新宙邦6月16日盘中涨幅达5%"
+        "[行业|w0.51] 新宙邦6月17日盘中涨幅达5%",
+        "[行业|w0.51] 新宙邦6月17日快速反弹",
+        "[行业|w0.5] 新宙邦6月16日盘中涨幅达5%"
       ],
       "negative_factors": [
-        "[行业|w1.2] 新宙邦：融资净偿还7030.65万元，融资余额13.21亿元"
+        "[行业|w1.02] 新宙邦：融资净偿还7030.65万元，融资余额13.21亿元"
       ],
       "news_count": 14,
       "news_dropped": 0,
       "performance": {
-        "list_fetch_ms": 6631,
+        "list_fetch_ms": 6166,
         "candidate_filter_ms": 0,
-        "enrichment_ms": 27585,
+        "enrichment_ms": 22918,
         "raw_news_count": 40,
         "raw_research_count": 10,
         "candidate_news_count": 14,
@@ -1377,7 +1200,7 @@
         },
         "date_filter_ms": 0,
         "relevance_ms": 0,
-        "llm_ms": 4484,
+        "llm_ms": 3732,
         "scoring_ms": 0
       },
       "top_news": [
@@ -1388,14 +1211,14 @@
           "type": "行业",
           "sentiment": 1,
           "weight": 1,
-          "final_weight": 0.6,
+          "final_weight": 0.51,
           "source_authority": 3,
-          "recency_factor": 1,
+          "recency_factor": 0.85,
           "source": "东方财富资讯",
           "llm_reviewed": true,
           "llm_confidence": 0.3,
           "llm_is_real_catalyst": false,
-          "llm_reasoning": "仅描述股价涨幅，无实质信息"
+          "llm_reasoning": "仅描述股价盘中涨幅，无实质催化"
         },
         {
           "date": "2026-06-17 10:01:05",
@@ -1404,14 +1227,14 @@
           "type": "行业",
           "sentiment": 1,
           "weight": 1,
-          "final_weight": 0.6,
+          "final_weight": 0.51,
           "source_authority": 3,
-          "recency_factor": 1,
+          "recency_factor": 0.85,
           "source": "东方财富资讯",
           "llm_reviewed": true,
           "llm_confidence": 0.3,
           "llm_is_real_catalyst": false,
-          "llm_reasoning": "盘口异动快照，无实质催化"
+          "llm_reasoning": "仅描述盘中快速反弹，无实质信息"
         },
         {
           "date": "2026-06-17 09:15:16",
@@ -1420,14 +1243,14 @@
           "type": "行业",
           "sentiment": -1,
           "weight": 1,
-          "final_weight": 1.2,
+          "final_weight": 1.02,
           "source_authority": 3,
-          "recency_factor": 1,
+          "recency_factor": 0.85,
           "source": "东方财富资讯",
           "llm_reviewed": true,
           "llm_confidence": 0.5,
           "llm_is_real_catalyst": false,
-          "llm_reasoning": "融资净偿还，但属常规交易数据"
+          "llm_reasoning": "融资净偿还显示资金流出，但属常规交易数据"
         },
         {
           "date": "2026-06-16 11:52:04",
@@ -1436,18 +1259,105 @@
           "type": "行业",
           "sentiment": 0,
           "weight": 1,
+          "final_weight": 0.5,
+          "source_authority": 3,
+          "recency_factor": 0.72,
+          "source": "东方财富资讯",
+          "llm_reviewed": true,
+          "llm_confidence": 0.4,
+          "llm_is_real_catalyst": false,
+          "llm_reasoning": "澄清未涉及MLCC概念，中性信息"
+        },
+        {
+          "date": "2026-06-16 10:07:11",
+          "title": "新宙邦6月16日盘中涨幅达5%",
+          "content": "",
+          "type": "行业",
+          "sentiment": 1,
+          "weight": 1,
+          "final_weight": 0.5,
+          "source_authority": 3,
+          "recency_factor": 0.72,
+          "source": "东方财富资讯",
+          "llm_reviewed": true,
+          "llm_confidence": 0.3,
+          "llm_is_real_catalyst": false,
+          "llm_reasoning": "仅描述股价盘中涨幅，无实质催化"
+        }
+      ]
+    },
+    "SZSE:001223": {
+      "name": "欧克科技",
+      "score": 54,
+      "score_raw": 1.02,
+      "score_components": {
+        "positive_weight_sum": 1.52,
+        "negative_weight_sum": 0.5,
+        "news_effective_count": 11,
+        "news_dropped_count": 0
+      },
+      "signal": "⚪ No Trade (微多)",
+      "strategy": "情绪轻微偏多，信号不足，以观望为主",
+      "suitable_for": "观望",
+      "confidence": "低",
+      "patterns": [],
+      "positive_factors": [
+        "[行业|w0.51] 欧克科技6月17日盘中涨停",
+        "[行业|w0.51] 欧克科技6月17日盘中涨幅达5%",
+        "[行业|w0.5] 欧克科技6月15日盘中涨幅达5%"
+      ],
+      "negative_factors": [
+        "[行业|w0.5] 欧克科技6月16日加速下跌"
+      ],
+      "news_count": 11,
+      "news_dropped": 0,
+      "performance": {
+        "list_fetch_ms": 2573,
+        "candidate_filter_ms": 0,
+        "enrichment_ms": 13274,
+        "raw_news_count": 40,
+        "raw_research_count": 4,
+        "candidate_news_count": 11,
+        "candidate_research_count": 0,
+        "enriched_news_count": 11,
+        "enriched_research_count": 0,
+        "candidate_reasons": {
+          "news": {
+            "no-subject-mention": 1,
+            "noise:\\d{1,2}月\\d{1,2}日(快速上涨|快速回调|涨停|": 3,
+            "dedup": 0,
+            "out_of_window": 25
+          },
+          "research": {
+            "dedup": 0,
+            "out_of_window": 4
+          }
+        },
+        "date_filter_ms": 0,
+        "relevance_ms": 0,
+        "llm_ms": 3543,
+        "scoring_ms": 0
+      },
+      "top_news": [
+        {
+          "date": "2026-06-17 13:01:18",
+          "title": "欧克科技6月17日盘中涨停",
+          "content": "",
+          "type": "行业",
+          "sentiment": 1,
+          "weight": 1,
           "final_weight": 0.51,
           "source_authority": 3,
           "recency_factor": 0.85,
           "source": "东方财富资讯",
           "llm_reviewed": true,
-          "llm_confidence": 0.4,
+          "llm_confidence": 0.3,
           "llm_is_real_catalyst": false,
-          "llm_reasoning": "澄清未涉及MLCC概念，中性"
+          "llm_reasoning": "仅描述股价涨停，无实质催化"
         },
         {
-          "date": "2026-06-16 10:07:11",
-          "title": "新宙邦6月16日盘中涨幅达5%",
+          "date": "2026-06-17 10:16:27",
+          "title": "欧克科技6月17日盘中涨幅达5%",
           "content": "",
           "type": "行业",
           "sentiment": 1,
@@ -1460,6 +1370,54 @@
           "llm_confidence": 0.3,
           "llm_is_real_catalyst": false,
           "llm_reasoning": "仅描述股价涨幅，无实质信息"
+        },
+        {
+          "date": "2026-06-16 09:43:31",
+          "title": "欧克科技6月16日加速下跌",
+          "content": "",
+          "type": "行业",
+          "sentiment": -1,
+          "weight": 1,
+          "final_weight": 0.5,
+          "source_authority": 3,
+          "recency_factor": 0.72,
+          "source": "东方财富资讯",
+          "llm_reviewed": true,
+          "llm_confidence": 0.3,
+          "llm_is_real_catalyst": false,
+          "llm_reasoning": "仅描述股价下跌，无实质信息"
+        },
+        {
+          "date": "2026-06-16",
+          "title": "欧克科技:关于召开2026年第一次临时股东会的通知",
+          "content": "",
+          "type": "政策",
+          "sentiment": 0,
+          "weight": 2,
+          "final_weight": 1.56,
+          "source_authority": 4.5,
+          "recency_factor": 0.72,
+          "source": "东方财富公告",
+          "llm_reviewed": true,
+          "llm_confidence": 0.5,
+          "llm_is_real_catalyst": false,
+          "llm_reasoning": "召开临时股东会通知，常规程序"
+        },
+        {
+          "date": "2026-06-16",
+          "title": "欧克科技:关于变更公司注册资本及修订《公司章程》的公告",
+          "content": "许可项目:货物进出口(依法须经批准的项目,经相关部门批准后方可开展经营活动)一般项目:机械设备研发,专用设备制造(不含许可类专业设备制造),机械设备销售,制浆和造纸专用设备制造,包装专用设备制造,包装专用设备销售,家用电器制造,家用电器销售,塑料制品制造,包装材料及制品销售,塑料制品销售(除许可业务外,可自主依法经营法律法规非禁止或限制的项目)\n郑重声明：东方财富网发布此信息的目的在于传播更多信息，与本站立场无关。东方财富网不保证该信息（包括但不限于文字、视频、音频、数据及图表）全部或者部分内容的准确性、真实性、完整性、有效性、及时性、原创性等。相关信息并未经过本网站证实，不对您构成任何投资建议，据此操作，风险自担。",
+          "type": "政策",
+          "sentiment": 0,
+          "weight": 4,
+          "final_weight": 3.89,
+          "source_authority": 4.5,
+          "recency_factor": 0.72,
+          "source": "东方财富公告",
+          "llm_reviewed": true,
+          "llm_confidence": 0.7,
+          "llm_is_real_catalyst": true,
+          "llm_reasoning": "变更注册资本及修订章程，涉及公司治理"
         }
       ]
     },
@@ -1481,7 +1439,7 @@
       "news_count": 0,
       "news_dropped": 0,
       "performance": {
-        "list_fetch_ms": 2618,
+        "list_fetch_ms": 2903,
         "candidate_filter_ms": 0,
         "enrichment_ms": 0,
         "raw_news_count": 40,
@@ -1492,11 +1450,11 @@
         "enriched_research_count": 0,
         "candidate_reasons": {
           "news": {
-            "no-subject-mention": 9,
+            "no-subject-mention": 10,
             "noise:\\d{1,2}月\\d{1,2}日(快速上涨|快速回调|涨停|": 2,
             "noise:融资净(买入|卖出)": 1,
             "dedup": 0,
-            "out_of_window": 28
+            "out_of_window": 27
           },
           "research": {
             "dedup": 0,
@@ -1530,9 +1488,9 @@
       "news_count": 3,
       "news_dropped": 0,
       "performance": {
-        "list_fetch_ms": 1794,
-        "candidate_filter_ms": 1,
-        "enrichment_ms": 4404,
+        "list_fetch_ms": 2441,
+        "candidate_filter_ms": 0,
+        "enrichment_ms": 4079,
         "raw_news_count": 40,
         "raw_research_count": 2,
         "candidate_news_count": 3,
@@ -1553,8 +1511,8 @@
         },
         "date_filter_ms": 0,
         "relevance_ms": 0,
-        "llm_ms": 3854,
-        "scoring_ms": 1
+        "llm_ms": 0,
+        "scoring_ms": 0
       },
       "top_news": [
         {
@@ -1566,7 +1524,7 @@
           "weight": 1,
           "final_weight": 0.5,
           "source_authority": 4.5,
-          "recency_factor": 0.42,
+          "recency_factor": 0.36,
           "source": "东方财富公告",
           "llm_reviewed": true,
           "llm_confidence": 0.3,
@@ -1582,7 +1540,7 @@
           "weight": 1,
           "final_weight": 0.5,
           "source_authority": 4.5,
-          "recency_factor": 0.42,
+          "recency_factor": 0.36,
           "source": "东方财富公告",
           "llm_reviewed": true,
           "llm_confidence": 0.3,
@@ -1598,7 +1556,7 @@
           "weight": 1,
           "final_weight": 0.5,
           "source_authority": 4.5,
-          "recency_factor": 0.42,
+          "recency_factor": 0.36,
           "source": "东方财富公告",
           "llm_reviewed": true,
           "llm_confidence": 0.4,
@@ -1625,7 +1583,7 @@
       "news_count": 0,
       "news_dropped": 0,
       "performance": {
-        "list_fetch_ms": 2641,
+        "list_fetch_ms": 2953,
         "candidate_filter_ms": 0,
         "enrichment_ms": 0,
         "raw_news_count": 40,
@@ -1655,119 +1613,6 @@
       },
       "top_news": []
     },
-    "SZSE:001223": {
-      "name": "001223",
-      "score": 50,
-      "score_raw": 0,
-      "score_components": {
-        "positive_weight_sum": 0,
-        "negative_weight_sum": 0,
-        "news_effective_count": 4,
-        "news_dropped_count": 0
-      },
-      "signal": "⚪ No Trade (微多)",
-      "strategy": "情绪轻微偏多，信号不足，以观望为主",
-      "suitable_for": "观望",
-      "confidence": "低",
-      "patterns": [],
-      "positive_factors": [],
-      "negative_factors": [],
-      "news_count": 4,
-      "news_dropped": 0,
-      "performance": {
-        "list_fetch_ms": 2734,
-        "candidate_filter_ms": 0,
-        "enrichment_ms": 8543,
-        "raw_news_count": 40,
-        "raw_research_count": 4,
-        "candidate_news_count": 4,
-        "candidate_research_count": 0,
-        "enriched_news_count": 4,
-        "enriched_research_count": 0,
-        "candidate_reasons": {
-          "news": {
-            "no-subject-mention": 7,
-            "noise:\\d{1,2}月\\d{1,2}日(快速上涨|快速回调|涨停|": 3,
-            "dedup": 0,
-            "out_of_window": 26
-          },
-          "research": {
-            "dedup": 0,
-            "out_of_window": 4
-          }
-        },
-        "date_filter_ms": 0,
-        "relevance_ms": 0,
-        "llm_ms": 8,
-        "scoring_ms": 0
-      },
-      "top_news": [
-        {
-          "date": "2026-06-16",
-          "title": "欧克科技:关于召开2026年第一次临时股东会的通知",
-          "content": "",
-          "type": "行业",
-          "sentiment": 0,
-          "weight": 1,
-          "final_weight": 0.76,
-          "source_authority": 4.5,
-          "recency_factor": 0.85,
-          "source": "东方财富公告",
-          "llm_reviewed": true,
-          "llm_confidence": 0.1,
-          "llm_is_real_catalyst": false,
-          "llm_reasoning": "仅为召开临时股东会通知，无实质影响"
-        },
-        {
-          "date": "2026-06-16",
-          "title": "欧克科技:关于变更公司注册资本及修订《公司章程》的公告",
-          "content": "许可项目:货物进出口(依法须经批准的项目,经相关部门批准后方可开展经营活动)一般项目:机械设备研发,专用设备制造(不含许可类专业设备制造),机械设备销售,制浆和造纸专用设备制造,包装专用设备制造,包装专用设备销售,家用电器制造,家用电器销售,塑料制品制造,包装材料及制品销售,塑料制品销售(除许可业务外,可自主依法经营法律法规非禁止或限制的项目)\n郑重声明：东方财富网发布此信息的目的在于传播更多信息，与本站立场无关。东方财富网不保证该信息（包括但不限于文字、视频、音频、数据及图表）全部或者部分内容的准确性、真实性、完整性、有效性、及时性、原创性等。相关信息并未经过本网站证实，不对您构成任何投资建议，据此操作，风险自担。",
-          "type": "行业",
-          "sentiment": 0,
-          "weight": 1,
-          "final_weight": 0.76,
-          "source_authority": 4.5,
-          "recency_factor": 0.85,
-          "source": "东方财富公告",
-          "llm_reviewed": true,
-          "llm_confidence": 0.2,
-          "llm_is_real_catalyst": false,
-          "llm_reasoning": "变更注册资本及修订章程，属常规事项"
-        },
-        {
-          "date": "2026-06-16",
-          "title": "欧克科技:第二届董事会第二十三次会议决议公告",
-          "content": "许可项目:货物进出口(依法须经批准的项目,经相关部门批准后方可开展经营活动)一般项目:机械设备研发,专用设备制造(不含许可类专业设备制造),机械设备销售,制浆和造纸专用设备制造,包装专用设备制造,包装专用设备销售,家用电器制造,家用电器销售,塑料制品制造,包装材料及制品销售,塑料制品销售(除许可业务外,可自主依法经营法律法规非禁止或限制的项目)\n郑重声明：东方财富网发布此信息的目的在于传播更多信息，与本站立场无关。东方财富网不保证该信息（包括但不限于文字、视频、音频、数据及图表）全部或者部分内容的准确性、真实性、完整性、有效性、及时性、原创性等。相关信息并未经过本网站证实，不对您构成任何投资建议，据此操作，风险自担。",
-          "type": "行业",
-          "sentiment": 0,
-          "weight": 1,
-          "final_weight": 0.76,
-          "source_authority": 4.5,
-          "recency_factor": 0.85,
-          "source": "东方财富公告",
-          "llm_reviewed": true,
-          "llm_confidence": 0.1,
-          "llm_is_real_catalyst": false,
-          "llm_reasoning": "董事会决议公告，内容为常规经营范围描述"
-        },
-        {
-          "date": "2026-06-16",
-          "title": "欧克科技:公司章程",
-          "content": "",
-          "type": "行业",
-          "sentiment": 0,
-          "weight": 1,
-          "final_weight": 0.76,
-          "source_authority": 4.5,
-          "recency_factor": 0.85,
-          "source": "东方财富公告",
-          "llm_reviewed": true,
-          "llm_confidence": 0.1,
-          "llm_is_real_catalyst": false,
-          "llm_reasoning": "公司章程文本，无交易催化信息"
-        }
-      ]
-    },
     "SZSE:002965": {
       "name": "002965",
       "score": 50,
@@ -1786,8 +1631,8 @@
       "news_count": 0,
       "news_dropped": 0,
       "performance": {
-        "list_fetch_ms": 2057,
-        "candidate_filter_ms": 0,
+        "list_fetch_ms": 2281,
+        "candidate_filter_ms": 1,
         "enrichment_ms": 0,
         "raw_news_count": 40,
         "raw_research_count": 10,
@@ -1815,8 +1660,8 @@
       },
       "top_news": []
     },
-    "SSE:603203": {
-      "name": "603203",
+    "SZSE:002875": {
+      "name": "002875",
       "score": 50,
       "score_raw": 0,
       "score_components": {
@@ -1833,26 +1678,25 @@
       "news_count": 0,
       "news_dropped": 0,
       "performance": {
-        "list_fetch_ms": 3529,
+        "list_fetch_ms": 3607,
         "candidate_filter_ms": 0,
         "enrichment_ms": 0,
         "raw_news_count": 40,
-        "raw_research_count": 10,
+        "raw_research_count": 4,
         "candidate_news_count": 0,
         "candidate_research_count": 0,
         "enriched_news_count": 0,
         "enriched_research_count": 0,
         "candidate_reasons": {
           "news": {
-            "noise:\\d{1,2}月\\d{1,2}日(快速上涨|快速回调|涨停|": 7,
-            "no-subject-mention": 11,
-            "noise:龙虎榜|大宗交易|盘口异动": 2,
+            "no-subject-mention": 4,
+            "noise:\\d{1,2}月\\d{1,2}日(快速上涨|快速回调|涨停|": 4,
             "dedup": 0,
-            "out_of_window": 20
+            "out_of_window": 32
           },
           "research": {
             "dedup": 0,
-            "out_of_window": 10
+            "out_of_window": 4
           }
         },
         "date_filter_ms": 0,
@@ -1862,8 +1706,8 @@
       },
       "top_news": []
     },
-    "SSE:600186": {
-      "name": "600186",
+    "SSE:600522": {
+      "name": "600522",
       "score": 50,
       "score_raw": 0,
       "score_components": {
@@ -1880,7 +1724,7 @@
       "news_count": 0,
       "news_dropped": 0,
       "performance": {
-        "list_fetch_ms": 6611,
+        "list_fetch_ms": 5509,
         "candidate_filter_ms": 0,
         "enrichment_ms": 0,
         "raw_news_count": 40,
@@ -1891,8 +1735,9 @@
         "enriched_research_count": 0,
         "candidate_reasons": {
           "news": {
-            "no-subject-mention": 13,
-            "noise:\\d{1,2}月\\d{1,2}日(快速上涨|快速回调|涨停|": 5,
+            "noise:龙虎榜|大宗交易|盘口异动": 1,
+            "no-subject-mention": 15,
+            "noise:\\d{1,2}月\\d{1,2}日(快速上涨|快速回调|涨停|": 2,
             "noise:融资净(买入|卖出)": 2,
             "dedup": 0,
             "out_of_window": 20
@@ -1909,31 +1754,158 @@
       },
       "top_news": []
     },
-    "SSE:601665": {
-      "name": "601665",
-      "score": 47,
-      "score_raw": -0.68,
+    "SZSE:300308": {
+      "name": "300308",
+      "score": 50,
+      "score_raw": 0,
       "score_components": {
         "positive_weight_sum": 0,
-        "negative_weight_sum": 0.68,
+        "negative_weight_sum": 0,
+        "news_effective_count": 5,
+        "news_dropped_count": 0
+      },
+      "signal": "⚪ No Trade (微多)",
+      "strategy": "情绪轻微偏多，信号不足，以观望为主",
+      "suitable_for": "观望",
+      "confidence": "低",
+      "patterns": [],
+      "positive_factors": [],
+      "negative_factors": [],
+      "news_count": 5,
+      "news_dropped": 0,
+      "performance": {
+        "list_fetch_ms": 5071,
+        "candidate_filter_ms": 0,
+        "enrichment_ms": 19884,
+        "raw_news_count": 40,
+        "raw_research_count": 10,
+        "candidate_news_count": 5,
+        "candidate_research_count": 0,
+        "enriched_news_count": 5,
+        "enriched_research_count": 0,
+        "candidate_reasons": {
+          "news": {
+            "no-subject-mention": 17,
+            "noise:融资净(买入|卖出)": 3,
+            "dedup": 0,
+            "out_of_window": 15
+          },
+          "research": {
+            "dedup": 0,
+            "out_of_window": 10
+          }
+        },
+        "date_filter_ms": 0,
+        "relevance_ms": 0,
+        "llm_ms": 3435,
+        "scoring_ms": 0
+      },
+      "top_news": [
+        {
+          "date": "2026-06-12",
+          "title": "中际旭创:第六届董事会第一次会议决议公告",
+          "content": "",
+          "type": "财报",
+          "sentiment": 0,
+          "weight": 1,
+          "final_weight": 0.5,
+          "source_authority": 4.5,
+          "recency_factor": 0.36,
+          "source": "东方财富公告",
+          "llm_reviewed": true,
+          "llm_confidence": 0.3,
+          "llm_is_real_catalyst": false,
+          "llm_reasoning": "董事会决议公告，无实质业绩信息"
+        },
+        {
+          "date": "2026-06-12",
+          "title": "中际旭创:关于董事会完成换届选举暨聘任高级管理人员和证券事务代表的公告",
+          "content": "",
+          "type": "财报",
+          "sentiment": 0,
+          "weight": 1,
+          "final_weight": 0.5,
+          "source_authority": 4.5,
+          "recency_factor": 0.36,
+          "source": "东方财富公告",
+          "llm_reviewed": true,
+          "llm_confidence": 0.3,
+          "llm_is_real_catalyst": false,
+          "llm_reasoning": "换届选举公告，无业绩或催化信息"
+        },
+        {
+          "date": "2026-06-12",
+          "title": "中际旭创:北京中银(苏州)律师事务所关于公司2026年第二次临时股东会之法律意见书",
+          "content": "",
+          "type": "财报",
+          "sentiment": 0,
+          "weight": 1,
+          "final_weight": 0.5,
+          "source_authority": 4.5,
+          "recency_factor": 0.36,
+          "source": "东方财富公告",
+          "llm_reviewed": true,
+          "llm_confidence": 0.3,
+          "llm_is_real_catalyst": false,
+          "llm_reasoning": "法律意见书，无实质内容"
+        },
+        {
+          "date": "2026-06-12",
+          "title": "中际旭创:2026年第二次临时股东会决议公告",
+          "content": "一般项目:通信设备制造;光通信设备制造;光通信设备销售;电子元器件制造;电子元器件零售;光电子器件制造;光电子器件销售;集成电路芯片及产品制造;技术服务、技术开发、技术咨询、技术交流、技术转让、技术推广;货物进出口;以自有资金从事投资活动;企业管理;非居住房地产租赁。(除依法须经批准的项目外,凭营业执照依法自主开展经营活动)\n郑重声明：东方财富网发布此信息的目的在于传播更多信息，与本站立场无关。东方财富网不保证该信息（包括但不限于文字、视频、音频、数据及图表）全部或者部分内容的准确性、真实性、完整性、有效性、及时性、原创性等。相关信息并未经过本网站证实，不对您构成任何投资建议，据此操作，风险自担。",
+          "type": "财报",
+          "sentiment": 0,
+          "weight": 1,
+          "final_weight": 0.5,
+          "source_authority": 4.5,
+          "recency_factor": 0.36,
+          "source": "东方财富公告",
+          "llm_reviewed": true,
+          "llm_confidence": 0.3,
+          "llm_is_real_catalyst": false,
+          "llm_reasoning": "股东会决议公告，仅列经营范围，无催化"
+        },
+        {
+          "date": "2026-06-12",
+          "title": "中际旭创:关于选举第六届董事会职工代表董事的公告",
+          "content": "",
+          "type": "财报",
+          "sentiment": 0,
+          "weight": 1,
+          "final_weight": 0.5,
+          "source_authority": 4.5,
+          "recency_factor": 0.36,
+          "source": "东方财富公告",
+          "llm_reviewed": true,
+          "llm_confidence": 0.3,
+          "llm_is_real_catalyst": false,
+          "llm_reasoning": "职工代表董事选举，无实质影响"
+        }
+      ]
+    },
+    "SSE:601665": {
+      "name": "601665",
+      "score": 50,
+      "score_raw": 0,
+      "score_components": {
+        "positive_weight_sum": 0,
+        "negative_weight_sum": 0,
         "news_effective_count": 2,
         "news_dropped_count": 0
       },
-      "signal": "🔴 No Trade / Short",
-      "strategy": "黑天鹅事件规避，等待事件明朗化再评估",
-      "suitable_for": "反转(等底部确认)",
-      "confidence": "高",
+      "signal": "⚪ No Trade (微多)",
+      "strategy": "情绪轻微偏多，信号不足，以观望为主",
+      "suitable_for": "观望",
+      "confidence": "低",
       "patterns": [],
       "positive_factors": [],
-      "negative_factors": [
-        "[黑天鹅|w0.68] 齐鲁银行:齐鲁银行股份有限公司关于董事辞任的公告"
-      ],
+      "negative_factors": [],
       "news_count": 2,
       "news_dropped": 0,
       "performance": {
-        "list_fetch_ms": 6185,
+        "list_fetch_ms": 7601,
         "candidate_filter_ms": 0,
-        "enrichment_ms": 15437,
+        "enrichment_ms": 12430,
         "raw_news_count": 40,
         "raw_research_count": 10,
         "candidate_news_count": 2,
@@ -1954,31 +1926,15 @@
         },
         "date_filter_ms": 0,
         "relevance_ms": 0,
-        "llm_ms": 9,
+        "llm_ms": 18,
         "scoring_ms": 0
       },
       "top_news": [
         {
           "date": "2026-06-13",
           "title": "齐鲁银行:齐鲁银行股份有限公司关于董事辞任的公告",
-          "content": "人民币业务:吸收公众存款;发放短期、中期和长期贷款;办理国内结算;办理票据贴现;发行金融债券;代理发行、代理兑付、承销政府债券;买卖政府债券;从事同业拆借;提供担保;代理收付款项及代理保险业务;提供保管箱服务;办理地方财政信用周转使用资金委托存贷款业务;证券投资基金销售。外汇业务:外汇存款;外汇贷款;外汇汇款;外币兑换;国际结算;同业外汇拆借;外汇票据的承兑和贴现;外汇借款;外汇担保;结汇、售汇;资信调查、咨询、见证业务。经国务院银行业监督管理机构等审批机关核准的其他业务。\n郑重声明：东方财富网发布此信息的目的在于传播更多信息，与本站立场无关。东方财富网不保证该信息（包括但不限于文字、视频、音频、数据及图表）全部或者部分内容的准确性、真实性、完整性、有效性、及时性、原创性等。相关信息并未经过本网站证实，不对您构成任何投资建议，据此操作，风险自担。",
-          "type": "黑天鹅",
-          "sentiment": -1,
-          "weight": 1,
-          "final_weight": 0.68,
-          "source_authority": 4.5,
-          "recency_factor": 0.5,
-          "source": "东方财富公告",
-          "llm_reviewed": true,
-          "llm_confidence": 0.3,
-          "llm_is_real_catalyst": false,
-          "llm_reasoning": "董事辞任公告，但未说明原因，影响有限"
-        },
-        {
-          "date": "2026-06-12",
-          "title": "齐鲁银行:齐鲁银行股份有限公司2026年6月10日投资者关系活动记录表2026-006",
-          "content": "人民币业务:吸收公众存款;发放短期、中期和长期贷款;办理国内结算;办理票据贴现;发行金融债券;代理发行、代理兑付、承销政府债券;买卖政府债券;从事同业拆借;提供担保;代理收付款项及代理保险业务;提供保管箱服务;办理地方财政信用周转使用资金委托存贷款业务;证券投资基金销售。外汇业务:外汇存款;外汇贷款;外汇汇款;外币兑换;国际结算;同业外汇拆借;外汇票据的承兑和贴现;外汇借款;外汇担保;结汇、售汇;资信调查、咨询、见证业务。经国务院银行业监督管理机构等审批机关核准的其他业务。\n郑重声明：东方财富网发布此信息的目的在于传播更多信息，与本站立场无关。东方财富网不保证该信息（包括但不限于文字、视频、音频、数据及图表）全部或者部分内容的准确性、真实性、完整性、有效性、及时性、原创性等。相关信息并未经过本网站证实，不对您构成任何投资建议，据此操作，风险自担。",
-          "type": "行业",
+          "content": "",
+          "type": "传闻",
           "sentiment": 0,
           "weight": 1,
           "final_weight": 0.5,
@@ -1986,134 +1942,150 @@
           "recency_factor": 0.42,
           "source": "东方财富公告",
           "llm_reviewed": true,
+          "llm_confidence": 0.3,
+          "llm_is_real_catalyst": false,
+          "llm_reasoning": "董事辞任属常规人事变动，无实质影响"
+        },
+        {
+          "date": "2026-06-12",
+          "title": "齐鲁银行:齐鲁银行股份有限公司2026年6月10日投资者关系活动记录表2026-006",
+          "content": "",
+          "type": "行业",
+          "sentiment": 0,
+          "weight": 1,
+          "final_weight": 0.5,
+          "source_authority": 4.5,
+          "recency_factor": 0.36,
+          "source": "东方财富公告",
+          "llm_reviewed": true,
           "llm_confidence": 0.2,
           "llm_is_real_catalyst": false,
-          "llm_reasoning": "投资者关系活动记录，内容为空，无实质信息"
+          "llm_reasoning": "投资者关系活动记录，内容未披露具体催化"
         }
       ]
     },
-    "SZSE:002875": {
-      "name": "安奈儿",
-      "score": 46,
-      "score_raw": -1.02,
+    "SZSE:159389": {
+      "name": "159389",
+      "score": 50,
+      "score_raw": 0,
       "score_components": {
         "positive_weight_sum": 0,
-        "negative_weight_sum": 1.02,
-        "news_effective_count": 4,
-        "news_dropped_count": 0
+        "negative_weight_sum": 0
       },
-      "signal": "⚪ No Trade (中性)",
-      "strategy": "情绪中性，无明显方向，观望",
+      "signal": "⚪ No Trade (无数据)",
+      "strategy": "近期无相关有效新闻",
       "suitable_for": "观望",
-      "confidence": "低",
+      "confidence": "-",
       "patterns": [],
       "positive_factors": [],
-      "negative_factors": [
-        "[行业|w0.51] 安奈儿6月16日加速下跌",
-        "[行业|w0.51] 安奈儿6月16日开盘跌幅达5%"
-      ],
-      "news_count": 4,
+      "negative_factors": [],
+      "news_count": 0,
       "news_dropped": 0,
       "performance": {
-        "list_fetch_ms": 2589,
+        "list_fetch_ms": 4380,
         "candidate_filter_ms": 0,
-        "enrichment_ms": 12231,
-        "raw_news_count": 40,
-        "raw_research_count": 4,
-        "candidate_news_count": 4,
+        "enrichment_ms": 0,
+        "raw_news_count": 37,
+        "raw_research_count": 0,
+        "candidate_news_count": 0,
         "candidate_research_count": 0,
-        "enriched_news_count": 4,
+        "enriched_news_count": 0,
         "enriched_research_count": 0,
         "candidate_reasons": {
           "news": {
-            "noise:\\d{1,2}月\\d{1,2}日(快速上涨|快速回调|涨停|": 4,
             "dedup": 0,
-            "out_of_window": 32
+            "out_of_window": 37
           },
           "research": {
-            "dedup": 0,
-            "out_of_window": 4
+            "dedup": 0
           }
         },
         "date_filter_ms": 0,
         "relevance_ms": 0,
-        "llm_ms": 1998,
+        "llm_ms": 0,
+        "scoring_ms": 0
+      },
+      "top_news": []
+    },
+    "SSE:600186": {
+      "name": "600186",
+      "score": 23,
+      "score_raw": -6.38,
+      "score_components": {
+        "positive_weight_sum": 0,
+        "negative_weight_sum": 6.38,
+        "news_effective_count": 1,
+        "news_dropped_count": 0
+      },
+      "signal": "🔴 No Trade / Short",
+      "strategy": "黑天鹅事件规避，等待事件明朗化再评估",
+      "suitable_for": "反转(等底部确认)",
+      "confidence": "高",
+      "patterns": [
+        "情绪持续走弱↓(trend)"
+      ],
+      "positive_factors": [],
+      "negative_factors": [
+        "[黑天鹅|w6.38] 莲花控股股份有限公司关于股票交易异常波动的公告"
+      ],
+      "news_count": 1,
+      "news_dropped": 0,
+      "performance": {
+        "list_fetch_ms": 3753,
+        "candidate_filter_ms": 0,
+        "enrichment_ms": 12322,
+        "raw_news_count": 40,
+        "raw_research_count": 10,
+        "candidate_news_count": 1,
+        "candidate_research_count": 0,
+        "enriched_news_count": 1,
+        "enriched_research_count": 0,
+        "candidate_reasons": {
+          "news": {
+            "no-subject-mention": 14,
+            "noise:开盘价|收盘价": 1,
+            "noise:龙虎榜|大宗交易|盘口异动": 1,
+            "noise:\\d{1,2}月\\d{1,2}日(快速上涨|快速回调|涨停|": 3,
+            "noise:融资净(买入|卖出)": 1,
+            "dedup": 0,
+            "out_of_window": 19
+          },
+          "research": {
+            "dedup": 0,
+            "out_of_window": 10
+          }
+        },
+        "date_filter_ms": 0,
+        "relevance_ms": 0,
+        "llm_ms": 2435,
         "scoring_ms": 0
       },
       "top_news": [
         {
-          "date": "2026-06-17 10:09:06",
-          "title": "安奈儿6月17日快速反弹",
-          "content": "以下是安奈儿在北京时间6月17日10:08分盘口异动快照：\n\n　　在东方财富看资讯行情，选东方财富证券一站式开户交易>>\n\n分笔\n\n10:08:57 16.75 1↑\n10:08:54 16.74 1↓\n10:08:51 16.74 12↑\n10:08:48 16.72 8↓\n10:08:45 16.72 75↑\n \n10:08:42 16.69 1↓\n10:08:36 16.69 25↑\n10:08:33 16.68 4↓\n10:08:30 16.68 3↓\n10:08:24 16.68 9↑\n \n报价\n\n卖五 \n\n16.88\n\n 26\n卖四 \n\n16.87\n\n 12\n卖三 \n\n16.85\n\n 6\n卖二 \n\n16.8\n\n 34\n卖一 \n\n16.75\n\n 36\n\n买一 \n\n16.74\n\n 5\n买二 \n\n16.73\n\n 24\n买三 \n\n16.72\n\n 58\n买四 \n\n16.71\n\n 3\n买五 \n\n16.69\n\n 134\n\n最新：16.75\n涨幅：-0.06%\n涨跌：-0.01\n换手率：1.59%\n成交量：2.90万手\n成交额：4807.40万元\n主力净流入：\n-402.50万元\n\n  6月17日，安奈儿盘中快速反弹，5分钟内涨幅超过2%，截至10点08分，报16.75元，成交4807.40万元，换手率1.59%。\n注：以上信息仅供参考，不对您构成任何投资建议。",
-          "type": "行业",
-          "sentiment": 0,
-          "weight": 1,
-          "final_weight": 0.6,
-          "source_authority": 3,
-          "recency_factor": 1,
-          "source": "东方财富资讯",
-          "llm_reviewed": true,
-          "llm_confidence": 0.1,
-          "llm_is_real_catalyst": false,
-          "llm_reasoning": "仅描述盘中反弹，无基本面信息"
-        },
-        {
-          "date": "2026-06-16 10:05:15",
-          "title": "安奈儿6月16日快速反弹",
-          "content": "以下是安奈儿在北京时间6月16日09:48分盘口异动快照：\n\n　　专业金融数据，下一代智能终端\n\n分笔\n\n09:48:03 15.68 1↑\n09:48:00 15.66 228↑\n09:47:57 15.62 14↑\n09:47:54 15.62 109↑\n09:47:51 15.59 18↑\n \n09:47:48 15.57 51↑\n09:47:45 15.55 6↑\n09:47:42 15.53 30↓\n09:47:39 15.55 43↑\n09:47:36 15.55 5↑\n \n报价\n\n卖五 \n\n15.75\n\n 3\n卖四 \n\n15.74\n\n 22\n卖三 \n\n15.73\n\n 4\n卖二 \n\n15.72\n\n 9\n卖一 \n\n15.69\n\n 5\n\n买一 \n\n15.65\n\n 24\n买二 \n\n15.64\n\n 50\n买三 \n\n15.63\n\n 11\n买四 \n\n15.62\n\n 19\n买五 \n\n15.61\n\n 21\n\n最新：15.68\n涨幅：-5.54%\n涨跌：-0.92\n换手率：3.06%\n成交量：5.58万手\n成交额：8681.72万元\n主力净流入：\n-1407.51万元\n\n  6月16日，安奈儿盘中快速反弹，5分钟内涨幅超过2%，截至9点48分，报15.68元，成交8681.72万元，换手率3.06%。\n注：以上信息仅供参考，不对您构成任何投资建议。",
-          "type": "行业",
-          "sentiment": 0,
-          "weight": 1,
-          "final_weight": 0.51,
-          "source_authority": 3,
-          "recency_factor": 0.85,
-          "source": "东方财富资讯",
-          "llm_reviewed": true,
-          "llm_confidence": 0.1,
-          "llm_is_real_catalyst": false,
-          "llm_reasoning": "仅描述盘中反弹，无基本面信息"
-        },
-        {
-          "date": "2026-06-16 09:53:52",
-          "title": "安奈儿6月16日加速下跌",
-          "content": "以下是安奈儿在北京时间6月16日09:39分盘口异动快照：\n\n　　专业金融数据，下一代智能终端\n\n分笔\n\n09:39:06 15.28 74↓\n09:39:03 15.32 147↓\n09:39:00 15.33 15↑\n09:38:57 15.32 30↓\n09:38:54 15.33 5↑\n \n09:38:51 15.31 42↑\n09:38:48 15.30 177↑\n09:38:45 15.30 87↑\n09:38:42 15.30 193↑\n09:38:39 15.30 145↓\n \n报价\n\n卖五 \n\n15.32\n\n 45\n卖四 \n\n15.31\n\n 31\n卖三 \n\n15.3\n\n 22\n卖二 \n\n15.29\n\n 76\n卖一 \n\n15.28\n\n 19\n\n买一 \n\n15.24\n\n 1\n买二 \n\n15.22\n\n 8\n买三 \n\n15.21\n\n 20\n买四 \n\n15.2\n\n 57\n买五 \n\n15.14\n\n 3\n\n最新：15.28\n涨幅：-7.95%\n涨跌：-1.32\n换手率：2.04%\n成交量：3.72万手\n成交额：5849.71万元\n主力净流入：\n-897.61万元\n\n  6月16日，安奈儿盘中加速下跌，5分钟内跌幅超过2%，截至9点39分，报15.28元，成交5849.71万元，换手率2.04%。\n注：以上信息仅供参考，不对您构成任何投资建议。",
-          "type": "行业",
+          "date": "2026-06-17",
+          "title": "莲花控股股份有限公司关于股票交易异常波动的公告",
+          "content": "1\n证券代码：600186 \t证券简称：莲花控股 \t公告编号：2026-040\n莲花控股股份有限公司\n关于股票交易异常波动的公告\n本公司董事会及全体董事保证本公告内容不存在任何虚假记载、误导性陈述或\n者重大遗漏，并对其内容的真实性、准确性和完整性承担法律责任。\n重要风险提示：\n1、莲花控股股份有限公司（以下简称“公司”）股价近期波动较大，自\n2026 \t年 \t6 \t月 \t4 \t日至 \t2026 \t年 \t6 \t月 \t17 \t日，公司股价累计涨幅达 \t53.51%。公司股\n票价格于 \t2026 \t年 \t6 \t月 \t16 \t日、6 \t月 \t17 \t日连续两个交易日内日收盘价格涨幅偏\n离值累计达到 \t20%，根据上海证券交易所的相关规定，属于股票交易异常波\n动的情况，但公司基本面未发生重大变化。敬请广大投资者理性投资，注意\n投资风险。\n2、截至本公告披露日，公司近期投资标的上海阶跃星辰智能科技股份有\n限公司处于大额亏损状态。标的公司在未来经营过程中有可能面临市场风\n险、政策风险、经营管理风险等，从而可能导致公司投资出现亏损风险。\n3、公司主营调味品业务，2025 \t年度公司服务器租赁业务收入占比较小且持\n续处于亏损状态，2025 \t年服务器租赁业务收入 \t12,187.63 \t万元，占公司营业总\n收入仅为 \t3.53%，净利润为-2,857.86 \t万元。2025 \t年度存在签订大额合同短期内\n终止的情况，业务开展不及预期，未来发展存在不确定性。\n4、上述投资占标的公司股份比例较小，对公司整体业务不构成重大影响。\n敬请广大投资者理性投资，注意投资风险。\n5、经自查，本次交易不存在上市公司与控股股东、实际控制人共同投资或\n其他特殊利益安排的情形。\n\n-- 1 of 3 --\n\n2\n重要内容提示：\n \t公司股票价格于 \t2026 \t年 \t6 \t月 \t16 \t日、6 \t月 \t17 \t日连续两个交易日内日收盘\n价格涨幅偏离值累计达到 \t20%，根据上海证券交易所的相关规定，属于股票交易\n异常波动的情况。\n \t经公司自查，并征询公司控股股东及实际控制人，截至本公告披露日，\n除已披露的信息外，公司、控股股东及实际控制人不存在应予披露而未披露的重\n大事项。\n \t公司目前经营正常，内外部经营环境未发生重大变化，敬请广大投资者\n注意二级市场交易风险，审慎决策，理性投资。\n一、股票交易异常波动的具体情况\n公司股票价格于 \t2026 \t年 \t6 \t月 \t16 \t日、6 \t月 \t17 \t日连续两个交易日内日收盘价\n格涨幅偏离值累计达到 \t20%，根据上海证券交易所的相关规定，属于股票交易异\n常波动。\n二、公司关注并核实的相关情况\n针对公司本次股票交易异常波动情况，公司对有关事项进行了核查，并征询\n了公司控股股东及实际控制人，现将有关情况说明如下：\n（一）生产经营情况\n经公司自查，公司目前生产经营正常，内外部经营环境未发生重大变化，不\n存在影响公司股票交易价格异常波动的重大事项。\n（二）重大事项情况\n经公司自查，并向公司控股股东及实际控制人核实，截至本公告披露日，公\n司、控股股东及实际控制人均不存在根据有关规定应予披露而未披露的事项，包\n括但不限于重大资产重组、股份发行、重大交易类事项、业务重组、股份回购、\n股权激励、破产重整、重大业务合作、引进战略投资者等可能对公司股票交易价\n格产生较大影响的重大事项。\n（三）媒体报道、市场传闻、热点概念情况\n\n-- 2 of 3 --\n\n3\n经自查，公司未发现其他可能对公司股价产生较大影响的重大事件。未发现\n对公司股票交易价格产生影响的需要澄清或回应的媒体报道或市场传闻，亦未涉\n及热点概念事项。\n（四）其他股价敏感信息\n经公司自查，公司董事、高级管理人员、控股股东及其一致行动人、其他重\n要股东在公司本次股票交易异常波动期间不存在买卖公司股票的情况。\n三、相关风险提示\n公司股票价格于 \t2026 \t年 \t6 \t月 \t16 \t日、6 \t月 \t17 \t日连续两个交易日内日收盘价\n格涨幅偏离值累计达到 \t20%，根据上海证券交易所的相关规定，属于股票交易异\n常波动的情况。敬请广大投资者注意二级市场交易风险，审慎决策，理性投资。\n公司指定信息披露媒体为《中国证券报》《上海证券报》《证券日报》和上\n海证券交易所网站，公司有关信息均以上述指定媒体发布的公告为准。\n四、董事会声明\n公司董事会确认，截至本公告披露日，除已按规定披露的事项外，公司不存\n在根据《上海证券交易所股票上市规则》等有关规定应披露而未披露的事项或与\n该事项有关的筹划、商谈、意向、协议等，董事会也未获悉本公司有根据《上海\n证券交易所股票上市规则》等有关规定应予以披露而未披露的、对本公司股票及\n其衍生品种交易价格产生较大影响的信息；公司前期披露的信息不存在需要更\n正、补充之处。\n公司郑重提醒广大投资者，有关公司信息以公司在上海证券交易所网站和法\n定信息披露媒体刊登的相关公告为准，公司将严格按照有关法律法规的规定和要\n求，认真履行信息披露义务，及时做好信息披露工作。敬请广大投资者理性投\n资，注意投资风险。\n特此公告。\n莲花控股股份有限公司董事会\n2026 \t年 \t6 \t月 \t18 \t日\n\n-- 3 of 3 --",
+          "type": "黑天鹅",
           "sentiment": -1,
-          "weight": 1,
-          "final_weight": 0.51,
-          "source_authority": 3,
+          "weight": 6,
+          "final_weight": 6.38,
+          "source_authority": 5,
           "recency_factor": 0.85,
-          "source": "东方财富资讯",
+          "source": "巨潮资讯",
           "llm_reviewed": true,
-          "llm_confidence": 0.1,
-          "llm_is_real_catalyst": false,
-          "llm_reasoning": "仅描述加速下跌，无基本面信息"
-        },
-        {
-          "date": "2026-06-16 09:33:24",
-          "title": "安奈儿6月16日开盘跌幅达5%",
-          "content": "以下是安奈儿在北京时间6月16日09:30分盘口异动快照：\n\n　　在东方财富看资讯行情，选东方财富证券一站式开户交易>>\n\n分笔\n\n09:30:27 15.73 201↓\n09:30:24 15.81 210↓\n09:30:21 15.87 178↑\n09:30:18 15.87 38↓\n09:30:15 15.91 23↓\n \n09:30:12 15.97 158↓\n09:30:09 16.00 190↓\n09:30:06 16.03 207↓\n09:30:03 16.21 587↓\n09:30:00 16.23 717↓\n \n报价\n\n卖五 \n\n15.86\n\n 35\n卖四 \n\n15.83\n\n 185\n卖三 \n\n15.81\n\n 180\n卖二 \n\n15.8\n\n 3\n卖一 \n\n15.73\n\n 347\n\n买一 \n\n15.7\n\n 33\n买二 \n\n15.66\n\n 40\n买三 \n\n15.6\n\n 5\n买四 \n\n15.59\n\n 1\n买五 \n\n15.58\n\n 54\n\n最新：15.73\n涨幅：-5.24%\n涨跌：-0.87\n换手率：0.23%\n成交量：4270手\n成交额：689.87万元\n主力净流入：\n-64.64万元\n\n  6月16日，安奈儿开盘跌幅达5%，截至9点30分，报15.73元，成交689.87万元，换手率0.23%。\n注：以上信息仅供参考，不对您构成任何投资建议。",
-          "type": "行业",
-          "sentiment": -1,
-          "weight": 1,
-          "final_weight": 0.51,
-          "source_authority": 3,
-          "recency_factor": 0.85,
-          "source": "东方财富资讯",
-          "llm_reviewed": true,
-          "llm_confidence": 0.1,
-          "llm_is_real_catalyst": false,
-          "llm_reasoning": "仅描述开盘跌幅，无基本面信息"
+          "llm_confidence": 0.8,
+          "llm_is_real_catalyst": true,
+          "llm_reasoning": "公告提示股价异常波动及投资标的亏损风险"
         }
       ]
     },
     "SSE:600198": {
       "name": "600198",
       "score": 20,
-      "score_raw": -9.65,
+      "score_raw": -8.11,
       "score_components": {
         "positive_weight_sum": 0,
-        "negative_weight_sum": 9.65,
+        "negative_weight_sum": 8.11,
         "news_effective_count": 10,
         "news_dropped_count": 0
       },
@@ -2126,15 +2098,15 @@
       ],
       "positive_factors": [],
       "negative_factors": [
-        "[财报|w4.97] 大唐电信:大华会计师事务所关于大唐电信科技股份有限公司控股股东及其他关联方资金占用情况的专项说明(更正版)",
-        "[财报|w4.68] 大华会计师事务所关于大唐电信科技股份有限公司控股股东及其他关联方资金占用情况的专项说明（更正版）"
+        "[财报|w4.21] 大唐电信:大华会计师事务所关于大唐电信科技股份有限公司控股股东及其他关联方资金占用情况的专项说明(更正版)",
+        "[财报|w3.9] 大华会计师事务所关于大唐电信科技股份有限公司控股股东及其他关联方资金占用情况的专项说明（更正版）"
       ],
       "news_count": 10,
       "news_dropped": 0,
       "performance": {
-        "list_fetch_ms": 2747,
+        "list_fetch_ms": 2590,
         "candidate_filter_ms": 0,
-        "enrichment_ms": 12508,
+        "enrichment_ms": 322,
         "raw_news_count": 40,
         "raw_research_count": 0,
         "candidate_news_count": 10,
@@ -2153,9 +2125,9 @@
           }
         },
         "date_filter_ms": 0,
-        "relevance_ms": 0,
-        "llm_ms": 4494,
-        "scoring_ms": 0
+        "relevance_ms": 1,
+        "llm_ms": 1,
+        "scoring_ms": 1
       },
       "top_news": [
         {
@@ -2165,9 +2137,9 @@
           "type": "政策",
           "sentiment": 0,
           "weight": 1,
-          "final_weight": 0.92,
+          "final_weight": 0.78,
           "source_authority": 4.5,
-          "recency_factor": 0.85,
+          "recency_factor": 0.72,
           "source": "东方财富公告",
           "llm_reviewed": true,
           "llm_confidence": 0.2,
@@ -2181,9 +2153,9 @@
           "type": "政策",
           "sentiment": 0,
           "weight": 1,
-          "final_weight": 0.92,
+          "final_weight": 0.78,
           "source_authority": 4.5,
-          "recency_factor": 0.85,
+          "recency_factor": 0.72,
           "source": "东方财富公告",
           "llm_reviewed": true,
           "llm_confidence": 0.2,
@@ -2197,9 +2169,9 @@
           "type": "政策",
           "sentiment": 0,
           "weight": 1,
-          "final_weight": 0.92,
+          "final_weight": 0.78,
           "source_authority": 4.5,
-          "recency_factor": 0.85,
+          "recency_factor": 0.72,
           "source": "东方财富公告",
           "llm_reviewed": true,
           "llm_confidence": 0.2,
@@ -2212,10 +2184,10 @@
           "content": "许可经营项目:制造电子及通信设备、移动电话机、仪器仪表、文化办公设备;第二类增值电信业务中的信息服务业务、第二类基础电信业务中的网络托管业务(不含固定网电话信息服务和互联网信息服务)。物业管理。一般经营项目:制造电子计算机软硬件及外部设备;技术开发、技术转让、技术咨询、技术服务;销售电子及通信设备、移动电话机、仪器仪表、文化办公设备、电子计算机软硬件及外部设备、系统集成、光电缆、微电子器件、机械设备、电气设备、空调设备、通信基站机房节能设备、专业作业车辆;安装机械设备、电气设备、空调设备;通信及信息系统工程设计;信息服务;技术进出口、货物进出口、代理进出口。\n郑重声明：东方财富网发布此信息的目的在于传播更多信息，与本站立场无关。东方财富网不保证该信息（包括但不限于文字、视频、音频、数据及图表）全部或者部分内容的准确性、真实性、完整性、有效性、及时性、原创性等。相关信息并未经过本网站证实，不对您构成任何投资建议，据此操作，风险自担。",
           "type": "财报",
           "sentiment": -1,
-          "weight": 5,
-          "final_weight": 4.97,
+          "weight": 4,
+          "final_weight": 4.21,
           "source_authority": 4.5,
-          "recency_factor": 0.85,
+          "recency_factor": 0.72,
           "source": "东方财富公告",
           "llm_reviewed": true,
           "llm_confidence": 0.7,
@@ -2229,9 +2201,9 @@
           "type": "政策",
           "sentiment": 0,
           "weight": 1,
-          "final_weight": 0.86,
+          "final_weight": 0.72,
           "source_authority": 5,
-          "recency_factor": 0.72,
+          "recency_factor": 0.6,
           "source": "巨潮资讯",
           "llm_reviewed": true,
           "llm_confidence": 0.2,

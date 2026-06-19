@@ -1,100 +1,102 @@
 # US Grade A Picks — Triple Confirmed
+**Generated:** 2026-06-18  |  **Criteria:** Grade 🟢A + MTF Align ≥3/4 + News GREEN Long (Strong)
+**Pipeline:** scan → news → tech → combined → grade A filter
 
-**Generated:** 2026-06-17  |  **Criteria:** Grade 🟢A + MTF Align ≥3/4 + News GREEN Long (Strong)
-
-> Formula: Combined = TechScore × 0.6 + NewsScore × 0.4 + (trendy ? +5 : 0)  
+> Formula: Combined = TechScore × 0.6 + NewsScore × 0.4 - (overheated ? 5 : 0)  
 > Grade A threshold: Tech ≥ 30 + News Long (not overheated)  
 > Source: `npm run combined:us` → `watchlist/us_combined_signals.md`
 
 ---
 
-## 🟢 Grade A Pick (1 / 79)
+## 🟢 Grade A Pick (1 / 76)
 
-Only **1 stock** out of 79 passes all three gates simultaneously.  
-Yesterday HPE was included but today its news signal flipped to WARN Overheated.
+Only **1 stock** out of 76 passes all three gates simultaneously.
 
-### 1. NYSE:C (Citigroup) — Combined 58.7
+### 1. NASDAQ:ASML (ASML Holding) — Combined 62.1
 
 | Field | Value |
 |-------|-------|
-| **Combined Score** | **58.7** |
-| Tech Score | 36.1 (Trend Follow — HH/HL Intact) |
-| News Score | 80 → GREEN Long (Strong) |
-| MTF Alignment | **4/4 (100%)** ← 1W↑ 1D↑ 4H↑ 1H↑ |
-| Current Price | $142.99 |
-| **Entry** | **$142.99** |
-| **Stop** | **$137.20** (ATR × 1.5) |
-| **Target** | **$151.48** |
+| **Combined Score** | **62.1** |
+| Tech Score | 33.9 (Trend Follow — HH/HL Intact) |
+| News Score | 92 → **GREEN Long (Strong)** |
+| MTF Alignment | **3/4 (75%)** ← 1W↑ 1D↑ 4H→ 1H↓ |
+| Current Price | $1,867.83 |
+| **Entry** | **$1,867.83** |
+| **Stop** | **$1,724.94** (ATR × 1.5) |
+| **Target** | **$2,077.40** |
 | **R/R** | **1.5 : 1** |
-| RSI | 72.9 (near overbought) |
-| ADX | 33.4 (trend established) |
-| ATR% | 2.7% |
-| Dist from EMA20 | +7.4% |
-| RS vs SPY | +15.2 |
+| RSI (1D) | 62.7 |
+| ADX | 30.6 |
+| ATR% | 5.1% |
+| Dist from EMA20 | +8.0% |
+| RS vs SPY | +27.0 |
 | Chase OK | **NO** |
 
-**📰 Key Catalysts (last 7 days):**
+**📰 Key Catalysts (last 5 trading days):**
 
 | Date | Type | Weight | Headline |
 |------|------|--------|----------|
-| 2026-06-15 | M&A | 3.53 | C Sheds Polish Arm — Final Exit From Non-Core Consumer Business |
-| 2026-06-15 | Analyst | 3.02 | CFO Growth Outlook + Blockchain Trading Expansion |
-| 2026-06-16 | Industry | 0.60 | C Ascends While Market Falls (Zacks, no real catalyst) |
+| 2026-06-17 | Analyst | 3.87 | ASML upgraded on AI-driven EUV demand acceleration |
+| 2026-06-16 | Industry | 3.57 | TSMC capacity expansion boosts lithography tool orders |
+| 2026-06-15 | Earnings | 3.53 | Strong Q2 order book, raised FY guidance |
 
-**Sentiment:** All 3 kept news items are bullish (zero bearish). 25 raw news fetched, 22 filtered as irrelevant. High confidence signal.
+**Sentiment:** 15 kept / 0 filtered (high volume, high quality). All bullish — zero bearish news items. High confidence signal.
 
 **⚠️ Risk Flags:**
 
 | Flag | Detail |
 |------|--------|
-| **BULL-TRAP** | RSI 72.9 (overbought zone) + near 4H/1H resistance at $143.50 |
-| **NEAR-RESIST** | 4H resistance at $143.53, 1H resistance at $143.50 |
-| **Stoch RSI** | 100 on 1D + 94.7 on 4H — extreme overbought momentum |
-| **1H Bear Div** | RSI bearish divergence on 1H, MACD histogram negative |
-| **+7.4% from EMA20** | Extended from mean, pullback risk elevated |
+| **NEAR-RESIST** | Approaching technical resistance zone; breakout not yet confirmed |
+| **BEAR-DIV** | Bearish divergence on lower timeframes — RSI making lower highs |
+| **+8% from EMA20** | Extended from mean, pullback risk elevated |
+| **1H weak** | 1H timeframe trending down — short-term pressure |
+
+**📊 Multi-Timeframe Detail:**
+
+| TF | Score | RSI | Trend | Key |
+|----|-------|-----|-------|-----|
+| 1W | 33 | 62.7 | ↑ | Bullish structure, EMA stack intact |
+| 1D | 40 | 62.7 | ↑ | Primary trend strong, ADX 30.6 |
+| 4H | 20 | — | → | Neutral, consolidating near resistance |
+| 1H | 6 | — | ↓ | Weak, bearish divergence |
 
 **📊 Verdict:** 
-- 唯一三条件全满足标的。4/4完美多周期EMA多头排列，ADX 33.4确认趋势强劲
-- 但 BULL-TRAP + RSI 72.9 + Stoch RSI 100 = 短期很可能冲高回落
-- CFO增长指引超预期（+区块链交易扩展）提供基本面支撑
-- 波兰消费者业务剥离完成是长期利好（资本释放+聚焦机构业务）
-- **建议：等 $137-139 回调（EMA20=133 附近）入场，不追高。止损 $137.20。**
-
-### Multi-Timeframe Detail
-
-| TF | Score | RSI | MACD | ADX | Stoch RSI | Key |
-|----|-------|-----|------|-----|-----------|-----|
-| 1W | 23 | 71.5 | Hist +1.47 (bull) | 29.4 | 100 | EMA多头, bear div on weekly RSI |
-| 1D | 52 | 72.9 | Hist +1.27 (bull) | 33.4 | 100 | 趋势最强, 距EMA20 +7.4% |
-| 4H | 35 | 74.0 | Hist +0.61 (bull) | 36.8 | 94.7 | near_resist $143.53 |
-| 1H | 28 | 70.5 | Hist -0.12 (bear) | 55.5 | 55.1 | MACD转负, bear div, near_resist $143.50 |
+- 今日唯一三条件全满足标的。3/4多周期对齐，1D趋势强劲
+- 新闻情绪极强（92分），AI半导体资本支出周期提供基本面支撑
+- 但 near_resist + bear_div on 4H/1H = 短期可能回踩
+- 距EMA20 +8%，不建议追高
+- **建议：等回调至$1,720-1,780（EMA20附近）入场。不追高。止损 $1,724.94。**
 
 ---
 
-## 🔄 Change from Yesterday (2026-06-16)
+## 🔄 Change from Yesterday (2026-06-17)
 
 | Stock | Yesterday | Today | Reason |
 |-------|-----------|-------|--------|
-| **NYSE:C** | ✅ Grade A (3/4 align, 65.2) | ✅ Grade A (4/4 align, 58.7) | Alignment improved 3/4→4/4; combined score recalculated |
-| **NYSE:HPE** | ✅ Grade A (4/4 align, 60.8) | ❌ Demoted to C+ | News flipped to WARN Overheated (90→overheat penalty) |
+| **NASDAQ:ASML** | Near-miss (Align 25%) | ✅ Grade A (3/4 align) | MTF alignment surged 1/4→3/4; news stayed GREEN Long (Strong) |
+| **NYSE:C** | ✅ Grade A (4/4, 58.7) | ❌ Demoted to C | Tech score dropped; news signal degraded from Strong→Mid |
 
 ---
 
-## Near-Miss Candidates (7 stocks that missed by ONE criterion)
+## Near-Miss Candidates (10 stocks that missed by ONE criterion)
 
 | Stock | Combined | Grade | Align | News Signal | Missed By |
 |-------|----------|-------|-------|-------------|-----------|
-| **NASDAQ:AMAT** | 61.2 | A | 2/4 ❌ | GREEN Long (Strong) | Align only 50% |
-| **NYSE:DELL** | 58.7 | A | 2/4 ❌ | GREEN Long (Strong) | Align only 50% |
-| **NYSE:DOV** | 55.3 | A | 3/4 ✅ | GREEN Long (Mid) | News not "Strong" |
-| **NASDAQ:EQIX** | 54.6 | A | 3/4 ✅ | GREEN Long (Mid) | News not "Strong" |
-| **NYSE:GE** | 52.6 | A | 4/4 ✅ | GREEN Long (Mid) | News not "Strong" |
-| **NASDAQ:ASML** | 52.6 | A | 1/4 ❌ | GREEN Long (Strong) | Align only 25% |
-| **NYSE:APH** | 44.2 | B | 3/4 ✅ | GREEN Long (Strong) | Tech 20.4 < 30 |
+| **NYSE:MS** | 61.8 | A | 3/4 ✅ | GREEN Long (Mid) | News not "Strong" |
+| **NASDAQ:AEHR** | 57.4 | A | 3/4 ✅ | GREEN Long (Mid) | News not "Strong" |
+| **NASDAQ:WDC** | 48.3 | A | 3/4 ✅ | WARN Long (Cautious) | News overheated |
+| **NYSE:DELL** | 48.1 | A | 3/4 ✅ | GREEN Long (Mid) | News not "Strong" |
+| **NASDAQ:LRCX** | 57.6 | A | 2/4 ❌ | GREEN Long (Strong) | Align only 50% |
+| **NASDAQ:KLAC** | 58.2 | A | 1/4 ❌ | GREEN Long (Mid) | Align + News |
+| **NYSE:DOV** | 56.2 | A | 2/4 ❌ | GREEN Long (Mid) | Align + News |
+| **NASDAQ:AMKR** | 54.7 | A | 2/4 ❌ | GREEN Long (Mid) | Align + News |
+| **NYSE:VRT** | 50.3 | A | 1/4 ❌ | GREEN Long (Mid) | Align + News |
+| **NYSE:FCX** | 50.2 | A | 2/4 ❌ | GREEN Long (Mid) | Align + News |
 
-- **DELL/AMAT**: 新闻最强但多周期不一致，情绪-技术背离
-- **GE**: 4/4全对齐，差一步（News Mid→Strong），最值得继续跟踪
-- **DOV**: 3/4对齐+Tech 48.2，回踩买入型，等新闻催化升级
+- **MS**: 3/4对齐+Tech最高(+55)，BULL-TRAP风险，等News升级
+- **AEHR**: 3/4对齐+Breakout类型，ATR% 13%高波动，等News催化
+- **LRCX**: 新闻最强(GREEN Strong)但对齐仅50%，趋势一致性不足
+- **DELL**:  3/4对齐但RS+77超强(overheat)，等待回调消化
 
 ---
 
@@ -102,10 +104,11 @@ Yesterday HPE was included but today its news signal flipped to WARN Overheated.
 
 | Stock | Max Position | Stop Loss % | Notes |
 |-------|-------------|-------------|-------|
-| NYSE:C | 25% | -4.0% | RSI 72.9 高温，等回调至 $137-139 再入场 |
+| NASDAQ:ASML | 30% | -7.6% | 距EMA20 +8%，等回调至$1,720-1,780入场 |
 
 **Discipline:**
 1. No chasing — `chase: NO`
-2. Close on daily close below stop ($137.20), no exceptions
-3. Better entry: wait for pullback to EMA20 (~$133) or at least break of $137 support test
-4. 1H MACD已转负，Stoch RSI极端超买，短期回调概率高
+2. Close on daily close below stop ($1,724.94), no exceptions
+3. Better entry: wait for pullback to EMA20 area (~$1,720)
+4. Monitor 4H bearish divergence — if RSI makes new low, tighten stop
+5. Max 30% position per Grade A name
