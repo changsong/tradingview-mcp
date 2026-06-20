@@ -9,6 +9,7 @@ export function Header() {
       <nav>
         <Link href="/dashboard">Dashboard</Link>
         <Link href="/runs">Runs</Link>
+        <Link href="/intraday">Intraday</Link>
       </nav>
     </header>
   );

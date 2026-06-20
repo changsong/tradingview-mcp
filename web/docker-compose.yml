@@ -7,7 +7,7 @@ services:
       POSTGRES_PASSWORD: postgres
       POSTGRES_DB: tradingview_mcp_web
     ports:
-      - "5432:5432"
+      - "6432:5432"
     volumes:
       - tv-web-db:/var/lib/postgresql/data
 
@@ -22,7 +22,7 @@ services:
       WEB_SESSION_SECRET: ${WEB_SESSION_SECRET}
       REPORTS_DIR: /reports
     ports:
-      - "3000:3000"
+      - "3001:3000"
     volumes:
       - ../reports:/reports:ro
 

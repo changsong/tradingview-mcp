@@ -29,7 +29,8 @@ export default async function StockPage({ params, searchParams }: Props) {
     date: fmtDate(row.date),
     newsScore: row.newsScore,
     techScore: row.techScore,
-    combinedScore: row.combinedScore
+    combinedScore: row.combinedScore,
+    price: row.price ?? null
   }));
 
   return (

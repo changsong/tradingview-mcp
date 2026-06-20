@@ -1,74 +1,181 @@
-# US Grade A Picks — Triple-Confirmed (2026-06-09)
+# US Grade A Picks — Triple-Confirmed (2026-06-19)
 
-**筛选条件（3 项全部满足）：**
-1. 综合等级：🟢 A
-2. 多周期对齐：3/4 (75%) 或 4/4 (100%)
-3. News Signal：GREEN Long (Strong)
+**Filters (all 3 must pass):**
+1. Combined Grade: 🟢A
+2. Multi-TF Alignment: 3/4 (75%) or 4/4 (100%)
+3. News Signal: **GREEN Long (Strong)**
 
-**筛选结果：** 12 只 Grade A 股票中，仅 **2 只** 满足全部条件。
-
----
-
-## 精选列表
-
-| # | Ticker | Combined | Grade | Tech | News | Align | News Signal | Type | Entry | Stop | Target | R/R |
-|---|--------|----------|-------|------|------|-------|------------|------|-------|------|--------|-----|
-| 1 | **NASDAQ:INCY** | **69.5** | 🟢A | 54.5 | 92 | 3/4 (75%) | GREEN Long (Strong) | Pullback Buy | 99.13 | 94.40 | 106.88 | 1.6:1 |
-| 2 | **NASDAQ:CRDO** | **55.6** | 🟢A | 34.3 | 75 | 3/4 (75%) | GREEN Long (Strong) | Trend Continuation | 222.27 | 187.93 | 272.64 | 1.5:1 |
+**Result:** 6 stocks out of 113 selected pass all three gates (20 Grade A → 6 triple-confirmed).
 
 ---
 
-## 逐只分析
+## Top Picks
 
-### 1. NASDAQ:INCY — Combined 69.5 🟢A ⭐ 首选
-
-| 维度 | 详情 |
-|------|------|
-| **技术面** | Tech +54.5，Pullback Buy 回踩支撑入场，RSI 57.5（中性偏强），ADX 偏低（整理中） |
-| **新闻面** | News 92/100 — GREEN Long (Strong)，$2B 收购 Vega Therapeutics + Oppenheimer 上调目标价至 $107 |
-| **多周期** | 3/4 (75%) — 1W↑ 1D↑ 4H↑ 1H→ 三周期共振向上 |
-| **入场** | $99.13（回踩 EMA 支撑区） |
-| **止损** | $94.40（ATR×2，约 -4.8%） |
-| **目标** | $106.88（+7.8%） |
-| **R/R** | **1.6:1** |
-| **风险** | 近阻力位 / 震荡整理（ADX 偏低） |
-| **追涨** | ❌ 不建议，等回调至 Entry 附近 |
-
-### 2. NASDAQ:CRDO — Combined 55.6 🟢A
-
-| 维度 | 详情 |
-|------|------|
-| **技术面** | Tech +34.3，Trend Continuation 趋势延续型，RSI 59.1，ADX 30.3（趋势确认） |
-| **新闻面** | News 75/100 — GREEN Long (Strong) |
-| **多周期** | 3/4 (75%) 对齐 |
-| **入场** | $222.27（现价入场） |
-| **止损** | $187.93（ATR×1.5，约 -15.4%） |
-| **目标** | $272.64（+22.7%） |
-| **R/R** | **1.5:1** |
-| **风险** | ATR 偏高（10.3%），止损距离远 / 动能衰减 / low_rr |
-| **追涨** | ❌ 不建议 |
+| # | Symbol | Combined | Tech | News | Align | Type | Entry | Stop | Target | R/R | Risks |
+|---|--------|----------|------|------|-------|------|-------|------|--------|-----|-------|
+| 1 | **AMKR** | 69.4 | 50.4 | 98 | 4/4 | Overextended Chase | 90.46 | 79.47 | 105.11 | 1.3:1 | overheated |
+| 2 | **INTC** | 62.6 | 44.4 | 90 | 4/4 | Overextended Chase | 133.99 | 118.31 | 154.89 | 1.3:1 | overheated near_resist |
+| 3 | **QCOM** | 60.8 | 34.4 | 88 | 4/4 | Trend Continuation | 226.11 | 199.99 | 264.41 | 1.5:1 | mom_decay low_rr |
+| 4 | **COHR** | 58.1 | 33.8 | 82 | 3/4 | Breakout (Squeeze) | 390.74 | 318.75 | 487.94 | 1.4:1 | mom_decay chop low_rr |
+| 5 | **AEHR** | 57.9 | 36.2 | 78 | 4/4 | Breakout (Squeeze) | 115.65 | 89.15 | 151.62 | 1.4:1 | low_rr |
+| 6 | **MRVL** | 55.6 | 38.6 | 81 | 3/4 | Overextended Chase | 310.58 | 251.88 | 388.85 | 1.3:1 | overheated low_rr |
 
 ---
 
-## 未入选的 Grade A 股票
+## 1. AMKR (NASDAQ:AMKR) — Combined 69.4 ⭐ Best Score
 
-| Ticker | Align | News Signal | 缺失项 |
-|--------|-------|------------|--------|
-| NASDAQ:AAOI | 4/4 ✅ | GREEN Long (Mid) | News 非 Strong |
-| NASDAQ:MRVL | 2/4 | WARN Long (Cautious) | Align + News |
-| NASDAQ:KLAC | 4/4 ✅ | GREEN Long (Mid) | News 非 Strong |
-| NASDAQ:CRWD | 1/4 | GREEN Long (Strong) ✅ | Align 过低 |
-| NASDAQ:AMAT | 4/4 ✅ | GREEN Long (Mid) | News 非 Strong |
-| NYSE:DOCN | 1/4 | GREEN Long (Mid) | Align + News |
-| NYSE:CARR | 2/4 | GREEN Long (Mid) | Align + News |
-| NASDAQ:PANW | 1/4 | GREEN Long (Mid) | Align + News |
-| NYSE:JCI | 2/4 | GREEN Long (Mid) | Align + News |
-| NASDAQ:AMD | 1/4 | GREEN Long (Mid) | Align + News |
+| Field | Value |
+|-------|-------|
+| Combined | **69.4** |
+| Tech | 50.4 — Overextended Chase (High Risk) |
+| News | 98 → **GREEN Long (Strong)** |
+| Price | 90.46 |
+| ATR% | 8.1% |
+| RSI | 70.5 |
+| Dist EMA20 | 17.3% |
+| Alignment | **4/4 (100%)** |
+| Entry | **90.46** |
+| Stop | **79.47** (-12.1%) |
+| Target | **105.11** (+16.2%) |
+| R/R | 1.3:1 |
+| Chase | NO |
+| Risks | overheated — price well above EMA20, RSI elevated at 70.5. Size small. |
 
 ---
 
-## 结论
+## 2. INTC (NASDAQ:INTC) — Combined 62.6
 
-当前市场环境下，同时满足 🟢A + 多周期共振 + 新闻强看多的标的非常稀缺（仅 2/54）。**INCY 为首选**（M&A 催化剂确定性强、R/R 1.6:1、回踩入场），CRDO 为次选（趋势延续但 ATR 偏宽止损距离大）。
+| Field | Value |
+|-------|-------|
+| Combined | **62.6** |
+| Tech | 44.4 — Overextended Chase (High Risk) |
+| News | 90 → **GREEN Long (Strong)** |
+| Price | 133.99 |
+| ATR% | 7.8% |
+| RSI | 64.2 |
+| Dist EMA20 | 15.5% |
+| Alignment | **4/4 (100%)** |
+| Entry | **133.99** |
+| Stop | **118.31** (-11.7%) |
+| Target | **154.89** (+15.6%) |
+| R/R | 1.3:1 |
+| Chase | NO |
+| Risks | overheated + near_resist. Price extended 15.5% above EMA20. |
 
-> 生成时间：2026-06-09 22:35 UTC+8 | 数据源：us_combined_signals.md (fresh run)
+---
+
+## 3. QCOM (NASDAQ:QCOM) — Combined 60.8 ⭐ Best R/R
+
+| Field | Value |
+|-------|-------|
+| Combined | **60.8** |
+| Tech | 34.4 — Trend Continuation |
+| News | 88 → **GREEN Long (Strong)** |
+| Price | 226.11 |
+| ATR% | 7.7% |
+| RSI | 55.3 |
+| Dist EMA20 | 4.7% |
+| Alignment | **4/4 (100%)** |
+| Entry | **226.11** |
+| Stop | **199.99** (-11.6%) |
+| Target | **264.41** (+16.9%) |
+| R/R | **1.5:1** |
+| Chase | NO |
+| Risks | mom_decay low_rr — momentum weakening but still trending. Best R/R of the group. |
+
+---
+
+## 4. COHR (NYSE:COHR) — Combined 58.1
+
+| Field | Value |
+|-------|-------|
+| Combined | **58.1** |
+| Tech | 33.8 — Breakout (Squeeze Release) |
+| News | 82 → **GREEN Long (Strong)** |
+| Price | 389.57 |
+| ATR% | 10.1% |
+| RSI | 53.3 |
+| Dist EMA20 | 2.5% |
+| Alignment | **3/4 (75%)** |
+| Entry | **390.74** |
+| Stop | **318.75** (-18.2%) |
+| Target | **487.94** (+25.2%) |
+| R/R | 1.4:1 |
+| Chase | NO |
+| Risks | mom_decay chop low_rr — wide stop due to high ATR (10.1%). Squeeze release setup, RSI neutral at 53. |
+
+---
+
+## 5. AEHR (NASDAQ:AEHR) — Combined 57.9
+
+| Field | Value |
+|-------|-------|
+| Combined | **57.9** |
+| Tech | 36.2 — Breakout (Squeeze Release) |
+| News | 78 → **GREEN Long (Strong)** |
+| Price | 115.30 |
+| ATR% | 12.6% |
+| RSI | 58.8 |
+| Dist EMA20 | 11.4% |
+| Alignment | **4/4 (100%)** |
+| Entry | **115.65** |
+| Stop | **89.15** (-22.7%) |
+| Target | **151.62** (+31.5%) |
+| R/R | 1.4:1 |
+| Chase | NO |
+| Risks | low_rr — highest ATR in group (12.6%), stop is very wide. High upside potential but high volatility. |
+
+---
+
+## 6. MRVL (NASDAQ:MRVL) — Combined 55.6
+
+| Field | Value |
+|-------|-------|
+| Combined | **55.6** |
+| Tech | 38.6 — Overextended Chase (High Risk) |
+| News | 81 → **GREEN Long (Strong)** |
+| Price | 310.58 |
+| ATR% | 12.6% |
+| RSI | 64.6 |
+| Dist EMA20 | 19.5% |
+| Alignment | **3/4 (75%)** |
+| Entry | **310.58** |
+| Stop | **251.88** (-18.9%) |
+| Target | **388.85** (+25.2%) |
+| R/R | 1.3:1 |
+| Chase | NO |
+| Risks | overheated low_rr — most extended (19.5% above EMA20), RSI 64.6. Highest risk in group. |
+
+---
+
+## Grade A Stocks That Failed Filtering
+
+| Symbol | Align | News Signal | Missing |
+|--------|-------|------------|---------|
+| MS | 2/4 | GREEN Long (Strong) ✅ | Align too low |
+| EQIX | 3/4 ✅ | GREEN Long (Mid) | News not Strong |
+| ADI | 4/4 ✅ | GREEN Long (Mid) | News not Strong |
+| FLEX | 2/4 | GREEN Long (Mid) | Both |
+| CDNS | 1/4 | GREEN Long (Mid) | Both |
+| ON | 4/4 ✅ | GREEN Long (Mid) | News not Strong |
+| HON | 4/4 ✅ | GREEN Long (Mid) | News not Strong |
+| DOV | 4/4 ✅ | GREEN Long (Mid) | News not Strong |
+| WWD | 3/4 ✅ | GREEN Long (Mid) | News not Strong |
+| DKS | 4/4 ✅ | GREEN Long (Mid) | News not Strong |
+| APH | 3/4 ✅ | GREEN Long (Mid) | News not Strong |
+| ANET | 4/4 ✅ | GREEN Long (Mid) | News not Strong |
+| GEV | 4/4 ✅ | GREEN Long (Mid) | News not Strong |
+| CSCO | 2/4 | GREEN Long (Mid) | Both |
+
+---
+
+## Summary
+
+- **Total:** 6 / 113 (5.3%) pass all three gates
+- **Full alignment (4/4):** AMKR, INTC, QCOM, AEHR
+- **Partial alignment (3/4):** COHR, MRVL
+- **Best R/R:** QCOM (1.5:1) — cleanest setup with trend continuation, RSI neutral, price near EMA20
+- **Highest conviction:** AMKR (news 98) + QCOM (news 88, best R/R)
+- **Caution:** 3 of 6 tagged overheated (AMKR, INTC, MRVL). Size small; do NOT chase.
+
+> Generated: 2026-06-19 23:37 | Source: `npm run combined:us` → `watchlist/us_combined_signals.md`
