@@ -548,16 +548,30 @@ export async function openScript({ name }) {
         .then(function(scripts) {
           if (!Array.isArray(scripts)) return {error: 'pine-facade returned unexpected data'};
           var match = null;
+          // 1st pass: exact match on scriptName (prefer name over title to avoid misnamed duplicates)
           for (var i = 0; i < scripts.length; i++) {
             var sn = (scripts[i].scriptName || '').toLowerCase();
-            var st = (scripts[i].scriptTitle || '').toLowerCase();
-            if (sn === target || st === target) { match = scripts[i]; break; }
+            if (sn === target) { match = scripts[i]; break; }
           }
+          // 2nd pass: exact match on scriptTitle
+          if (!match) {
+            for (var i = 0; i < scripts.length; i++) {
+              var st = (scripts[i].scriptTitle || '').toLowerCase();
+              if (st === target) { match = scripts[i]; break; }
+            }
+          }
+          // 3rd pass: substring match on scriptName
           if (!match) {
             for (var j = 0; j < scripts.length; j++) {
               var sn2 = (scripts[j].scriptName || '').toLowerCase();
+              if (sn2.indexOf(target) !== -1) { match = scripts[j]; break; }
+            }
+          }
+          // 4th pass: substring match on scriptTitle
+          if (!match) {
+            for (var j = 0; j < scripts.length; j++) {
               var st2 = (scripts[j].scriptTitle || '').toLowerCase();
-              if (sn2.indexOf(target) !== -1 || st2.indexOf(target) !== -1) { match = scripts[j]; break; }
+              if (st2.indexOf(target) !== -1) { match = scripts[j]; break; }
             }
           }
           if (!match) return {error: 'Script "' + target + '" not found. Use pine_list_scripts to see available scripts.'};
