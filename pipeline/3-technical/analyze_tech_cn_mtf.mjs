@@ -663,7 +663,7 @@ function scoreTF(bars, tfKey, live = {}, extra = {}) {
   const chopDiscount = ADX?.chop ? 0.5 : 1;
 
   // 趋势 (±35)
-  if (bullEMA)       { const v = Math.round(12 * chopDiscount); score += v; notes.push(`EMA多头排列(+${v}${ADX?.chop ? ' 震荡折半' : ''})`); }
+  if (bullEMA)       { const baseW = (tfKey === '1W') ? 11 : 15; const v = Math.round(baseW * chopDiscount); score += v; notes.push(`EMA多头排列(+${v}${ADX?.chop ? ' 震荡折半' : ''})`); }
   if (aboveEMA200)   { score += 8;  notes.push('站上EMA200(+8)'); }
   else               { score -= 8;  notes.push('EMA200下方(-8)'); }
   if (ema200Rising)  { score += 4;  notes.push('EMA200上行(+4)'); }
