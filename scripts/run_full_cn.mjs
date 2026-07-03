@@ -36,3 +36,4 @@ try {
 
 await run(`${PIPELINE}/4-combined/analyze_cn_combined.mjs`, 'combined:cn');
 await run(`${PIPELINE}/3.5-limup/predict_cn_limup.mjs`, 'limup:cn');
+await run(`${PIPELINE}/4.5-gap/analyze_cn_intraday_gap.mjs`, 'gap:cn');
