@@ -1,114 +1,99 @@
-# US Grade A Picks — Triple Confirmed
-**Generated:** 2026-06-18  |  **Criteria:** Grade 🟢A + MTF Align ≥3/4 + News GREEN Long (Strong)
-**Pipeline:** scan → news → tech → combined → grade A filter
+# US Grade A 精选 — 三条件过滤结果
 
-> Formula: Combined = TechScore × 0.6 + NewsScore × 0.4 - (overheated ? 5 : 0)  
-> Grade A threshold: Tech ≥ 30 + News Long (not overheated)  
-> Source: `npm run combined:us` → `watchlist/us_combined_signals.md`
+**生成时间:** 2026-07-02 18:17
+**数据源:** watchlist/us_combined_signals.md + us_tech_signals + us_news_signals
 
----
+## 过滤条件
 
-## 🟢 Grade A Pick (1 / 76)
-
-Only **1 stock** out of 76 passes all three gates simultaneously.
-
-### 1. NASDAQ:ASML (ASML Holding) — Combined 62.1
-
-| Field | Value |
-|-------|-------|
-| **Combined Score** | **62.1** |
-| Tech Score | 33.9 (Trend Follow — HH/HL Intact) |
-| News Score | 92 → **GREEN Long (Strong)** |
-| MTF Alignment | **3/4 (75%)** ← 1W↑ 1D↑ 4H→ 1H↓ |
-| Current Price | $1,867.83 |
-| **Entry** | **$1,867.83** |
-| **Stop** | **$1,724.94** (ATR × 1.5) |
-| **Target** | **$2,077.40** |
-| **R/R** | **1.5 : 1** |
-| RSI (1D) | 62.7 |
-| ADX | 30.6 |
-| ATR% | 5.1% |
-| Dist from EMA20 | +8.0% |
-| RS vs SPY | +27.0 |
-| Chase OK | **NO** |
-
-**📰 Key Catalysts (last 5 trading days):**
-
-| Date | Type | Weight | Headline |
-|------|------|--------|----------|
-| 2026-06-17 | Analyst | 3.87 | ASML upgraded on AI-driven EUV demand acceleration |
-| 2026-06-16 | Industry | 3.57 | TSMC capacity expansion boosts lithography tool orders |
-| 2026-06-15 | Earnings | 3.53 | Strong Q2 order book, raised FY guidance |
-
-**Sentiment:** 15 kept / 0 filtered (high volume, high quality). All bullish — zero bearish news items. High confidence signal.
-
-**⚠️ Risk Flags:**
-
-| Flag | Detail |
-|------|--------|
-| **NEAR-RESIST** | Approaching technical resistance zone; breakout not yet confirmed |
-| **BEAR-DIV** | Bearish divergence on lower timeframes — RSI making lower highs |
-| **+8% from EMA20** | Extended from mean, pullback risk elevated |
-| **1H weak** | 1H timeframe trending down — short-term pressure |
-
-**📊 Multi-Timeframe Detail:**
-
-| TF | Score | RSI | Trend | Key |
-|----|-------|-----|-------|-----|
-| 1W | 33 | 62.7 | ↑ | Bullish structure, EMA stack intact |
-| 1D | 40 | 62.7 | ↑ | Primary trend strong, ADX 30.6 |
-| 4H | 20 | — | → | Neutral, consolidating near resistance |
-| 1H | 6 | — | ↓ | Weak, bearish divergence |
-
-**📊 Verdict:** 
-- 今日唯一三条件全满足标的。3/4多周期对齐，1D趋势强劲
-- 新闻情绪极强（92分），AI半导体资本支出周期提供基本面支撑
-- 但 near_resist + bear_div on 4H/1H = 短期可能回踩
-- 距EMA20 +8%，不建议追高
-- **建议：等回调至$1,720-1,780（EMA20附近）入场。不追高。止损 $1,724.94。**
+| # | 条件 | 阈值 |
+|---|------|------|
+| 1 | 等级 | 🟢A（技术+新闻双确认，无过热惩罚） |
+| 2 | 多周期对齐 | 3/4 (75%) 或 4/4 (100%) |
+| 3 | News Signal | GREEN Long (Strong) |
 
 ---
 
-## 🔄 Change from Yesterday (2026-06-17)
-
-| Stock | Yesterday | Today | Reason |
-|-------|-----------|-------|--------|
-| **NASDAQ:ASML** | Near-miss (Align 25%) | ✅ Grade A (3/4 align) | MTF alignment surged 1/4→3/4; news stayed GREEN Long (Strong) |
-| **NYSE:C** | ✅ Grade A (4/4, 58.7) | ❌ Demoted to C | Tech score dropped; news signal degraded from Strong→Mid |
+## 通过筛选: 1 只 / 38 候选 (2.6%)
 
 ---
 
-## Near-Miss Candidates (10 stocks that missed by ONE criterion)
+## 🟢 Grade A Pick
 
-| Stock | Combined | Grade | Align | News Signal | Missed By |
-|-------|----------|-------|-------|-------------|-----------|
-| **NYSE:MS** | 61.8 | A | 3/4 ✅ | GREEN Long (Mid) | News not "Strong" |
-| **NASDAQ:AEHR** | 57.4 | A | 3/4 ✅ | GREEN Long (Mid) | News not "Strong" |
-| **NASDAQ:WDC** | 48.3 | A | 3/4 ✅ | WARN Long (Cautious) | News overheated |
-| **NYSE:DELL** | 48.1 | A | 3/4 ✅ | GREEN Long (Mid) | News not "Strong" |
-| **NASDAQ:LRCX** | 57.6 | A | 2/4 ❌ | GREEN Long (Strong) | Align only 50% |
-| **NASDAQ:KLAC** | 58.2 | A | 1/4 ❌ | GREEN Long (Mid) | Align + News |
-| **NYSE:DOV** | 56.2 | A | 2/4 ❌ | GREEN Long (Mid) | Align + News |
-| **NASDAQ:AMKR** | 54.7 | A | 2/4 ❌ | GREEN Long (Mid) | Align + News |
-| **NYSE:VRT** | 50.3 | A | 1/4 ❌ | GREEN Long (Mid) | Align + News |
-| **NYSE:FCX** | 50.2 | A | 2/4 ❌ | GREEN Long (Mid) | Align + News |
+### 1. PACS (NYSE:PACS) — Combined 66.2
 
-- **MS**: 3/4对齐+Tech最高(+55)，BULL-TRAP风险，等News升级
-- **AEHR**: 3/4对齐+Breakout类型，ATR% 13%高波动，等News催化
-- **LRCX**: 新闻最强(GREEN Strong)但对齐仅50%，趋势一致性不足
-- **DELL**:  3/4对齐但RS+77超强(overheat)，等待回调消化
+| 维度 | 内容 |
+|------|------|
+| 等级 | 🟢A |
+| 综合分 | **66.2** |
+| 技术分 | 50.4 (Overextended Chase — High Risk) |
+| 新闻分 | 90 → GREEN Long (Strong) |
+| MTF 对齐 | **3/4 (75%)** |
+| 当前价 | 44.32 |
+| **入场价** | **44.32**（不追涨，等回调至 $41.2-$42） |
+| **止损价** | **41.2**（ATR 4.7% × 1.5） |
+| **目标价** | **48.49** |
+| RSI | 69.4（接近过热） |
+| ATR% | 4.7% |
+| EMA20 距离 | 14.3%（大幅偏离，追涨风险高） |
+| 盈亏比 | **1.3:1**（偏低） |
+| 追涨 | **NO** |
+| 风险标注 | overheated, near_resist |
+
+**核心催化剂：**
+- 新闻分 90/100，全候选最高，正面催化剂极强
+- 技术面 3/4 多周期确认，趋势健康
+- 但当前价格大幅偏离 EMA20（14.3%），RSI 接近 70
+
+**注意：**
+- **OVERHEATED** — 等回调再入场，不要在现价追
+- 理想入场区间 $41.2-$42（接近止损位）
+- R/R 仅 1.3:1，建议缩小仓位至 15-20%（正常 A 级 30%）
+- 若 RSI 跌破 60 或收盘跌破止损，立即离场
 
 ---
 
-## Position Sizing & Risk Management
+## 筛选漏斗
 
-| Stock | Max Position | Stop Loss % | Notes |
-|-------|-------------|-------------|-------|
-| NASDAQ:ASML | 30% | -7.6% | 距EMA20 +8%，等回调至$1,720-1,780入场 |
+| 筛选步 | 通过数 | 淘汰数 | 淘汰原因 |
+|--------|--------|--------|----------|
+| 总候选 | 38 | — | — |
+| 🟢A 等级 | 5 | 33 | 技术分不足/新闻中性/过热惩罚 |
+| 对齐 ≥ 3/4 | 2 | 3 | JCI(2/4), ANET(2/4), GLW(1/4) |
+| GREEN Long (Strong) | **1** | 1 | DELL 对齐 3/4 但新闻仅 Mid |
 
-**Discipline:**
-1. No chasing — `chase: NO`
-2. Close on daily close below stop ($1,724.94), no exceptions
-3. Better entry: wait for pullback to EMA20 area (~$1,720)
-4. Monitor 4H bearish divergence — if RSI makes new low, tighten stop
-5. Max 30% position per Grade A name
+---
+
+## 被淘汰的 Near Miss（满足 1-2/3 条件）
+
+| 股票 | 综合分 | 等级 | 对齐 | 新闻信号 | 缺失条件 |
+|------|--------|------|------|---------|----------|
+| DELL NYSE:DELL | 50.6 | 🟢A | 3/4 (75%) ✅ | Mid ❌ | 新闻非 Strong |
+| ANET NYSE:ANET | 60.1 | 🟢A | 2/4 (50%) ❌ | Strong ✅ | 对齐不足 |
+| JCI NYSE:JCI | 63.7 | 🟢A | 2/4 (50%) ❌ | WARN ❌ | 对齐+新闻 |
+| GLW NYSE:GLW | 55.9 | 🟢A | 1/4 (25%) ❌ | Mid ❌ | 对齐+新闻 |
+
+---
+
+## 与上期对比 (07-01 → 07-02)
+
+| 股票 | 07-01 | 07-02 | 变化 |
+|------|-------|-------|------|
+| ASML | 🟢A (61, 3/4, Strong) | 🔵B (49.5, 1/4, Mid) | 降级：MTF对齐崩溃+新闻走弱 |
+| PACS | 🔵B (56.4, 4/4) | 🟢A (66.2, 3/4, Strong) | **升为A级**：新闻爆发至90分 |
+
+---
+
+## 本期总结
+
+| 指标 | US (07-02) | US (07-01) |
+|------|-----------|------------|
+| 命中数 | **1** | **1** |
+| 候选池 | 38 只 | 48 只 |
+| A 级数 | 5 只 | 4 只 |
+| 对齐 ≥3/4 的 A 级 | 2 只 | 1 只 |
+| 新闻 Strong 的 A 级 | 2 只 | 1 只 |
+| 三条件全过 | **1 只** (PACS) | **1 只** (ASML) |
+
+**变化：** 上期唯一 Grade A 标的 ASML 降级至 B 级（MTF 对齐从 3/4 跌至 1/4，技术面全面恶化）。PACS 从 B 级升为 A 级（新闻面爆发至 90 分）。ANET 新闻 Strong 但对齐仅 2/4，DELL 对齐 3/4 但新闻仅 Mid — 两只均差一个条件。市场 BULL-TRAP/FAKE/BEAR-DIV 标签密集（17/38 标记），追涨风险高。
+
+*Generated: 2026-07-02 | Sources: us_combined_signals + us_tech_signals + us_news_signals*
