@@ -18,6 +18,7 @@ import { dirname, resolve } from 'path';
 import { searchHKNews, extractHKCode } from '../../src/core/hkNews.js';
 import { analyzeStockData } from './lib/analyze.mjs';
 import { isLLMEnabled, MODEL } from './lib/llm_common.mjs';
+import { pruneWatchlist } from './lib/prune_watchlist.mjs';
 
 process.chdir(resolve(dirname(fileURLToPath(import.meta.url)), '../..'));
 
@@ -298,6 +299,11 @@ async function main() {
   };
   writeFileSync(OUTPUT_JSON, JSON.stringify(json, null, 2), 'utf8');
   console.log(`✅ 下游契约 JSON 已保存: ${OUTPUT_JSON}\n`);
+
+  const { removed } = pruneWatchlist(SYMBOLS_FILE, OUTPUT_JSON, MARKET);
+  if (removed.length > 0) {
+    console.log(`🧹 已从 watchlist 移除规避/做空股票: ${removed.join(', ')}`);
+  }
 }
 
 main().catch(err => {

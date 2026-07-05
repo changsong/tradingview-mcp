@@ -19,6 +19,7 @@ import { searchUSNews } from '../../src/core/usNews.js';
 import { analyzeStockData } from './lib/analyze.mjs';
 import { filterRelevantCandidates } from './lib/relevance.mjs';
 import { isLLMEnabled, MODEL } from './lib/llm_common.mjs';
+import { pruneWatchlist } from './lib/prune_watchlist.mjs';
 
 process.chdir(resolve(dirname(fileURLToPath(import.meta.url)), '../..'));
 
@@ -395,6 +396,11 @@ async function main() {
   writeFileSync(OUTPUT_JSON, JSON.stringify(json, null, 2), 'utf8');
   logPerformanceSummary(json.performance);
   console.log(`JSON contract saved: ${OUTPUT_JSON}\n`);
+
+  const { removed } = pruneWatchlist(SYMBOLS_FILE, OUTPUT_JSON, MARKET);
+  if (removed.length > 0) {
+    console.log(`Cleaned watchlist: removed ${removed.join(', ')}`);
+  }
 }
 
 main().catch(err => {

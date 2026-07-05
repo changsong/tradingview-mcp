@@ -20,6 +20,7 @@ import { searchNews, extractCode } from '../../src/core/webNews.js';
 import { analyzeStockData } from './lib/analyze.mjs';
 import { filterRelevantCandidates } from './lib/relevance.mjs';
 import { isLLMEnabled, MODEL } from './lib/llm_common.mjs';
+import { pruneWatchlist } from './lib/prune_watchlist.mjs';
 import { createLimiter } from '../../src/core/concurrency.js';
 
 // 锁定 CWD 为项目根，使 ./watchlist 等相对路径稳定
@@ -394,6 +395,11 @@ async function main() {
   writeFileSync(OUTPUT_JSON, JSON.stringify(json, null, 2), 'utf8');
   logPerformanceSummary(json.performance);
   console.log(`✅ 下游契约 JSON 已保存: ${OUTPUT_JSON}\n`);
+
+  const { removed } = pruneWatchlist(SYMBOLS_FILE, OUTPUT_JSON, MARKET);
+  if (removed.length > 0) {
+    console.log(`🧹 已从 watchlist 移除规避/做空股票: ${removed.join(', ')}`);
+  }
 }
 
 main().catch(err => {
