@@ -215,6 +215,7 @@ async function scanStocks() {
     if (r.trendUp && r.validCompression && r.volOK && r.rsiOK && r.notHighVol && r.signal === 'LONG') return true;
     // 二级通道：趋势延伸 — validCompression=false（已突破），但其他4个条件全满足
     if (r.trendUp && !r.validCompression && r.volOK && r.rsiOK && r.notHighVol) return true;
+    if (r.trendUp && r.signal === 'LONG') return true;
     return false;
   });
 
