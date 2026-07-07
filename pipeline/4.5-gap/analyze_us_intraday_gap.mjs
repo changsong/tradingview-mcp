@@ -11,7 +11,7 @@ process.chdir(resolve(dirname(fileURLToPath(import.meta.url)), '../..'));
 
 import { runGap } from './gapCore.mjs';
 
-runGap('us').catch(e => {
+runGap('us').then(() => process.exit(0)).catch(e => {
   console.error('\n❌ gap:us 失败:', e.message);
   process.exit(1);
 });

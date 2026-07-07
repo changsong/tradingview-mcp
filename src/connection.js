@@ -110,17 +110,25 @@ export async function connect() {
 }
 
 async function findChartTarget() {
-  const resp = await fetch(`http://${CDP_HOST}:${CDP_PORT}/json/list`);
-  const targets = await resp.json();
-  // Priority 1: https tradingview.com/chart
-  return targets.find(t => t.type === 'page' && /tradingview\.com\/chart/i.test(t.url))
-    // Priority 2: any https tradingview.com page (not file://)
-    || targets.find(t => t.type === 'page' && /^https?:\/\/.+tradingview/i.test(t.url))
-    // Priority 3: any page mentioning tradingview (fallback, avoids file:// toast windows)
-    || targets.find(t => t.type === 'page' && /tradingview/i.test(t.url) && t.url.startsWith('http'))
-    // Priority 4: TradingView Desktop (Electron) — file:// URLs with "tabbed-window" main window
-    || targets.find(t => t.type === 'page' && /tabbed-window/i.test(t.url))
-    || null;
+  const ctrl = new AbortController();
+  const t = setTimeout(() => ctrl.abort(), 5000);
+  try {
+    const resp = await fetch(`http://${CDP_HOST}:${CDP_PORT}/json/list`, { signal: ctrl.signal });
+    clearTimeout(t);
+    const targets = await resp.json();
+    // Priority 1: https tradingview.com/chart
+    return targets.find(t => t.type === 'page' && /tradingview\.com\/chart/i.test(t.url))
+      // Priority 2: any https tradingview.com page (not file://)
+      || targets.find(t => t.type === 'page' && /^https?:\/\/.+tradingview/i.test(t.url))
+      // Priority 3: any page mentioning tradingview (fallback, avoids file:// toast windows)
+      || targets.find(t => t.type === 'page' && /tradingview/i.test(t.url) && t.url.startsWith('http'))
+      // Priority 4: TradingView Desktop (Electron) — file:// URLs with "tabbed-window" main window
+      || targets.find(t => t.type === 'page' && /tabbed-window/i.test(t.url))
+      || null;
+  } catch {
+    clearTimeout(t);
+    return null;
+  }
 }
 
 export async function getTargetInfo() {
