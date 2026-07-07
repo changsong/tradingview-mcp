@@ -210,9 +210,11 @@ npm run combined:hk
 ### 使用 ./scripts/launch_tv_debug.bat 启动TradigView，请使用策略：US Stock SQZMOM Daily PRO v4 (ATR + EMA20 Stop)，请分析这个策略，有没有可以提高的地方, 先列出可能优化的点，并制定优化计划，在日线上进行回测并分析交易清单，对策略进行改进，提高交易信号同时，也需要提高胜率，提高收益, 优化策略后，请使用 ../watchlist/us.txt 中的股票列表做回测，根据回测结果特别是交易清单，研究亏损的订单，总结规律，不断优化策略，并回测，做对比，对策略进行改进，提高交易信号同时，也需要提高胜率提高胜率，提高收益，持续优化，直到不能持续优化为止
 
 ## 添加Wathlist
-使用 ./scripts/launch_tv_debug.bat 启动TradigView，将 600460,605111,300623,605358,300373,301099,300503,002975,300184,600549,301360,000062,000636,300408,300806,605376,603678,603267,301013,300136,002636,300903,603186,01888,00148,300476,002384,300308,301217,601208,600183,001389 这些股票加入 A股可交易 这个watchlist
+使用 ./scripts/launch_tv_debug.bat 启动TradigView，将 002371,300666,300054,603986,600584,002156,300308,300502,601138,603019,002050,002837,300476,002463,300750,300014,300274,300827,600
+  406,601179,002028,002085,600990,300699,300777,600038,002896,300124,601689,603662,601668,600031,600585,002129,300751,000786,601800
+  ,601390 这些股票加入 A股可交易 这个watchlist
 
-使用 ./scripts/launch_tv_debug.bat 启动TradigView，将 AMAT,LRCX,KLAC,ASML,APD,LIN,IFNNY,STM,NVDA,SMCI,LITE,COHR,AAOI,GLW,AMKR,ASX,MU,WDC,TSLA,WOLF,ON  这些股票加入 美股可交易 这个watchlist
+使用 ./scripts/launch_tv_debug.bat 启动TradigView，将 TSM,NVDA,LLY,GEV,AMD,NBIS,ISRG,BE,CRCL,CRSP  这些股票加入 美股可交易 这个watchlist
 
 使用 ./scripts/launch_tv_debug.bat 启动TradigView，将   522,1347,981,2577,992,763,6869,1300,1888,148,9880,9660,1810,3898 这些股票加入 港股可交易 这个watchlist
 
