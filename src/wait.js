@@ -3,14 +3,16 @@ import { evaluate, safeString } from './connection.js';
 const DEFAULT_TIMEOUT = 10000;
 const POLL_INTERVAL = 60;
 
-export async function waitForChartReady(expectedSymbol = null, expectedTf = null, timeout = DEFAULT_TIMEOUT, pollInterval = POLL_INTERVAL) {
+export async function waitForChartReady(expectedSymbol = null, expectedTf = null, timeout = DEFAULT_TIMEOUT, pollInterval = POLL_INTERVAL, prevBarFingerprint = null) {
   const start = Date.now();
   let lastBarCount = -1;
   let stableCount = 0;
 
   while (Date.now() - start < timeout) {
+    const fpCheck = prevBarFingerprint ? `var prevFp = ${JSON.stringify(prevBarFingerprint)};` : 'var prevFp = null;';
     const state = await evaluate(`
       (function() {
+        ${fpCheck}
         var expectedSymbol = ${expectedSymbol ? safeString(expectedSymbol) : 'null'};
 
         // Fast functional check via chart API — no DOM dependency
@@ -18,9 +20,22 @@ export async function waitForChartReady(expectedSymbol = null, expectedTf = null
         if (chartApi) {
           try {
             var currentSym = chartApi.symbol();
-            var barsSize = chartApi._chartWidget.model().mainSeries().bars().size();
+            var bars = chartApi._chartWidget.model().mainSeries().bars();
+            var barsSize = bars.size();
             if (barsSize > 0 && (expectedSymbol == null || currentSym.toUpperCase().indexOf(expectedSymbol.toUpperCase()) !== -1)) {
-              return { ready: true, method: 'api', currentSymbol: currentSym, barCount: barsSize };
+              // Bar fingerprint check: verify bars actually changed since symbol switch
+              var barsChanged = true;
+              if (prevFp) {
+                try {
+                  var last = bars.valueAt(bars.lastIndex());
+                  if (last && last[0] === prevFp.time && last[4] === prevFp.close) {
+                    barsChanged = false;
+                  }
+                } catch(e) {}
+              }
+              if (barsChanged) {
+                return { ready: true, method: 'api', currentSymbol: currentSym, barCount: barsSize };
+              }
             }
           } catch {}
         }
@@ -34,8 +49,8 @@ export async function waitForChartReady(expectedSymbol = null, expectedTf = null
         var barCount = -1;
         try {
           if (chartApi) {
-            var bars = chartApi._chartWidget.model().mainSeries().bars();
-            barCount = bars ? bars.size() : -1;
+            var bars2 = chartApi._chartWidget.model().mainSeries().bars();
+            barCount = bars2 ? bars2.size() : -1;
           }
         } catch {}
 

@@ -113,15 +113,15 @@ const sleep = ms => new Promise(r => setTimeout(r, ms));
 
 // Direct CDP wrappers — replace execSync CLI calls so symbol/timeframe switches
 // persist across operations in the same WebSocket session.
-const CDP_DEPS = { pollInterval: 60, timeout: 2000 };
+const CDP_DEPS = { pollInterval: 80, timeout: 8000 };
 async function cdpSwitchSymbol(sym) {
   try { return await coreChart.setSymbol({ symbol: sym, _deps: CDP_DEPS }); } catch { return null; }
 }
 async function cdpSwitchTf(tf) {
   try { return await coreChart.setTimeframe({ timeframe: tf, _deps: CDP_DEPS }); } catch { return null; }
 }
-async function cdpOhlcv(n) {
-  try { return await coreData.getOhlcv({ count: n }); } catch { return null; }
+async function cdpOhlcv(n, expectedSymbol) {
+  try { return await coreData.getOhlcv({ count: n, expectedSymbol }); } catch { return null; }
 }
 async function cdpStudyValues() {
   try { return await coreData.getStudyValues(); } catch { return null; }
@@ -958,7 +958,7 @@ async function fetchBenchBars() {
   const sw = await cdpSwitchSymbol(BENCH_SYM);
   if (!sw?.success) { process.stdout.write(' ❌ 切换失败\n'); return null; }
   await cdpSwitchTf('D');
-  const o = await cdpOhlcv(60);
+  const o = await cdpOhlcv(60, BENCH_SYM);
   const bars = (o?.success && o.bars) ? o.bars : null;
   if (bars) {
     try {
@@ -978,7 +978,7 @@ async function analyzeStock(meta, opts, benchBars) {
   process.stdout.write(`  ${symbol.padEnd(16)} `);
 
   const sw = await withRetry(() => cdpSwitchSymbol(symbol), { label: `${symbol} switch` });
-  if (!sw?.success) { process.stdout.write('❌ 切换失败\n'); return null; }
+  if (!sw?.success || sw.chart_ready === false) { process.stdout.write('❌ 切换失败\n'); return null; }
   tPts.sw = Math.round(performance.now() - tStart);
 
   const tfMap = {};
@@ -995,7 +995,7 @@ async function analyzeStock(meta, opts, benchBars) {
       const sw2 = await withRetry(() => cdpSwitchTf(tf), { label: `${symbol} tf=${tf}` });
       if (!sw2?.success) { process.stdout.write('!'); continue; }
 
-      ohlcv = await cdpOhlcv(bars);
+      ohlcv = await cdpOhlcv(bars, symbol);
       if (!ohlcv?.success || !ohlcv.bars?.length || ohlcv.bars.length < 20) {
         process.stdout.write('○');
         continue;

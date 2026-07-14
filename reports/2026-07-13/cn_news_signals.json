@@ -1,205 +1,31 @@
 {
-  "generated_at": "2026-07-14T00:00:26.933Z",
+  "generated_at": "2026-07-13T12:08:26.267Z",
   "market": "cn",
   "source": "src/core/webNews.js",
   "score_scale": "0-100 normalized (neutral=50)",
   "window": {
-    "from": "2026-07-07",
-    "to": "2026-07-14",
+    "from": "2026-07-06",
+    "to": "2026-07-13",
     "days": 7
   },
   "llm_used": true,
   "performance": {
     "totals_ms": {
-      "list_fetch_ms": 82672,
-      "enrichment_ms": 36284,
+      "list_fetch_ms": 121235,
+      "enrichment_ms": 254092,
       "relevance_ms": 0,
-      "llm_ms": 10379,
-      "report_write_ms": 15
+      "llm_ms": 58215,
+      "report_write_ms": 16
     },
     "avg_ms": {
-      "list_fetch_ms": 2953,
-      "enrichment_ms": 1296,
+      "list_fetch_ms": 3911,
+      "enrichment_ms": 8197,
       "relevance_ms": 0,
-      "llm_ms": 371,
+      "llm_ms": 1878,
       "report_write_ms": 1
     }
   },
   "stocks": {
-    "SSE:603296": {
-      "name": "603296",
-      "score": 90,
-      "score_raw": 9.63,
-      "score_components": {
-        "positive_weight_sum": 9.63,
-        "negative_weight_sum": 0,
-        "news_effective_count": 2,
-        "news_dropped_count": 0
-      },
-      "signal": "🟢 Long (强)",
-      "strategy": "多重利好共振，基本面+情绪双支撑，适合追涨或持有",
-      "suitable_for": "追涨 / 持有",
-      "confidence": "高",
-      "patterns": [
-        "情绪持续增强↑(trend)"
-      ],
-      "positive_factors": [
-        "[财报|w5.85] 华勤技术:华勤技术2026年半年度业绩预增公告",
-        "[并购|w3.78] 华勤技术:华勤技术H股公告-有关在市场上收购晶合集成H股之须予披露交易"
-      ],
-      "negative_factors": [],
-      "news_count": 2,
-      "news_dropped": 0,
-      "performance": {
-        "list_fetch_ms": 2162,
-        "candidate_filter_ms": 0,
-        "enrichment_ms": 2159,
-        "raw_news_count": 30,
-        "raw_research_count": 10,
-        "candidate_news_count": 2,
-        "candidate_research_count": 0,
-        "enriched_news_count": 2,
-        "enriched_research_count": 0,
-        "candidate_reasons": {
-          "news": {
-            "no-subject-mention": 18,
-            "noise:\\d{1,2}月\\d{1,2}日(快速上涨|快速回调|涨停|": 1,
-            "noise:融资净(买入|卖出)": 1,
-            "dedup": 0,
-            "out_of_window": 8
-          },
-          "research": {
-            "dedup": 0,
-            "out_of_window": 10
-          }
-        },
-        "date_filter_ms": 0,
-        "relevance_ms": 0,
-        "llm_ms": 1564,
-        "scoring_ms": 0
-      },
-      "top_news": [
-        {
-          "date": "2026-07-14",
-          "title": "华勤技术:华勤技术2026年半年度业绩预增公告",
-          "content": "",
-          "type": "财报",
-          "sentiment": 1,
-          "weight": 6,
-          "final_weight": 5.85,
-          "source_authority": 4.5,
-          "recency_factor": 1,
-          "source": "东方财富公告",
-          "llm_reviewed": true,
-          "llm_confidence": 0.9,
-          "llm_is_real_catalyst": true,
-          "llm_reasoning": "半年度业绩预增公告，明确利好"
-        },
-        {
-          "date": "2026-07-11",
-          "title": "华勤技术:华勤技术H股公告-有关在市场上收购晶合集成H股之须予披露交易",
-          "content": "一般项目:从事计算机软件领域内的技术开发、技术转让、技术咨询、技术服务,通讯产品及相关软硬件的设计、销售;货物进出口;技术进出口。(除依法须经批准的项目外,凭营业执照依法自主开展经营活动)\n郑重声明：东方财富网发布此信息的目的在于传播更多信息，与本站立场无关。东方财富网不保证该信息（包括但不限于文字、视频、音频、数据及图表）全部或者部分内容的准确性、真实性、完整性、有效性、及时性、原创性等。相关信息并未经过本网站证实，不对您构成任何投资建议，据此操作，风险自担。",
-          "type": "并购",
-          "sentiment": 1,
-          "weight": 4,
-          "final_weight": 3.78,
-          "source_authority": 4.5,
-          "recency_factor": 0.6,
-          "source": "东方财富公告",
-          "llm_reviewed": true,
-          "llm_confidence": 0.8,
-          "llm_is_real_catalyst": true,
-          "llm_reasoning": "收购晶合集成H股，属须披露交易"
-        }
-      ]
-    },
-    "SSE:603416": {
-      "name": "603416",
-      "score": 88,
-      "score_raw": 9,
-      "score_components": {
-        "positive_weight_sum": 9,
-        "negative_weight_sum": 0,
-        "news_effective_count": 2,
-        "news_dropped_count": 0
-      },
-      "signal": "🟢 Long (强)",
-      "strategy": "多重利好共振，基本面+情绪双支撑，适合追涨或持有",
-      "suitable_for": "追涨 / 持有",
-      "confidence": "高",
-      "patterns": [
-        "情绪持续增强↑(trend)"
-      ],
-      "positive_factors": [
-        "[财报|w5.85] 信捷电气:无锡信捷电气股份有限公司2025年年度权益分派实施公告",
-        "[并购|w3.15] 信捷电气:无锡信捷电气股份有限公司关于购买土地并投资建设项目进展的公告"
-      ],
-      "negative_factors": [],
-      "news_count": 2,
-      "news_dropped": 0,
-      "performance": {
-        "list_fetch_ms": 2204,
-        "candidate_filter_ms": 0,
-        "enrichment_ms": 2328,
-        "raw_news_count": 30,
-        "raw_research_count": 10,
-        "candidate_news_count": 2,
-        "candidate_research_count": 0,
-        "enriched_news_count": 2,
-        "enriched_research_count": 0,
-        "candidate_reasons": {
-          "news": {
-            "no-subject-mention": 14,
-            "noise:\\d{1,2}月\\d{1,2}日(快速上涨|快速回调|涨停|": 2,
-            "noise:融资净(买入|卖出)": 1,
-            "dedup": 0,
-            "out_of_window": 11
-          },
-          "research": {
-            "dedup": 0,
-            "out_of_window": 10
-          }
-        },
-        "date_filter_ms": 0,
-        "relevance_ms": 0,
-        "llm_ms": 1651,
-        "scoring_ms": 0
-      },
-      "top_news": [
-        {
-          "date": "2026-07-14",
-          "title": "信捷电气:无锡信捷电气股份有限公司2025年年度权益分派实施公告",
-          "content": "",
-          "type": "财报",
-          "sentiment": 1,
-          "weight": 6,
-          "final_weight": 5.85,
-          "source_authority": 4.5,
-          "recency_factor": 1,
-          "source": "东方财富公告",
-          "llm_reviewed": true,
-          "llm_confidence": 0.8,
-          "llm_is_real_catalyst": true,
-          "llm_reasoning": "权益分派实施公告，属于财报相关事件"
-        },
-        {
-          "date": "2026-07-10",
-          "title": "信捷电气:无锡信捷电气股份有限公司关于购买土地并投资建设项目进展的公告",
-          "content": "",
-          "type": "并购",
-          "sentiment": 1,
-          "weight": 3,
-          "final_weight": 3.15,
-          "source_authority": 4.5,
-          "recency_factor": 0.5,
-          "source": "东方财富公告",
-          "llm_reviewed": true,
-          "llm_confidence": 0.7,
-          "llm_is_real_catalyst": true,
-          "llm_reasoning": "购买土地并投资建设项目，属于资产投资类公告"
-        }
-      ]
-    },
     "SZSE:000938": {
       "name": "000938",
       "score": 85,
@@ -226,9 +52,9 @@
       "news_count": 5,
       "news_dropped": 0,
       "performance": {
-        "list_fetch_ms": 4418,
+        "list_fetch_ms": 5230,
         "candidate_filter_ms": 0,
-        "enrichment_ms": 4323,
+        "enrichment_ms": 4075,
         "raw_news_count": 40,
         "raw_research_count": 10,
         "candidate_news_count": 4,
@@ -251,8 +77,8 @@
         },
         "date_filter_ms": 0,
         "relevance_ms": 0,
-        "llm_ms": 21,
-        "scoring_ms": 0
+        "llm_ms": 2313,
+        "scoring_ms": 1
       },
       "top_news": [
         {
@@ -337,98 +163,152 @@
         }
       ]
     },
-    "SZSE:002916": {
-      "name": "002916",
-      "score": 84,
-      "score_raw": 8.12,
+    "SZSE:000977": {
+      "name": "000977",
+      "score": 67,
+      "score_raw": 4.04,
       "score_components": {
-        "positive_weight_sum": 8.12,
-        "negative_weight_sum": 0,
-        "news_effective_count": 2,
+        "positive_weight_sum": 6.25,
+        "negative_weight_sum": 2.21,
+        "news_effective_count": 7,
         "news_dropped_count": 0
       },
-      "signal": "🟢 Long (强)",
-      "strategy": "多重利好共振，基本面+情绪双支撑，适合追涨或持有",
-      "suitable_for": "追涨 / 持有",
+      "signal": "🔴 No Trade / Short",
+      "strategy": "黑天鹅事件规避，等待事件明朗化再评估",
+      "suitable_for": "反转(等底部确认)",
       "confidence": "高",
       "patterns": [
-        "情绪持续增强↑(trend)"
+        "⚠️情绪背离(黑天鹅被掩盖)"
       ],
       "positive_factors": [
-        "[财报|w5.85] 深南电路:2026年半年度业绩预告",
-        "[政策|w2.27] 深南电路:关于2026年度向特定对象发行股票获得有权国资监管单位批复的公告"
+        "[财报|w2.11] 浪潮信息:2026年半年度业绩预告",
+        "[财报|w1.95] 2026年半年度业绩预告",
+        "[分析师动作|w0.81] 深度布局国产算力生态，业绩表现大超市场预期"
       ],
-      "negative_factors": [],
-      "news_count": 2,
+      "negative_factors": [
+        "[黑天鹅|w1.13] 浪潮信息:股票交易异常波动公告",
+        "[黑天鹅|w1.08] 股票交易异常波动公告"
+      ],
+      "news_count": 7,
       "news_dropped": 0,
       "performance": {
-        "list_fetch_ms": 2848,
+        "list_fetch_ms": 2442,
         "candidate_filter_ms": 0,
-        "enrichment_ms": 3032,
-        "raw_news_count": 30,
+        "enrichment_ms": 3282,
+        "raw_news_count": 40,
         "raw_research_count": 10,
-        "candidate_news_count": 2,
-        "candidate_research_count": 0,
-        "enriched_news_count": 2,
-        "enriched_research_count": 0,
+        "candidate_news_count": 4,
+        "candidate_research_count": 3,
+        "enriched_news_count": 4,
+        "enriched_research_count": 3,
         "candidate_reasons": {
           "news": {
             "no-subject-mention": 16,
-            "noise:\\d{1,2}月\\d{1,2}日(快速上涨|快速回调|涨停|": 4,
+            "noise:\\d{1,2}月\\d{1,2}日(快速上涨|快速回调|涨停|": 2,
+            "noise:龙虎榜|大宗交易|盘口异动": 1,
+            "noise:融资净(买入|卖出)": 1,
             "dedup": 0,
-            "out_of_window": 8
+            "out_of_window": 16
           },
           "research": {
             "dedup": 0,
-            "out_of_window": 10
+            "out_of_window": 7
           }
         },
         "date_filter_ms": 0,
         "relevance_ms": 0,
-        "llm_ms": 1578,
+        "llm_ms": 2834,
         "scoring_ms": 0
       },
       "top_news": [
         {
-          "date": "2026-07-14",
-          "title": "深南电路:2026年半年度业绩预告",
-          "content": "",
-          "type": "财报",
-          "sentiment": 1,
-          "weight": 6,
-          "final_weight": 5.85,
-          "source_authority": 4.5,
-          "recency_factor": 1,
-          "source": "东方财富公告",
-          "llm_reviewed": true,
-          "llm_confidence": 0.9,
-          "llm_is_real_catalyst": true,
-          "llm_reasoning": "半年度业绩预告发布，提供可量化财务数据"
-        },
-        {
           "date": "2026-07-09",
-          "title": "深南电路:关于2026年度向特定对象发行股票获得有权国资监管单位批复的公告",
-          "content": "",
-          "type": "政策",
-          "sentiment": 1,
-          "weight": 2,
-          "final_weight": 2.27,
+          "title": "浪潮信息:股票交易异常波动公告",
+          "content": "一般项目:计算机软硬件及外围设备制造;计算机软硬件及辅助设备批发;计算机软硬件及辅助设备零售;互联网设备销售;互联网设备制造;软件开发;软件销售;通信设备制造;通信设备销售;通用设备制造(不含特种设备制造);电子专用材料制造;电子专用材料研发;电子专用材料销售;制冷、空调设备制造;制冷、空调设备销售;钟表与计时仪器制造;钟表与计时仪器销售;计算器设备销售;玩具制造;玩具销售;教学用模型及教具制造;教学用模型及教具销售;技术服务、技术开发、技术咨询、技术交流、技术转让、技术推广;计算机及通讯设备租赁;计算机及办公设备维修;非居住房地产租赁;工程和技术研究和试验发展;工程管理服务;信息系统集成服务;变压器、整流器和电感器制造;配电开关控制设备制造;配电开关控制设备销售;电池制造;电池销售;锻件及粉末冶金制品制造;锻件及粉末冶金制品销售;金属结构制造;金属结构销售;玻璃制造;金属材料制造;金属材料销售;喷涂加工;云计算设备制造;云计算设备销售;信息技术咨询服务;网络技术服务;智能控制系统集成;信息安全设备制造;信息安全设备销售;网络与信息安全软件开发;数字视频监控系统制造;数字视频监控系统销售(除依法须经批准的项目外,凭营业执照依法自主开展经营活动)许可项目:进出口代理;技术进出口;货物进出口;各类工程建设活动;建设工程设计;建筑智能化系统设计;建筑智能化工程施工(依法须经批准的项目,经相关部门批准后方可开展经营活动,具体经营项目以审批结果为准)。\n郑重声明：东方财富网发布此信息的目的在于传播更多信息，与本站立场无关。东方财富网不保证该信息（包括但不限于文字、视频、音频、数据及图表）全部或者部分内容的准确性、真实性、完整性、有效性、及时性、原创性等。相关信息并未经过本网站证实，不对您构成任何投资建议，据此操作，风险自担。",
+          "type": "黑天鹅",
+          "sentiment": -1,
+          "weight": 1,
+          "final_weight": 1.13,
           "source_authority": 4.5,
           "recency_factor": 0.42,
           "source": "东方财富公告",
           "llm_reviewed": true,
-          "llm_confidence": 0.8,
+          "llm_confidence": 0.6,
+          "llm_is_real_catalyst": false,
+          "llm_reasoning": "异常波动公告提示风险，无实质利空"
+        },
+        {
+          "date": "2026-07-08",
+          "title": "浪潮信息:2026年半年度业绩预告",
+          "content": "",
+          "type": "财报",
+          "sentiment": 1,
+          "weight": 2,
+          "final_weight": 2.11,
+          "source_authority": 4.5,
+          "recency_factor": 0.36,
+          "source": "东方财富公告",
+          "llm_reviewed": true,
+          "llm_confidence": 0.9,
           "llm_is_real_catalyst": true,
-          "llm_reasoning": "定增获国资批复，政策落地利好融资"
+          "llm_reasoning": "半年度业绩预告发布，属财报类型"
+        },
+        {
+          "date": "2026-07-08",
+          "title": "股票交易异常波动公告",
+          "content": "1\n证券代码：000977 \t证券简称：浪潮信息 \t公告编号：2026-022\n浪潮电子信息产业股份有限公司\n股票交易异常波动公告\n本公司及董事会全体成员保证信息披露的内容真实、准确、完整，没有虚假记载、误导\n性陈述或重大遗漏。\n重要内容提示：\n1.浪潮电子信息产业股份有限公司（以下简称“公司”或“本公司”）股票\n（证券简称：浪潮信息，证券代码：000977）连续三个交易日内（2026年7月6\n日、7月7日、7月8日）日收盘价格涨幅偏离值累计超过20%。根据《深圳证券交\n易所交易规则》的相关规定，属于股票交易异常波动的情况。\n2.公司于2026年7月8日在巨潮资讯网（https://www.cninfo.com.cn）披露\n了《2026年半年度业绩预告》，业绩预告相关财务数据是公司财务部门初步测算\n的结果，具体财务数据将在公司2026年半年度报告中予以详细披露。\n3.公司股价短期波动幅度较大，敬请广大投资者理性投资，注意投资风险。\n一、股票交易异常波动的情况介绍\n公司股票连续三个交易日内（2026年7月6日、7月7日、7月8日）日收盘价格\n涨幅偏离值累计超过20%。根据《深圳证券交易所交易规则》的相关规定，属于\n股票交易异常波动的情况。\n二、公司关注及核实的情况\n针对公司股票异常波动，公司董事会进行了核查，并就有关事项函询了控股\n股东，现就有关情况说明如下：\n1.公司前期披露的信息不存在需要更正、补充之处；\n2.公司未发现近期公共传媒报道了可能或已经对公司股票交易价格产生较\n大影响的未公开重大信息；\n3.近期公司经营情况及内外部经营环境未发生重大变化，亦未预计将要发生\n\n-- 1 of 2 --\n\n2\n重大变化；\n4.公司、控股股东和实际控制人不存在关于本公司的应披露而未披露的重大\n事项，或处于筹划阶段的重大事项；\n5.经查询，公司董事及高级管理人员、控股股东及实际控制人在本公司股票\n交易异常波动期间未买卖本公司股票。\n三、是否存在应披露而未披露信息的说明\n本公司董事会确认，本公司目前没有任何根据深交所《股票上市规则》等有\n关规定应予以披露而未披露的事项或与该事项有关的筹划、商谈、意向、协议等；\n董事会也未获悉本公司有根据深交所《股票上市规则》等有关规定应予以披露而\n未披露的、对本公司股票及其衍生品种交易价格产生较大影响的信息；公司前期\n披露的信息不存在需要更正、补充之处。\n四、风险提示\n1.经自查，公司不存在违反信息公平披露的情形。\n2.公司于2026年7月8日在巨潮资讯网（https://www.cninfo.com.cn）披露\n了《2026年半年度业绩预告》（公告编号：2026-021）。截至本公告披露日，公\n司不存在需要修正2026年半年度业绩预告的情形，业绩预告相关财务数据是公司\n财务部门初步测算的结果，具体财务数据将在公司2026年半年度报告中予以详细\n披露。\n3.公司郑重提醒广大投资者：《中国证券报》《证券时报》《上海证券报》\n《证券日报》和巨潮资讯网（https://www.cninfo.com.cn）为公司选定的信息\n披露媒体，公司所有信息均以在上述指定媒体披露的信息为准，请广大投资者理\n性投资，注意风险。\n五、备查文件\n1.公司向控股股东的核实函及回函。\n特此公告。\n浪潮电子信息产业股份有限公司董事会\n二〇二六年七月九日\n\n-- 2 of 2 --",
+          "type": "黑天鹅",
+          "sentiment": -1,
+          "weight": 1,
+          "final_weight": 1.08,
+          "source_authority": 5,
+          "recency_factor": 0.36,
+          "source": "巨潮资讯",
+          "llm_reviewed": true,
+          "llm_confidence": 0.6,
+          "llm_is_real_catalyst": false,
+          "llm_reasoning": "异常波动公告提示风险，无实质利空"
+        },
+        {
+          "date": "2026-07-07",
+          "title": "2026年半年度业绩预告",
+          "content": "证券代码：000977 \t证券简称：浪潮信息 \t公告编号：2026-021\n浪潮电子信息产业股份有限公司\n2026 \t年半年度业绩预告\n本公司及董事会全体成员保证信息披露的内容真实、准确、完整，没有虚假记载、\n误导性陈述或重大遗漏。\n一、本期业绩预计情况\n1、业绩预告期间：2026 \t年 \t1 \t月 \t1 \t日至 \t2026 \t年 \t6 \t月 \t30 \t日。\n2、业绩预告情况：预计净利润为正值且属于同向上升情形\n（1）以区间数进行业绩预告的\n单位：万元\n项目 \t本报告期 \t上年同期\n归属于上市公司\n股东的净利润\n260,000 \t～ \t310,000 79,864.49\n比上年同期增长 \t226% \t～ \t288%\n扣除非经常性损\n益后的净利润\n205,500 \t～ \t255,500 67,173.91\n比上年同期增长 \t206% \t～ \t280%\n基 本 每 股 收 益\n（元/股） 1.77 \t～ \t2.11 \t0.5425\n二、与会计师事务所沟通情况\n本次业绩预告相关财务数据未经会计师事务所预审计。\n三、业绩变动原因说明\n2026 \t年上半年，公司坚持以市场为导向，紧抓行业上行机遇，持续致力于\n产品技术创新和提升客户满意度，不断完善产品线布局，努力提升产品附加值，\n增强供应保障能力，有力地促进公司经营业绩大幅增长。\n四、风险提示\n本次业绩预告相关财务数据为公司财务部门初步测算的结果，具体财务数据\n将在公司 \t2026 \t年半年度报告中予以详细披露。敬请广大投资者理性投资，注意\n投资风险。\n\n-- 1 of 2 --\n\n特此公告。\n浪潮电子信息产业股份有限公司董事会\n二〇二六年七月八日\n\n-- 2 of 2 --",
+          "type": "财报",
+          "sentiment": 1,
+          "weight": 2,
+          "final_weight": 1.95,
+          "source_authority": 5,
+          "recency_factor": 0.3,
+          "source": "巨潮资讯",
+          "llm_reviewed": true,
+          "llm_confidence": 0.95,
+          "llm_is_real_catalyst": true,
+          "llm_reasoning": "净利润同比增226%-288%，大幅超预期"
+        },
+        {
+          "date": "2026-07-09",
+          "title": "深度布局国产算力生态，业绩表现大超市场预期",
+          "content": "",
+          "type": "分析师动作",
+          "sentiment": 1,
+          "weight": 1,
+          "final_weight": 0.81,
+          "source_authority": 4,
+          "recency_factor": 0.42,
+          "source": "中邮证券",
+          "llm_reviewed": true,
+          "llm_confidence": 0.7,
+          "llm_is_real_catalyst": false,
+          "llm_reasoning": "中邮证券研报称业绩超预期，正面评价"
         }
       ]
     },
-    "SSE:601798": {
-      "name": "601798",
-      "score": 74,
-      "score_raw": 5.85,
+    "SSE:603296": {
+      "name": "603296",
+      "score": 66,
+      "score_raw": 3.78,
       "score_components": {
-        "positive_weight_sum": 5.85,
+        "positive_weight_sum": 3.78,
         "negative_weight_sum": 0,
         "news_effective_count": 1,
         "news_dropped_count": 0
@@ -437,69 +317,68 @@
       "strategy": "情绪偏多，适合低吸或轻仓参与",
       "suitable_for": "低吸 / 轻仓追",
       "confidence": "中",
-      "patterns": [
-        "情绪持续增强↑(trend)"
-      ],
+      "patterns": [],
       "positive_factors": [
-        "[财报|w5.85] 蓝科高新:蓝科高新2026年半年度业绩预增公告"
+        "[并购|w3.78] 华勤技术:华勤技术H股公告-有关在市场上收购晶合集成H股之须予披露交易"
       ],
       "negative_factors": [],
       "news_count": 1,
       "news_dropped": 0,
       "performance": {
-        "list_fetch_ms": 2833,
+        "list_fetch_ms": 3021,
         "candidate_filter_ms": 0,
-        "enrichment_ms": 2833,
-        "raw_news_count": 30,
-        "raw_research_count": 2,
+        "enrichment_ms": 7757,
+        "raw_news_count": 40,
+        "raw_research_count": 10,
         "candidate_news_count": 1,
         "candidate_research_count": 0,
         "enriched_news_count": 1,
         "enriched_research_count": 0,
         "candidate_reasons": {
           "news": {
-            "no-subject-mention": 7,
-            "noise:\\d{1,2}月\\d{1,2}日(快速上涨|快速回调|涨停|": 1,
+            "no-subject-mention": 16,
+            "noise:\\d{1,2}月\\d{1,2}日(快速上涨|快速回调|涨停|": 3,
+            "noise:融资净(买入|卖出)": 1,
             "dedup": 0,
-            "out_of_window": 21
+            "out_of_window": 19
           },
           "research": {
             "dedup": 0,
-            "out_of_window": 2
+            "out_of_window": 10
           }
         },
         "date_filter_ms": 0,
         "relevance_ms": 0,
-        "llm_ms": 1300,
+        "llm_ms": 1372,
         "scoring_ms": 0
       },
       "top_news": [
         {
-          "date": "2026-07-14",
-          "title": "蓝科高新:蓝科高新2026年半年度业绩预增公告",
-          "content": "",
-          "type": "财报",
+          "date": "2026-07-11",
+          "title": "华勤技术:华勤技术H股公告-有关在市场上收购晶合集成H股之须予披露交易",
+          "content": "一般项目:从事计算机软件领域内的技术开发、技术转让、技术咨询、技术服务,通讯产品及相关软硬件的设计、销售;货物进出口;技术进出口。(除依法须经批准的项目外,凭营业执照依法自主开展经营活动)\n郑重声明：东方财富网发布此信息的目的在于传播更多信息，与本站立场无关。东方财富网不保证该信息（包括但不限于文字、视频、音频、数据及图表）全部或者部分内容的准确性、真实性、完整性、有效性、及时性、原创性等。相关信息并未经过本网站证实，不对您构成任何投资建议，据此操作，风险自担。",
+          "type": "并购",
           "sentiment": 1,
-          "weight": 6,
-          "final_weight": 5.85,
+          "weight": 4,
+          "final_weight": 3.78,
           "source_authority": 4.5,
-          "recency_factor": 1,
+          "recency_factor": 0.6,
           "source": "东方财富公告",
           "llm_reviewed": true,
-          "llm_confidence": 0.9,
+          "llm_confidence": 0.8,
           "llm_is_real_catalyst": true,
-          "llm_reasoning": "半年度业绩预增公告，明确利好"
+          "llm_reasoning": "公告收购晶合集成H股，属并购交易"
         }
       ]
     },
     "SZSE:000725": {
-      "name": "000725",
-      "score": 74,
-      "score_raw": 5.76,
+      "name": "京东方Ａ",
+      "score": 63,
+      "score_raw": 3.26,
       "score_components": {
-        "positive_weight_sum": 5.76,
-        "negative_weight_sum": 0,
-        "news_effective_count": 3,
+        "positive_weight_sum": 5.3,
+        "negative_weight_sum": 2.04,
+        "news_effective_count": 12,
         "news_dropped_count": 0
       },
       "signal": "🟢 Long (中)",
@@ -510,26 +389,30 @@
       "positive_factors": [
         "[财报|w2.46] 京东方Ａ:2026年半年度业绩预告",
         "[财报|w2.34] 2026年半年度业绩预告",
-        "[分析师动作|w0.96] 全球半导体显示龙头，LCD稳健与AMOLED成长双轮驱动"
+        "[行业|w0.5] 全球半导体显示龙头，LCD稳健与AMOLED成长双轮驱动"
       ],
-      "negative_factors": [],
-      "news_count": 3,
+      "negative_factors": [
+        "[行业|w0.51] 京东方Ａ7月13日打开跌停",
+        "[行业|w0.51] 京东方Ａ7月13日盘中跌停",
+        "[行业|w0.51] 京东方Ａ成交额超100亿元"
+      ],
+      "news_count": 12,
       "news_dropped": 0,
       "performance": {
-        "list_fetch_ms": 2940,
+        "list_fetch_ms": 1593,
         "candidate_filter_ms": 0,
-        "enrichment_ms": 2905,
+        "enrichment_ms": 15464,
         "raw_news_count": 40,
         "raw_research_count": 10,
-        "candidate_news_count": 2,
+        "candidate_news_count": 11,
         "candidate_research_count": 1,
-        "enriched_news_count": 2,
+        "enriched_news_count": 11,
         "enriched_research_count": 1,
         "candidate_reasons": {
           "news": {
-            "no-subject-mention": 20,
+            "no-subject-mention": 16,
             "dedup": 0,
-            "out_of_window": 18
+            "out_of_window": 13
           },
           "research": {
             "dedup": 0,
@@ -538,10 +421,74 @@
         },
         "date_filter_ms": 0,
         "relevance_ms": 0,
-        "llm_ms": 1934,
+        "llm_ms": 3596,
         "scoring_ms": 0
       },
       "top_news": [
+        {
+          "date": "2026-07-13 14:45:28",
+          "title": "京东方Ａ7月13日打开跌停",
+          "content": "",
+          "type": "行业",
+          "sentiment": -1,
+          "weight": 1,
+          "final_weight": 0.51,
+          "source_authority": 3,
+          "recency_factor": 0.85,
+          "source": "东方财富资讯",
+          "llm_reviewed": true,
+          "llm_confidence": 0.3,
+          "llm_is_real_catalyst": false,
+          "llm_reasoning": "仅描述股价跌停，无具体原因"
+        },
+        {
+          "date": "2026-07-13 14:41:22",
+          "title": "京东方Ａ7月13日盘中跌停",
+          "content": "以下是京东方Ａ在北京时间7月13日14:41分盘口异动快照：\n\n　　炒股第一步，先开个股票账户\n\n分笔\n\n14:41:12 6.83 32353↓\n14:41:09 6.83 103212↓\n14:41:06 6.83 35776↓\n14:41:03 6.83 41270↓\n14:41:00 6.83 76944↓\n \n14:40:57 6.84 6544↑\n14:40:54 6.84 7261↑\n14:40:51 6.84 9194↑\n14:40:48 6.84 10878↑\n14:40:45 6.83 8310↓\n \n报价\n\n卖五 \n\n6.87\n\n 16008\n卖四 \n\n6.86\n\n 27644\n卖三 \n\n6.85\n\n 38185\n卖二 \n\n6.84\n\n 101072\n卖一 \n\n6.83\n\n 32074\n\n买一 - 0\n买二 - 0\n买三 - 0\n买四 - 0\n买五 - 0\n\n最新：6.83\n涨幅：-10.01%\n涨跌：-0.76\n换手率：8.56%\n成交量：3027.22万手\n成交额：213.80亿元\n主力净流入：\n-24.88亿元\n\n  7月13日14点41分，京东方Ａ盘中跌停，报6.83元，目前封单32074手，折合2190.70万元。截至目前，成交213.80亿元，换手率8.56%。\n注：以上信息仅供参考，不对您构成任何投资建议。",
+          "type": "行业",
+          "sentiment": -1,
+          "weight": 1,
+          "final_weight": 0.51,
+          "source_authority": 3,
+          "recency_factor": 0.85,
+          "source": "东方财富资讯",
+          "llm_reviewed": true,
+          "llm_confidence": 0.3,
+          "llm_is_real_catalyst": false,
+          "llm_reasoning": "盘中跌停异动，无基本面催化"
+        },
+        {
+          "date": "2026-07-13 10:22:00",
+          "title": "京东方Ａ成交额超100亿元",
+          "content": "全新妙想投研助理，立即体验\n\n　　数据宝统计，截至10:03，京东方Ａ成交额103.95亿元，超100亿元。最新股价下跌6.85%，换手率4.10%。上一交易日该股全天成交额为302.77亿元。\n\n　　据天眼查APP显示，京东方科技集团股份有限公司成立于1993年04月09日，注册资本3704432.8064万人民币。（数据宝）\n\n　　注：本文系新闻报道，不构成投资建议，股市有风险，投资需谨慎。",
+          "type": "行业",
+          "sentiment": -1,
+          "weight": 1,
+          "final_weight": 0.51,
+          "source_authority": 3,
+          "recency_factor": 0.85,
+          "source": "东方财富资讯",
+          "llm_reviewed": true,
+          "llm_confidence": 0.3,
+          "llm_is_real_catalyst": false,
+          "llm_reasoning": "成交额超百亿但股价下跌，无实质催化"
+        },
+        {
+          "date": "2026-07-13 09:49:11",
+          "title": "京东方Ａ7月13日盘中跌幅达5%",
+          "content": "",
+          "type": "行业",
+          "sentiment": -1,
+          "weight": 1,
+          "final_weight": 0.51,
+          "source_authority": 3,
+          "recency_factor": 0.85,
+          "source": "东方财富资讯",
+          "llm_reviewed": true,
+          "llm_confidence": 0.2,
+          "llm_is_real_catalyst": false,
+          "llm_reasoning": "仅描述跌幅达5%，无具体信息"
+        },
         {
           "date": "2026-07-09",
           "title": "京东方Ａ:2026年半年度业绩预告",
@@ -557,38 +504,74 @@
           "llm_confidence": 0.9,
           "llm_is_real_catalyst": true,
           "llm_reasoning": "半年度业绩预告，净利润同比增54%-69%"
+        }
+      ]
+    },
+    "SSE:603416": {
+      "name": "603416",
+      "score": 63,
+      "score_raw": 3.15,
+      "score_components": {
+        "positive_weight_sum": 3.15,
+        "negative_weight_sum": 0,
+        "news_effective_count": 1,
+        "news_dropped_count": 0
+      },
+      "signal": "🟢 Long (中)",
+      "strategy": "情绪偏多，适合低吸或轻仓参与",
+      "suitable_for": "低吸 / 轻仓追",
+      "confidence": "中",
+      "patterns": [],
+      "positive_factors": [
+        "[并购|w3.15] 信捷电气:无锡信捷电气股份有限公司关于购买土地并投资建设项目进展的公告"
+      ],
+      "negative_factors": [],
+      "news_count": 1,
+      "news_dropped": 0,
+      "performance": {
+        "list_fetch_ms": 4277,
+        "candidate_filter_ms": 1,
+        "enrichment_ms": 3316,
+        "raw_news_count": 40,
+        "raw_research_count": 10,
+        "candidate_news_count": 1,
+        "candidate_research_count": 0,
+        "enriched_news_count": 1,
+        "enriched_research_count": 0,
+        "candidate_reasons": {
+          "news": {
+            "no-subject-mention": 13,
+            "noise:\\d{1,2}月\\d{1,2}日(快速上涨|快速回调|涨停|": 4,
+            "noise:融资净(买入|卖出)": 2,
+            "dedup": 0,
+            "out_of_window": 20
+          },
+          "research": {
+            "dedup": 0,
+            "out_of_window": 10
+          }
         },
-        {
-          "date": "2026-07-08",
-          "title": "2026年半年度业绩预告",
-          "content": "1\n证券代码：000725 \t证券简称：京东方 \tA \t公告编号：2026-065\n证券代码：200725 \t证券简称：京东方 \tB \t公告编号：2026-065\n京东方科技集团股份有限公司\n2026 \t年半年度业绩预告\n本公司及董事会全体成员保证信息披露的内容真实、准确、\n完整，没有虚假记载、误导性陈述或重大遗漏。\n一、本期业绩预计情况\n1、业绩预告期间：2026 \t年 \t1 \t月 \t1 \t日—2026 \t年 \t6 \t月 \t30 \t日\n2、预计的业绩：同向上升\n项 \t目 \t本报告期 \t上年同期\n归属于上市公司股东\n的净利润\n盈利：500,000 \t万元–550,000 \t万元\n盈利：324,689 \t万元\n比上年同期增长：54% \t- \t69%\n扣除非经常性损益后\n的净利润\n盈利：308,000 \t万元–331,000 \t万元\n盈利：228,224 \t万元\n比上年同期增长：35% \t- \t45%\n基本每股收益 \t盈利：0.13 \t元/股–0.15 \t元/股 \t盈利：0.09 \t元/股\n注：基本每股收益上年同期以 \t2025 \t年 \t6 \t月 \t30 \t日扣除公司回购专用证券账户中的股份的总股本\n37,393,297,464 \t股加权计算，本报告期以 \t2026 \t年 \t6 \t月 \t30 \t日扣除公司回购专用证券账户中的股份和尚未解锁\n的限制性股票股份后的总股本 \t35,956,688,466 \t股加权计算。\n二、与会计师事务所沟通情况\n本次业绩预告相关数据是公司财务部门初步测算的结果，未经会\n计师事务所预审计。\n三、业绩变动原因说明\n1、报告期内，存储产品价格持续上涨使消费电子终端产品销量\n不同程度承压，但显示行业需求仍保持韧性，行业格局持续优化。公\n\n-- 1 of 2 --\n\n2\n司持续保持显示领域领先优势，五大主流应用 \tLCD \t面板出货量持续\n保持全球第一，高刷新率、高对比度、高分辨率等高端产品出货量持\n续增加，经营稳健。\n2、LCD \t方面，尽管体育赛事备货拉动了 \tTV \t产品需求，但主流\n应用领域整体出货量仍同比承压；受益于大尺寸化趋势加速，出货面\n积同比增长。供给端部分海外老旧产线退出，行业坚持“按需生产”，\n供需关系持续改善，TV \t类产品供需趋于平衡。受此影响，2026 \t年一\n至四月各主流尺寸 \tTV \t产品价格全面上涨；随着体育赛事与促销季备\n货收尾，五、六月在供需同步收紧的影响下，主流尺寸 \tTV \t价格持稳。\n公司充分发挥自身技术和产能优势，坚持创新引领，持续优化产品结\n构，LCD \t业务业绩同比显著增长。\n3、柔性 \tAMOLED \t方面，面对手机市场需求下降的挑战，公司\n持续深化客户合作，重点推动 \tLTPO \t等高端产品出货，上半年公司\nAMOLED \t产品出货超 \t8,000 \t万片，同比保持增长。此外，在第 \t8.6 \t代\nAMOLED \t产线量产后，公司将依托该产线的规模化产能与领先技术\n优势，持续推动中尺寸高端 \tOLED \t产品升级，稳步提升公司柔性\nAMOLED \t业务整体竞争力。\n4、2026 \t年上半年归属于上市公司股东的净利润中预计非经常性\n损益的金额约 \t20 \t亿元，较上年同期增加，主要为公司持有的交易性\n金融资产公允价值变动收益增加，该事项属于非经常性损益。\n四、其他相关说明\n有关本公司 \t2026 \t年半年度经营业绩的具体数据，将在 \t2026 \t年半\n年度报告中详细披露，敬请广大投资者注意投资风险。\n特此公告。\n京东方科技集团股份有限公司\n董 \t事 \t会\n2026 \t年 \t7 \t月 \t8 \t日\n\n-- 2 of 2 --",
-          "type": "财报",
-          "sentiment": 1,
-          "weight": 2,
-          "final_weight": 2.34,
-          "source_authority": 5,
-          "recency_factor": 0.36,
-          "source": "巨潮资讯",
-          "llm_reviewed": true,
-          "llm_confidence": 0.95,
-          "llm_is_real_catalyst": true,
-          "llm_reasoning": "业绩预告显示净利润大幅增长，硬数据催化"
-        },
+        "date_filter_ms": 0,
+        "relevance_ms": 0,
+        "llm_ms": 1398,
+        "scoring_ms": 0
+      },
+      "top_news": [
         {
           "date": "2026-07-10",
-          "title": "全球半导体显示龙头，LCD稳健与AMOLED成长双轮驱动",
+          "title": "信捷电气:无锡信捷电气股份有限公司关于购买土地并投资建设项目进展的公告",
           "content": "",
-          "type": "分析师动作",
+          "type": "并购",
           "sentiment": 1,
-          "weight": 1,
-          "final_weight": 0.96,
-          "source_authority": 4,
+          "weight": 3,
+          "final_weight": 3.15,
+          "source_authority": 4.5,
           "recency_factor": 0.5,
-          "source": "金元证券",
+          "source": "东方财富公告",
           "llm_reviewed": true,
-          "llm_confidence": 0.5,
-          "llm_is_real_catalyst": false,
-          "llm_reasoning": "标题为观点性描述，无具体评级或目标价"
+          "llm_confidence": 0.8,
+          "llm_is_real_catalyst": true,
+          "llm_reasoning": "购买土地并投资建设项目，属于资产并购进展"
         }
       ]
     },
@@ -614,10 +597,10 @@
       "news_count": 1,
       "news_dropped": 0,
       "performance": {
-        "list_fetch_ms": 2296,
+        "list_fetch_ms": 5500,
         "candidate_filter_ms": 0,
-        "enrichment_ms": 22,
-        "raw_news_count": 30,
+        "enrichment_ms": 3848,
+        "raw_news_count": 40,
         "raw_research_count": 2,
         "candidate_news_count": 1,
         "candidate_research_count": 0,
@@ -625,11 +608,11 @@
         "enriched_research_count": 0,
         "candidate_reasons": {
           "news": {
-            "no-subject-mention": 11,
+            "no-subject-mention": 13,
             "noise:\\d{1,2}月\\d{1,2}日(快速上涨|快速回调|涨停|": 5,
             "noise:融资净(买入|卖出)": 2,
             "dedup": 0,
-            "out_of_window": 11
+            "out_of_window": 19
           },
           "research": {
             "dedup": 0,
@@ -638,7 +621,7 @@
         },
         "date_filter_ms": 0,
         "relevance_ms": 0,
-        "llm_ms": 15,
+        "llm_ms": 1565,
         "scoring_ms": 0
       },
       "top_news": [
@@ -682,9 +665,9 @@
       "news_count": 4,
       "news_dropped": 0,
       "performance": {
-        "list_fetch_ms": 2283,
+        "list_fetch_ms": 4323,
         "candidate_filter_ms": 0,
-        "enrichment_ms": 2208,
+        "enrichment_ms": 3754,
         "raw_news_count": 40,
         "raw_research_count": 9,
         "candidate_news_count": 4,
@@ -693,8 +676,8 @@
         "enriched_research_count": 0,
         "candidate_reasons": {
           "news": {
-            "no-subject-mention": 16,
-            "noise:\\d{1,2}月\\d{1,2}日(快速上涨|快速回调|涨停|": 2,
+            "no-subject-mention": 15,
+            "noise:\\d{1,2}月\\d{1,2}日(快速上涨|快速回调|涨停|": 3,
             "noise:龙虎榜|大宗交易|盘口异动": 2,
             "dedup": 0,
             "out_of_window": 16
@@ -706,7 +689,7 @@
         },
         "date_filter_ms": 0,
         "relevance_ms": 0,
-        "llm_ms": 10,
+        "llm_ms": 1944,
         "scoring_ms": 0
       },
       "top_news": [
@@ -802,10 +785,10 @@
       "news_count": 9,
       "news_dropped": 0,
       "performance": {
-        "list_fetch_ms": 2902,
+        "list_fetch_ms": 9292,
         "candidate_filter_ms": 0,
-        "enrichment_ms": 4171,
-        "raw_news_count": 30,
+        "enrichment_ms": 8760,
+        "raw_news_count": 40,
         "raw_research_count": 10,
         "candidate_news_count": 9,
         "candidate_research_count": 0,
@@ -816,7 +799,8 @@
             "no-subject-mention": 13,
             "noise:\\d{1,2}月\\d{1,2}日(快速上涨|快速回调|涨停|": 6,
             "noise:融资净(买入|卖出)": 1,
-            "dedup": 1
+            "dedup": 1,
+            "out_of_window": 10
           },
           "research": {
             "dedup": 0,
@@ -825,7 +809,7 @@
         },
         "date_filter_ms": 0,
         "relevance_ms": 0,
-        "llm_ms": 9,
+        "llm_ms": 4066,
         "scoring_ms": 0
       },
       "top_news": [
@@ -911,6 +895,73 @@
         }
       ]
     },
+    "SZSE:002916": {
+      "name": "002916",
+      "score": 59,
+      "score_raw": 2.27,
+      "score_components": {
+        "positive_weight_sum": 2.27,
+        "negative_weight_sum": 0,
+        "news_effective_count": 1,
+        "news_dropped_count": 0
+      },
+      "signal": "⚪ No Trade (微多)",
+      "strategy": "情绪轻微偏多，信号不足，以观望为主",
+      "suitable_for": "观望",
+      "confidence": "低",
+      "patterns": [],
+      "positive_factors": [
+        "[政策|w2.27] 深南电路:关于2026年度向特定对象发行股票获得有权国资监管单位批复的公告"
+      ],
+      "negative_factors": [],
+      "news_count": 1,
+      "news_dropped": 0,
+      "performance": {
+        "list_fetch_ms": 2634,
+        "candidate_filter_ms": 0,
+        "enrichment_ms": 13224,
+        "raw_news_count": 40,
+        "raw_research_count": 10,
+        "candidate_news_count": 1,
+        "candidate_research_count": 0,
+        "enriched_news_count": 1,
+        "enriched_research_count": 0,
+        "candidate_reasons": {
+          "news": {
+            "no-subject-mention": 15,
+            "noise:\\d{1,2}月\\d{1,2}日(快速上涨|快速回调|涨停|": 5,
+            "dedup": 0,
+            "out_of_window": 19
+          },
+          "research": {
+            "dedup": 0,
+            "out_of_window": 10
+          }
+        },
+        "date_filter_ms": 0,
+        "relevance_ms": 0,
+        "llm_ms": 1231,
+        "scoring_ms": 0
+      },
+      "top_news": [
+        {
+          "date": "2026-07-09",
+          "title": "深南电路:关于2026年度向特定对象发行股票获得有权国资监管单位批复的公告",
+          "content": "",
+          "type": "政策",
+          "sentiment": 1,
+          "weight": 2,
+          "final_weight": 2.27,
+          "source_authority": 4.5,
+          "recency_factor": 0.42,
+          "source": "东方财富公告",
+          "llm_reviewed": true,
+          "llm_confidence": 0.9,
+          "llm_is_real_catalyst": true,
+          "llm_reasoning": "定增获国资批复，政策落地利好"
+        }
+      ]
+    },
     "SZSE:301018": {
       "name": "301018",
       "score": 59,
@@ -933,10 +984,10 @@
       "news_count": 1,
       "news_dropped": 0,
       "performance": {
-        "list_fetch_ms": 2750,
+        "list_fetch_ms": 3449,
         "candidate_filter_ms": 0,
-        "enrichment_ms": 2203,
-        "raw_news_count": 30,
+        "enrichment_ms": 4534,
+        "raw_news_count": 40,
         "raw_research_count": 10,
         "candidate_news_count": 1,
         "candidate_research_count": 0,
@@ -944,11 +995,11 @@
         "enriched_research_count": 0,
         "candidate_reasons": {
           "news": {
-            "no-subject-mention": 10,
-            "noise:\\d{1,2}月\\d{1,2}日(快速上涨|快速回调|涨停|": 7,
+            "no-subject-mention": 11,
+            "noise:\\d{1,2}月\\d{1,2}日(快速上涨|快速回调|涨停|": 8,
             "noise:融资净(买入|卖出)": 1,
             "dedup": 0,
-            "out_of_window": 11
+            "out_of_window": 19
           },
           "research": {
             "dedup": 0,
@@ -957,7 +1008,7 @@
         },
         "date_filter_ms": 0,
         "relevance_ms": 0,
-        "llm_ms": 11,
+        "llm_ms": 1338,
         "scoring_ms": 0
       },
       "top_news": [
@@ -979,37 +1030,343 @@
         }
       ]
     },
+    "SZSE:300684": {
+      "name": "300684",
+      "score": 57,
+      "score_raw": 1.62,
+      "score_components": {
+        "positive_weight_sum": 1.62,
+        "negative_weight_sum": 0,
+        "news_effective_count": 1,
+        "news_dropped_count": 0
+      },
+      "signal": "⚪ No Trade (微多)",
+      "strategy": "情绪轻微偏多，信号不足，以观望为主",
+      "suitable_for": "观望",
+      "confidence": "低",
+      "patterns": [],
+      "positive_factors": [
+        "[回购|w1.62] 中石科技:关于2025年限制性股票激励计划首次授予部分第一个归属期归属结果暨股份上市的公告"
+      ],
+      "negative_factors": [],
+      "news_count": 1,
+      "news_dropped": 0,
+      "performance": {
+        "list_fetch_ms": 4605,
+        "candidate_filter_ms": 0,
+        "enrichment_ms": 5828,
+        "raw_news_count": 40,
+        "raw_research_count": 10,
+        "candidate_news_count": 1,
+        "candidate_research_count": 0,
+        "enriched_news_count": 1,
+        "enriched_research_count": 0,
+        "candidate_reasons": {
+          "news": {
+            "no-subject-mention": 8,
+            "noise:\\d{1,2}月\\d{1,2}日(快速上涨|快速回调|涨停|": 5,
+            "noise:龙虎榜|大宗交易|盘口异动": 1,
+            "dedup": 0,
+            "out_of_window": 25
+          },
+          "research": {
+            "dedup": 0,
+            "out_of_window": 10
+          }
+        },
+        "date_filter_ms": 0,
+        "relevance_ms": 0,
+        "llm_ms": 1225,
+        "scoring_ms": 0
+      },
+      "top_news": [
+        {
+          "date": "2026-07-07",
+          "title": "中石科技:关于2025年限制性股票激励计划首次授予部分第一个归属期归属结果暨股份上市的公告",
+          "content": "经营本企业和成员企业自产产品及技术出口业务;本企业和成员企业生产所有的原辅材料、仪器仪表、机械设备、零配件及技术的进口业务(国家限定公司经营和国家禁止出口的商品除外);经营进料加工和“三来一补”业务。(企业依法自主选择经营项目,开展经营活动;依法须经批准的项目,经相关部门批准后依据批准的内容开展经营活动;不得从事本市产业政策禁止和限制类项目的经营活动。)\n郑重声明：东方财富网发布此信息的目的在于传播更多信息，与本站立场无关。东方财富网不保证该信息（包括但不限于文字、视频、音频、数据及图表）全部或者部分内容的准确性、真实性、完整性、有效性、及时性、原创性等。相关信息并未经过本网站证实，不对您构成任何投资建议，据此操作，风险自担。",
+          "type": "回购",
+          "sentiment": 1,
+          "weight": 2,
+          "final_weight": 1.62,
+          "source_authority": 4.5,
+          "recency_factor": 0.3,
+          "source": "东方财富公告",
+          "llm_reviewed": true,
+          "llm_confidence": 0.8,
+          "llm_is_real_catalyst": true,
+          "llm_reasoning": "股权激励归属完成，利好员工激励"
+        }
+      ]
+    },
+    "SZSE:002965": {
+      "name": "祥鑫科技",
+      "score": 54,
+      "score_raw": 1.01,
+      "score_components": {
+        "positive_weight_sum": 1.51,
+        "negative_weight_sum": 0.5,
+        "news_effective_count": 6,
+        "news_dropped_count": 0
+      },
+      "signal": "⚪ No Trade (微多)",
+      "strategy": "情绪轻微偏多，信号不足，以观望为主",
+      "suitable_for": "观望",
+      "confidence": "低",
+      "patterns": [],
+      "positive_factors": [
+        "[行业|w0.51] 祥鑫科技7月13日快速反弹",
+        "[行业|w0.5] 祥鑫科技7月10日盘中涨幅达5%",
+        "[行业|w0.5] 祥鑫科技7月9日快速反弹"
+      ],
+      "negative_factors": [
+        "[行业|w0.5] 祥鑫科技7月8日加速下跌"
+      ],
+      "news_count": 6,
+      "news_dropped": 0,
+      "performance": {
+        "list_fetch_ms": 1900,
+        "candidate_filter_ms": 2,
+        "enrichment_ms": 6352,
+        "raw_news_count": 40,
+        "raw_research_count": 10,
+        "candidate_news_count": 6,
+        "candidate_research_count": 0,
+        "enriched_news_count": 6,
+        "enriched_research_count": 0,
+        "candidate_reasons": {
+          "news": {
+            "noise:\\d{1,2}月\\d{1,2}日(快速上涨|快速回调|涨停|": 7,
+            "noise:融资净(买入|卖出)": 2,
+            "dedup": 0,
+            "out_of_window": 25
+          },
+          "research": {
+            "dedup": 0,
+            "out_of_window": 10
+          }
+        },
+        "date_filter_ms": 0,
+        "relevance_ms": 0,
+        "llm_ms": 3636,
+        "scoring_ms": 1
+      },
+      "top_news": [
+        {
+          "date": "2026-07-13 09:42:23",
+          "title": "祥鑫科技7月13日快速反弹",
+          "content": "以下是祥鑫科技在北京时间7月13日09:35分盘口异动快照：\n\n　　在东方财富看资讯行情，选东方财富证券一站式开户交易>>\n\n分笔\n\n09:35:03 52.44 211↑\n09:35:00 52.42 32↓\n09:34:57 52.43 27↑\n09:34:54 52.43 109↑\n09:34:51 52.37 170↓\n \n09:34:48 52.52 56↓\n09:34:45 52.49 88↓\n09:34:42 52.54 142↑\n09:34:39 52.42 311↓\n09:34:36 52.44 73↑\n \n报价\n\n卖五 \n\n52.52\n\n 23\n卖四 \n\n52.51\n\n 9\n卖三 \n\n52.5\n\n 84\n卖二 \n\n52.49\n\n 4\n卖一 \n\n52.48\n\n 8\n\n买一 \n\n52.41\n\n 2\n买二 \n\n52.37\n\n 7\n买三 \n\n52.36\n\n 69\n买四 \n\n52.35\n\n 39\n买五 \n\n52.34\n\n 30\n\n最新：52.44\n涨幅：2.00%\n涨跌：1.03\n换手率：0.76%\n成交量：1.44万手\n成交额：7396.30万元\n主力净流入：\n813.32万元\n\n  7月13日，祥鑫科技盘中快速反弹，5分钟内涨幅超过2%，截至9点35分，报52.44元，成交7396.30万元，换手率0.76%。\n注：以上信息仅供参考，不对您构成任何投资建议。",
+          "type": "行业",
+          "sentiment": 1,
+          "weight": 1,
+          "final_weight": 0.51,
+          "source_authority": 3,
+          "recency_factor": 0.85,
+          "source": "东方财富资讯",
+          "llm_reviewed": true,
+          "llm_confidence": 0.3,
+          "llm_is_real_catalyst": false,
+          "llm_reasoning": "仅描述盘中股价反弹，无实质催化"
+        },
+        {
+          "date": "2026-07-10 10:05:42",
+          "title": "祥鑫科技7月10日盘中涨幅达5%",
+          "content": "",
+          "type": "行业",
+          "sentiment": 1,
+          "weight": 1,
+          "final_weight": 0.5,
+          "source_authority": 3,
+          "recency_factor": 0.5,
+          "source": "东方财富资讯",
+          "llm_reviewed": true,
+          "llm_confidence": 0.2,
+          "llm_is_real_catalyst": false,
+          "llm_reasoning": "仅描述盘中涨幅，无实质信息"
+        },
+        {
+          "date": "2026-07-10 09:12:19",
+          "title": "祥鑫科技：融资净偿还2526.87万元，融资余额7.77亿元",
+          "content": "专业金融数据，下一代智能终端\n\n交易所最新数据显示，祥鑫科技于2026年7月9日获融资买入5357.01万元，融资偿还7883.88万元，当日融资净偿还2526.87万元。目前，该股融资余额7.77亿，占流通市值比例为7.96%。\n\n该股当日融券卖出100股，融券偿还400股，融券净偿还300股。目前，该股融券余量7.23万股，融券余额370.54万元。\n\n免责声明：本文基于AI生产，仅供参考，不构成任何投资建议，据此操作风险自担。东方财富发布此内容旨在传播更多信息，与本平台立场无关。东方财富力求但不保证数据的完全准确，如有错漏请以中国证监会指定上市公司信息披露媒体为准，东方财富不对因该资料全部或部分内容而引致的盈亏承担任何责任。用户个人对服务的使用承担风险，东方财富对此不作任何类型的担保。",
+          "type": "行业",
+          "sentiment": 0,
+          "weight": 1,
+          "final_weight": 0.5,
+          "source_authority": 3,
+          "recency_factor": 0.5,
+          "source": "东方财富资讯",
+          "llm_reviewed": true,
+          "llm_confidence": 0.4,
+          "llm_is_real_catalyst": false,
+          "llm_reasoning": "融资净偿还，属常规资金变动"
+        },
+        {
+          "date": "2026-07-09 09:39:39",
+          "title": "祥鑫科技7月9日快速反弹",
+          "content": "",
+          "type": "行业",
+          "sentiment": 1,
+          "weight": 1,
+          "final_weight": 0.5,
+          "source_authority": 3,
+          "recency_factor": 0.42,
+          "source": "东方财富资讯",
+          "llm_reviewed": true,
+          "llm_confidence": 0.2,
+          "llm_is_real_catalyst": false,
+          "llm_reasoning": "仅描述盘中反弹，无实质催化"
+        },
+        {
+          "date": "2026-07-08 10:09:41",
+          "title": "祥鑫科技7月8日加速下跌",
+          "content": "以下是祥鑫科技在北京时间7月8日09:45分盘口异动快照：\n\n　　在东方财富看资讯行情，选东方财富证券一站式开户交易>>\n\n \n\n  7月8日，祥鑫科技盘中加速下跌，5分钟内跌幅超过2%，截至9点45分，报51.23元，成交3.08亿元，换手率3.00%。\n注：以上信息仅供参考，不对您构成任何投资建议。",
+          "type": "行业",
+          "sentiment": -1,
+          "weight": 1,
+          "final_weight": 0.5,
+          "source_authority": 3,
+          "recency_factor": 0.36,
+          "source": "东方财富资讯",
+          "llm_reviewed": true,
+          "llm_confidence": 0.3,
+          "llm_is_real_catalyst": false,
+          "llm_reasoning": "仅描述盘中加速下跌，无实质利空"
+        }
+      ]
+    },
+    "SZSE:002457": {
+      "name": "002457",
+      "score": 54,
+      "score_raw": 0.92,
+      "score_components": {
+        "positive_weight_sum": 1.89,
+        "negative_weight_sum": 0.97,
+        "news_effective_count": 3,
+        "news_dropped_count": 0
+      },
+      "signal": "🔴 No Trade / Short",
+      "strategy": "黑天鹅事件规避，等待事件明朗化再评估",
+      "suitable_for": "反转(等底部确认)",
+      "confidence": "高",
+      "patterns": [],
+      "positive_factors": [
+        "[并购|w1.89] 青龙管业:关于签订买卖合同的公告"
+      ],
+      "negative_factors": [
+        "[黑天鹅|w0.97] 青龙管业:关于股票交易异常波动公告"
+      ],
+      "news_count": 3,
+      "news_dropped": 0,
+      "performance": {
+        "list_fetch_ms": 3228,
+        "candidate_filter_ms": 0,
+        "enrichment_ms": 3155,
+        "raw_news_count": 40,
+        "raw_research_count": 2,
+        "candidate_news_count": 3,
+        "candidate_research_count": 0,
+        "enriched_news_count": 3,
+        "enriched_research_count": 0,
+        "candidate_reasons": {
+          "news": {
+            "no-subject-mention": 15,
+            "noise:\\d{1,2}月\\d{1,2}日(快速上涨|快速回调|涨停|": 4,
+            "noise:龙虎榜|大宗交易|盘口异动": 1,
+            "dedup": 0,
+            "out_of_window": 17
+          },
+          "research": {
+            "dedup": 0,
+            "out_of_window": 2
+          }
+        },
+        "date_filter_ms": 0,
+        "relevance_ms": 0,
+        "llm_ms": 1988,
+        "scoring_ms": 0
+      },
+      "top_news": [
+        {
+          "date": "2026-07-10",
+          "title": "青龙管业:关于控股股东部分股份解除质押的公告",
+          "content": "一般项目:水泥制品制造;水泥制品销售;橡胶制品制造;橡胶制品销售;塑料制品制造;塑料制品销售;高性能纤维及复合材料制造;高性能纤维及复合材料销售;玻璃纤维及制品制造;玻璃纤维及制品销售;保温材料销售;钢压延加工;金属结构制造;金属结构销售;黑色金属铸造;工程管理服务;灌溉服务;水利相关咨询服务;风力发电机组及零部件销售;风电场相关装备销售;风力发电技术服务;海上风电相关装备销售;海上风电相关系统研发;货物进出口;技术进出口;新材料技术研发(除许可业务外,可自主依法经营法律法规非禁止或限制的项目)许可项目:建设工程施工;道路货物运输(不含危险货物)(依法须经批准的项目,经相关部门批准后方可开展经营活动)\n郑重声明：东方财富网发布此信息的目的在于传播更多信息，与本站立场无关。东方财富网不保证该信息（包括但不限于文字、视频、音频、数据及图表）全部或者部分内容的准确性、真实性、完整性、有效性、及时性、原创性等。相关信息并未经过本网站证实，不对您构成任何投资建议，据此操作，风险自担。",
+          "type": "财报",
+          "sentiment": 0,
+          "weight": 1,
+          "final_weight": 0.59,
+          "source_authority": 4.5,
+          "recency_factor": 0.5,
+          "source": "东方财富公告",
+          "llm_reviewed": true,
+          "llm_confidence": 0.3,
+          "llm_is_real_catalyst": false,
+          "llm_reasoning": "股份解除质押，中性信息，无实质影响"
+        },
+        {
+          "date": "2026-07-08",
+          "title": "青龙管业:关于股票交易异常波动公告",
+          "content": "",
+          "type": "黑天鹅",
+          "sentiment": -1,
+          "weight": 1,
+          "final_weight": 0.97,
+          "source_authority": 4.5,
+          "recency_factor": 0.36,
+          "source": "东方财富公告",
+          "llm_reviewed": true,
+          "llm_confidence": 0.5,
+          "llm_is_real_catalyst": false,
+          "llm_reasoning": "异常波动公告，可能隐含风险，但无具体内容"
+        },
+        {
+          "date": "2026-07-07",
+          "title": "青龙管业:关于签订买卖合同的公告",
+          "content": "",
+          "type": "并购",
+          "sentiment": 1,
+          "weight": 2,
+          "final_weight": 1.89,
+          "source_authority": 4.5,
+          "recency_factor": 0.3,
+          "source": "东方财富公告",
+          "llm_reviewed": true,
+          "llm_confidence": 0.7,
+          "llm_is_real_catalyst": true,
+          "llm_reasoning": "签订买卖合同，构成实质性业务进展"
+        }
+      ]
+    },
     "SSE:600688": {
-      "name": "600688",
+      "name": "上海石化",
       "score": 50,
       "score_raw": 0,
       "score_components": {
         "positive_weight_sum": 0,
-        "negative_weight_sum": 0
+        "negative_weight_sum": 0,
+        "news_effective_count": 3,
+        "news_dropped_count": 0
       },
-      "signal": "⚪ No Trade (无数据)",
-      "strategy": "近期无相关有效新闻",
+      "signal": "⚪ No Trade (微多)",
+      "strategy": "情绪轻微偏多，信号不足，以观望为主",
       "suitable_for": "观望",
-      "confidence": "-",
+      "confidence": "低",
       "patterns": [],
       "positive_factors": [],
       "negative_factors": [],
-      "news_count": 0,
+      "news_count": 3,
       "news_dropped": 0,
       "performance": {
-        "list_fetch_ms": 2855,
+        "list_fetch_ms": 2370,
         "candidate_filter_ms": 0,
-        "enrichment_ms": 0,
+        "enrichment_ms": 22392,
         "raw_news_count": 40,
         "raw_research_count": 10,
-        "candidate_news_count": 0,
+        "candidate_news_count": 3,
         "candidate_research_count": 0,
-        "enriched_news_count": 0,
+        "enriched_news_count": 3,
         "enriched_research_count": 0,
         "candidate_reasons": {
           "news": {
             "noise:融资净(买入|卖出)": 2,
-            "no-subject-mention": 3,
             "dedup": 0,
             "out_of_window": 35
           },
@@ -1020,19 +1377,113 @@
         },
         "date_filter_ms": 0,
         "relevance_ms": 0,
-        "llm_ms": 0,
+        "llm_ms": 1761,
         "scoring_ms": 0
       },
-      "top_news": []
+      "top_news": [
+        {
+          "date": "2026-07-11 07:33:23",
+          "title": "上海石化：融资净偿还66.56万元，融资余额3.19亿元",
+          "content": "专业金融数据，下一代智能终端\n\n交易所最新数据显示，上海石化于2026年7月10日获融资买入1748.43万元，融资偿还1814.99万元，当日融资净偿还66.56万元。目前，该股融资余额3.19亿，占流通市值比例为1.50%。\n\n该股当日融券卖出12.42万股，融券偿还20.03万股，融券净偿还7.61万股。目前，该股融券余量67.06万股，融券余额194.48万元。\n\n免责声明：本文基于AI生产，仅供参考，不构成任何投资建议，据此操作风险自担。东方财富发布此内容旨在传播更多信息，与本平台立场无关。东方财富力求但不保证数据的完全准确，如有错漏请以中国证监会指定上市公司信息披露媒体为准，东方财富不对因该资料全部或部分内容而引致的盈亏承担任何责任。用户个人对服务的使用承担风险，东方财富对此不作任何类型的担保。",
+          "type": "行业",
+          "sentiment": 0,
+          "weight": 1,
+          "final_weight": 0.5,
+          "source_authority": 3,
+          "recency_factor": 0.6,
+          "source": "东方财富资讯",
+          "llm_reviewed": true,
+          "llm_confidence": 0.3,
+          "llm_is_real_catalyst": false,
+          "llm_reasoning": "融资数据日常披露，无实质影响"
+        },
+        {
+          "date": "2026-07-10 07:54:48",
+          "title": "上海石化：融资净偿还74.79万元，融资余额3.19亿元",
+          "content": "炒股第一步，先开个股票账户\n\n交易所最新数据显示，上海石化于2026年7月9日获融资买入1257.76万元，融资偿还1332.55万元，当日融资净偿还74.79万元。目前，该股融资余额3.19亿，占流通市值比例为1.51%。\n\n该股当日融券卖出8.22万股，融券偿还9.55万股，融券净偿还1.33万股。目前，该股融券余量74.67万股，融券余额215.06万元。\n\n免责声明：本文基于AI生产，仅供参考，不构成任何投资建议，据此操作风险自担。东方财富发布此内容旨在传播更多信息，与本平台立场无关。东方财富力求但不保证数据的完全准确，如有错漏请以中国证监会指定上市公司信息披露媒体为准，东方财富不对因该资料全部或部分内容而引致的盈亏承担任何责任。用户个人对服务的使用承担风险，东方财富对此不作任何类型的担保。",
+          "type": "行业",
+          "sentiment": 0,
+          "weight": 1,
+          "final_weight": 0.5,
+          "source_authority": 3,
+          "recency_factor": 0.5,
+          "source": "东方财富资讯",
+          "llm_reviewed": true,
+          "llm_confidence": 0.3,
+          "llm_is_real_catalyst": false,
+          "llm_reasoning": "融资数据日常披露，无实质影响"
+        },
+        {
+          "date": "2026-07-09 07:49:09",
+          "title": "上海石化：融资净偿还3995.19万元，融资余额3.2亿元",
+          "content": "在东方财富看资讯行情，选东方财富证券一站式开户交易>>\n\n交易所最新数据显示，上海石化于2026年7月8日获融资买入1549.36万元，融资偿还5544.55万元，当日融资净偿还3995.19万元。目前，该股融资余额3.20亿，占流通市值比例为1.53%。\n\n该股当日融券卖出9.55万股，融券偿还11.10万股，融券净偿还1.55万股。目前，该股融券余量76万股，融券余额217.37万元。\n\n免责声明：本文基于AI生产，仅供参考，不构成任何投资建议，据此操作风险自担。东方财富发布此内容旨在传播更多信息，与本平台立场无关。东方财富力求但不保证数据的完全准确，如有错漏请以中国证监会指定上市公司信息披露媒体为准，东方财富不对因该资料全部或部分内容而引致的盈亏承担任何责任。用户个人对服务的使用承担风险，东方财富对此不作任何类型的担保。",
+          "type": "行业",
+          "sentiment": 0,
+          "weight": 1,
+          "final_weight": 0.5,
+          "source_authority": 3,
+          "recency_factor": 0.42,
+          "source": "东方财富资讯",
+          "llm_reviewed": true,
+          "llm_confidence": 0.3,
+          "llm_is_real_catalyst": false,
+          "llm_reasoning": "融资数据日常披露，无实质影响"
+        }
+      ]
     },
-    "SZSE:001223": {
-      "name": "001223",
+    "SSE:601798": {
+      "name": "蓝科高新",
       "score": 50,
       "score_raw": 0,
       "score_components": {
         "positive_weight_sum": 0,
-        "negative_weight_sum": 0,
-        "news_effective_count": 1,
+        "negative_weight_sum": 0
+      },
+      "signal": "⚪ No Trade (无数据)",
+      "strategy": "LLM 不可用或调用失败（不走关键字降级）",
+      "suitable_for": "观望",
+      "confidence": "-",
+      "patterns": [],
+      "positive_factors": [],
+      "negative_factors": [],
+      "news_count": 0,
+      "news_dropped": 0,
+      "performance": {
+        "list_fetch_ms": 2585,
+        "candidate_filter_ms": 0,
+        "enrichment_ms": 29214,
+        "raw_news_count": 40,
+        "raw_research_count": 2,
+        "candidate_news_count": 4,
+        "candidate_research_count": 0,
+        "enriched_news_count": 4,
+        "enriched_research_count": 0,
+        "candidate_reasons": {
+          "news": {
+            "noise:\\d{1,2}月\\d{1,2}日(快速上涨|快速回调|涨停|": 1,
+            "dedup": 0,
+            "out_of_window": 35
+          },
+          "research": {
+            "dedup": 0,
+            "out_of_window": 2
+          }
+        },
+        "date_filter_ms": 0,
+        "relevance_ms": 0,
+        "llm_ms": 6210,
+        "scoring_ms": 0
+      },
+      "top_news": []
+    },
+    "SSE:605162": {
+      "name": "新中港",
+      "score": 50,
+      "score_raw": -0.01,
+      "score_components": {
+        "positive_weight_sum": 0.5,
+        "negative_weight_sum": 0.51,
+        "news_effective_count": 2,
         "news_dropped_count": 0
       },
       "signal": "⚪ No Trade (微多)",
@@ -1040,135 +1491,28 @@
       "suitable_for": "观望",
       "confidence": "低",
       "patterns": [],
-      "positive_factors": [],
-      "negative_factors": [],
-      "news_count": 1,
+      "positive_factors": [
+        "[行业|w0.5] 新中港7月10日快速反弹"
+      ],
+      "negative_factors": [
+        "[行业|w0.51] 新中港7月13日盘中跌幅达5%"
+      ],
+      "news_count": 2,
       "news_dropped": 0,
       "performance": {
-        "list_fetch_ms": 2829,
+        "list_fetch_ms": 2797,
         "candidate_filter_ms": 0,
-        "enrichment_ms": 2908,
-        "raw_news_count": 30,
-        "raw_research_count": 4,
-        "candidate_news_count": 1,
-        "candidate_research_count": 0,
-        "enriched_news_count": 1,
-        "enriched_research_count": 0,
-        "candidate_reasons": {
-          "news": {
-            "no-subject-mention": 4,
-            "noise:\\d{1,2}月\\d{1,2}日(快速上涨|快速回调|涨停|": 1,
-            "dedup": 0,
-            "out_of_window": 24
-          },
-          "research": {
-            "dedup": 0,
-            "out_of_window": 4
-          }
-        },
-        "date_filter_ms": 0,
-        "relevance_ms": 0,
-        "llm_ms": 1215,
-        "scoring_ms": 1
-      },
-      "top_news": [
-        {
-          "date": "2026-07-09",
-          "title": "欧克科技:关于完成工商变更登记的公告",
-          "content": "",
-          "type": "行业",
-          "sentiment": 0,
-          "weight": 1,
-          "final_weight": 0.5,
-          "source_authority": 4.5,
-          "recency_factor": 0.42,
-          "source": "东方财富公告",
-          "llm_reviewed": true,
-          "llm_confidence": 0.3,
-          "llm_is_real_catalyst": false,
-          "llm_reasoning": "工商变更登记属常规事项，无实质影响"
-        }
-      ]
-    },
-    "SZSE:002965": {
-      "name": "002965",
-      "score": 50,
-      "score_raw": 0,
-      "score_components": {
-        "positive_weight_sum": 0,
-        "negative_weight_sum": 0
-      },
-      "signal": "⚪ No Trade (无数据)",
-      "strategy": "近期无相关有效新闻",
-      "suitable_for": "观望",
-      "confidence": "-",
-      "patterns": [],
-      "positive_factors": [],
-      "negative_factors": [],
-      "news_count": 0,
-      "news_dropped": 0,
-      "performance": {
-        "list_fetch_ms": 2950,
-        "candidate_filter_ms": 0,
-        "enrichment_ms": 0,
-        "raw_news_count": 30,
-        "raw_research_count": 10,
-        "candidate_news_count": 0,
-        "candidate_research_count": 0,
-        "enriched_news_count": 0,
-        "enriched_research_count": 0,
-        "candidate_reasons": {
-          "news": {
-            "noise:\\d{1,2}月\\d{1,2}日(快速上涨|快速回调|涨停|": 6,
-            "no-subject-mention": 5,
-            "noise:融资净(买入|卖出)": 2,
-            "dedup": 0,
-            "out_of_window": 17
-          },
-          "research": {
-            "dedup": 0,
-            "out_of_window": 10
-          }
-        },
-        "date_filter_ms": 0,
-        "relevance_ms": 0,
-        "llm_ms": 0,
-        "scoring_ms": 0
-      },
-      "top_news": []
-    },
-    "SSE:605162": {
-      "name": "605162",
-      "score": 50,
-      "score_raw": 0,
-      "score_components": {
-        "positive_weight_sum": 0,
-        "negative_weight_sum": 0
-      },
-      "signal": "⚪ No Trade (无数据)",
-      "strategy": "近期无相关有效新闻",
-      "suitable_for": "观望",
-      "confidence": "-",
-      "patterns": [],
-      "positive_factors": [],
-      "negative_factors": [],
-      "news_count": 0,
-      "news_dropped": 0,
-      "performance": {
-        "list_fetch_ms": 2960,
-        "candidate_filter_ms": 0,
-        "enrichment_ms": 0,
-        "raw_news_count": 30,
+        "enrichment_ms": 29277,
+        "raw_news_count": 40,
         "raw_research_count": 0,
-        "candidate_news_count": 0,
+        "candidate_news_count": 2,
         "candidate_research_count": 0,
-        "enriched_news_count": 0,
+        "enriched_news_count": 2,
         "enriched_research_count": 0,
         "candidate_reasons": {
           "news": {
-            "no-subject-mention": 2,
             "dedup": 0,
-            "out_of_window": 28
+            "out_of_window": 38
           },
           "research": {
             "dedup": 0
@@ -1176,57 +1520,43 @@
         },
         "date_filter_ms": 0,
         "relevance_ms": 0,
-        "llm_ms": 0,
+        "llm_ms": 2102,
         "scoring_ms": 0
       },
-      "top_news": []
-    },
-    "SSE:603259": {
-      "name": "603259",
-      "score": 50,
-      "score_raw": 0,
-      "score_components": {
-        "positive_weight_sum": 0,
-        "negative_weight_sum": 0
-      },
-      "signal": "⚪ No Trade (无数据)",
-      "strategy": "近期无相关有效新闻",
-      "suitable_for": "观望",
-      "confidence": "-",
-      "patterns": [],
-      "positive_factors": [],
-      "negative_factors": [],
-      "news_count": 0,
-      "news_dropped": 0,
-      "performance": {
-        "list_fetch_ms": 2825,
-        "candidate_filter_ms": 2,
-        "enrichment_ms": 0,
-        "raw_news_count": 30,
-        "raw_research_count": 10,
-        "candidate_news_count": 0,
-        "candidate_research_count": 0,
-        "enriched_news_count": 0,
-        "enriched_research_count": 0,
-        "candidate_reasons": {
-          "news": {
-            "no-subject-mention": 17,
-            "noise:融资净(买入|卖出)": 1,
-            "noise:\\d{1,2}月\\d{1,2}日(快速上涨|快速回调|涨停|": 2,
-            "dedup": 0,
-            "out_of_window": 10
-          },
-          "research": {
-            "dedup": 0,
-            "out_of_window": 10
-          }
+      "top_news": [
+        {
+          "date": "2026-07-13 13:28:32",
+          "title": "新中港7月13日盘中跌幅达5%",
+          "content": "以下是新中港在北京时间7月13日13:28分盘口异动快照：\n\n　　全新妙想投研助理，立即体验\n\n分笔\n\n13:28:13 7.17 52↓\n13:28:10 7.18 397↓\n13:28:04 7.19 18↑\n13:28:01 7.18 7↓\n13:27:46 7.19 19↓\n \n13:27:43 7.19 1↑\n13:27:40 7.19 55↑\n13:27:37 7.19 5↑\n13:27:34 7.19 31↑\n13:27:31 7.18 10↓\n \n报价\n\n卖五 \n\n7.22\n\n 77\n卖四 \n\n7.21\n\n 115\n卖三 \n\n7.2\n\n 132\n卖二 \n\n7.19\n\n 34\n卖一 \n\n7.18\n\n 8\n\n买一 \n\n7.17\n\n 159\n买二 \n\n7.16\n\n 189\n买三 \n\n7.15\n\n 157\n买四 \n\n7.14\n\n 61\n买五 \n\n7.13\n\n 20\n\n最新：7.17\n涨幅：-5.03%\n涨跌：-0.38\n换手率：1.52%\n成交量：6.74万手\n成交额：4946.26万元\n主力净流入：\n166.11万元\n\n  7月13日，新中港盘中跌幅达5%，截至13点28分，报7.17元，成交4946.26万元，换手率1.52%。\n注：以上信息仅供参考，不对您构成任何投资建议。",
+          "type": "行业",
+          "sentiment": -1,
+          "weight": 1,
+          "final_weight": 0.51,
+          "source_authority": 3,
+          "recency_factor": 0.85,
+          "source": "东方财富资讯",
+          "llm_reviewed": true,
+          "llm_confidence": 0.3,
+          "llm_is_real_catalyst": false,
+          "llm_reasoning": "仅描述盘中跌幅，无实质催化"
         },
-        "date_filter_ms": 0,
-        "relevance_ms": 0,
-        "llm_ms": 0,
-        "scoring_ms": 0
-      },
-      "top_news": []
+        {
+          "date": "2026-07-10 09:53:13",
+          "title": "新中港7月10日快速反弹",
+          "content": "以下是新中港在北京时间7月10日09:38分盘口异动快照：\n\n　　全新妙想投研助理，立即体验\n\n分笔\n\n09:38:41 7.41 1↑\n09:38:38 7.40 60↓\n09:38:35 7.40 479↑\n09:38:29 7.38 29↑\n09:38:26 7.38 48↓\n \n09:38:23 7.38 3↓\n09:38:20 7.38 2↓\n09:38:14 7.38 9↓\n09:38:02 7.38 27↓\n09:37:56 7.37 323↓\n \n报价\n\n卖五 \n\n7.45\n\n 21\n卖四 \n\n7.44\n\n 193\n卖三 \n\n7.43\n\n 2\n卖二 \n\n7.42\n\n 570\n卖一 \n\n7.41\n\n 14\n\n买一 \n\n7.4\n\n 3\n买二 \n\n7.39\n\n 119\n买三 7.38 30\n买四 \n\n7.37\n\n 463\n买五 \n\n7.36\n\n 238\n\n最新：7.41\n涨幅：0.41%\n涨跌：0.03\n换手率：0.22%\n成交量：9827手\n成交额：721.60万元\n主力净流入：\n30.67万元\n\n  7月10日，新中港盘中快速反弹，5分钟内涨幅超过2%，截至9点38分，报7.41元，成交721.60万元，换手率0.22%。\n注：以上信息仅供参考，不对您构成任何投资建议。",
+          "type": "行业",
+          "sentiment": 1,
+          "weight": 1,
+          "final_weight": 0.5,
+          "source_authority": 3,
+          "recency_factor": 0.5,
+          "source": "东方财富资讯",
+          "llm_reviewed": true,
+          "llm_confidence": 0.3,
+          "llm_is_real_catalyst": false,
+          "llm_reasoning": "仅描述盘中反弹，无实质催化"
+        }
+      ]
     },
     "SZSE:159389": {
       "name": "159389",
@@ -1246,10 +1576,10 @@
       "news_count": 0,
       "news_dropped": 0,
       "performance": {
-        "list_fetch_ms": 2926,
+        "list_fetch_ms": 4305,
         "candidate_filter_ms": 0,
         "enrichment_ms": 0,
-        "raw_news_count": 19,
+        "raw_news_count": 39,
         "raw_research_count": 0,
         "candidate_news_count": 0,
         "candidate_research_count": 0,
@@ -1258,7 +1588,7 @@
         "candidate_reasons": {
           "news": {
             "dedup": 0,
-            "out_of_window": 19
+            "out_of_window": 39
           },
           "research": {
             "dedup": 0
@@ -1291,10 +1621,10 @@
       "news_count": 3,
       "news_dropped": 0,
       "performance": {
-        "list_fetch_ms": 4572,
+        "list_fetch_ms": 4800,
         "candidate_filter_ms": 0,
-        "enrichment_ms": 252,
-        "raw_news_count": 30,
+        "enrichment_ms": 8947,
+        "raw_news_count": 40,
         "raw_research_count": 10,
         "candidate_news_count": 3,
         "candidate_research_count": 0,
@@ -1303,9 +1633,9 @@
         "candidate_reasons": {
           "news": {
             "no-subject-mention": 16,
-            "noise:\\d{1,2}月\\d{1,2}日(快速上涨|快速回调|涨停|": 3,
+            "noise:\\d{1,2}月\\d{1,2}日(快速上涨|快速回调|涨停|": 4,
             "dedup": 0,
-            "out_of_window": 8
+            "out_of_window": 17
           },
           "research": {
             "dedup": 0,
@@ -1314,7 +1644,7 @@
         },
         "date_filter_ms": 0,
         "relevance_ms": 0,
-        "llm_ms": 15,
+        "llm_ms": 1666,
         "scoring_ms": 0
       },
       "top_news": [
@@ -1386,10 +1716,10 @@
       "news_count": 0,
       "news_dropped": 0,
       "performance": {
-        "list_fetch_ms": 4236,
+        "list_fetch_ms": 4352,
         "candidate_filter_ms": 0,
         "enrichment_ms": 0,
-        "raw_news_count": 30,
+        "raw_news_count": 40,
         "raw_research_count": 10,
         "candidate_news_count": 0,
         "candidate_research_count": 0,
@@ -1401,7 +1731,7 @@
             "noise:\\d{1,2}月\\d{1,2}日(快速上涨|快速回调|涨停|": 4,
             "noise:融资净(买入|卖出)": 1,
             "dedup": 0,
-            "out_of_window": 10
+            "out_of_window": 20
           },
           "research": {
             "dedup": 0,
@@ -1433,10 +1763,10 @@
       "news_count": 0,
       "news_dropped": 0,
       "performance": {
-        "list_fetch_ms": 3613,
+        "list_fetch_ms": 3054,
         "candidate_filter_ms": 0,
         "enrichment_ms": 0,
-        "raw_news_count": 30,
+        "raw_news_count": 40,
         "raw_research_count": 10,
         "candidate_news_count": 0,
         "candidate_research_count": 0,
@@ -1444,11 +1774,12 @@
         "enriched_research_count": 0,
         "candidate_reasons": {
           "news": {
-            "no-subject-mention": 7,
-            "noise:\\d{1,2}月\\d{1,2}日(快速上涨|快速回调|涨停|": 1,
+            "no-subject-mention": 9,
+            "noise:\\d{1,2}月\\d{1,2}日(快速上涨|快速回调|涨停|": 3,
             "noise:融资净(买入|卖出)": 1,
+            "noise:龙虎榜|大宗交易|盘口异动": 3,
             "dedup": 0,
-            "out_of_window": 21
+            "out_of_window": 24
           },
           "research": {
             "dedup": 0,
@@ -1482,10 +1813,10 @@
       "news_count": 10,
       "news_dropped": 0,
       "performance": {
-        "list_fetch_ms": 3588,
+        "list_fetch_ms": 4861,
         "candidate_filter_ms": 0,
-        "enrichment_ms": 2439,
-        "raw_news_count": 30,
+        "enrichment_ms": 13340,
+        "raw_news_count": 40,
         "raw_research_count": 10,
         "candidate_news_count": 10,
         "candidate_research_count": 0,
@@ -1496,7 +1827,8 @@
             "no-subject-mention": 15,
             "noise:\\d{1,2}月\\d{1,2}日(快速上涨|快速回调|涨停|": 3,
             "noise:融资净(买入|卖出)": 2,
-            "dedup": 0
+            "dedup": 0,
+            "out_of_window": 10
           },
           "research": {
             "dedup": 0,
@@ -1505,7 +1837,7 @@
         },
         "date_filter_ms": 0,
         "relevance_ms": 0,
-        "llm_ms": 29,
+        "llm_ms": 3342,
         "scoring_ms": 0
       },
       "top_news": [
@@ -1609,10 +1941,10 @@
       "news_count": 0,
       "news_dropped": 0,
       "performance": {
-        "list_fetch_ms": 3208,
+        "list_fetch_ms": 6414,
         "candidate_filter_ms": 0,
         "enrichment_ms": 0,
-        "raw_news_count": 30,
+        "raw_news_count": 40,
         "raw_research_count": 10,
         "candidate_news_count": 0,
         "candidate_research_count": 0,
@@ -1620,10 +1952,11 @@
         "enriched_research_count": 0,
         "candidate_reasons": {
           "news": {
-            "no-subject-mention": 6,
-            "noise:\\d{1,2}月\\d{1,2}日(快速上涨|快速回调|涨停|": 1,
+            "no-subject-mention": 7,
+            "noise:\\d{1,2}月\\d{1,2}日(快速上涨|快速回调|涨停|": 2,
+            "noise:融资净(买入|卖出)": 1,
             "dedup": 0,
-            "out_of_window": 23
+            "out_of_window": 30
           },
           "research": {
             "dedup": 0,
@@ -1655,10 +1988,10 @@
       "news_count": 0,
       "news_dropped": 0,
       "performance": {
-        "list_fetch_ms": 2877,
+        "list_fetch_ms": 5419,
         "candidate_filter_ms": 0,
         "enrichment_ms": 0,
-        "raw_news_count": 30,
+        "raw_news_count": 40,
         "raw_research_count": 10,
         "candidate_news_count": 0,
         "candidate_research_count": 0,
@@ -1667,9 +2000,9 @@
         "candidate_reasons": {
           "news": {
             "no-subject-mention": 12,
-            "noise:融资净(买入|卖出)": 2,
+            "noise:融资净(买入|卖出)": 3,
             "dedup": 0,
-            "out_of_window": 16
+            "out_of_window": 25
           },
           "research": {
             "dedup": 0,
@@ -1703,10 +2036,10 @@
       "news_count": 1,
       "news_dropped": 0,
       "performance": {
-        "list_fetch_ms": 3972,
+        "list_fetch_ms": 4539,
         "candidate_filter_ms": 0,
-        "enrichment_ms": 22,
-        "raw_news_count": 30,
+        "enrichment_ms": 5386,
+        "raw_news_count": 40,
         "raw_research_count": 10,
         "candidate_news_count": 1,
         "candidate_research_count": 0,
@@ -1714,12 +2047,12 @@
         "enriched_research_count": 0,
         "candidate_reasons": {
           "news": {
-            "no-subject-mention": 16,
             "noise:\\d{1,2}月\\d{1,2}日(快速上涨|快速回调|涨停|": 2,
+            "no-subject-mention": 16,
             "noise:融资净(买入|卖出)": 1,
             "noise:^.{0,8}重要公告集锦": 1,
             "dedup": 0,
-            "out_of_window": 9
+            "out_of_window": 19
           },
           "research": {
             "dedup": 0,
@@ -1728,7 +2061,7 @@
         },
         "date_filter_ms": 0,
         "relevance_ms": 0,
-        "llm_ms": 27,
+        "llm_ms": 2079,
         "scoring_ms": 0
       },
       "top_news": [
@@ -1750,53 +2083,6 @@
         }
       ]
     },
-    "SZSE:300684": {
-      "name": "300684",
-      "score": 50,
-      "score_raw": 0,
-      "score_components": {
-        "positive_weight_sum": 0,
-        "negative_weight_sum": 0
-      },
-      "signal": "⚪ No Trade (无数据)",
-      "strategy": "近期无相关有效新闻",
-      "suitable_for": "观望",
-      "confidence": "-",
-      "patterns": [],
-      "positive_factors": [],
-      "negative_factors": [],
-      "news_count": 0,
-      "news_dropped": 0,
-      "performance": {
-        "list_fetch_ms": 2744,
-        "candidate_filter_ms": 0,
-        "enrichment_ms": 0,
-        "raw_news_count": 30,
-        "raw_research_count": 10,
-        "candidate_news_count": 0,
-        "candidate_research_count": 0,
-        "enriched_news_count": 0,
-        "enriched_research_count": 0,
-        "candidate_reasons": {
-          "news": {
-            "no-subject-mention": 6,
-            "noise:\\d{1,2}月\\d{1,2}日(快速上涨|快速回调|涨停|": 5,
-            "noise:龙虎榜|大宗交易|盘口异动": 1,
-            "dedup": 0,
-            "out_of_window": 18
-          },
-          "research": {
-            "dedup": 0,
-            "out_of_window": 10
-          }
-        },
-        "date_filter_ms": 0,
-        "relevance_ms": 0,
-        "llm_ms": 0,
-        "scoring_ms": 0
-      },
-      "top_news": []
-    },
     "SZSE:301165": {
       "name": "301165",
       "score": 50,
@@ -1815,10 +2101,10 @@
       "news_count": 0,
       "news_dropped": 0,
       "performance": {
-        "list_fetch_ms": 2365,
+        "list_fetch_ms": 3667,
         "candidate_filter_ms": 0,
         "enrichment_ms": 0,
-        "raw_news_count": 30,
+        "raw_news_count": 40,
         "raw_research_count": 10,
         "candidate_news_count": 0,
         "candidate_research_count": 0,
@@ -1829,7 +2115,7 @@
             "no-subject-mention": 16,
             "noise:\\d{1,2}月\\d{1,2}日(快速上涨|快速回调|涨停|": 4,
             "dedup": 0,
-            "out_of_window": 10
+            "out_of_window": 20
           },
           "research": {
             "dedup": 0,
@@ -1863,10 +2149,10 @@
       "news_count": 1,
       "news_dropped": 0,
       "performance": {
-        "list_fetch_ms": 2150,
+        "list_fetch_ms": 3209,
         "candidate_filter_ms": 0,
-        "enrichment_ms": 23,
-        "raw_news_count": 30,
+        "enrichment_ms": 3009,
+        "raw_news_count": 40,
         "raw_research_count": 10,
         "candidate_news_count": 1,
         "candidate_research_count": 0,
@@ -1874,11 +2160,11 @@
         "enriched_research_count": 0,
         "candidate_reasons": {
           "news": {
-            "noise:融资净(买入|卖出)": 2,
-            "no-subject-mention": 11,
+            "no-subject-mention": 12,
             "noise:\\d{1,2}月\\d{1,2}日(快速上涨|快速回调|涨停|": 1,
+            "noise:融资净(买入|卖出)": 1,
             "dedup": 0,
-            "out_of_window": 15
+            "out_of_window": 25
           },
           "research": {
             "dedup": 0,
@@ -1887,7 +2173,7 @@
         },
         "date_filter_ms": 0,
         "relevance_ms": 0,
-        "llm_ms": 33,
+        "llm_ms": 1281,
         "scoring_ms": 0
       },
       "top_news": [
@@ -1915,35 +2201,33 @@
       "score_raw": 0,
       "score_components": {
         "positive_weight_sum": 0,
-        "negative_weight_sum": 0,
-        "news_effective_count": 1,
-        "news_dropped_count": 0
+        "negative_weight_sum": 0
       },
-      "signal": "⚪ No Trade (微多)",
-      "strategy": "情绪轻微偏多，信号不足，以观望为主",
+      "signal": "⚪ No Trade (无数据)",
+      "strategy": "近期无相关有效新闻",
       "suitable_for": "观望",
-      "confidence": "低",
+      "confidence": "-",
       "patterns": [],
       "positive_factors": [],
       "negative_factors": [],
-      "news_count": 1,
+      "news_count": 0,
       "news_dropped": 0,
       "performance": {
-        "list_fetch_ms": 2137,
+        "list_fetch_ms": 5796,
         "candidate_filter_ms": 0,
-        "enrichment_ms": 2161,
-        "raw_news_count": 30,
+        "enrichment_ms": 0,
+        "raw_news_count": 40,
         "raw_research_count": 10,
-        "candidate_news_count": 1,
+        "candidate_news_count": 0,
         "candidate_research_count": 0,
-        "enriched_news_count": 1,
+        "enriched_news_count": 0,
         "enriched_research_count": 0,
         "candidate_reasons": {
           "news": {
-            "no-subject-mention": 12,
-            "noise:\\d{1,2}月\\d{1,2}日(快速上涨|快速回调|涨停|": 4,
+            "no-subject-mention": 15,
+            "noise:\\d{1,2}月\\d{1,2}日(快速上涨|快速回调|涨停|": 5,
             "dedup": 0,
-            "out_of_window": 13
+            "out_of_window": 20
           },
           "research": {
             "dedup": 0,
@@ -1952,25 +2236,146 @@
         },
         "date_filter_ms": 0,
         "relevance_ms": 0,
-        "llm_ms": 959,
+        "llm_ms": 0,
         "scoring_ms": 0
+      },
+      "top_news": []
+    },
+    "SSE:603259": {
+      "name": "药明康德",
+      "score": 49,
+      "score_raw": -0.24,
+      "score_components": {
+        "positive_weight_sum": 1.6,
+        "negative_weight_sum": 1.84,
+        "news_effective_count": 6,
+        "news_dropped_count": 0
+      },
+      "signal": "⚪ No Trade (中性)",
+      "strategy": "情绪中性，无明显方向，观望",
+      "suitable_for": "观望",
+      "confidence": "低",
+      "patterns": [],
+      "positive_factors": [
+        "[行业|w0.6] 医药生物行业今日净流入资金41.55亿元，药明康德等11股净流入资金超亿元",
+        "[行业|w0.5] 药明康德7月10日快速反弹",
+        "[行业|w0.5] 药明康德7月9日盘中涨幅达5%"
+      ],
+      "negative_factors": [
+        "[财报|w0.78] 药明康德：融资净偿还2.3亿元，融资余额52亿元",
+        "[财报|w0.56] 药明康德：融资净偿还2.09亿元，融资余额54.41亿元",
+        "[财报|w0.5] 药明康德：融资净偿还1094.6万元，融资余额54.3亿元"
+      ],
+      "news_count": 6,
+      "news_dropped": 0,
+      "performance": {
+        "list_fetch_ms": 1957,
+        "candidate_filter_ms": 0,
+        "enrichment_ms": 10844,
+        "raw_news_count": 40,
+        "raw_research_count": 10,
+        "candidate_news_count": 6,
+        "candidate_research_count": 0,
+        "enriched_news_count": 6,
+        "enriched_research_count": 0,
+        "candidate_reasons": {
+          "news": {
+            "no-subject-mention": 11,
+            "noise:融资净(买入|卖出)": 1,
+            "noise:\\d{1,2}月\\d{1,2}日(快速上涨|快速回调|涨停|": 2,
+            "dedup": 0,
+            "out_of_window": 20
+          },
+          "research": {
+            "dedup": 0,
+            "out_of_window": 10
+          }
+        },
+        "date_filter_ms": 0,
+        "relevance_ms": 0,
+        "llm_ms": 3754,
+        "scoring_ms": 1
       },
       "top_news": [
         {
-          "date": "2026-07-14",
-          "title": "昊志机电:关于公司控股股东、实际控制人部分股份质押及解除质押的公告",
-          "content": "",
-          "type": "财报",
-          "sentiment": 0,
+          "date": "2026-07-10 17:31:00",
+          "title": "医药生物行业今日净流入资金41.55亿元，药明康德等11股净流入资金超亿元",
+          "content": "专业金融数据，下一代智能终端\n\n　　沪指7月10日下跌1.00%，申万所属行业中，今日上涨的有21个，涨幅居前的行业为传媒、国防军工，涨幅分别为2.60%、2.56%。医药生物行业位居今日涨幅榜第三。跌幅居前的行业为电子、通信，跌幅分别为5.32%、3.51%。\n\n　　资金面上看，两市主力资金全天净流出305.74亿元，今日有20个行业主力资金净流入，国防军工行业主力资金净流入规模居首，该行业今日上涨2.56%，全天净流入资金80.49亿元，其次是医药生物行业，日涨幅为2.48%，净流入资金为41.55亿元。\n\n　　主力资金净流出的行业有11个，电子行业主力资金净流出规模居首，全天净流出资金394.82亿元，其次是电力设备行业，净流出资金为67.02亿元，净流出资金较多的还有通信、基础化工、非银金融等行业。\n\n　　医药生物行业今日上涨2.48%，全天主力资金净流入41.55亿元，该行业所属的个股共477只，今日上涨的有424只，涨停的有12只；下跌的有51只。以资金流向数据进行统计，该行业资金净流入的个股有230只，其中，净流入资金超亿元的有11只，净流入资金居首的是药明康德，今日净流入资金6.52亿元，紧随其后的是昭衍新药、常山药业，净流入资金分别为4.10亿元、3.56亿元。医药生物行业资金净流出个股中，资金净流出超3000万元的有8只，净流出资金居前的有奕瑞科技、济民健康、诚达药业，净流出资金分别为7920.45万元、6393.38万元、5594.55万元。（数据宝）\n\n　　医药生物行业资金流入榜\n\n代码 简称 今日涨跌幅（%） 今日换手率（%） 主力资金流量（万元）\n603259 药明康德 1.84 2.76 65152.00\n603127 昭衍新药 10.00 8.50 41039.47\n300255 常山药业 20.00 7.66 35598.98\n603538 美诺华 10.01 21.23 34142.84\n002317 众生药业 10.02 9.28 27569.40\n600276 恒瑞医药 0.25 2.09 19672.52\n002038 双鹭药业 10.00 8.47 17532.86\n002044 美年健康 4.98 5.68 16229.75\n600664 哈药股份 10.13 3.97 14938.50\n002821 凯莱英 2.59 4.90 12594.09\n688331 荣昌生物 1.52 3.30 10032.38\n300759 康龙化成 9.55 7.20 9569.00\n002693 双成药业 10.00 13.96 9393.38\n002653 海思科 0.43 3.50 8627.92\n002422 科伦药业 3.21 4.01 8348.04\n300347 泰格医药 8.79 6.01 7447.76\n300142 沃森生物 5.12 6.38 7405.49\n600436 片仔癀 6.11 1.38 7226.34\n002437 誉衡药业 5.74 7.30 6566.51\n688266 泽璟制药-U 5.95 4.24 5709.31\n\n　　医药生物行业资金流出榜\n\n代码 简称 今日涨跌幅（%） 今日换手率（%） 主力资金流量（万元）\n688301 奕瑞科技 -8.49 3.92 -7920.45\n603222 济民健康 -2.37 13.24 -6393.38\n301201 诚达药业 6.28 16.76 -5594.55\n300199 翰宇药业 -1.32 11.90 -4141.95\n002773 康弘药业 1.97 2.36 -3926.41\n301580 爱迪特 -3.89 7.87 -3384.53\n300497 富祥股份 -3.38 7.63 -3316.42\n688271 联影医疗 0.80 1.00 -3220.29\n300244 迪安诊断 11.56 14.35 -2788.67\n002294 信立泰 5.45 5.05 -2464.08\n688658 悦康药业 3.10 4.38 -2463.11\n002864 盘龙药业 -6.43 11.36 -2227.34\n688108 赛诺医疗 -0.92 4.90 -2134.52\n600079 ST人福 0.41 0.62 -1986.61\n000518 四环生物 1.75 13.38 -1925.61\n600763 通策医疗 1.39 2.13 -1885.72\n301293 三博脑科 2.52 4.69 -1870.03\n002793 罗欣药业 2.00 4.79 -1870.00\n688621 阳光诺和 4.79 2.98 -1860.96\n688117 圣诺生物 2.74 5.12 -1812.64\n\n注：本文系新闻报道，不构成投资建议，股市有风险，投资需谨慎。\n\n　　全新妙想投研助理，立即体验",
+          "type": "行业",
+          "sentiment": 1,
           "weight": 1,
-          "final_weight": 1.17,
-          "source_authority": 4.5,
-          "recency_factor": 1,
-          "source": "东方财富公告",
+          "final_weight": 0.6,
+          "source_authority": 3,
+          "recency_factor": 0.5,
+          "source": "东方财富资讯",
+          "llm_reviewed": true,
+          "llm_confidence": 0.6,
+          "llm_is_real_catalyst": false,
+          "llm_reasoning": "行业资金流入，药明康德净流入居首"
+        },
+        {
+          "date": "2026-07-10 10:03:14",
+          "title": "药明康德7月10日快速反弹",
+          "content": "以下是药明康德在北京时间7月10日09:46分盘口异动快照：\n\n　　全新妙想投研助理，立即体验\n\n分笔\n\n09:46:04 123.31 161↑\n09:46:01 123.18 483↑\n09:45:58 123.16 288↑\n09:45:55 123.12 1110↑\n09:45:52 122.95 270↑\n \n09:45:49 122.88 98↑\n09:45:46 122.82 228↑\n09:45:43 122.80 183↑\n09:45:40 122.60 420↑\n09:45:37 122.30 117↑\n \n报价\n\n卖五 \n\n123.45\n\n 15\n卖四 \n\n123.44\n\n 1\n卖三 \n\n123.43\n\n 2\n卖二 \n\n123.4\n\n 18\n卖一 \n\n123.38\n\n 20\n\n买一 \n\n123.31\n\n 7\n买二 \n\n123.3\n\n 11\n买三 \n\n123.29\n\n 41\n买四 \n\n123.28\n\n 1\n买五 \n\n123.24\n\n 4\n\n最新：123.31\n涨幅：1.85%\n涨跌：2.24\n换手率：0.37%\n成交量：9.24万手\n成交额：11.24亿元\n主力净流入：\n3050.32万元\n\n  7月10日，药明康德盘中快速反弹，5分钟内涨幅超过2%，截至9点46分，报123.31元，成交11.24亿元，换手率0.37%。\n注：以上信息仅供参考，不对您构成任何投资建议。",
+          "type": "行业",
+          "sentiment": 1,
+          "weight": 1,
+          "final_weight": 0.5,
+          "source_authority": 3,
+          "recency_factor": 0.5,
+          "source": "东方财富资讯",
+          "llm_reviewed": true,
+          "llm_confidence": 0.4,
+          "llm_is_real_catalyst": false,
+          "llm_reasoning": "盘中快速反弹，属价格异动描述"
+        },
+        {
+          "date": "2026-07-10 07:37:45",
+          "title": "药明康德：融资净偿还2.3亿元，融资余额52亿元",
+          "content": "炒股第一步，先开个股票账户\n\n交易所最新数据显示，药明康德于2026年7月9日获融资买入4.95亿元，融资偿还7.24亿元，当日融资净偿还2.3亿元。目前，该股融资余额52.00亿，占流通市值比例为1.74%。\n\n该股当日融券卖出3.10万股，融券偿还1.58万股，融券净卖出1.52万股。目前，该股融券余量36.55万股，融券余额4424.59万元。\n\n免责声明：本文基于AI生产，仅供参考，不构成任何投资建议，据此操作风险自担。东方财富发布此内容旨在传播更多信息，与本平台立场无关。东方财富力求但不保证数据的完全准确，如有错漏请以中国证监会指定上市公司信息披露媒体为准，东方财富不对因该资料全部或部分内容而引致的盈亏承担任何责任。用户个人对服务的使用承担风险，东方财富对此不作任何类型的担保。",
+          "type": "财报",
+          "sentiment": -1,
+          "weight": 1,
+          "final_weight": 0.78,
+          "source_authority": 3,
+          "recency_factor": 0.5,
+          "source": "东方财富资讯",
+          "llm_reviewed": true,
+          "llm_confidence": 0.5,
+          "llm_is_real_catalyst": false,
+          "llm_reasoning": "融资净偿还2.3亿元，资金流出信号"
+        },
+        {
+          "date": "2026-07-09 10:08:13",
+          "title": "药明康德7月9日盘中涨幅达5%",
+          "content": "",
+          "type": "行业",
+          "sentiment": 1,
+          "weight": 1,
+          "final_weight": 0.5,
+          "source_authority": 3,
+          "recency_factor": 0.42,
+          "source": "东方财富资讯",
           "llm_reviewed": true,
           "llm_confidence": 0.3,
           "llm_is_real_catalyst": false,
-          "llm_reasoning": "股份质押公告，无业绩或催化信息"
+          "llm_reasoning": "盘中涨幅达5%，无具体催化信息"
+        },
+        {
+          "date": "2026-07-09 07:45:14",
+          "title": "药明康德：融资净偿还1094.6万元，融资余额54.3亿元",
+          "content": "在东方财富看资讯行情，选东方财富证券一站式开户交易>>\n\n交易所最新数据显示，药明康德于2026年7月8日获融资买入4.73亿元，融资偿还4.84亿元，当日融资净偿还1094.6万元。目前，该股融资余额54.30亿，占流通市值比例为1.90%。\n\n该股当日融券卖出2.32万股，融券偿还2.47万股，融券净偿还1500股。目前，该股融券余量35.03万股，融券余额4041.97万元。\n\n免责声明：本文基于AI生产，仅供参考，不构成任何投资建议，据此操作风险自担。东方财富发布此内容旨在传播更多信息，与本平台立场无关。东方财富力求但不保证数据的完全准确，如有错漏请以中国证监会指定上市公司信息披露媒体为准，东方财富不对因该资料全部或部分内容而引致的盈亏承担任何责任。用户个人对服务的使用承担风险，东方财富对此不作任何类型的担保。",
+          "type": "财报",
+          "sentiment": -1,
+          "weight": 1,
+          "final_weight": 0.5,
+          "source_authority": 3,
+          "recency_factor": 0.42,
+          "source": "东方财富资讯",
+          "llm_reviewed": true,
+          "llm_confidence": 0.4,
+          "llm_is_real_catalyst": false,
+          "llm_reasoning": "融资净偿还1094.6万元，资金小幅流出"
         }
       ]
     },
@@ -1996,10 +2401,10 @@
       "news_count": 6,
       "news_dropped": 0,
       "performance": {
-        "list_fetch_ms": 2229,
+        "list_fetch_ms": 4763,
         "candidate_filter_ms": 0,
-        "enrichment_ms": 2295,
-        "raw_news_count": 30,
+        "enrichment_ms": 4948,
+        "raw_news_count": 40,
         "raw_research_count": 10,
         "candidate_news_count": 6,
         "candidate_research_count": 0,
@@ -2011,7 +2416,7 @@
             "noise:\\d{1,2}月\\d{1,2}日(快速上涨|快速回调|涨停|": 2,
             "noise:龙虎榜|大宗交易|盘口异动": 4,
             "dedup": 0,
-            "out_of_window": 4
+            "out_of_window": 14
           },
           "research": {
             "dedup": 0,
@@ -2020,7 +2425,7 @@
         },
         "date_filter_ms": 0,
         "relevance_ms": 0,
-        "llm_ms": 8,
+        "llm_ms": 2578,
         "scoring_ms": 0
       },
       "top_news": [
@@ -2103,6 +2508,276 @@
           "llm_confidence": 0.1,
           "llm_is_real_catalyst": false,
           "llm_reasoning": "选举职工代表董事，常规事项"
+        }
+      ]
+    },
+    "SZSE:001223": {
+      "name": "欧克科技",
+      "score": 46,
+      "score_raw": -1.02,
+      "score_components": {
+        "positive_weight_sum": 0.5,
+        "negative_weight_sum": 1.52,
+        "news_effective_count": 5,
+        "news_dropped_count": 0
+      },
+      "signal": "⚪ No Trade (中性)",
+      "strategy": "情绪中性，无明显方向，观望",
+      "suitable_for": "观望",
+      "confidence": "低",
+      "patterns": [],
+      "positive_factors": [
+        "[行业|w0.5] 欧克科技7月10日快速反弹"
+      ],
+      "negative_factors": [
+        "[行业|w0.51] 欧克科技7月13日盘中跌幅达5%",
+        "[行业|w0.51] 欧克科技7月13日加速下跌",
+        "[行业|w0.5] 欧克科技7月8日加速下跌"
+      ],
+      "news_count": 5,
+      "news_dropped": 0,
+      "performance": {
+        "list_fetch_ms": 2632,
+        "candidate_filter_ms": 0,
+        "enrichment_ms": 24218,
+        "raw_news_count": 40,
+        "raw_research_count": 4,
+        "candidate_news_count": 5,
+        "candidate_research_count": 0,
+        "enriched_news_count": 5,
+        "enriched_research_count": 0,
+        "candidate_reasons": {
+          "news": {
+            "noise:\\d{1,2}月\\d{1,2}日(快速上涨|快速回调|涨停|": 1,
+            "dedup": 0,
+            "out_of_window": 34
+          },
+          "research": {
+            "dedup": 0,
+            "out_of_window": 4
+          }
+        },
+        "date_filter_ms": 0,
+        "relevance_ms": 0,
+        "llm_ms": 2208,
+        "scoring_ms": 0
+      },
+      "top_news": [
+        {
+          "date": "2026-07-13 10:36:03",
+          "title": "欧克科技7月13日盘中跌幅达5%",
+          "content": "以下是欧克科技在北京时间7月13日09:58分盘口异动快照：\n\n　　全新妙想投研助理，立即体验\n\n分笔\n\n09:58:06 35.40 16↓\n09:58:03 35.49 2↑\n09:57:57 35.50 49↓\n09:57:54 35.51 6↓\n09:57:48 35.52 12↓\n \n09:57:45 35.54 5↑\n09:57:42 35.52 13↓\n09:57:39 35.53 19↓\n09:57:36 35.55 5↑\n09:57:33 35.54 1↓\n \n报价\n\n卖五 \n\n35.54\n\n 154\n卖四 \n\n35.51\n\n 10\n卖三 \n\n35.5\n\n 54\n卖二 \n\n35.49\n\n 1\n卖一 \n\n35.48\n\n 19\n\n买一 \n\n35.4\n\n 11\n买二 \n\n35.35\n\n 2\n买三 \n\n35.33\n\n 2\n买四 \n\n35.3\n\n 18\n买五 \n\n35.28\n\n 19\n\n最新：35.4\n涨幅：-5.12%\n涨跌：-1.91\n换手率：0.79%\n成交量：5494.92手\n成交额：1989.01万元\n主力净流入：\n-160.26万元\n\n  7月13日，欧克科技盘中跌幅达5%，截至9点58分，报35.4元，成交1989.01万元，换手率0.79%。\n注：以上信息仅供参考，不对您构成任何投资建议。",
+          "type": "行业",
+          "sentiment": -1,
+          "weight": 1,
+          "final_weight": 0.51,
+          "source_authority": 3,
+          "recency_factor": 0.85,
+          "source": "东方财富资讯",
+          "llm_reviewed": true,
+          "llm_confidence": 0.3,
+          "llm_is_real_catalyst": false,
+          "llm_reasoning": "仅描述股价下跌，无实质催化"
+        },
+        {
+          "date": "2026-07-13 09:51:53",
+          "title": "欧克科技7月13日加速下跌",
+          "content": "",
+          "type": "行业",
+          "sentiment": -1,
+          "weight": 1,
+          "final_weight": 0.51,
+          "source_authority": 3,
+          "recency_factor": 0.85,
+          "source": "东方财富资讯",
+          "llm_reviewed": true,
+          "llm_confidence": 0.2,
+          "llm_is_real_catalyst": false,
+          "llm_reasoning": "标题提及加速下跌，无具体信息"
+        },
+        {
+          "date": "2026-07-10 09:57:01",
+          "title": "欧克科技7月10日快速反弹",
+          "content": "",
+          "type": "行业",
+          "sentiment": 1,
+          "weight": 1,
+          "final_weight": 0.5,
+          "source_authority": 3,
+          "recency_factor": 0.5,
+          "source": "东方财富资讯",
+          "llm_reviewed": true,
+          "llm_confidence": 0.2,
+          "llm_is_real_catalyst": false,
+          "llm_reasoning": "标题提及快速反弹，无实质内容"
+        },
+        {
+          "date": "2026-07-09",
+          "title": "欧克科技:关于完成工商变更登记的公告",
+          "content": "",
+          "type": "政策",
+          "sentiment": 0,
+          "weight": 2,
+          "final_weight": 2.27,
+          "source_authority": 4.5,
+          "recency_factor": 0.42,
+          "source": "东方财富公告",
+          "llm_reviewed": true,
+          "llm_confidence": 0.7,
+          "llm_is_real_catalyst": true,
+          "llm_reasoning": "工商变更登记完成，属常规公告"
+        },
+        {
+          "date": "2026-07-08 10:06:32",
+          "title": "欧克科技7月8日加速下跌",
+          "content": "以下是欧克科技在北京时间7月8日09:44分盘口异动快照：\n\n　　在东方财富看资讯行情，选东方财富证券一站式开户交易>>\n\n分笔\n\n09:44:30 38.20 10↓\n09:44:27 38.22 45↓\n09:44:21 38.22 1↓\n09:44:18 38.27 13↑\n09:44:15 38.23 26↓\n \n09:44:09 38.27 6↓\n09:44:03 38.23 49↓\n09:43:57 38.24 9↓\n09:43:54 38.43 6↑\n09:43:51 38.42 4↑\n \n报价\n\n卖五 \n\n38.55\n\n 115\n卖四 \n\n38.52\n\n 19\n卖三 \n\n38.37\n\n 13\n卖二 \n\n38.27\n\n 10\n卖一 \n\n38.22\n\n 272\n\n买一 \n\n38.2\n\n 3\n买二 \n\n38.11\n\n 6\n买三 \n\n38.1\n\n 61\n买四 \n\n38.09\n\n 1\n买五 \n\n38.07\n\n 1\n\n最新：38.2\n涨幅：-2.30%\n涨跌：-0.9\n换手率：0.33%\n成交量：2337.6手\n成交额：911.03万元\n主力净流入：\n82.58万元\n\n  7月8日，欧克科技盘中加速下跌，5分钟内跌幅超过2%，截至9点44分，报38.2元，成交911.03万元，换手率0.33%。\n注：以上信息仅供参考，不对您构成任何投资建议。",
+          "type": "行业",
+          "sentiment": -1,
+          "weight": 1,
+          "final_weight": 0.5,
+          "source_authority": 3,
+          "recency_factor": 0.36,
+          "source": "东方财富资讯",
+          "llm_reviewed": true,
+          "llm_confidence": 0.3,
+          "llm_is_real_catalyst": false,
+          "llm_reasoning": "仅描述股价加速下跌，无实质催化"
+        }
+      ]
+    },
+    "SZSE:002875": {
+      "name": "安奈儿",
+      "score": 38,
+      "score_raw": -2.81,
+      "score_components": {
+        "positive_weight_sum": 1.51,
+        "negative_weight_sum": 4.32,
+        "news_effective_count": 8,
+        "news_dropped_count": 0
+      },
+      "signal": "🔴 No Trade / 规避",
+      "strategy": "情绪偏空，建议规避或减仓，等待企稳",
+      "suitable_for": "反转(等企稳)",
+      "confidence": "中",
+      "patterns": [],
+      "positive_factors": [
+        "[行业|w0.51] 安奈儿7月13日开盘涨幅达5%",
+        "[行业|w0.5] 安奈儿7月10日盘中涨停",
+        "[行业|w0.5] 安奈儿7月10日盘中涨幅达5%"
+      ],
+      "negative_factors": [
+        "[财报|w3.32] 安奈儿：预计上半年净亏损320万元—600万元",
+        "[行业|w0.5] 安奈儿7月9日盘中跌幅达5%",
+        "[行业|w0.5] 安奈儿7月7日盘中跌幅达5%"
+      ],
+      "news_count": 8,
+      "news_dropped": 0,
+      "performance": {
+        "list_fetch_ms": 2221,
+        "candidate_filter_ms": 0,
+        "enrichment_ms": 19168,
+        "raw_news_count": 40,
+        "raw_research_count": 4,
+        "candidate_news_count": 8,
+        "candidate_research_count": 0,
+        "enriched_news_count": 8,
+        "enriched_research_count": 0,
+        "candidate_reasons": {
+          "news": {
+            "noise:\\d{1,2}月\\d{1,2}日(快速上涨|快速回调|涨停|": 2,
+            "dedup": 0,
+            "out_of_window": 30
+          },
+          "research": {
+            "dedup": 0,
+            "out_of_window": 4
+          }
+        },
+        "date_filter_ms": 0,
+        "relevance_ms": 0,
+        "llm_ms": 2728,
+        "scoring_ms": 1
+      },
+      "top_news": [
+        {
+          "date": "2026-07-13 19:20:00",
+          "title": "安奈儿：预计上半年净亏损320万元—600万元",
+          "content": "在东方财富看资讯行情，选东方财富证券一站式开户交易>>\n\n　　南财智讯7月13日电，安奈儿发布中期业绩预告，预计上半年归属于上市公司股东的净利润为亏损320万元—600万元；预计上半年归属于上市公司股东的扣除非经常性损益的净利润为亏损400万元—720万元。报告期内，公司持续优化产品及渠道结构，进一步提升产品品质，销售实现增长；同时公司持续加强库存管理，库龄结构有所改善，并不断强化成本费用管控，亏损较上年同期收窄。",
+          "type": "财报",
+          "sentiment": -1,
+          "weight": 3,
+          "final_weight": 3.32,
+          "source_authority": 3,
+          "recency_factor": 0.85,
+          "source": "东方财富资讯",
+          "llm_reviewed": true,
+          "llm_confidence": 0.9,
+          "llm_is_real_catalyst": true,
+          "llm_reasoning": "预计上半年亏损，但亏损收窄"
+        },
+        {
+          "date": "2026-07-13 09:27:47",
+          "title": "安奈儿7月13日开盘涨幅达5%",
+          "content": "",
+          "type": "行业",
+          "sentiment": 1,
+          "weight": 1,
+          "final_weight": 0.51,
+          "source_authority": 3,
+          "recency_factor": 0.85,
+          "source": "东方财富资讯",
+          "llm_reviewed": true,
+          "llm_confidence": 0.3,
+          "llm_is_real_catalyst": false,
+          "llm_reasoning": "仅描述股价涨幅，无实质催化"
+        },
+        {
+          "date": "2026-07-10 10:28:59",
+          "title": "安奈儿7月10日打开涨停",
+          "content": "以下是安奈儿在北京时间7月10日10:08分盘口异动快照：\n\n　　在东方财富看资讯行情，选东方财富证券一站式开户交易>>\n\n \n\n  7月10日10点8分，安奈儿盘中打开涨停，现报14元，成交8464.27万元，换手率3.44%。该股之前于10点2分涨停。\n注：以上信息仅供参考，不对您构成任何投资建议。",
+          "type": "行业",
+          "sentiment": 0,
+          "weight": 1,
+          "final_weight": 0.5,
+          "source_authority": 3,
+          "recency_factor": 0.5,
+          "source": "东方财富资讯",
+          "llm_reviewed": true,
+          "llm_confidence": 0.2,
+          "llm_is_real_catalyst": false,
+          "llm_reasoning": "盘中打开涨停，无实质信息"
+        },
+        {
+          "date": "2026-07-10 10:22:43",
+          "title": "安奈儿7月10日盘中涨停",
+          "content": "以下是安奈儿在北京时间7月10日10:02分盘口异动快照：\n\n　　炒股第一步，先开个股票账户\n\n分笔\n\n10:02:15 14.10 1786↑\n10:02:12 13.92 48↓\n10:02:09 13.94 282↓\n10:02:06 13.94 74↓\n10:02:03 13.94 241↓\n \n10:02:00 13.94 119↓\n10:01:57 13.97 125↑\n10:01:54 13.93 13↑\n10:01:51 13.91 12↓\n10:01:48 13.93 34↓\n \n报价\n\n卖五 - 0\n卖四 - 0\n卖三 - 0\n卖二 - 0\n卖一 - 0\n\n买一 \n\n14.1\n\n 92004\n买二 \n\n14.09\n\n 4\n买三 \n\n14.06\n\n 1\n买四 \n\n13.96\n\n 17\n买五 \n\n13.94\n\n 9\n\n最新：14.1\n涨幅：9.98%\n涨跌：1.28\n换手率：2.76%\n成交量：5.04万手\n成交额：6715.79万元\n主力净流入：\n330.23万元\n\n  7月10日10点2分，安奈儿盘中涨停，报14.1元，目前封单92004手，折合1.30亿元。截至目前，成交6715.79万元，换手率2.76%。\n注：以上信息仅供参考，不对您构成任何投资建议。",
+          "type": "行业",
+          "sentiment": 1,
+          "weight": 1,
+          "final_weight": 0.5,
+          "source_authority": 3,
+          "recency_factor": 0.5,
+          "source": "东方财富资讯",
+          "llm_reviewed": true,
+          "llm_confidence": 0.2,
+          "llm_is_real_catalyst": false,
+          "llm_reasoning": "盘中涨停，无实质催化"
+        },
+        {
+          "date": "2026-07-10 10:05:02",
+          "title": "安奈儿7月10日盘中涨幅达5%",
+          "content": "",
+          "type": "行业",
+          "sentiment": 1,
+          "weight": 1,
+          "final_weight": 0.5,
+          "source_authority": 3,
+          "recency_factor": 0.5,
+          "source": "东方财富资讯",
+          "llm_reviewed": true,
+          "llm_confidence": 0.2,
+          "llm_is_real_catalyst": false,
+          "llm_reasoning": "仅描述股价涨幅，无实质信息"
         }
       ]
     }

@@ -74,6 +74,11 @@ export async function runGap(market) {
       results.push({ symbol: sym, ok: false, reason: 'switch_fail' });
       continue;
     }
+    if (sw.chart_ready === false) {
+      console.log('⚠ 图表未就绪（超时），跳过');
+      results.push({ symbol: sym, ok: false, reason: 'chart_not_ready' });
+      continue;
+    }
     await sleep(SWITCH_DELAY);
     await runCli('timeframe D');
     await sleep(TF_DELAY);

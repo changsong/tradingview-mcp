@@ -38,7 +38,21 @@ export async function getState({ _deps } = {}) {
 }
 
 export async function setSymbol({ symbol, _deps }) {
-  const { evaluateAsync, waitForChartReady } = _resolve(_deps);
+  const { evaluate, evaluateAsync, waitForChartReady } = _resolve(_deps);
+
+  // Capture current bar fingerprint BEFORE switching, so we can detect when
+  // the new symbol's bars have actually loaded (vs stale bars from old symbol).
+  const prevFp = await evaluate(`
+    (function() {
+      try {
+        var bars = window.TradingViewApi._activeChartWidgetWV.value()._chartWidget.model().mainSeries().bars();
+        var last = bars.valueAt(bars.lastIndex());
+        if (last) return { time: last[0], close: last[4] };
+      } catch(e) {}
+      return null;
+    })()
+  `);
+
   await evaluateAsync(`
     (function() {
       var chart = ${CHART_API};
@@ -48,7 +62,7 @@ export async function setSymbol({ symbol, _deps }) {
       });
     })()
   `);
-  const ready = await waitForChartReady(symbol, null, _deps?.timeout, _deps?.pollInterval);
+  const ready = await waitForChartReady(symbol, null, _deps?.timeout, _deps?.pollInterval, prevFp);
   return { success: true, symbol, chart_ready: ready };
 }
 

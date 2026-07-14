@@ -13,6 +13,7 @@ import * as coreChart from '../../src/core/chart.js';
 import * as coreData from '../../src/core/data.js';
 
 let _connected = false;
+let _currentSymbol = null;
 
 async function ensureConnected() {
   if (!_connected) {
@@ -36,8 +37,12 @@ export async function runCli(cmd) {
       case 'status':
         return { success: true, cdp_connected: true };
 
-      case 'symbol':
-        return await coreChart.setSymbol({ symbol: parts.slice(1).join(' ') });
+      case 'symbol': {
+        const sym = parts.slice(1).join(' ');
+        const result = await coreChart.setSymbol({ symbol: sym });
+        if (result?.success) _currentSymbol = sym;
+        return result;
+      }
 
       case 'timeframe':
         return await coreChart.setTimeframe({ timeframe: parts[1] });
@@ -45,7 +50,7 @@ export async function runCli(cmd) {
       case 'ohlcv': {
         const nIdx = parts.indexOf('-n');
         const count = nIdx >= 0 ? parseInt(parts[nIdx + 1], 10) : 100;
-        return await coreData.getOhlcv({ count });
+        return await coreData.getOhlcv({ count, expectedSymbol: _currentSymbol });
       }
 
       case 'data': {
@@ -61,7 +66,7 @@ export async function runCli(cmd) {
         return await coreData.getStudyValues();
 
       case 'quote':
-        return await coreData.getQuote({ symbol: parts[1] || '' });
+        return await coreData.getQuote({ symbol: parts[1] || _currentSymbol || '' });
 
       default:
         console.warn(`[runCli] 不支持的命令: ${cmd}`);

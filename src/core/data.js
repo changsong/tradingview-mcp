@@ -73,12 +73,14 @@ function buildGraphicsJS(collectionName, mapKey, filter) {
   `;
 }
 
-export async function getOhlcv({ count, summary } = {}) {
+export async function getOhlcv({ count, summary, expectedSymbol } = {}) {
   const limit = Math.min(count || 100, MAX_OHLCV_BARS);
   let data;
   try {
+    const symCheck = expectedSymbol ? `var expectedSym = ${safeString(expectedSymbol)}; var curSym = ''; try { curSym = ${CHART_API}.symbol(); } catch(e) {} if (expectedSym && curSym && curSym.toUpperCase().indexOf(expectedSym.toUpperCase()) === -1) return { bars: [], total_bars: 0, source: 'direct_bars', _err: 'SYMBOL_MISMATCH: expected=' + expectedSym + ' actual=' + curSym };` : '';
     data = await evaluate(`
       (function() {
+        ${symCheck}
         var bars = ${BARS_PATH};
         if (!bars || typeof bars.lastIndex !== 'function') return null;
         var result = [];
@@ -92,6 +94,10 @@ export async function getOhlcv({ count, summary } = {}) {
       })()
     `);
   } catch { data = null; }
+
+  if (data?._err && data._err.startsWith('SYMBOL_MISMATCH')) {
+    throw new Error(`OHLCV symbol mismatch: chart is showing a different symbol than requested. ${data._err}`);
+  }
 
   if (!data || !data.bars || data.bars.length === 0) {
     throw new Error('Could not extract OHLCV data. The chart may still be loading.');
