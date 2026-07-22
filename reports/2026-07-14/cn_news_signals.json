@@ -1,0 +1,229 @@
+{
+  "generated_at": "2026-07-14T07:18:51.870Z",
+  "market": "cn",
+  "source": "src/core/webNews.js",
+  "score_scale": "0-100 normalized (neutral=50)",
+  "window": {
+    "from": "2026-07-07",
+    "to": "2026-07-14",
+    "days": 7
+  },
+  "llm_used": true,
+  "performance": {
+    "totals_ms": {
+      "list_fetch_ms": 2338,
+      "enrichment_ms": 5130,
+      "relevance_ms": 0,
+      "llm_ms": 1899,
+      "report_write_ms": 13
+    },
+    "avg_ms": {
+      "list_fetch_ms": 1169,
+      "enrichment_ms": 2565,
+      "relevance_ms": 0,
+      "llm_ms": 950,
+      "report_write_ms": 7
+    }
+  },
+  "stocks": {
+    "SZSE:002384": {
+      "name": "002384",
+      "score": 53,
+      "score_raw": 0.6,
+      "score_components": {
+        "positive_weight_sum": 0.6,
+        "negative_weight_sum": 0,
+        "news_effective_count": 1,
+        "news_dropped_count": 0
+      },
+      "signal": "⚪ No Trade (微多)",
+      "strategy": "情绪轻微偏多，信号不足，以观望为主",
+      "suitable_for": "观望",
+      "confidence": "低",
+      "patterns": [],
+      "positive_factors": [
+        "[行业|w0.6] 亚太股市午后集体大反攻！PCB板块狂飙，002384直线涨停，有股民直呼“东山再起就靠你”"
+      ],
+      "negative_factors": [],
+      "news_count": 1,
+      "news_dropped": 0,
+      "performance": {
+        "list_fetch_ms": 1145,
+        "candidate_filter_ms": 1,
+        "enrichment_ms": 2065,
+        "raw_news_count": 40,
+        "raw_research_count": 10,
+        "candidate_news_count": 1,
+        "candidate_research_count": 0,
+        "enriched_news_count": 1,
+        "enriched_research_count": 0,
+        "candidate_reasons": {
+          "news": {
+            "no-subject-mention": 18,
+            "noise:\\d{1,2}月\\d{1,2}日(快速上涨|快速回调|涨停|": 1,
+            "dedup": 0,
+            "out_of_window": 20
+          },
+          "research": {
+            "dedup": 0,
+            "out_of_window": 10
+          }
+        },
+        "date_filter_ms": 0,
+        "relevance_ms": 0,
+        "llm_ms": 1892,
+        "scoring_ms": 0
+      },
+      "top_news": [
+        {
+          "date": "2026-07-14 14:14:00",
+          "title": "亚太股市午后集体大反攻！PCB板块狂飙，002384直线涨停，有股民直呼“东山再起就靠你”",
+          "content": "在东方财富看资讯行情，选东方财富证券一站式开户交易>>\n\n　　亚太股市午后集体大反攻！\n\n　　日韩股市“深V”翻红，韩国KOSPI指数转涨，此前一度跌超5%。SK海力士抹去一度达9%的跌幅。SK海力士现涨超3%，SK海力士ADR(SKHY.O)夜盘涨超6%。三星电子涨超4%，南方两倍做多三星电子涨超5%，此前一度跌超10%。\n\n　　截至发稿，创业板指涨3%，现报3835.379点；上证指数涨0.61%，现报3937.697点；深证成指涨2.05%，现报14819.998点。算力硬件产业链冲高，PCB、服务器方向领涨，沪深京三市上涨个股近3900只。\n\n　　PCB板块走强，东山精密直线涨停。截至13:18，公司股价报260.37元/股，最新市值为4769亿元。有股民直呼：“东山再起就靠你”。\n\n　　消息面上，多家PCB龙头公司集中发布超预期的业绩预告。例如，金安国纪7月13日晚间披露上半年业绩预告，预计实现净利润7.3亿元—8.2亿元，同比增长935.75%—1063.45%。沪电股份预计实现归母净利润28.30亿元—30亿元，同比增长68.17%—78.28%。\n\n　　东山精密是全球领先的PCB供应商，持续深耕高端PCB赛道。公司此前表示，目前老厂改造项目已顺利投产，新建产能按计划稳步建设落地。此外，公司构建起“光模块含光芯片+AI PCB”的AI算力核心硬件产品布局，产品覆盖10G至1.6T全速率，并持续推进3.2T及以上下一代光模块研发。\n\n　　市场高度关注东山精密半年度业绩预告。东山精密2026年一季报显示，公司实现营收131.38亿元，同比增长52.72%；归母净利润为11.10亿元，同比增长143.47%。\n\n　　国泰海通研报表示，在AI需求爆发的背景下，光互联已成为决定AI基础设施性能和算力利用率的重要因素，光通信行业有望保持较高增速。\n\n　　来源：公司公告、中国证券报、21世纪经济报道",
+          "type": "行业",
+          "sentiment": 1,
+          "weight": 1,
+          "final_weight": 0.6,
+          "source_authority": 3,
+          "recency_factor": 1,
+          "source": "东方财富资讯",
+          "llm_reviewed": true,
+          "llm_confidence": 0.4,
+          "llm_is_real_catalyst": false,
+          "llm_reasoning": "新闻主要描述板块上涨，未提及东山精密具体催化"
+        }
+      ]
+    },
+    "SZSE:002747": {
+      "name": "002747",
+      "score": 48,
+      "score_raw": -0.5,
+      "score_components": {
+        "positive_weight_sum": 0,
+        "negative_weight_sum": 0.5,
+        "news_effective_count": 6,
+        "news_dropped_count": 0
+      },
+      "signal": "⚪ No Trade (中性)",
+      "strategy": "情绪中性，无明显方向，观望",
+      "suitable_for": "观望",
+      "confidence": "低",
+      "patterns": [],
+      "positive_factors": [],
+      "negative_factors": [
+        "[行业|w0.5] 埃斯顿:股票交易异常波动公告"
+      ],
+      "news_count": 6,
+      "news_dropped": 0,
+      "performance": {
+        "list_fetch_ms": 1193,
+        "candidate_filter_ms": 0,
+        "enrichment_ms": 3065,
+        "raw_news_count": 40,
+        "raw_research_count": 10,
+        "candidate_news_count": 6,
+        "candidate_research_count": 0,
+        "enriched_news_count": 6,
+        "enriched_research_count": 0,
+        "candidate_reasons": {
+          "news": {
+            "noise:\\d{1,2}月\\d{1,2}日(快速上涨|快速回调|涨停|": 3,
+            "no-subject-mention": 14,
+            "noise:龙虎榜|大宗交易|盘口异动": 3,
+            "dedup": 0,
+            "out_of_window": 14
+          },
+          "research": {
+            "dedup": 0,
+            "out_of_window": 10
+          }
+        },
+        "date_filter_ms": 0,
+        "relevance_ms": 0,
+        "llm_ms": 7,
+        "scoring_ms": 1
+      },
+      "top_news": [
+        {
+          "date": "2026-07-10",
+          "title": "埃斯顿:2026年第一次临时股东会决议公告",
+          "content": "生产、开发、服务各类机电一体化产品、自动控制、运动控制、驱动装置、计算机应用软件、伺服液压控制及系统集成;销售自产产品;自营和代理各类商品和技术的进出口业务。(依法须经批准的项目,经相关部门批准后方可开展经营活动)一般项目:工业机器人制造;智能机器人的研发;人工智能应用软件开发;工业互联网数据服务;电子元器件制造(除依法须经批准的项目外,凭营业执照依法自主开展经营活动)。\n郑重声明：东方财富网发布此信息的目的在于传播更多信息，与本站立场无关。东方财富网不保证该信息（包括但不限于文字、视频、音频、数据及图表）全部或者部分内容的准确性、真实性、完整性、有效性、及时性、原创性等。相关信息并未经过本网站证实，不对您构成任何投资建议，据此操作，风险自担。",
+          "type": "行业",
+          "sentiment": 0,
+          "weight": 1,
+          "final_weight": 0.5,
+          "source_authority": 4.5,
+          "recency_factor": 0.5,
+          "source": "东方财富公告",
+          "llm_reviewed": true,
+          "llm_confidence": 0.1,
+          "llm_is_real_catalyst": false,
+          "llm_reasoning": "仅为股东会决议公告，无实质影响"
+        },
+        {
+          "date": "2026-07-10",
+          "title": "埃斯顿:第六届董事会第一次会议决议公告",
+          "content": "",
+          "type": "行业",
+          "sentiment": 0,
+          "weight": 1,
+          "final_weight": 0.5,
+          "source_authority": 4.5,
+          "recency_factor": 0.5,
+          "source": "东方财富公告",
+          "llm_reviewed": true,
+          "llm_confidence": 0.1,
+          "llm_is_real_catalyst": false,
+          "llm_reasoning": "董事会会议决议，内容为空"
+        },
+        {
+          "date": "2026-07-10",
+          "title": "埃斯顿:北京国枫(南京)律师事务所关于南京埃斯顿自动化股份有限公司2026年第一次临时股东会的法律意见书",
+          "content": "",
+          "type": "行业",
+          "sentiment": 0,
+          "weight": 1,
+          "final_weight": 0.5,
+          "source_authority": 4.5,
+          "recency_factor": 0.5,
+          "source": "东方财富公告",
+          "llm_reviewed": true,
+          "llm_confidence": 0.1,
+          "llm_is_real_catalyst": false,
+          "llm_reasoning": "法律意见书，无实质内容"
+        },
+        {
+          "date": "2026-07-10",
+          "title": "埃斯顿:关于董事会换届选举完成及聘任高级管理人员、证券事务代表的公告",
+          "content": "",
+          "type": "行业",
+          "sentiment": 0,
+          "weight": 1,
+          "final_weight": 0.5,
+          "source_authority": 4.5,
+          "recency_factor": 0.5,
+          "source": "东方财富公告",
+          "llm_reviewed": true,
+          "llm_confidence": 0.1,
+          "llm_is_real_catalyst": false,
+          "llm_reasoning": "换届及聘任公告，常规事项"
+        },
+        {
+          "date": "2026-07-10",
+          "title": "埃斯顿:关于选举职工代表董事的公告",
+          "content": "生产、开发、服务各类机电一体化产品、自动控制、运动控制、驱动装置、计算机应用软件、伺服液压控制及系统集成;销售自产产品;自营和代理各类商品和技术的进出口业务。(依法须经批准的项目,经相关部门批准后方可开展经营活动)一般项目:工业机器人制造;智能机器人的研发;人工智能应用软件开发;工业互联网数据服务;电子元器件制造(除依法须经批准的项目外,凭营业执照依法自主开展经营活动)。\n郑重声明：东方财富网发布此信息的目的在于传播更多信息，与本站立场无关。东方财富网不保证该信息（包括但不限于文字、视频、音频、数据及图表）全部或者部分内容的准确性、真实性、完整性、有效性、及时性、原创性等。相关信息并未经过本网站证实，不对您构成任何投资建议，据此操作，风险自担。",
+          "type": "行业",
+          "sentiment": 0,
+          "weight": 1,
+          "final_weight": 0.5,
+          "source_authority": 4.5,
+          "recency_factor": 0.5,
+          "source": "东方财富公告",
+          "llm_reviewed": true,
+          "llm_confidence": 0.1,
+          "llm_is_real_catalyst": false,
+          "llm_reasoning": "选举职工代表董事，常规事项"
+        }
+      ]
+    }
+  }
+}

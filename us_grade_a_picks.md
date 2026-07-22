@@ -1,110 +1,87 @@
-# US Grade A 精选 — 三条件过滤结果
+# US Grade-A Picks — Strict 3-Criteria Filter
 
-**生成时间:** 2026-07-06 21:55
-**数据源:** watchlist/us_combined_signals.md + us_tech_signals + us_news_signals
-
-## 过滤条件
-
-| # | 条件 | 阈值 |
-|---|------|------|
-| 1 | 等级 | 🟢A（技术+新闻双确认，无过热惩罚） |
-| 2 | 多周期对齐 | 3/4 (75%) 或 4/4 (100%) |
-| 3 | News Signal | GREEN Long (Strong) |
+**Date:** 2026-07-16 | **Source:** combined:us pipeline
+**Criteria:** Grade-A + >=3/4 MTF Alignment + GREEN Long (Strong) News
 
 ---
 
-## 通过筛选: 1 只 / 24 候选 (4.2%)
+## Result: 0 stocks pass all 3 criteria
+
+The strict intersection of the three filters is empty on today's scan. No stock simultaneously satisfies all three conditions.
 
 ---
 
-## 🟢 Grade A Pick
+## Full Intersection Matrix
 
-### 1. AAPL (NASDAQ:AAPL) — Combined 57.9
-
-| 维度 | 内容 |
-|------|------|
-| 等级 | 🟢A |
-| 综合分 | **57.9** |
-| 技术分 | 43.8 (Pullback Buy — Near Support) |
-| 新闻分 | 79 → GREEN Long (Strong) |
-| MTF 对齐 | **3/4 (75%)** 1W↑ 1D↑ 4H→ 1H↑ |
-| 当前价 | 308.79 |
-| **入场价** | **304.16**（回调至支撑区入场） |
-| **止损价** | **291.5**（ATR 2.8% × 2） |
-| **目标价** | **326.08** |
-| RSI | 60.4（健康） |
-| ATR% | 2.8% |
-| EMA20 距离 | 4.4%（正常范围） |
-| 盈亏比 | **1.7:1** ★ |
-| 追涨 | **NO** |
-| 风险标注 | near_resist |
-
-**技术面要点（多周期）：**
-- 1W: ↑ EMA Bull Stack + HH/HL 完整，RSI=62.7
-- 1D: ↑ EMA Bull Stack，MACD 加速，RSI 健康，回踩支撑 305（已测试 1 次）
-- 4H: → 横盘整理，RSI=66.1，MACD 偏正
-- 1H: ↑ RSI=79.1 超买但 MACD 向上
-
-**核心催化剂：**
-- 🟢 $600B+ 回购能力——极端财务实力信号（权重 3.57）
-- 🟢 Broadcom 5年定制芯片协议——硬件护城河加深（权重 2.98）
-- 🟢 巴菲特/Abel 买入信号——价值投资背书
-- 🔴 折叠屏 iPhone 供应链传闻（权重 0.71，影响有限）
-
-**风险提示：**
-- 1D 结构为 LH（下降高点），趋势未完全确认反转
-- StochRSI 100 超买，短期回调压力
-- 成交量低迷——突破 317.4 阻力需要放量确认
-- 接近 52 周高点 + 阻力位 317.4
-
-**操作建议：**
-- 等价格回调至 304-305 支撑区域入场，不追高
-- 日线收盘跌破 291.5 立即止损
-- 若放量突破 317.4 阻力位可加仓
-- R/R 1.7:1 属于可接受范围，标准 Grade A 仓位 30%
+| # | Symbol | Grade-A | Align >=3/4 | Strong Long | Pass | Blocker |
+|---|--------|:-------:|:----------:|:-----------:|:----:|---------|
+| 1 | NYSE:MS | ✅ | ❌ 1/4 (25%) | ✅ | 2/3 | MTF alignment broken |
+| 2 | NASDAQ:CRWD | ✅ | ✅ 3/4 (75%) | ❌ Mid | 2/3 | News = "Long (Mid)" not "Strong" |
+| 3 | NASDAQ:AMD | ✅ | ❌ 0/4 (0%) | ✅ | 2/3 | All 4 TFs sideways, weekly LH |
+| 4 | NASDAQ:MNST | ❌ C | ✅ 4/4 (100%) | ❌ | 1/3 | Grade C (news neutral); FAKE-BRK |
+| 5 | NASDAQ:ASML | ❌ C+ | ✅ 3/4 (75%) | ❌ | 1/3 | News overheated (99); CHOP |
+| 6 | NYSE:PACS | ❌ C | ✅ 4/4 (100%) | ❌ | 1/3 | Grade C; FAKE-BRK |
+| 7 | NASDAQ:RELY | ❌ C | ✅ 4/4 (100%) | ❌ | 1/3 | Grade C; BULL-TRAP + FAKE-BRK |
+| 8 | AMEX:CET | ❌ C | ✅ 3/3 (100%) | ❌ | 1/3 | Grade C (no news); FAKE-BRK/CHOP/POOR-RR |
+| 9 | NYSE:LTC | ❌ C | ✅ 3/3 (100%) | ❌ | 1/3 | Grade C (no news); BULL-TRAP/FAKE-BRK |
+| 10 | NYSE:IRM | ❌ C | ❌ 2/4 (50%) | ❌ | 0/3 | CHOP; news neutral |
+| 11 | NYSE:TT | ❌ C | ❌ 1/3 (33%) | ❌ | 0/3 | CHOP/POOR-RR |
+| 12 | NYSE:GE | ❌ D | ❌ 0/4 (0%) | ❌ | 0/3 | Grade D; 0% alignment; POOR-RR |
 
 ---
 
-## 筛选漏斗
+## Near-Miss Candidates (2/3 criteria)
 
-| 筛选步 | 通过数 | 淘汰数 | 淘汰原因 |
-|--------|--------|--------|----------|
-| 总候选 | 24 | — | — |
-| 🟢A 等级 | 1 | 23 | 技术分不足/新闻中性/过热惩罚 |
-| 对齐 ≥ 3/4 | 1 | 0 | AAPL 对齐 3/4 ✅ |
-| GREEN Long (Strong) | **1** | 0 | AAPL 新闻 79 Strong ✅ |
+### 1. NYSE:MS — Missing: MTF Alignment (1/4)
+
+| Field | Value |
+|-------|-------|
+| Combined | **63.9** Grade-A |
+| News | **80** -> GREEN Long (Strong) ✅ |
+| MTF | 1/4 (25%) ❌ — 1W↑ but 1D→ 4H→ 1H→ |
+| Tech | 44.8 | R/R: 0.6 | RSI: 54.9 | Price: 221.63 |
+| Risk | POOR-RR, near resistance 230.47 |
+| **Catalyst** | 4H/1H turns bullish → alignment 3/4+ |
+
+### 2. NASDAQ:CRWD — Missing: News = "Strong" (currently Mid)
+
+| Field | Value |
+|-------|-------|
+| Combined | **59.3** Grade-A |
+| MTF | **3/4 (75%)** ✅ — 1W↑ 1D↑ 4H↑ |
+| News | 72 -> GREEN Long (Mid) ❌ |
+| Tech | 42.5 | ADX: 38.7★ | RS: +19.9% | Price: 204.39 |
+| Risk | POOR-RR (0.2), near resistance 209.5 |
+| **Catalyst** | New analyst upgrade / earnings → Strong signal |
+
+### 3. NASDAQ:AMD — Missing: MTF Alignment (0/4)
+
+| Field | Value |
+|-------|-------|
+| Combined | **58.2** Grade-A |
+| News | **80** -> GREEN Long (Strong) ✅ |
+| MTF | 0/4 (0%) ❌ — All 4 TFs sideways, weekly LH |
+| Tech | 35.3 | Squeeze 8bar | R/R: **2.5** | Price: 506.44 |
+| Risk | CHOP, MOM-DECAY, ATR 7.6% |
+| **Catalyst** | Squeeze break + close above 527 → alignment flip |
 
 ---
 
-## 被淘汰的 Near Miss（满足 1-2/3 条件）
+## Market Context
 
-| 股票 | 综合分 | 等级 | 对齐 | 新闻信号 | 缺失条件 |
-|------|--------|------|------|---------|----------|
-| APH NYSE:APH | 48.9 | 🔵B | 1/3 (33%) ❌ | Mid Long (65) ❌ | 等级+对齐+新闻非 Strong |
-| GE NYSE:GE | — | ⚪C | 4/4 (100%) ✅ | Strong (81) ✅ | 等级 C（BULL-TRAP/FAKE 惩罚） |
-
----
-
-## 与上期对比 (07-02 → 07-06)
-
-| 股票 | 07-02 | 07-06 | 变化 |
-|------|-------|-------|------|
-| PACS | 🟢A (66.2, 3/4, Strong) | ⚪C (—) | **降级**：技术面 OVERHEAT/BULL-TRAP/FAKE-BRK 惩罚 |
-| AAPL | — | 🟢A (57.9, 3/4, Strong) | **新晋 A 级** |
+- Combined pipeline: 3 Grade-A (MS, CRWD, AMD), none clear the 3-filter gate
+- ASML (70.9 combined) is C+ — news overheated, wait for -6% pullback to 1708
+- 5 stocks flagged FAKE-BRK, 2 BULL-TRAP — caution warranted
+- Best R/R among near-misses: **AMD** (2.5:1, squeeze compression, Stoch RSI=0 oversold)
 
 ---
 
-## 本期总结
+## Recommendation
 
-| 指标 | US (07-06) | US (07-02) |
-|------|-----------|------------|
-| 命中数 | **1** | **1** |
-| 候选池 | 24 只 | 38 只 |
-| A 级数 | 1 只 | 5 只 |
-| 对齐 ≥3/4 的 A 级 | 1 只 | 2 只 |
-| 新闻 Strong 的 A 级 | 1 只 | 2 只 |
-| 三条件全过 | **1 只** (AAPL) | **1 只** (PACS) |
+No immediate entry. Closest monitor candidates:
 
-**变化：** 上期唯一 Grade A 标的 PACS 降级至 C 级（技术面 OVERHEAT/BULL-TRAP/FAKE-BRK 惩罚）。AAPL 新晋为唯一 A 级标的——新闻面 Bullish（回购+并购+巴菲特背书），技术面 3/4 MTF 对齐，回调买入信号清晰，R/R 1.7:1 优于上期 PACS 的 1.3:1。GE 虽新闻 81 强 + 对齐 4/4 完美，但技术面 BULL-TRAP/FAKE 重罚导致等级 C。
+1. **CRWD** — nearest to qualifying (only needs news Mid→Strong upgrade)
+2. **AMD** — best R/R (2.5:1), watch squeeze break for alignment flip
+3. **MS** — strongest fundamentals (record Q2 earnings), wait for MTF re-alignment
 
-*Generated: 2026-07-06 21:55 | Sources: us_combined_signals + us_tech_signals + us_news_signals*
+*Generated: 2026-07-16 | Pipeline: combined:us*

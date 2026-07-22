@@ -267,6 +267,15 @@ async function scanStocks() {
       }
     }
 
+    // 孤儿清理：剔除 cn_selected.txt 中已不在 cn.txt 的股票
+    const watchlistSet = new Set(symbols.map(s => s.symbol));
+    const beforeOrphan = existingSymbols.length;
+    existingSymbols = existingSymbols.filter(s => watchlistSet.has(s));
+    const nOrphan = beforeOrphan - existingSymbols.length;
+    if (nOrphan > 0) {
+      console.log(`   剔除孤儿(不在watchlist): ${nOrphan}`);
+    }
+
     const newSymbols = qualified.map(s => s.symbol);
     const mergedSymbols = [...new Set([...existingSymbols, ...newSymbols])];
 
@@ -274,6 +283,7 @@ async function scanStocks() {
 
     console.log(`\n✅ 已保存到: ${outputPath}`);
     if (nRemoved > 0) console.log(`   剔除趋势反转: ${nRemoved}`);
+    if (nOrphan > 0) console.log(`   剔除孤儿: ${nOrphan}`);
     console.log(`   本次新增: ${newSymbols.length}, 已有: ${existingSymbols.length}, 排重后总计: ${mergedSymbols.length}\n`);
   }
 

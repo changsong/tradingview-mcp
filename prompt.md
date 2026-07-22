@@ -64,8 +64,6 @@ npm run combined:cn
     npm review:cn
 
 
-
-
 ### 美股 30分钟左右
 使用 `./scripts/launch_tv_debug.bat` 启动TradingView，请使用策略名为：US Stock SQZMOM Daily PRO v7 (Max Loss Cap), 设置图表周期为天。然后执行：
 
@@ -210,13 +208,16 @@ npm run combined:hk
 ### 使用 ./scripts/launch_tv_debug.bat 启动TradigView，请使用策略：US Stock SQZMOM Daily PRO v4 (ATR + EMA20 Stop)，请分析这个策略，有没有可以提高的地方, 先列出可能优化的点，并制定优化计划，在日线上进行回测并分析交易清单，对策略进行改进，提高交易信号同时，也需要提高胜率，提高收益, 优化策略后，请使用 ../watchlist/us.txt 中的股票列表做回测，根据回测结果特别是交易清单，研究亏损的订单，总结规律，不断优化策略，并回测，做对比，对策略进行改进，提高交易信号同时，也需要提高胜率提高胜率，提高收益，持续优化，直到不能持续优化为止
 
 ## 添加Wathlist
-使用 ./scripts/launch_tv_debug.bat 启动TradigView，将 002371,300666,300054,603986,600584,002156,300308,300502,601138,603019,002050,002837,300476,002463,300750,300014,300274,300827,600
-  406,601179,002028,002085,600990,300699,300777,600038,002896,300124,601689,603662,601668,600031,600585,002129,300751,000786,601800
-  ,601390 这些股票加入 A股可交易 这个watchlist
+使用 ./scripts/launch_tv_debug.bat 启动TradigView，将 002371.SZ,300666.SZ,300054.SZ,300308.SZ,300502.SZ,603019.SH,002050.SZ,30
+  0750.SZ,300274.SZ,600406.SH,601179.SH,002028.SZ,300001.SZ,601689.SH,6037
+  28.SH,002085.SZ,600038.SH,002023.SZ,600990.SH,300777.SZ,300699.SZ,002241
+  .SZ,002475.SZ,603501.SH,301101.SZ,000333.SZ,600690.SH,000651.SZ,600031.S
+  H,000157.SZ,600585.SH,601800.SH,601668.SH,601390.SH,002594.SZ,300228.SZ,
+  002639.SZ,301369.SZ 这些股票加入 A股可交易 这个watchlist
 
-使用 ./scripts/launch_tv_debug.bat 启动TradigView，将 TSM,NVDA,LLY,GEV,AMD,NBIS,ISRG,BE,CRCL,CRSP  这些股票加入 美股可交易 这个watchlist
+使用 ./scripts/launch_tv_debug.bat 启动TradigView，将 EH.US 这些股票加入 美股可交易 这个watchlist
 
-使用 ./scripts/launch_tv_debug.bat 启动TradigView，将   522,1347,981,2577,992,763,6869,1300,1888,148,9880,9660,1810,3898 这些股票加入 港股可交易 这个watchlist
+使用 ./scripts/launch_tv_debug.bat 启动TradigView，将     0981.HK,1211.HK,9868.HK,9863.HK,1347.HK,09880.HK 这些股票加入 港股可交易 这个watchlist
 
 ## 分析ReView
 分析 ./reports/YYYY-MM-dd 下所有 cn_review.json, cn_review.md 统计涨幅共同特征，跌幅共同特征，权重调整建议 ，未分类特征。分析出最值得的权重调整建议，最值得增加未分类特征 
