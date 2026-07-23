@@ -1,14 +1,3 @@
----
-AIGC:
-    Label: "1"
-    ContentProducer: 001191440300708461136T1XGW3
-    ProduceID: 96e0402ca683a23de686ac6d805202d6_42b175c985dc11f1a68c525400826444
-    ReservedCode1: RFjqS/ksZ7v6u5upMZ0vTSENERLurkOiH4T4lWvMqq/dyKqpnLJTWNp2ZxTgbOwCPhntDFdYYPMdzCMYtt6V4xseYGYY/uTemeVWcjrhYCWtdC+HY6MmEjUvWRabjFVWc/x2c8PeUeO8sqYguIkrxRpMWFwS8PSpcy5zhodvJ6FKHjy9tKAjPTr+FCE=
-    ContentPropagator: 001191440300708461136T1XGW3
-    PropagateID: 96e0402ca683a23de686ac6d805202d6_42b175c985dc11f1a68c525400826444
-    ReservedCode2: RFjqS/ksZ7v6u5upMZ0vTSENERLurkOiH4T4lWvMqq/dyKqpnLJTWNp2ZxTgbOwCPhntDFdYYPMdzCMYtt6V4xseYGYY/uTemeVWcjrhYCWtdC+HY6MmEjUvWRabjFVWc/x2c8PeUeO8sqYguIkrxRpMWFwS8PSpcy5zhodvJ6FKHjy9tKAjPTr+FCE=
----
-
 # Combined Analysis Report · Final Entry Ranking (US)
 **Date:** 2026-07-22　　**Method:** Tech 60% × News 40% - Overheat Penalty
 **Formula:** Combined = TechScore × 0.6 + NewsScore × 0.4 + (trendy ? +5 : 0) - (overheated && !trendy ? 5 : 0)　　(NewsScore is 0-100 normalized, neutral=50)
@@ -65,4 +54,3 @@ AIGC:
 4. **Position sizing**: Grade A 30%, B 20%, C+ (post-pullback) 15%, max 30% per name.
 
 *Generated: 2026/7/22 22:46:55*
-*（内容由AI生成，仅供参考）*

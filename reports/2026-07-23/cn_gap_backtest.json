@@ -1,0 +1,223 @@
+{
+  "generated_at": "2026-07-15T04:49:41.263Z",
+  "market": "cn",
+  "days": 30,
+  "symbols": 28,
+  "total_samples": 924,
+  "model": "external_3d",
+  "formula": "Score = 外盘(±4) + 新闻(±3) + 板块(±2)",
+  "data_coverage": {
+    "market_samples": 924,
+    "news_samples": 266,
+    "news_report_dates": 57,
+    "sector_samples": 0,
+    "sector_report_dates": 0,
+    "composite_samples": 924
+  },
+  "accuracy": {
+    "market": {
+      "label": "隔夜外盘·均值回归",
+      "correct": 549,
+      "total": 924,
+      "pct": 59.4
+    },
+    "news": {
+      "label": "新闻情绪",
+      "correct": 118,
+      "total": 266,
+      "pct": 44.4
+    },
+    "sector": {
+      "label": "板块资金流",
+      "correct": 0,
+      "total": 0,
+      "pct": null
+    },
+    "marketNews": {
+      "label": "外盘+新闻复合",
+      "correct": 165,
+      "total": 266,
+      "pct": 62
+    },
+    "composite": {
+      "label": "三维全复合",
+      "correct": 549,
+      "total": 924,
+      "pct": 59.4
+    },
+    "marketOnly": {
+      "label": "仅外盘",
+      "correct": 549,
+      "total": 924,
+      "pct": 59.4
+    },
+    "candle": {
+      "label": "阴阳线延续",
+      "correct": 465,
+      "total": 924,
+      "pct": 50.3
+    },
+    "alwaysUp": {
+      "label": "永远看涨",
+      "correct": 471,
+      "total": 924,
+      "pct": 51
+    }
+  },
+  "csi300_correlation": {
+    "base_rate_pct": 51,
+    "hs300_up_then_stock_up": {
+      "count": 199,
+      "total": 476,
+      "pct": 41.8
+    },
+    "hs300_down_then_stock_up": {
+      "count": 272,
+      "total": 448,
+      "pct": 60.7
+    },
+    "mean_reversion_confirmed": true
+  },
+  "per_symbol": [
+    {
+      "symbol": "SZSE:300990",
+      "samples": 33,
+      "composite_accuracy": 69.7
+    },
+    {
+      "symbol": "SZSE:002364",
+      "samples": 33,
+      "composite_accuracy": 69.7
+    },
+    {
+      "symbol": "SZSE:301018",
+      "samples": 33,
+      "composite_accuracy": 69.7
+    },
+    {
+      "symbol": "SZSE:300503",
+      "samples": 33,
+      "composite_accuracy": 69.7
+    },
+    {
+      "symbol": "SZSE:002916",
+      "samples": 33,
+      "composite_accuracy": 63.6
+    },
+    {
+      "symbol": "SZSE:002126",
+      "samples": 33,
+      "composite_accuracy": 63.6
+    },
+    {
+      "symbol": "SZSE:002472",
+      "samples": 33,
+      "composite_accuracy": 63.6
+    },
+    {
+      "symbol": "SZSE:002536",
+      "samples": 33,
+      "composite_accuracy": 63.6
+    },
+    {
+      "symbol": "SZSE:300033",
+      "samples": 33,
+      "composite_accuracy": 63.6
+    },
+    {
+      "symbol": "SZSE:300684",
+      "samples": 33,
+      "composite_accuracy": 63.6
+    },
+    {
+      "symbol": "SSE:603296",
+      "samples": 33,
+      "composite_accuracy": 63.6
+    },
+    {
+      "symbol": "SSE:600688",
+      "samples": 33,
+      "composite_accuracy": 60.6
+    },
+    {
+      "symbol": "SZSE:159389",
+      "samples": 33,
+      "composite_accuracy": 60.6
+    },
+    {
+      "symbol": "SZSE:001223",
+      "samples": 33,
+      "composite_accuracy": 57.6
+    },
+    {
+      "symbol": "SSE:605162",
+      "samples": 33,
+      "composite_accuracy": 57.6
+    },
+    {
+      "symbol": "SSE:603259",
+      "samples": 33,
+      "composite_accuracy": 57.6
+    },
+    {
+      "symbol": "SZSE:300458",
+      "samples": 33,
+      "composite_accuracy": 57.6
+    },
+    {
+      "symbol": "SZSE:301165",
+      "samples": 33,
+      "composite_accuracy": 57.6
+    },
+    {
+      "symbol": "SSE:600172",
+      "samples": 33,
+      "composite_accuracy": 57.6
+    },
+    {
+      "symbol": "SSE:605305",
+      "samples": 33,
+      "composite_accuracy": 57.6
+    },
+    {
+      "symbol": "SZSE:002747",
+      "samples": 33,
+      "composite_accuracy": 57.6
+    },
+    {
+      "symbol": "SSE:601798",
+      "samples": 33,
+      "composite_accuracy": 54.5
+    },
+    {
+      "symbol": "SZSE:002965",
+      "samples": 33,
+      "composite_accuracy": 54.5
+    },
+    {
+      "symbol": "SZSE:000938",
+      "samples": 33,
+      "composite_accuracy": 54.5
+    },
+    {
+      "symbol": "SZSE:000725",
+      "samples": 33,
+      "composite_accuracy": 51.5
+    },
+    {
+      "symbol": "SZSE:002896",
+      "samples": 33,
+      "composite_accuracy": 51.5
+    },
+    {
+      "symbol": "SZSE:301529",
+      "samples": 33,
+      "composite_accuracy": 45.5
+    },
+    {
+      "symbol": "SSE:603416",
+      "samples": 33,
+      "composite_accuracy": 45.5
+    }
+  ]
+}

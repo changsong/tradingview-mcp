@@ -1,14 +1,3 @@
----
-AIGC:
-    Label: "1"
-    ContentProducer: 001191440300708461136T1XGW3
-    ProduceID: 96e0402ca683a23de686ac6d805202d6_160cb895863c11f1a68c525400826444
-    ReservedCode1: mxUE5MBOnN3FTlg7sBTDKQXjy7R1mwaaQJCnHyZPSMZW2IvwMnDmmSmvucEs2IKEh6UC15SSsyJEJ4PHiEBNr8LCyeQkiJBqtGIGMILB505dtuGZqx+LrHm23lB9rpxl72hg3WMNDJB8Bj5M2JbE5v8fz7fxYNMWughicxPXw1TpgcdzwctuEi/PTCw=
-    ContentPropagator: 001191440300708461136T1XGW3
-    PropagateID: 96e0402ca683a23de686ac6d805202d6_160cb895863c11f1a68c525400826444
-    ReservedCode2: mxUE5MBOnN3FTlg7sBTDKQXjy7R1mwaaQJCnHyZPSMZW2IvwMnDmmSmvucEs2IKEh6UC15SSsyJEJ4PHiEBNr8LCyeQkiJBqtGIGMILB505dtuGZqx+LrHm23lB9rpxl72hg3WMNDJB8Bj5M2JbE5v8fz7fxYNMWughicxPXw1TpgcdzwctuEi/PTCw=
----
-
 # 回归检核报告 · US — 2026-07-23
 
 **对照快照:** `reports/2026-07-22` (2026-07-22)
@@ -48,4 +37,3 @@ AIGC:
 > ⚠️ 本脚本仅产出建议,**不修改任何评分源码**。请人工评审后手改对应 `file:line`。
 
 _报告生成: 2026/7/23 09:49:54_
-*（内容由AI生成，仅供参考）*
