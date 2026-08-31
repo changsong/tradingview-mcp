@@ -1,0 +1,206 @@
+//@version=6
+strategy("A股 Top选股策略 v5 PRO",
+     overlay=true,
+     initial_capital=100000,
+     pyramiding=0,
+     default_qty_type=strategy.fixed)
+
+//=========================
+// 参数
+//=========================
+ema10Len = input.int(10)
+ema60Len = input.int(60)
+adxLen   = input.int(14)
+atrLen   = input.int(14)
+
+risk_pct = input.float(1.0,"单笔风险 %")
+
+//=========================
+// 均线
+//=========================
+ema10 = ta.ema(close, ema10Len)
+ema60 = ta.ema(close, ema60Len)
+
+//=========================
+// ATR
+//=========================
+atr = ta.atr(atrLen)
+
+//=========================
+// ADX
+//=========================
+f_adx(len)=>
+
+    up = ta.change(high)
+    down = -ta.change(low)
+
+    plusDM  = (up > down and up > 0) ? up : 0
+    minusDM = (down > up and down > 0) ? down : 0
+
+    tr_val = ta.rma(ta.tr(true), len)
+
+    plusDI  = 100 * ta.rma(plusDM, len) / tr_val
+    minusDI = 100 * ta.rma(minusDM, len) / tr_val
+
+    dx = 100 * math.abs(plusDI - minusDI) / (plusDI + minusDI)
+
+    ta.rma(dx, len)
+
+adx = f_adx(adxLen)
+
+//=========================
+// SQZMOM
+//=========================
+f_sqzmom() =>
+    length = 20
+    ta.linreg(close - (high + low)/2, length, 0)
+
+sqzD = f_sqzmom()
+sqzW = request.security(syminfo.tickerid,"W",f_sqzmom())
+
+//=========================
+// 趋势评分
+//=========================
+trend_score = 0.0
+
+trend_score += close > ema10 ? 10 : 0
+trend_score += ema10 > ema10[1] ? 10 : 0
+trend_score += close > ema60 ? 10 : 0
+
+trend_score += adx > 20 ? 5 : 0
+trend_score += adx > 25 ? 5 : 0
+
+//=========================
+// 回调评分
+//=========================
+pullback_score = 0.0
+
+dist = math.abs(close - ema10) / ema10
+
+pullback_score += dist < 0.02 ? 10 : 0
+pullback_score += dist < 0.015 ? 5 : 0
+
+drop_pct = (close - close[1]) / close[1] * 100
+
+pullback_score += (drop_pct < -1 and drop_pct > -5) ? 10 : 0
+
+//=========================
+// 成交量评分
+//=========================
+vol_score = 0.0
+
+vol_ma = ta.sma(volume,5)
+
+vol_score += volume < vol_ma ? 10 : 0
+vol_score += volume > vol_ma * 0.5 ? 10 : 0
+
+//=========================
+// SQZMOM评分
+//=========================
+sqz_score = 0.0
+
+sqz_score += (sqzD > 0 and sqzD[1] <= 0) ? 15 : 0
+sqz_score += (sqzD > sqzD[1]) ? 5 : 0
+sqz_score += sqzW > 0 ? 5 : 0
+
+//=========================
+// 总评分
+//=========================
+score = trend_score + pullback_score + vol_score + sqz_score
+
+//=========================
+// 上证指数过滤
+//=========================
+index_close = request.security("SSE:000001", timeframe.period, close)
+
+index_ema50  = ta.ema(index_close,50)
+index_ema200 = ta.ema(index_close,200)
+
+market_ok =
+     index_close > index_ema200
+ and index_ema50 > index_ema200
+
+//=========================
+// 沪深300资金趋势
+//=========================
+hs300 = request.security("SSE:510300", timeframe.period, close)
+
+hs300_ema50 = ta.ema(hs300,50)
+
+capital_flow_ok = hs300 > hs300_ema50
+
+//=========================
+// 涨停过滤（避免追高）
+//=========================
+limit_up = (close - close[1]) / close[1] > 0.095
+
+//=========================
+// 仓位计算
+//=========================
+account_size = strategy.equity
+risk_value = account_size * risk_pct / 100
+
+qty = risk_value / atr
+
+//=========================
+// 交易条件
+//=========================
+longCondition =
+     score >= 80
+ and close > ema10
+ //and market_ok
+ and capital_flow_ok
+ and not limit_up
+
+exitCondition =
+     score < 60
+ or close < ema10
+
+//=========================
+// 开仓
+//=========================
+if longCondition and strategy.position_size == 0
+
+    strategy.entry("LONG",strategy.long,qty)
+
+    alert(
+    '{"symbol":"'+syminfo.ticker+
+    '","type":"cn"'+
+    ',"side":"LONG","action":"ENTRY"'+
+    ',"qty":'+str.tostring(qty)+
+    ',"price":'+str.tostring(close)+
+    ',"score":'+str.tostring(score)+'}',
+    alert.freq_once_per_bar_close)
+
+//=========================
+// 平仓
+//=========================
+if exitCondition and strategy.position_size > 0
+
+    strategy.close("LONG")
+
+    alert(
+    '{"symbol":"'+syminfo.ticker+
+    '","type":"cn"'+
+    ',"side":"LONG","action":"EXIT"'+
+    ',"price":'+str.tostring(close)+'}',
+    alert.freq_once_per_bar_close)
+
+//=========================
+// 图形
+//=========================
+plot(ema10,color=color.yellow)
+plot(ema60,color=color.blue)
+
+// BUY SELL 标记
+plotshape(longCondition,title="BUY",
+     style=shape.triangleup,
+     location=location.belowbar,
+     color=color.green,
+     size=size.small)
+
+plotshape(exitCondition,title="SELL",
+     style=shape.triangledown,
+     location=location.abovebar,
+     color=color.red,
+     size=size.small)

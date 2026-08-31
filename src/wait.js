@@ -1,30 +1,59 @@
-import { evaluate } from './connection.js';
+import { evaluate, safeString } from './connection.js';
 
 const DEFAULT_TIMEOUT = 10000;
-const POLL_INTERVAL = 200;
+const POLL_INTERVAL = 60;
 
-export async function waitForChartReady(expectedSymbol = null, expectedTf = null, timeout = DEFAULT_TIMEOUT) {
+export async function waitForChartReady(expectedSymbol = null, expectedTf = null, timeout = DEFAULT_TIMEOUT, pollInterval = POLL_INTERVAL, prevBarFingerprint = null) {
   const start = Date.now();
   let lastBarCount = -1;
   let stableCount = 0;
 
   while (Date.now() - start < timeout) {
+    const fpCheck = prevBarFingerprint ? `var prevFp = ${JSON.stringify(prevBarFingerprint)};` : 'var prevFp = null;';
     const state = await evaluate(`
       (function() {
-        // Check for loading spinner
+        ${fpCheck}
+        var expectedSymbol = ${expectedSymbol ? safeString(expectedSymbol) : 'null'};
+
+        // Fast functional check via chart API — no DOM dependency
+        var chartApi = window.TradingViewApi._activeChartWidgetWV.value();
+        if (chartApi) {
+          try {
+            var currentSym = chartApi.symbol();
+            var bars = chartApi._chartWidget.model().mainSeries().bars();
+            var barsSize = bars.size();
+            if (barsSize > 0 && (expectedSymbol == null || currentSym.toUpperCase().indexOf(expectedSymbol.toUpperCase()) !== -1)) {
+              // Bar fingerprint check: verify bars actually changed since symbol switch
+              var barsChanged = true;
+              if (prevFp) {
+                try {
+                  var last = bars.valueAt(bars.lastIndex());
+                  if (last && last[0] === prevFp.time && last[4] === prevFp.close) {
+                    barsChanged = false;
+                  }
+                } catch(e) {}
+              }
+              if (barsChanged) {
+                return { ready: true, method: 'api', currentSymbol: currentSym, barCount: barsSize };
+              }
+            }
+          } catch {}
+        }
+
+        // Fallback: DOM-based detection
         var spinner = document.querySelector('[class*="loader"]')
           || document.querySelector('[class*="loading"]')
           || document.querySelector('[data-name="loading"]');
         var isLoading = spinner && spinner.offsetParent !== null;
 
-        // Try to get bar count from data window or chart
         var barCount = -1;
         try {
-          var bars = document.querySelectorAll('[class*="bar"]');
-          barCount = bars.length;
+          if (chartApi) {
+            var bars2 = chartApi._chartWidget.model().mainSeries().bars();
+            barCount = bars2 ? bars2.size() : -1;
+          }
         } catch {}
 
-        // Get current symbol from header
         var symbolEl = document.querySelector('[data-name="legend-source-title"]')
           || document.querySelector('[class*="title"] [class*="apply-common-tooltip"]');
         var currentSymbol = symbolEl ? symbolEl.textContent.trim() : '';
@@ -34,25 +63,27 @@ export async function waitForChartReady(expectedSymbol = null, expectedTf = null
     `);
 
     if (!state) {
-      await new Promise(r => setTimeout(r, POLL_INTERVAL));
+      await new Promise(r => setTimeout(r, pollInterval));
       continue;
     }
 
-    // Not ready if still loading
+    // Functional check passed — chart is ready
+    if (state.ready) {
+      return true;
+    }
+
     if (state.isLoading) {
       stableCount = 0;
-      await new Promise(r => setTimeout(r, POLL_INTERVAL));
+      await new Promise(r => setTimeout(r, pollInterval));
       continue;
     }
 
-    // Check symbol match if expected
     if (expectedSymbol && state.currentSymbol && !state.currentSymbol.toUpperCase().includes(expectedSymbol.toUpperCase())) {
       stableCount = 0;
-      await new Promise(r => setTimeout(r, POLL_INTERVAL));
+      await new Promise(r => setTimeout(r, pollInterval));
       continue;
     }
 
-    // Check bar count stability
     if (state.barCount === lastBarCount && state.barCount > 0) {
       stableCount++;
     } else {
@@ -60,66 +91,11 @@ export async function waitForChartReady(expectedSymbol = null, expectedTf = null
     }
     lastBarCount = state.barCount;
 
-    if (stableCount >= 2) {
+    if (stableCount >= 1) {
       return true;
     }
 
-    await new Promise(r => setTimeout(r, POLL_INTERVAL));
-  }
-
-  // Timeout — return true anyway, caller should verify
-  return false;
-}
-
-/**
- * Wait for the chart to finish (re)rendering — used before screenshots so a
- * capture right after chart_set_symbol / chart_set_timeframe doesn't grab a
- * stale frame (issue #144). Waits for any loading spinner to clear, then for
- * the symbol/resolution/canvas signature to hold stable across 3 polls.
- */
-export async function waitForChartRender(timeout = 5000) {
-  const start = Date.now();
-  let lastSignature = null;
-  let stableCount = 0;
-
-  while (Date.now() - start < timeout) {
-    const state = await evaluate(`
-      (function() {
-        var canvas = document.querySelector('[data-name="pane-canvas"] canvas')
-          || document.querySelector('[data-name="pane-canvas"]')
-          || document.querySelector('canvas');
-        var rect = canvas ? canvas.getBoundingClientRect() : null;
-        var symbol = '', resolution = '';
-        try {
-          var chart = window.TradingViewApi._activeChartWidgetWV.value();
-          symbol = chart.symbol();
-          resolution = chart.resolution();
-        } catch(e) {}
-        var spinner = document.querySelector('[class*="loader"]')
-          || document.querySelector('[class*="loading"]')
-          || document.querySelector('[data-name="loading"]');
-        return {
-          symbol: symbol,
-          resolution: resolution,
-          isLoading: !!(spinner && spinner.offsetParent !== null),
-          canvasWidth: rect ? Math.round(rect.width) : 0,
-          canvasHeight: rect ? Math.round(rect.height) : 0
-        };
-      })()
-    `);
-
-    if (!state || state.isLoading || !state.canvasWidth || !state.canvasHeight) {
-      stableCount = 0;
-      await new Promise(r => setTimeout(r, POLL_INTERVAL));
-      continue;
-    }
-
-    const signature = [state.symbol, state.resolution, state.canvasWidth, state.canvasHeight].join('|');
-    if (signature === lastSignature) stableCount++;
-    else { stableCount = 0; lastSignature = signature; }
-
-    if (stableCount >= 3) return true;
-    await new Promise(r => setTimeout(r, POLL_INTERVAL));
+    await new Promise(r => setTimeout(r, pollInterval));
   }
 
   return false;

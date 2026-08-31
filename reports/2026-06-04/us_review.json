@@ -1,0 +1,3779 @@
+{
+  "generated_at": "2026-06-04T04:36:59.245Z",
+  "market": "us",
+  "target_date": "2026-06-04",
+  "prev_snapshot_date": "2026-06-03",
+  "prev_snapshot_dir": "reports/2026-06-03",
+  "universe_size": 75,
+  "fetched_ok": 75,
+  "fetched_fail": [],
+  "thresholds": {
+    "top_n": 10,
+    "gain_rate_min": 0.5,
+    "loss_rate_min": 0.5,
+    "diff_threshold": 0.3,
+    "up_factor": 1.25,
+    "down_factor": 0.75
+  },
+  "gainers": [
+    {
+      "sym": "NASDAQ:NBIX",
+      "name": "NASDAQ:NBIX",
+      "ok": true,
+      "prev_close": 154.84,
+      "close": 165.11,
+      "change_pct": 6.63,
+      "in_prev_tech": false,
+      "in_prev_news": false,
+      "tech_score": null,
+      "news_score": null,
+      "tech_type": null,
+      "tech_flags": [],
+      "news_signal": null,
+      "features": []
+    },
+    {
+      "sym": "NASDAQ:TTMI",
+      "name": "NASDAQ:TTMI",
+      "ok": true,
+      "prev_close": 179.62,
+      "close": 189.6,
+      "change_pct": 5.56,
+      "in_prev_tech": true,
+      "in_prev_news": true,
+      "tech_score": 33.5,
+      "news_score": 70,
+      "tech_type": "Trend Continuation",
+      "tech_flags": [
+        "mom_decay",
+        "near_resist",
+        "low_rr"
+      ],
+      "news_signal": "WARN Long (Cautious)",
+      "features": [
+        {
+          "key": "tech.verdict.strong_long",
+          "value": "Strong Long"
+        },
+        {
+          "key": "tech.flag.momentum_decay",
+          "value": "mom_decay"
+        },
+        {
+          "key": "tech.flag.resistance",
+          "value": "near_resist"
+        },
+        {
+          "key": "tech.flag.bad_rr",
+          "value": "low_rr"
+        },
+        {
+          "key": "tech.score.mid",
+          "value": 33.5
+        },
+        {
+          "key": "tech.1W.rsi.overheat",
+          "value": 75.7
+        },
+        {
+          "key": "tech.1W.adx.strong",
+          "value": 50.8
+        },
+        {
+          "key": "tech.1W.bull_ema",
+          "value": true
+        },
+        {
+          "key": "tech.1W.above_ema200",
+          "value": true
+        },
+        {
+          "key": "tech.1W.macd.bullish",
+          "value": 5.8758
+        },
+        {
+          "key": "tech.1W.obv.up",
+          "value": true
+        },
+        {
+          "key": "tech.1W.dist20.overheat",
+          "value": 36.3
+        },
+        {
+          "key": "tech.1D.rsi.healthy",
+          "value": 60
+        },
+        {
+          "key": "tech.1D.adx.trending",
+          "value": 28
+        },
+        {
+          "key": "tech.1D.bull_ema",
+          "value": true
+        },
+        {
+          "key": "tech.1D.above_ema200",
+          "value": true
+        },
+        {
+          "key": "tech.1D.obv.down",
+          "value": true
+        },
+        {
+          "key": "tech.4H.rsi.healthy",
+          "value": 54.2
+        },
+        {
+          "key": "tech.4H.adx.chop",
+          "value": 17.7
+        },
+        {
+          "key": "tech.4H.bull_ema",
+          "value": true
+        },
+        {
+          "key": "tech.4H.above_ema200",
+          "value": true
+        },
+        {
+          "key": "tech.4H.obv.down",
+          "value": true
+        },
+        {
+          "key": "tech.4H.dist20.near",
+          "value": 1.3
+        },
+        {
+          "key": "tech.4H.near_support",
+          "value": true
+        },
+        {
+          "key": "tech.1H.rsi.healthy",
+          "value": 53
+        },
+        {
+          "key": "tech.1H.adx.chop",
+          "value": 18.1
+        },
+        {
+          "key": "tech.1H.above_ema200",
+          "value": true
+        },
+        {
+          "key": "tech.1H.macd.bullish",
+          "value": 1.0151
+        },
+        {
+          "key": "tech.1H.obv.up",
+          "value": true
+        },
+        {
+          "key": "tech.1H.dist20.near",
+          "value": 1.1
+        },
+        {
+          "key": "tech.1H.near_support",
+          "value": true
+        },
+        {
+          "key": "news.score.high",
+          "value": 70
+        },
+        {
+          "key": "news.top_news_type.Earnings",
+          "value": true
+        },
+        {
+          "key": "news.top_news_type.Analyst Action",
+          "value": true
+        },
+        {
+          "key": "news.top_news_type.Industry",
+          "value": true
+        }
+      ]
+    },
+    {
+      "sym": "NASDAQ:WDC",
+      "name": "NASDAQ:WDC",
+      "ok": true,
+      "prev_close": 563.1,
+      "close": 594.11,
+      "change_pct": 5.51,
+      "in_prev_tech": true,
+      "in_prev_news": true,
+      "tech_score": 14.2,
+      "news_score": 82,
+      "tech_type": "Overextended Chase (High Risk)",
+      "tech_flags": [
+        "overheated",
+        "fake_break",
+        "bull_trap",
+        "mom_decay",
+        "near_resist",
+        "bear_div"
+      ],
+      "news_signal": "GREEN Long (Strong)",
+      "features": [
+        {
+          "key": "tech.verdict.long",
+          "value": "Long"
+        },
+        {
+          "key": "tech.flag.overheat",
+          "value": "overheated"
+        },
+        {
+          "key": "tech.flag.fake_breakout",
+          "value": "fake_break"
+        },
+        {
+          "key": "tech.flag.bull_trap",
+          "value": "bull_trap"
+        },
+        {
+          "key": "tech.flag.momentum_decay",
+          "value": "mom_decay"
+        },
+        {
+          "key": "tech.flag.resistance",
+          "value": "near_resist"
+        },
+        {
+          "key": "tech.flag.bear_div",
+          "value": "bear_div"
+        },
+        {
+          "key": "tech.score.low",
+          "value": 14.2
+        },
+        {
+          "key": "tech.rs.strong",
+          "value": 21.5
+        },
+        {
+          "key": "tech.1W.rsi.overheat",
+          "value": 90.4
+        },
+        {
+          "key": "tech.1W.adx.strong",
+          "value": 64.1
+        },
+        {
+          "key": "tech.1W.bull_ema",
+          "value": true
+        },
+        {
+          "key": "tech.1W.above_ema200",
+          "value": true
+        },
+        {
+          "key": "tech.1W.macd.bullish",
+          "value": 18.902
+        },
+        {
+          "key": "tech.1W.obv.up",
+          "value": true
+        },
+        {
+          "key": "tech.1W.dist20.overheat",
+          "value": 49.9
+        },
+        {
+          "key": "tech.1D.rsi.overheat",
+          "value": 76.7
+        },
+        {
+          "key": "tech.1D.adx.strong",
+          "value": 35.3
+        },
+        {
+          "key": "tech.1D.bull_ema",
+          "value": true
+        },
+        {
+          "key": "tech.1D.above_ema200",
+          "value": true
+        },
+        {
+          "key": "tech.1D.macd.bullish",
+          "value": 2.8672
+        },
+        {
+          "key": "tech.1D.obv.up",
+          "value": true
+        },
+        {
+          "key": "tech.1D.divergence.bear",
+          "value": true
+        },
+        {
+          "key": "tech.1D.dist20.overheat",
+          "value": 14.2
+        },
+        {
+          "key": "tech.4H.rsi.healthy",
+          "value": 68.8
+        },
+        {
+          "key": "tech.4H.adx.strong",
+          "value": 33.6
+        },
+        {
+          "key": "tech.4H.bull_ema",
+          "value": true
+        },
+        {
+          "key": "tech.4H.above_ema200",
+          "value": true
+        },
+        {
+          "key": "tech.4H.macd.bullish",
+          "value": 3.5909
+        },
+        {
+          "key": "tech.4H.obv.up",
+          "value": true
+        },
+        {
+          "key": "tech.1H.rsi.healthy",
+          "value": 63
+        },
+        {
+          "key": "tech.1H.adx.strong",
+          "value": 47
+        },
+        {
+          "key": "tech.1H.above_ema200",
+          "value": true
+        },
+        {
+          "key": "tech.1H.macd.bullish",
+          "value": 0.689
+        },
+        {
+          "key": "tech.1H.obv.up",
+          "value": true
+        },
+        {
+          "key": "tech.1H.divergence.bear",
+          "value": true
+        },
+        {
+          "key": "tech.1H.dist20.near",
+          "value": 2.1
+        },
+        {
+          "key": "tech.1H.near_support",
+          "value": true
+        },
+        {
+          "key": "news.score.high",
+          "value": 82
+        },
+        {
+          "key": "news.top_news_type.Industry",
+          "value": true
+        },
+        {
+          "key": "news.top_news_type.Analyst Action",
+          "value": true
+        }
+      ]
+    },
+    {
+      "sym": "NASDAQ:ADEA",
+      "name": "NASDAQ:ADEA",
+      "ok": true,
+      "prev_close": 30.66,
+      "close": 32.05,
+      "change_pct": 4.53,
+      "in_prev_tech": true,
+      "in_prev_news": true,
+      "tech_score": 35.1,
+      "news_score": 50,
+      "tech_type": "Pullback Buy (Near Support)",
+      "tech_flags": [
+        "mom_decay",
+        "near_resist",
+        "low_rr"
+      ],
+      "news_signal": "NEUTRAL No Trade (No Data)",
+      "features": [
+        {
+          "key": "tech.type.pullback",
+          "value": "Pullback Buy (Near Support)"
+        },
+        {
+          "key": "tech.verdict.strong_long",
+          "value": "Strong Long"
+        },
+        {
+          "key": "tech.flag.momentum_decay",
+          "value": "mom_decay"
+        },
+        {
+          "key": "tech.flag.resistance",
+          "value": "near_resist"
+        },
+        {
+          "key": "tech.flag.bad_rr",
+          "value": "low_rr"
+        },
+        {
+          "key": "tech.score.high",
+          "value": 35.1
+        },
+        {
+          "key": "tech.rs.weak",
+          "value": -14.6
+        },
+        {
+          "key": "tech.1W.rsi.healthy",
+          "value": 67.4
+        },
+        {
+          "key": "tech.1W.adx.strong",
+          "value": 38
+        },
+        {
+          "key": "tech.1W.bull_ema",
+          "value": true
+        },
+        {
+          "key": "tech.1W.above_ema200",
+          "value": true
+        },
+        {
+          "key": "tech.1W.macd.bullish",
+          "value": 0.1547
+        },
+        {
+          "key": "tech.1W.obv.up",
+          "value": true
+        },
+        {
+          "key": "tech.1W.dist20.overheat",
+          "value": 21.4
+        },
+        {
+          "key": "tech.1D.rsi.healthy",
+          "value": 58.1
+        },
+        {
+          "key": "tech.1D.adx.trending",
+          "value": 21.2
+        },
+        {
+          "key": "tech.1D.bull_ema",
+          "value": true
+        },
+        {
+          "key": "tech.1D.above_ema200",
+          "value": true
+        },
+        {
+          "key": "tech.1D.obv.up",
+          "value": true
+        },
+        {
+          "key": "tech.1D.near_support",
+          "value": true
+        },
+        {
+          "key": "tech.4H.rsi.healthy",
+          "value": 59.1
+        },
+        {
+          "key": "tech.4H.adx.trending",
+          "value": 20.7
+        },
+        {
+          "key": "tech.4H.above_ema200",
+          "value": true
+        },
+        {
+          "key": "tech.4H.macd.bullish",
+          "value": 0.4285
+        },
+        {
+          "key": "tech.4H.obv.up",
+          "value": true
+        },
+        {
+          "key": "tech.4H.near_support",
+          "value": true
+        },
+        {
+          "key": "tech.1H.rsi.healthy",
+          "value": 66.9
+        },
+        {
+          "key": "tech.1H.adx.strong",
+          "value": 35.3
+        },
+        {
+          "key": "tech.1H.bull_ema",
+          "value": true
+        },
+        {
+          "key": "tech.1H.above_ema200",
+          "value": true
+        },
+        {
+          "key": "tech.1H.macd.bullish",
+          "value": 0.1589
+        },
+        {
+          "key": "tech.1H.obv.up",
+          "value": true
+        },
+        {
+          "key": "tech.1H.near_support",
+          "value": true
+        },
+        {
+          "key": "news.signal.no_trade",
+          "value": "NEUTRAL No Trade (No Data)"
+        },
+        {
+          "key": "news.score.high",
+          "value": 50
+        }
+      ]
+    },
+    {
+      "sym": "NYSE:DKS",
+      "name": "NYSE:DKS",
+      "ok": true,
+      "prev_close": 214.74,
+      "close": 224.17,
+      "change_pct": 4.39,
+      "in_prev_tech": true,
+      "in_prev_news": true,
+      "tech_score": 23.5,
+      "news_score": 70,
+      "tech_type": "Breakout (Squeeze Release)",
+      "tech_flags": [
+        "mom_decay",
+        "near_resist",
+        "chop",
+        "low_rr"
+      ],
+      "news_signal": "GREEN Long (Mid)",
+      "features": [
+        {
+          "key": "tech.type.breakout",
+          "value": "Breakout (Squeeze Release)"
+        },
+        {
+          "key": "tech.verdict.long",
+          "value": "Long"
+        },
+        {
+          "key": "tech.flag.momentum_decay",
+          "value": "mom_decay"
+        },
+        {
+          "key": "tech.flag.resistance",
+          "value": "near_resist"
+        },
+        {
+          "key": "tech.flag.chop",
+          "value": "chop"
+        },
+        {
+          "key": "tech.flag.bad_rr",
+          "value": "low_rr"
+        },
+        {
+          "key": "tech.score.mid",
+          "value": 23.5
+        },
+        {
+          "key": "tech.rs.weak",
+          "value": -7
+        },
+        {
+          "key": "tech.1W.rsi.healthy",
+          "value": 50.7
+        },
+        {
+          "key": "tech.1W.adx.chop",
+          "value": 19
+        },
+        {
+          "key": "tech.1W.above_ema200",
+          "value": true
+        },
+        {
+          "key": "tech.1W.macd.bullish",
+          "value": 1.9543
+        },
+        {
+          "key": "tech.1W.obv.down",
+          "value": true
+        },
+        {
+          "key": "tech.1W.dist20.near",
+          "value": 0.1
+        },
+        {
+          "key": "tech.1W.near_support",
+          "value": true
+        },
+        {
+          "key": "tech.1D.adx.chop",
+          "value": 14.2
+        },
+        {
+          "key": "tech.1D.above_ema200",
+          "value": true
+        },
+        {
+          "key": "tech.1D.sqz.active",
+          "value": true
+        },
+        {
+          "key": "tech.1D.sqz.long_streak",
+          "value": 5
+        },
+        {
+          "key": "tech.1D.obv.up",
+          "value": true
+        },
+        {
+          "key": "tech.1D.dist20.near",
+          "value": -2.7
+        },
+        {
+          "key": "tech.1D.near_support",
+          "value": true
+        },
+        {
+          "key": "tech.4H.adx.chop",
+          "value": 18
+        },
+        {
+          "key": "tech.4H.above_ema200",
+          "value": true
+        },
+        {
+          "key": "tech.4H.obv.down",
+          "value": true
+        },
+        {
+          "key": "tech.4H.near_support",
+          "value": true
+        },
+        {
+          "key": "tech.1H.adx.trending",
+          "value": 24.4
+        },
+        {
+          "key": "tech.1H.above_ema200",
+          "value": true
+        },
+        {
+          "key": "tech.1H.obv.down",
+          "value": true
+        },
+        {
+          "key": "tech.1H.dist20.near",
+          "value": -2
+        },
+        {
+          "key": "tech.1H.near_support",
+          "value": true
+        },
+        {
+          "key": "news.score.high",
+          "value": 70
+        },
+        {
+          "key": "news.top_news_type.Analyst Action",
+          "value": true
+        },
+        {
+          "key": "news.top_news_type.Earnings",
+          "value": true
+        },
+        {
+          "key": "news.top_news_type.Industry",
+          "value": true
+        }
+      ]
+    },
+    {
+      "sym": "NASDAQ:AMD",
+      "name": "NASDAQ:AMD",
+      "ok": true,
+      "prev_close": 521.54,
+      "close": 542.52,
+      "change_pct": 4.02,
+      "in_prev_tech": true,
+      "in_prev_news": true,
+      "tech_score": -5.7,
+      "news_score": 36,
+      "tech_type": "Overextended Chase (High Risk)",
+      "tech_flags": [
+        "overheated",
+        "fake_break",
+        "bull_trap",
+        "mom_decay",
+        "near_resist",
+        "bear_div",
+        "low_rr"
+      ],
+      "news_signal": "RED No Trade / Avoid",
+      "features": [
+        {
+          "key": "tech.flag.overheat",
+          "value": "overheated"
+        },
+        {
+          "key": "tech.flag.fake_breakout",
+          "value": "fake_break"
+        },
+        {
+          "key": "tech.flag.bull_trap",
+          "value": "bull_trap"
+        },
+        {
+          "key": "tech.flag.momentum_decay",
+          "value": "mom_decay"
+        },
+        {
+          "key": "tech.flag.resistance",
+          "value": "near_resist"
+        },
+        {
+          "key": "tech.flag.bear_div",
+          "value": "bear_div"
+        },
+        {
+          "key": "tech.flag.bad_rr",
+          "value": "low_rr"
+        },
+        {
+          "key": "tech.score.low",
+          "value": -5.7
+        },
+        {
+          "key": "tech.alignment.full",
+          "value": "4/4 (100%)"
+        },
+        {
+          "key": "tech.rs.strong",
+          "value": 46.9
+        },
+        {
+          "key": "tech.1W.rsi.overheat",
+          "value": 82.8
+        },
+        {
+          "key": "tech.1W.adx.strong",
+          "value": 37.3
+        },
+        {
+          "key": "tech.1W.bull_ema",
+          "value": true
+        },
+        {
+          "key": "tech.1W.above_ema200",
+          "value": true
+        },
+        {
+          "key": "tech.1W.macd.bullish",
+          "value": 29.061
+        },
+        {
+          "key": "tech.1W.obv.up",
+          "value": true
+        },
+        {
+          "key": "tech.1W.divergence.bull",
+          "value": true
+        },
+        {
+          "key": "tech.1W.dist20.overheat",
+          "value": 55.1
+        },
+        {
+          "key": "tech.1D.rsi.overheat",
+          "value": 75.2
+        },
+        {
+          "key": "tech.1D.adx.strong",
+          "value": 46.8
+        },
+        {
+          "key": "tech.1D.bull_ema",
+          "value": true
+        },
+        {
+          "key": "tech.1D.above_ema200",
+          "value": true
+        },
+        {
+          "key": "tech.1D.macd.bullish",
+          "value": 1.6877
+        },
+        {
+          "key": "tech.1D.obv.up",
+          "value": true
+        },
+        {
+          "key": "tech.1D.divergence.bear",
+          "value": true
+        },
+        {
+          "key": "tech.1D.dist20.overheat",
+          "value": 15.2
+        },
+        {
+          "key": "tech.4H.rsi.healthy",
+          "value": 69.8
+        },
+        {
+          "key": "tech.4H.adx.trending",
+          "value": 25.5
+        },
+        {
+          "key": "tech.4H.bull_ema",
+          "value": true
+        },
+        {
+          "key": "tech.4H.above_ema200",
+          "value": true
+        },
+        {
+          "key": "tech.4H.obv.up",
+          "value": true
+        },
+        {
+          "key": "tech.1H.rsi.healthy",
+          "value": 62.1
+        },
+        {
+          "key": "tech.1H.adx.chop",
+          "value": 18.7
+        },
+        {
+          "key": "tech.1H.bull_ema",
+          "value": true
+        },
+        {
+          "key": "tech.1H.above_ema200",
+          "value": true
+        },
+        {
+          "key": "tech.1H.sqz.active",
+          "value": true
+        },
+        {
+          "key": "tech.1H.sqz.long_streak",
+          "value": 5
+        },
+        {
+          "key": "tech.1H.obv.up",
+          "value": true
+        },
+        {
+          "key": "tech.1H.dist20.near",
+          "value": 1.9
+        },
+        {
+          "key": "tech.1H.near_support",
+          "value": true
+        },
+        {
+          "key": "news.signal.no_trade",
+          "value": "RED No Trade / Avoid"
+        },
+        {
+          "key": "news.score.high",
+          "value": 36
+        },
+        {
+          "key": "news.top_news_type.Industry",
+          "value": true
+        },
+        {
+          "key": "news.top_news_type.Analyst Action",
+          "value": true
+        }
+      ]
+    },
+    {
+      "sym": "NASDAQ:MPWR",
+      "name": "NASDAQ:MPWR",
+      "ok": true,
+      "prev_close": 1624.99,
+      "close": 1689.89,
+      "change_pct": 3.99,
+      "in_prev_tech": true,
+      "in_prev_news": true,
+      "tech_score": 19.2,
+      "news_score": 55,
+      "tech_type": "Trend Continuation",
+      "tech_flags": [
+        "mom_decay",
+        "near_resist",
+        "bear_div",
+        "low_rr"
+      ],
+      "news_signal": "NEUTRAL No Trade (Weak Bullish)",
+      "features": [
+        {
+          "key": "tech.verdict.long",
+          "value": "Long"
+        },
+        {
+          "key": "tech.flag.momentum_decay",
+          "value": "mom_decay"
+        },
+        {
+          "key": "tech.flag.resistance",
+          "value": "near_resist"
+        },
+        {
+          "key": "tech.flag.bear_div",
+          "value": "bear_div"
+        },
+        {
+          "key": "tech.flag.bad_rr",
+          "value": "low_rr"
+        },
+        {
+          "key": "tech.score.mid",
+          "value": 19.2
+        },
+        {
+          "key": "tech.alignment.full",
+          "value": "4/4 (100%)"
+        },
+        {
+          "key": "tech.1W.adx.strong",
+          "value": 41.6
+        },
+        {
+          "key": "tech.1W.bull_ema",
+          "value": true
+        },
+        {
+          "key": "tech.1W.above_ema200",
+          "value": true
+        },
+        {
+          "key": "tech.1W.macd.bullish",
+          "value": 26.9553
+        },
+        {
+          "key": "tech.1W.obv.up",
+          "value": true
+        },
+        {
+          "key": "tech.1W.dist20.overheat",
+          "value": 20.1
+        },
+        {
+          "key": "tech.1D.rsi.healthy",
+          "value": 56.4
+        },
+        {
+          "key": "tech.1D.adx.trending",
+          "value": 25.2
+        },
+        {
+          "key": "tech.1D.bull_ema",
+          "value": true
+        },
+        {
+          "key": "tech.1D.above_ema200",
+          "value": true
+        },
+        {
+          "key": "tech.1D.obv.down",
+          "value": true
+        },
+        {
+          "key": "tech.1D.divergence.bear",
+          "value": true
+        },
+        {
+          "key": "tech.4H.rsi.healthy",
+          "value": 55.8
+        },
+        {
+          "key": "tech.4H.adx.chop",
+          "value": 15.6
+        },
+        {
+          "key": "tech.4H.bull_ema",
+          "value": true
+        },
+        {
+          "key": "tech.4H.above_ema200",
+          "value": true
+        },
+        {
+          "key": "tech.4H.obv.up",
+          "value": true
+        },
+        {
+          "key": "tech.4H.dist20.near",
+          "value": 2.3
+        },
+        {
+          "key": "tech.1H.rsi.healthy",
+          "value": 61.6
+        },
+        {
+          "key": "tech.1H.adx.chop",
+          "value": 18.2
+        },
+        {
+          "key": "tech.1H.bull_ema",
+          "value": true
+        },
+        {
+          "key": "tech.1H.above_ema200",
+          "value": true
+        },
+        {
+          "key": "tech.1H.macd.bullish",
+          "value": 8.3865
+        },
+        {
+          "key": "tech.1H.vol.expanding",
+          "value": 1.8
+        },
+        {
+          "key": "tech.1H.obv.up",
+          "value": true
+        },
+        {
+          "key": "tech.1H.dist20.near",
+          "value": 2.2
+        },
+        {
+          "key": "tech.1H.near_support",
+          "value": true
+        },
+        {
+          "key": "news.signal.no_trade",
+          "value": "NEUTRAL No Trade (Weak Bullish)"
+        },
+        {
+          "key": "news.score.high",
+          "value": 55
+        },
+        {
+          "key": "news.top_news_type.Industry",
+          "value": true
+        }
+      ]
+    },
+    {
+      "sym": "NASDAQ:KLAC",
+      "name": "NASDAQ:KLAC",
+      "ok": true,
+      "prev_close": 2045.2,
+      "close": 2125.11,
+      "change_pct": 3.91,
+      "in_prev_tech": true,
+      "in_prev_news": true,
+      "tech_score": 22.6,
+      "news_score": 50,
+      "tech_type": "Trend Continuation",
+      "tech_flags": [
+        "fake_break",
+        "near_resist",
+        "chop",
+        "low_rr"
+      ],
+      "news_signal": "NEUTRAL No Trade (Weak Bullish)",
+      "features": [
+        {
+          "key": "tech.verdict.long",
+          "value": "Long"
+        },
+        {
+          "key": "tech.flag.fake_breakout",
+          "value": "fake_break"
+        },
+        {
+          "key": "tech.flag.resistance",
+          "value": "near_resist"
+        },
+        {
+          "key": "tech.flag.chop",
+          "value": "chop"
+        },
+        {
+          "key": "tech.flag.bad_rr",
+          "value": "low_rr"
+        },
+        {
+          "key": "tech.score.mid",
+          "value": 22.6
+        },
+        {
+          "key": "tech.alignment.full",
+          "value": "4/4 (100%)"
+        },
+        {
+          "key": "tech.rs.strong",
+          "value": 13.6
+        },
+        {
+          "key": "tech.1W.rsi.healthy",
+          "value": 70.3
+        },
+        {
+          "key": "tech.1W.adx.strong",
+          "value": 36.4
+        },
+        {
+          "key": "tech.1W.bull_ema",
+          "value": true
+        },
+        {
+          "key": "tech.1W.above_ema200",
+          "value": true
+        },
+        {
+          "key": "tech.1W.macd.bullish",
+          "value": 24.0726
+        },
+        {
+          "key": "tech.1W.obv.up",
+          "value": true
+        },
+        {
+          "key": "tech.1W.dist20.overheat",
+          "value": 22.4
+        },
+        {
+          "key": "tech.1D.rsi.healthy",
+          "value": 65.5
+        },
+        {
+          "key": "tech.1D.adx.chop",
+          "value": 15.3
+        },
+        {
+          "key": "tech.1D.bull_ema",
+          "value": true
+        },
+        {
+          "key": "tech.1D.above_ema200",
+          "value": true
+        },
+        {
+          "key": "tech.1D.macd.bullish",
+          "value": 11.1558
+        },
+        {
+          "key": "tech.1D.obv.up",
+          "value": true
+        },
+        {
+          "key": "tech.4H.rsi.healthy",
+          "value": 68.6
+        },
+        {
+          "key": "tech.4H.adx.chop",
+          "value": 14
+        },
+        {
+          "key": "tech.4H.bull_ema",
+          "value": true
+        },
+        {
+          "key": "tech.4H.above_ema200",
+          "value": true
+        },
+        {
+          "key": "tech.4H.macd.bullish",
+          "value": 7.0817
+        },
+        {
+          "key": "tech.4H.obv.up",
+          "value": true
+        },
+        {
+          "key": "tech.1H.rsi.healthy",
+          "value": 70
+        },
+        {
+          "key": "tech.1H.adx.trending",
+          "value": 21.4
+        },
+        {
+          "key": "tech.1H.bull_ema",
+          "value": true
+        },
+        {
+          "key": "tech.1H.above_ema200",
+          "value": true
+        },
+        {
+          "key": "tech.1H.macd.bullish",
+          "value": 10.6857
+        },
+        {
+          "key": "tech.1H.vol.expanding",
+          "value": 1.7
+        },
+        {
+          "key": "tech.1H.obv.up",
+          "value": true
+        },
+        {
+          "key": "news.signal.no_trade",
+          "value": "NEUTRAL No Trade (Weak Bullish)"
+        },
+        {
+          "key": "news.score.high",
+          "value": 50
+        },
+        {
+          "key": "news.top_news_type.Industry",
+          "value": true
+        }
+      ]
+    },
+    {
+      "sym": "NASDAQ:MRVL",
+      "name": "NASDAQ:MRVL",
+      "ok": true,
+      "prev_close": 290.79,
+      "close": 301.65,
+      "change_pct": 3.73,
+      "in_prev_tech": true,
+      "in_prev_news": true,
+      "tech_score": 25.6,
+      "news_score": 85,
+      "tech_type": "Overextended Chase (High Risk)",
+      "tech_flags": [
+        "overheated",
+        "bull_trap",
+        "mom_decay",
+        "near_resist"
+      ],
+      "news_signal": "WARN No Trade (Overheated)",
+      "features": [
+        {
+          "key": "tech.verdict.long",
+          "value": "Long"
+        },
+        {
+          "key": "tech.flag.overheat",
+          "value": "overheated"
+        },
+        {
+          "key": "tech.flag.bull_trap",
+          "value": "bull_trap"
+        },
+        {
+          "key": "tech.flag.momentum_decay",
+          "value": "mom_decay"
+        },
+        {
+          "key": "tech.flag.resistance",
+          "value": "near_resist"
+        },
+        {
+          "key": "tech.score.mid",
+          "value": 25.6
+        },
+        {
+          "key": "tech.alignment.full",
+          "value": "4/4 (100%)"
+        },
+        {
+          "key": "tech.rs.strong",
+          "value": 71.9
+        },
+        {
+          "key": "tech.1W.rsi.overheat",
+          "value": 94.7
+        },
+        {
+          "key": "tech.1W.adx.strong",
+          "value": 50.4
+        },
+        {
+          "key": "tech.1W.bull_ema",
+          "value": true
+        },
+        {
+          "key": "tech.1W.above_ema200",
+          "value": true
+        },
+        {
+          "key": "tech.1W.macd.bullish",
+          "value": 15.2808
+        },
+        {
+          "key": "tech.1W.obv.up",
+          "value": true
+        },
+        {
+          "key": "tech.1W.dist20.overheat",
+          "value": 94.6
+        },
+        {
+          "key": "tech.1D.rsi.overheat",
+          "value": 85.9
+        },
+        {
+          "key": "tech.1D.adx.strong",
+          "value": 48.1
+        },
+        {
+          "key": "tech.1D.bull_ema",
+          "value": true
+        },
+        {
+          "key": "tech.1D.above_ema200",
+          "value": true
+        },
+        {
+          "key": "tech.1D.macd.bullish",
+          "value": 6.4967
+        },
+        {
+          "key": "tech.1D.vol.expanding",
+          "value": 3.3
+        },
+        {
+          "key": "tech.1D.obv.up",
+          "value": true
+        },
+        {
+          "key": "tech.1D.dist20.overheat",
+          "value": 48.8
+        },
+        {
+          "key": "tech.4H.rsi.overheat",
+          "value": 87.3
+        },
+        {
+          "key": "tech.4H.adx.strong",
+          "value": 42
+        },
+        {
+          "key": "tech.4H.bull_ema",
+          "value": true
+        },
+        {
+          "key": "tech.4H.above_ema200",
+          "value": true
+        },
+        {
+          "key": "tech.4H.macd.bullish",
+          "value": 8.0914
+        },
+        {
+          "key": "tech.4H.obv.up",
+          "value": true
+        },
+        {
+          "key": "tech.4H.dist20.overheat",
+          "value": 35.4
+        },
+        {
+          "key": "tech.1H.rsi.overheat",
+          "value": 87
+        },
+        {
+          "key": "tech.1H.adx.strong",
+          "value": 50.1
+        },
+        {
+          "key": "tech.1H.bull_ema",
+          "value": true
+        },
+        {
+          "key": "tech.1H.above_ema200",
+          "value": true
+        },
+        {
+          "key": "tech.1H.macd.bullish",
+          "value": 6.3831
+        },
+        {
+          "key": "tech.1H.obv.up",
+          "value": true
+        },
+        {
+          "key": "tech.1H.dist20.overheat",
+          "value": 17.5
+        },
+        {
+          "key": "news.signal.overheated",
+          "value": "WARN No Trade (Overheated)"
+        },
+        {
+          "key": "news.score.high",
+          "value": 85
+        },
+        {
+          "key": "news.top_news_type.Industry",
+          "value": true
+        }
+      ]
+    },
+    {
+      "sym": "NYSE:JCI",
+      "name": "NYSE:JCI",
+      "ok": true,
+      "prev_close": 141.99,
+      "close": 146.96,
+      "change_pct": 3.5,
+      "in_prev_tech": true,
+      "in_prev_news": true,
+      "tech_score": 25.8,
+      "news_score": 67,
+      "tech_type": "Pullback Buy (Near Support)",
+      "tech_flags": [
+        "mom_decay",
+        "near_resist",
+        "chop",
+        "low_rr"
+      ],
+      "news_signal": "GREEN Long (Mid)",
+      "features": [
+        {
+          "key": "tech.type.pullback",
+          "value": "Pullback Buy (Near Support)"
+        },
+        {
+          "key": "tech.verdict.long",
+          "value": "Long"
+        },
+        {
+          "key": "tech.flag.momentum_decay",
+          "value": "mom_decay"
+        },
+        {
+          "key": "tech.flag.resistance",
+          "value": "near_resist"
+        },
+        {
+          "key": "tech.flag.chop",
+          "value": "chop"
+        },
+        {
+          "key": "tech.flag.bad_rr",
+          "value": "low_rr"
+        },
+        {
+          "key": "tech.score.mid",
+          "value": 25.8
+        },
+        {
+          "key": "tech.rs.weak",
+          "value": -7.5
+        },
+        {
+          "key": "tech.1W.rsi.healthy",
+          "value": 59.6
+        },
+        {
+          "key": "tech.1W.adx.trending",
+          "value": 22.1
+        },
+        {
+          "key": "tech.1W.bull_ema",
+          "value": true
+        },
+        {
+          "key": "tech.1W.above_ema200",
+          "value": true
+        },
+        {
+          "key": "tech.1W.obv.down",
+          "value": true
+        },
+        {
+          "key": "tech.1D.rsi.healthy",
+          "value": 54.9
+        },
+        {
+          "key": "tech.1D.adx.chop",
+          "value": 17.3
+        },
+        {
+          "key": "tech.1D.above_ema200",
+          "value": true
+        },
+        {
+          "key": "tech.1D.obv.down",
+          "value": true
+        },
+        {
+          "key": "tech.1D.dist20.near",
+          "value": 2.3
+        },
+        {
+          "key": "tech.1D.near_support",
+          "value": true
+        },
+        {
+          "key": "tech.4H.rsi.healthy",
+          "value": 58.3
+        },
+        {
+          "key": "tech.4H.adx.trending",
+          "value": 21.4
+        },
+        {
+          "key": "tech.4H.above_ema200",
+          "value": true
+        },
+        {
+          "key": "tech.4H.macd.bullish",
+          "value": 0.456
+        },
+        {
+          "key": "tech.4H.obv.up",
+          "value": true
+        },
+        {
+          "key": "tech.4H.dist20.near",
+          "value": 2.9
+        },
+        {
+          "key": "tech.4H.near_support",
+          "value": true
+        },
+        {
+          "key": "tech.1H.rsi.healthy",
+          "value": 67.8
+        },
+        {
+          "key": "tech.1H.adx.strong",
+          "value": 32.2
+        },
+        {
+          "key": "tech.1H.bull_ema",
+          "value": true
+        },
+        {
+          "key": "tech.1H.above_ema200",
+          "value": true
+        },
+        {
+          "key": "tech.1H.macd.bullish",
+          "value": 0.9008
+        },
+        {
+          "key": "tech.1H.vol.expanding",
+          "value": 1.7
+        },
+        {
+          "key": "tech.1H.obv.up",
+          "value": true
+        },
+        {
+          "key": "tech.1H.dist20.near",
+          "value": 2.7
+        },
+        {
+          "key": "tech.1H.near_support",
+          "value": true
+        },
+        {
+          "key": "news.score.high",
+          "value": 67
+        },
+        {
+          "key": "news.top_news_type.Industry",
+          "value": true
+        },
+        {
+          "key": "news.top_news_type.Analyst Action",
+          "value": true
+        }
+      ]
+    }
+  ],
+  "losers": [
+    {
+      "sym": "NASDAQ:ONDS",
+      "name": "NASDAQ:ONDS",
+      "ok": true,
+      "prev_close": 13.58,
+      "close": 11.61,
+      "change_pct": -14.51,
+      "in_prev_tech": false,
+      "in_prev_news": false,
+      "tech_score": null,
+      "news_score": null,
+      "tech_type": null,
+      "tech_flags": [],
+      "news_signal": null,
+      "features": []
+    },
+    {
+      "sym": "NASDAQ:LITE",
+      "name": "NASDAQ:LITE",
+      "ok": true,
+      "prev_close": 1029.15,
+      "close": 938,
+      "change_pct": -8.86,
+      "in_prev_tech": true,
+      "in_prev_news": true,
+      "tech_score": 21.8,
+      "news_score": 80,
+      "tech_type": "Trend Continuation",
+      "tech_flags": [
+        "mom_decay",
+        "chop",
+        "low_rr"
+      ],
+      "news_signal": "WARN No Trade (Overheated)",
+      "features": [
+        {
+          "key": "tech.verdict.long",
+          "value": "Long"
+        },
+        {
+          "key": "tech.flag.momentum_decay",
+          "value": "mom_decay"
+        },
+        {
+          "key": "tech.flag.chop",
+          "value": "chop"
+        },
+        {
+          "key": "tech.flag.bad_rr",
+          "value": "low_rr"
+        },
+        {
+          "key": "tech.score.mid",
+          "value": 21.8
+        },
+        {
+          "key": "tech.alignment.full",
+          "value": "4/4 (100%)"
+        },
+        {
+          "key": "tech.1W.adx.strong",
+          "value": 57.4
+        },
+        {
+          "key": "tech.1W.bull_ema",
+          "value": true
+        },
+        {
+          "key": "tech.1W.above_ema200",
+          "value": true
+        },
+        {
+          "key": "tech.1W.macd.bullish",
+          "value": 5.5636
+        },
+        {
+          "key": "tech.1W.obv.down",
+          "value": true
+        },
+        {
+          "key": "tech.1W.dist20.overheat",
+          "value": 34.9
+        },
+        {
+          "key": "tech.1D.rsi.healthy",
+          "value": 60
+        },
+        {
+          "key": "tech.1D.adx.chop",
+          "value": 15.7
+        },
+        {
+          "key": "tech.1D.bull_ema",
+          "value": true
+        },
+        {
+          "key": "tech.1D.above_ema200",
+          "value": true
+        },
+        {
+          "key": "tech.1D.obv.up",
+          "value": true
+        },
+        {
+          "key": "tech.4H.rsi.healthy",
+          "value": 62.6
+        },
+        {
+          "key": "tech.4H.adx.chop",
+          "value": 13.2
+        },
+        {
+          "key": "tech.4H.bull_ema",
+          "value": true
+        },
+        {
+          "key": "tech.4H.above_ema200",
+          "value": true
+        },
+        {
+          "key": "tech.4H.macd.bullish",
+          "value": 13.631
+        },
+        {
+          "key": "tech.4H.obv.up",
+          "value": true
+        },
+        {
+          "key": "tech.1H.rsi.overheat",
+          "value": 76.4
+        },
+        {
+          "key": "tech.1H.adx.strong",
+          "value": 30.4
+        },
+        {
+          "key": "tech.1H.bull_ema",
+          "value": true
+        },
+        {
+          "key": "tech.1H.above_ema200",
+          "value": true
+        },
+        {
+          "key": "tech.1H.macd.bullish",
+          "value": 15.9281
+        },
+        {
+          "key": "tech.1H.obv.up",
+          "value": true
+        },
+        {
+          "key": "news.signal.overheated",
+          "value": "WARN No Trade (Overheated)"
+        },
+        {
+          "key": "news.score.high",
+          "value": 80
+        },
+        {
+          "key": "news.top_news_type.Industry",
+          "value": true
+        }
+      ]
+    },
+    {
+      "sym": "NYSE:QBTS",
+      "name": "NYSE:QBTS",
+      "ok": true,
+      "prev_close": 29.91,
+      "close": 27.55,
+      "change_pct": -7.89,
+      "in_prev_tech": true,
+      "in_prev_news": true,
+      "tech_score": 26.9,
+      "news_score": 86,
+      "tech_type": "Overextended Chase (High Risk)",
+      "tech_flags": [
+        "overheated",
+        "bear_div",
+        "low_rr"
+      ],
+      "news_signal": "GREEN Long (Strong)",
+      "features": [
+        {
+          "key": "tech.verdict.long",
+          "value": "Long"
+        },
+        {
+          "key": "tech.flag.overheat",
+          "value": "overheated"
+        },
+        {
+          "key": "tech.flag.bear_div",
+          "value": "bear_div"
+        },
+        {
+          "key": "tech.flag.bad_rr",
+          "value": "low_rr"
+        },
+        {
+          "key": "tech.score.mid",
+          "value": 26.9
+        },
+        {
+          "key": "tech.alignment.full",
+          "value": "4/4 (100%)"
+        },
+        {
+          "key": "tech.rs.strong",
+          "value": 37.2
+        },
+        {
+          "key": "tech.1W.rsi.healthy",
+          "value": 62.3
+        },
+        {
+          "key": "tech.1W.adx.trending",
+          "value": 23.2
+        },
+        {
+          "key": "tech.1W.bull_ema",
+          "value": true
+        },
+        {
+          "key": "tech.1W.above_ema200",
+          "value": true
+        },
+        {
+          "key": "tech.1W.macd.bullish",
+          "value": 1.4893
+        },
+        {
+          "key": "tech.1W.obv.up",
+          "value": true
+        },
+        {
+          "key": "tech.1W.dist20.overheat",
+          "value": 32
+        },
+        {
+          "key": "tech.1D.rsi.healthy",
+          "value": 66.4
+        },
+        {
+          "key": "tech.1D.adx.strong",
+          "value": 36.7
+        },
+        {
+          "key": "tech.1D.bull_ema",
+          "value": true
+        },
+        {
+          "key": "tech.1D.above_ema200",
+          "value": true
+        },
+        {
+          "key": "tech.1D.macd.bullish",
+          "value": 0.6707
+        },
+        {
+          "key": "tech.1D.obv.up",
+          "value": true
+        },
+        {
+          "key": "tech.1D.divergence.bear",
+          "value": true
+        },
+        {
+          "key": "tech.1D.dist20.overheat",
+          "value": 19.6
+        },
+        {
+          "key": "tech.4H.rsi.healthy",
+          "value": 65.8
+        },
+        {
+          "key": "tech.4H.adx.trending",
+          "value": 26.7
+        },
+        {
+          "key": "tech.4H.bull_ema",
+          "value": true
+        },
+        {
+          "key": "tech.4H.above_ema200",
+          "value": true
+        },
+        {
+          "key": "tech.4H.macd.bullish",
+          "value": 0.1086
+        },
+        {
+          "key": "tech.4H.obv.up",
+          "value": true
+        },
+        {
+          "key": "tech.4H.divergence.bear",
+          "value": true
+        },
+        {
+          "key": "tech.1H.rsi.healthy",
+          "value": 55.4
+        },
+        {
+          "key": "tech.1H.adx.chop",
+          "value": 18.2
+        },
+        {
+          "key": "tech.1H.bull_ema",
+          "value": true
+        },
+        {
+          "key": "tech.1H.above_ema200",
+          "value": true
+        },
+        {
+          "key": "tech.1H.sqz.active",
+          "value": true
+        },
+        {
+          "key": "tech.1H.sqz.long_streak",
+          "value": 10
+        },
+        {
+          "key": "tech.1H.obv.up",
+          "value": true
+        },
+        {
+          "key": "tech.1H.dist20.near",
+          "value": 1.3
+        },
+        {
+          "key": "tech.1H.near_support",
+          "value": true
+        },
+        {
+          "key": "news.score.high",
+          "value": 86
+        },
+        {
+          "key": "news.top_news_type.Policy",
+          "value": true
+        },
+        {
+          "key": "news.top_news_type.Industry",
+          "value": true
+        },
+        {
+          "key": "news.top_news_type.Analyst Action",
+          "value": true
+        }
+      ]
+    },
+    {
+      "sym": "NASDAQ:APLD",
+      "name": "NASDAQ:APLD",
+      "ok": true,
+      "prev_close": 47.86,
+      "close": 44.71,
+      "change_pct": -6.58,
+      "in_prev_tech": true,
+      "in_prev_news": true,
+      "tech_score": 25.1,
+      "news_score": 50,
+      "tech_type": "Trend Continuation",
+      "tech_flags": [
+        "bear_div",
+        "low_rr"
+      ],
+      "news_signal": "NEUTRAL No Trade (No Data)",
+      "features": [
+        {
+          "key": "tech.verdict.long",
+          "value": "Long"
+        },
+        {
+          "key": "tech.flag.bear_div",
+          "value": "bear_div"
+        },
+        {
+          "key": "tech.flag.bad_rr",
+          "value": "low_rr"
+        },
+        {
+          "key": "tech.score.mid",
+          "value": 25.1
+        },
+        {
+          "key": "tech.rs.strong",
+          "value": 28.5
+        },
+        {
+          "key": "tech.1W.rsi.healthy",
+          "value": 71.5
+        },
+        {
+          "key": "tech.1W.adx.trending",
+          "value": 22.7
+        },
+        {
+          "key": "tech.1W.bull_ema",
+          "value": true
+        },
+        {
+          "key": "tech.1W.above_ema200",
+          "value": true
+        },
+        {
+          "key": "tech.1W.macd.bullish",
+          "value": 1.7616
+        },
+        {
+          "key": "tech.1W.obv.up",
+          "value": true
+        },
+        {
+          "key": "tech.1W.dist20.overheat",
+          "value": 34.8
+        },
+        {
+          "key": "tech.1D.rsi.healthy",
+          "value": 60.7
+        },
+        {
+          "key": "tech.1D.adx.trending",
+          "value": 29.9
+        },
+        {
+          "key": "tech.1D.bull_ema",
+          "value": true
+        },
+        {
+          "key": "tech.1D.above_ema200",
+          "value": true
+        },
+        {
+          "key": "tech.1D.macd.bullish",
+          "value": 0.0783
+        },
+        {
+          "key": "tech.1D.obv.up",
+          "value": true
+        },
+        {
+          "key": "tech.1D.divergence.bear",
+          "value": true
+        },
+        {
+          "key": "tech.4H.rsi.healthy",
+          "value": 57.7
+        },
+        {
+          "key": "tech.4H.adx.trending",
+          "value": 24.9
+        },
+        {
+          "key": "tech.4H.above_ema200",
+          "value": true
+        },
+        {
+          "key": "tech.4H.obv.up",
+          "value": true
+        },
+        {
+          "key": "tech.1H.adx.chop",
+          "value": 14.5
+        },
+        {
+          "key": "tech.1H.above_ema200",
+          "value": true
+        },
+        {
+          "key": "tech.1H.obv.up",
+          "value": true
+        },
+        {
+          "key": "tech.1H.dist20.near",
+          "value": -0.5
+        },
+        {
+          "key": "tech.1H.near_support",
+          "value": true
+        },
+        {
+          "key": "news.signal.no_trade",
+          "value": "NEUTRAL No Trade (No Data)"
+        },
+        {
+          "key": "news.score.high",
+          "value": 50
+        }
+      ]
+    },
+    {
+      "sym": "NASDAQ:CRDO",
+      "name": "NASDAQ:CRDO",
+      "ok": true,
+      "prev_close": 229,
+      "close": 214.6,
+      "change_pct": -6.29,
+      "in_prev_tech": true,
+      "in_prev_news": true,
+      "tech_score": 45.8,
+      "news_score": 84,
+      "tech_type": "Overextended Chase (High Risk)",
+      "tech_flags": [
+        "overheated"
+      ],
+      "news_signal": "GREEN Long (Strong)",
+      "features": [
+        {
+          "key": "tech.verdict.strong_long",
+          "value": "Strong Long"
+        },
+        {
+          "key": "tech.flag.overheat",
+          "value": "overheated"
+        },
+        {
+          "key": "tech.score.high",
+          "value": 45.8
+        },
+        {
+          "key": "tech.alignment.full",
+          "value": "4/4 (100%)"
+        },
+        {
+          "key": "tech.rs.strong",
+          "value": 21.4
+        },
+        {
+          "key": "tech.1W.rsi.healthy",
+          "value": 67.8
+        },
+        {
+          "key": "tech.1W.adx.trending",
+          "value": 25.2
+        },
+        {
+          "key": "tech.1W.bull_ema",
+          "value": true
+        },
+        {
+          "key": "tech.1W.above_ema200",
+          "value": true
+        },
+        {
+          "key": "tech.1W.macd.bullish",
+          "value": 11.2153
+        },
+        {
+          "key": "tech.1W.obv.up",
+          "value": true
+        },
+        {
+          "key": "tech.1W.dist20.overheat",
+          "value": 37.5
+        },
+        {
+          "key": "tech.1D.rsi.healthy",
+          "value": 64.7
+        },
+        {
+          "key": "tech.1D.adx.strong",
+          "value": 33.1
+        },
+        {
+          "key": "tech.1D.bull_ema",
+          "value": true
+        },
+        {
+          "key": "tech.1D.above_ema200",
+          "value": true
+        },
+        {
+          "key": "tech.1D.macd.bullish",
+          "value": 2.5903
+        },
+        {
+          "key": "tech.1D.vol.expanding",
+          "value": 2.2
+        },
+        {
+          "key": "tech.1D.obv.up",
+          "value": true
+        },
+        {
+          "key": "tech.1D.dist20.overheat",
+          "value": 13.3
+        },
+        {
+          "key": "tech.4H.rsi.healthy",
+          "value": 62.3
+        },
+        {
+          "key": "tech.4H.adx.strong",
+          "value": 34
+        },
+        {
+          "key": "tech.4H.bull_ema",
+          "value": true
+        },
+        {
+          "key": "tech.4H.above_ema200",
+          "value": true
+        },
+        {
+          "key": "tech.4H.macd.bullish",
+          "value": 0.5315
+        },
+        {
+          "key": "tech.4H.obv.down",
+          "value": true
+        },
+        {
+          "key": "tech.1H.rsi.healthy",
+          "value": 54.2
+        },
+        {
+          "key": "tech.1H.adx.trending",
+          "value": 28.9
+        },
+        {
+          "key": "tech.1H.bull_ema",
+          "value": true
+        },
+        {
+          "key": "tech.1H.above_ema200",
+          "value": true
+        },
+        {
+          "key": "tech.1H.obv.down",
+          "value": true
+        },
+        {
+          "key": "tech.1H.divergence.bear",
+          "value": true
+        },
+        {
+          "key": "tech.1H.dist20.near",
+          "value": 1.1
+        },
+        {
+          "key": "tech.1H.near_support",
+          "value": true
+        },
+        {
+          "key": "news.score.high",
+          "value": 84
+        },
+        {
+          "key": "news.top_news_type.Earnings",
+          "value": true
+        },
+        {
+          "key": "news.top_news_type.Analyst Action",
+          "value": true
+        },
+        {
+          "key": "news.top_news_type.Industry",
+          "value": true
+        }
+      ]
+    },
+    {
+      "sym": "NASDAQ:SEDG",
+      "name": "NASDAQ:SEDG",
+      "ok": true,
+      "prev_close": 78.51,
+      "close": 74.02,
+      "change_pct": -5.72,
+      "in_prev_tech": true,
+      "in_prev_news": true,
+      "tech_score": 12,
+      "news_score": 50,
+      "tech_type": "Overextended Chase (High Risk)",
+      "tech_flags": [
+        "overheated",
+        "fake_break",
+        "bull_trap",
+        "mom_decay",
+        "near_resist"
+      ],
+      "news_signal": "NEUTRAL No Trade (Weak Bullish)",
+      "features": [
+        {
+          "key": "tech.verdict.long",
+          "value": "Long"
+        },
+        {
+          "key": "tech.flag.overheat",
+          "value": "overheated"
+        },
+        {
+          "key": "tech.flag.fake_breakout",
+          "value": "fake_break"
+        },
+        {
+          "key": "tech.flag.bull_trap",
+          "value": "bull_trap"
+        },
+        {
+          "key": "tech.flag.momentum_decay",
+          "value": "mom_decay"
+        },
+        {
+          "key": "tech.flag.resistance",
+          "value": "near_resist"
+        },
+        {
+          "key": "tech.score.low",
+          "value": 12
+        },
+        {
+          "key": "tech.alignment.full",
+          "value": "4/4 (100%)"
+        },
+        {
+          "key": "tech.rs.strong",
+          "value": 83.3
+        },
+        {
+          "key": "tech.1W.rsi.overheat",
+          "value": 75.3
+        },
+        {
+          "key": "tech.1W.adx.strong",
+          "value": 32.1
+        },
+        {
+          "key": "tech.1W.bull_ema",
+          "value": true
+        },
+        {
+          "key": "tech.1W.above_ema200",
+          "value": true
+        },
+        {
+          "key": "tech.1W.macd.bullish",
+          "value": 3.5571
+        },
+        {
+          "key": "tech.1W.obv.up",
+          "value": true
+        },
+        {
+          "key": "tech.1W.dist20.overheat",
+          "value": 57.4
+        },
+        {
+          "key": "tech.1D.rsi.overheat",
+          "value": 76.2
+        },
+        {
+          "key": "tech.1D.adx.strong",
+          "value": 36.7
+        },
+        {
+          "key": "tech.1D.bull_ema",
+          "value": true
+        },
+        {
+          "key": "tech.1D.above_ema200",
+          "value": true
+        },
+        {
+          "key": "tech.1D.macd.bullish",
+          "value": 2.3851
+        },
+        {
+          "key": "tech.1D.obv.up",
+          "value": true
+        },
+        {
+          "key": "tech.1D.dist20.overheat",
+          "value": 27.8
+        },
+        {
+          "key": "tech.4H.rsi.overheat",
+          "value": 76
+        },
+        {
+          "key": "tech.4H.adx.strong",
+          "value": 34.8
+        },
+        {
+          "key": "tech.4H.bull_ema",
+          "value": true
+        },
+        {
+          "key": "tech.4H.above_ema200",
+          "value": true
+        },
+        {
+          "key": "tech.4H.macd.bullish",
+          "value": 0.1625
+        },
+        {
+          "key": "tech.4H.obv.up",
+          "value": true
+        },
+        {
+          "key": "tech.4H.divergence.bear",
+          "value": true
+        },
+        {
+          "key": "tech.4H.dist20.overheat",
+          "value": 13.8
+        },
+        {
+          "key": "tech.1H.rsi.healthy",
+          "value": 64.3
+        },
+        {
+          "key": "tech.1H.adx.chop",
+          "value": 19.4
+        },
+        {
+          "key": "tech.1H.bull_ema",
+          "value": true
+        },
+        {
+          "key": "tech.1H.above_ema200",
+          "value": true
+        },
+        {
+          "key": "tech.1H.macd.bullish",
+          "value": 0.0708
+        },
+        {
+          "key": "tech.1H.obv.up",
+          "value": true
+        },
+        {
+          "key": "news.signal.no_trade",
+          "value": "NEUTRAL No Trade (Weak Bullish)"
+        },
+        {
+          "key": "news.score.high",
+          "value": 50
+        },
+        {
+          "key": "news.top_news_type.Industry",
+          "value": true
+        }
+      ]
+    },
+    {
+      "sym": "NASDAQ:PANW",
+      "name": "NASDAQ:PANW",
+      "ok": true,
+      "prev_close": 297.18,
+      "close": 280.43,
+      "change_pct": -5.64,
+      "in_prev_tech": false,
+      "in_prev_news": false,
+      "tech_score": null,
+      "news_score": null,
+      "tech_type": null,
+      "tech_flags": [],
+      "news_signal": null,
+      "features": []
+    },
+    {
+      "sym": "NYSE:BE",
+      "name": "NYSE:BE",
+      "ok": true,
+      "prev_close": 302.85,
+      "close": 287.32,
+      "change_pct": -5.13,
+      "in_prev_tech": true,
+      "in_prev_news": true,
+      "tech_score": 18.6,
+      "news_score": 64,
+      "tech_type": "Breakout (Squeeze Release)",
+      "tech_flags": [
+        "mom_decay",
+        "near_resist",
+        "bear_div",
+        "low_rr"
+      ],
+      "news_signal": "GREEN Long (Mid)",
+      "features": [
+        {
+          "key": "tech.type.breakout",
+          "value": "Breakout (Squeeze Release)"
+        },
+        {
+          "key": "tech.verdict.long",
+          "value": "Long"
+        },
+        {
+          "key": "tech.flag.momentum_decay",
+          "value": "mom_decay"
+        },
+        {
+          "key": "tech.flag.resistance",
+          "value": "near_resist"
+        },
+        {
+          "key": "tech.flag.bear_div",
+          "value": "bear_div"
+        },
+        {
+          "key": "tech.flag.bad_rr",
+          "value": "low_rr"
+        },
+        {
+          "key": "tech.score.mid",
+          "value": 18.6
+        },
+        {
+          "key": "tech.alignment.full",
+          "value": "4/4 (100%)"
+        },
+        {
+          "key": "tech.1W.adx.strong",
+          "value": 41.9
+        },
+        {
+          "key": "tech.1W.bull_ema",
+          "value": true
+        },
+        {
+          "key": "tech.1W.above_ema200",
+          "value": true
+        },
+        {
+          "key": "tech.1W.macd.bullish",
+          "value": 11.1354
+        },
+        {
+          "key": "tech.1W.obv.up",
+          "value": true
+        },
+        {
+          "key": "tech.1W.divergence.bull",
+          "value": true
+        },
+        {
+          "key": "tech.1W.divergence.bear",
+          "value": true
+        },
+        {
+          "key": "tech.1W.dist20.overheat",
+          "value": 43.4
+        },
+        {
+          "key": "tech.1D.rsi.healthy",
+          "value": 60.2
+        },
+        {
+          "key": "tech.1D.adx.trending",
+          "value": 25.6
+        },
+        {
+          "key": "tech.1D.bull_ema",
+          "value": true
+        },
+        {
+          "key": "tech.1D.above_ema200",
+          "value": true
+        },
+        {
+          "key": "tech.1D.sqz.active",
+          "value": true
+        },
+        {
+          "key": "tech.1D.obv.down",
+          "value": true
+        },
+        {
+          "key": "tech.1D.divergence.bear",
+          "value": true
+        },
+        {
+          "key": "tech.4H.rsi.healthy",
+          "value": 56.1
+        },
+        {
+          "key": "tech.4H.adx.chop",
+          "value": 14.4
+        },
+        {
+          "key": "tech.4H.bull_ema",
+          "value": true
+        },
+        {
+          "key": "tech.4H.above_ema200",
+          "value": true
+        },
+        {
+          "key": "tech.4H.obv.down",
+          "value": true
+        },
+        {
+          "key": "tech.1H.rsi.healthy",
+          "value": 59.1
+        },
+        {
+          "key": "tech.1H.adx.trending",
+          "value": 21.1
+        },
+        {
+          "key": "tech.1H.bull_ema",
+          "value": true
+        },
+        {
+          "key": "tech.1H.above_ema200",
+          "value": true
+        },
+        {
+          "key": "tech.1H.macd.bullish",
+          "value": 3.0737
+        },
+        {
+          "key": "tech.1H.obv.up",
+          "value": true
+        },
+        {
+          "key": "tech.1H.divergence.bull",
+          "value": true
+        },
+        {
+          "key": "tech.1H.near_support",
+          "value": true
+        },
+        {
+          "key": "news.score.high",
+          "value": 64
+        },
+        {
+          "key": "news.top_news_type.Industry",
+          "value": true
+        },
+        {
+          "key": "news.top_news_type.Policy",
+          "value": true
+        },
+        {
+          "key": "news.top_news_type.Analyst Action",
+          "value": true
+        }
+      ]
+    },
+    {
+      "sym": "NASDAQ:ERIC",
+      "name": "NASDAQ:ERIC",
+      "ok": true,
+      "prev_close": 13.74,
+      "close": 13.16,
+      "change_pct": -4.22,
+      "in_prev_tech": true,
+      "in_prev_news": true,
+      "tech_score": 52.8,
+      "news_score": 50,
+      "tech_type": "Trend Follow (HH/HL Intact)",
+      "tech_flags": [
+        "fake_break",
+        "near_resist"
+      ],
+      "news_signal": "NEUTRAL No Trade (Weak Bullish)",
+      "features": [
+        {
+          "key": "tech.verdict.long",
+          "value": "Long"
+        },
+        {
+          "key": "tech.flag.fake_breakout",
+          "value": "fake_break"
+        },
+        {
+          "key": "tech.flag.resistance",
+          "value": "near_resist"
+        },
+        {
+          "key": "tech.score.high",
+          "value": 52.8
+        },
+        {
+          "key": "tech.alignment.full",
+          "value": "4/4 (100%)"
+        },
+        {
+          "key": "tech.rs.strong",
+          "value": 12.4
+        },
+        {
+          "key": "tech.1W.adx.strong",
+          "value": 55.5
+        },
+        {
+          "key": "tech.1W.bull_ema",
+          "value": true
+        },
+        {
+          "key": "tech.1W.above_ema200",
+          "value": true
+        },
+        {
+          "key": "tech.1W.macd.bullish",
+          "value": 0.1543
+        },
+        {
+          "key": "tech.1W.obv.up",
+          "value": true
+        },
+        {
+          "key": "tech.1W.dist20.overheat",
+          "value": 17.2
+        },
+        {
+          "key": "tech.1D.rsi.healthy",
+          "value": 65.9
+        },
+        {
+          "key": "tech.1D.adx.trending",
+          "value": 21.1
+        },
+        {
+          "key": "tech.1D.bull_ema",
+          "value": true
+        },
+        {
+          "key": "tech.1D.above_ema200",
+          "value": true
+        },
+        {
+          "key": "tech.1D.macd.bullish",
+          "value": 0.0415
+        },
+        {
+          "key": "tech.1D.obv.up",
+          "value": true
+        },
+        {
+          "key": "tech.4H.rsi.healthy",
+          "value": 68.2
+        },
+        {
+          "key": "tech.4H.adx.strong",
+          "value": 30.6
+        },
+        {
+          "key": "tech.4H.bull_ema",
+          "value": true
+        },
+        {
+          "key": "tech.4H.above_ema200",
+          "value": true
+        },
+        {
+          "key": "tech.4H.macd.bullish",
+          "value": 0.0096
+        },
+        {
+          "key": "tech.4H.macd.turning",
+          "value": true
+        },
+        {
+          "key": "tech.4H.obv.up",
+          "value": true
+        },
+        {
+          "key": "tech.1H.adx.strong",
+          "value": 35.3
+        },
+        {
+          "key": "tech.1H.bull_ema",
+          "value": true
+        },
+        {
+          "key": "tech.1H.above_ema200",
+          "value": true
+        },
+        {
+          "key": "tech.1H.macd.bullish",
+          "value": 0.0487
+        },
+        {
+          "key": "tech.1H.vol.expanding",
+          "value": 2.3
+        },
+        {
+          "key": "tech.1H.obv.up",
+          "value": true
+        },
+        {
+          "key": "tech.1H.dist20.near",
+          "value": 2.3
+        },
+        {
+          "key": "news.signal.no_trade",
+          "value": "NEUTRAL No Trade (Weak Bullish)"
+        },
+        {
+          "key": "news.score.high",
+          "value": 50
+        },
+        {
+          "key": "news.top_news_type.Industry",
+          "value": true
+        }
+      ]
+    },
+    {
+      "sym": "NASDAQ:NBIS",
+      "name": "NASDAQ:NBIS",
+      "ok": true,
+      "prev_close": 260.58,
+      "close": 251.68,
+      "change_pct": -3.42,
+      "in_prev_tech": true,
+      "in_prev_news": true,
+      "tech_score": 26.3,
+      "news_score": 72,
+      "tech_type": "Overextended Chase (High Risk)",
+      "tech_flags": [
+        "overheated"
+      ],
+      "news_signal": "GREEN Long (Mid)",
+      "features": [
+        {
+          "key": "tech.verdict.long",
+          "value": "Long"
+        },
+        {
+          "key": "tech.flag.overheat",
+          "value": "overheated"
+        },
+        {
+          "key": "tech.score.mid",
+          "value": 26.3
+        },
+        {
+          "key": "tech.rs.strong",
+          "value": 41.9
+        },
+        {
+          "key": "tech.1W.rsi.overheat",
+          "value": 81.3
+        },
+        {
+          "key": "tech.1W.adx.strong",
+          "value": 32.4
+        },
+        {
+          "key": "tech.1W.bull_ema",
+          "value": true
+        },
+        {
+          "key": "tech.1W.above_ema200",
+          "value": true
+        },
+        {
+          "key": "tech.1W.macd.bullish",
+          "value": 13.2813
+        },
+        {
+          "key": "tech.1W.obv.up",
+          "value": true
+        },
+        {
+          "key": "tech.1W.dist20.overheat",
+          "value": 64.6
+        },
+        {
+          "key": "tech.1D.adx.strong",
+          "value": 38.3
+        },
+        {
+          "key": "tech.1D.bull_ema",
+          "value": true
+        },
+        {
+          "key": "tech.1D.above_ema200",
+          "value": true
+        },
+        {
+          "key": "tech.1D.macd.bullish",
+          "value": 3.949
+        },
+        {
+          "key": "tech.1D.obv.up",
+          "value": true
+        },
+        {
+          "key": "tech.1D.dist20.overheat",
+          "value": 24.1
+        },
+        {
+          "key": "tech.4H.rsi.healthy",
+          "value": 70.2
+        },
+        {
+          "key": "tech.4H.adx.trending",
+          "value": 23.8
+        },
+        {
+          "key": "tech.4H.bull_ema",
+          "value": true
+        },
+        {
+          "key": "tech.4H.above_ema200",
+          "value": true
+        },
+        {
+          "key": "tech.4H.macd.bullish",
+          "value": 4.1695
+        },
+        {
+          "key": "tech.4H.obv.down",
+          "value": true
+        },
+        {
+          "key": "tech.4H.dist20.overheat",
+          "value": 13.8
+        },
+        {
+          "key": "tech.1H.rsi.healthy",
+          "value": 61.1
+        },
+        {
+          "key": "tech.1H.adx.strong",
+          "value": 36.4
+        },
+        {
+          "key": "tech.1H.above_ema200",
+          "value": true
+        },
+        {
+          "key": "tech.1H.obv.up",
+          "value": true
+        },
+        {
+          "key": "tech.1H.dist20.near",
+          "value": 2.5
+        },
+        {
+          "key": "news.score.high",
+          "value": 72
+        },
+        {
+          "key": "news.top_news_type.Industry",
+          "value": true
+        },
+        {
+          "key": "news.top_news_type.Analyst Action",
+          "value": true
+        },
+        {
+          "key": "news.top_news_type.Buyback",
+          "value": true
+        }
+      ]
+    }
+  ],
+  "feature_stats": [
+    {
+      "key": "tech.flag.resistance",
+      "gain_count": 9,
+      "loss_count": 3,
+      "gain_rate": 0.9,
+      "loss_rate": 0.3,
+      "diff": 0.6
+    },
+    {
+      "key": "tech.flag.momentum_decay",
+      "gain_count": 8,
+      "loss_count": 3,
+      "gain_rate": 0.8,
+      "loss_rate": 0.3,
+      "diff": 0.5
+    },
+    {
+      "key": "tech.4H.near_support",
+      "gain_count": 4,
+      "loss_count": 0,
+      "gain_rate": 0.4,
+      "loss_rate": 0,
+      "diff": 0.4
+    },
+    {
+      "key": "tech.flag.bad_rr",
+      "gain_count": 7,
+      "loss_count": 4,
+      "gain_rate": 0.7,
+      "loss_rate": 0.4,
+      "diff": 0.3
+    },
+    {
+      "key": "tech.4H.dist20.near",
+      "gain_count": 3,
+      "loss_count": 0,
+      "gain_rate": 0.3,
+      "loss_rate": 0,
+      "diff": 0.3
+    },
+    {
+      "key": "tech.1H.macd.bullish",
+      "gain_count": 7,
+      "loss_count": 4,
+      "gain_rate": 0.7,
+      "loss_rate": 0.4,
+      "diff": 0.3
+    },
+    {
+      "key": "tech.1H.near_support",
+      "gain_count": 7,
+      "loss_count": 4,
+      "gain_rate": 0.7,
+      "loss_rate": 0.4,
+      "diff": 0.3
+    },
+    {
+      "key": "tech.rs.weak",
+      "gain_count": 3,
+      "loss_count": 0,
+      "gain_rate": 0.3,
+      "loss_rate": 0,
+      "diff": 0.3
+    },
+    {
+      "key": "tech.1D.near_support",
+      "gain_count": 3,
+      "loss_count": 0,
+      "gain_rate": 0.3,
+      "loss_rate": 0,
+      "diff": 0.3
+    },
+    {
+      "key": "tech.1W.rsi.overheat",
+      "gain_count": 4,
+      "loss_count": 2,
+      "gain_rate": 0.4,
+      "loss_rate": 0.2,
+      "diff": 0.2
+    },
+    {
+      "key": "tech.1W.adx.strong",
+      "gain_count": 7,
+      "loss_count": 5,
+      "gain_rate": 0.7,
+      "loss_rate": 0.5,
+      "diff": 0.2
+    },
+    {
+      "key": "tech.1D.obv.down",
+      "gain_count": 3,
+      "loss_count": 1,
+      "gain_rate": 0.3,
+      "loss_rate": 0.1,
+      "diff": 0.2
+    },
+    {
+      "key": "tech.4H.adx.chop",
+      "gain_count": 4,
+      "loss_count": 2,
+      "gain_rate": 0.4,
+      "loss_rate": 0.2,
+      "diff": 0.2
+    },
+    {
+      "key": "tech.1H.rsi.healthy",
+      "gain_count": 7,
+      "loss_count": 5,
+      "gain_rate": 0.7,
+      "loss_rate": 0.5,
+      "diff": 0.2
+    },
+    {
+      "key": "tech.flag.bull_trap",
+      "gain_count": 3,
+      "loss_count": 1,
+      "gain_rate": 0.3,
+      "loss_rate": 0.1,
+      "diff": 0.2
+    },
+    {
+      "key": "tech.1D.rsi.overheat",
+      "gain_count": 3,
+      "loss_count": 1,
+      "gain_rate": 0.3,
+      "loss_rate": 0.1,
+      "diff": 0.2
+    },
+    {
+      "key": "tech.4H.obv.up",
+      "gain_count": 7,
+      "loss_count": 5,
+      "gain_rate": 0.7,
+      "loss_rate": 0.5,
+      "diff": 0.2
+    },
+    {
+      "key": "tech.type.pullback",
+      "gain_count": 2,
+      "loss_count": 0,
+      "gain_rate": 0.2,
+      "loss_rate": 0,
+      "diff": 0.2
+    },
+    {
+      "key": "tech.flag.chop",
+      "gain_count": 3,
+      "loss_count": 1,
+      "gain_rate": 0.3,
+      "loss_rate": 0.1,
+      "diff": 0.2
+    },
+    {
+      "key": "tech.1D.adx.chop",
+      "gain_count": 3,
+      "loss_count": 1,
+      "gain_rate": 0.3,
+      "loss_rate": 0.1,
+      "diff": 0.2
+    },
+    {
+      "key": "tech.1D.dist20.near",
+      "gain_count": 2,
+      "loss_count": 0,
+      "gain_rate": 0.2,
+      "loss_rate": 0,
+      "diff": 0.2
+    },
+    {
+      "key": "tech.1H.vol.expanding",
+      "gain_count": 3,
+      "loss_count": 1,
+      "gain_rate": 0.3,
+      "loss_rate": 0.1,
+      "diff": 0.2
+    },
+    {
+      "key": "tech.verdict.strong_long",
+      "gain_count": 2,
+      "loss_count": 1,
+      "gain_rate": 0.2,
+      "loss_rate": 0.1,
+      "diff": 0.1
+    },
+    {
+      "key": "tech.score.mid",
+      "gain_count": 6,
+      "loss_count": 5,
+      "gain_rate": 0.6,
+      "loss_rate": 0.5,
+      "diff": 0.1
+    },
+    {
+      "key": "tech.1W.above_ema200",
+      "gain_count": 9,
+      "loss_count": 8,
+      "gain_rate": 0.9,
+      "loss_rate": 0.8,
+      "diff": 0.1
+    },
+    {
+      "key": "tech.1D.above_ema200",
+      "gain_count": 9,
+      "loss_count": 8,
+      "gain_rate": 0.9,
+      "loss_rate": 0.8,
+      "diff": 0.1
+    },
+    {
+      "key": "tech.4H.above_ema200",
+      "gain_count": 9,
+      "loss_count": 8,
+      "gain_rate": 0.9,
+      "loss_rate": 0.8,
+      "diff": 0.1
+    },
+    {
+      "key": "tech.1H.above_ema200",
+      "gain_count": 9,
+      "loss_count": 8,
+      "gain_rate": 0.9,
+      "loss_rate": 0.8,
+      "diff": 0.1
+    },
+    {
+      "key": "tech.1H.obv.up",
+      "gain_count": 8,
+      "loss_count": 7,
+      "gain_rate": 0.8,
+      "loss_rate": 0.7,
+      "diff": 0.1
+    },
+    {
+      "key": "tech.1H.dist20.near",
+      "gain_count": 6,
+      "loss_count": 5,
+      "gain_rate": 0.6,
+      "loss_rate": 0.5,
+      "diff": 0.1
+    },
+    {
+      "key": "news.score.high",
+      "gain_count": 9,
+      "loss_count": 8,
+      "gain_rate": 0.9,
+      "loss_rate": 0.8,
+      "diff": 0.1
+    },
+    {
+      "key": "news.top_news_type.Earnings",
+      "gain_count": 2,
+      "loss_count": 1,
+      "gain_rate": 0.2,
+      "loss_rate": 0.1,
+      "diff": 0.1
+    },
+    {
+      "key": "news.top_news_type.Analyst Action",
+      "gain_count": 5,
+      "loss_count": 4,
+      "gain_rate": 0.5,
+      "loss_rate": 0.4,
+      "diff": 0.1
+    },
+    {
+      "key": "news.top_news_type.Industry",
+      "gain_count": 8,
+      "loss_count": 7,
+      "gain_rate": 0.8,
+      "loss_rate": 0.7,
+      "diff": 0.1
+    },
+    {
+      "key": "tech.flag.fake_breakout",
+      "gain_count": 3,
+      "loss_count": 2,
+      "gain_rate": 0.3,
+      "loss_rate": 0.2,
+      "diff": 0.1
+    },
+    {
+      "key": "tech.score.low",
+      "gain_count": 2,
+      "loss_count": 1,
+      "gain_rate": 0.2,
+      "loss_rate": 0.1,
+      "diff": 0.1
+    },
+    {
+      "key": "tech.1H.adx.strong",
+      "gain_count": 4,
+      "loss_count": 3,
+      "gain_rate": 0.4,
+      "loss_rate": 0.3,
+      "diff": 0.1
+    },
+    {
+      "key": "tech.1W.rsi.healthy",
+      "gain_count": 4,
+      "loss_count": 3,
+      "gain_rate": 0.4,
+      "loss_rate": 0.3,
+      "diff": 0.1
+    },
+    {
+      "key": "news.signal.no_trade",
+      "gain_count": 4,
+      "loss_count": 3,
+      "gain_rate": 0.4,
+      "loss_rate": 0.3,
+      "diff": 0.1
+    },
+    {
+      "key": "tech.1W.adx.chop",
+      "gain_count": 1,
+      "loss_count": 0,
+      "gain_rate": 0.1,
+      "loss_rate": 0,
+      "diff": 0.1
+    },
+    {
+      "key": "tech.1W.obv.down",
+      "gain_count": 2,
+      "loss_count": 1,
+      "gain_rate": 0.2,
+      "loss_rate": 0.1,
+      "diff": 0.1
+    },
+    {
+      "key": "tech.1W.dist20.near",
+      "gain_count": 1,
+      "loss_count": 0,
+      "gain_rate": 0.1,
+      "loss_rate": 0,
+      "diff": 0.1
+    },
+    {
+      "key": "tech.1W.near_support",
+      "gain_count": 1,
+      "loss_count": 0,
+      "gain_rate": 0.1,
+      "loss_rate": 0,
+      "diff": 0.1
+    },
+    {
+      "key": "tech.1D.sqz.long_streak",
+      "gain_count": 1,
+      "loss_count": 0,
+      "gain_rate": 0.1,
+      "loss_rate": 0,
+      "diff": 0.1
+    },
+    {
+      "key": "tech.1H.dist20.overheat",
+      "gain_count": 1,
+      "loss_count": 0,
+      "gain_rate": 0.1,
+      "loss_rate": 0,
+      "diff": 0.1
+    },
+    {
+      "key": "tech.1W.bull_ema",
+      "gain_count": 8,
+      "loss_count": 8,
+      "gain_rate": 0.8,
+      "loss_rate": 0.8,
+      "diff": 0
+    },
+    {
+      "key": "tech.1W.macd.bullish",
+      "gain_count": 8,
+      "loss_count": 8,
+      "gain_rate": 0.8,
+      "loss_rate": 0.8,
+      "diff": 0
+    },
+    {
+      "key": "tech.1W.obv.up",
+      "gain_count": 7,
+      "loss_count": 7,
+      "gain_rate": 0.7,
+      "loss_rate": 0.7,
+      "diff": 0
+    },
+    {
+      "key": "tech.1D.adx.trending",
+      "gain_count": 3,
+      "loss_count": 3,
+      "gain_rate": 0.3,
+      "loss_rate": 0.3,
+      "diff": 0
+    },
+    {
+      "key": "tech.4H.rsi.healthy",
+      "gain_count": 7,
+      "loss_count": 7,
+      "gain_rate": 0.7,
+      "loss_rate": 0.7,
+      "diff": 0
+    },
+    {
+      "key": "tech.1H.adx.chop",
+      "gain_count": 3,
+      "loss_count": 3,
+      "gain_rate": 0.3,
+      "loss_rate": 0.3,
+      "diff": 0
+    },
+    {
+      "key": "tech.flag.bear_div",
+      "gain_count": 3,
+      "loss_count": 3,
+      "gain_rate": 0.3,
+      "loss_rate": 0.3,
+      "diff": 0
+    },
+    {
+      "key": "tech.1D.divergence.bear",
+      "gain_count": 3,
+      "loss_count": 3,
+      "gain_rate": 0.3,
+      "loss_rate": 0.3,
+      "diff": 0
+    },
+    {
+      "key": "tech.1H.divergence.bear",
+      "gain_count": 1,
+      "loss_count": 1,
+      "gain_rate": 0.1,
+      "loss_rate": 0.1,
+      "diff": 0
+    },
+    {
+      "key": "tech.4H.adx.trending",
+      "gain_count": 3,
+      "loss_count": 3,
+      "gain_rate": 0.3,
+      "loss_rate": 0.3,
+      "diff": 0
+    },
+    {
+      "key": "tech.1H.bull_ema",
+      "gain_count": 6,
+      "loss_count": 6,
+      "gain_rate": 0.6,
+      "loss_rate": 0.6,
+      "diff": 0
+    },
+    {
+      "key": "tech.type.breakout",
+      "gain_count": 1,
+      "loss_count": 1,
+      "gain_rate": 0.1,
+      "loss_rate": 0.1,
+      "diff": 0
+    },
+    {
+      "key": "tech.1D.sqz.active",
+      "gain_count": 1,
+      "loss_count": 1,
+      "gain_rate": 0.1,
+      "loss_rate": 0.1,
+      "diff": 0
+    },
+    {
+      "key": "tech.1H.adx.trending",
+      "gain_count": 2,
+      "loss_count": 2,
+      "gain_rate": 0.2,
+      "loss_rate": 0.2,
+      "diff": 0
+    },
+    {
+      "key": "tech.1H.obv.down",
+      "gain_count": 1,
+      "loss_count": 1,
+      "gain_rate": 0.1,
+      "loss_rate": 0.1,
+      "diff": 0
+    },
+    {
+      "key": "tech.1W.divergence.bull",
+      "gain_count": 1,
+      "loss_count": 1,
+      "gain_rate": 0.1,
+      "loss_rate": 0.1,
+      "diff": 0
+    },
+    {
+      "key": "tech.1H.sqz.active",
+      "gain_count": 1,
+      "loss_count": 1,
+      "gain_rate": 0.1,
+      "loss_rate": 0.1,
+      "diff": 0
+    },
+    {
+      "key": "tech.1H.sqz.long_streak",
+      "gain_count": 1,
+      "loss_count": 1,
+      "gain_rate": 0.1,
+      "loss_rate": 0.1,
+      "diff": 0
+    },
+    {
+      "key": "tech.1D.vol.expanding",
+      "gain_count": 1,
+      "loss_count": 1,
+      "gain_rate": 0.1,
+      "loss_rate": 0.1,
+      "diff": 0
+    },
+    {
+      "key": "tech.4H.rsi.overheat",
+      "gain_count": 1,
+      "loss_count": 1,
+      "gain_rate": 0.1,
+      "loss_rate": 0.1,
+      "diff": 0
+    },
+    {
+      "key": "tech.1H.rsi.overheat",
+      "gain_count": 1,
+      "loss_count": 1,
+      "gain_rate": 0.1,
+      "loss_rate": 0.1,
+      "diff": 0
+    },
+    {
+      "key": "news.signal.overheated",
+      "gain_count": 1,
+      "loss_count": 1,
+      "gain_rate": 0.1,
+      "loss_rate": 0.1,
+      "diff": 0
+    },
+    {
+      "key": "tech.1W.dist20.overheat",
+      "gain_count": 7,
+      "loss_count": 8,
+      "gain_rate": 0.7,
+      "loss_rate": 0.8,
+      "diff": -0.1
+    },
+    {
+      "key": "tech.1D.rsi.healthy",
+      "gain_count": 5,
+      "loss_count": 6,
+      "gain_rate": 0.5,
+      "loss_rate": 0.6,
+      "diff": -0.1
+    },
+    {
+      "key": "tech.1D.bull_ema",
+      "gain_count": 7,
+      "loss_count": 8,
+      "gain_rate": 0.7,
+      "loss_rate": 0.8,
+      "diff": -0.1
+    },
+    {
+      "key": "tech.4H.bull_ema",
+      "gain_count": 6,
+      "loss_count": 7,
+      "gain_rate": 0.6,
+      "loss_rate": 0.7,
+      "diff": -0.1
+    },
+    {
+      "key": "tech.4H.obv.down",
+      "gain_count": 2,
+      "loss_count": 3,
+      "gain_rate": 0.2,
+      "loss_rate": 0.3,
+      "diff": -0.1
+    },
+    {
+      "key": "tech.verdict.long",
+      "gain_count": 6,
+      "loss_count": 7,
+      "gain_rate": 0.6,
+      "loss_rate": 0.7,
+      "diff": -0.1
+    },
+    {
+      "key": "tech.flag.overheat",
+      "gain_count": 3,
+      "loss_count": 4,
+      "gain_rate": 0.3,
+      "loss_rate": 0.4,
+      "diff": -0.1
+    },
+    {
+      "key": "tech.1D.adx.strong",
+      "gain_count": 3,
+      "loss_count": 4,
+      "gain_rate": 0.3,
+      "loss_rate": 0.4,
+      "diff": -0.1
+    },
+    {
+      "key": "tech.1D.obv.up",
+      "gain_count": 6,
+      "loss_count": 7,
+      "gain_rate": 0.6,
+      "loss_rate": 0.7,
+      "diff": -0.1
+    },
+    {
+      "key": "tech.1D.dist20.overheat",
+      "gain_count": 3,
+      "loss_count": 4,
+      "gain_rate": 0.3,
+      "loss_rate": 0.4,
+      "diff": -0.1
+    },
+    {
+      "key": "tech.4H.adx.strong",
+      "gain_count": 2,
+      "loss_count": 3,
+      "gain_rate": 0.2,
+      "loss_rate": 0.3,
+      "diff": -0.1
+    },
+    {
+      "key": "tech.4H.macd.bullish",
+      "gain_count": 5,
+      "loss_count": 6,
+      "gain_rate": 0.5,
+      "loss_rate": 0.6,
+      "diff": -0.1
+    },
+    {
+      "key": "tech.score.high",
+      "gain_count": 1,
+      "loss_count": 2,
+      "gain_rate": 0.1,
+      "loss_rate": 0.2,
+      "diff": -0.1
+    },
+    {
+      "key": "tech.4H.dist20.overheat",
+      "gain_count": 1,
+      "loss_count": 2,
+      "gain_rate": 0.1,
+      "loss_rate": 0.2,
+      "diff": -0.1
+    },
+    {
+      "key": "tech.1W.divergence.bear",
+      "gain_count": 0,
+      "loss_count": 1,
+      "gain_rate": 0,
+      "loss_rate": 0.1,
+      "diff": -0.1
+    },
+    {
+      "key": "tech.1H.divergence.bull",
+      "gain_count": 0,
+      "loss_count": 1,
+      "gain_rate": 0,
+      "loss_rate": 0.1,
+      "diff": -0.1
+    },
+    {
+      "key": "tech.4H.macd.turning",
+      "gain_count": 0,
+      "loss_count": 1,
+      "gain_rate": 0,
+      "loss_rate": 0.1,
+      "diff": -0.1
+    },
+    {
+      "key": "news.top_news_type.Buyback",
+      "gain_count": 0,
+      "loss_count": 1,
+      "gain_rate": 0,
+      "loss_rate": 0.1,
+      "diff": -0.1
+    },
+    {
+      "key": "tech.rs.strong",
+      "gain_count": 4,
+      "loss_count": 6,
+      "gain_rate": 0.4,
+      "loss_rate": 0.6,
+      "diff": -0.2
+    },
+    {
+      "key": "tech.1D.macd.bullish",
+      "gain_count": 4,
+      "loss_count": 6,
+      "gain_rate": 0.4,
+      "loss_rate": 0.6,
+      "diff": -0.2
+    },
+    {
+      "key": "tech.alignment.full",
+      "gain_count": 4,
+      "loss_count": 6,
+      "gain_rate": 0.4,
+      "loss_rate": 0.6,
+      "diff": -0.2
+    },
+    {
+      "key": "tech.1W.adx.trending",
+      "gain_count": 1,
+      "loss_count": 3,
+      "gain_rate": 0.1,
+      "loss_rate": 0.3,
+      "diff": -0.2
+    },
+    {
+      "key": "tech.4H.divergence.bear",
+      "gain_count": 0,
+      "loss_count": 2,
+      "gain_rate": 0,
+      "loss_rate": 0.2,
+      "diff": -0.2
+    },
+    {
+      "key": "news.top_news_type.Policy",
+      "gain_count": 0,
+      "loss_count": 2,
+      "gain_rate": 0,
+      "loss_rate": 0.2,
+      "diff": -0.2
+    }
+  ],
+  "common_gainer_features": [
+    {
+      "key": "tech.flag.resistance",
+      "gain_count": 9,
+      "loss_count": 3,
+      "gain_rate": 0.9,
+      "loss_rate": 0.3,
+      "diff": 0.6
+    },
+    {
+      "key": "tech.flag.momentum_decay",
+      "gain_count": 8,
+      "loss_count": 3,
+      "gain_rate": 0.8,
+      "loss_rate": 0.3,
+      "diff": 0.5
+    },
+    {
+      "key": "tech.flag.bad_rr",
+      "gain_count": 7,
+      "loss_count": 4,
+      "gain_rate": 0.7,
+      "loss_rate": 0.4,
+      "diff": 0.3
+    },
+    {
+      "key": "tech.1H.macd.bullish",
+      "gain_count": 7,
+      "loss_count": 4,
+      "gain_rate": 0.7,
+      "loss_rate": 0.4,
+      "diff": 0.3
+    },
+    {
+      "key": "tech.1H.near_support",
+      "gain_count": 7,
+      "loss_count": 4,
+      "gain_rate": 0.7,
+      "loss_rate": 0.4,
+      "diff": 0.3
+    }
+  ],
+  "common_loser_features": [],
+  "weight_recommendations": [
+    {
+      "feature": "tech.flag.resistance",
+      "direction": "up",
+      "status": "uncategorized",
+      "rationale": "gainers 9/10 vs losers 3/10 (Δ=60pp)"
+    },
+    {
+      "feature": "tech.flag.momentum_decay",
+      "direction": "up",
+      "status": "uncategorized",
+      "rationale": "gainers 8/10 vs losers 3/10 (Δ=50pp)"
+    },
+    {
+      "feature": "tech.flag.bad_rr",
+      "direction": "up",
+      "layer": "tech",
+      "source_path": "pipeline/3-technical/analyze_tech_us_mtf.mjs (genSignal adjScore)",
+      "source_label": "R/R<1.5",
+      "current_weight": -3,
+      "recommended_weight": -4,
+      "rationale": "gainers 7/10 vs losers 4/10 (Δ=30pp)"
+    },
+    {
+      "feature": "tech.1H.macd.bullish",
+      "direction": "up",
+      "status": "uncategorized",
+      "rationale": "gainers 7/10 vs losers 4/10 (Δ=30pp)"
+    },
+    {
+      "feature": "tech.1H.near_support",
+      "direction": "up",
+      "status": "uncategorized",
+      "rationale": "gainers 7/10 vs losers 4/10 (Δ=30pp)"
+    }
+  ],
+  "uncategorized_features": [
+    "tech.flag.resistance",
+    "tech.flag.momentum_decay",
+    "tech.1H.macd.bullish",
+    "tech.1H.near_support"
+  ]
+}

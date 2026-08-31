@@ -1,0 +1,2765 @@
+{
+  "generated_at": "2026-05-08T13:08:37.812Z",
+  "market": "us",
+  "source": "src/core/usNews.js",
+  "score_scale": "0-100 normalized (neutral=50)",
+  "window": {
+    "from": "2026-05-01",
+    "to": "2026-05-08",
+    "days": 7
+  },
+  "llm_used": false,
+  "stocks": {
+    "NYSE:MTZ": {
+      "name": "MTZ",
+      "score": 100,
+      "score_raw": 21.56,
+      "score_components": {
+        "positive_weight_sum": 21.56,
+        "negative_weight_sum": 0,
+        "news_effective_count": 11,
+        "news_dropped_count": 19
+      },
+      "signal": "WARN No Trade (Overheated)",
+      "strategy": "Score very high but overheated — wait for pullback to buy dip",
+      "suitable_for": "Buy Dip (wait for pullback)",
+      "confidence": "Low (risk present)",
+      "patterns": [
+        "Sentiment Strengthening UP (trend)",
+        "WARNING: Overheated Sentiment (one-sided bullish)"
+      ],
+      "positive_factors": [
+        "[Earnings|w2.81] Clear Street Raises MasTec (MTZ) Price Target, Keeps Buy Rating",
+        "[Earnings|w2.81] MasTec (MTZ) Reports Record Q1 2026 Revenue of $3.8B Driven by 34% Gro",
+        "[Analyst Action|w2.1] Mizuho Maintains Outperform on MasTec, Raises Price Target to $498"
+      ],
+      "negative_factors": [],
+      "news_count": 11,
+      "news_dropped": 19,
+      "top_news": [
+        {
+          "date": "2026-05-07",
+          "title": "Clear Street Raises MasTec (MTZ) Price Target, Keeps Buy Rating",
+          "type": "Earnings",
+          "sentiment": 1,
+          "weight": 3,
+          "final_weight": 2.81,
+          "source_authority": 3,
+          "recency_factor": 0.72,
+          "source": "Yahoo Finance"
+        },
+        {
+          "date": "2026-05-07",
+          "title": "MasTec (MTZ) Reports Record Q1 2026 Revenue of $3.8B Driven by 34% Growth",
+          "type": "Earnings",
+          "sentiment": 1,
+          "weight": 3,
+          "final_weight": 2.81,
+          "source_authority": 3,
+          "recency_factor": 0.72,
+          "source": "Yahoo Finance"
+        },
+        {
+          "date": "2026-05-05",
+          "title": "Mizuho Maintains Outperform on MasTec, Raises Price Target to $498",
+          "type": "Analyst Action",
+          "sentiment": 1,
+          "weight": 2,
+          "final_weight": 2.1,
+          "source_authority": 3.5,
+          "recency_factor": 0.5,
+          "source": "Finnhub"
+        },
+        {
+          "date": "2026-05-04",
+          "title": "TD Cowen Maintains Buy on MasTec, Raises Price Target to $445",
+          "type": "Analyst Action",
+          "sentiment": 1,
+          "weight": 2,
+          "final_weight": 1.76,
+          "source_authority": 3.5,
+          "recency_factor": 0.42,
+          "source": "Finnhub"
+        },
+        {
+          "date": "2026-05-04",
+          "title": "Goldman Sachs Maintains Buy on MasTec, Raises Price Target to $487",
+          "type": "Analyst Action",
+          "sentiment": 1,
+          "weight": 2,
+          "final_weight": 1.76,
+          "source_authority": 3.5,
+          "recency_factor": 0.42,
+          "source": "Finnhub"
+        }
+      ]
+    },
+    "NYSE:PWR": {
+      "name": "PWR",
+      "score": 95,
+      "score_raw": 16.19,
+      "score_components": {
+        "positive_weight_sum": 16.19,
+        "negative_weight_sum": 0,
+        "news_effective_count": 8,
+        "news_dropped_count": 32
+      },
+      "signal": "WARN No Trade (Overheated)",
+      "strategy": "Score very high but overheated — wait for pullback to buy dip",
+      "suitable_for": "Buy Dip (wait for pullback)",
+      "confidence": "Low (risk present)",
+      "patterns": [
+        "Sentiment Strengthening UP (trend)",
+        "WARNING: Overheated Sentiment (one-sided bullish)"
+      ],
+      "positive_factors": [
+        "[Earnings|w2.81] Quanta Services (PWR) Reports Record Q1 2026 Revenue of $7.87B",
+        "[Earnings|w2.73] 3 Companies Reporting Record Results This Earnings Season",
+        "[Industry|w2.52] Quanta Stock Climbs 36% in a Month: Should You Buy Now or Wait?"
+      ],
+      "negative_factors": [],
+      "news_count": 8,
+      "news_dropped": 32,
+      "top_news": [
+        {
+          "date": "2026-05-07",
+          "title": "Quanta Services (PWR) Reports Record Q1 2026 Revenue of $7.87B",
+          "type": "Earnings",
+          "sentiment": 1,
+          "weight": 3,
+          "final_weight": 2.81,
+          "source_authority": 3,
+          "recency_factor": 0.72,
+          "source": "Yahoo Finance"
+        },
+        {
+          "date": "2026-05-07",
+          "title": "Quanta Stock Climbs 36% in a Month: Should You Buy Now or Wait?",
+          "type": "Industry",
+          "sentiment": 1,
+          "weight": 3,
+          "final_weight": 2.52,
+          "source_authority": 3.5,
+          "recency_factor": 0.72,
+          "source": "Finnhub"
+        },
+        {
+          "date": "2026-05-06",
+          "title": "Market Update: AMD, BMY, EQR, F, OGE, PWR, PYPL, ANET, STRL",
+          "type": "Industry",
+          "sentiment": 0,
+          "weight": 2,
+          "final_weight": 1.8,
+          "source_authority": 3,
+          "recency_factor": 0.6,
+          "source": "Yahoo Finance"
+        },
+        {
+          "date": "2026-05-06",
+          "title": "Quanta Services (PWR) Is Up 22.3% After Raising 2026 Outlook On Record Infrastructure Backlog - What",
+          "type": "Earnings",
+          "sentiment": 1,
+          "weight": 2,
+          "final_weight": 2.34,
+          "source_authority": 3,
+          "recency_factor": 0.6,
+          "source": "Yahoo Finance"
+        },
+        {
+          "date": "2026-05-06",
+          "title": "3 Companies Reporting Record Results This Earnings Season",
+          "type": "Earnings",
+          "sentiment": 1,
+          "weight": 3,
+          "final_weight": 2.73,
+          "source_authority": 3.5,
+          "recency_factor": 0.6,
+          "source": "Finnhub"
+        }
+      ]
+    },
+    "NYSE:NVT": {
+      "name": "NVT",
+      "score": 92,
+      "score_raw": 19.13,
+      "score_components": {
+        "positive_weight_sum": 19.13,
+        "negative_weight_sum": 0,
+        "news_effective_count": 12,
+        "news_dropped_count": 28
+      },
+      "signal": "WARN No Trade (Overheated)",
+      "strategy": "Score very high but overheated — wait for pullback to buy dip",
+      "suitable_for": "Buy Dip (wait for pullback)",
+      "confidence": "Low (risk present)",
+      "patterns": [
+        "Sentiment Strengthening UP (trend)",
+        "WARNING: Overheated Sentiment (one-sided bullish)"
+      ],
+      "positive_factors": [
+        "[Earnings|w2.81] nVent (NVT): The Best European Stock That Beat Earnings Estimates to B",
+        "[Analyst Action|w2.1] Citigroup Maintains Buy on nVent Electric, Raises Price Target to $187",
+        "[Earnings|w1.91] nVent Electric Q1 Earnings Beat Estimates, Revenues Rise Y/Y"
+      ],
+      "negative_factors": [],
+      "news_count": 12,
+      "news_dropped": 28,
+      "top_news": [
+        {
+          "date": "2026-05-07",
+          "title": "nVent (NVT): The Best European Stock That Beat Earnings Estimates to Buy",
+          "type": "Earnings",
+          "sentiment": 1,
+          "weight": 3,
+          "final_weight": 2.81,
+          "source_authority": 3,
+          "recency_factor": 0.72,
+          "source": "Yahoo Finance"
+        },
+        {
+          "date": "2026-05-05",
+          "title": "nVent to Participate in Upcoming Investor Conference",
+          "type": "Industry",
+          "sentiment": 0,
+          "weight": 2,
+          "final_weight": 1.75,
+          "source_authority": 3.5,
+          "recency_factor": 0.5,
+          "source": "Finnhub"
+        },
+        {
+          "date": "2026-05-05",
+          "title": "Best Momentum Stock to Buy for May 5th",
+          "type": "Industry",
+          "sentiment": 1,
+          "weight": 2,
+          "final_weight": 1.75,
+          "source_authority": 3.5,
+          "recency_factor": 0.5,
+          "source": "Finnhub"
+        },
+        {
+          "date": "2026-05-05",
+          "title": "Citigroup Maintains Buy on nVent Electric, Raises Price Target to $187",
+          "type": "Analyst Action",
+          "sentiment": 1,
+          "weight": 2,
+          "final_weight": 2.1,
+          "source_authority": 3.5,
+          "recency_factor": 0.5,
+          "source": "Finnhub"
+        },
+        {
+          "date": "2026-05-04",
+          "title": "Compared to Estimates, nVent (NVT) Q1 Earnings: A Look at Key Metrics",
+          "type": "Earnings",
+          "sentiment": 0,
+          "weight": 2,
+          "final_weight": 1.64,
+          "source_authority": 3,
+          "recency_factor": 0.42,
+          "source": "Yahoo Finance"
+        }
+      ]
+    },
+    "NYSE:SPNT": {
+      "name": "SPNT",
+      "score": 91,
+      "score_raw": 9.88,
+      "score_components": {
+        "positive_weight_sum": 9.88,
+        "negative_weight_sum": 0,
+        "news_effective_count": 3,
+        "news_dropped_count": 20
+      },
+      "signal": "GREEN Long (Strong)",
+      "strategy": "Multiple bullish catalysts converging — strong sentiment + fundamental support",
+      "suitable_for": "Momentum / Hold",
+      "confidence": "High",
+      "patterns": [],
+      "positive_factors": [
+        "[Earnings|w3.32] SiriusPoint (SPNT) Q1 Earnings Beat Estimates",
+        "[Earnings|w3.28] SiriusPoint Ltd (NYSE:SPNT) Beats Q1 Estimates as Underwriting Discipl",
+        "[Earnings|w3.28] SiriusPoint Q1 EPS $0.82 Beats $0.71 Estimate, Sales $774.600M Beat $7"
+      ],
+      "negative_factors": [],
+      "news_count": 3,
+      "news_dropped": 20,
+      "top_news": [
+        {
+          "date": "2026-05-08",
+          "title": "SiriusPoint (SPNT) Q1 Earnings Beat Estimates",
+          "type": "Earnings",
+          "sentiment": 1,
+          "weight": 3,
+          "final_weight": 3.32,
+          "source_authority": 3,
+          "recency_factor": 0.85,
+          "source": "Yahoo Finance"
+        },
+        {
+          "date": "2026-05-07",
+          "title": "SiriusPoint Ltd (NYSE:SPNT) Beats Q1 Estimates as Underwriting Discipline Drives Profit Jump",
+          "type": "Earnings",
+          "sentiment": 1,
+          "weight": 3,
+          "final_weight": 3.28,
+          "source_authority": 3.5,
+          "recency_factor": 0.72,
+          "source": "Finnhub"
+        },
+        {
+          "date": "2026-05-07",
+          "title": "SiriusPoint Q1 EPS $0.82 Beats $0.71 Estimate, Sales $774.600M Beat $768.106M Estimate",
+          "type": "Earnings",
+          "sentiment": 1,
+          "weight": 3,
+          "final_weight": 3.28,
+          "source_authority": 3.5,
+          "recency_factor": 0.72,
+          "source": "Finnhub"
+        }
+      ]
+    },
+    "NASDAQ:AEIS": {
+      "name": "AEIS",
+      "score": 88,
+      "score_raw": 28.56,
+      "score_components": {
+        "positive_weight_sum": 28.56,
+        "negative_weight_sum": 0,
+        "news_effective_count": 17,
+        "news_dropped_count": 22
+      },
+      "signal": "WARN No Trade (Overheated)",
+      "strategy": "Score very high but overheated — wait for pullback to buy dip",
+      "suitable_for": "Buy Dip (wait for pullback)",
+      "confidence": "Low (risk present)",
+      "patterns": [
+        "Sentiment Strengthening UP (trend)",
+        "WARNING: Overheated Sentiment (one-sided bullish)"
+      ],
+      "positive_factors": [
+        "[Earnings|w2.81] Assessing Advanced Energy Industries (AEIS) Valuation After Strong Q1 ",
+        "[Earnings|w2.73] Advanced Energy: Data Center Revenue Doubles",
+        "[Analyst Action|w2.52] Citigroup Maintains Buy on Advanced Energy Indus, Raises Price Target "
+      ],
+      "negative_factors": [],
+      "news_count": 17,
+      "news_dropped": 22,
+      "top_news": [
+        {
+          "date": "2026-05-08",
+          "title": "Advanced Energy to Participate at Upcoming Investor Conferences",
+          "type": "Industry",
+          "sentiment": 0,
+          "weight": 3,
+          "final_weight": 2.98,
+          "source_authority": 3.5,
+          "recency_factor": 0.85,
+          "source": "Finnhub"
+        },
+        {
+          "date": "2026-05-07",
+          "title": "Advanced Energy Industries (AEIS) is a Top-Ranked Growth Stock: Should You Buy?",
+          "type": "Industry",
+          "sentiment": 1,
+          "weight": 2,
+          "final_weight": 2.16,
+          "source_authority": 3,
+          "recency_factor": 0.72,
+          "source": "Yahoo Finance"
+        },
+        {
+          "date": "2026-05-07",
+          "title": "Assessing Advanced Energy Industries (AEIS) Valuation After Strong Q1 Results And Higher AI Data Cen",
+          "type": "Earnings",
+          "sentiment": 1,
+          "weight": 3,
+          "final_weight": 2.81,
+          "source_authority": 3,
+          "recency_factor": 0.72,
+          "source": "Yahoo Finance"
+        },
+        {
+          "date": "2026-05-06",
+          "title": "Here's Why Advanced Energy Industries (AEIS) is a Strong Momentum Stock",
+          "type": "Industry",
+          "sentiment": 1,
+          "weight": 2,
+          "final_weight": 1.8,
+          "source_authority": 3,
+          "recency_factor": 0.6,
+          "source": "Yahoo Finance"
+        },
+        {
+          "date": "2026-05-06",
+          "title": "Citigroup Maintains Buy on Advanced Energy Indus, Raises Price Target to $410",
+          "type": "Analyst Action",
+          "sentiment": 1,
+          "weight": 3,
+          "final_weight": 2.52,
+          "source_authority": 3.5,
+          "recency_factor": 0.6,
+          "source": "Finnhub"
+        }
+      ]
+    },
+    "NYSE:GLW": {
+      "name": "GLW",
+      "score": 85,
+      "score_raw": 8.3,
+      "score_components": {
+        "positive_weight_sum": 8.3,
+        "negative_weight_sum": 0,
+        "news_effective_count": 4,
+        "news_dropped_count": 35
+      },
+      "signal": "GREEN Long (Strong)",
+      "strategy": "Multiple bullish catalysts converging — strong sentiment + fundamental support",
+      "suitable_for": "Momentum / Hold",
+      "confidence": "High",
+      "patterns": [],
+      "positive_factors": [
+        "[Analyst Action|w3.02] Oppenheimer Maintains Outperform on Corning, Raises Price Target to $2",
+        "[Earnings|w2.73] Is Corning Incorporated (GLW) One of the Best Performing Dividend Stoc",
+        "[Industry|w2.55] Is Corning (GLW) Getting Ahead Of Itself After A 311% One Year Surge?"
+      ],
+      "negative_factors": [],
+      "news_count": 4,
+      "news_dropped": 35,
+      "top_news": [
+        {
+          "date": "2026-05-08",
+          "title": "Jim Cramer Makes Big Prediction About Corning (GLW)",
+          "type": "Industry",
+          "sentiment": 0,
+          "weight": 3,
+          "final_weight": 2.55,
+          "source_authority": 3,
+          "recency_factor": 0.85,
+          "source": "Yahoo Finance"
+        },
+        {
+          "date": "2026-05-08",
+          "title": "Is Corning (GLW) Getting Ahead Of Itself After A 311% One Year Surge?",
+          "type": "Industry",
+          "sentiment": 1,
+          "weight": 3,
+          "final_weight": 2.55,
+          "source_authority": 3,
+          "recency_factor": 0.85,
+          "source": "Yahoo Finance"
+        },
+        {
+          "date": "2026-05-07",
+          "title": "Oppenheimer Maintains Outperform on Corning, Raises Price Target to $210",
+          "type": "Analyst Action",
+          "sentiment": 1,
+          "weight": 3,
+          "final_weight": 3.02,
+          "source_authority": 3.5,
+          "recency_factor": 0.72,
+          "source": "Finnhub"
+        },
+        {
+          "date": "2026-05-06",
+          "title": "Is Corning Incorporated (GLW) One of the Best Performing Dividend Stocks So Far in 2026",
+          "type": "Earnings",
+          "sentiment": 1,
+          "weight": 3,
+          "final_weight": 2.73,
+          "source_authority": 3.5,
+          "recency_factor": 0.6,
+          "source": "Finnhub"
+        }
+      ]
+    },
+    "NYSE:TRNO": {
+      "name": "TRNO",
+      "score": 78,
+      "score_raw": 6.68,
+      "score_components": {
+        "positive_weight_sum": 6.68,
+        "negative_weight_sum": 0,
+        "news_effective_count": 2,
+        "news_dropped_count": 14
+      },
+      "signal": "GREEN Long (Strong)",
+      "strategy": "Multiple bullish catalysts converging — strong sentiment + fundamental support",
+      "suitable_for": "Momentum / Hold",
+      "confidence": "High",
+      "patterns": [],
+      "positive_factors": [
+        "[Earnings|w3.87] Terreno Realty Corp (NYSE:TRNO) Shows Strong Growth Fundamentals and B",
+        "[Earnings|w2.81] Terreno Realty (TRNO) Valuation Check After Strong Q1 Earnings And Por"
+      ],
+      "negative_factors": [],
+      "news_count": 2,
+      "news_dropped": 14,
+      "top_news": [
+        {
+          "date": "2026-05-08",
+          "title": "Terreno Realty Corp (NYSE:TRNO) Shows Strong Growth Fundamentals and Bullish Technical Breakout Setu",
+          "type": "Earnings",
+          "sentiment": 1,
+          "weight": 4,
+          "final_weight": 3.87,
+          "source_authority": 3.5,
+          "recency_factor": 0.85,
+          "source": "Finnhub"
+        },
+        {
+          "date": "2026-05-07",
+          "title": "Terreno Realty (TRNO) Valuation Check After Strong Q1 Earnings And Portfolio Expansion",
+          "type": "Earnings",
+          "sentiment": 1,
+          "weight": 3,
+          "final_weight": 2.81,
+          "source_authority": 3,
+          "recency_factor": 0.72,
+          "source": "Yahoo Finance"
+        }
+      ]
+    },
+    "NASDAQ:KALU": {
+      "name": "KALU",
+      "score": 77,
+      "score_raw": 6.49,
+      "score_components": {
+        "positive_weight_sum": 6.49,
+        "negative_weight_sum": 0,
+        "news_effective_count": 4,
+        "news_dropped_count": 19
+      },
+      "signal": "GREEN Long (Strong)",
+      "strategy": "Multiple bullish catalysts converging — strong sentiment + fundamental support",
+      "suitable_for": "Momentum / Hold",
+      "confidence": "High",
+      "patterns": [
+        "Sentiment Strengthening UP (trend)"
+      ],
+      "positive_factors": [
+        "[Earnings|w2.27] This Applied Materials Analyst Begins Coverage On A Bullish Note; Here",
+        "[Earnings|w2.27] Kaiser Aluminum: Dangerous Valuation In May 2026",
+        "[Earnings|w1.95] A Look At Kaiser Aluminum (KALU) Valuation After Its Strong Q1 2026 Ea"
+      ],
+      "negative_factors": [],
+      "news_count": 4,
+      "news_dropped": 19,
+      "top_news": [
+        {
+          "date": "2026-05-05",
+          "title": "A Look At Kaiser Aluminum (KALU) Valuation After Its Strong Q1 2026 Earnings Beat And Guidance Upgra",
+          "type": "Earnings",
+          "sentiment": 1,
+          "weight": 2,
+          "final_weight": 1.95,
+          "source_authority": 3,
+          "recency_factor": 0.5,
+          "source": "Yahoo Finance"
+        },
+        {
+          "date": "2026-05-05",
+          "title": "This Applied Materials Analyst Begins Coverage On A Bullish Note; Here Are Top 5 Initiations For Tue",
+          "type": "Earnings",
+          "sentiment": 1,
+          "weight": 2,
+          "final_weight": 2.27,
+          "source_authority": 3.5,
+          "recency_factor": 0.5,
+          "source": "Finnhub"
+        },
+        {
+          "date": "2026-05-05",
+          "title": "UBS Initiates Coverage On Kaiser Aluminum with Neutral Rating, Announces Price Target of $176",
+          "type": "Analyst Action",
+          "sentiment": 0,
+          "weight": 2,
+          "final_weight": 2.1,
+          "source_authority": 3.5,
+          "recency_factor": 0.5,
+          "source": "Finnhub"
+        },
+        {
+          "date": "2026-05-05",
+          "title": "Kaiser Aluminum: Dangerous Valuation In May 2026",
+          "type": "Earnings",
+          "sentiment": 1,
+          "weight": 2,
+          "final_weight": 2.27,
+          "source_authority": 3.5,
+          "recency_factor": 0.5,
+          "source": "Finnhub"
+        }
+      ]
+    },
+    "NASDAQ:ARM": {
+      "name": "ARM",
+      "score": 74,
+      "score_raw": 28.87,
+      "score_components": {
+        "positive_weight_sum": 30.5,
+        "negative_weight_sum": 1.63,
+        "news_effective_count": 22,
+        "news_dropped_count": 17
+      },
+      "signal": "GREEN Long (Mid)",
+      "strategy": "Positive sentiment flow — suitable for dip-buy or light momentum entry",
+      "suitable_for": "Buy Dip / Light Momentum",
+      "confidence": "Medium",
+      "patterns": [
+        "Sentiment Strengthening UP (trend)"
+      ],
+      "positive_factors": [
+        "[Earnings|w3.28] Wall Street ends lower as chip stocks give up gains",
+        "[Earnings|w3.28] Arm slides as investors question near-term monetization of AI demand",
+        "[Earnings|w3.28] Arm (ARM) Q4 2026 Earnings Call Transcript"
+      ],
+      "negative_factors": [
+        "[Earnings|w1.63] Arm Holdings Stock May Plunge Following Results (Technical Analysis)"
+      ],
+      "news_count": 22,
+      "news_dropped": 17,
+      "top_news": [
+        {
+          "date": "2026-05-07",
+          "title": "Analyst Report: Arm Holdings plc",
+          "type": "Industry",
+          "sentiment": 0,
+          "weight": 2,
+          "final_weight": 2.16,
+          "source_authority": 3,
+          "recency_factor": 0.72,
+          "source": "Yahoo Finance"
+        },
+        {
+          "date": "2026-05-07",
+          "title": "These Stocks Are Today’s Movers: IonQ, Arm, Datadog, Fortinet, Nvidia, Whirlpool, Planet Fitness, Fa",
+          "type": "Industry",
+          "sentiment": 0,
+          "weight": 2,
+          "final_weight": 2.16,
+          "source_authority": 3,
+          "recency_factor": 0.72,
+          "source": "Yahoo Finance"
+        },
+        {
+          "date": "2026-05-07",
+          "title": "Stocks to Watch Recap: Whirlpool, DoorDash, Arm, Airbnb",
+          "type": "Industry",
+          "sentiment": 0,
+          "weight": 2,
+          "final_weight": 2.16,
+          "source_authority": 3,
+          "recency_factor": 0.72,
+          "source": "Yahoo Finance"
+        },
+        {
+          "date": "2026-05-07",
+          "title": "Wall Street ends lower as chip stocks give up gains",
+          "type": "Earnings",
+          "sentiment": 1,
+          "weight": 3,
+          "final_weight": 3.28,
+          "source_authority": 3.5,
+          "recency_factor": 0.72,
+          "source": "Finnhub"
+        },
+        {
+          "date": "2026-05-07",
+          "title": "Stock Market Today: Dow Falls 300 Points, Nasdaq Keeps Losses Small; IBD 50 Leader SiTime Soars (Liv",
+          "type": "Earnings",
+          "sentiment": 0,
+          "weight": 3,
+          "final_weight": 3.28,
+          "source_authority": 3.5,
+          "recency_factor": 0.72,
+          "source": "Finnhub"
+        }
+      ]
+    },
+    "NYSE:DTM": {
+      "name": "DTM",
+      "score": 74,
+      "score_raw": 5.77,
+      "score_components": {
+        "positive_weight_sum": 5.77,
+        "negative_weight_sum": 0,
+        "news_effective_count": 3,
+        "news_dropped_count": 25
+      },
+      "signal": "GREEN Long (Mid)",
+      "strategy": "Positive sentiment flow — suitable for dip-buy or light momentum entry",
+      "suitable_for": "Buy Dip / Light Momentum",
+      "confidence": "Medium",
+      "patterns": [],
+      "positive_factors": [
+        "[Analyst Action|w2.1] Mizuho Maintains Neutral on DT Midstream, Raises Price Target to $153",
+        "[Earnings|w1.91] Earnings Beat: DT Midstream, Inc. Just Beat Analyst Forecasts, And Ana",
+        "[Analyst Action|w1.76] Citigroup Maintains Buy on DT Midstream, Raises Price Target to $169"
+      ],
+      "negative_factors": [],
+      "news_count": 3,
+      "news_dropped": 25,
+      "top_news": [
+        {
+          "date": "2026-05-05",
+          "title": "Mizuho Maintains Neutral on DT Midstream, Raises Price Target to $153",
+          "type": "Analyst Action",
+          "sentiment": 1,
+          "weight": 2,
+          "final_weight": 2.1,
+          "source_authority": 3.5,
+          "recency_factor": 0.5,
+          "source": "Finnhub"
+        },
+        {
+          "date": "2026-05-04",
+          "title": "Citigroup Maintains Buy on DT Midstream, Raises Price Target to $169",
+          "type": "Analyst Action",
+          "sentiment": 1,
+          "weight": 2,
+          "final_weight": 1.76,
+          "source_authority": 3.5,
+          "recency_factor": 0.42,
+          "source": "Finnhub"
+        },
+        {
+          "date": "2026-05-04",
+          "title": "Earnings Beat: DT Midstream, Inc. Just Beat Analyst Forecasts, And Analysts Have Been Updating Their",
+          "type": "Earnings",
+          "sentiment": 1,
+          "weight": 2,
+          "final_weight": 1.91,
+          "source_authority": 3.5,
+          "recency_factor": 0.42,
+          "source": "Finnhub"
+        }
+      ]
+    },
+    "NASDAQ:ADUS": {
+      "name": "ADUS",
+      "score": 74,
+      "score_raw": 9.15,
+      "score_components": {
+        "positive_weight_sum": 11.06,
+        "negative_weight_sum": 1.91,
+        "news_effective_count": 9,
+        "news_dropped_count": 21
+      },
+      "signal": "GREEN Long (Mid)",
+      "strategy": "Positive sentiment flow — suitable for dip-buy or light momentum entry",
+      "suitable_for": "Buy Dip / Light Momentum",
+      "confidence": "Medium",
+      "patterns": [
+        "Sentiment Strengthening UP (trend)"
+      ],
+      "positive_factors": [
+        "[Earnings|w2.73] Addus HomeCare Corp (NASDAQ:ADUS) Passes the Caviar Cruise Quality Scr",
+        "[Analyst Action|w2.52] Citizens Maintains Market Outperform on Addus HomeCare, Lowers Price T",
+        "[Earnings|w1.95] A Look At Addus HomeCare (ADUS) Valuation After Q1 Earnings Beat And I"
+      ],
+      "negative_factors": [
+        "[Earnings|w1.91] Addus HomeCare (NASDAQ:ADUS) Q1 2026 Revenue Miss Overshadows Adjusted"
+      ],
+      "news_count": 9,
+      "news_dropped": 21,
+      "top_news": [
+        {
+          "date": "2026-05-06",
+          "title": "Is It Time To Reconsider Addus HomeCare (ADUS) After Its Recent DCF Valuation Gap",
+          "type": "Industry",
+          "sentiment": 0,
+          "weight": 2,
+          "final_weight": 1.8,
+          "source_authority": 3,
+          "recency_factor": 0.6,
+          "source": "Yahoo Finance"
+        },
+        {
+          "date": "2026-05-06",
+          "title": "Addus HomeCare Corp (NASDAQ:ADUS) Passes the Caviar Cruise Quality Screen",
+          "type": "Earnings",
+          "sentiment": 1,
+          "weight": 3,
+          "final_weight": 2.73,
+          "source_authority": 3.5,
+          "recency_factor": 0.6,
+          "source": "Finnhub"
+        },
+        {
+          "date": "2026-05-06",
+          "title": "Citizens Maintains Market Outperform on Addus HomeCare, Lowers Price Target to $142",
+          "type": "Analyst Action",
+          "sentiment": 1,
+          "weight": 3,
+          "final_weight": 2.52,
+          "source_authority": 3.5,
+          "recency_factor": 0.6,
+          "source": "Finnhub"
+        },
+        {
+          "date": "2026-05-05",
+          "title": "A Look At Addus HomeCare (ADUS) Valuation After Q1 Earnings Beat And Indiana Acquisitions",
+          "type": "Earnings",
+          "sentiment": 1,
+          "weight": 2,
+          "final_weight": 1.95,
+          "source_authority": 3,
+          "recency_factor": 0.5,
+          "source": "Yahoo Finance"
+        },
+        {
+          "date": "2026-05-05",
+          "title": "Should Addus HomeCare’s Q1 Beat, Revenue Miss, and Indiana Deals Prompt Action From ADUS Investors?",
+          "type": "Earnings",
+          "sentiment": 1,
+          "weight": 2,
+          "final_weight": 1.95,
+          "source_authority": 3,
+          "recency_factor": 0.5,
+          "source": "Yahoo Finance"
+        }
+      ]
+    },
+    "NASDAQ:ADI": {
+      "name": "ADI",
+      "score": 72,
+      "score_raw": 6.95,
+      "score_components": {
+        "positive_weight_sum": 6.95,
+        "negative_weight_sum": 0,
+        "news_effective_count": 7,
+        "news_dropped_count": 30
+      },
+      "signal": "GREEN Long (Mid)",
+      "strategy": "Positive sentiment flow — suitable for dip-buy or light momentum entry",
+      "suitable_for": "Buy Dip / Light Momentum",
+      "confidence": "Medium",
+      "patterns": [],
+      "positive_factors": [
+        "[Industry|w2.52] 4 Solid Stocks to Buy as AI Powers Steady Semiconductor Sales",
+        "[Earnings|w2.27] Analog Devices: Strongest Growth Outlook Among DAO Peers",
+        "[Industry|w2.16] Here's Why Analog Devices (ADI) is a Strong Growth Stock"
+      ],
+      "negative_factors": [],
+      "news_count": 7,
+      "news_dropped": 30,
+      "top_news": [
+        {
+          "date": "2026-05-07",
+          "title": "Here's Why Analog Devices (ADI) is a Strong Growth Stock",
+          "type": "Industry",
+          "sentiment": 1,
+          "weight": 2,
+          "final_weight": 2.16,
+          "source_authority": 3,
+          "recency_factor": 0.72,
+          "source": "Yahoo Finance"
+        },
+        {
+          "date": "2026-05-07",
+          "title": "Analog Devices, Inc. (ADI) Hit a 52 Week High, Can the Run Continue?",
+          "type": "Industry",
+          "sentiment": 0,
+          "weight": 2,
+          "final_weight": 2.16,
+          "source_authority": 3,
+          "recency_factor": 0.72,
+          "source": "Yahoo Finance"
+        },
+        {
+          "date": "2026-05-07",
+          "title": "Analog Devices, Inc. (ADI) Is a Trending Stock: Facts to Know Before Betting on It",
+          "type": "Industry",
+          "sentiment": 0,
+          "weight": 2,
+          "final_weight": 2.16,
+          "source_authority": 3,
+          "recency_factor": 0.72,
+          "source": "Yahoo Finance"
+        },
+        {
+          "date": "2026-05-07",
+          "title": "4 Solid Stocks to Buy as AI Powers Steady Semiconductor Sales",
+          "type": "Industry",
+          "sentiment": 1,
+          "weight": 3,
+          "final_weight": 2.52,
+          "source_authority": 3.5,
+          "recency_factor": 0.72,
+          "source": "Finnhub"
+        },
+        {
+          "date": "2026-05-06",
+          "title": "Analog Devices (ADI) Is Up 5.6% After Analyst Upgrades Ahead Of Earnings - What's Changed",
+          "type": "Earnings",
+          "sentiment": 0,
+          "weight": 3,
+          "final_weight": 2.73,
+          "source_authority": 3.5,
+          "recency_factor": 0.6,
+          "source": "Finnhub"
+        }
+      ]
+    },
+    "NYSE:HG": {
+      "name": "HG",
+      "score": 71,
+      "score_raw": 5.09,
+      "score_components": {
+        "positive_weight_sum": 5.09,
+        "negative_weight_sum": 0,
+        "news_effective_count": 4,
+        "news_dropped_count": 27
+      },
+      "signal": "GREEN Long (Mid)",
+      "strategy": "Positive sentiment flow — suitable for dip-buy or light momentum entry",
+      "suitable_for": "Buy Dip / Light Momentum",
+      "confidence": "Medium",
+      "patterns": [],
+      "positive_factors": [
+        "[Analyst Action|w2.52] Wells Fargo Maintains Overweight on Hamilton Insurance Group, Raises P",
+        "[Earnings|w1.4] HG Q1 Deep Dive: Underwriting Discipline and Selective Growth Shape Ea",
+        "[Earnings|w1.17] Hamilton Insurance Group Ltd (HG) Q1 2026 Earnings Call Highlights: St"
+      ],
+      "negative_factors": [],
+      "news_count": 4,
+      "news_dropped": 27,
+      "top_news": [
+        {
+          "date": "2026-05-06",
+          "title": "Wells Fargo Maintains Overweight on Hamilton Insurance Group, Raises Price Target to $37",
+          "type": "Analyst Action",
+          "sentiment": 1,
+          "weight": 3,
+          "final_weight": 2.52,
+          "source_authority": 3.5,
+          "recency_factor": 0.6,
+          "source": "Finnhub"
+        },
+        {
+          "date": "2026-05-03",
+          "title": "HG Q1 Deep Dive: Underwriting Discipline and Selective Growth Shape Earnings",
+          "type": "Earnings",
+          "sentiment": 1,
+          "weight": 1,
+          "final_weight": 1.4,
+          "source_authority": 3,
+          "recency_factor": 0.36,
+          "source": "Yahoo Finance"
+        },
+        {
+          "date": "2026-05-02",
+          "title": "Hamilton Insurance Group Ltd (HG) Q1 2026 Earnings Call Highlights: Strong Net Income and ...",
+          "type": "Earnings",
+          "sentiment": 1,
+          "weight": 1,
+          "final_weight": 1.17,
+          "source_authority": 3,
+          "recency_factor": 0.3,
+          "source": "Yahoo Finance"
+        },
+        {
+          "date": "2026-05-02",
+          "title": "Will Stronger Underwriting Margins and Lower Revenue Volumes Change Hamilton Insurance Group's (HG) ",
+          "type": "Earnings",
+          "sentiment": 0,
+          "weight": 1,
+          "final_weight": 1.17,
+          "source_authority": 3,
+          "recency_factor": 0.3,
+          "source": "Yahoo Finance"
+        }
+      ]
+    },
+    "NASDAQ:MTSI": {
+      "name": "MTSI",
+      "score": 69,
+      "score_raw": 13.71,
+      "score_components": {
+        "positive_weight_sum": 13.71,
+        "negative_weight_sum": 0,
+        "news_effective_count": 12,
+        "news_dropped_count": 21
+      },
+      "signal": "GREEN Long (Mid)",
+      "strategy": "Positive sentiment flow — suitable for dip-buy or light momentum entry",
+      "suitable_for": "Buy Dip / Light Momentum",
+      "confidence": "Medium",
+      "patterns": [],
+      "positive_factors": [
+        "[Earnings|w3.87] MACOM Technology Solutions Q2 Earnings Call Highlights",
+        "[Earnings|w3.28] MACOM Technology Solutions H (NASDAQ:MTSI) Surges on Strong Fiscal Q3 ",
+        "[Earnings|w3.28] Macom Technology Solutions Delivers Strong Fiscal Q2 Results, Outlook"
+      ],
+      "negative_factors": [],
+      "news_count": 12,
+      "news_dropped": 21,
+      "top_news": [
+        {
+          "date": "2026-05-08",
+          "title": "Here's What Key Metrics Tell Us About M/A-Com (MTSI) Q2 Earnings",
+          "type": "Earnings",
+          "sentiment": 0,
+          "weight": 3,
+          "final_weight": 3.32,
+          "source_authority": 3,
+          "recency_factor": 0.85,
+          "source": "Yahoo Finance"
+        },
+        {
+          "date": "2026-05-08",
+          "title": "MACOM Technology Solutions Q2 Earnings Call Highlights",
+          "type": "Earnings",
+          "sentiment": 1,
+          "weight": 4,
+          "final_weight": 3.87,
+          "source_authority": 3.5,
+          "recency_factor": 0.85,
+          "source": "Finnhub"
+        },
+        {
+          "date": "2026-05-07",
+          "title": "MACOM (MTSI) Q2 2026 Earnings Transcript",
+          "type": "Earnings",
+          "sentiment": 0,
+          "weight": 3,
+          "final_weight": 2.81,
+          "source_authority": 3,
+          "recency_factor": 0.72,
+          "source": "Yahoo Finance"
+        },
+        {
+          "date": "2026-05-07",
+          "title": "MTSI Q2 Earnings Surpass Expectations, Revenues Rise Y/Y",
+          "type": "Earnings",
+          "sentiment": 0,
+          "weight": 3,
+          "final_weight": 2.81,
+          "source_authority": 3,
+          "recency_factor": 0.72,
+          "source": "Yahoo Finance"
+        },
+        {
+          "date": "2026-05-07",
+          "title": "M/A-Com (MTSI) Surpasses Q2 Earnings and Revenue Estimates",
+          "type": "Earnings",
+          "sentiment": 0,
+          "weight": 3,
+          "final_weight": 2.81,
+          "source_authority": 3,
+          "recency_factor": 0.72,
+          "source": "Yahoo Finance"
+        }
+      ]
+    },
+    "NYSE:CRC": {
+      "name": "CRC",
+      "score": 69,
+      "score_raw": 6.04,
+      "score_components": {
+        "positive_weight_sum": 6.04,
+        "negative_weight_sum": 0,
+        "news_effective_count": 8,
+        "news_dropped_count": 24
+      },
+      "signal": "GREEN Long (Mid)",
+      "strategy": "Positive sentiment flow — suitable for dip-buy or light momentum entry",
+      "suitable_for": "Buy Dip / Light Momentum",
+      "confidence": "Medium",
+      "patterns": [],
+      "positive_factors": [
+        "[Earnings|w2.27] California Resources Corp (NYSE:CRC) Tops Q1 Estimates, Raises 2026 EB",
+        "[Earnings|w2.27] California Resources Q1 Adj. EPS $0.88 Beats $0.85 Estimate, Sales $11",
+        "[Industry|w1.5] CRC targets 1% 2026 entry-to-exit gross production growth and $1.45B a"
+      ],
+      "negative_factors": [],
+      "news_count": 8,
+      "news_dropped": 24,
+      "top_news": [
+        {
+          "date": "2026-05-06",
+          "title": "California Resources Corporation (CRC) Q1 2026 Earnings Call Transcript",
+          "type": "Earnings",
+          "sentiment": 0,
+          "weight": 3,
+          "final_weight": 2.73,
+          "source_authority": 3.5,
+          "recency_factor": 0.6,
+          "source": "Finnhub"
+        },
+        {
+          "date": "2026-05-06",
+          "title": "CRC targets 1% 2026 entry-to-exit gross production growth and $1.45B adjusted EBITDAX as it ramps to",
+          "type": "Industry",
+          "sentiment": 1,
+          "weight": 2,
+          "final_weight": 1.5,
+          "source_authority": 2.5,
+          "recency_factor": 0.6,
+          "source": "Seeking Alpha"
+        },
+        {
+          "date": "2026-05-05",
+          "title": "California Resources Corporation (CRC) Q1 Earnings and Revenues Top Estimates",
+          "type": "Earnings",
+          "sentiment": 0,
+          "weight": 2,
+          "final_weight": 1.95,
+          "source_authority": 3,
+          "recency_factor": 0.5,
+          "source": "Yahoo Finance"
+        },
+        {
+          "date": "2026-05-05",
+          "title": "California Resources (NYSE:CRC) Reports Sales Below Analyst Estimates In Q1 CY2026 Earnings",
+          "type": "Earnings",
+          "sentiment": 0,
+          "weight": 2,
+          "final_weight": 1.95,
+          "source_authority": 3,
+          "recency_factor": 0.5,
+          "source": "Yahoo Finance"
+        },
+        {
+          "date": "2026-05-05",
+          "title": "California Resources Corp (NYSE:CRC) Tops Q1 Estimates, Raises 2026 EBITDAX Guidance by 42% on Stron",
+          "type": "Earnings",
+          "sentiment": 1,
+          "weight": 2,
+          "final_weight": 2.27,
+          "source_authority": 3.5,
+          "recency_factor": 0.5,
+          "source": "Finnhub"
+        }
+      ]
+    },
+    "NYSE:RRC": {
+      "name": "RRC",
+      "score": 68,
+      "score_raw": 4.4,
+      "score_components": {
+        "positive_weight_sum": 4.4,
+        "negative_weight_sum": 0,
+        "news_effective_count": 2,
+        "news_dropped_count": 26
+      },
+      "signal": "GREEN Long (Mid)",
+      "strategy": "Positive sentiment flow — suitable for dip-buy or light momentum entry",
+      "suitable_for": "Buy Dip / Light Momentum",
+      "confidence": "Medium",
+      "patterns": [],
+      "positive_factors": [
+        "[M&A|w2.45] Vanguard’s New Stakes Deepen Institutional Ownership In Undervalued Ra",
+        "[Earnings|w1.95] Assessing Range Resources (RRC) Valuation After Strong Q1 2026 Revenue"
+      ],
+      "negative_factors": [],
+      "news_count": 2,
+      "news_dropped": 26,
+      "top_news": [
+        {
+          "date": "2026-05-05",
+          "title": "Assessing Range Resources (RRC) Valuation After Strong Q1 2026 Revenue And Net Income Results",
+          "type": "Earnings",
+          "sentiment": 1,
+          "weight": 2,
+          "final_weight": 1.95,
+          "source_authority": 3,
+          "recency_factor": 0.5,
+          "source": "Yahoo Finance"
+        },
+        {
+          "date": "2026-05-05",
+          "title": "Vanguard’s New Stakes Deepen Institutional Ownership In Undervalued Range Resources",
+          "type": "M&A",
+          "sentiment": 1,
+          "weight": 2,
+          "final_weight": 2.45,
+          "source_authority": 3.5,
+          "recency_factor": 0.5,
+          "source": "Finnhub"
+        }
+      ]
+    },
+    "NYSE:DY": {
+      "name": "DY",
+      "score": 66,
+      "score_raw": 3.78,
+      "score_components": {
+        "positive_weight_sum": 3.78,
+        "negative_weight_sum": 0,
+        "news_effective_count": 3,
+        "news_dropped_count": 32
+      },
+      "signal": "GREEN Long (Mid)",
+      "strategy": "Positive sentiment flow — suitable for dip-buy or light momentum entry",
+      "suitable_for": "Buy Dip / Light Momentum",
+      "confidence": "Medium",
+      "patterns": [],
+      "positive_factors": [
+        "[Earnings|w2.27] Why Dycom Is A Strong Buy After The Breakout (Rating Upgrade)",
+        "[M&A|w1.51] Dycom Industries (DY) Is Up 5.6% After Vanguard Discloses 5% Stake And"
+      ],
+      "negative_factors": [],
+      "news_count": 3,
+      "news_dropped": 32,
+      "top_news": [
+        {
+          "date": "2026-05-07",
+          "title": "Dycom Industries (DY) Appoints Regina Salazar as Chief Information Officer",
+          "type": "Industry",
+          "sentiment": 0,
+          "weight": 2,
+          "final_weight": 2.16,
+          "source_authority": 3,
+          "recency_factor": 0.72,
+          "source": "Yahoo Finance"
+        },
+        {
+          "date": "2026-05-05",
+          "title": "Why Dycom Is A Strong Buy After The Breakout (Rating Upgrade)",
+          "type": "Earnings",
+          "sentiment": 1,
+          "weight": 2,
+          "final_weight": 2.27,
+          "source_authority": 3.5,
+          "recency_factor": 0.5,
+          "source": "Finnhub"
+        },
+        {
+          "date": "2026-05-03",
+          "title": "Dycom Industries (DY) Is Up 5.6% After Vanguard Discloses 5% Stake And Sector Rally – Has The Bull C",
+          "type": "M&A",
+          "sentiment": 1,
+          "weight": 2,
+          "final_weight": 1.51,
+          "source_authority": 3,
+          "recency_factor": 0.36,
+          "source": "Yahoo Finance"
+        }
+      ]
+    },
+    "NASDAQ:ADEA": {
+      "name": "ADEA",
+      "score": 66,
+      "score_raw": 7.14,
+      "score_components": {
+        "positive_weight_sum": 7.14,
+        "negative_weight_sum": 0,
+        "news_effective_count": 12,
+        "news_dropped_count": 23
+      },
+      "signal": "GREEN Long (Mid)",
+      "strategy": "Positive sentiment flow — suitable for dip-buy or light momentum entry",
+      "suitable_for": "Buy Dip / Light Momentum",
+      "confidence": "Medium",
+      "patterns": [
+        "Sentiment Strengthening UP (trend)"
+      ],
+      "positive_factors": [
+        "[Earnings|w3.32] Adeia (ADEA) Is Down 13.9% After Strong Q1 Results And CEO Transition ",
+        "[Earnings|w1.91] Adeia Inc (NASDAQ:ADEA) Falls After Q1 Beat but Full-Year Guidance Dis",
+        "[Earnings|w1.91] Adeia Q1 Adj. EPS $0.38 Beats $0.33 Estimate, Sales $104.772M Beat $99"
+      ],
+      "negative_factors": [],
+      "news_count": 12,
+      "news_dropped": 23,
+      "top_news": [
+        {
+          "date": "2026-05-08",
+          "title": "Adeia (ADEA) Is Down 13.9% After Strong Q1 Results And CEO Transition Plan News – Has The Bull Case ",
+          "type": "Earnings",
+          "sentiment": 1,
+          "weight": 3,
+          "final_weight": 3.32,
+          "source_authority": 3,
+          "recency_factor": 0.85,
+          "source": "Yahoo Finance"
+        },
+        {
+          "date": "2026-05-05",
+          "title": "Adeia Inc. (ADEA) Q1 2026 Earnings Call Transcript",
+          "type": "Earnings",
+          "sentiment": 0,
+          "weight": 2,
+          "final_weight": 1.63,
+          "source_authority": 2.5,
+          "recency_factor": 0.5,
+          "source": "Seeking Alpha"
+        },
+        {
+          "date": "2026-05-04",
+          "title": "Adeia (ADEA) Q1 2026 Earnings Transcript",
+          "type": "Earnings",
+          "sentiment": 0,
+          "weight": 2,
+          "final_weight": 1.64,
+          "source_authority": 3,
+          "recency_factor": 0.42,
+          "source": "Yahoo Finance"
+        },
+        {
+          "date": "2026-05-04",
+          "title": "Adeia (ADEA) Surpasses Q1 Earnings and Revenue Estimates",
+          "type": "Earnings",
+          "sentiment": 0,
+          "weight": 2,
+          "final_weight": 1.64,
+          "source_authority": 3,
+          "recency_factor": 0.42,
+          "source": "Yahoo Finance"
+        },
+        {
+          "date": "2026-05-04",
+          "title": "Adeia Inc. (ADEA) Q1 2026 Earnings Call Transcript",
+          "type": "Earnings",
+          "sentiment": 0,
+          "weight": 2,
+          "final_weight": 1.91,
+          "source_authority": 3.5,
+          "recency_factor": 0.42,
+          "source": "Finnhub"
+        }
+      ]
+    },
+    "NYSE:FN": {
+      "name": "FN",
+      "score": 64,
+      "score_raw": 8.69,
+      "score_components": {
+        "positive_weight_sum": 10.79,
+        "negative_weight_sum": 2.1,
+        "news_effective_count": 14,
+        "news_dropped_count": 24
+      },
+      "signal": "GREEN Long (Mid)",
+      "strategy": "Positive sentiment flow — suitable for dip-buy or light momentum entry",
+      "suitable_for": "Buy Dip / Light Momentum",
+      "confidence": "Medium",
+      "patterns": [
+        "Sentiment Strengthening UP (trend)"
+      ],
+      "positive_factors": [
+        "[Analyst Action|w2.52] Barclays Maintains Overweight on Fabrinet, Raises Price Target to $702",
+        "[Earnings|w2.27] Fabrinet Posts Record Q3, But Don't Thank Nvidia: Analyst",
+        "[Analyst Action|w2.1] Needham Reiterates Buy on Fabrinet, Maintains $800 Price Target"
+      ],
+      "negative_factors": [
+        "[Analyst Action|w2.1] JP Morgan Maintains Neutral on Fabrinet, Lowers Price Target to $680"
+      ],
+      "news_count": 14,
+      "news_dropped": 24,
+      "top_news": [
+        {
+          "date": "2026-05-08",
+          "title": "Fabrinet (NYSE:FN) Released Earnings Last Week And Analysts Lifted Their Price Target To US$749",
+          "type": "Earnings",
+          "sentiment": 0,
+          "weight": 3,
+          "final_weight": 3.32,
+          "source_authority": 3,
+          "recency_factor": 0.85,
+          "source": "Yahoo Finance"
+        },
+        {
+          "date": "2026-05-07",
+          "title": "Fabrinet 2026 Q3 - Results - Earnings Call Presentation",
+          "type": "Earnings",
+          "sentiment": 0,
+          "weight": 3,
+          "final_weight": 3.28,
+          "source_authority": 3.5,
+          "recency_factor": 0.72,
+          "source": "Finnhub"
+        },
+        {
+          "date": "2026-05-07",
+          "title": "Applied Optoelectronics Crashes 14%, Coherent Slides 10%, Lumentum Falls 7% as Optics Trade Cools",
+          "type": "Industry",
+          "sentiment": 0,
+          "weight": 3,
+          "final_weight": 2.52,
+          "source_authority": 3.5,
+          "recency_factor": 0.72,
+          "source": "Finnhub"
+        },
+        {
+          "date": "2026-05-06",
+          "title": "Barclays Maintains Overweight on Fabrinet, Raises Price Target to $702",
+          "type": "Analyst Action",
+          "sentiment": 1,
+          "weight": 3,
+          "final_weight": 2.52,
+          "source_authority": 3.5,
+          "recency_factor": 0.6,
+          "source": "Finnhub"
+        },
+        {
+          "date": "2026-05-05",
+          "title": "FN Q3 Earnings Beat Estimates, Revenues Up on Strong Telecom & HPC",
+          "type": "Earnings",
+          "sentiment": 1,
+          "weight": 2,
+          "final_weight": 1.95,
+          "source_authority": 3,
+          "recency_factor": 0.5,
+          "source": "Yahoo Finance"
+        }
+      ]
+    },
+    "NYSE:FAF": {
+      "name": "FAF",
+      "score": 64,
+      "score_raw": 3.25,
+      "score_components": {
+        "positive_weight_sum": 3.25,
+        "negative_weight_sum": 0,
+        "news_effective_count": 4,
+        "news_dropped_count": 22
+      },
+      "signal": "GREEN Long (Mid)",
+      "strategy": "Positive sentiment flow — suitable for dip-buy or light momentum entry",
+      "suitable_for": "Buy Dip / Light Momentum",
+      "confidence": "Medium",
+      "patterns": [],
+      "positive_factors": [
+        "[Industry|w1.75] Best Value Stocks to Buy for May 5th",
+        "[Industry|w1.5] FAF Trades Near 52-Week High: Time to Buy the Stock for Solid Returns?"
+      ],
+      "negative_factors": [],
+      "news_count": 4,
+      "news_dropped": 22,
+      "top_news": [
+        {
+          "date": "2026-05-06",
+          "title": "First American Financial (FAF) Could Be a Great Choice",
+          "type": "Rumor",
+          "sentiment": 0,
+          "weight": 1,
+          "final_weight": 1.08,
+          "source_authority": 3,
+          "recency_factor": 0.6,
+          "source": "Yahoo Finance"
+        },
+        {
+          "date": "2026-05-05",
+          "title": "FAF Trades Near 52-Week High: Time to Buy the Stock for Solid Returns?",
+          "type": "Industry",
+          "sentiment": 1,
+          "weight": 2,
+          "final_weight": 1.5,
+          "source_authority": 3,
+          "recency_factor": 0.5,
+          "source": "Yahoo Finance"
+        },
+        {
+          "date": "2026-05-05",
+          "title": "Best Value Stocks to Buy for May 5th",
+          "type": "Industry",
+          "sentiment": 1,
+          "weight": 2,
+          "final_weight": 1.75,
+          "source_authority": 3.5,
+          "recency_factor": 0.5,
+          "source": "Finnhub"
+        },
+        {
+          "date": "2026-05-04",
+          "title": "Wall Street Analysts See a 25.8% Upside in First American Financial (FAF): Can the Stock Really Move",
+          "type": "Industry",
+          "sentiment": 0,
+          "weight": 1,
+          "final_weight": 1.26,
+          "source_authority": 3,
+          "recency_factor": 0.42,
+          "source": "Yahoo Finance"
+        }
+      ]
+    },
+    "NASDAQ:CPRX": {
+      "name": "CPRX",
+      "score": 63,
+      "score_raw": 3.02,
+      "score_components": {
+        "positive_weight_sum": 3.02,
+        "negative_weight_sum": 0,
+        "news_effective_count": 3,
+        "news_dropped_count": 30
+      },
+      "signal": "GREEN Long (Mid)",
+      "strategy": "Positive sentiment flow — suitable for dip-buy or light momentum entry",
+      "suitable_for": "Buy Dip / Light Momentum",
+      "confidence": "Medium",
+      "patterns": [],
+      "positive_factors": [
+        "[Analyst Action|w3.02] Stephens & Co. Downgrades Catalyst Pharmaceuticals to Equal-Weight"
+      ],
+      "negative_factors": [],
+      "news_count": 3,
+      "news_dropped": 30,
+      "top_news": [
+        {
+          "date": "2026-05-07",
+          "title": "Seeking Clues to Catalyst (CPRX) Q1 Earnings? A Peek Into Wall Street Projections for Key Metrics",
+          "type": "Earnings",
+          "sentiment": 0,
+          "weight": 3,
+          "final_weight": 2.81,
+          "source_authority": 3,
+          "recency_factor": 0.72,
+          "source": "Yahoo Finance"
+        },
+        {
+          "date": "2026-05-07",
+          "title": "Stephens & Co. Downgrades Catalyst Pharmaceuticals to Equal-Weight",
+          "type": "Analyst Action",
+          "sentiment": 1,
+          "weight": 3,
+          "final_weight": 3.02,
+          "source_authority": 3.5,
+          "recency_factor": 0.72,
+          "source": "Finnhub"
+        },
+        {
+          "date": "2026-05-07",
+          "title": "CPRX Stock Alert: Halper Sadeh LLC is Investigating Whether Catalyst Pharmaceuticals, Inc. is Obtain",
+          "type": "Industry",
+          "sentiment": 0,
+          "weight": 3,
+          "final_weight": 2.52,
+          "source_authority": 3.5,
+          "recency_factor": 0.72,
+          "source": "Finnhub"
+        }
+      ]
+    },
+    "NYSE:WT": {
+      "name": "WT",
+      "score": 62,
+      "score_raw": 2.81,
+      "score_components": {
+        "positive_weight_sum": 2.81,
+        "negative_weight_sum": 0,
+        "news_effective_count": 2,
+        "news_dropped_count": 24
+      },
+      "signal": "GREEN Long (Mid)",
+      "strategy": "Positive sentiment flow — suitable for dip-buy or light momentum entry",
+      "suitable_for": "Buy Dip / Light Momentum",
+      "confidence": "Medium",
+      "patterns": [],
+      "positive_factors": [
+        "[Earnings|w1.64] WT Q1 Deep Dive: Strategic Acquisitions and Diversified Flows Drive Re",
+        "[Earnings|w1.17] WisdomTree Inc (WT) Q1 2026 Earnings Call Highlights: Record AUM and R"
+      ],
+      "negative_factors": [],
+      "news_count": 2,
+      "news_dropped": 24,
+      "top_news": [
+        {
+          "date": "2026-05-04",
+          "title": "WT Q1 Deep Dive: Strategic Acquisitions and Diversified Flows Drive Revenue Growth",
+          "type": "Earnings",
+          "sentiment": 1,
+          "weight": 2,
+          "final_weight": 1.64,
+          "source_authority": 3,
+          "recency_factor": 0.42,
+          "source": "Yahoo Finance"
+        },
+        {
+          "date": "2026-05-02",
+          "title": "WisdomTree Inc (WT) Q1 2026 Earnings Call Highlights: Record AUM and Robust Revenue Growth",
+          "type": "Earnings",
+          "sentiment": 1,
+          "weight": 1,
+          "final_weight": 1.17,
+          "source_authority": 3,
+          "recency_factor": 0.3,
+          "source": "Yahoo Finance"
+        }
+      ]
+    },
+    "NYSE:AROC": {
+      "name": "AROC",
+      "score": 60,
+      "score_raw": 4.19,
+      "score_components": {
+        "positive_weight_sum": 6.46,
+        "negative_weight_sum": 2.27,
+        "news_effective_count": 9,
+        "news_dropped_count": 20
+      },
+      "signal": "GREEN Long (Mid)",
+      "strategy": "Positive sentiment flow — suitable for dip-buy or light momentum entry",
+      "suitable_for": "Buy Dip / Light Momentum",
+      "confidence": "Medium",
+      "patterns": [],
+      "positive_factors": [
+        "[Analyst Action|w3.02] Wells Fargo Maintains Overweight on Archrock, Raises Price Target to $",
+        "[Industry|w1.8] Assessing Archrock (AROC) Valuation After Strong Recent Share Price Ga",
+        "[Earnings|w1.64] Will Archrock Inc. (AROC) Beat Estimates Again in Its Next Earnings Re"
+      ],
+      "negative_factors": [
+        "[Earnings|w2.27] Archrock Q1 Adj. EPS $0.42 Misses $0.46 Estimate, Sales $373.767M Miss"
+      ],
+      "news_count": 9,
+      "news_dropped": 20,
+      "top_news": [
+        {
+          "date": "2026-05-08",
+          "title": "Be Sure To Check Out Archrock, Inc. (NYSE:AROC) Before It Goes Ex-Dividend",
+          "type": "Industry",
+          "sentiment": 0,
+          "weight": 3,
+          "final_weight": 2.55,
+          "source_authority": 3,
+          "recency_factor": 0.85,
+          "source": "Yahoo Finance"
+        },
+        {
+          "date": "2026-05-07",
+          "title": "Archrock AROC Q1 2026 Earnings Transcript",
+          "type": "Earnings",
+          "sentiment": 0,
+          "weight": 3,
+          "final_weight": 2.81,
+          "source_authority": 3,
+          "recency_factor": 0.72,
+          "source": "Yahoo Finance"
+        },
+        {
+          "date": "2026-05-07",
+          "title": "Wells Fargo Maintains Overweight on Archrock, Raises Price Target to $43",
+          "type": "Analyst Action",
+          "sentiment": 1,
+          "weight": 3,
+          "final_weight": 3.02,
+          "source_authority": 3.5,
+          "recency_factor": 0.72,
+          "source": "Finnhub"
+        },
+        {
+          "date": "2026-05-06",
+          "title": "Assessing Archrock (AROC) Valuation After Strong Recent Share Price Gains",
+          "type": "Industry",
+          "sentiment": 1,
+          "weight": 2,
+          "final_weight": 1.8,
+          "source_authority": 3,
+          "recency_factor": 0.6,
+          "source": "Yahoo Finance"
+        },
+        {
+          "date": "2026-05-06",
+          "title": "Archrock Inc. (AROC) Misses Q1 Earnings and Revenue Estimates",
+          "type": "Earnings",
+          "sentiment": 0,
+          "weight": 2,
+          "final_weight": 2.34,
+          "source_authority": 3,
+          "recency_factor": 0.6,
+          "source": "Yahoo Finance"
+        }
+      ]
+    },
+    "NASDAQ:BGC": {
+      "name": "BGC",
+      "score": 59,
+      "score_raw": 6.56,
+      "score_components": {
+        "positive_weight_sum": 6.56,
+        "negative_weight_sum": 0,
+        "news_effective_count": 13,
+        "news_dropped_count": 14
+      },
+      "signal": "NEUTRAL No Trade (Weak Bullish)",
+      "strategy": "Mildly positive, insufficient signal — watch for stronger catalyst",
+      "suitable_for": "Watch",
+      "confidence": "Low",
+      "patterns": [],
+      "positive_factors": [
+        "[Earnings|w3.28] BGC Group (NASDAQ:BGC) Beats Q1 2026 Revenue Estimates as Sales Jump 4",
+        "[Earnings|w3.28] BGC Group Q1 Adj. EPS $0.41, Inline, Sales $955.481M Beat $923.355M Es"
+      ],
+      "negative_factors": [],
+      "news_count": 13,
+      "news_dropped": 14,
+      "top_news": [
+        {
+          "date": "2026-05-08",
+          "title": "BGC Group, Inc. 2026 Q1 - Results - Earnings Call Presentation",
+          "type": "Earnings",
+          "sentiment": 0,
+          "weight": 4,
+          "final_weight": 3.87,
+          "source_authority": 3.5,
+          "recency_factor": 0.85,
+          "source": "Finnhub"
+        },
+        {
+          "date": "2026-05-07",
+          "title": "BGC Group, Inc Q1 2026 Earnings Call Summary",
+          "type": "Earnings",
+          "sentiment": 0,
+          "weight": 3,
+          "final_weight": 2.81,
+          "source_authority": 3,
+          "recency_factor": 0.72,
+          "source": "Yahoo Finance"
+        },
+        {
+          "date": "2026-05-07",
+          "title": "Assessing BGC Group (BGC) Valuation After Recent Pullback And Premium P/E Multiple",
+          "type": "Industry",
+          "sentiment": 0,
+          "weight": 2,
+          "final_weight": 2.16,
+          "source_authority": 3,
+          "recency_factor": 0.72,
+          "source": "Yahoo Finance"
+        },
+        {
+          "date": "2026-05-07",
+          "title": "BGC Group (BGC) Matches Q1 Earnings Estimates",
+          "type": "Earnings",
+          "sentiment": 0,
+          "weight": 3,
+          "final_weight": 2.81,
+          "source_authority": 3,
+          "recency_factor": 0.72,
+          "source": "Yahoo Finance"
+        },
+        {
+          "date": "2026-05-07",
+          "title": "BGC (NASDAQ:BGC) Beats Q1 CY2026 Sales Expectations",
+          "type": "Earnings",
+          "sentiment": 0,
+          "weight": 3,
+          "final_weight": 2.81,
+          "source_authority": 3,
+          "recency_factor": 0.72,
+          "source": "Yahoo Finance"
+        }
+      ]
+    },
+    "NYSE:ENVA": {
+      "name": "ENVA",
+      "score": 58,
+      "score_raw": 1.95,
+      "score_components": {
+        "positive_weight_sum": 1.95,
+        "negative_weight_sum": 0,
+        "news_effective_count": 2,
+        "news_dropped_count": 21
+      },
+      "signal": "NEUTRAL No Trade (Weak Bullish)",
+      "strategy": "Mildly positive, insufficient signal — watch for stronger catalyst",
+      "suitable_for": "Watch",
+      "confidence": "Low",
+      "patterns": [],
+      "positive_factors": [
+        "[Earnings|w1.95] Enova International (ENVA) Is Down 5.6% After Raising 2026 Guidance On"
+      ],
+      "negative_factors": [],
+      "news_count": 2,
+      "news_dropped": 21,
+      "top_news": [
+        {
+          "date": "2026-05-06",
+          "title": "Recent Price Trend in Enova International (ENVA) is Your Friend, Here's Why",
+          "type": "Industry",
+          "sentiment": 0,
+          "weight": 2,
+          "final_weight": 1.8,
+          "source_authority": 3,
+          "recency_factor": 0.6,
+          "source": "Yahoo Finance"
+        },
+        {
+          "date": "2026-05-05",
+          "title": "Enova International (ENVA) Is Down 5.6% After Raising 2026 Guidance On Strong Q1 Earnings And Buybac",
+          "type": "Earnings",
+          "sentiment": 1,
+          "weight": 2,
+          "final_weight": 1.95,
+          "source_authority": 3,
+          "recency_factor": 0.5,
+          "source": "Yahoo Finance"
+        }
+      ]
+    },
+    "NYSE:JHG": {
+      "name": "JHG",
+      "score": 57,
+      "score_raw": 1.75,
+      "score_components": {
+        "positive_weight_sum": 1.75,
+        "negative_weight_sum": 0,
+        "news_effective_count": 1,
+        "news_dropped_count": 16
+      },
+      "signal": "NEUTRAL No Trade (Weak Bullish)",
+      "strategy": "Mildly positive, insufficient signal — watch for stronger catalyst",
+      "suitable_for": "Watch",
+      "confidence": "Low",
+      "patterns": [],
+      "positive_factors": [
+        "[Industry|w1.75] Janus Henderson Group PLC (NYSE:JHG) Shows Strong Dividend Potential W"
+      ],
+      "negative_factors": [],
+      "news_count": 1,
+      "news_dropped": 16,
+      "top_news": [
+        {
+          "date": "2026-05-05",
+          "title": "Janus Henderson Group PLC (NYSE:JHG) Shows Strong Dividend Potential With 6% Yield and Solid Financi",
+          "type": "Industry",
+          "sentiment": 1,
+          "weight": 2,
+          "final_weight": 1.75,
+          "source_authority": 3.5,
+          "recency_factor": 0.5,
+          "source": "Finnhub"
+        }
+      ]
+    },
+    "NYSE:GRMN": {
+      "name": "GRMN",
+      "score": 57,
+      "score_raw": 1.94,
+      "score_components": {
+        "positive_weight_sum": 6.78,
+        "negative_weight_sum": 4.84,
+        "news_effective_count": 7,
+        "news_dropped_count": 22
+      },
+      "signal": "RED No Trade / Short",
+      "strategy": "Black swan risk — avoid until event clarity",
+      "suitable_for": "Reversal (wait for bottom confirmation)",
+      "confidence": "High",
+      "patterns": [
+        "WARNING: Sentiment Divergence (black swan masked by noise)"
+      ],
+      "positive_factors": [
+        "[Industry|w2.55] Is It Too Late To Consider Garmin (GRMN) After Its Strong Three Year S",
+        "[Industry|w1.8] Garmin receives Best Supplier of the Year Award for 11th straight year",
+        "[Industry|w1.26] Garmin (GRMN) is a Top-Ranked Growth Stock: Should You Buy?"
+      ],
+      "negative_factors": [
+        "[Analyst Action|w2.59] Morgan Stanley Lowers its Price Target on Garmin (GRMN) to $249",
+        "[Black Swan|w2.25] Garmin redefines luxury home audio with revolutionary new Primacy® sys"
+      ],
+      "news_count": 7,
+      "news_dropped": 22,
+      "top_news": [
+        {
+          "date": "2026-05-08",
+          "title": "Is It Too Late To Consider Garmin (GRMN) After Its Strong Three Year Share Price Run?",
+          "type": "Industry",
+          "sentiment": 1,
+          "weight": 3,
+          "final_weight": 2.55,
+          "source_authority": 3,
+          "recency_factor": 0.85,
+          "source": "Yahoo Finance"
+        },
+        {
+          "date": "2026-05-07",
+          "title": "Morgan Stanley Lowers its Price Target on Garmin (GRMN) to $249",
+          "type": "Analyst Action",
+          "sentiment": -1,
+          "weight": 3,
+          "final_weight": 2.59,
+          "source_authority": 3,
+          "recency_factor": 0.72,
+          "source": "Yahoo Finance"
+        },
+        {
+          "date": "2026-05-06",
+          "title": "Garmin receives Best Supplier of the Year Award for 11th straight year from Embraer",
+          "type": "Industry",
+          "sentiment": 1,
+          "weight": 2,
+          "final_weight": 1.8,
+          "source_authority": 3,
+          "recency_factor": 0.6,
+          "source": "Yahoo Finance"
+        },
+        {
+          "date": "2026-05-05",
+          "title": "Garmin redefines luxury home audio with revolutionary new Primacy® system from JL Audio®",
+          "type": "Black Swan",
+          "sentiment": -1,
+          "weight": 2,
+          "final_weight": 2.25,
+          "source_authority": 3,
+          "recency_factor": 0.5,
+          "source": "Yahoo Finance"
+        },
+        {
+          "date": "2026-05-04",
+          "title": "Garmin (GRMN) is a Top-Ranked Growth Stock: Should You Buy?",
+          "type": "Industry",
+          "sentiment": 1,
+          "weight": 1,
+          "final_weight": 1.26,
+          "source_authority": 3,
+          "recency_factor": 0.42,
+          "source": "Yahoo Finance"
+        }
+      ]
+    },
+    "NYSE:SM": {
+      "name": "SM",
+      "score": 57,
+      "score_raw": 5.07,
+      "score_components": {
+        "positive_weight_sum": 7.41,
+        "negative_weight_sum": 2.34,
+        "news_effective_count": 15,
+        "news_dropped_count": 14
+      },
+      "signal": "NEUTRAL No Trade (Weak Bullish)",
+      "strategy": "Mildly positive, insufficient signal — watch for stronger catalyst",
+      "suitable_for": "Watch",
+      "confidence": "Low",
+      "patterns": [],
+      "positive_factors": [
+        "[Earnings|w2.73] SM Energy Co (NYSE:SM) Beats Q1 Estimates, Lifts Production Outlook",
+        "[Earnings|w2.73] SM Energy Q1 Adj. EPS $1.55 Beats $1.15 Estimate, Sales $1.479B Beat $",
+        "[Earnings|w1.95] SM Energy Gears Up to Report Q1 Earnings: Time to Buy or Exit?"
+      ],
+      "negative_factors": [
+        "[Earnings|w2.34] SM Energy Q1 Adjusted Earnings Fall, Revenue Rises"
+      ],
+      "news_count": 15,
+      "news_dropped": 14,
+      "top_news": [
+        {
+          "date": "2026-05-07",
+          "title": "SM Energy Company Q1 2026 Earnings Call Summary",
+          "type": "Earnings",
+          "sentiment": 0,
+          "weight": 3,
+          "final_weight": 2.81,
+          "source_authority": 3,
+          "recency_factor": 0.72,
+          "source": "Yahoo Finance"
+        },
+        {
+          "date": "2026-05-07",
+          "title": "SM Energy Company (SM) Q1 2026 Earnings Call Transcript",
+          "type": "Earnings",
+          "sentiment": 0,
+          "weight": 3,
+          "final_weight": 3.28,
+          "source_authority": 3.5,
+          "recency_factor": 0.72,
+          "source": "Finnhub"
+        },
+        {
+          "date": "2026-05-07",
+          "title": "Transcript : SM Energy Company, Q1 2026 Earnings Call, May 07, 2026",
+          "type": "Earnings",
+          "sentiment": 0,
+          "weight": 3,
+          "final_weight": 3.28,
+          "source_authority": 3.5,
+          "recency_factor": 0.72,
+          "source": "Finnhub"
+        },
+        {
+          "date": "2026-05-07",
+          "title": "SM Energy Company 2026 Q1 - Results - Earnings Call Presentation",
+          "type": "Earnings",
+          "sentiment": 0,
+          "weight": 3,
+          "final_weight": 3.28,
+          "source_authority": 3.5,
+          "recency_factor": 0.72,
+          "source": "Finnhub"
+        },
+        {
+          "date": "2026-05-07",
+          "title": "SM Energy targets 420,000 BOE/d 2026 production midpoint and plans Q2 share buybacks as synergies go",
+          "type": "Buyback",
+          "sentiment": 0,
+          "weight": 2,
+          "final_weight": 2.16,
+          "source_authority": 2.5,
+          "recency_factor": 0.72,
+          "source": "Seeking Alpha"
+        }
+      ]
+    },
+    "NASDAQ:MPWR": {
+      "name": "MPWR",
+      "score": 56,
+      "score_raw": 1.4,
+      "score_components": {
+        "positive_weight_sum": 1.4,
+        "negative_weight_sum": 0,
+        "news_effective_count": 5,
+        "news_dropped_count": 31
+      },
+      "signal": "NEUTRAL No Trade (Weak Bullish)",
+      "strategy": "Mildly positive, insufficient signal — watch for stronger catalyst",
+      "suitable_for": "Watch",
+      "confidence": "Low",
+      "patterns": [],
+      "positive_factors": [
+        "[Earnings|w1.4] MPWR Q1 Deep Dive: Strong Segment Growth, Cautious Margin Outlook Amid"
+      ],
+      "negative_factors": [],
+      "news_count": 5,
+      "news_dropped": 31,
+      "top_news": [
+        {
+          "date": "2026-05-07",
+          "title": "Surging Earnings Estimates Signal Upside for Monolithic (MPWR) Stock",
+          "type": "Earnings",
+          "sentiment": 0,
+          "weight": 3,
+          "final_weight": 2.81,
+          "source_authority": 3,
+          "recency_factor": 0.72,
+          "source": "Yahoo Finance"
+        },
+        {
+          "date": "2026-05-07",
+          "title": "Monolithic Stock Rises 158.2% in the Past Year: How to Play the Stock",
+          "type": "Industry",
+          "sentiment": 0,
+          "weight": 3,
+          "final_weight": 2.52,
+          "source_authority": 3.5,
+          "recency_factor": 0.72,
+          "source": "Finnhub"
+        },
+        {
+          "date": "2026-05-03",
+          "title": "How The Story Is Shifting For Monolithic Power Systems (MPWR) As Price Targets Reset",
+          "type": "Industry",
+          "sentiment": 0,
+          "weight": 1,
+          "final_weight": 1.08,
+          "source_authority": 3,
+          "recency_factor": 0.36,
+          "source": "Yahoo Finance"
+        },
+        {
+          "date": "2026-05-03",
+          "title": "Analysts Are Upgrading Monolithic Power Systems, Inc. (NASDAQ:MPWR) After Its Latest Results",
+          "type": "Earnings",
+          "sentiment": 0,
+          "weight": 1,
+          "final_weight": 1.4,
+          "source_authority": 3,
+          "recency_factor": 0.36,
+          "source": "Yahoo Finance"
+        },
+        {
+          "date": "2026-05-03",
+          "title": "MPWR Q1 Deep Dive: Strong Segment Growth, Cautious Margin Outlook Amid Robust Guidance",
+          "type": "Earnings",
+          "sentiment": 1,
+          "weight": 1,
+          "final_weight": 1.4,
+          "source_authority": 3,
+          "recency_factor": 0.36,
+          "source": "Yahoo Finance"
+        }
+      ]
+    },
+    "NASDAQ:SANM": {
+      "name": "SANM",
+      "score": 56,
+      "score_raw": 1.5,
+      "score_components": {
+        "positive_weight_sum": 1.5,
+        "negative_weight_sum": 0,
+        "news_effective_count": 5,
+        "news_dropped_count": 19
+      },
+      "signal": "NEUTRAL No Trade (Weak Bullish)",
+      "strategy": "Mildly positive, insufficient signal — watch for stronger catalyst",
+      "suitable_for": "Watch",
+      "confidence": "Low",
+      "patterns": [],
+      "positive_factors": [
+        "[Industry|w1.5] Does Sanmina (SANM) Still Offer Value After A 175% One Year Share Pric"
+      ],
+      "negative_factors": [],
+      "news_count": 5,
+      "news_dropped": 19,
+      "top_news": [
+        {
+          "date": "2026-05-07",
+          "title": "Sanmina Corporation (SANM) Hit a 52 Week High, Can the Run Continue?",
+          "type": "Industry",
+          "sentiment": 0,
+          "weight": 2,
+          "final_weight": 2.16,
+          "source_authority": 3,
+          "recency_factor": 0.72,
+          "source": "Yahoo Finance"
+        },
+        {
+          "date": "2026-05-05",
+          "title": "Does Sanmina (SANM) Still Offer Value After A 175% One Year Share Price Surge",
+          "type": "Industry",
+          "sentiment": 1,
+          "weight": 2,
+          "final_weight": 1.5,
+          "source_authority": 3,
+          "recency_factor": 0.5,
+          "source": "Yahoo Finance"
+        },
+        {
+          "date": "2026-05-05",
+          "title": "Why Sanmina (SANM) Is Up 15.1% After Raising Guidance And Approving A $600 Million Buyback",
+          "type": "Earnings",
+          "sentiment": 0,
+          "weight": 2,
+          "final_weight": 1.95,
+          "source_authority": 3,
+          "recency_factor": 0.5,
+          "source": "Yahoo Finance"
+        },
+        {
+          "date": "2026-05-05",
+          "title": "Are You Looking for a Top Momentum Pick? Why Sanmina (SANM) is a Great Choice",
+          "type": "Industry",
+          "sentiment": 0,
+          "weight": 2,
+          "final_weight": 1.5,
+          "source_authority": 3,
+          "recency_factor": 0.5,
+          "source": "Yahoo Finance"
+        },
+        {
+          "date": "2026-05-05",
+          "title": "Why Sanmina (SANM) is a Top Momentum Stock for the Long-Term",
+          "type": "Industry",
+          "sentiment": 0,
+          "weight": 2,
+          "final_weight": 1.5,
+          "source_authority": 3,
+          "recency_factor": 0.5,
+          "source": "Yahoo Finance"
+        }
+      ]
+    },
+    "NYSE:SXI": {
+      "name": "SXI",
+      "score": 54,
+      "score_raw": 1.05,
+      "score_components": {
+        "positive_weight_sum": 2.67,
+        "negative_weight_sum": 1.62,
+        "news_effective_count": 3,
+        "news_dropped_count": 27
+      },
+      "signal": "RED No Trade / Short",
+      "strategy": "Black swan risk — avoid until event clarity",
+      "suitable_for": "Reversal (wait for bottom confirmation)",
+      "confidence": "High",
+      "patterns": [
+        "WARNING: Sentiment Divergence (black swan masked by noise)"
+      ],
+      "positive_factors": [
+        "[Industry|w1.5] SXI Q1 Deep Dive: Portfolio Simplification and Fast-Growth Markets Dri",
+        "[Earnings|w1.17] Standex International Corp (SXI) Q3 2026 Earnings Call Highlights: Str"
+      ],
+      "negative_factors": [
+        "[Black Swan|w1.62] Does Standex (SXI)ʼs Dividend Hike and Portfolio Shift Redefine Its Lo"
+      ],
+      "news_count": 3,
+      "news_dropped": 27,
+      "top_news": [
+        {
+          "date": "2026-05-05",
+          "title": "SXI Q1 Deep Dive: Portfolio Simplification and Fast-Growth Markets Drive Mixed Market Reaction",
+          "type": "Industry",
+          "sentiment": 1,
+          "weight": 2,
+          "final_weight": 1.5,
+          "source_authority": 3,
+          "recency_factor": 0.5,
+          "source": "Yahoo Finance"
+        },
+        {
+          "date": "2026-05-03",
+          "title": "Does Standex (SXI)ʼs Dividend Hike and Portfolio Shift Redefine Its Long-Term Earnings Story?",
+          "type": "Black Swan",
+          "sentiment": -1,
+          "weight": 2,
+          "final_weight": 1.62,
+          "source_authority": 3,
+          "recency_factor": 0.36,
+          "source": "Yahoo Finance"
+        },
+        {
+          "date": "2026-05-02",
+          "title": "Standex International Corp (SXI) Q3 2026 Earnings Call Highlights: Strategic Shifts and Growth ...",
+          "type": "Earnings",
+          "sentiment": 1,
+          "weight": 1,
+          "final_weight": 1.17,
+          "source_authority": 3,
+          "recency_factor": 0.3,
+          "source": "Yahoo Finance"
+        }
+      ]
+    },
+    "CBOE:CBOE": {
+      "name": "CBOE",
+      "score": 52,
+      "score_raw": 1.55,
+      "score_components": {
+        "positive_weight_sum": 6.63,
+        "negative_weight_sum": 5.08,
+        "news_effective_count": 16,
+        "news_dropped_count": 23
+      },
+      "signal": "NEUTRAL No Trade (Weak Bullish)",
+      "strategy": "Mildly positive, insufficient signal — watch for stronger catalyst",
+      "suitable_for": "Watch",
+      "confidence": "Low",
+      "patterns": [],
+      "positive_factors": [
+        "[Earnings|w2.73] Global Crossing Airlines Reports First Quarter 2026 Financial Results",
+        "[Industry|w2.1] CBOE VIX Slides Toward 17 as Oil Retreat and Tech Stock Surge Restore ",
+        "[Industry|w1.8] Cboe Global Markets (CBOE) Is Up 13.2% After Record Q1 And Major Strat"
+      ],
+      "negative_factors": [
+        "[Industry|w2.98] Abaxx Exchange Named Newcomer of the Year at 2026 Energy Risk Awards",
+        "[Industry|w2.1] HIMU Sits Vulnerable to a Double Risk: Slowing Growth and Stuck Intere"
+      ],
+      "news_count": 16,
+      "news_dropped": 23,
+      "top_news": [
+        {
+          "date": "2026-05-08",
+          "title": "Abaxx Exchange Named Newcomer of the Year at 2026 Energy Risk Awards",
+          "type": "Industry",
+          "sentiment": -1,
+          "weight": 3,
+          "final_weight": 2.98,
+          "source_authority": 3.5,
+          "recency_factor": 0.85,
+          "source": "Finnhub"
+        },
+        {
+          "date": "2026-05-08",
+          "title": "DeFi Technologies Announces Partnership with OMFIF's Digital Monetary Institute and Confirms Partici",
+          "type": "Industry",
+          "sentiment": 0,
+          "weight": 3,
+          "final_weight": 2.98,
+          "source_authority": 3.5,
+          "recency_factor": 0.85,
+          "source": "Finnhub"
+        },
+        {
+          "date": "2026-05-07",
+          "title": "Rothschild & Co Redburn Adjusts Price Target on Cboe Global Markets to $331 From $310",
+          "type": "Industry",
+          "sentiment": 0,
+          "weight": 2,
+          "final_weight": 2.16,
+          "source_authority": 3,
+          "recency_factor": 0.72,
+          "source": "Yahoo Finance"
+        },
+        {
+          "date": "2026-05-07",
+          "title": "Zacks Industry Outlook Highlights S&P Global, CME Group, Intercontinental Exchange, Nasdaq and Cboe ",
+          "type": "Earnings",
+          "sentiment": 0,
+          "weight": 3,
+          "final_weight": 2.81,
+          "source_authority": 3,
+          "recency_factor": 0.72,
+          "source": "Yahoo Finance"
+        },
+        {
+          "date": "2026-05-07",
+          "title": "Abaxx Advances Digital Title Toward Commercial Implementation; Names Alta as First Singapore Integra",
+          "type": "Industry",
+          "sentiment": 0,
+          "weight": 3,
+          "final_weight": 2.52,
+          "source_authority": 3.5,
+          "recency_factor": 0.72,
+          "source": "Finnhub"
+        }
+      ]
+    },
+    "NASDAQ:NWBI": {
+      "name": "NWBI",
+      "score": 50,
+      "score_raw": 0,
+      "score_components": {
+        "positive_weight_sum": 0,
+        "negative_weight_sum": 0,
+        "news_effective_count": 1,
+        "news_dropped_count": 22
+      },
+      "signal": "NEUTRAL No Trade (Weak Bullish)",
+      "strategy": "Mildly positive, insufficient signal — watch for stronger catalyst",
+      "suitable_for": "Watch",
+      "confidence": "Low",
+      "patterns": [],
+      "positive_factors": [],
+      "negative_factors": [],
+      "news_count": 1,
+      "news_dropped": 22,
+      "top_news": [
+        {
+          "date": "2026-05-03",
+          "title": "A Look At Northwest Bancshares (NWBI) Valuation As Shares Show Recent Price Momentum",
+          "type": "Industry",
+          "sentiment": 0,
+          "weight": 1,
+          "final_weight": 1.08,
+          "source_authority": 3,
+          "recency_factor": 0.36,
+          "source": "Yahoo Finance"
+        }
+      ]
+    },
+    "NYSE:PACS": {
+      "name": "PACS",
+      "score": 50,
+      "score_raw": 0,
+      "score_components": {
+        "positive_weight_sum": 0,
+        "negative_weight_sum": 0,
+        "news_effective_count": 2,
+        "news_dropped_count": 18
+      },
+      "signal": "NEUTRAL No Trade (Weak Bullish)",
+      "strategy": "Mildly positive, insufficient signal — watch for stronger catalyst",
+      "suitable_for": "Watch",
+      "confidence": "Low",
+      "patterns": [],
+      "positive_factors": [],
+      "negative_factors": [],
+      "news_count": 2,
+      "news_dropped": 18,
+      "top_news": [
+        {
+          "date": "2026-05-05",
+          "title": "PACS Group Intends to Release First Quarter 2026 Earnings on Monday, May 11, 2026, and Host a Call t",
+          "type": "Earnings",
+          "sentiment": 0,
+          "weight": 2,
+          "final_weight": 1.95,
+          "source_authority": 3,
+          "recency_factor": 0.5,
+          "source": "Yahoo Finance"
+        },
+        {
+          "date": "2026-05-04",
+          "title": "PACS Group Announces Acquisition in Alaska; New Construction of a Skilled Nursing Community",
+          "type": "M&A",
+          "sentiment": 0,
+          "weight": 2,
+          "final_weight": 2.06,
+          "source_authority": 3.5,
+          "recency_factor": 0.42,
+          "source": "Finnhub"
+        }
+      ]
+    },
+    "NASDAQ:RMBS": {
+      "name": "RMBS",
+      "score": 50,
+      "score_raw": 0,
+      "score_components": {
+        "positive_weight_sum": 0,
+        "negative_weight_sum": 0
+      },
+      "signal": "NEUTRAL No Trade (No Data)",
+      "strategy": "No relevant news in window",
+      "suitable_for": "Watch",
+      "confidence": "-",
+      "patterns": [],
+      "positive_factors": [],
+      "negative_factors": [],
+      "news_count": 0,
+      "news_dropped": 21,
+      "top_news": []
+    },
+    "NASDAQ:NBN": {
+      "name": "NBN",
+      "score": 50,
+      "score_raw": 0,
+      "score_components": {
+        "positive_weight_sum": 0,
+        "negative_weight_sum": 0
+      },
+      "signal": "NEUTRAL No Trade (No Data)",
+      "strategy": "No relevant news in window",
+      "suitable_for": "Watch",
+      "confidence": "-",
+      "patterns": [],
+      "positive_factors": [],
+      "negative_factors": [],
+      "news_count": 0,
+      "news_dropped": 23,
+      "top_news": []
+    },
+    "NYSE:FSS": {
+      "name": "FSS",
+      "score": 50,
+      "score_raw": 0,
+      "score_components": {
+        "positive_weight_sum": 0,
+        "negative_weight_sum": 0
+      },
+      "signal": "NEUTRAL No Trade (No Data)",
+      "strategy": "No relevant news in window",
+      "suitable_for": "Watch",
+      "confidence": "-",
+      "patterns": [],
+      "positive_factors": [],
+      "negative_factors": [],
+      "news_count": 0,
+      "news_dropped": 27,
+      "top_news": []
+    },
+    "NYSE:PRIM": {
+      "name": "PRIM",
+      "score": 50,
+      "score_raw": 0.1,
+      "score_components": {
+        "positive_weight_sum": 7.91,
+        "negative_weight_sum": 7.81,
+        "news_effective_count": 11,
+        "news_dropped_count": 29
+      },
+      "signal": "NEUTRAL No Trade (Weak Bullish)",
+      "strategy": "Mildly positive, insufficient signal — watch for stronger catalyst",
+      "suitable_for": "Watch",
+      "confidence": "Low",
+      "patterns": [],
+      "positive_factors": [
+        "[Analyst Action|w3.02] Keybanc Maintains Overweight on Primoris Services, Lowers Price Target",
+        "[Earnings|w2.73] Primoris Services Corp (NYSE:PRIM): A Sustainable Dividend Growth Play",
+        "[Industry|w2.16] Should Value Investors Buy Primoris Services (PRIM) Stock?"
+      ],
+      "negative_factors": [
+        "[Earnings|w2.81] A Look At Primoris Services (PRIM) Valuation After Weak Q1 2026 Result",
+        "[Earnings|w2.73] Primoris Stock Falls After Disappointing Q1 Results",
+        "[Earnings|w2.27] Primoris Services Corp (NYSE:PRIM) Plunges After Major Q1 Earnings Mis"
+      ],
+      "news_count": 11,
+      "news_dropped": 29,
+      "top_news": [
+        {
+          "date": "2026-05-07",
+          "title": "A Look At Primoris Services (PRIM) Valuation After Weak Q1 2026 Results And Lower Profit Guidance",
+          "type": "Earnings",
+          "sentiment": -1,
+          "weight": 3,
+          "final_weight": 2.81,
+          "source_authority": 3,
+          "recency_factor": 0.72,
+          "source": "Yahoo Finance"
+        },
+        {
+          "date": "2026-05-07",
+          "title": "Primoris Services (PRIM) Reports $1.6B Q1 2026 Revenue",
+          "type": "Earnings",
+          "sentiment": 0,
+          "weight": 3,
+          "final_weight": 2.81,
+          "source_authority": 3,
+          "recency_factor": 0.72,
+          "source": "Yahoo Finance"
+        },
+        {
+          "date": "2026-05-07",
+          "title": "Should Value Investors Buy Primoris Services (PRIM) Stock?",
+          "type": "Industry",
+          "sentiment": 1,
+          "weight": 2,
+          "final_weight": 2.16,
+          "source_authority": 3,
+          "recency_factor": 0.72,
+          "source": "Yahoo Finance"
+        },
+        {
+          "date": "2026-05-07",
+          "title": "Keybanc Maintains Overweight on Primoris Services, Lowers Price Target to $137",
+          "type": "Analyst Action",
+          "sentiment": 1,
+          "weight": 3,
+          "final_weight": 3.02,
+          "source_authority": 3.5,
+          "recency_factor": 0.72,
+          "source": "Finnhub"
+        },
+        {
+          "date": "2026-05-06",
+          "title": "Primoris (PRIM) Q3 2025 Earnings Transcript",
+          "type": "Earnings",
+          "sentiment": 0,
+          "weight": 2,
+          "final_weight": 2.34,
+          "source_authority": 3,
+          "recency_factor": 0.6,
+          "source": "Yahoo Finance"
+        }
+      ]
+    },
+    "NYSE:TPC": {
+      "name": "TPC",
+      "score": 50,
+      "score_raw": 0,
+      "score_components": {
+        "positive_weight_sum": 2.73,
+        "negative_weight_sum": 2.73,
+        "news_effective_count": 7,
+        "news_dropped_count": 21
+      },
+      "signal": "NEUTRAL No Trade (Weak Bullish)",
+      "strategy": "Mildly positive, insufficient signal — watch for stronger catalyst",
+      "suitable_for": "Watch",
+      "confidence": "Low",
+      "patterns": [],
+      "positive_factors": [
+        "[Earnings|w2.73] Tutor Perini Q1 Adj. EPS $1.03 Beats $0.79 Estimate, Sales $1.389B Mis"
+      ],
+      "negative_factors": [
+        "[Earnings|w2.73] Tutor Perini Corp (NYSE:TPC) Beats on Q1 Adjusted EPS But Revenue Miss"
+      ],
+      "news_count": 7,
+      "news_dropped": 21,
+      "top_news": [
+        {
+          "date": "2026-05-07",
+          "title": "Tutor Perini Corporation (TPC) Q1 2026 Earnings Call Transcript",
+          "type": "Earnings",
+          "sentiment": 0,
+          "weight": 3,
+          "final_weight": 3.28,
+          "source_authority": 3.5,
+          "recency_factor": 0.72,
+          "source": "Finnhub"
+        },
+        {
+          "date": "2026-05-06",
+          "title": "Tutor Perini (TPC) Q1 2026 Earnings Transcript",
+          "type": "Earnings",
+          "sentiment": 0,
+          "weight": 2,
+          "final_weight": 2.34,
+          "source_authority": 3,
+          "recency_factor": 0.6,
+          "source": "Yahoo Finance"
+        },
+        {
+          "date": "2026-05-06",
+          "title": "Tutor Perini (TPC) Surpasses Q1 Earnings Estimates",
+          "type": "Earnings",
+          "sentiment": 0,
+          "weight": 2,
+          "final_weight": 2.34,
+          "source_authority": 3,
+          "recency_factor": 0.6,
+          "source": "Yahoo Finance"
+        },
+        {
+          "date": "2026-05-06",
+          "title": "Tutor Perini (NYSE:TPC) Misses Q1 CY2026 Sales Expectations, Stock Drops",
+          "type": "Earnings",
+          "sentiment": 0,
+          "weight": 2,
+          "final_weight": 2.34,
+          "source_authority": 3,
+          "recency_factor": 0.6,
+          "source": "Yahoo Finance"
+        },
+        {
+          "date": "2026-05-06",
+          "title": "Tutor Perini Corp (NYSE:TPC) Beats on Q1 Adjusted EPS But Revenue Miss Triggers 11.7% Stock Drop",
+          "type": "Earnings",
+          "sentiment": -1,
+          "weight": 3,
+          "final_weight": 2.73,
+          "source_authority": 3.5,
+          "recency_factor": 0.6,
+          "source": "Finnhub"
+        }
+      ]
+    },
+    "NYSE:SMP": {
+      "name": "SMP",
+      "score": 50,
+      "score_raw": 0,
+      "score_components": {
+        "positive_weight_sum": 0,
+        "negative_weight_sum": 0
+      },
+      "signal": "NEUTRAL No Trade (No Data)",
+      "strategy": "No relevant news in window",
+      "suitable_for": "Watch",
+      "confidence": "-",
+      "patterns": [],
+      "positive_factors": [],
+      "negative_factors": [],
+      "news_count": 0,
+      "news_dropped": 21,
+      "top_news": []
+    },
+    "NYSE:FOR": {
+      "name": "FOR",
+      "score": 45,
+      "score_raw": -3.29,
+      "score_components": {
+        "positive_weight_sum": 6.64,
+        "negative_weight_sum": 9.93,
+        "news_effective_count": 15,
+        "news_dropped_count": 25
+      },
+      "signal": "NEUTRAL No Trade (Neutral)",
+      "strategy": "No clear directional bias — stay flat",
+      "suitable_for": "Watch",
+      "confidence": "Low",
+      "patterns": [],
+      "positive_factors": [
+        "[Earnings|w3.32] Stocks at all-time highs can still go higher. Here&#x2019;s one case f",
+        "[Earnings|w3.32] Intesa Posts Net Profit Rise as Corporate, Investment Banking Drives G"
+      ],
+      "negative_factors": [
+        "[Policy|w3.06] Dollar Could Fall if U.S. Jobs Data Favors Rate Cuts",
+        "[Industry|w2.55] My husband has a $225,000 pension. We don&#x2019;t trust his &#x2018;t",
+        "[Industry|w2.16] Mattel Shareholder Wants Company to Sell"
+      ],
+      "news_count": 15,
+      "news_dropped": 25,
+      "top_news": [
+        {
+          "date": "2026-05-08",
+          "title": "My husband has a $225,000 pension. We don&#x2019;t trust his &#x2018;too big to fail&#x2019; employe",
+          "type": "Industry",
+          "sentiment": -1,
+          "weight": 3,
+          "final_weight": 2.55,
+          "source_authority": 3,
+          "recency_factor": 0.85,
+          "source": "MarketWatch"
+        },
+        {
+          "date": "2026-05-08",
+          "title": "This new target for the S&amp;P 500 is very nearly Wall Street&#x2019;s highest. Here are the trades",
+          "type": "Earnings",
+          "sentiment": 0,
+          "weight": 3,
+          "final_weight": 3.32,
+          "source_authority": 3,
+          "recency_factor": 0.85,
+          "source": "MarketWatch"
+        },
+        {
+          "date": "2026-05-08",
+          "title": "Just graduated? Here&#x2019;s your financial cheat sheet for building real wealth.",
+          "type": "Industry",
+          "sentiment": 0,
+          "weight": 3,
+          "final_weight": 2.55,
+          "source_authority": 3,
+          "recency_factor": 0.85,
+          "source": "MarketWatch"
+        },
+        {
+          "date": "2026-05-08",
+          "title": "Stocks at all-time highs can still go higher. Here&#x2019;s one case for buying into the rally.",
+          "type": "Earnings",
+          "sentiment": 1,
+          "weight": 3,
+          "final_weight": 3.32,
+          "source_authority": 3,
+          "recency_factor": 0.85,
+          "source": "MarketWatch"
+        },
+        {
+          "date": "2026-05-08",
+          "title": "World Food Prices Rise for Third Straight Month, U.N. Says",
+          "type": "Industry",
+          "sentiment": 0,
+          "weight": 3,
+          "final_weight": 2.55,
+          "source_authority": 3,
+          "recency_factor": 0.85,
+          "source": "MarketWatch"
+        }
+      ]
+    },
+    "NYSE:PFS": {
+      "name": "PFS",
+      "score": 38,
+      "score_raw": -2.88,
+      "score_components": {
+        "positive_weight_sum": 0.9,
+        "negative_weight_sum": 3.78,
+        "news_effective_count": 3,
+        "news_dropped_count": 20
+      },
+      "signal": "RED No Trade / Short",
+      "strategy": "Black swan risk — avoid until event clarity",
+      "suitable_for": "Reversal (wait for bottom confirmation)",
+      "confidence": "High",
+      "patterns": [],
+      "positive_factors": [
+        "[Industry|w0.9] PFS Q1 Deep Dive: Loan Growth, Diversification, and Credit Quality Rem"
+      ],
+      "negative_factors": [
+        "[Black Swan|w3.78] Provident Financial Services (NYSE:PFS) Shows Strong Technical Breakou"
+      ],
+      "news_count": 3,
+      "news_dropped": 20,
+      "top_news": [
+        {
+          "date": "2026-05-07",
+          "title": "Provident Financial Services (NYSE:PFS) Shows Strong Technical Breakout Setup",
+          "type": "Black Swan",
+          "sentiment": -1,
+          "weight": 4,
+          "final_weight": 3.78,
+          "source_authority": 3.5,
+          "recency_factor": 0.72,
+          "source": "Finnhub"
+        },
+        {
+          "date": "2026-05-04",
+          "title": "Stonegate Capital Partners Updates Coverage on Provident Financial Services Inc (PFS) 1Q26",
+          "type": "Industry",
+          "sentiment": 0,
+          "weight": 1,
+          "final_weight": 1.26,
+          "source_authority": 3,
+          "recency_factor": 0.42,
+          "source": "Yahoo Finance"
+        },
+        {
+          "date": "2026-05-02",
+          "title": "PFS Q1 Deep Dive: Loan Growth, Diversification, and Credit Quality Remain in Focus",
+          "type": "Industry",
+          "sentiment": 1,
+          "weight": 1,
+          "final_weight": 0.9,
+          "source_authority": 3,
+          "recency_factor": 0.3,
+          "source": "Yahoo Finance"
+        }
+      ]
+    }
+  }
+}

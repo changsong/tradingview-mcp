@@ -1,0 +1,4333 @@
+{
+  "generated_at": "2026-06-08T13:47:25.527Z",
+  "market": "cn",
+  "target_date": "2026-06-08",
+  "prev_snapshot_date": "2026-06-07",
+  "prev_snapshot_dir": "reports/2026-06-07",
+  "universe_size": 49,
+  "fetched_ok": 28,
+  "fetched_fail": [
+    {
+      "sym": "SZSE:000657",
+      "reason": "switch_fail"
+    },
+    {
+      "sym": "SZSE:002938",
+      "reason": "switch_fail"
+    },
+    {
+      "sym": "SZSE:002463",
+      "reason": "switch_fail"
+    },
+    {
+      "sym": "SZSE:300394",
+      "reason": "switch_fail"
+    },
+    {
+      "sym": "SSE:600522",
+      "reason": "ohlcv_fail"
+    },
+    {
+      "sym": "SZSE:300037",
+      "reason": "switch_fail"
+    },
+    {
+      "sym": "SZSE:002851",
+      "reason": "switch_fail"
+    },
+    {
+      "sym": "SSE:603119",
+      "reason": "switch_fail"
+    },
+    {
+      "sym": "SZSE:002472",
+      "reason": "switch_fail"
+    },
+    {
+      "sym": "SSE:601689",
+      "reason": "switch_fail"
+    },
+    {
+      "sym": "SZSE:002156",
+      "reason": "switch_fail"
+    },
+    {
+      "sym": "SZSE:002983",
+      "reason": "switch_fail"
+    },
+    {
+      "sym": "SZSE:300752",
+      "reason": "switch_fail"
+    },
+    {
+      "sym": "SZSE:300445",
+      "reason": "switch_fail"
+    },
+    {
+      "sym": "SSE:600160",
+      "reason": "switch_fail"
+    },
+    {
+      "sym": "SZSE:159770",
+      "reason": "switch_fail"
+    },
+    {
+      "sym": "SSE:562500",
+      "reason": "switch_fail"
+    },
+    {
+      "sym": "SZSE:300308",
+      "reason": "switch_fail"
+    },
+    {
+      "sym": "SSE:605319",
+      "reason": "switch_fail"
+    },
+    {
+      "sym": "SZSE:300040",
+      "reason": "switch_fail"
+    },
+    {
+      "sym": "SSE:605580",
+      "reason": "switch_fail"
+    }
+  ],
+  "thresholds": {
+    "top_n": 10,
+    "gain_rate_min": 0.5,
+    "loss_rate_min": 0.5,
+    "diff_threshold": 0.3,
+    "up_factor": 1.25,
+    "down_factor": 0.75
+  },
+  "gainers": [
+    {
+      "sym": "SSE:600688",
+      "name": "600688",
+      "ok": true,
+      "prev_close": 44.51,
+      "close": 42.21,
+      "change_pct": -5.17,
+      "in_prev_tech": true,
+      "in_prev_news": true,
+      "tech_score": 68.7,
+      "news_score": 42,
+      "tech_type": "过热追涨(高风险)",
+      "tech_flags": [
+        "过热",
+        "动能衰",
+        "RR差"
+      ],
+      "news_signal": "⚪ No Trade (中性)",
+      "features": [
+        {
+          "key": "tech.type.overheat_chase",
+          "value": "过热追涨(高风险)"
+        },
+        {
+          "key": "tech.verdict.strong_long",
+          "value": "强看多"
+        },
+        {
+          "key": "tech.flag.overheat",
+          "value": "过热"
+        },
+        {
+          "key": "tech.flag.momentum_decay",
+          "value": "动能衰"
+        },
+        {
+          "key": "tech.flag.bad_rr",
+          "value": "RR差"
+        },
+        {
+          "key": "tech.score.high",
+          "value": 68.7
+        },
+        {
+          "key": "tech.rs.strong",
+          "value": 17.5
+        },
+        {
+          "key": "tech.1W.rsi.healthy",
+          "value": 62.2
+        },
+        {
+          "key": "tech.1W.adx.strong",
+          "value": 30.1
+        },
+        {
+          "key": "tech.1W.bull_ema",
+          "value": true
+        },
+        {
+          "key": "tech.1W.above_ema200",
+          "value": true
+        },
+        {
+          "key": "tech.1W.macd.bullish",
+          "value": 0.0105
+        },
+        {
+          "key": "tech.1W.macd.turning",
+          "value": true
+        },
+        {
+          "key": "tech.1W.vol.expanding",
+          "value": 2.4
+        },
+        {
+          "key": "tech.1W.obv.up",
+          "value": true
+        },
+        {
+          "key": "tech.1W.dist20.overheat",
+          "value": 16.8
+        },
+        {
+          "key": "tech.1D.rsi.overheat",
+          "value": 75.2
+        },
+        {
+          "key": "tech.1D.adx.trending",
+          "value": 25.4
+        },
+        {
+          "key": "tech.1D.bull_ema",
+          "value": true
+        },
+        {
+          "key": "tech.1D.above_ema200",
+          "value": true
+        },
+        {
+          "key": "tech.1D.macd.bullish",
+          "value": 0.067
+        },
+        {
+          "key": "tech.1D.vol.expanding",
+          "value": 7.8
+        },
+        {
+          "key": "tech.1D.obv.up",
+          "value": true
+        },
+        {
+          "key": "tech.1D.dist20.overheat",
+          "value": 17.3
+        },
+        {
+          "key": "tech.4H.adx.strong",
+          "value": 40.6
+        },
+        {
+          "key": "tech.4H.bull_ema",
+          "value": true
+        },
+        {
+          "key": "tech.4H.above_ema200",
+          "value": true
+        },
+        {
+          "key": "tech.4H.macd.bullish",
+          "value": 0.0957
+        },
+        {
+          "key": "tech.4H.obv.up",
+          "value": true
+        },
+        {
+          "key": "tech.4H.dist20.overheat",
+          "value": 14.1
+        },
+        {
+          "key": "tech.1H.rsi.healthy",
+          "value": 69.6
+        },
+        {
+          "key": "tech.1H.adx.strong",
+          "value": 60.6
+        },
+        {
+          "key": "tech.1H.above_ema200",
+          "value": true
+        },
+        {
+          "key": "tech.1H.macd.bullish",
+          "value": 0.0279
+        },
+        {
+          "key": "tech.1H.obv.down",
+          "value": true
+        },
+        {
+          "key": "news.signal.no_trade",
+          "value": "⚪ No Trade (中性)"
+        },
+        {
+          "key": "news.score.high",
+          "value": 42
+        },
+        {
+          "key": "news.top_news_type.政策",
+          "value": true
+        }
+      ]
+    },
+    {
+      "sym": "SSE:601798",
+      "name": "601798",
+      "ok": true,
+      "prev_close": 44.51,
+      "close": 42.21,
+      "change_pct": -5.17,
+      "in_prev_tech": true,
+      "in_prev_news": true,
+      "tech_score": 36.2,
+      "news_score": 56,
+      "tech_type": "回调低吸(支撑)",
+      "tech_flags": [
+        "压力"
+      ],
+      "news_signal": "⚪ No Trade (微多)",
+      "features": [
+        {
+          "key": "tech.type.pullback",
+          "value": "回调低吸(支撑)"
+        },
+        {
+          "key": "tech.verdict.strong_long",
+          "value": "强看多"
+        },
+        {
+          "key": "tech.flag.resistance",
+          "value": "压力"
+        },
+        {
+          "key": "tech.score.high",
+          "value": 36.2
+        },
+        {
+          "key": "tech.rs.weak",
+          "value": -9.7
+        },
+        {
+          "key": "tech.1W.adx.strong",
+          "value": 34.8
+        },
+        {
+          "key": "tech.1W.above_ema200",
+          "value": true
+        },
+        {
+          "key": "tech.1W.macd.bullish",
+          "value": 0.0221
+        },
+        {
+          "key": "tech.1W.vol.expanding",
+          "value": 2.8
+        },
+        {
+          "key": "tech.1W.obv.up",
+          "value": true
+        },
+        {
+          "key": "tech.1W.dist20.near",
+          "value": -2.9
+        },
+        {
+          "key": "tech.1W.near_support",
+          "value": true
+        },
+        {
+          "key": "tech.1D.adx.strong",
+          "value": 33.6
+        },
+        {
+          "key": "tech.1D.macd.bullish",
+          "value": 0.0214
+        },
+        {
+          "key": "tech.1D.vol.expanding",
+          "value": 2.8
+        },
+        {
+          "key": "tech.1D.obv.up",
+          "value": true
+        },
+        {
+          "key": "tech.1D.dist20.near",
+          "value": -2.9
+        },
+        {
+          "key": "tech.1D.near_support",
+          "value": true
+        },
+        {
+          "key": "tech.4H.adx.strong",
+          "value": 30.2
+        },
+        {
+          "key": "tech.4H.above_ema200",
+          "value": true
+        },
+        {
+          "key": "tech.4H.macd.bullish",
+          "value": 0.0756
+        },
+        {
+          "key": "tech.4H.vol.expanding",
+          "value": 1.5
+        },
+        {
+          "key": "tech.4H.obv.down",
+          "value": true
+        },
+        {
+          "key": "tech.4H.dist20.near",
+          "value": -1.2
+        },
+        {
+          "key": "tech.4H.near_support",
+          "value": true
+        },
+        {
+          "key": "tech.1H.adx.trending",
+          "value": 27.7
+        },
+        {
+          "key": "tech.1H.above_ema200",
+          "value": true
+        },
+        {
+          "key": "tech.1H.obv.down",
+          "value": true
+        },
+        {
+          "key": "tech.1H.dist20.near",
+          "value": -1.3
+        },
+        {
+          "key": "tech.1H.near_support",
+          "value": true
+        },
+        {
+          "key": "news.signal.no_trade",
+          "value": "⚪ No Trade (微多)"
+        },
+        {
+          "key": "news.score.high",
+          "value": 56
+        },
+        {
+          "key": "news.top_news_type.并购",
+          "value": true
+        }
+      ]
+    },
+    {
+      "sym": "SSE:603120",
+      "name": "603120",
+      "ok": true,
+      "prev_close": 44.51,
+      "close": 42.21,
+      "change_pct": -5.17,
+      "in_prev_tech": true,
+      "in_prev_news": true,
+      "tech_score": 43.9,
+      "news_score": 12,
+      "tech_type": "趋势追涨(结构完好)",
+      "tech_flags": [
+        "动能衰",
+        "RR差"
+      ],
+      "news_signal": "🔴 Short / 规避",
+      "features": [
+        {
+          "key": "tech.type.trend_chase",
+          "value": "趋势追涨(结构完好)"
+        },
+        {
+          "key": "tech.verdict.strong_long",
+          "value": "强看多"
+        },
+        {
+          "key": "tech.flag.momentum_decay",
+          "value": "动能衰"
+        },
+        {
+          "key": "tech.flag.bad_rr",
+          "value": "RR差"
+        },
+        {
+          "key": "tech.score.high",
+          "value": 43.9
+        },
+        {
+          "key": "tech.rs.strong",
+          "value": 22
+        },
+        {
+          "key": "tech.1W.rsi.healthy",
+          "value": 62.7
+        },
+        {
+          "key": "tech.1W.adx.trending",
+          "value": 27.8
+        },
+        {
+          "key": "tech.1W.bull_ema",
+          "value": true
+        },
+        {
+          "key": "tech.1W.above_ema200",
+          "value": true
+        },
+        {
+          "key": "tech.1W.macd.bullish",
+          "value": 1.328
+        },
+        {
+          "key": "tech.1W.vol.expanding",
+          "value": 1.5
+        },
+        {
+          "key": "tech.1W.obv.up",
+          "value": true
+        },
+        {
+          "key": "tech.1W.dist20.overheat",
+          "value": 17.8
+        },
+        {
+          "key": "tech.1D.rsi.healthy",
+          "value": 56.7
+        },
+        {
+          "key": "tech.1D.adx.trending",
+          "value": 28.9
+        },
+        {
+          "key": "tech.1D.bull_ema",
+          "value": true
+        },
+        {
+          "key": "tech.1D.above_ema200",
+          "value": true
+        },
+        {
+          "key": "tech.1D.obv.up",
+          "value": true
+        },
+        {
+          "key": "tech.4H.rsi.healthy",
+          "value": 53.4
+        },
+        {
+          "key": "tech.4H.adx.trending",
+          "value": 28.8
+        },
+        {
+          "key": "tech.4H.above_ema200",
+          "value": true
+        },
+        {
+          "key": "tech.4H.macd.bullish",
+          "value": 0.2584
+        },
+        {
+          "key": "tech.4H.obv.down",
+          "value": true
+        },
+        {
+          "key": "tech.4H.dist20.near",
+          "value": 1.4
+        },
+        {
+          "key": "tech.4H.near_support",
+          "value": true
+        },
+        {
+          "key": "tech.1H.rsi.healthy",
+          "value": 51.6
+        },
+        {
+          "key": "tech.1H.adx.trending",
+          "value": 28.5
+        },
+        {
+          "key": "tech.1H.above_ema200",
+          "value": true
+        },
+        {
+          "key": "tech.1H.obv.up",
+          "value": true
+        },
+        {
+          "key": "tech.1H.divergence.bull",
+          "value": true
+        },
+        {
+          "key": "tech.1H.dist20.near",
+          "value": 0
+        },
+        {
+          "key": "tech.1H.near_support",
+          "value": true
+        },
+        {
+          "key": "news.signal.short_avoid",
+          "value": "🔴 Short / 规避"
+        },
+        {
+          "key": "news.pattern.trend_down",
+          "value": "情绪持续走弱↓(trend)"
+        },
+        {
+          "key": "news.score.positive",
+          "value": 12
+        },
+        {
+          "key": "news.top_news_type.并购",
+          "value": true
+        }
+      ]
+    },
+    {
+      "sym": "SSE:600198",
+      "name": "600198",
+      "ok": true,
+      "prev_close": 44.51,
+      "close": 42.21,
+      "change_pct": -5.17,
+      "in_prev_tech": true,
+      "in_prev_news": true,
+      "tech_score": 34.1,
+      "news_score": 50,
+      "tech_type": "反转(MACD金叉)",
+      "tech_flags": [
+        "压力",
+        "震荡",
+        "RR差"
+      ],
+      "news_signal": "⚪ No Trade (微多)",
+      "features": [
+        {
+          "key": "tech.type.reversal",
+          "value": "反转(MACD金叉)"
+        },
+        {
+          "key": "tech.verdict.long",
+          "value": "看多"
+        },
+        {
+          "key": "tech.flag.resistance",
+          "value": "压力"
+        },
+        {
+          "key": "tech.flag.chop",
+          "value": "震荡"
+        },
+        {
+          "key": "tech.flag.bad_rr",
+          "value": "RR差"
+        },
+        {
+          "key": "tech.score.mid",
+          "value": 34.1
+        },
+        {
+          "key": "tech.1W.rsi.healthy",
+          "value": 51.1
+        },
+        {
+          "key": "tech.1W.adx.chop",
+          "value": 18.3
+        },
+        {
+          "key": "tech.1W.above_ema200",
+          "value": true
+        },
+        {
+          "key": "tech.1W.obv.up",
+          "value": true
+        },
+        {
+          "key": "tech.1W.dist20.near",
+          "value": 2
+        },
+        {
+          "key": "tech.1D.rsi.healthy",
+          "value": 53.5
+        },
+        {
+          "key": "tech.1D.adx.chop",
+          "value": 18.5
+        },
+        {
+          "key": "tech.1D.above_ema200",
+          "value": true
+        },
+        {
+          "key": "tech.1D.macd.bullish",
+          "value": 0.0109
+        },
+        {
+          "key": "tech.1D.macd.turning",
+          "value": true
+        },
+        {
+          "key": "tech.1D.obv.up",
+          "value": true
+        },
+        {
+          "key": "tech.1D.dist20.near",
+          "value": 2.9
+        },
+        {
+          "key": "tech.1D.near_support",
+          "value": true
+        },
+        {
+          "key": "tech.4H.rsi.healthy",
+          "value": 55.6
+        },
+        {
+          "key": "tech.4H.adx.chop",
+          "value": 18.4
+        },
+        {
+          "key": "tech.4H.above_ema200",
+          "value": true
+        },
+        {
+          "key": "tech.4H.macd.bullish",
+          "value": 0.1188
+        },
+        {
+          "key": "tech.4H.obv.down",
+          "value": true
+        },
+        {
+          "key": "tech.4H.divergence.bull",
+          "value": true
+        },
+        {
+          "key": "tech.1H.rsi.healthy",
+          "value": 57.8
+        },
+        {
+          "key": "tech.1H.adx.strong",
+          "value": 31.2
+        },
+        {
+          "key": "tech.1H.above_ema200",
+          "value": true
+        },
+        {
+          "key": "tech.1H.obv.down",
+          "value": true
+        },
+        {
+          "key": "tech.1H.dist20.near",
+          "value": 1.1
+        },
+        {
+          "key": "tech.1H.near_support",
+          "value": true
+        },
+        {
+          "key": "news.signal.no_trade",
+          "value": "⚪ No Trade (微多)"
+        },
+        {
+          "key": "news.score.high",
+          "value": 50
+        },
+        {
+          "key": "news.top_news_type.行业",
+          "value": true
+        }
+      ]
+    },
+    {
+      "sym": "SZSE:001223",
+      "name": "001223",
+      "ok": true,
+      "prev_close": 44.51,
+      "close": 42.21,
+      "change_pct": -5.17,
+      "in_prev_tech": true,
+      "in_prev_news": true,
+      "tech_score": 33.8,
+      "news_score": 53,
+      "tech_type": "趋势延续",
+      "tech_flags": [
+        "动能衰",
+        "震荡",
+        "RR差"
+      ],
+      "news_signal": "⚪ No Trade (微多)",
+      "features": [
+        {
+          "key": "tech.type.trend_continue",
+          "value": "趋势延续"
+        },
+        {
+          "key": "tech.verdict.long",
+          "value": "看多"
+        },
+        {
+          "key": "tech.flag.momentum_decay",
+          "value": "动能衰"
+        },
+        {
+          "key": "tech.flag.chop",
+          "value": "震荡"
+        },
+        {
+          "key": "tech.flag.bad_rr",
+          "value": "RR差"
+        },
+        {
+          "key": "tech.score.mid",
+          "value": 33.8
+        },
+        {
+          "key": "tech.alignment.full",
+          "value": "4/4 (100%)"
+        },
+        {
+          "key": "tech.rs.strong",
+          "value": 11.4
+        },
+        {
+          "key": "tech.1W.rsi.healthy",
+          "value": 56.4
+        },
+        {
+          "key": "tech.1W.adx.chop",
+          "value": 18.7
+        },
+        {
+          "key": "tech.1W.bull_ema",
+          "value": true
+        },
+        {
+          "key": "tech.1W.above_ema200",
+          "value": true
+        },
+        {
+          "key": "tech.1W.vol.expanding",
+          "value": 1.8
+        },
+        {
+          "key": "tech.1W.obv.up",
+          "value": true
+        },
+        {
+          "key": "tech.1D.rsi.healthy",
+          "value": 56.5
+        },
+        {
+          "key": "tech.1D.adx.chop",
+          "value": 18.5
+        },
+        {
+          "key": "tech.1D.bull_ema",
+          "value": true
+        },
+        {
+          "key": "tech.1D.above_ema200",
+          "value": true
+        },
+        {
+          "key": "tech.1D.vol.expanding",
+          "value": 1.8
+        },
+        {
+          "key": "tech.1D.obv.up",
+          "value": true
+        },
+        {
+          "key": "tech.4H.rsi.healthy",
+          "value": 56.5
+        },
+        {
+          "key": "tech.4H.adx.chop",
+          "value": 18.5
+        },
+        {
+          "key": "tech.4H.bull_ema",
+          "value": true
+        },
+        {
+          "key": "tech.4H.above_ema200",
+          "value": true
+        },
+        {
+          "key": "tech.4H.vol.expanding",
+          "value": 1.8
+        },
+        {
+          "key": "tech.4H.obv.up",
+          "value": true
+        },
+        {
+          "key": "tech.1H.rsi.healthy",
+          "value": 56.5
+        },
+        {
+          "key": "tech.1H.adx.chop",
+          "value": 18.6
+        },
+        {
+          "key": "tech.1H.bull_ema",
+          "value": true
+        },
+        {
+          "key": "tech.1H.above_ema200",
+          "value": true
+        },
+        {
+          "key": "tech.1H.vol.expanding",
+          "value": 1.8
+        },
+        {
+          "key": "tech.1H.obv.up",
+          "value": true
+        },
+        {
+          "key": "news.signal.no_trade",
+          "value": "⚪ No Trade (微多)"
+        },
+        {
+          "key": "news.score.high",
+          "value": 53
+        },
+        {
+          "key": "news.top_news_type.行业",
+          "value": true
+        }
+      ]
+    },
+    {
+      "sym": "SSE:603135",
+      "name": "603135",
+      "ok": true,
+      "prev_close": 44.51,
+      "close": 42.21,
+      "change_pct": -5.17,
+      "in_prev_tech": true,
+      "in_prev_news": true,
+      "tech_score": 33.8,
+      "news_score": 50,
+      "tech_type": "趋势延续",
+      "tech_flags": [
+        "动能衰",
+        "震荡",
+        "RR差"
+      ],
+      "news_signal": "⚪ No Trade (无数据)",
+      "features": [
+        {
+          "key": "tech.type.trend_continue",
+          "value": "趋势延续"
+        },
+        {
+          "key": "tech.verdict.long",
+          "value": "看多"
+        },
+        {
+          "key": "tech.flag.momentum_decay",
+          "value": "动能衰"
+        },
+        {
+          "key": "tech.flag.chop",
+          "value": "震荡"
+        },
+        {
+          "key": "tech.flag.bad_rr",
+          "value": "RR差"
+        },
+        {
+          "key": "tech.score.mid",
+          "value": 33.8
+        },
+        {
+          "key": "tech.alignment.full",
+          "value": "4/4 (100%)"
+        },
+        {
+          "key": "tech.rs.strong",
+          "value": 11.4
+        },
+        {
+          "key": "tech.1W.rsi.healthy",
+          "value": 56.4
+        },
+        {
+          "key": "tech.1W.adx.chop",
+          "value": 18.7
+        },
+        {
+          "key": "tech.1W.bull_ema",
+          "value": true
+        },
+        {
+          "key": "tech.1W.above_ema200",
+          "value": true
+        },
+        {
+          "key": "tech.1W.vol.expanding",
+          "value": 1.8
+        },
+        {
+          "key": "tech.1W.obv.up",
+          "value": true
+        },
+        {
+          "key": "tech.1D.rsi.healthy",
+          "value": 56.5
+        },
+        {
+          "key": "tech.1D.adx.chop",
+          "value": 18.5
+        },
+        {
+          "key": "tech.1D.bull_ema",
+          "value": true
+        },
+        {
+          "key": "tech.1D.above_ema200",
+          "value": true
+        },
+        {
+          "key": "tech.1D.vol.expanding",
+          "value": 1.8
+        },
+        {
+          "key": "tech.1D.obv.up",
+          "value": true
+        },
+        {
+          "key": "tech.4H.rsi.healthy",
+          "value": 56.5
+        },
+        {
+          "key": "tech.4H.adx.chop",
+          "value": 18.5
+        },
+        {
+          "key": "tech.4H.bull_ema",
+          "value": true
+        },
+        {
+          "key": "tech.4H.above_ema200",
+          "value": true
+        },
+        {
+          "key": "tech.4H.vol.expanding",
+          "value": 1.8
+        },
+        {
+          "key": "tech.4H.obv.up",
+          "value": true
+        },
+        {
+          "key": "tech.1H.rsi.healthy",
+          "value": 56.5
+        },
+        {
+          "key": "tech.1H.adx.chop",
+          "value": 18.6
+        },
+        {
+          "key": "tech.1H.bull_ema",
+          "value": true
+        },
+        {
+          "key": "tech.1H.above_ema200",
+          "value": true
+        },
+        {
+          "key": "tech.1H.vol.expanding",
+          "value": 1.8
+        },
+        {
+          "key": "tech.1H.obv.up",
+          "value": true
+        },
+        {
+          "key": "news.signal.no_trade",
+          "value": "⚪ No Trade (无数据)"
+        },
+        {
+          "key": "news.score.high",
+          "value": 50
+        }
+      ]
+    },
+    {
+      "sym": "SZSE:002965",
+      "name": "002965",
+      "ok": true,
+      "prev_close": 44.51,
+      "close": 42.21,
+      "change_pct": -5.17,
+      "in_prev_tech": true,
+      "in_prev_news": true,
+      "tech_score": 33.8,
+      "news_score": 60,
+      "tech_type": "趋势延续",
+      "tech_flags": [
+        "动能衰",
+        "震荡",
+        "RR差"
+      ],
+      "news_signal": "🟢 Long (中)",
+      "features": [
+        {
+          "key": "tech.type.trend_continue",
+          "value": "趋势延续"
+        },
+        {
+          "key": "tech.verdict.long",
+          "value": "看多"
+        },
+        {
+          "key": "tech.flag.momentum_decay",
+          "value": "动能衰"
+        },
+        {
+          "key": "tech.flag.chop",
+          "value": "震荡"
+        },
+        {
+          "key": "tech.flag.bad_rr",
+          "value": "RR差"
+        },
+        {
+          "key": "tech.score.mid",
+          "value": 33.8
+        },
+        {
+          "key": "tech.alignment.full",
+          "value": "4/4 (100%)"
+        },
+        {
+          "key": "tech.rs.strong",
+          "value": 11.4
+        },
+        {
+          "key": "tech.1W.rsi.healthy",
+          "value": 56.4
+        },
+        {
+          "key": "tech.1W.adx.chop",
+          "value": 18.7
+        },
+        {
+          "key": "tech.1W.bull_ema",
+          "value": true
+        },
+        {
+          "key": "tech.1W.above_ema200",
+          "value": true
+        },
+        {
+          "key": "tech.1W.vol.expanding",
+          "value": 1.8
+        },
+        {
+          "key": "tech.1W.obv.up",
+          "value": true
+        },
+        {
+          "key": "tech.1D.rsi.healthy",
+          "value": 56.5
+        },
+        {
+          "key": "tech.1D.adx.chop",
+          "value": 18.5
+        },
+        {
+          "key": "tech.1D.bull_ema",
+          "value": true
+        },
+        {
+          "key": "tech.1D.above_ema200",
+          "value": true
+        },
+        {
+          "key": "tech.1D.vol.expanding",
+          "value": 1.8
+        },
+        {
+          "key": "tech.1D.obv.up",
+          "value": true
+        },
+        {
+          "key": "tech.4H.rsi.healthy",
+          "value": 56.5
+        },
+        {
+          "key": "tech.4H.adx.chop",
+          "value": 18.5
+        },
+        {
+          "key": "tech.4H.bull_ema",
+          "value": true
+        },
+        {
+          "key": "tech.4H.above_ema200",
+          "value": true
+        },
+        {
+          "key": "tech.4H.vol.expanding",
+          "value": 1.8
+        },
+        {
+          "key": "tech.4H.obv.up",
+          "value": true
+        },
+        {
+          "key": "tech.1H.rsi.healthy",
+          "value": 56.5
+        },
+        {
+          "key": "tech.1H.adx.chop",
+          "value": 18.6
+        },
+        {
+          "key": "tech.1H.bull_ema",
+          "value": true
+        },
+        {
+          "key": "tech.1H.above_ema200",
+          "value": true
+        },
+        {
+          "key": "tech.1H.vol.expanding",
+          "value": 1.8
+        },
+        {
+          "key": "tech.1H.obv.up",
+          "value": true
+        },
+        {
+          "key": "news.signal.long_medium",
+          "value": "🟢 Long (中)"
+        },
+        {
+          "key": "news.score.high",
+          "value": 60
+        },
+        {
+          "key": "news.top_news_type.财报",
+          "value": true
+        }
+      ]
+    },
+    {
+      "sym": "SSE:605162",
+      "name": "605162",
+      "ok": true,
+      "prev_close": 44.51,
+      "close": 42.21,
+      "change_pct": -5.17,
+      "in_prev_tech": true,
+      "in_prev_news": true,
+      "tech_score": 33.8,
+      "news_score": 50,
+      "tech_type": "趋势延续",
+      "tech_flags": [
+        "动能衰",
+        "震荡",
+        "RR差"
+      ],
+      "news_signal": "⚪ No Trade (微多)",
+      "features": [
+        {
+          "key": "tech.type.trend_continue",
+          "value": "趋势延续"
+        },
+        {
+          "key": "tech.verdict.long",
+          "value": "看多"
+        },
+        {
+          "key": "tech.flag.momentum_decay",
+          "value": "动能衰"
+        },
+        {
+          "key": "tech.flag.chop",
+          "value": "震荡"
+        },
+        {
+          "key": "tech.flag.bad_rr",
+          "value": "RR差"
+        },
+        {
+          "key": "tech.score.mid",
+          "value": 33.8
+        },
+        {
+          "key": "tech.alignment.full",
+          "value": "4/4 (100%)"
+        },
+        {
+          "key": "tech.rs.strong",
+          "value": 11.4
+        },
+        {
+          "key": "tech.1W.rsi.healthy",
+          "value": 56.4
+        },
+        {
+          "key": "tech.1W.adx.chop",
+          "value": 18.7
+        },
+        {
+          "key": "tech.1W.bull_ema",
+          "value": true
+        },
+        {
+          "key": "tech.1W.above_ema200",
+          "value": true
+        },
+        {
+          "key": "tech.1W.vol.expanding",
+          "value": 1.8
+        },
+        {
+          "key": "tech.1W.obv.up",
+          "value": true
+        },
+        {
+          "key": "tech.1D.rsi.healthy",
+          "value": 56.5
+        },
+        {
+          "key": "tech.1D.adx.chop",
+          "value": 18.5
+        },
+        {
+          "key": "tech.1D.bull_ema",
+          "value": true
+        },
+        {
+          "key": "tech.1D.above_ema200",
+          "value": true
+        },
+        {
+          "key": "tech.1D.vol.expanding",
+          "value": 1.8
+        },
+        {
+          "key": "tech.1D.obv.up",
+          "value": true
+        },
+        {
+          "key": "tech.4H.rsi.healthy",
+          "value": 56.5
+        },
+        {
+          "key": "tech.4H.adx.chop",
+          "value": 18.5
+        },
+        {
+          "key": "tech.4H.bull_ema",
+          "value": true
+        },
+        {
+          "key": "tech.4H.above_ema200",
+          "value": true
+        },
+        {
+          "key": "tech.4H.vol.expanding",
+          "value": 1.8
+        },
+        {
+          "key": "tech.4H.obv.up",
+          "value": true
+        },
+        {
+          "key": "tech.1H.rsi.healthy",
+          "value": 56.5
+        },
+        {
+          "key": "tech.1H.adx.chop",
+          "value": 18.6
+        },
+        {
+          "key": "tech.1H.bull_ema",
+          "value": true
+        },
+        {
+          "key": "tech.1H.above_ema200",
+          "value": true
+        },
+        {
+          "key": "tech.1H.vol.expanding",
+          "value": 1.8
+        },
+        {
+          "key": "tech.1H.obv.up",
+          "value": true
+        },
+        {
+          "key": "news.signal.no_trade",
+          "value": "⚪ No Trade (微多)"
+        },
+        {
+          "key": "news.score.high",
+          "value": 50
+        },
+        {
+          "key": "news.top_news_type.传闻",
+          "value": true
+        }
+      ]
+    },
+    {
+      "sym": "SZSE:002875",
+      "name": "002875",
+      "ok": true,
+      "prev_close": 44.51,
+      "close": 42.21,
+      "change_pct": -5.17,
+      "in_prev_tech": true,
+      "in_prev_news": true,
+      "tech_score": 33.8,
+      "news_score": 50,
+      "tech_type": "趋势延续",
+      "tech_flags": [
+        "动能衰",
+        "震荡",
+        "RR差"
+      ],
+      "news_signal": "⚪ No Trade (无数据)",
+      "features": [
+        {
+          "key": "tech.type.trend_continue",
+          "value": "趋势延续"
+        },
+        {
+          "key": "tech.verdict.long",
+          "value": "看多"
+        },
+        {
+          "key": "tech.flag.momentum_decay",
+          "value": "动能衰"
+        },
+        {
+          "key": "tech.flag.chop",
+          "value": "震荡"
+        },
+        {
+          "key": "tech.flag.bad_rr",
+          "value": "RR差"
+        },
+        {
+          "key": "tech.score.mid",
+          "value": 33.8
+        },
+        {
+          "key": "tech.alignment.full",
+          "value": "4/4 (100%)"
+        },
+        {
+          "key": "tech.rs.strong",
+          "value": 11.4
+        },
+        {
+          "key": "tech.1W.rsi.healthy",
+          "value": 56.4
+        },
+        {
+          "key": "tech.1W.adx.chop",
+          "value": 18.7
+        },
+        {
+          "key": "tech.1W.bull_ema",
+          "value": true
+        },
+        {
+          "key": "tech.1W.above_ema200",
+          "value": true
+        },
+        {
+          "key": "tech.1W.vol.expanding",
+          "value": 1.8
+        },
+        {
+          "key": "tech.1W.obv.up",
+          "value": true
+        },
+        {
+          "key": "tech.1D.rsi.healthy",
+          "value": 56.5
+        },
+        {
+          "key": "tech.1D.adx.chop",
+          "value": 18.5
+        },
+        {
+          "key": "tech.1D.bull_ema",
+          "value": true
+        },
+        {
+          "key": "tech.1D.above_ema200",
+          "value": true
+        },
+        {
+          "key": "tech.1D.vol.expanding",
+          "value": 1.8
+        },
+        {
+          "key": "tech.1D.obv.up",
+          "value": true
+        },
+        {
+          "key": "tech.4H.rsi.healthy",
+          "value": 56.5
+        },
+        {
+          "key": "tech.4H.adx.chop",
+          "value": 18.5
+        },
+        {
+          "key": "tech.4H.bull_ema",
+          "value": true
+        },
+        {
+          "key": "tech.4H.above_ema200",
+          "value": true
+        },
+        {
+          "key": "tech.4H.vol.expanding",
+          "value": 1.8
+        },
+        {
+          "key": "tech.4H.obv.up",
+          "value": true
+        },
+        {
+          "key": "tech.1H.rsi.healthy",
+          "value": 56.5
+        },
+        {
+          "key": "tech.1H.adx.chop",
+          "value": 18.6
+        },
+        {
+          "key": "tech.1H.bull_ema",
+          "value": true
+        },
+        {
+          "key": "tech.1H.above_ema200",
+          "value": true
+        },
+        {
+          "key": "tech.1H.vol.expanding",
+          "value": 1.8
+        },
+        {
+          "key": "tech.1H.obv.up",
+          "value": true
+        },
+        {
+          "key": "news.signal.no_trade",
+          "value": "⚪ No Trade (无数据)"
+        },
+        {
+          "key": "news.score.high",
+          "value": 50
+        }
+      ]
+    },
+    {
+      "sym": "SSE:603656",
+      "name": "603656",
+      "ok": true,
+      "prev_close": 44.51,
+      "close": 42.21,
+      "change_pct": -5.17,
+      "in_prev_tech": true,
+      "in_prev_news": true,
+      "tech_score": 33.8,
+      "news_score": 54,
+      "tech_type": "趋势延续",
+      "tech_flags": [
+        "动能衰",
+        "震荡",
+        "RR差"
+      ],
+      "news_signal": "⚪ No Trade (微多)",
+      "features": [
+        {
+          "key": "tech.type.trend_continue",
+          "value": "趋势延续"
+        },
+        {
+          "key": "tech.verdict.long",
+          "value": "看多"
+        },
+        {
+          "key": "tech.flag.momentum_decay",
+          "value": "动能衰"
+        },
+        {
+          "key": "tech.flag.chop",
+          "value": "震荡"
+        },
+        {
+          "key": "tech.flag.bad_rr",
+          "value": "RR差"
+        },
+        {
+          "key": "tech.score.mid",
+          "value": 33.8
+        },
+        {
+          "key": "tech.alignment.full",
+          "value": "4/4 (100%)"
+        },
+        {
+          "key": "tech.rs.strong",
+          "value": 11.4
+        },
+        {
+          "key": "tech.1W.rsi.healthy",
+          "value": 56.4
+        },
+        {
+          "key": "tech.1W.adx.chop",
+          "value": 18.7
+        },
+        {
+          "key": "tech.1W.bull_ema",
+          "value": true
+        },
+        {
+          "key": "tech.1W.above_ema200",
+          "value": true
+        },
+        {
+          "key": "tech.1W.vol.expanding",
+          "value": 1.8
+        },
+        {
+          "key": "tech.1W.obv.up",
+          "value": true
+        },
+        {
+          "key": "tech.1D.rsi.healthy",
+          "value": 56.5
+        },
+        {
+          "key": "tech.1D.adx.chop",
+          "value": 18.5
+        },
+        {
+          "key": "tech.1D.bull_ema",
+          "value": true
+        },
+        {
+          "key": "tech.1D.above_ema200",
+          "value": true
+        },
+        {
+          "key": "tech.1D.vol.expanding",
+          "value": 1.8
+        },
+        {
+          "key": "tech.1D.obv.up",
+          "value": true
+        },
+        {
+          "key": "tech.4H.rsi.healthy",
+          "value": 56.5
+        },
+        {
+          "key": "tech.4H.adx.chop",
+          "value": 18.5
+        },
+        {
+          "key": "tech.4H.bull_ema",
+          "value": true
+        },
+        {
+          "key": "tech.4H.above_ema200",
+          "value": true
+        },
+        {
+          "key": "tech.4H.vol.expanding",
+          "value": 1.8
+        },
+        {
+          "key": "tech.4H.obv.up",
+          "value": true
+        },
+        {
+          "key": "tech.1H.rsi.healthy",
+          "value": 56.5
+        },
+        {
+          "key": "tech.1H.adx.chop",
+          "value": 18.6
+        },
+        {
+          "key": "tech.1H.bull_ema",
+          "value": true
+        },
+        {
+          "key": "tech.1H.above_ema200",
+          "value": true
+        },
+        {
+          "key": "tech.1H.vol.expanding",
+          "value": 1.8
+        },
+        {
+          "key": "tech.1H.obv.up",
+          "value": true
+        },
+        {
+          "key": "news.signal.no_trade",
+          "value": "⚪ No Trade (微多)"
+        },
+        {
+          "key": "news.score.high",
+          "value": 54
+        },
+        {
+          "key": "news.top_news_type.政策",
+          "value": true
+        }
+      ]
+    }
+  ],
+  "losers": [
+    {
+      "sym": "SSE:603083",
+      "name": "603083",
+      "ok": true,
+      "prev_close": 157.2,
+      "close": 148.85,
+      "change_pct": -5.31,
+      "in_prev_tech": true,
+      "in_prev_news": true,
+      "tech_score": 27.8,
+      "news_score": 42,
+      "tech_type": "趋势延续",
+      "tech_flags": [
+        "动能衰",
+        "震荡",
+        "RR差"
+      ],
+      "news_signal": "🔴 No Trade / Short",
+      "features": [
+        {
+          "key": "tech.type.trend_continue",
+          "value": "趋势延续"
+        },
+        {
+          "key": "tech.verdict.long",
+          "value": "看多"
+        },
+        {
+          "key": "tech.flag.momentum_decay",
+          "value": "动能衰"
+        },
+        {
+          "key": "tech.flag.chop",
+          "value": "震荡"
+        },
+        {
+          "key": "tech.flag.bad_rr",
+          "value": "RR差"
+        },
+        {
+          "key": "tech.score.mid",
+          "value": 27.8
+        },
+        {
+          "key": "tech.alignment.full",
+          "value": "4/4 (100%)"
+        },
+        {
+          "key": "tech.rs.strong",
+          "value": 11.4
+        },
+        {
+          "key": "tech.1W.rsi.healthy",
+          "value": 56.4
+        },
+        {
+          "key": "tech.1W.adx.chop",
+          "value": 18.7
+        },
+        {
+          "key": "tech.1W.bull_ema",
+          "value": true
+        },
+        {
+          "key": "tech.1W.above_ema200",
+          "value": true
+        },
+        {
+          "key": "tech.1W.vol.expanding",
+          "value": 1.8
+        },
+        {
+          "key": "tech.1W.obv.up",
+          "value": true
+        },
+        {
+          "key": "tech.1D.rsi.healthy",
+          "value": 56.5
+        },
+        {
+          "key": "tech.1D.adx.chop",
+          "value": 18.5
+        },
+        {
+          "key": "tech.1D.bull_ema",
+          "value": true
+        },
+        {
+          "key": "tech.1D.above_ema200",
+          "value": true
+        },
+        {
+          "key": "tech.1D.vol.expanding",
+          "value": 1.8
+        },
+        {
+          "key": "tech.1D.obv.up",
+          "value": true
+        },
+        {
+          "key": "tech.4H.rsi.healthy",
+          "value": 56.5
+        },
+        {
+          "key": "tech.4H.adx.chop",
+          "value": 18.5
+        },
+        {
+          "key": "tech.4H.bull_ema",
+          "value": true
+        },
+        {
+          "key": "tech.4H.above_ema200",
+          "value": true
+        },
+        {
+          "key": "tech.4H.vol.expanding",
+          "value": 1.8
+        },
+        {
+          "key": "tech.4H.obv.up",
+          "value": true
+        },
+        {
+          "key": "tech.1H.rsi.healthy",
+          "value": 56.5
+        },
+        {
+          "key": "tech.1H.adx.chop",
+          "value": 18.6
+        },
+        {
+          "key": "tech.1H.bull_ema",
+          "value": true
+        },
+        {
+          "key": "tech.1H.above_ema200",
+          "value": true
+        },
+        {
+          "key": "tech.1H.vol.expanding",
+          "value": 1.8
+        },
+        {
+          "key": "tech.1H.obv.up",
+          "value": true
+        },
+        {
+          "key": "news.signal.no_trade",
+          "value": "🔴 No Trade / Short"
+        },
+        {
+          "key": "news.score.high",
+          "value": 42
+        },
+        {
+          "key": "news.top_news_type.并购",
+          "value": true
+        },
+        {
+          "key": "news.top_news_type.政策",
+          "value": true
+        }
+      ]
+    },
+    {
+      "sym": "SSE:600301",
+      "name": "600301",
+      "ok": true,
+      "prev_close": 44.51,
+      "close": 42.21,
+      "change_pct": -5.17,
+      "in_prev_tech": true,
+      "in_prev_news": true,
+      "tech_score": 33.8,
+      "news_score": 74,
+      "tech_type": "趋势延续",
+      "tech_flags": [
+        "动能衰",
+        "震荡",
+        "RR差"
+      ],
+      "news_signal": "⚠️ Long (谨慎)",
+      "features": [
+        {
+          "key": "tech.type.trend_continue",
+          "value": "趋势延续"
+        },
+        {
+          "key": "tech.verdict.long",
+          "value": "看多"
+        },
+        {
+          "key": "tech.flag.momentum_decay",
+          "value": "动能衰"
+        },
+        {
+          "key": "tech.flag.chop",
+          "value": "震荡"
+        },
+        {
+          "key": "tech.flag.bad_rr",
+          "value": "RR差"
+        },
+        {
+          "key": "tech.score.mid",
+          "value": 33.8
+        },
+        {
+          "key": "tech.alignment.full",
+          "value": "4/4 (100%)"
+        },
+        {
+          "key": "tech.rs.strong",
+          "value": 11.4
+        },
+        {
+          "key": "tech.1W.rsi.healthy",
+          "value": 56.4
+        },
+        {
+          "key": "tech.1W.adx.chop",
+          "value": 18.7
+        },
+        {
+          "key": "tech.1W.bull_ema",
+          "value": true
+        },
+        {
+          "key": "tech.1W.above_ema200",
+          "value": true
+        },
+        {
+          "key": "tech.1W.vol.expanding",
+          "value": 1.8
+        },
+        {
+          "key": "tech.1W.obv.up",
+          "value": true
+        },
+        {
+          "key": "tech.1D.rsi.healthy",
+          "value": 56.5
+        },
+        {
+          "key": "tech.1D.adx.chop",
+          "value": 18.5
+        },
+        {
+          "key": "tech.1D.bull_ema",
+          "value": true
+        },
+        {
+          "key": "tech.1D.above_ema200",
+          "value": true
+        },
+        {
+          "key": "tech.1D.vol.expanding",
+          "value": 1.8
+        },
+        {
+          "key": "tech.1D.obv.up",
+          "value": true
+        },
+        {
+          "key": "tech.4H.rsi.healthy",
+          "value": 56.5
+        },
+        {
+          "key": "tech.4H.adx.chop",
+          "value": 18.5
+        },
+        {
+          "key": "tech.4H.bull_ema",
+          "value": true
+        },
+        {
+          "key": "tech.4H.above_ema200",
+          "value": true
+        },
+        {
+          "key": "tech.4H.vol.expanding",
+          "value": 1.8
+        },
+        {
+          "key": "tech.4H.obv.up",
+          "value": true
+        },
+        {
+          "key": "tech.1H.rsi.healthy",
+          "value": 56.5
+        },
+        {
+          "key": "tech.1H.adx.chop",
+          "value": 18.6
+        },
+        {
+          "key": "tech.1H.bull_ema",
+          "value": true
+        },
+        {
+          "key": "tech.1H.above_ema200",
+          "value": true
+        },
+        {
+          "key": "tech.1H.vol.expanding",
+          "value": 1.8
+        },
+        {
+          "key": "tech.1H.obv.up",
+          "value": true
+        },
+        {
+          "key": "news.signal.long_caution",
+          "value": "⚠️ Long (谨慎)"
+        },
+        {
+          "key": "news.pattern.rumor_dominant",
+          "value": "⚠️传闻主导(假利好风险)"
+        },
+        {
+          "key": "news.score.high",
+          "value": 74
+        },
+        {
+          "key": "news.top_news_type.财报",
+          "value": true
+        },
+        {
+          "key": "news.top_news_type.传闻",
+          "value": true
+        }
+      ]
+    },
+    {
+      "sym": "SZSE:300502",
+      "name": "300502",
+      "ok": true,
+      "prev_close": 44.51,
+      "close": 42.21,
+      "change_pct": -5.17,
+      "in_prev_tech": true,
+      "in_prev_news": true,
+      "tech_score": 33.8,
+      "news_score": 61,
+      "tech_type": "趋势延续",
+      "tech_flags": [
+        "动能衰",
+        "震荡",
+        "RR差"
+      ],
+      "news_signal": "🟢 Long (中)",
+      "features": [
+        {
+          "key": "tech.type.trend_continue",
+          "value": "趋势延续"
+        },
+        {
+          "key": "tech.verdict.long",
+          "value": "看多"
+        },
+        {
+          "key": "tech.flag.momentum_decay",
+          "value": "动能衰"
+        },
+        {
+          "key": "tech.flag.chop",
+          "value": "震荡"
+        },
+        {
+          "key": "tech.flag.bad_rr",
+          "value": "RR差"
+        },
+        {
+          "key": "tech.score.mid",
+          "value": 33.8
+        },
+        {
+          "key": "tech.alignment.full",
+          "value": "4/4 (100%)"
+        },
+        {
+          "key": "tech.rs.strong",
+          "value": 11.4
+        },
+        {
+          "key": "tech.1W.rsi.healthy",
+          "value": 56.4
+        },
+        {
+          "key": "tech.1W.adx.chop",
+          "value": 18.7
+        },
+        {
+          "key": "tech.1W.bull_ema",
+          "value": true
+        },
+        {
+          "key": "tech.1W.above_ema200",
+          "value": true
+        },
+        {
+          "key": "tech.1W.vol.expanding",
+          "value": 1.8
+        },
+        {
+          "key": "tech.1W.obv.up",
+          "value": true
+        },
+        {
+          "key": "tech.1D.rsi.healthy",
+          "value": 56.5
+        },
+        {
+          "key": "tech.1D.adx.chop",
+          "value": 18.5
+        },
+        {
+          "key": "tech.1D.bull_ema",
+          "value": true
+        },
+        {
+          "key": "tech.1D.above_ema200",
+          "value": true
+        },
+        {
+          "key": "tech.1D.vol.expanding",
+          "value": 1.8
+        },
+        {
+          "key": "tech.1D.obv.up",
+          "value": true
+        },
+        {
+          "key": "tech.4H.rsi.healthy",
+          "value": 56.5
+        },
+        {
+          "key": "tech.4H.adx.chop",
+          "value": 18.5
+        },
+        {
+          "key": "tech.4H.bull_ema",
+          "value": true
+        },
+        {
+          "key": "tech.4H.above_ema200",
+          "value": true
+        },
+        {
+          "key": "tech.4H.vol.expanding",
+          "value": 1.8
+        },
+        {
+          "key": "tech.4H.obv.up",
+          "value": true
+        },
+        {
+          "key": "tech.1H.rsi.healthy",
+          "value": 56.5
+        },
+        {
+          "key": "tech.1H.adx.chop",
+          "value": 18.6
+        },
+        {
+          "key": "tech.1H.bull_ema",
+          "value": true
+        },
+        {
+          "key": "tech.1H.above_ema200",
+          "value": true
+        },
+        {
+          "key": "tech.1H.vol.expanding",
+          "value": 1.8
+        },
+        {
+          "key": "tech.1H.obv.up",
+          "value": true
+        },
+        {
+          "key": "news.signal.long_medium",
+          "value": "🟢 Long (中)"
+        },
+        {
+          "key": "news.score.high",
+          "value": 61
+        },
+        {
+          "key": "news.top_news_type.行业",
+          "value": true
+        },
+        {
+          "key": "news.top_news_type.财报",
+          "value": true
+        }
+      ]
+    },
+    {
+      "sym": "SSE:601138",
+      "name": "601138",
+      "ok": true,
+      "prev_close": 44.51,
+      "close": 42.21,
+      "change_pct": -5.17,
+      "in_prev_tech": true,
+      "in_prev_news": true,
+      "tech_score": 33.8,
+      "news_score": 50,
+      "tech_type": "趋势延续",
+      "tech_flags": [
+        "动能衰",
+        "震荡",
+        "RR差"
+      ],
+      "news_signal": "⚪ No Trade (微多)",
+      "features": [
+        {
+          "key": "tech.type.trend_continue",
+          "value": "趋势延续"
+        },
+        {
+          "key": "tech.verdict.long",
+          "value": "看多"
+        },
+        {
+          "key": "tech.flag.momentum_decay",
+          "value": "动能衰"
+        },
+        {
+          "key": "tech.flag.chop",
+          "value": "震荡"
+        },
+        {
+          "key": "tech.flag.bad_rr",
+          "value": "RR差"
+        },
+        {
+          "key": "tech.score.mid",
+          "value": 33.8
+        },
+        {
+          "key": "tech.alignment.full",
+          "value": "4/4 (100%)"
+        },
+        {
+          "key": "tech.rs.strong",
+          "value": 11.4
+        },
+        {
+          "key": "tech.1W.rsi.healthy",
+          "value": 56.4
+        },
+        {
+          "key": "tech.1W.adx.chop",
+          "value": 18.7
+        },
+        {
+          "key": "tech.1W.bull_ema",
+          "value": true
+        },
+        {
+          "key": "tech.1W.above_ema200",
+          "value": true
+        },
+        {
+          "key": "tech.1W.vol.expanding",
+          "value": 1.8
+        },
+        {
+          "key": "tech.1W.obv.up",
+          "value": true
+        },
+        {
+          "key": "tech.1D.rsi.healthy",
+          "value": 56.5
+        },
+        {
+          "key": "tech.1D.adx.chop",
+          "value": 18.5
+        },
+        {
+          "key": "tech.1D.bull_ema",
+          "value": true
+        },
+        {
+          "key": "tech.1D.above_ema200",
+          "value": true
+        },
+        {
+          "key": "tech.1D.vol.expanding",
+          "value": 1.8
+        },
+        {
+          "key": "tech.1D.obv.up",
+          "value": true
+        },
+        {
+          "key": "tech.4H.rsi.healthy",
+          "value": 56.5
+        },
+        {
+          "key": "tech.4H.adx.chop",
+          "value": 18.5
+        },
+        {
+          "key": "tech.4H.bull_ema",
+          "value": true
+        },
+        {
+          "key": "tech.4H.above_ema200",
+          "value": true
+        },
+        {
+          "key": "tech.4H.vol.expanding",
+          "value": 1.8
+        },
+        {
+          "key": "tech.4H.obv.up",
+          "value": true
+        },
+        {
+          "key": "tech.1H.rsi.healthy",
+          "value": 56.5
+        },
+        {
+          "key": "tech.1H.adx.chop",
+          "value": 18.6
+        },
+        {
+          "key": "tech.1H.bull_ema",
+          "value": true
+        },
+        {
+          "key": "tech.1H.above_ema200",
+          "value": true
+        },
+        {
+          "key": "tech.1H.vol.expanding",
+          "value": 1.8
+        },
+        {
+          "key": "tech.1H.obv.up",
+          "value": true
+        },
+        {
+          "key": "news.signal.no_trade",
+          "value": "⚪ No Trade (微多)"
+        },
+        {
+          "key": "news.score.high",
+          "value": 50
+        },
+        {
+          "key": "news.top_news_type.行业",
+          "value": true
+        }
+      ]
+    },
+    {
+      "sym": "SSE:601100",
+      "name": "601100",
+      "ok": true,
+      "prev_close": 44.51,
+      "close": 42.21,
+      "change_pct": -5.17,
+      "in_prev_tech": true,
+      "in_prev_news": true,
+      "tech_score": 33.8,
+      "news_score": 56,
+      "tech_type": "趋势延续",
+      "tech_flags": [
+        "动能衰",
+        "震荡",
+        "RR差"
+      ],
+      "news_signal": "⚪ No Trade (微多)",
+      "features": [
+        {
+          "key": "tech.type.trend_continue",
+          "value": "趋势延续"
+        },
+        {
+          "key": "tech.verdict.long",
+          "value": "看多"
+        },
+        {
+          "key": "tech.flag.momentum_decay",
+          "value": "动能衰"
+        },
+        {
+          "key": "tech.flag.chop",
+          "value": "震荡"
+        },
+        {
+          "key": "tech.flag.bad_rr",
+          "value": "RR差"
+        },
+        {
+          "key": "tech.score.mid",
+          "value": 33.8
+        },
+        {
+          "key": "tech.alignment.full",
+          "value": "4/4 (100%)"
+        },
+        {
+          "key": "tech.rs.strong",
+          "value": 11.4
+        },
+        {
+          "key": "tech.1W.rsi.healthy",
+          "value": 56.4
+        },
+        {
+          "key": "tech.1W.adx.chop",
+          "value": 18.7
+        },
+        {
+          "key": "tech.1W.bull_ema",
+          "value": true
+        },
+        {
+          "key": "tech.1W.above_ema200",
+          "value": true
+        },
+        {
+          "key": "tech.1W.vol.expanding",
+          "value": 1.8
+        },
+        {
+          "key": "tech.1W.obv.up",
+          "value": true
+        },
+        {
+          "key": "tech.1D.rsi.healthy",
+          "value": 56.5
+        },
+        {
+          "key": "tech.1D.adx.chop",
+          "value": 18.5
+        },
+        {
+          "key": "tech.1D.bull_ema",
+          "value": true
+        },
+        {
+          "key": "tech.1D.above_ema200",
+          "value": true
+        },
+        {
+          "key": "tech.1D.vol.expanding",
+          "value": 1.8
+        },
+        {
+          "key": "tech.1D.obv.up",
+          "value": true
+        },
+        {
+          "key": "tech.4H.rsi.healthy",
+          "value": 56.5
+        },
+        {
+          "key": "tech.4H.adx.chop",
+          "value": 18.5
+        },
+        {
+          "key": "tech.4H.bull_ema",
+          "value": true
+        },
+        {
+          "key": "tech.4H.above_ema200",
+          "value": true
+        },
+        {
+          "key": "tech.4H.vol.expanding",
+          "value": 1.8
+        },
+        {
+          "key": "tech.4H.obv.up",
+          "value": true
+        },
+        {
+          "key": "tech.1H.rsi.healthy",
+          "value": 56.5
+        },
+        {
+          "key": "tech.1H.adx.chop",
+          "value": 18.6
+        },
+        {
+          "key": "tech.1H.bull_ema",
+          "value": true
+        },
+        {
+          "key": "tech.1H.above_ema200",
+          "value": true
+        },
+        {
+          "key": "tech.1H.vol.expanding",
+          "value": 1.8
+        },
+        {
+          "key": "tech.1H.obv.up",
+          "value": true
+        },
+        {
+          "key": "news.signal.no_trade",
+          "value": "⚪ No Trade (微多)"
+        },
+        {
+          "key": "news.score.high",
+          "value": 56
+        },
+        {
+          "key": "news.top_news_type.分析师动作",
+          "value": true
+        }
+      ]
+    },
+    {
+      "sym": "SZSE:002384",
+      "name": "002384",
+      "ok": true,
+      "prev_close": 44.51,
+      "close": 42.21,
+      "change_pct": -5.17,
+      "in_prev_tech": true,
+      "in_prev_news": true,
+      "tech_score": 33.8,
+      "news_score": 57,
+      "tech_type": "趋势延续",
+      "tech_flags": [
+        "动能衰",
+        "震荡",
+        "RR差"
+      ],
+      "news_signal": "⚪ No Trade (微多)",
+      "features": [
+        {
+          "key": "tech.type.trend_continue",
+          "value": "趋势延续"
+        },
+        {
+          "key": "tech.verdict.long",
+          "value": "看多"
+        },
+        {
+          "key": "tech.flag.momentum_decay",
+          "value": "动能衰"
+        },
+        {
+          "key": "tech.flag.chop",
+          "value": "震荡"
+        },
+        {
+          "key": "tech.flag.bad_rr",
+          "value": "RR差"
+        },
+        {
+          "key": "tech.score.mid",
+          "value": 33.8
+        },
+        {
+          "key": "tech.alignment.full",
+          "value": "4/4 (100%)"
+        },
+        {
+          "key": "tech.rs.strong",
+          "value": 11.4
+        },
+        {
+          "key": "tech.1W.rsi.healthy",
+          "value": 56.4
+        },
+        {
+          "key": "tech.1W.adx.chop",
+          "value": 18.7
+        },
+        {
+          "key": "tech.1W.bull_ema",
+          "value": true
+        },
+        {
+          "key": "tech.1W.above_ema200",
+          "value": true
+        },
+        {
+          "key": "tech.1W.vol.expanding",
+          "value": 1.8
+        },
+        {
+          "key": "tech.1W.obv.up",
+          "value": true
+        },
+        {
+          "key": "tech.1D.rsi.healthy",
+          "value": 56.5
+        },
+        {
+          "key": "tech.1D.adx.chop",
+          "value": 18.5
+        },
+        {
+          "key": "tech.1D.bull_ema",
+          "value": true
+        },
+        {
+          "key": "tech.1D.above_ema200",
+          "value": true
+        },
+        {
+          "key": "tech.1D.vol.expanding",
+          "value": 1.8
+        },
+        {
+          "key": "tech.1D.obv.up",
+          "value": true
+        },
+        {
+          "key": "tech.4H.rsi.healthy",
+          "value": 56.5
+        },
+        {
+          "key": "tech.4H.adx.chop",
+          "value": 18.5
+        },
+        {
+          "key": "tech.4H.bull_ema",
+          "value": true
+        },
+        {
+          "key": "tech.4H.above_ema200",
+          "value": true
+        },
+        {
+          "key": "tech.4H.vol.expanding",
+          "value": 1.8
+        },
+        {
+          "key": "tech.4H.obv.up",
+          "value": true
+        },
+        {
+          "key": "tech.1H.rsi.healthy",
+          "value": 56.5
+        },
+        {
+          "key": "tech.1H.adx.chop",
+          "value": 18.6
+        },
+        {
+          "key": "tech.1H.bull_ema",
+          "value": true
+        },
+        {
+          "key": "tech.1H.above_ema200",
+          "value": true
+        },
+        {
+          "key": "tech.1H.vol.expanding",
+          "value": 1.8
+        },
+        {
+          "key": "tech.1H.obv.up",
+          "value": true
+        },
+        {
+          "key": "news.signal.no_trade",
+          "value": "⚪ No Trade (微多)"
+        },
+        {
+          "key": "news.score.high",
+          "value": 57
+        },
+        {
+          "key": "news.top_news_type.行业",
+          "value": true
+        },
+        {
+          "key": "news.top_news_type.财报",
+          "value": true
+        }
+      ]
+    },
+    {
+      "sym": "SSE:600584",
+      "name": "600584",
+      "ok": true,
+      "prev_close": 44.51,
+      "close": 42.21,
+      "change_pct": -5.17,
+      "in_prev_tech": true,
+      "in_prev_news": true,
+      "tech_score": 33.8,
+      "news_score": 59,
+      "tech_type": "趋势延续",
+      "tech_flags": [
+        "动能衰",
+        "震荡",
+        "RR差"
+      ],
+      "news_signal": "⚪ No Trade (微多)",
+      "features": [
+        {
+          "key": "tech.type.trend_continue",
+          "value": "趋势延续"
+        },
+        {
+          "key": "tech.verdict.long",
+          "value": "看多"
+        },
+        {
+          "key": "tech.flag.momentum_decay",
+          "value": "动能衰"
+        },
+        {
+          "key": "tech.flag.chop",
+          "value": "震荡"
+        },
+        {
+          "key": "tech.flag.bad_rr",
+          "value": "RR差"
+        },
+        {
+          "key": "tech.score.mid",
+          "value": 33.8
+        },
+        {
+          "key": "tech.alignment.full",
+          "value": "4/4 (100%)"
+        },
+        {
+          "key": "tech.rs.strong",
+          "value": 11.4
+        },
+        {
+          "key": "tech.1W.rsi.healthy",
+          "value": 56.4
+        },
+        {
+          "key": "tech.1W.adx.chop",
+          "value": 18.7
+        },
+        {
+          "key": "tech.1W.bull_ema",
+          "value": true
+        },
+        {
+          "key": "tech.1W.above_ema200",
+          "value": true
+        },
+        {
+          "key": "tech.1W.vol.expanding",
+          "value": 1.8
+        },
+        {
+          "key": "tech.1W.obv.up",
+          "value": true
+        },
+        {
+          "key": "tech.1D.rsi.healthy",
+          "value": 56.5
+        },
+        {
+          "key": "tech.1D.adx.chop",
+          "value": 18.5
+        },
+        {
+          "key": "tech.1D.bull_ema",
+          "value": true
+        },
+        {
+          "key": "tech.1D.above_ema200",
+          "value": true
+        },
+        {
+          "key": "tech.1D.vol.expanding",
+          "value": 1.8
+        },
+        {
+          "key": "tech.1D.obv.up",
+          "value": true
+        },
+        {
+          "key": "tech.4H.rsi.healthy",
+          "value": 56.5
+        },
+        {
+          "key": "tech.4H.adx.chop",
+          "value": 18.5
+        },
+        {
+          "key": "tech.4H.bull_ema",
+          "value": true
+        },
+        {
+          "key": "tech.4H.above_ema200",
+          "value": true
+        },
+        {
+          "key": "tech.4H.vol.expanding",
+          "value": 1.8
+        },
+        {
+          "key": "tech.4H.obv.up",
+          "value": true
+        },
+        {
+          "key": "tech.1H.rsi.healthy",
+          "value": 56.5
+        },
+        {
+          "key": "tech.1H.adx.chop",
+          "value": 18.6
+        },
+        {
+          "key": "tech.1H.bull_ema",
+          "value": true
+        },
+        {
+          "key": "tech.1H.above_ema200",
+          "value": true
+        },
+        {
+          "key": "tech.1H.vol.expanding",
+          "value": 1.8
+        },
+        {
+          "key": "tech.1H.obv.up",
+          "value": true
+        },
+        {
+          "key": "news.signal.no_trade",
+          "value": "⚪ No Trade (微多)"
+        },
+        {
+          "key": "news.score.high",
+          "value": 59
+        },
+        {
+          "key": "news.top_news_type.政策",
+          "value": true
+        },
+        {
+          "key": "news.top_news_type.行业",
+          "value": true
+        }
+      ]
+    },
+    {
+      "sym": "SSE:603986",
+      "name": "603986",
+      "ok": true,
+      "prev_close": 44.51,
+      "close": 42.21,
+      "change_pct": -5.17,
+      "in_prev_tech": true,
+      "in_prev_news": true,
+      "tech_score": 33.8,
+      "news_score": 46,
+      "tech_type": "趋势延续",
+      "tech_flags": [
+        "动能衰",
+        "震荡",
+        "RR差"
+      ],
+      "news_signal": "⚪ No Trade (中性)",
+      "features": [
+        {
+          "key": "tech.type.trend_continue",
+          "value": "趋势延续"
+        },
+        {
+          "key": "tech.verdict.long",
+          "value": "看多"
+        },
+        {
+          "key": "tech.flag.momentum_decay",
+          "value": "动能衰"
+        },
+        {
+          "key": "tech.flag.chop",
+          "value": "震荡"
+        },
+        {
+          "key": "tech.flag.bad_rr",
+          "value": "RR差"
+        },
+        {
+          "key": "tech.score.mid",
+          "value": 33.8
+        },
+        {
+          "key": "tech.alignment.full",
+          "value": "4/4 (100%)"
+        },
+        {
+          "key": "tech.rs.strong",
+          "value": 11.4
+        },
+        {
+          "key": "tech.1W.rsi.healthy",
+          "value": 56.4
+        },
+        {
+          "key": "tech.1W.adx.chop",
+          "value": 18.7
+        },
+        {
+          "key": "tech.1W.bull_ema",
+          "value": true
+        },
+        {
+          "key": "tech.1W.above_ema200",
+          "value": true
+        },
+        {
+          "key": "tech.1W.vol.expanding",
+          "value": 1.8
+        },
+        {
+          "key": "tech.1W.obv.up",
+          "value": true
+        },
+        {
+          "key": "tech.1D.rsi.healthy",
+          "value": 56.5
+        },
+        {
+          "key": "tech.1D.adx.chop",
+          "value": 18.5
+        },
+        {
+          "key": "tech.1D.bull_ema",
+          "value": true
+        },
+        {
+          "key": "tech.1D.above_ema200",
+          "value": true
+        },
+        {
+          "key": "tech.1D.vol.expanding",
+          "value": 1.8
+        },
+        {
+          "key": "tech.1D.obv.up",
+          "value": true
+        },
+        {
+          "key": "tech.4H.rsi.healthy",
+          "value": 56.5
+        },
+        {
+          "key": "tech.4H.adx.chop",
+          "value": 18.5
+        },
+        {
+          "key": "tech.4H.bull_ema",
+          "value": true
+        },
+        {
+          "key": "tech.4H.above_ema200",
+          "value": true
+        },
+        {
+          "key": "tech.4H.vol.expanding",
+          "value": 1.8
+        },
+        {
+          "key": "tech.4H.obv.up",
+          "value": true
+        },
+        {
+          "key": "tech.1H.rsi.healthy",
+          "value": 56.5
+        },
+        {
+          "key": "tech.1H.adx.chop",
+          "value": 18.6
+        },
+        {
+          "key": "tech.1H.bull_ema",
+          "value": true
+        },
+        {
+          "key": "tech.1H.above_ema200",
+          "value": true
+        },
+        {
+          "key": "tech.1H.vol.expanding",
+          "value": 1.8
+        },
+        {
+          "key": "tech.1H.obv.up",
+          "value": true
+        },
+        {
+          "key": "news.signal.no_trade",
+          "value": "⚪ No Trade (中性)"
+        },
+        {
+          "key": "news.score.high",
+          "value": 46
+        },
+        {
+          "key": "news.top_news_type.行业",
+          "value": true
+        },
+        {
+          "key": "news.top_news_type.政策",
+          "value": true
+        },
+        {
+          "key": "news.top_news_type.并购",
+          "value": true
+        }
+      ]
+    },
+    {
+      "sym": "SZSE:300679",
+      "name": "300679",
+      "ok": true,
+      "prev_close": 44.51,
+      "close": 42.21,
+      "change_pct": -5.17,
+      "in_prev_tech": true,
+      "in_prev_news": true,
+      "tech_score": 33.8,
+      "news_score": 76,
+      "tech_type": "趋势延续",
+      "tech_flags": [
+        "动能衰",
+        "震荡",
+        "RR差"
+      ],
+      "news_signal": "⚠️ Long (谨慎)",
+      "features": [
+        {
+          "key": "tech.type.trend_continue",
+          "value": "趋势延续"
+        },
+        {
+          "key": "tech.verdict.long",
+          "value": "看多"
+        },
+        {
+          "key": "tech.flag.momentum_decay",
+          "value": "动能衰"
+        },
+        {
+          "key": "tech.flag.chop",
+          "value": "震荡"
+        },
+        {
+          "key": "tech.flag.bad_rr",
+          "value": "RR差"
+        },
+        {
+          "key": "tech.score.mid",
+          "value": 33.8
+        },
+        {
+          "key": "tech.alignment.full",
+          "value": "4/4 (100%)"
+        },
+        {
+          "key": "tech.rs.strong",
+          "value": 11.4
+        },
+        {
+          "key": "tech.1W.rsi.healthy",
+          "value": 56.4
+        },
+        {
+          "key": "tech.1W.adx.chop",
+          "value": 18.7
+        },
+        {
+          "key": "tech.1W.bull_ema",
+          "value": true
+        },
+        {
+          "key": "tech.1W.above_ema200",
+          "value": true
+        },
+        {
+          "key": "tech.1W.vol.expanding",
+          "value": 1.8
+        },
+        {
+          "key": "tech.1W.obv.up",
+          "value": true
+        },
+        {
+          "key": "tech.1D.rsi.healthy",
+          "value": 56.5
+        },
+        {
+          "key": "tech.1D.adx.chop",
+          "value": 18.5
+        },
+        {
+          "key": "tech.1D.bull_ema",
+          "value": true
+        },
+        {
+          "key": "tech.1D.above_ema200",
+          "value": true
+        },
+        {
+          "key": "tech.1D.vol.expanding",
+          "value": 1.8
+        },
+        {
+          "key": "tech.1D.obv.up",
+          "value": true
+        },
+        {
+          "key": "tech.4H.rsi.healthy",
+          "value": 56.5
+        },
+        {
+          "key": "tech.4H.adx.chop",
+          "value": 18.5
+        },
+        {
+          "key": "tech.4H.bull_ema",
+          "value": true
+        },
+        {
+          "key": "tech.4H.above_ema200",
+          "value": true
+        },
+        {
+          "key": "tech.4H.vol.expanding",
+          "value": 1.8
+        },
+        {
+          "key": "tech.4H.obv.up",
+          "value": true
+        },
+        {
+          "key": "tech.1H.rsi.healthy",
+          "value": 56.5
+        },
+        {
+          "key": "tech.1H.adx.chop",
+          "value": 18.6
+        },
+        {
+          "key": "tech.1H.bull_ema",
+          "value": true
+        },
+        {
+          "key": "tech.1H.above_ema200",
+          "value": true
+        },
+        {
+          "key": "tech.1H.vol.expanding",
+          "value": 1.8
+        },
+        {
+          "key": "tech.1H.obv.up",
+          "value": true
+        },
+        {
+          "key": "news.signal.long_caution",
+          "value": "⚠️ Long (谨慎)"
+        },
+        {
+          "key": "news.pattern.trend_up",
+          "value": "情绪持续增强↑(trend)"
+        },
+        {
+          "key": "news.pattern.early_hype",
+          "value": "⚠️疑似提前炒作(无硬催化)"
+        },
+        {
+          "key": "news.score.high",
+          "value": 76
+        },
+        {
+          "key": "news.top_news_type.回购",
+          "value": true
+        },
+        {
+          "key": "news.top_news_type.行业",
+          "value": true
+        }
+      ]
+    },
+    {
+      "sym": "SZSE:002897",
+      "name": "002897",
+      "ok": true,
+      "prev_close": 44.51,
+      "close": 42.21,
+      "change_pct": -5.17,
+      "in_prev_tech": true,
+      "in_prev_news": true,
+      "tech_score": 33.8,
+      "news_score": 56,
+      "tech_type": "趋势延续",
+      "tech_flags": [
+        "动能衰",
+        "震荡",
+        "RR差"
+      ],
+      "news_signal": "⚪ No Trade (微多)",
+      "features": [
+        {
+          "key": "tech.type.trend_continue",
+          "value": "趋势延续"
+        },
+        {
+          "key": "tech.verdict.long",
+          "value": "看多"
+        },
+        {
+          "key": "tech.flag.momentum_decay",
+          "value": "动能衰"
+        },
+        {
+          "key": "tech.flag.chop",
+          "value": "震荡"
+        },
+        {
+          "key": "tech.flag.bad_rr",
+          "value": "RR差"
+        },
+        {
+          "key": "tech.score.mid",
+          "value": 33.8
+        },
+        {
+          "key": "tech.alignment.full",
+          "value": "4/4 (100%)"
+        },
+        {
+          "key": "tech.rs.strong",
+          "value": 11.4
+        },
+        {
+          "key": "tech.1W.rsi.healthy",
+          "value": 56.4
+        },
+        {
+          "key": "tech.1W.adx.chop",
+          "value": 18.7
+        },
+        {
+          "key": "tech.1W.bull_ema",
+          "value": true
+        },
+        {
+          "key": "tech.1W.above_ema200",
+          "value": true
+        },
+        {
+          "key": "tech.1W.vol.expanding",
+          "value": 1.8
+        },
+        {
+          "key": "tech.1W.obv.up",
+          "value": true
+        },
+        {
+          "key": "tech.1D.rsi.healthy",
+          "value": 56.5
+        },
+        {
+          "key": "tech.1D.adx.chop",
+          "value": 18.5
+        },
+        {
+          "key": "tech.1D.bull_ema",
+          "value": true
+        },
+        {
+          "key": "tech.1D.above_ema200",
+          "value": true
+        },
+        {
+          "key": "tech.1D.vol.expanding",
+          "value": 1.8
+        },
+        {
+          "key": "tech.1D.obv.up",
+          "value": true
+        },
+        {
+          "key": "tech.4H.rsi.healthy",
+          "value": 56.5
+        },
+        {
+          "key": "tech.4H.adx.chop",
+          "value": 18.5
+        },
+        {
+          "key": "tech.4H.bull_ema",
+          "value": true
+        },
+        {
+          "key": "tech.4H.above_ema200",
+          "value": true
+        },
+        {
+          "key": "tech.4H.vol.expanding",
+          "value": 1.8
+        },
+        {
+          "key": "tech.4H.obv.up",
+          "value": true
+        },
+        {
+          "key": "tech.1H.rsi.healthy",
+          "value": 56.5
+        },
+        {
+          "key": "tech.1H.adx.chop",
+          "value": 18.6
+        },
+        {
+          "key": "tech.1H.bull_ema",
+          "value": true
+        },
+        {
+          "key": "tech.1H.above_ema200",
+          "value": true
+        },
+        {
+          "key": "tech.1H.vol.expanding",
+          "value": 1.8
+        },
+        {
+          "key": "tech.1H.obv.up",
+          "value": true
+        },
+        {
+          "key": "news.signal.no_trade",
+          "value": "⚪ No Trade (微多)"
+        },
+        {
+          "key": "news.score.high",
+          "value": 56
+        },
+        {
+          "key": "news.top_news_type.回购",
+          "value": true
+        }
+      ]
+    }
+  ],
+  "feature_stats": [
+    {
+      "key": "tech.4H.macd.bullish",
+      "gain_count": 4,
+      "loss_count": 0,
+      "gain_rate": 0.4,
+      "loss_rate": 0,
+      "diff": 0.4
+    },
+    {
+      "key": "tech.verdict.strong_long",
+      "gain_count": 3,
+      "loss_count": 0,
+      "gain_rate": 0.3,
+      "loss_rate": 0,
+      "diff": 0.3
+    },
+    {
+      "key": "tech.score.high",
+      "gain_count": 3,
+      "loss_count": 0,
+      "gain_rate": 0.3,
+      "loss_rate": 0,
+      "diff": 0.3
+    },
+    {
+      "key": "tech.1W.macd.bullish",
+      "gain_count": 3,
+      "loss_count": 0,
+      "gain_rate": 0.3,
+      "loss_rate": 0,
+      "diff": 0.3
+    },
+    {
+      "key": "tech.1D.macd.bullish",
+      "gain_count": 3,
+      "loss_count": 0,
+      "gain_rate": 0.3,
+      "loss_rate": 0,
+      "diff": 0.3
+    },
+    {
+      "key": "tech.1H.obv.down",
+      "gain_count": 3,
+      "loss_count": 0,
+      "gain_rate": 0.3,
+      "loss_rate": 0,
+      "diff": 0.3
+    },
+    {
+      "key": "tech.4H.obv.down",
+      "gain_count": 3,
+      "loss_count": 0,
+      "gain_rate": 0.3,
+      "loss_rate": 0,
+      "diff": 0.3
+    },
+    {
+      "key": "tech.1H.dist20.near",
+      "gain_count": 3,
+      "loss_count": 0,
+      "gain_rate": 0.3,
+      "loss_rate": 0,
+      "diff": 0.3
+    },
+    {
+      "key": "tech.1H.near_support",
+      "gain_count": 3,
+      "loss_count": 0,
+      "gain_rate": 0.3,
+      "loss_rate": 0,
+      "diff": 0.3
+    },
+    {
+      "key": "tech.1W.adx.strong",
+      "gain_count": 2,
+      "loss_count": 0,
+      "gain_rate": 0.2,
+      "loss_rate": 0,
+      "diff": 0.2
+    },
+    {
+      "key": "tech.1W.dist20.overheat",
+      "gain_count": 2,
+      "loss_count": 0,
+      "gain_rate": 0.2,
+      "loss_rate": 0,
+      "diff": 0.2
+    },
+    {
+      "key": "tech.1D.adx.trending",
+      "gain_count": 2,
+      "loss_count": 0,
+      "gain_rate": 0.2,
+      "loss_rate": 0,
+      "diff": 0.2
+    },
+    {
+      "key": "tech.4H.adx.strong",
+      "gain_count": 2,
+      "loss_count": 0,
+      "gain_rate": 0.2,
+      "loss_rate": 0,
+      "diff": 0.2
+    },
+    {
+      "key": "tech.1H.adx.strong",
+      "gain_count": 2,
+      "loss_count": 0,
+      "gain_rate": 0.2,
+      "loss_rate": 0,
+      "diff": 0.2
+    },
+    {
+      "key": "tech.flag.resistance",
+      "gain_count": 2,
+      "loss_count": 0,
+      "gain_rate": 0.2,
+      "loss_rate": 0,
+      "diff": 0.2
+    },
+    {
+      "key": "tech.1W.dist20.near",
+      "gain_count": 2,
+      "loss_count": 0,
+      "gain_rate": 0.2,
+      "loss_rate": 0,
+      "diff": 0.2
+    },
+    {
+      "key": "tech.1D.dist20.near",
+      "gain_count": 2,
+      "loss_count": 0,
+      "gain_rate": 0.2,
+      "loss_rate": 0,
+      "diff": 0.2
+    },
+    {
+      "key": "tech.1D.near_support",
+      "gain_count": 2,
+      "loss_count": 0,
+      "gain_rate": 0.2,
+      "loss_rate": 0,
+      "diff": 0.2
+    },
+    {
+      "key": "tech.4H.dist20.near",
+      "gain_count": 2,
+      "loss_count": 0,
+      "gain_rate": 0.2,
+      "loss_rate": 0,
+      "diff": 0.2
+    },
+    {
+      "key": "tech.4H.near_support",
+      "gain_count": 2,
+      "loss_count": 0,
+      "gain_rate": 0.2,
+      "loss_rate": 0,
+      "diff": 0.2
+    },
+    {
+      "key": "tech.1H.adx.trending",
+      "gain_count": 2,
+      "loss_count": 0,
+      "gain_rate": 0.2,
+      "loss_rate": 0,
+      "diff": 0.2
+    },
+    {
+      "key": "tech.type.overheat_chase",
+      "gain_count": 1,
+      "loss_count": 0,
+      "gain_rate": 0.1,
+      "loss_rate": 0,
+      "diff": 0.1
+    },
+    {
+      "key": "tech.flag.overheat",
+      "gain_count": 1,
+      "loss_count": 0,
+      "gain_rate": 0.1,
+      "loss_rate": 0,
+      "diff": 0.1
+    },
+    {
+      "key": "tech.1W.macd.turning",
+      "gain_count": 1,
+      "loss_count": 0,
+      "gain_rate": 0.1,
+      "loss_rate": 0,
+      "diff": 0.1
+    },
+    {
+      "key": "tech.1D.rsi.overheat",
+      "gain_count": 1,
+      "loss_count": 0,
+      "gain_rate": 0.1,
+      "loss_rate": 0,
+      "diff": 0.1
+    },
+    {
+      "key": "tech.1D.dist20.overheat",
+      "gain_count": 1,
+      "loss_count": 0,
+      "gain_rate": 0.1,
+      "loss_rate": 0,
+      "diff": 0.1
+    },
+    {
+      "key": "tech.4H.dist20.overheat",
+      "gain_count": 1,
+      "loss_count": 0,
+      "gain_rate": 0.1,
+      "loss_rate": 0,
+      "diff": 0.1
+    },
+    {
+      "key": "tech.1H.macd.bullish",
+      "gain_count": 1,
+      "loss_count": 0,
+      "gain_rate": 0.1,
+      "loss_rate": 0,
+      "diff": 0.1
+    },
+    {
+      "key": "news.signal.no_trade",
+      "gain_count": 8,
+      "loss_count": 7,
+      "gain_rate": 0.8,
+      "loss_rate": 0.7,
+      "diff": 0.1
+    },
+    {
+      "key": "tech.type.pullback",
+      "gain_count": 1,
+      "loss_count": 0,
+      "gain_rate": 0.1,
+      "loss_rate": 0,
+      "diff": 0.1
+    },
+    {
+      "key": "tech.rs.weak",
+      "gain_count": 1,
+      "loss_count": 0,
+      "gain_rate": 0.1,
+      "loss_rate": 0,
+      "diff": 0.1
+    },
+    {
+      "key": "tech.1W.near_support",
+      "gain_count": 1,
+      "loss_count": 0,
+      "gain_rate": 0.1,
+      "loss_rate": 0,
+      "diff": 0.1
+    },
+    {
+      "key": "tech.1D.adx.strong",
+      "gain_count": 1,
+      "loss_count": 0,
+      "gain_rate": 0.1,
+      "loss_rate": 0,
+      "diff": 0.1
+    },
+    {
+      "key": "tech.type.trend_chase",
+      "gain_count": 1,
+      "loss_count": 0,
+      "gain_rate": 0.1,
+      "loss_rate": 0,
+      "diff": 0.1
+    },
+    {
+      "key": "tech.1W.adx.trending",
+      "gain_count": 1,
+      "loss_count": 0,
+      "gain_rate": 0.1,
+      "loss_rate": 0,
+      "diff": 0.1
+    },
+    {
+      "key": "tech.4H.adx.trending",
+      "gain_count": 1,
+      "loss_count": 0,
+      "gain_rate": 0.1,
+      "loss_rate": 0,
+      "diff": 0.1
+    },
+    {
+      "key": "tech.1H.divergence.bull",
+      "gain_count": 1,
+      "loss_count": 0,
+      "gain_rate": 0.1,
+      "loss_rate": 0,
+      "diff": 0.1
+    },
+    {
+      "key": "news.signal.short_avoid",
+      "gain_count": 1,
+      "loss_count": 0,
+      "gain_rate": 0.1,
+      "loss_rate": 0,
+      "diff": 0.1
+    },
+    {
+      "key": "news.pattern.trend_down",
+      "gain_count": 1,
+      "loss_count": 0,
+      "gain_rate": 0.1,
+      "loss_rate": 0,
+      "diff": 0.1
+    },
+    {
+      "key": "news.score.positive",
+      "gain_count": 1,
+      "loss_count": 0,
+      "gain_rate": 0.1,
+      "loss_rate": 0,
+      "diff": 0.1
+    },
+    {
+      "key": "tech.type.reversal",
+      "gain_count": 1,
+      "loss_count": 0,
+      "gain_rate": 0.1,
+      "loss_rate": 0,
+      "diff": 0.1
+    },
+    {
+      "key": "tech.1D.macd.turning",
+      "gain_count": 1,
+      "loss_count": 0,
+      "gain_rate": 0.1,
+      "loss_rate": 0,
+      "diff": 0.1
+    },
+    {
+      "key": "tech.4H.divergence.bull",
+      "gain_count": 1,
+      "loss_count": 0,
+      "gain_rate": 0.1,
+      "loss_rate": 0,
+      "diff": 0.1
+    },
+    {
+      "key": "tech.1W.above_ema200",
+      "gain_count": 10,
+      "loss_count": 10,
+      "gain_rate": 1,
+      "loss_rate": 1,
+      "diff": 0
+    },
+    {
+      "key": "tech.1W.obv.up",
+      "gain_count": 10,
+      "loss_count": 10,
+      "gain_rate": 1,
+      "loss_rate": 1,
+      "diff": 0
+    },
+    {
+      "key": "tech.1D.obv.up",
+      "gain_count": 10,
+      "loss_count": 10,
+      "gain_rate": 1,
+      "loss_rate": 1,
+      "diff": 0
+    },
+    {
+      "key": "tech.4H.above_ema200",
+      "gain_count": 10,
+      "loss_count": 10,
+      "gain_rate": 1,
+      "loss_rate": 1,
+      "diff": 0
+    },
+    {
+      "key": "tech.1H.above_ema200",
+      "gain_count": 10,
+      "loss_count": 10,
+      "gain_rate": 1,
+      "loss_rate": 1,
+      "diff": 0
+    },
+    {
+      "key": "news.top_news_type.并购",
+      "gain_count": 2,
+      "loss_count": 2,
+      "gain_rate": 0.2,
+      "loss_rate": 0.2,
+      "diff": 0
+    },
+    {
+      "key": "news.signal.long_medium",
+      "gain_count": 1,
+      "loss_count": 1,
+      "gain_rate": 0.1,
+      "loss_rate": 0.1,
+      "diff": 0
+    },
+    {
+      "key": "news.top_news_type.传闻",
+      "gain_count": 1,
+      "loss_count": 1,
+      "gain_rate": 0.1,
+      "loss_rate": 0.1,
+      "diff": 0
+    },
+    {
+      "key": "tech.flag.bad_rr",
+      "gain_count": 9,
+      "loss_count": 10,
+      "gain_rate": 0.9,
+      "loss_rate": 1,
+      "diff": -0.1
+    },
+    {
+      "key": "tech.1W.rsi.healthy",
+      "gain_count": 9,
+      "loss_count": 10,
+      "gain_rate": 0.9,
+      "loss_rate": 1,
+      "diff": -0.1
+    },
+    {
+      "key": "tech.1W.vol.expanding",
+      "gain_count": 9,
+      "loss_count": 10,
+      "gain_rate": 0.9,
+      "loss_rate": 1,
+      "diff": -0.1
+    },
+    {
+      "key": "tech.1D.above_ema200",
+      "gain_count": 9,
+      "loss_count": 10,
+      "gain_rate": 0.9,
+      "loss_rate": 1,
+      "diff": -0.1
+    },
+    {
+      "key": "tech.1H.rsi.healthy",
+      "gain_count": 9,
+      "loss_count": 10,
+      "gain_rate": 0.9,
+      "loss_rate": 1,
+      "diff": -0.1
+    },
+    {
+      "key": "news.score.high",
+      "gain_count": 9,
+      "loss_count": 10,
+      "gain_rate": 0.9,
+      "loss_rate": 1,
+      "diff": -0.1
+    },
+    {
+      "key": "news.top_news_type.政策",
+      "gain_count": 2,
+      "loss_count": 3,
+      "gain_rate": 0.2,
+      "loss_rate": 0.3,
+      "diff": -0.1
+    },
+    {
+      "key": "news.pattern.rumor_dominant",
+      "gain_count": 0,
+      "loss_count": 1,
+      "gain_rate": 0,
+      "loss_rate": 0.1,
+      "diff": -0.1
+    },
+    {
+      "key": "news.top_news_type.分析师动作",
+      "gain_count": 0,
+      "loss_count": 1,
+      "gain_rate": 0,
+      "loss_rate": 0.1,
+      "diff": -0.1
+    },
+    {
+      "key": "news.pattern.trend_up",
+      "gain_count": 0,
+      "loss_count": 1,
+      "gain_rate": 0,
+      "loss_rate": 0.1,
+      "diff": -0.1
+    },
+    {
+      "key": "news.pattern.early_hype",
+      "gain_count": 0,
+      "loss_count": 1,
+      "gain_rate": 0,
+      "loss_rate": 0.1,
+      "diff": -0.1
+    },
+    {
+      "key": "tech.flag.momentum_decay",
+      "gain_count": 8,
+      "loss_count": 10,
+      "gain_rate": 0.8,
+      "loss_rate": 1,
+      "diff": -0.2
+    },
+    {
+      "key": "tech.rs.strong",
+      "gain_count": 8,
+      "loss_count": 10,
+      "gain_rate": 0.8,
+      "loss_rate": 1,
+      "diff": -0.2
+    },
+    {
+      "key": "tech.1W.bull_ema",
+      "gain_count": 8,
+      "loss_count": 10,
+      "gain_rate": 0.8,
+      "loss_rate": 1,
+      "diff": -0.2
+    },
+    {
+      "key": "tech.1D.bull_ema",
+      "gain_count": 8,
+      "loss_count": 10,
+      "gain_rate": 0.8,
+      "loss_rate": 1,
+      "diff": -0.2
+    },
+    {
+      "key": "tech.1D.vol.expanding",
+      "gain_count": 8,
+      "loss_count": 10,
+      "gain_rate": 0.8,
+      "loss_rate": 1,
+      "diff": -0.2
+    },
+    {
+      "key": "tech.1D.rsi.healthy",
+      "gain_count": 8,
+      "loss_count": 10,
+      "gain_rate": 0.8,
+      "loss_rate": 1,
+      "diff": -0.2
+    },
+    {
+      "key": "tech.4H.rsi.healthy",
+      "gain_count": 8,
+      "loss_count": 10,
+      "gain_rate": 0.8,
+      "loss_rate": 1,
+      "diff": -0.2
+    },
+    {
+      "key": "news.top_news_type.财报",
+      "gain_count": 1,
+      "loss_count": 3,
+      "gain_rate": 0.1,
+      "loss_rate": 0.3,
+      "diff": -0.2
+    },
+    {
+      "key": "news.signal.long_caution",
+      "gain_count": 0,
+      "loss_count": 2,
+      "gain_rate": 0,
+      "loss_rate": 0.2,
+      "diff": -0.2
+    },
+    {
+      "key": "news.top_news_type.回购",
+      "gain_count": 0,
+      "loss_count": 2,
+      "gain_rate": 0,
+      "loss_rate": 0.2,
+      "diff": -0.2
+    },
+    {
+      "key": "tech.4H.bull_ema",
+      "gain_count": 7,
+      "loss_count": 10,
+      "gain_rate": 0.7,
+      "loss_rate": 1,
+      "diff": -0.3
+    },
+    {
+      "key": "tech.4H.obv.up",
+      "gain_count": 7,
+      "loss_count": 10,
+      "gain_rate": 0.7,
+      "loss_rate": 1,
+      "diff": -0.3
+    },
+    {
+      "key": "tech.4H.vol.expanding",
+      "gain_count": 7,
+      "loss_count": 10,
+      "gain_rate": 0.7,
+      "loss_rate": 1,
+      "diff": -0.3
+    },
+    {
+      "key": "tech.1H.obv.up",
+      "gain_count": 7,
+      "loss_count": 10,
+      "gain_rate": 0.7,
+      "loss_rate": 1,
+      "diff": -0.3
+    },
+    {
+      "key": "tech.verdict.long",
+      "gain_count": 7,
+      "loss_count": 10,
+      "gain_rate": 0.7,
+      "loss_rate": 1,
+      "diff": -0.3
+    },
+    {
+      "key": "tech.flag.chop",
+      "gain_count": 7,
+      "loss_count": 10,
+      "gain_rate": 0.7,
+      "loss_rate": 1,
+      "diff": -0.3
+    },
+    {
+      "key": "tech.score.mid",
+      "gain_count": 7,
+      "loss_count": 10,
+      "gain_rate": 0.7,
+      "loss_rate": 1,
+      "diff": -0.3
+    },
+    {
+      "key": "tech.1W.adx.chop",
+      "gain_count": 7,
+      "loss_count": 10,
+      "gain_rate": 0.7,
+      "loss_rate": 1,
+      "diff": -0.3
+    },
+    {
+      "key": "tech.1D.adx.chop",
+      "gain_count": 7,
+      "loss_count": 10,
+      "gain_rate": 0.7,
+      "loss_rate": 1,
+      "diff": -0.3
+    },
+    {
+      "key": "tech.4H.adx.chop",
+      "gain_count": 7,
+      "loss_count": 10,
+      "gain_rate": 0.7,
+      "loss_rate": 1,
+      "diff": -0.3
+    },
+    {
+      "key": "news.top_news_type.行业",
+      "gain_count": 2,
+      "loss_count": 6,
+      "gain_rate": 0.2,
+      "loss_rate": 0.6,
+      "diff": -0.4
+    },
+    {
+      "key": "tech.type.trend_continue",
+      "gain_count": 6,
+      "loss_count": 10,
+      "gain_rate": 0.6,
+      "loss_rate": 1,
+      "diff": -0.4
+    },
+    {
+      "key": "tech.alignment.full",
+      "gain_count": 6,
+      "loss_count": 10,
+      "gain_rate": 0.6,
+      "loss_rate": 1,
+      "diff": -0.4
+    },
+    {
+      "key": "tech.1H.adx.chop",
+      "gain_count": 6,
+      "loss_count": 10,
+      "gain_rate": 0.6,
+      "loss_rate": 1,
+      "diff": -0.4
+    },
+    {
+      "key": "tech.1H.bull_ema",
+      "gain_count": 6,
+      "loss_count": 10,
+      "gain_rate": 0.6,
+      "loss_rate": 1,
+      "diff": -0.4
+    },
+    {
+      "key": "tech.1H.vol.expanding",
+      "gain_count": 6,
+      "loss_count": 10,
+      "gain_rate": 0.6,
+      "loss_rate": 1,
+      "diff": -0.4
+    }
+  ],
+  "common_gainer_features": [],
+  "common_loser_features": [
+    {
+      "key": "news.top_news_type.行业",
+      "gain_count": 2,
+      "loss_count": 6,
+      "gain_rate": 0.2,
+      "loss_rate": 0.6,
+      "diff": -0.4
+    },
+    {
+      "key": "tech.type.trend_continue",
+      "gain_count": 6,
+      "loss_count": 10,
+      "gain_rate": 0.6,
+      "loss_rate": 1,
+      "diff": -0.4
+    },
+    {
+      "key": "tech.alignment.full",
+      "gain_count": 6,
+      "loss_count": 10,
+      "gain_rate": 0.6,
+      "loss_rate": 1,
+      "diff": -0.4
+    },
+    {
+      "key": "tech.1H.adx.chop",
+      "gain_count": 6,
+      "loss_count": 10,
+      "gain_rate": 0.6,
+      "loss_rate": 1,
+      "diff": -0.4
+    },
+    {
+      "key": "tech.1H.bull_ema",
+      "gain_count": 6,
+      "loss_count": 10,
+      "gain_rate": 0.6,
+      "loss_rate": 1,
+      "diff": -0.4
+    },
+    {
+      "key": "tech.1H.vol.expanding",
+      "gain_count": 6,
+      "loss_count": 10,
+      "gain_rate": 0.6,
+      "loss_rate": 1,
+      "diff": -0.4
+    },
+    {
+      "key": "tech.4H.bull_ema",
+      "gain_count": 7,
+      "loss_count": 10,
+      "gain_rate": 0.7,
+      "loss_rate": 1,
+      "diff": -0.3
+    },
+    {
+      "key": "tech.4H.obv.up",
+      "gain_count": 7,
+      "loss_count": 10,
+      "gain_rate": 0.7,
+      "loss_rate": 1,
+      "diff": -0.3
+    },
+    {
+      "key": "tech.4H.vol.expanding",
+      "gain_count": 7,
+      "loss_count": 10,
+      "gain_rate": 0.7,
+      "loss_rate": 1,
+      "diff": -0.3
+    },
+    {
+      "key": "tech.1H.obv.up",
+      "gain_count": 7,
+      "loss_count": 10,
+      "gain_rate": 0.7,
+      "loss_rate": 1,
+      "diff": -0.3
+    },
+    {
+      "key": "tech.verdict.long",
+      "gain_count": 7,
+      "loss_count": 10,
+      "gain_rate": 0.7,
+      "loss_rate": 1,
+      "diff": -0.3
+    },
+    {
+      "key": "tech.flag.chop",
+      "gain_count": 7,
+      "loss_count": 10,
+      "gain_rate": 0.7,
+      "loss_rate": 1,
+      "diff": -0.3
+    },
+    {
+      "key": "tech.score.mid",
+      "gain_count": 7,
+      "loss_count": 10,
+      "gain_rate": 0.7,
+      "loss_rate": 1,
+      "diff": -0.3
+    },
+    {
+      "key": "tech.1W.adx.chop",
+      "gain_count": 7,
+      "loss_count": 10,
+      "gain_rate": 0.7,
+      "loss_rate": 1,
+      "diff": -0.3
+    },
+    {
+      "key": "tech.1D.adx.chop",
+      "gain_count": 7,
+      "loss_count": 10,
+      "gain_rate": 0.7,
+      "loss_rate": 1,
+      "diff": -0.3
+    },
+    {
+      "key": "tech.4H.adx.chop",
+      "gain_count": 7,
+      "loss_count": 10,
+      "gain_rate": 0.7,
+      "loss_rate": 1,
+      "diff": -0.3
+    }
+  ],
+  "weight_recommendations": [
+    {
+      "feature": "news.top_news_type.行业",
+      "direction": "down",
+      "status": "uncategorized",
+      "rationale": "gainers 2/10 vs losers 6/10 (Δ=-40pp)"
+    },
+    {
+      "feature": "tech.type.trend_continue",
+      "direction": "down",
+      "layer": "tech",
+      "source_path": "pipeline/3-technical/analyze_tech_cn_mtf.mjs:699",
+      "source_label": "趋势延续",
+      "current_weight": null,
+      "recommended_weight": null,
+      "rationale": "gainers 6/10 vs losers 10/10 (Δ=-40pp)"
+    },
+    {
+      "feature": "tech.alignment.full",
+      "direction": "down",
+      "status": "uncategorized",
+      "rationale": "gainers 6/10 vs losers 10/10 (Δ=-40pp)"
+    },
+    {
+      "feature": "tech.1H.adx.chop",
+      "direction": "down",
+      "status": "uncategorized",
+      "rationale": "gainers 6/10 vs losers 10/10 (Δ=-40pp)"
+    },
+    {
+      "feature": "tech.1H.bull_ema",
+      "direction": "down",
+      "status": "uncategorized",
+      "rationale": "gainers 6/10 vs losers 10/10 (Δ=-40pp)"
+    },
+    {
+      "feature": "tech.1H.vol.expanding",
+      "direction": "down",
+      "status": "uncategorized",
+      "rationale": "gainers 6/10 vs losers 10/10 (Δ=-40pp)"
+    },
+    {
+      "feature": "tech.4H.bull_ema",
+      "direction": "down",
+      "status": "uncategorized",
+      "rationale": "gainers 7/10 vs losers 10/10 (Δ=-30pp)"
+    },
+    {
+      "feature": "tech.4H.obv.up",
+      "direction": "down",
+      "status": "uncategorized",
+      "rationale": "gainers 7/10 vs losers 10/10 (Δ=-30pp)"
+    },
+    {
+      "feature": "tech.4H.vol.expanding",
+      "direction": "down",
+      "status": "uncategorized",
+      "rationale": "gainers 7/10 vs losers 10/10 (Δ=-30pp)"
+    },
+    {
+      "feature": "tech.1H.obv.up",
+      "direction": "down",
+      "status": "uncategorized",
+      "rationale": "gainers 7/10 vs losers 10/10 (Δ=-30pp)"
+    },
+    {
+      "feature": "tech.verdict.long",
+      "direction": "down",
+      "status": "uncategorized",
+      "rationale": "gainers 7/10 vs losers 10/10 (Δ=-30pp)"
+    },
+    {
+      "feature": "tech.flag.chop",
+      "direction": "down",
+      "layer": "tech",
+      "source_path": "pipeline/3-technical/analyze_tech_cn_mtf.mjs:709",
+      "source_label": "震荡市",
+      "current_weight": -4,
+      "recommended_weight": -3,
+      "rationale": "gainers 7/10 vs losers 10/10 (Δ=-30pp)"
+    },
+    {
+      "feature": "tech.score.mid",
+      "direction": "down",
+      "layer": "tech",
+      "source_path": "pipeline/3-technical/analyze_tech_cn_mtf.mjs (scoreTF 总分区间)",
+      "source_label": "技术分15-35中等区间",
+      "current_weight": null,
+      "recommended_weight": null,
+      "rationale": "gainers 7/10 vs losers 10/10 (Δ=-30pp)"
+    },
+    {
+      "feature": "tech.1W.adx.chop",
+      "direction": "down",
+      "status": "uncategorized",
+      "rationale": "gainers 7/10 vs losers 10/10 (Δ=-30pp)"
+    },
+    {
+      "feature": "tech.1D.adx.chop",
+      "direction": "down",
+      "layer": "tech",
+      "source_path": "pipeline/3-technical/analyze_tech_cn_mtf.mjs:501",
+      "source_label": "ADX<20 震荡折半 (1D)",
+      "current_weight": 0,
+      "recommended_weight": 0,
+      "rationale": "gainers 7/10 vs losers 10/10 (Δ=-30pp)"
+    },
+    {
+      "feature": "tech.4H.adx.chop",
+      "direction": "down",
+      "status": "uncategorized",
+      "rationale": "gainers 7/10 vs losers 10/10 (Δ=-30pp)"
+    }
+  ],
+  "uncategorized_features": [
+    "news.top_news_type.行业",
+    "tech.alignment.full",
+    "tech.1H.adx.chop",
+    "tech.1H.bull_ema",
+    "tech.1H.vol.expanding",
+    "tech.4H.bull_ema",
+    "tech.4H.obv.up",
+    "tech.4H.vol.expanding",
+    "tech.1H.obv.up",
+    "tech.verdict.long",
+    "tech.1W.adx.chop",
+    "tech.4H.adx.chop"
+  ]
+}

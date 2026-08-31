@@ -1,0 +1,1907 @@
+{
+  "generated_at": "2026-07-28T06:31:48.856Z",
+  "market": "cn",
+  "source": "src/core/webNews.js",
+  "score_scale": "0-100 normalized (neutral=50)",
+  "window": {
+    "from": "2026-07-21",
+    "to": "2026-07-28",
+    "days": 7
+  },
+  "llm_used": true,
+  "performance": {
+    "totals_ms": {
+      "list_fetch_ms": 61396,
+      "enrichment_ms": 189762,
+      "relevance_ms": 0,
+      "llm_ms": 234515,
+      "report_write_ms": 15
+    },
+    "avg_ms": {
+      "list_fetch_ms": 2924,
+      "enrichment_ms": 9036,
+      "relevance_ms": 0,
+      "llm_ms": 11167,
+      "report_write_ms": 1
+    }
+  },
+  "stocks": {
+    "SSE:603296": {
+      "name": "华勤技术",
+      "score": 98,
+      "score_raw": 29.7,
+      "score_components": {
+        "positive_weight_sum": 30.42,
+        "negative_weight_sum": 0.72,
+        "news_effective_count": 13,
+        "news_dropped_count": 0
+      },
+      "signal": "🟢 Long (强)",
+      "strategy": "多重利好共振，基本面+情绪双支撑，适合追涨或持有",
+      "suitable_for": "追涨 / 持有",
+      "confidence": "高",
+      "patterns": [
+        "情绪持续增强↑(trend)"
+      ],
+      "positive_factors": [
+        "[回购|w5.4] 华勤技术:华勤技术关于公司实际控制人增持公司H股股份计划完成的公告",
+        "[并购|w3.78] 华勤技术:华勤技术H股公告-有关在市场上收购晶合集成H股之须予披露交易",
+        "[财报|w3.32] 华勤技术：实控人邱文生增持18万股H股 金额1213万港元"
+      ],
+      "negative_factors": [
+        "[行业|w0.72] 华勤技术：融资净偿还4743.94万元，融资余额11.42亿元"
+      ],
+      "news_count": 13,
+      "news_dropped": 0,
+      "performance": {
+        "list_fetch_ms": 2794,
+        "candidate_filter_ms": 0,
+        "enrichment_ms": 25053,
+        "raw_news_count": 40,
+        "raw_research_count": 10,
+        "candidate_news_count": 13,
+        "candidate_research_count": 0,
+        "enriched_news_count": 13,
+        "enriched_research_count": 0,
+        "candidate_reasons": {
+          "news": {
+            "noise:融资净(买入|卖出)": 2,
+            "no-subject-mention": 8,
+            "noise:\\d{1,2}月\\d{1,2}日(快速上涨|快速回调|涨停|": 2,
+            "noise:开盘价|收盘价": 1,
+            "dedup": 0,
+            "out_of_window": 14
+          },
+          "research": {
+            "dedup": 0,
+            "out_of_window": 10
+          }
+        },
+        "date_filter_ms": 0,
+        "relevance_ms": 0,
+        "llm_ms": 35557,
+        "scoring_ms": 0
+      },
+      "top_news": [
+        {
+          "date": "2026-07-28 13:43:33",
+          "title": "华勤技术7月28日快速反弹",
+          "content": "",
+          "type": "行业",
+          "sentiment": 1,
+          "weight": 1,
+          "final_weight": 0.6,
+          "source_authority": 3,
+          "recency_factor": 1,
+          "source": "东方财富资讯",
+          "llm_reviewed": true,
+          "llm_confidence": 0.3,
+          "llm_is_real_catalyst": false,
+          "llm_reasoning": "盘中快速反弹，无实质催化"
+        },
+        {
+          "date": "2026-07-28",
+          "title": "华勤技术:华勤技术关于公司实际控制人增持公司H股股份计划完成的公告",
+          "content": "一般项目:从事计算机软件领域内的技术开发、技术转让、技术咨询、技术服务,通讯产品及相关软硬件的设计、销售;货物进出口;技术进出口。(除依法须经批准的项目外,凭营业执照依法自主开展经营活动)\n郑重声明：东方财富网发布此信息的目的在于传播更多信息，与本站立场无关。东方财富网不保证该信息（包括但不限于文字、视频、音频、数据及图表）全部或者部分内容的准确性、真实性、完整性、有效性、及时性、原创性等。相关信息并未经过本网站证实，不对您构成任何投资建议，据此操作，风险自担。",
+          "type": "回购",
+          "sentiment": 1,
+          "weight": 5,
+          "final_weight": 5.4,
+          "source_authority": 4.5,
+          "recency_factor": 1,
+          "source": "东方财富公告",
+          "llm_reviewed": true,
+          "llm_confidence": 0.9,
+          "llm_is_real_catalyst": true,
+          "llm_reasoning": "实控人增持H股计划完成"
+        },
+        {
+          "date": "2026-07-28",
+          "title": "华勤技术:北京市中伦律师事务所关于华勤技术股份有限公司实际控制人增持股份的专项核查意见",
+          "content": "一般项目:从事计算机软件领域内的技术开发、技术转让、技术咨询、技术服务,通讯产品及相关软硬件的设计、销售;货物进出口;技术进出口。(除依法须经批准的项目外,凭营业执照依法自主开展经营活动)\n郑重声明：东方财富网发布此信息的目的在于传播更多信息，与本站立场无关。东方财富网不保证该信息（包括但不限于文字、视频、音频、数据及图表）全部或者部分内容的准确性、真实性、完整性、有效性、及时性、原创性等。相关信息并未经过本网站证实，不对您构成任何投资建议，据此操作，风险自担。",
+          "type": "回购",
+          "sentiment": 1,
+          "weight": 2,
+          "final_weight": 2.16,
+          "source_authority": 4.5,
+          "recency_factor": 1,
+          "source": "东方财富公告",
+          "llm_reviewed": true,
+          "llm_confidence": 0.7,
+          "llm_is_real_catalyst": false,
+          "llm_reasoning": "律师确认增持合规，非直接增持"
+        },
+        {
+          "date": "2026-07-27 20:09:00",
+          "title": "华勤技术：董事长完成增持18万股H股",
+          "content": "全新妙想投研助理，立即体验\n\n　　南财智讯7月27日电，华勤技术（03296.HK）发布自愿公告，公司董事长邱文生先生通过港股集中竞价方式完成增持计划，合计增持180,000股H股，增持金额约1,213.03万港元。本次增持后，邱文生先生直接持股总数为68,604,456股（含68,314,456股A股及290,000股H股），占公司已发行股份总数的4.52%。增持计划实施符合《中华人民共和国证券法》《上海证券交易所股票上市规则》等规定，不触发强制要约收购，未导致公司控股股东、实际控制人变更，亦未对公司治理及持续经营产生影响。中伦律师事务所出具专项核查意见，确认本次增持属于豁免强制要约收购情形。",
+          "type": "回购",
+          "sentiment": 1,
+          "weight": 3,
+          "final_weight": 3.06,
+          "source_authority": 3,
+          "recency_factor": 0.85,
+          "source": "东方财富资讯",
+          "llm_reviewed": true,
+          "llm_confidence": 0.95,
+          "llm_is_real_catalyst": true,
+          "llm_reasoning": "董事长完成增持18万股，金额1213万港元"
+        },
+        {
+          "date": "2026-07-27 16:37:00",
+          "title": "华勤技术：实控人邱文生增持18万股H股 金额1213万港元",
+          "content": "在东方财富看资讯行情，选东方财富证券一站式开户交易>>\n\n　　7月27日，华勤技术（603296/03296）发布公告，实际控制人邱文生通过香港联合交易所增持公司H股股份18万股，占总股本的0.0119%，增持金额为1213万港元，增持计划已完成。\n\n　　2026年一季度，华勤技术实现收入407.46亿元，归母净利润10.61亿元。",
+          "type": "财报",
+          "sentiment": 1,
+          "weight": 3,
+          "final_weight": 3.32,
+          "source_authority": 3,
+          "recency_factor": 0.85,
+          "source": "东方财富资讯",
+          "llm_reviewed": true,
+          "llm_confidence": 0.9,
+          "llm_is_real_catalyst": true,
+          "llm_reasoning": "增持完成，Q1净利10.61亿"
+        }
+      ]
+    },
+    "SZSE:002415": {
+      "name": "海康威视",
+      "score": 91,
+      "score_raw": 28.45,
+      "score_components": {
+        "positive_weight_sum": 29.65,
+        "negative_weight_sum": 1.2,
+        "news_effective_count": 23,
+        "news_dropped_count": 0
+      },
+      "signal": "🟢 Long (强)",
+      "strategy": "多重利好共振，基本面+情绪双支撑，适合追涨或持有",
+      "suitable_for": "追涨 / 持有",
+      "confidence": "高",
+      "patterns": [
+        "情绪持续增强↑(trend)"
+      ],
+      "positive_factors": [
+        "[财报|w3.32] 海康威视上半年净利润增近四成 丨A股财报解读",
+        "[财报|w2.81] 海康威视上半年净利润增近四成 全年营收有望破千亿元",
+        "[财报|w2.81] 002415，最新消息！"
+      ],
+      "negative_factors": [
+        "[行业|w1.2] 海康威视：融资净偿还4.4亿元，融资余额49.41亿元"
+      ],
+      "news_count": 23,
+      "news_dropped": 0,
+      "performance": {
+        "list_fetch_ms": 2394,
+        "candidate_filter_ms": 0,
+        "enrichment_ms": 14755,
+        "raw_news_count": 40,
+        "raw_research_count": 10,
+        "candidate_news_count": 21,
+        "candidate_research_count": 2,
+        "enriched_news_count": 20,
+        "enriched_research_count": 2,
+        "candidate_reasons": {
+          "news": {
+            "no-subject-mention": 6,
+            "dedup": 0,
+            "out_of_window": 13
+          },
+          "research": {
+            "dedup": 0,
+            "out_of_window": 8
+          }
+        },
+        "date_filter_ms": 0,
+        "relevance_ms": 0,
+        "llm_ms": 38027,
+        "scoring_ms": 0
+      },
+      "top_news": [
+        {
+          "date": "2026-07-28 09:00:01",
+          "title": "海康威视：融资净偿还4.4亿元，融资余额49.41亿元",
+          "content": "炒股第一步，先开个股票账户\n\n交易所最新数据显示，海康威视于2026年7月27日获融资买入8.08亿元，融资偿还12.47亿元，当日融资净偿还4.4亿元。目前，该股融资余额49.41亿，占流通市值比例为1.48%。\n\n该股当日融券卖出6.92万股，融券偿还8.50万股，融券净偿还1.58万股。目前，该股融券余量219.41万股，融券余额8116.03万元。\n\n免责声明：本文基于AI生产，仅供参考，不构成任何投资建议，据此操作风险自担。东方财富发布此内容旨在传播更多信息，与本平台立场无关。东方财富力求但不保证数据的完全准确，如有错漏请以中国证监会指定上市公司信息披露媒体为准，东方财富不对因该资料全部或部分内容而引致的盈亏承担任何责任。用户个人对服务的使用承担风险，东方财富对此不作任何类型的担保。",
+          "type": "行业",
+          "sentiment": -1,
+          "weight": 1,
+          "final_weight": 1.2,
+          "source_authority": 3,
+          "recency_factor": 1,
+          "source": "东方财富资讯",
+          "llm_reviewed": true,
+          "llm_confidence": 0.5,
+          "llm_is_real_catalyst": false,
+          "llm_reasoning": "融资净偿还4.4亿，资金流出"
+        },
+        {
+          "date": "2026-07-27 15:02:00",
+          "title": "海康威视成交额超100亿元",
+          "content": "全新妙想投研助理，立即体验\n\n　　数据宝统计，截至14:42，海康威视成交额100.37亿元，超100亿元。最新股价上涨4.09%，换手率2.99%。上一交易日该股全天成交额为27.60亿元。\n\n　　据天眼查APP显示，杭州海康威视数字技术股份有限公司成立于2001年11月30日，注册资本916487.155万人民币。（数据宝）\n\n　　注：本文系新闻报道，不构成投资建议，股市有风险，投资需谨慎。",
+          "type": "行业",
+          "sentiment": 1,
+          "weight": 1,
+          "final_weight": 1.02,
+          "source_authority": 3,
+          "recency_factor": 0.85,
+          "source": "东方财富资讯",
+          "llm_reviewed": true,
+          "llm_confidence": 0.5,
+          "llm_is_real_catalyst": false,
+          "llm_reasoning": "股价上涨4%，成交额超100亿"
+        },
+        {
+          "date": "2026-07-27 15:02:00",
+          "title": "海康威视成交额创上市以来新高",
+          "content": "专业金融数据，下一代智能终端\n\n　　数据宝统计，截至14:40，海康威视成交额99.28亿元，创上市以来新高。最新股价上涨3.89%，换手率2.96%。上一交易日该股全天成交额为27.60亿元。\n\n　　据天眼查APP显示，杭州海康威视数字技术股份有限公司成立于2001年11月30日，注册资本916487.155万人民币。（数据宝）\n\n　　注：本文系新闻报道，不构成投资建议，股市有风险，投资需谨慎。",
+          "type": "行业",
+          "sentiment": 1,
+          "weight": 1,
+          "final_weight": 1.02,
+          "source_authority": 3,
+          "recency_factor": 0.85,
+          "source": "东方财富资讯",
+          "llm_reviewed": true,
+          "llm_confidence": 0.6,
+          "llm_is_real_catalyst": false,
+          "llm_reasoning": "成交额创历史新高，股价涨3.9%"
+        },
+        {
+          "date": "2026-07-27 12:42:00",
+          "title": "海康威视上半年净利润增近四成 丨A股财报解读",
+          "content": "在东方财富看资讯行情，选东方财富证券一站式开户交易>>\n\n　　海康威视 002415\n\n　　公司简介\n\n　　海康威视成立于2001年，是全球领先的智能物联产品的研发、生产和销售企业。公司持续深耕智能物联行业，积极把握人工智能技术发展带来的产业机遇，推动安防行业升级和场景数字化业务发展。海康机器人、海康微影、萤石网络、海康汽车电子、海康存储等创新业务持续深耕细分行业，成为公司重要的增长动能。\n\n　　业绩概述\n\n　　2026年上半年，公司实现营业收入468.23亿元，同比增长11.97%；归属于上市公司股东的净利润78.96亿元，同比增长39.57%；基本每股收益0.862元。公司持续深耕智能物联行业，创新业务保持较快增长，盈利水平稳步提升。\n\n　　2026年上半年经营活动产生的现金流量净额为32.31亿元，而上年同期为-18.79亿元，由负转正，经营现金流状况大幅改善。\n\n　　海康威视预计，2026年全年营收将破千亿大关，利润创新高。\n\n　　公司拟每10股派发现金红利5.5元（含税），体现对股东回报的重视。\n\n　　业绩报看点\n\n　　创新业务持续驱动增长：海康机器人、海康微影、萤石网络、海康汽车电子、海康存储等创新业务持续深耕细分行业，不断提升产品竞争力和经营质量，进一步巩固行业领先地位，成为公司重要的增长动能。创新业务继续保持较快增长态势。\n\n　　AI赋能智能物联升级：公司持续推动安防行业升级和场景数字化业务发展，积极把握人工智能技术发展带来的产业机遇。国内业务方面，场景数字化业务持续打开增长空间，SMBG渠道运营效率进一步提升。\n\n　　海外业务持续拓展：公司坚持国际化发展战略，持续深化“一国一策”经营策略，不断优化产品结构和营销体系，提升本地化营销、服务和运营能力，积极拓展重点区域市场。\n\n　　机构点评\n\n　　长城证券：\n\n　　公司持续深耕智能物联行业，积极把握人工智能技术发展带来的产业机遇，推动安防行业升级和场景数字化业务发展。创新业务保持较快增长，海康机器人、海康微影、萤石网络等创新业务巩固行业领先地位，成为重要增长动能。公司推进‘算力换存力’战略，云边融合支撑产业智能化升级。\n\n　　引用研报来源\n\n　　长城证券 | 研报标题：《算力换存力，云边融合支撑产业智能化升级——事件点评》 | 分析师：侯宾、黄俊峰 | 发布日期：2026年7月23日\n\n　　本文机构观点来自持牌证券机构，不构成任何投资建议，亦不代表平台观点，请投资人独立判断和决策。\n\n　　全新妙想投研助理，立即体验",
+          "type": "财报",
+          "sentiment": 1,
+          "weight": 3,
+          "final_weight": 3.32,
+          "source_authority": 3,
+          "recency_factor": 0.85,
+          "source": "东方财富资讯",
+          "llm_reviewed": true,
+          "llm_confidence": 0.95,
+          "llm_is_real_catalyst": true,
+          "llm_reasoning": "H1净利增39.6%，现金流转正"
+        },
+        {
+          "date": "2026-07-27 10:20:00",
+          "title": "海康威视成交额创2026年1月22日以来新高",
+          "content": "在东方财富看资讯行情，选东方财富证券一站式开户交易>>\n\n　　数据宝统计，截至10:10，海康威视成交额55.93亿元，创2026年1月22日以来新高。最新股价上涨5.35%，换手率1.66%。上一交易日该股全天成交额为27.60亿元。\n\n　　据天眼查APP显示，杭州海康威视数字技术股份有限公司成立于2001年11月30日，注册资本916487.155万人民币。（数据宝）",
+          "type": "行业",
+          "sentiment": 1,
+          "weight": 1,
+          "final_weight": 1.02,
+          "source_authority": 3,
+          "recency_factor": 0.85,
+          "source": "东方财富资讯",
+          "llm_reviewed": true,
+          "llm_confidence": 0.5,
+          "llm_is_real_catalyst": false,
+          "llm_reasoning": "成交额创年内新高，股价涨5.35%"
+        }
+      ]
+    },
+    "SSE:600660": {
+      "name": "福耀玻璃",
+      "score": 77,
+      "score_raw": 6.37,
+      "score_components": {
+        "positive_weight_sum": 6.87,
+        "negative_weight_sum": 0.5,
+        "news_effective_count": 10,
+        "news_dropped_count": 0
+      },
+      "signal": "🟢 Long (强)",
+      "strategy": "多重利好共振，基本面+情绪双支撑，适合追涨或持有",
+      "suitable_for": "追涨 / 持有",
+      "confidence": "高",
+      "patterns": [],
+      "positive_factors": [
+        "[行业|w2.25] 福耀玻璃:福耀玻璃2026年度第四期中期票据发行情况公告",
+        "[行业|w2.1] 福耀玻璃2026年度第四期中期票据发行情况公告",
+        "[行业|w1.26] 福耀玻璃：完成发行3亿元中期票据丨港股公告精选"
+      ],
+      "negative_factors": [
+        "[行业|w0.5] 花旗集团在福耀玻璃H股的持股比例于7月20日从6.04%降至5.84%"
+      ],
+      "news_count": 10,
+      "news_dropped": 0,
+      "performance": {
+        "list_fetch_ms": 2644,
+        "candidate_filter_ms": 0,
+        "enrichment_ms": 19284,
+        "raw_news_count": 40,
+        "raw_research_count": 10,
+        "candidate_news_count": 10,
+        "candidate_research_count": 0,
+        "enriched_news_count": 10,
+        "enriched_research_count": 0,
+        "candidate_reasons": {
+          "news": {
+            "noise:龙虎榜|大宗交易|盘口异动": 3,
+            "noise:融资净(买入|卖出)": 1,
+            "no-subject-mention": 2,
+            "dedup": 0,
+            "out_of_window": 24
+          },
+          "research": {
+            "dedup": 0,
+            "out_of_window": 10
+          }
+        },
+        "date_filter_ms": 0,
+        "relevance_ms": 0,
+        "llm_ms": 43623,
+        "scoring_ms": 0
+      },
+      "top_news": [
+        {
+          "date": "2026-07-28 07:35:53",
+          "title": "福耀玻璃：融资净偿还319.95万元，融资余额19.31亿元",
+          "content": "专业金融数据，下一代智能终端\n\n交易所最新数据显示，福耀玻璃于2026年7月27日获融资买入2589.79万元，融资偿还2909.74万元，当日融资净偿还319.95万元。目前，该股融资余额19.31亿，占流通市值比例为1.74%。\n\n该股当日融券卖出1.52万股，融券偿还2.29万股，融券净偿还7700股。目前，该股融券余量24.81万股，融券余额1371.5万元。\n\n免责声明：本文基于AI生产，仅供参考，不构成任何投资建议，据此操作风险自担。东方财富发布此内容旨在传播更多信息，与本平台立场无关。东方财富力求但不保证数据的完全准确，如有错漏请以中国证监会指定上市公司信息披露媒体为准，东方财富不对因该资料全部或部分内容而引致的盈亏承担任何责任。用户个人对服务的使用承担风险，东方财富对此不作任何类型的担保。",
+          "type": "行业",
+          "sentiment": 0,
+          "weight": 1,
+          "final_weight": 0.6,
+          "source_authority": 3,
+          "recency_factor": 1,
+          "source": "东方财富资讯",
+          "llm_reviewed": true,
+          "llm_confidence": 0.3,
+          "llm_is_real_catalyst": false,
+          "llm_reasoning": "融资净偿还，常规二级市场数据"
+        },
+        {
+          "date": "2026-07-24 17:04:44",
+          "title": "花旗集团在福耀玻璃H股的持股比例于7月20日从6.04%降至5.84%",
+          "content": "",
+          "type": "行业",
+          "sentiment": -1,
+          "weight": 1,
+          "final_weight": 0.5,
+          "source_authority": 3,
+          "recency_factor": 0.5,
+          "source": "东方财富资讯",
+          "llm_reviewed": true,
+          "llm_confidence": 0.4,
+          "llm_is_real_catalyst": false,
+          "llm_reasoning": "花旗减持H股，轻微负面信号"
+        },
+        {
+          "date": "2026-07-24 07:55:38",
+          "title": "福耀玻璃：融资净偿还1250.66万元，融资余额19.32亿元",
+          "content": "炒股第一步，先开个股票账户\n\n交易所最新数据显示，福耀玻璃于2026年7月23日获融资买入1192.31万元，融资偿还2442.97万元，当日融资净偿还1250.66万元。目前，该股融资余额19.32亿，占流通市值比例为1.71%。\n\n该股当日融券卖出2.22万股，融券偿还5900股，融券净卖出1.63万股。目前，该股融券余量26.47万股，融券余额1493.17万元。\n\n免责声明：本文基于AI生产，仅供参考，不构成任何投资建议，据此操作风险自担。东方财富发布此内容旨在传播更多信息，与本平台立场无关。东方财富力求但不保证数据的完全准确，如有错漏请以中国证监会指定上市公司信息披露媒体为准，东方财富不对因该资料全部或部分内容而引致的盈亏承担任何责任。用户个人对服务的使用承担风险，东方财富对此不作任何类型的担保。",
+          "type": "行业",
+          "sentiment": 0,
+          "weight": 1,
+          "final_weight": 0.5,
+          "source_authority": 3,
+          "recency_factor": 0.5,
+          "source": "东方财富资讯",
+          "llm_reviewed": true,
+          "llm_confidence": 0.3,
+          "llm_is_real_catalyst": false,
+          "llm_reasoning": "融资净偿还数据，无实质催化"
+        },
+        {
+          "date": "2026-07-24",
+          "title": "福耀玻璃:福耀玻璃2026年度第四期中期票据发行情况公告",
+          "content": "生产汽车玻璃,装饰玻璃和其它工业技术玻璃及玻璃安装,售后服务;开发和生产经营特种优质浮法玻璃,包括超薄玻璃、薄玻璃、透明玻璃、着色彩色玻璃;并统一协调管理集团内各成员公司的经营活动和代购代销成员公司的原辅材料和产品;协助所属企业招聘人员、提供技术培训及咨询等有关业务;生产玻璃塑胶包边总成,塑料、橡胶制品;包装木料加工;纸箱、纸板、铁架、可循环使用的包装金属支撑架、包装托盘等玻璃安装用的材料的销售。国家禁止外商投资的行业除外,国家限制外商投资的行业或有特殊规定的,须依法履行相关程序。(涉及审批许可项目的,只允许在审批许可的范围和有效期限内从事生产经营)。\n郑重声明：东方财富网发布此信息的目的在于传播更多信息，与本站立场无关。东方财富网不保证该信息（包括但不限于文字、视频、音频、数据及图表）全部或者部分内容的准确性、真实性、完整性、有效性、及时性、原创性等。相关信息并未经过本网站证实，不对您构成任何投资建议，据此操作，风险自担。",
+          "type": "行业",
+          "sentiment": 1,
+          "weight": 2,
+          "final_weight": 2.25,
+          "source_authority": 4.5,
+          "recency_factor": 0.5,
+          "source": "东方财富公告",
+          "llm_reviewed": true,
+          "llm_confidence": 0.9,
+          "llm_is_real_catalyst": true,
+          "llm_reasoning": "发行3亿中票，低利率优化债务"
+        },
+        {
+          "date": "2026-07-23 20:52:00",
+          "title": "福耀玻璃：完成发行3亿元中期票据丨港股公告精选",
+          "content": "在东方财富看资讯行情，选东方财富证券一站式开户交易>>\n\n　　重点公告现代牧业：预计2026年上半年税前利润不低于0.43亿元，同比扭亏为盈\n\n　　现代牧业发布正面盈利预告公告，公司预计2026年上半年将录得税前利润不低于人民币0.43亿元，而2025年上半年为税前亏损约人民币9.72亿元，同比实现扭亏为盈。盈利改善主要得益于淘牛数量下降叠加淘牛价格上升导致乳牛公平值变动损失减少、原料奶销售毛利率保持稳定且毛利额增长，以及持续落实降本增效策略使饲喂成本及其他营运开支得到有效管控。\n\n　　福耀玻璃：完成发行3亿元中期票据\n\n　　福耀玻璃公告，公司于2026年7月21日在全国银行间市场公开发行2026年度第四期中期票据（简称“26福耀玻璃MTN004”，代码102682683），发行总额为人民币3亿元，期限3年，发行利率为1.68%（年利率），起息日为2026年7月22日，募集资金全部用于偿还公司金融机构借款。\n\n　　新华保险：完成发行100亿元无固定期限资本债券\n\n　　新华保险公告，经国家金融监督管理总局和中国人民银行批准，公司于2026年7月21日在全国银行间债券市场发行总额为人民币100亿元的无固定期限资本债券，并于2026年7月23日发行完毕；本期债券首5年票面利率为1.90%，自发行缴款截止日起每5年调整一次，第5年及之后每个付息日附发行人有条件赎回权；募集资金将依据适用法律和监管部门批准，用于补充公司核心二级资本，增强偿付能力，支持业务持续稳健发展。\n\n　　华能国际电力股份：完成发行25亿元中期票据\n\n　　华能国际电力股份公告，公司已完成2026年度第九期中期票据（能源保供特别债）的发行，发行额为人民币25亿元，期限为2+N年，票面利率1.67%，募集资金全部用于偿还能源保供特别债。\n\n　　建业地产：拟出售非核心文化旅游资产总代价30亿元\n\n　　建业地产发布须予披露交易公告，公司及其附属公司河南中原、一路有戏于2026年7月23日与信宸资本实体的两家附属公司订立两份《股权转让协议》，拟出售所持有的非核心文化旅游资产，包括注入河南麦田文化产业有限公司（目标公司一）的“只有河南·戏剧幻城”项目相关资产，以及注入河南一路有戏文化产业有限公司（目标公司二）的“建业电影小镇”项目相关资产；交易方式为河南中原及一路有戏分别向买方转让目标公司一及目标公司二100%股权，总代价为人民币30亿元，其中戏剧幻城项目对应25亿元、电影小镇项目对应5亿元；交易完成后，目标资产财务业绩将不再并入集团合并报表，所得款项净额约7.05亿元将用于交易费用、物业交付责任及债务重组等，预计确认亏损约12.16亿元；该交易已获联交所豁免适用代价比率，构成须予披露交易。\n\n　　经营业绩\n\n　　· 中国旺旺：2025财年净利润同比减少11.5%\n\n　　医药研发\n\n　　· 远大医药：中药1.1类创新药GPN01360 III期临床完成首例患者入组\n\n　　· 中国生物制药：IM-101注射液获NMPA临床试验批准\n\n　　· 石四药集团：四款药品获国家药监局注册批件\n\n　　其他事项\n\n　　· 承辉国际：拟配售1.19亿股筹资2480万港元\n\n　　· 天工国际：设立江苏天工电子科技公司开展PCB精密刀具项目\n\n　　· 悦达国际控股：拟向东台厚耀提供3000万元人民币反向保理融资\n\n　　· 兴证国际：拟购买巴克莱永续证券总代价约1504万美元\n\n　　全新妙想投研助理，立即体验",
+          "type": "行业",
+          "sentiment": 1,
+          "weight": 1,
+          "final_weight": 1.26,
+          "source_authority": 3,
+          "recency_factor": 0.42,
+          "source": "东方财富资讯",
+          "llm_reviewed": true,
+          "llm_confidence": 0.9,
+          "llm_is_real_catalyst": true,
+          "llm_reasoning": "完成低息中票发行，改善融资结构"
+        }
+      ]
+    },
+    "SSE:603228": {
+      "name": "603228",
+      "score": 59,
+      "score_raw": 2.27,
+      "score_components": {
+        "positive_weight_sum": 2.27,
+        "negative_weight_sum": 0,
+        "news_effective_count": 3,
+        "news_dropped_count": 0
+      },
+      "signal": "⚪ No Trade (微多)",
+      "strategy": "情绪轻微偏多，信号不足，以观望为主",
+      "suitable_for": "观望",
+      "confidence": "低",
+      "patterns": [],
+      "positive_factors": [
+        "[回购|w2.27] 景旺电子:景旺电子关于股权激励限制性股票回购注销实施公告"
+      ],
+      "negative_factors": [],
+      "news_count": 3,
+      "news_dropped": 0,
+      "performance": {
+        "list_fetch_ms": 2905,
+        "candidate_filter_ms": 0,
+        "enrichment_ms": 8,
+        "raw_news_count": 40,
+        "raw_research_count": 10,
+        "candidate_news_count": 3,
+        "candidate_research_count": 0,
+        "enriched_news_count": 3,
+        "enriched_research_count": 0,
+        "candidate_reasons": {
+          "news": {
+            "no-subject-mention": 17,
+            "noise:融资净(买入|卖出)": 1,
+            "noise:\\d{1,2}月\\d{1,2}日(快速上涨|快速回调|涨停|": 2,
+            "dedup": 0,
+            "out_of_window": 17
+          },
+          "research": {
+            "dedup": 0,
+            "out_of_window": 10
+          }
+        },
+        "date_filter_ms": 0,
+        "relevance_ms": 0,
+        "llm_ms": 7,
+        "scoring_ms": 0
+      },
+      "top_news": [
+        {
+          "date": "2026-07-24",
+          "title": "景旺电子:景旺电子关于为子公司提供担保的进展公告",
+          "content": "生产经营双面线路板、多层线路板、柔性线路板(法律、行政法规、国务院决定禁止的项目除外,限制的项目须取得许可后方可经营)\n郑重声明：东方财富网发布此信息的目的在于传播更多信息，与本站立场无关。东方财富网不保证该信息（包括但不限于文字、视频、音频、数据及图表）全部或者部分内容的准确性、真实性、完整性、有效性、及时性、原创性等。相关信息并未经过本网站证实，不对您构成任何投资建议，据此操作，风险自担。",
+          "type": "行业",
+          "sentiment": 0,
+          "weight": 1,
+          "final_weight": 0.5,
+          "source_authority": 4.5,
+          "recency_factor": 0.5,
+          "source": "东方财富公告",
+          "llm_reviewed": true,
+          "llm_confidence": 0.3,
+          "llm_is_real_catalyst": false,
+          "llm_reasoning": "担保公告内容为经营范围复述，无实质作用"
+        },
+        {
+          "date": "2026-07-23",
+          "title": "景旺电子:景旺电子关于股权激励限制性股票回购注销实施公告",
+          "content": "生产经营双面线路板、多层线路板、柔性线路板(法律、行政法规、国务院决定禁止的项目除外,限制的项目须取得许可后方可经营)\n郑重声明：东方财富网发布此信息的目的在于传播更多信息，与本站立场无关。东方财富网不保证该信息（包括但不限于文字、视频、音频、数据及图表）全部或者部分内容的准确性、真实性、完整性、有效性、及时性、原创性等。相关信息并未经过本网站证实，不对您构成任何投资建议，据此操作，风险自担。",
+          "type": "回购",
+          "sentiment": 1,
+          "weight": 2,
+          "final_weight": 2.27,
+          "source_authority": 4.5,
+          "recency_factor": 0.42,
+          "source": "东方财富公告",
+          "llm_reviewed": true,
+          "llm_confidence": 0.9,
+          "llm_is_real_catalyst": true,
+          "llm_reasoning": "股权激励限制性股票回购注销通常利好，减少股本"
+        },
+        {
+          "date": "2026-07-23",
+          "title": "景旺电子:北京观韬(深圳)律师事务所关于深圳市景旺电子股份有限公司2024年股票期权与限制性股票激励计划回购注销部分限制性股票实施相关事项的法律意见书",
+          "content": "生产经营双面线路板、多层线路板、柔性线路板(法律、行政法规、国务院决定禁止的项目除外,限制的项目须取得许可后方可经营)\n郑重声明：东方财富网发布此信息的目的在于传播更多信息，与本站立场无关。东方财富网不保证该信息（包括但不限于文字、视频、音频、数据及图表）全部或者部分内容的准确性、真实性、完整性、有效性、及时性、原创性等。相关信息并未经过本网站证实，不对您构成任何投资建议，据此操作，风险自担。",
+          "type": "回购",
+          "sentiment": 0,
+          "weight": 1,
+          "final_weight": 0.91,
+          "source_authority": 4.5,
+          "recency_factor": 0.42,
+          "source": "东方财富公告",
+          "llm_reviewed": true,
+          "llm_confidence": 0.6,
+          "llm_is_real_catalyst": false,
+          "llm_reasoning": "法律意见书属程序性文件，无新催化"
+        }
+      ]
+    },
+    "SSE:515030": {
+      "name": "515030",
+      "score": 58,
+      "score_raw": 1.8,
+      "score_components": {
+        "positive_weight_sum": 1.8,
+        "negative_weight_sum": 0,
+        "news_effective_count": 2,
+        "news_dropped_count": 0
+      },
+      "signal": "⚪ No Trade (微多)",
+      "strategy": "情绪轻微偏多，信号不足，以观望为主",
+      "suitable_for": "观望",
+      "confidence": "低",
+      "patterns": [],
+      "positive_factors": [
+        "[政策|w1.3] 2026中国汽车论坛今日正式启幕！政策持续助力新能源汽车产业，新能源车ETF华夏（515030）成交同类第一",
+        "[行业|w0.5] 涨超2.0%，新能源车ETF华夏(515030)盘中上涨2.06%"
+      ],
+      "negative_factors": [],
+      "news_count": 2,
+      "news_dropped": 0,
+      "performance": {
+        "list_fetch_ms": 5271,
+        "candidate_filter_ms": 0,
+        "enrichment_ms": 7724,
+        "raw_news_count": 40,
+        "raw_research_count": 0,
+        "candidate_news_count": 2,
+        "candidate_research_count": 0,
+        "enriched_news_count": 2,
+        "enriched_research_count": 0,
+        "candidate_reasons": {
+          "news": {
+            "no-subject-mention": 4,
+            "dedup": 0,
+            "out_of_window": 34
+          },
+          "research": {
+            "dedup": 0
+          }
+        },
+        "date_filter_ms": 0,
+        "relevance_ms": 0,
+        "llm_ms": 7,
+        "scoring_ms": 0
+      },
+      "top_news": [
+        {
+          "date": "2026-07-23 10:24:14",
+          "title": "涨超2.0%，新能源车ETF华夏(515030)盘中上涨2.06%",
+          "content": "全新妙想投研助理，立即体验\n\n　　截至2026年7月23日 10:15，中证新能源汽车指数(399976)强势上涨1.92%，成分股盛新锂能上涨8.39%，天华新能上涨8.27%，中伟新材上涨6.44%，中矿资源，银轮股份等个股跟涨。新能源车ETF华夏(515030)上涨2.06%，最新价报1.58元。拉长时间看，截至2026年7月22日，新能源车ETF华夏近1年累计上涨17.13%。（以上所列股票仅为指数成份股，无特定推荐之意）\n\n　　流动性方面，新能源车ETF华夏盘中换手率2.12%，成交额5347.75万元。拉长时间看，截至7月22日，新能源车ETF华夏近1年日均成交额2.19亿元，排名可比基金第一。\n\n　　规模方面，新能源车ETF华夏最新规模达25.02亿元。（数据来源：Wind）\n\n　　从估值层面来看，新能源车ETF华夏跟踪的中证新能源汽车指数最新市盈率（PE-TTM）仅26.27倍，处于近1年1.56%的分位，即估值低于近1年98.44%以上的时间，处于历史低位。\n\n　　新能源车ETF华夏(515030)，场外联接(华夏中证新能源汽车ETF发起式联接A：013013；华夏中证新能源汽车ETF发起式联接C：013014；华夏中证新能源汽车ETF发起式联接D：024629)。",
+          "type": "行业",
+          "sentiment": 1,
+          "weight": 1,
+          "final_weight": 0.5,
+          "source_authority": 3,
+          "recency_factor": 0.42,
+          "source": "东方财富资讯",
+          "llm_reviewed": true,
+          "llm_confidence": 0.9,
+          "llm_is_real_catalyst": false,
+          "llm_reasoning": "ETF盘中涨2.06%，估值历史低位"
+        },
+        {
+          "date": "2026-07-22 14:34:39",
+          "title": "2026中国汽车论坛今日正式启幕！政策持续助力新能源汽车产业，新能源车ETF华夏（515030）成交同类第一",
+          "content": "全新妙想投研助理，立即体验\n\n　　截至2026年7月22日14:23，A股三大指数全线调整，上证指数跌0.06%，深证成指跌1.12%，创业板指跌2.64%，新能源车ETF华夏（515030）下跌1.96%，最新报价1.548元，实时成交额达1.23亿元，在同类产品中排名第一。\n\n　　消息面上，2026中国汽车论坛今日召开，围绕“新开局，新机遇，新征程——共绘汽车产业高质量发展新蓝图”展开。活动包含16场核心会议，涵盖闭门峰会、主论坛、技术领袖峰会、十余场专题研讨与系列行业发布，辅以丰富配套活动。论坛议题紧贴产业现实，汇聚政产学研各界顶尖专家，凝聚行业智慧，研判当下难点，共谋未来发展路径。\n\n　　此外，工信部总工程师王卫明日前表示，将持续实施新一轮汽车等行业稳增长工作方案。接下来将统筹产业稳增长、核心技术攻坚、国产装备落地应用，全面推进装备工业转型升级，一方面紧扣 “十五五” 规划落实智能网联新能源汽车相关发展规划，出台机械、汽车、电力装备稳增长举措，拓宽供需市场，另一方面统筹产业基础再造与重大装备攻关，研发标杆产品筑牢产业链安全，同时搭建工业母机、机器人等装备供需渠道，加快首台套装备推广，并持续推进新能源汽车下乡与智能网联汽车各类试点，释放大宗消费活力。\n\n　　新能源车ETF华夏（515030）是跟踪中证新能源汽车指数（399976）规模最大的ETF产品，聚焦新能源车产业链（包括锂电池、充电桩、新能源整车等），锚定固态电池技术突破、反内卷、出海。",
+          "type": "政策",
+          "sentiment": 1,
+          "weight": 1,
+          "final_weight": 1.3,
+          "source_authority": 3,
+          "recency_factor": 0.36,
+          "source": "东方财富资讯",
+          "llm_reviewed": true,
+          "llm_confidence": 0.85,
+          "llm_is_real_catalyst": true,
+          "llm_reasoning": "工信部表态稳增长及下乡政策催化"
+        }
+      ]
+    },
+    "SZSE:300458": {
+      "name": "300458",
+      "score": 50,
+      "score_raw": 0,
+      "score_components": {
+        "positive_weight_sum": 0,
+        "negative_weight_sum": 0
+      },
+      "signal": "⚪ No Trade (无数据)",
+      "strategy": "近期无相关有效新闻",
+      "suitable_for": "观望",
+      "confidence": "-",
+      "patterns": [],
+      "positive_factors": [],
+      "negative_factors": [],
+      "news_count": 0,
+      "news_dropped": 0,
+      "performance": {
+        "list_fetch_ms": 2514,
+        "candidate_filter_ms": 0,
+        "enrichment_ms": 0,
+        "raw_news_count": 40,
+        "raw_research_count": 10,
+        "candidate_news_count": 0,
+        "candidate_research_count": 0,
+        "enriched_news_count": 0,
+        "enriched_research_count": 0,
+        "candidate_reasons": {
+          "news": {
+            "no-subject-mention": 14,
+            "noise:\\d{1,2}月\\d{1,2}日(快速上涨|快速回调|涨停|": 4,
+            "noise:融资净(买入|卖出)": 2,
+            "dedup": 0,
+            "out_of_window": 20
+          },
+          "research": {
+            "dedup": 0,
+            "out_of_window": 10
+          }
+        },
+        "date_filter_ms": 0,
+        "relevance_ms": 0,
+        "llm_ms": 0,
+        "scoring_ms": 0
+      },
+      "top_news": []
+    },
+    "SZSE:300474": {
+      "name": "300474",
+      "score": 50,
+      "score_raw": 0,
+      "score_components": {
+        "positive_weight_sum": 0,
+        "negative_weight_sum": 0
+      },
+      "signal": "⚪ No Trade (无数据)",
+      "strategy": "近期无相关有效新闻",
+      "suitable_for": "观望",
+      "confidence": "-",
+      "patterns": [],
+      "positive_factors": [],
+      "negative_factors": [],
+      "news_count": 0,
+      "news_dropped": 0,
+      "performance": {
+        "list_fetch_ms": 2492,
+        "candidate_filter_ms": 0,
+        "enrichment_ms": 0,
+        "raw_news_count": 40,
+        "raw_research_count": 10,
+        "candidate_news_count": 0,
+        "candidate_research_count": 0,
+        "enriched_news_count": 0,
+        "enriched_research_count": 0,
+        "candidate_reasons": {
+          "news": {
+            "no-subject-mention": 5,
+            "noise:融资净(买入|卖出)": 1,
+            "dedup": 0,
+            "out_of_window": 34
+          },
+          "research": {
+            "dedup": 0,
+            "out_of_window": 10
+          }
+        },
+        "date_filter_ms": 0,
+        "relevance_ms": 0,
+        "llm_ms": 0,
+        "scoring_ms": 0
+      },
+      "top_news": []
+    },
+    "SZSE:000021": {
+      "name": "000021",
+      "score": 50,
+      "score_raw": 0,
+      "score_components": {
+        "positive_weight_sum": 0,
+        "negative_weight_sum": 0
+      },
+      "signal": "⚪ No Trade (无数据)",
+      "strategy": "近期无相关有效新闻",
+      "suitable_for": "观望",
+      "confidence": "-",
+      "patterns": [],
+      "positive_factors": [],
+      "negative_factors": [],
+      "news_count": 0,
+      "news_dropped": 0,
+      "performance": {
+        "list_fetch_ms": 2328,
+        "candidate_filter_ms": 0,
+        "enrichment_ms": 0,
+        "raw_news_count": 40,
+        "raw_research_count": 10,
+        "candidate_news_count": 0,
+        "candidate_research_count": 0,
+        "enriched_news_count": 0,
+        "enriched_research_count": 0,
+        "candidate_reasons": {
+          "news": {
+            "no-subject-mention": 15,
+            "noise:融资净(买入|卖出)": 2,
+            "noise:\\d{1,2}月\\d{1,2}日(快速上涨|快速回调|涨停|": 3,
+            "dedup": 0,
+            "out_of_window": 20
+          },
+          "research": {
+            "dedup": 0,
+            "out_of_window": 10
+          }
+        },
+        "date_filter_ms": 0,
+        "relevance_ms": 0,
+        "llm_ms": 0,
+        "scoring_ms": 0
+      },
+      "top_news": []
+    },
+    "SSE:600048": {
+      "name": "600048",
+      "score": 50,
+      "score_raw": 0,
+      "score_components": {
+        "positive_weight_sum": 0,
+        "negative_weight_sum": 0,
+        "news_effective_count": 1,
+        "news_dropped_count": 0
+      },
+      "signal": "⚪ No Trade (微多)",
+      "strategy": "情绪轻微偏多，信号不足，以观望为主",
+      "suitable_for": "观望",
+      "confidence": "低",
+      "patterns": [],
+      "positive_factors": [],
+      "negative_factors": [],
+      "news_count": 1,
+      "news_dropped": 0,
+      "performance": {
+        "list_fetch_ms": 2238,
+        "candidate_filter_ms": 0,
+        "enrichment_ms": 16,
+        "raw_news_count": 40,
+        "raw_research_count": 10,
+        "candidate_news_count": 1,
+        "candidate_research_count": 0,
+        "enriched_news_count": 1,
+        "enriched_research_count": 0,
+        "candidate_reasons": {
+          "news": {
+            "no-subject-mention": 20,
+            "dedup": 0,
+            "out_of_window": 19
+          },
+          "research": {
+            "dedup": 0,
+            "out_of_window": 10
+          }
+        },
+        "date_filter_ms": 0,
+        "relevance_ms": 0,
+        "llm_ms": 12,
+        "scoring_ms": 1
+      },
+      "top_news": [
+        {
+          "date": "2026-07-24",
+          "title": "保利发展:保利发展控股集团股份有限公司2026年半年度业绩快报公告",
+          "content": "房地产开发经营;物业管理;房屋租赁;建筑物拆除(不含爆破作业);房屋建筑工程设计服务;铁路、道路、隧道和桥梁工程建筑;建筑工程后期装饰、装修和清理;土石方工程服务;建筑物空调设备、通风设备系统安装服务;酒店管理;商品批发贸易(许可审批类商品除外);商品零售贸易(许可审批类商品除外)\n郑重声明：东方财富网发布此信息的目的在于传播更多信息，与本站立场无关。东方财富网不保证该信息（包括但不限于文字、视频、音频、数据及图表）全部或者部分内容的准确性、真实性、完整性、有效性、及时性、原创性等。相关信息并未经过本网站证实，不对您构成任何投资建议，据此操作，风险自担。",
+          "type": "财报",
+          "sentiment": 0,
+          "weight": 1,
+          "final_weight": 0.59,
+          "source_authority": 4.5,
+          "recency_factor": 0.5,
+          "source": "东方财富公告",
+          "llm_reviewed": true,
+          "llm_confidence": 0.3,
+          "llm_is_real_catalyst": false,
+          "llm_reasoning": "业绩快报公告但正文未披露数据"
+        }
+      ]
+    },
+    "SZSE:300706": {
+      "name": "300706",
+      "score": 50,
+      "score_raw": 0,
+      "score_components": {
+        "positive_weight_sum": 0,
+        "negative_weight_sum": 0
+      },
+      "signal": "⚪ No Trade (无数据)",
+      "strategy": "近期无相关有效新闻",
+      "suitable_for": "观望",
+      "confidence": "-",
+      "patterns": [],
+      "positive_factors": [],
+      "negative_factors": [],
+      "news_count": 0,
+      "news_dropped": 0,
+      "performance": {
+        "list_fetch_ms": 2391,
+        "candidate_filter_ms": 0,
+        "enrichment_ms": 0,
+        "raw_news_count": 40,
+        "raw_research_count": 2,
+        "candidate_news_count": 0,
+        "candidate_research_count": 0,
+        "enriched_news_count": 0,
+        "enriched_research_count": 0,
+        "candidate_reasons": {
+          "news": {
+            "no-subject-mention": 4,
+            "noise:\\d{1,2}月\\d{1,2}日(快速上涨|快速回调|涨停|": 5,
+            "dedup": 0,
+            "out_of_window": 31
+          },
+          "research": {
+            "dedup": 0,
+            "out_of_window": 2
+          }
+        },
+        "date_filter_ms": 0,
+        "relevance_ms": 0,
+        "llm_ms": 0,
+        "scoring_ms": 0
+      },
+      "top_news": []
+    },
+    "SZSE:002409": {
+      "name": "002409",
+      "score": 50,
+      "score_raw": 0,
+      "score_components": {
+        "positive_weight_sum": 0,
+        "negative_weight_sum": 0
+      },
+      "signal": "⚪ No Trade (无数据)",
+      "strategy": "近期无相关有效新闻",
+      "suitable_for": "观望",
+      "confidence": "-",
+      "patterns": [],
+      "positive_factors": [],
+      "negative_factors": [],
+      "news_count": 0,
+      "news_dropped": 0,
+      "performance": {
+        "list_fetch_ms": 2174,
+        "candidate_filter_ms": 2,
+        "enrichment_ms": 0,
+        "raw_news_count": 40,
+        "raw_research_count": 10,
+        "candidate_news_count": 0,
+        "candidate_research_count": 0,
+        "enriched_news_count": 0,
+        "enriched_research_count": 0,
+        "candidate_reasons": {
+          "news": {
+            "no-subject-mention": 14,
+            "noise:\\d{1,2}月\\d{1,2}日(快速上涨|快速回调|涨停|": 2,
+            "noise:融资净(买入|卖出)": 1,
+            "noise:龙虎榜|大宗交易|盘口异动": 3,
+            "dedup": 0,
+            "out_of_window": 20
+          },
+          "research": {
+            "dedup": 0,
+            "out_of_window": 10
+          }
+        },
+        "date_filter_ms": 0,
+        "relevance_ms": 0,
+        "llm_ms": 0,
+        "scoring_ms": 0
+      },
+      "top_news": []
+    },
+    "SZSE:002843": {
+      "name": "002843",
+      "score": 50,
+      "score_raw": 0,
+      "score_components": {
+        "positive_weight_sum": 0,
+        "negative_weight_sum": 0
+      },
+      "signal": "⚪ No Trade (无数据)",
+      "strategy": "近期无相关有效新闻",
+      "suitable_for": "观望",
+      "confidence": "-",
+      "patterns": [],
+      "positive_factors": [],
+      "negative_factors": [],
+      "news_count": 0,
+      "news_dropped": 0,
+      "performance": {
+        "list_fetch_ms": 2485,
+        "candidate_filter_ms": 0,
+        "enrichment_ms": 0,
+        "raw_news_count": 40,
+        "raw_research_count": 5,
+        "candidate_news_count": 0,
+        "candidate_research_count": 0,
+        "enriched_news_count": 0,
+        "enriched_research_count": 0,
+        "candidate_reasons": {
+          "news": {
+            "no-subject-mention": 5,
+            "noise:融资净(买入|卖出)": 1,
+            "noise:\\d{1,2}月\\d{1,2}日(快速上涨|快速回调|涨停|": 2,
+            "dedup": 0,
+            "out_of_window": 32
+          },
+          "research": {
+            "dedup": 0,
+            "out_of_window": 5
+          }
+        },
+        "date_filter_ms": 0,
+        "relevance_ms": 0,
+        "llm_ms": 0,
+        "scoring_ms": 0
+      },
+      "top_news": []
+    },
+    "SSE:601668": {
+      "name": "601668",
+      "score": 50,
+      "score_raw": 0,
+      "score_components": {
+        "positive_weight_sum": 0,
+        "negative_weight_sum": 0,
+        "news_effective_count": 2,
+        "news_dropped_count": 0
+      },
+      "signal": "⚪ No Trade (微多)",
+      "strategy": "情绪轻微偏多，信号不足，以观望为主",
+      "suitable_for": "观望",
+      "confidence": "低",
+      "patterns": [],
+      "positive_factors": [],
+      "negative_factors": [],
+      "news_count": 2,
+      "news_dropped": 0,
+      "performance": {
+        "list_fetch_ms": 3263,
+        "candidate_filter_ms": 0,
+        "enrichment_ms": 17250,
+        "raw_news_count": 40,
+        "raw_research_count": 10,
+        "candidate_news_count": 2,
+        "candidate_research_count": 0,
+        "enriched_news_count": 2,
+        "enriched_research_count": 0,
+        "candidate_reasons": {
+          "news": {
+            "no-subject-mention": 20,
+            "dedup": 0,
+            "out_of_window": 18
+          },
+          "research": {
+            "dedup": 0,
+            "out_of_window": 10
+          }
+        },
+        "date_filter_ms": 0,
+        "relevance_ms": 0,
+        "llm_ms": 7,
+        "scoring_ms": 0
+      },
+      "top_news": [
+        {
+          "date": "2026-07-24",
+          "title": "中国建筑:中国建筑2026年1-6月经营情况简报",
+          "content": "一般经营项目:承担国内外公用、民用房屋建筑工程的施工、安装、咨询;基础设施项目的投资与承建;国内外房地产投资与开发;建筑与基础设施建设的勘察与设计;装饰工程、园林工程的设计与施工;实业投资;承包境内外资工程;进出口业务;建筑材料及其他非金属矿物制品、建筑用金属制品、工具、建筑工程机械和钻探机械的生产与销售。\n郑重声明：东方财富网发布此信息的目的在于传播更多信息，与本站立场无关。东方财富网不保证该信息（包括但不限于文字、视频、音频、数据及图表）全部或者部分内容的准确性、真实性、完整性、有效性、及时性、原创性等。相关信息并未经过本网站证实，不对您构成任何投资建议，据此操作，风险自担。",
+          "type": "财报",
+          "sentiment": 0,
+          "weight": 1,
+          "final_weight": 0.59,
+          "source_authority": 4.5,
+          "recency_factor": 0.5,
+          "source": "东方财富公告",
+          "llm_reviewed": true,
+          "llm_confidence": 0.3,
+          "llm_is_real_catalyst": false,
+          "llm_reasoning": "标题提及经营简报但正文无数据"
+        },
+        {
+          "date": "2026-07-23",
+          "title": "中国建筑:中国建筑第四届董事会第三十九次会议决议公告",
+          "content": "一般经营项目:承担国内外公用、民用房屋建筑工程的施工、安装、咨询;基础设施项目的投资与承建;国内外房地产投资与开发;建筑与基础设施建设的勘察与设计;装饰工程、园林工程的设计与施工;实业投资;承包境内外资工程;进出口业务;建筑材料及其他非金属矿物制品、建筑用金属制品、工具、建筑工程机械和钻探机械的生产与销售。\n郑重声明：东方财富网发布此信息的目的在于传播更多信息，与本站立场无关。东方财富网不保证该信息（包括但不限于文字、视频、音频、数据及图表）全部或者部分内容的准确性、真实性、完整性、有效性、及时性、原创性等。相关信息并未经过本网站证实，不对您构成任何投资建议，据此操作，风险自担。",
+          "type": "政策",
+          "sentiment": 0,
+          "weight": 1,
+          "final_weight": 0.5,
+          "source_authority": 4.5,
+          "recency_factor": 0.42,
+          "source": "东方财富公告",
+          "llm_reviewed": true,
+          "llm_confidence": 0.2,
+          "llm_is_real_catalyst": false,
+          "llm_reasoning": "董事会决议公告无具体内容"
+        }
+      ]
+    },
+    "SSE:603062": {
+      "name": "麦加芯彩",
+      "score": 50,
+      "score_raw": 0,
+      "score_components": {
+        "positive_weight_sum": 0,
+        "negative_weight_sum": 0,
+        "news_effective_count": 4,
+        "news_dropped_count": 0
+      },
+      "signal": "⚪ No Trade (微多)",
+      "strategy": "情绪轻微偏多，信号不足，以观望为主",
+      "suitable_for": "观望",
+      "confidence": "低",
+      "patterns": [],
+      "positive_factors": [],
+      "negative_factors": [],
+      "news_count": 4,
+      "news_dropped": 0,
+      "performance": {
+        "list_fetch_ms": 6416,
+        "candidate_filter_ms": 0,
+        "enrichment_ms": 27960,
+        "raw_news_count": 40,
+        "raw_research_count": 10,
+        "candidate_news_count": 4,
+        "candidate_research_count": 0,
+        "enriched_news_count": 4,
+        "enriched_research_count": 0,
+        "candidate_reasons": {
+          "news": {
+            "noise:融资净(买入|卖出)": 2,
+            "dedup": 0,
+            "out_of_window": 34
+          },
+          "research": {
+            "dedup": 0,
+            "out_of_window": 10
+          }
+        },
+        "date_filter_ms": 0,
+        "relevance_ms": 0,
+        "llm_ms": 26410,
+        "scoring_ms": 0
+      },
+      "top_news": [
+        {
+          "date": "2026-07-28 07:40:14",
+          "title": "麦加芯彩：融资净偿还80.15万元，融资余额1.22亿元",
+          "content": "全新妙想投研助理，立即体验\n\n交易所最新数据显示，麦加芯彩于2026年7月27日获融资买入54.62万元，融资偿还134.78万元，当日融资净偿还80.15万元。目前，该股融资余额1.22亿，占流通市值比例为9.54%。\n\n该股当日融券卖出600股，融券偿还0股，融券净卖出600股。目前，该股融券余量6600股，融券余额22.81万元。\n\n免责声明：本文基于AI生产，仅供参考，不构成任何投资建议，据此操作风险自担。东方财富发布此内容旨在传播更多信息，与本平台立场无关。东方财富力求但不保证数据的完全准确，如有错漏请以中国证监会指定上市公司信息披露媒体为准，东方财富不对因该资料全部或部分内容而引致的盈亏承担任何责任。用户个人对服务的使用承担风险，东方财富对此不作任何类型的担保。",
+          "type": "行业",
+          "sentiment": 0,
+          "weight": 1,
+          "final_weight": 0.6,
+          "source_authority": 3,
+          "recency_factor": 1,
+          "source": "东方财富资讯",
+          "llm_reviewed": true,
+          "llm_confidence": 0.1,
+          "llm_is_real_catalyst": false,
+          "llm_reasoning": "融资净偿还为日常资金数据，无实质影响"
+        },
+        {
+          "date": "2026-07-23 07:37:56",
+          "title": "麦加芯彩：融资净偿还37.58万元，融资余额1.22亿元",
+          "content": "在东方财富看资讯行情，选东方财富证券一站式开户交易>>\n\n交易所最新数据显示，麦加芯彩于2026年7月22日获融资买入165.48万元，融资偿还203.06万元，当日融资净偿还37.58万元。目前，该股融资余额1.22亿，占流通市值比例为9.39%。\n\n该股当日融券卖出1100股，融券偿还800股，融券净卖出300股。目前，该股融券余量5100股，融券余额17.92万元。\n\n免责声明：本文基于AI生产，仅供参考，不构成任何投资建议，据此操作风险自担。东方财富发布此内容旨在传播更多信息，与本平台立场无关。东方财富力求但不保证数据的完全准确，如有错漏请以中国证监会指定上市公司信息披露媒体为准，东方财富不对因该资料全部或部分内容而引致的盈亏承担任何责任。用户个人对服务的使用承担风险，东方财富对此不作任何类型的担保。",
+          "type": "行业",
+          "sentiment": 0,
+          "weight": 1,
+          "final_weight": 0.5,
+          "source_authority": 3,
+          "recency_factor": 0.42,
+          "source": "东方财富资讯",
+          "llm_reviewed": true,
+          "llm_confidence": 0.1,
+          "llm_is_real_catalyst": false,
+          "llm_reasoning": "融资持续净偿还属常规流动性变化"
+        },
+        {
+          "date": "2026-07-22 10:17:45",
+          "title": "麦加芯彩7月22日快速反弹",
+          "content": "",
+          "type": "行业",
+          "sentiment": 0,
+          "weight": 1,
+          "final_weight": 0.5,
+          "source_authority": 3,
+          "recency_factor": 0.36,
+          "source": "东方财富资讯",
+          "llm_reviewed": true,
+          "llm_confidence": 0.1,
+          "llm_is_real_catalyst": false,
+          "llm_reasoning": "仅提及股价反弹，无实质内容"
+        },
+        {
+          "date": "2026-07-22 07:55:29",
+          "title": "麦加芯彩：融资净偿还6.84万元，融资余额1.23亿元",
+          "content": "在东方财富看资讯行情，选东方财富证券一站式开户交易>>\n\n交易所最新数据显示，麦加芯彩于2026年7月21日获融资买入191.37万元，融资偿还198.21万元，当日融资净偿还6.84万元。目前，该股融资余额1.23亿，占流通市值比例为9.64%。\n\n该股当日融券卖出3000股，融券偿还1200股，融券净卖出1800股。目前，该股融券余量4800股，融券余额16.49万元。\n\n免责声明：本文基于AI生产，仅供参考，不构成任何投资建议，据此操作风险自担。东方财富发布此内容旨在传播更多信息，与本平台立场无关。东方财富力求但不保证数据的完全准确，如有错漏请以中国证监会指定上市公司信息披露媒体为准，东方财富不对因该资料全部或部分内容而引致的盈亏承担任何责任。用户个人对服务的使用承担风险，东方财富对此不作任何类型的担保。",
+          "type": "行业",
+          "sentiment": 0,
+          "weight": 1,
+          "final_weight": 0.5,
+          "source_authority": 3,
+          "recency_factor": 0.36,
+          "source": "东方财富资讯",
+          "llm_reviewed": true,
+          "llm_confidence": 0.1,
+          "llm_is_real_catalyst": false,
+          "llm_reasoning": "融资微幅净偿还，不构成催化"
+        }
+      ]
+    },
+    "SSE:601665": {
+      "name": "601665",
+      "score": 50,
+      "score_raw": 0,
+      "score_components": {
+        "positive_weight_sum": 0,
+        "negative_weight_sum": 0,
+        "news_effective_count": 6,
+        "news_dropped_count": 0
+      },
+      "signal": "⚪ No Trade (微多)",
+      "strategy": "情绪轻微偏多，信号不足，以观望为主",
+      "suitable_for": "观望",
+      "confidence": "低",
+      "patterns": [],
+      "positive_factors": [],
+      "negative_factors": [],
+      "news_count": 6,
+      "news_dropped": 0,
+      "performance": {
+        "list_fetch_ms": 2717,
+        "candidate_filter_ms": 0,
+        "enrichment_ms": 8634,
+        "raw_news_count": 40,
+        "raw_research_count": 10,
+        "candidate_news_count": 6,
+        "candidate_research_count": 0,
+        "enriched_news_count": 6,
+        "enriched_research_count": 0,
+        "candidate_reasons": {
+          "news": {
+            "noise:融资净(买入|卖出)": 3,
+            "no-subject-mention": 11,
+            "dedup": 0,
+            "out_of_window": 20
+          },
+          "research": {
+            "dedup": 0,
+            "out_of_window": 10
+          }
+        },
+        "date_filter_ms": 0,
+        "relevance_ms": 0,
+        "llm_ms": 8,
+        "scoring_ms": 0
+      },
+      "top_news": [
+        {
+          "date": "2026-07-25",
+          "title": "齐鲁银行:齐鲁银行股份有限公司关于高级管理人员任职资格获得核准的公告",
+          "content": "人民币业务:吸收公众存款;发放短期、中期和长期贷款;办理国内结算;办理票据贴现;发行金融债券;代理发行、代理兑付、承销政府债券;买卖政府债券;从事同业拆借;提供担保;代理收付款项及代理保险业务;提供保管箱服务;办理地方财政信用周转使用资金委托存贷款业务;证券投资基金销售。外汇业务:外汇存款;外汇贷款;外汇汇款;外币兑换;国际结算;同业外汇拆借;外汇票据的承兑和贴现;外汇借款;外汇担保;结汇、售汇;资信调查、咨询、见证业务。经国务院银行业监督管理机构等审批机关核准的其他业务。\n郑重声明：东方财富网发布此信息的目的在于传播更多信息，与本站立场无关。东方财富网不保证该信息（包括但不限于文字、视频、音频、数据及图表）全部或者部分内容的准确性、真实性、完整性、有效性、及时性、原创性等。相关信息并未经过本网站证实，不对您构成任何投资建议，据此操作，风险自担。",
+          "type": "政策",
+          "sentiment": 0,
+          "weight": 2,
+          "final_weight": 1.62,
+          "source_authority": 4.5,
+          "recency_factor": 0.6,
+          "source": "东方财富公告",
+          "llm_reviewed": true,
+          "llm_confidence": 0.4,
+          "llm_is_real_catalyst": true,
+          "llm_reasoning": "副行长任职资格获监管核准"
+        },
+        {
+          "date": "2026-07-24 16:56:30",
+          "title": "齐鲁银行(601665.SH)：刘振水、刘兰设副行长任职资格获核准",
+          "content": "在东方财富看资讯行情，选东方财富证券一站式开户交易>>\n\n　　2026年7月24日，齐鲁银行(601665.SH)公告，公司近日收到《山东金融监管局关于刘振水齐鲁银行副行长任职资格的批复》及《山东金融监管局关于刘兰设齐鲁银行副行长任职资格的批复》，国家金融监督管理总局山东监管局已核准刘振水先生、刘兰设先生公司副行长任职资格。",
+          "type": "政策",
+          "sentiment": 0,
+          "weight": 2,
+          "final_weight": 1.8,
+          "source_authority": 3,
+          "recency_factor": 0.5,
+          "source": "东方财富资讯",
+          "llm_reviewed": true,
+          "llm_confidence": 0.5,
+          "llm_is_real_catalyst": true,
+          "llm_reasoning": "副行长任职获金融监管局正式批复"
+        },
+        {
+          "date": "2026-07-22",
+          "title": "齐鲁银行:齐鲁银行股份有限公司第九届董事会第二十三次会议决议公告",
+          "content": "人民币业务:吸收公众存款;发放短期、中期和长期贷款;办理国内结算;办理票据贴现;发行金融债券;代理发行、代理兑付、承销政府债券;买卖政府债券;从事同业拆借;提供担保;代理收付款项及代理保险业务;提供保管箱服务;办理地方财政信用周转使用资金委托存贷款业务;证券投资基金销售。外汇业务:外汇存款;外汇贷款;外汇汇款;外币兑换;国际结算;同业外汇拆借;外汇票据的承兑和贴现;外汇借款;外汇担保;结汇、售汇;资信调查、咨询、见证业务。经国务院银行业监督管理机构等审批机关核准的其他业务。\n郑重声明：东方财富网发布此信息的目的在于传播更多信息，与本站立场无关。东方财富网不保证该信息（包括但不限于文字、视频、音频、数据及图表）全部或者部分内容的准确性、真实性、完整性、有效性、及时性、原创性等。相关信息并未经过本网站证实，不对您构成任何投资建议，据此操作，风险自担。",
+          "type": "政策",
+          "sentiment": 0,
+          "weight": 1,
+          "final_weight": 0.5,
+          "source_authority": 4.5,
+          "recency_factor": 0.36,
+          "source": "东方财富公告",
+          "llm_reviewed": true,
+          "llm_confidence": 0.1,
+          "llm_is_real_catalyst": false,
+          "llm_reasoning": "董事会决议例行无实质内容"
+        },
+        {
+          "date": "2026-07-22",
+          "title": "齐鲁银行:齐鲁银行股份有限公司独立董事候选人声明与承诺",
+          "content": "人民币业务:吸收公众存款;发放短期、中期和长期贷款;办理国内结算;办理票据贴现;发行金融债券;代理发行、代理兑付、承销政府债券;买卖政府债券;从事同业拆借;提供担保;代理收付款项及代理保险业务;提供保管箱服务;办理地方财政信用周转使用资金委托存贷款业务;证券投资基金销售。外汇业务:外汇存款;外汇贷款;外汇汇款;外币兑换;国际结算;同业外汇拆借;外汇票据的承兑和贴现;外汇借款;外汇担保;结汇、售汇;资信调查、咨询、见证业务。经国务院银行业监督管理机构等审批机关核准的其他业务。\n郑重声明：东方财富网发布此信息的目的在于传播更多信息，与本站立场无关。东方财富网不保证该信息（包括但不限于文字、视频、音频、数据及图表）全部或者部分内容的准确性、真实性、完整性、有效性、及时性、原创性等。相关信息并未经过本网站证实，不对您构成任何投资建议，据此操作，风险自担。",
+          "type": "政策",
+          "sentiment": 0,
+          "weight": 1,
+          "final_weight": 0.5,
+          "source_authority": 4.5,
+          "recency_factor": 0.36,
+          "source": "东方财富公告",
+          "llm_reviewed": true,
+          "llm_confidence": 0.1,
+          "llm_is_real_catalyst": false,
+          "llm_reasoning": "独立董事候选人声明与承诺"
+        },
+        {
+          "date": "2026-07-22",
+          "title": "齐鲁银行:齐鲁银行股份有限公司关于召开2026年第一次临时股东会的通知",
+          "content": "人民币业务:吸收公众存款;发放短期、中期和长期贷款;办理国内结算;办理票据贴现;发行金融债券;代理发行、代理兑付、承销政府债券;买卖政府债券;从事同业拆借;提供担保;代理收付款项及代理保险业务;提供保管箱服务;办理地方财政信用周转使用资金委托存贷款业务;证券投资基金销售。外汇业务:外汇存款;外汇贷款;外汇汇款;外币兑换;国际结算;同业外汇拆借;外汇票据的承兑和贴现;外汇借款;外汇担保;结汇、售汇;资信调查、咨询、见证业务。经国务院银行业监督管理机构等审批机关核准的其他业务。\n郑重声明：东方财富网发布此信息的目的在于传播更多信息，与本站立场无关。东方财富网不保证该信息（包括但不限于文字、视频、音频、数据及图表）全部或者部分内容的准确性、真实性、完整性、有效性、及时性、原创性等。相关信息并未经过本网站证实，不对您构成任何投资建议，据此操作，风险自担。",
+          "type": "政策",
+          "sentiment": 0,
+          "weight": 1,
+          "final_weight": 0.5,
+          "source_authority": 4.5,
+          "recency_factor": 0.36,
+          "source": "东方财富公告",
+          "llm_reviewed": true,
+          "llm_confidence": 0.1,
+          "llm_is_real_catalyst": false,
+          "llm_reasoning": "召开临时股东会通知"
+        }
+      ]
+    },
+    "SZSE:000969": {
+      "name": "000969",
+      "score": 50,
+      "score_raw": 0,
+      "score_components": {
+        "positive_weight_sum": 0,
+        "negative_weight_sum": 0,
+        "news_effective_count": 4,
+        "news_dropped_count": 0
+      },
+      "signal": "⚪ No Trade (微多)",
+      "strategy": "情绪轻微偏多，信号不足，以观望为主",
+      "suitable_for": "观望",
+      "confidence": "低",
+      "patterns": [],
+      "positive_factors": [],
+      "negative_factors": [],
+      "news_count": 4,
+      "news_dropped": 0,
+      "performance": {
+        "list_fetch_ms": 4093,
+        "candidate_filter_ms": 0,
+        "enrichment_ms": 2012,
+        "raw_news_count": 40,
+        "raw_research_count": 10,
+        "candidate_news_count": 4,
+        "candidate_research_count": 0,
+        "enriched_news_count": 4,
+        "enriched_research_count": 0,
+        "candidate_reasons": {
+          "news": {
+            "no-subject-mention": 5,
+            "noise:融资净(买入|卖出)": 1,
+            "dedup": 0,
+            "out_of_window": 30
+          },
+          "research": {
+            "dedup": 0,
+            "out_of_window": 10
+          }
+        },
+        "date_filter_ms": 0,
+        "relevance_ms": 0,
+        "llm_ms": 9,
+        "scoring_ms": 0
+      },
+      "top_news": [
+        {
+          "date": "2026-07-28",
+          "title": "安泰科技:北京海润天睿律师事务所关于安泰科技股份有限公司2026年第一次临时股东会的法律意见书",
+          "content": "",
+          "type": "政策",
+          "sentiment": 0,
+          "weight": 1,
+          "final_weight": 1.08,
+          "source_authority": 4.5,
+          "recency_factor": 1,
+          "source": "东方财富公告",
+          "llm_reviewed": true,
+          "llm_confidence": 0.2,
+          "llm_is_real_catalyst": false,
+          "llm_reasoning": "股东会法律意见书，无实质信息"
+        },
+        {
+          "date": "2026-07-28",
+          "title": "安泰科技:安泰科技股份有限公司2026年第一次临时股东会决议公告",
+          "content": "",
+          "type": "政策",
+          "sentiment": 0,
+          "weight": 1,
+          "final_weight": 1.08,
+          "source_authority": 4.5,
+          "recency_factor": 1,
+          "source": "东方财富公告",
+          "llm_reviewed": true,
+          "llm_confidence": 0.2,
+          "llm_is_real_catalyst": false,
+          "llm_reasoning": "股东会决议公告，无具体内容"
+        },
+        {
+          "date": "2026-07-27",
+          "title": "北京海润天睿律师事务所关于安泰科技股份有限公司2026年第一次临时股东会的法律意见书",
+          "content": "北京海润天睿律师事务所\n关于安泰科技股份有限公司\n2026 \t年第一次临时股东会的法律意见书\n中国·北京\n北京市朝阳区建外大街甲 \t14 \t号广播大厦 \t5&9&10&13&17 \t层\n邮编:100022 \t电话：(010)65219696 \t传真：（010）88381869\n\n-- 1 of 7 --\n\n法律意见书\n1\n北京海润天睿律师事务所\n关于安泰科技股份有限公司\n2026 \t年第一次临时股东会的法律意见书\n致：安泰科技股份有限公司\n北京海润天睿律师事务所（以下简称“本所”）接受安泰科技股份有限公司\n（以下简称“公司”）的委托，指派律师张阳、潘仙出席公司 \t2026 \t年第一次临\n时股东会，并依据《中华人民共和国公司法》（以下简称“《公司法》”）《上\n市公司股东会规则》（以下简称“《股东会规则》”）等法律法规、规范性文件\n及《安泰科技股份有限公司公司章程》（以下简称“《公司章程》”）的有关规\n定，对本次股东会相关事项依法进行见证并发表法律意见。\n为出具本法律意见书，本所律师出席了公司本次股东会，审查了公司提供的\n召开本次股东会的有关文件。公司已向本所及本所律师承诺，其所提供的文件和\n所作的陈述、说明是完整、真实和有效的，无任何隐瞒、遗漏，并据此出具法律\n意见。\n本所律师根据在本法律意见书出具日之前已经发生或者存在的事实及有关\n法律、法规、规范性文件及《公司章程》的规定发表法律意见。在本法律意见书\n中，本所律师仅对本次股东会的召集和召开程序、出席会议人员及会议召集人资\n格、审议事项以及表决程序、表决结果等相关事项是否符合《公司法》《股东会\n规则》等法律法规、规范性文件及《公司章程》的规定发表意见，不对会议审议\n的议案内容以及该等议案所表述的事实或数据的真实性及准确性发表意见。\n本法律意见书仅用于为公司本次股东会见证之目的，不得用于其他任何目\n的或用途。本所同意，公司将本法律意见书作为公司本次股东会的公告材料， \t随\n其他需公告的信息一起向公众披露。\n本所及经办律师依据《公司法》《中华人民共和国证券法》《律师事务所从\n事证券法律业务管理办法》和《律师事务所证券法律业务执业规则》等规定及本\n法律意见书出具日以前已经发生或者存在的事实，严格履行了法定职责，遵循了\n勤勉尽责和诚实信用原则，进行了充分的核查验证，保证本法律意见所认定的事\n实真实、准确、完整，所发表的结论性意见合法、准确，不存在虚假记载、误导\n\n-- 2 of 7 --\n\n法律意见书\n2\n性陈述或者重大遗漏，并承担相应法律责任。现按照律师行业公认的业务标准、\n道德规范和勤勉尽责精神，出具法律意见如下：\n一、本次股东会的召集、召开程序\n（一）本次股东会的召集\n经本所律师核查，公司于 \t2026 \t年 \t7 \t月 \t10 \t日召开的第九届董事会第七次临时\n会议，审议通过《关于提请召开安泰科技股份有限公司 \t2026 \t年第一次临时股东\n会的通知》，决定于 \t2026 \t年 \t7 \t月 \t27 \t日下午 \t14:30 \t召开公司 \t2026 \t年第一次临时\n股东会。\n2026 \t年 \t7 \t月 \t11 \t日，公司董事会在深圳证券交易所网站（https://www.szse.cn\n/）、《中国证券报》（https://www.cs.com.cn/）等指定信息披露媒体上登载、刊\n登《安泰科技股份有限公司关于召开 \t2026 \t年第一次临时股东会的通知》，股东\n会通知的公告中载明了本次股东会的召开时间、地点、召集人、召开方式、股权\n登记日、审议事项、出席对象、登记方法等事项。\n（二）本次股东会的召开程序\n本次股东会以现场表决与网络投票相结合的方式召开。\n本次股东会现场会议于 \t2026 \t年 \t7 \t月 \t27 \t日下午 \t14:30 \t在公司总部会议室（北\n京市海淀区学院南路 \t76 \t号）召开，会议由公司董事长李军风先生主持。\n公司通过深圳证券交易所交易系统和互联网投票系统向公司股东提供网络\n形式的投票平台。其中，通过深圳证券交易所交易系统进行网络投票的具体时间\n为 \t2026 \t年 \t7 \t月 \t27 \t日 \t9:15—9:25，9:30—11:30，13:00—15:00；通过深圳证券交\n易所互联网投票系统投票的具体时间为 \t2026 \t年 \t7 \t月 \t27 \t日 \t9:15 \t至 \t15:00 \t的任意时\n间。\n本所律师认为，公司本次股东会的召集、召开程序符合《公司法》《股东会\n规则》等法律法规、规范性文件及《公司章程》的有关规定。\n二、出席本次股东会人员的资格、召集人资格\n\n-- 3 of 7 --\n\n法律意见书\n3\n（一）本次股东会出席人员资格\n根据本次股东会现场会议的股东身份证明文件、股东签名册及授权委托书、\n深圳证券信息有限公司提供的数据并经本所律师核查，出席本次股东会的股东及\n股东代理人共计 \t1,025 \t人，代表股份 \t383,118,663 \t股，占公司有表决权股份总数\n的 \t36.4695%。其中出席本次股东会现场会议的股东及股东代理人共计 \t2 \t人，代\n表股份 \t364,390,524 \t股，占公司有表决权股份总数的 \t34.6867%；参加本次股东\n会网络投票的股东共计 \t1,023 \t人，代表股份 \t18,728,139 \t股，占公司有表决权股\n份总数的 \t1.7828%。\n除上述人员外，公司部分董事、董事会秘书及其他高级管理人员出席、列席\n了本次股东会，见证律师列席了本次股东会。\n（二）本次股东会召集人资格\n经本所律师核查，本次股东会召集人为公司董事会。公司董事会已于 \t2026\n年 \t7 \t月 \t11 \t日在深圳证券交易所网站（https://www.szse.cn/）、《中国证券报》\n（https://www.cs.com.cn/）等指定信息披露媒体上登载、刊登《安泰科技股份有\n限公司关于召开 \t2026 \t年第一次临时股东会的通知》。\n本所律师认为，出席本次股东会上述人员的资格和本次股东会的召集人资格\n均符合《公司法》《股东会规则》等法律法规、规范性文件及《公司章程》的有\n关规定。\n三、本次股东会的审议事项\n经本所律师核查，本次股东会审议的议案属于公司股东会的职权范围，并且\n与召开本次股东会的通知中所列明的审议事项相一致；本次股东会未发生对通知\n的议案进行修改的情形，亦未发生股东提出新议案的情形。\n四、本次股东会的表决程序及表决结果\n（一）本次股东会的表决程序\n\n-- 4 of 7 --\n\n法律意见书\n4\n经本所律师见证，本次股东会履行了以下表决程序：\n1.本次股东会的现场会议就股东会通知中列明的提案以记名投票方式进行\n了表决，并由股东代表及本所律师共同进行计票、监票，现场会议表决票当场清\n点、当场宣布表决结果。\n2.本次股东会现场会议和网络投票表决结束后，公司根据深圳证券信息有限\n公司提供的网络投票结果，合并统计了审议议案的现场投票、网络投票的表决结\n果。\n3.经本所律师查验，提交本次股东会审议的提案经合法表决通过。本次股东\n会未对股东会通知中未列明的事项进行表决。\n（二）本次股东会的表决结果\n经本所律师见证，本次股东会就股东会通知载明的议案进行了审议，具体的\n表决结果如下：\n1.审议通过了《关于安泰科技股份有限公司 \t2026 \t年度注册和发行债务融资\n工具可行性研究报告及发行方案的议案》\n表决情况：同意 \t381,680,163 \t股，占出席本次会议股东及股东代理人所持有\n效表决权股份总数的 \t99.6245％；反对 \t1,268,600 \t股，占出席本次会议股东及股\n东代理人所持有效表决权股份总数的 \t0.3311％；弃权 \t169,900 \t股（其中，因未\n投票默认弃权 \t0 \t股），占出席本次会议股东及股东代理人所持有效表决权股份总\n数的 \t0.0443％。\n其中出席本次会议的中小投资者表决情况：同意 \t17,313,439 \t股，占出席本\n次会议的中小投资者所持有效表决权股份总数的 \t92.3288％；反对 \t1,268,600 \t股，\n占出席本次会议的中小投资者所持有效表决权股份总数的 \t6.7652％；弃权\n169,900 \t股（其中，因未投票默认弃权 \t0 \t股），占出席本次会议的中小投资者所\n持有效表决权股份总数的 \t0.9060％。\n\n-- 5 of 7 --\n\n法律意见书\n5\n表决结果：通过。\n本所律师经审核后认为，本次股东会表决程序符合《公司法》《股东会规则》\n等法律、法规、规章和其他规范性文件以及《公司章程》的有关规定，表决结果\n合法有效。\n五、结论意见\n本所律师认为，公司本次股东会的召集、召开程序、出席本次股东会的人员\n资格、召集人资格、本次股东会的表决程序等均符合《公司法》《股东会规则》\n等法律法规、规范性文件及《公司章程》的有关规定，本次股东会的表决结果合\n法有效。\n（以下无正文）\n\n-- 6 of 7 --\n\n法律意见书\n（此页无正文，为《北京海润天睿律师事务所关于安泰科技股份有限公司\n2026 \t年第一次临时股东会的法律意见书》之签字、盖章页）\n北京海润天睿律师事务所(盖章) \t见证律师：(签字)\n负责人：(签字) \t张 \t阳：\n颜克兵： \t潘 \t仙：\n年 \t月 \t日\n\n-- 7 of 7 --",
+          "type": "政策",
+          "sentiment": 0,
+          "weight": 1,
+          "final_weight": 1.02,
+          "source_authority": 5,
+          "recency_factor": 0.85,
+          "source": "巨潮资讯",
+          "llm_reviewed": true,
+          "llm_confidence": 0.3,
+          "llm_is_real_catalyst": false,
+          "llm_reasoning": "法律意见书确认股东会程序合规"
+        },
+        {
+          "date": "2026-07-27",
+          "title": "安泰科技股份有限公司2026年第一次临时股东会决议公告",
+          "content": "1\n证券代码：000969 \t证券简称：安泰科技 \t公告编号：2026-028\n安泰科技股份有限公司\n2026 \t年第一次临时股东会决议公告\n本公司及董事会全体成员保证信息披露内容的真实、准确和完整，没有虚假记载、误\n导性陈述或重大遗漏。\n特别提示：\n1、本次股东会未出现否决议案的情形；\n2、本次股东会未涉及变更前次股东会决议。\n3、安泰科技、公司、本公司：安泰科技股份有限公司\n一、会议召开和出席情况\n1、会议召开情况\n（1）现场会议时间：2026 \t年 \t7 \t月 \t27 \t日（周一）下午 \t14:30\n（2）召开地点：公司总部会议室（北京市海淀区学院南路 \t76 \t号）\n（3）召开方式：现场投票与网络投票相结合\n网络投票时间：通过深圳证券交易所交易系统进行网络投票的具体时间为：\n2026 \t年 \t7 \t月 \t27 \t日上午 \t9:15-9:25，9:30-11:30，下午 \t13:00-15:00。通过深圳证券\n交易所互联网投票系统投票的具体时间为：2026 \t年 \t7 \t月 \t27 \t日 \t9:15-15:00 \t期间的\n任意时间。\n（4）会议召集人：公司董事会。本次会议的召开已经公司第九届董事会第\n七次临时会议审议通过召开本次股东会的议案。\n（5）现场会议主持人：公司董事长李军风先生。\n本次股东会会议召开符合《公司法》、中国证监会《上市公司股东会规则》、\n《深圳证券交易所股票上市规则》、\t《深圳证券交易所上市公司股东会网络投票实\n施细则》和《公司章程》等有关规定。\n2、会议出席情况\n通过现场和网络投票的股东 \t1,025 \t人，代表股份 \t383,118,663 \t股，占公司有\n\n-- 1 of 3 --\n\n2\n表决权股份总数的 \t36.4695%。\n其中：通过现场投票的股东 \t2 \t人，代表股份 \t364,390,524 \t股，占公司有表决\n权股份总数的 \t34.6867%。\n通过网络投票的股东 \t1,023 \t人，代表股份 \t18,728,139 \t股，占公司有表决权\n股份总数的 \t1.7828%。\n中小股东出席的总体情况：\n通过现场和网络投票的中小股东 \t1,024 \t人，代表股份 \t18,751,939 \t股，占公\n司有表决权股份总数的 \t1.7850%。\n其中：通过现场投票的中小股东 \t1 \t人，代表股份 \t23,800 \t股，占公司有表决\n权股份总数的 \t0.0023%。\n通过网络投票的中小股东 \t1,023 \t人，代表股份 \t18,728,139 \t股，占公司有表\n决权股份总数的 \t1.7828%。\n3、会议出席人员：公司部分董事、董事会秘书及其他高级管理人员出席、\n列席了本次股东会，见证律师列席了本次股东会。\n二、议案审议表决情况\n本次股东会采取现场投票与网络投票相结合的方式，审议并通过了如下议案：\n1、《关于安泰科技股份有限公司 \t2026 \t年度注册和发行债务融资工具可行性\n研究报告及发行方案的议案》\n本议案为普通决议议案，已获得出席本次会议的有效表决权的半数以上同意。\n同意 \t381,680,163 \t股，占出席本次股东会有效表决权股份总数的 \t99.6245%；\n反对 \t1,268,600 \t股，占出席本次股东会有效表决权股份总数的 \t0.3311%；弃权\n169,900 \t股（其中，因未投票默认弃权 \t0 \t股），占出席本次股东会有效表决权股份\n总数的 \t0.0443%。\n中小股东总表决情况：\n同意 \t17,313,439 \t股，占出席本次股东会中小股东有效表决权股份总数的\n92.3288%；反对 \t1,268,600 \t股，占出席本次股东会中小股东有效表决权股份总数\n的 \t6.7652%；弃权 \t169,900 \t股（其中，因未投票默认弃权 \t0 \t股），占出席本次股\n东会中小股东有效表决权股份总数的 \t0.9060%。\n\n-- 2 of 3 --\n\n3\n三、律师出具的法律意见\n1、律师事务所名称：北京海润天睿律师事务所\n2、律师姓名：张阳、潘仙\n3、结论性意见：本次股东会的召集、召开程序、出席本次股东会的人员资\n格、召集人资格、本次股东会的表决程序等均符合《公司法》《股东会规则》等\n法律法规、规范性文件及《公司章程》的有关规定，本次股东会的表决结果合法\n有效。\n四、备查文件\n1、安泰科技股份有限公司 \t2026 \t年第一次临时股东会决议；\n2、北京海润天睿律师事务所关于安泰科技股份有限公司 \t2026 \t年第一次临时\n股东会的法律意见书。\n特此公告。\n安泰科技股份有限公司董事会\n2026 \t年 \t7 \t月 \t28 \t日\n\n-- 3 of 3 --",
+          "type": "政策",
+          "sentiment": 0,
+          "weight": 2,
+          "final_weight": 2.04,
+          "source_authority": 5,
+          "recency_factor": 0.85,
+          "source": "巨潮资讯",
+          "llm_reviewed": true,
+          "llm_confidence": 0.6,
+          "llm_is_real_catalyst": false,
+          "llm_reasoning": "审议通过债务融资工具发行方案，中性"
+        }
+      ]
+    },
+    "SSE:600686": {
+      "name": "600686",
+      "score": 50,
+      "score_raw": 0,
+      "score_components": {
+        "positive_weight_sum": 0,
+        "negative_weight_sum": 0
+      },
+      "signal": "⚪ No Trade (无数据)",
+      "strategy": "近期无相关有效新闻",
+      "suitable_for": "观望",
+      "confidence": "-",
+      "patterns": [],
+      "positive_factors": [],
+      "negative_factors": [],
+      "news_count": 0,
+      "news_dropped": 0,
+      "performance": {
+        "list_fetch_ms": 1600,
+        "candidate_filter_ms": 0,
+        "enrichment_ms": 0,
+        "raw_news_count": 40,
+        "raw_research_count": 10,
+        "candidate_news_count": 0,
+        "candidate_research_count": 0,
+        "enriched_news_count": 0,
+        "enriched_research_count": 0,
+        "candidate_reasons": {
+          "news": {
+            "noise:\\d{1,2}月\\d{1,2}日(快速上涨|快速回调|涨停|": 1,
+            "no-subject-mention": 4,
+            "noise:融资净(买入|卖出)": 1,
+            "dedup": 0,
+            "out_of_window": 34
+          },
+          "research": {
+            "dedup": 0,
+            "out_of_window": 10
+          }
+        },
+        "date_filter_ms": 0,
+        "relevance_ms": 0,
+        "llm_ms": 0,
+        "scoring_ms": 0
+      },
+      "top_news": []
+    },
+    "SSE:601168": {
+      "name": "601168",
+      "score": 50,
+      "score_raw": 0,
+      "score_components": {
+        "positive_weight_sum": 0,
+        "negative_weight_sum": 0
+      },
+      "signal": "⚪ No Trade (无数据)",
+      "strategy": "近期无相关有效新闻",
+      "suitable_for": "观望",
+      "confidence": "-",
+      "patterns": [],
+      "positive_factors": [],
+      "negative_factors": [],
+      "news_count": 0,
+      "news_dropped": 0,
+      "performance": {
+        "list_fetch_ms": 1026,
+        "candidate_filter_ms": 0,
+        "enrichment_ms": 0,
+        "raw_news_count": 40,
+        "raw_research_count": 10,
+        "candidate_news_count": 0,
+        "candidate_research_count": 0,
+        "enriched_news_count": 0,
+        "enriched_research_count": 0,
+        "candidate_reasons": {
+          "news": {
+            "no-subject-mention": 17,
+            "noise:融资净(买入|卖出)": 1,
+            "noise:\\d{1,2}月\\d{1,2}日(快速上涨|快速回调|涨停|": 2,
+            "dedup": 0,
+            "out_of_window": 20
+          },
+          "research": {
+            "dedup": 0,
+            "out_of_window": 10
+          }
+        },
+        "date_filter_ms": 0,
+        "relevance_ms": 0,
+        "llm_ms": 0,
+        "scoring_ms": 0
+      },
+      "top_news": []
+    },
+    "SZSE:301165": {
+      "name": "锐捷网络",
+      "score": 49,
+      "score_raw": -0.21,
+      "score_components": {
+        "positive_weight_sum": 2.1,
+        "negative_weight_sum": 2.31,
+        "news_effective_count": 8,
+        "news_dropped_count": 0
+      },
+      "signal": "⚪ No Trade (中性)",
+      "strategy": "情绪中性，无明显方向，观望",
+      "suitable_for": "观望",
+      "confidence": "低",
+      "patterns": [],
+      "positive_factors": [
+        "[行业|w0.6] 锐捷网络7月28日快速反弹",
+        "[行业|w0.5] 锐捷网络7月24日盘中涨幅达5%",
+        "[行业|w0.5] 锐捷网络7月23日快速反弹"
+      ],
+      "negative_factors": [
+        "[行业|w0.6] 锐捷网络7月28日加速下跌",
+        "[行业|w0.6] 锐捷网络7月28日开盘跌幅达5%",
+        "[行业|w0.6] 锐捷网络：融资净偿还1136.16万元，融资余额8.1亿元"
+      ],
+      "news_count": 8,
+      "news_dropped": 0,
+      "performance": {
+        "list_fetch_ms": 1554,
+        "candidate_filter_ms": 0,
+        "enrichment_ms": 7696,
+        "raw_news_count": 40,
+        "raw_research_count": 10,
+        "candidate_news_count": 8,
+        "candidate_research_count": 0,
+        "enriched_news_count": 8,
+        "enriched_research_count": 0,
+        "candidate_reasons": {
+          "news": {
+            "no-subject-mention": 7,
+            "noise:\\d{1,2}月\\d{1,2}日(快速上涨|快速回调|涨停|": 4,
+            "noise:融资净(买入|卖出)": 1,
+            "noise:开盘价|收盘价": 1,
+            "dedup": 0,
+            "out_of_window": 19
+          },
+          "research": {
+            "dedup": 0,
+            "out_of_window": 10
+          }
+        },
+        "date_filter_ms": 0,
+        "relevance_ms": 0,
+        "llm_ms": 31396,
+        "scoring_ms": 0
+      },
+      "top_news": [
+        {
+          "date": "2026-07-28 10:00:11",
+          "title": "锐捷网络7月28日加速下跌",
+          "content": "",
+          "type": "行业",
+          "sentiment": -1,
+          "weight": 1,
+          "final_weight": 0.6,
+          "source_authority": 3,
+          "recency_factor": 1,
+          "source": "东方财富资讯",
+          "llm_reviewed": true,
+          "llm_confidence": 0.1,
+          "llm_is_real_catalyst": false,
+          "llm_reasoning": "加速下跌无实质内容"
+        },
+        {
+          "date": "2026-07-28 09:46:52",
+          "title": "锐捷网络7月28日快速反弹",
+          "content": "",
+          "type": "行业",
+          "sentiment": 1,
+          "weight": 1,
+          "final_weight": 0.6,
+          "source_authority": 3,
+          "recency_factor": 1,
+          "source": "东方财富资讯",
+          "llm_reviewed": true,
+          "llm_confidence": 0.1,
+          "llm_is_real_catalyst": false,
+          "llm_reasoning": "快速反弹无实质内容"
+        },
+        {
+          "date": "2026-07-28 09:27:42",
+          "title": "锐捷网络7月28日开盘跌幅达5%",
+          "content": "以下是锐捷网络在北京时间7月28日09:26分盘口异动快照：\n\n　　专业金融数据，下一代智能终端\n\n分笔\n\n09:25:00 122.00 2910↑\n09:24:57 122.00 2802↑\n09:24:48 122.97 2234↑\n09:24:39 123.00 2092↑\n09:24:30 123.00 1977↑\n \n09:24:21 123.00 1853↑\n09:24:12 123.00 1734↑\n09:24:03 123.00 1663↑\n09:23:54 123.00 1607↑\n09:23:45 123.00 1468↑\n \n报价\n\n卖五 \n\n122.33\n\n 1\n卖四 \n\n122.28\n\n 1\n卖三 \n\n122.08\n\n 1\n卖二 \n\n122.01\n\n 9\n卖一 \n\n122\n\n 1187\n\n买一 \n\n121.92\n\n 1\n买二 \n\n121.88\n\n 9\n买三 \n\n121.82\n\n 2\n买四 \n\n121.8\n\n 8\n买五 \n\n121.77\n\n 4\n\n最新：122\n涨幅：-6.61%\n涨跌：-8.64\n换手率：0.03%\n成交量：2910手\n成交额：3550.2万元\n主力净流入：\n0元\n\n  7月28日，锐捷网络开盘跌幅达5%，截至9点26分，报122元，成交3550.2万元，换手率0.03%。\n注：以上信息仅供参考，不对您构成任何投资建议。",
+          "type": "行业",
+          "sentiment": -1,
+          "weight": 1,
+          "final_weight": 0.6,
+          "source_authority": 3,
+          "recency_factor": 1,
+          "source": "东方财富资讯",
+          "llm_reviewed": true,
+          "llm_confidence": 0.2,
+          "llm_is_real_catalyst": false,
+          "llm_reasoning": "开盘跌幅5%无催化"
+        },
+        {
+          "date": "2026-07-28 09:09:27",
+          "title": "锐捷网络：融资净偿还1136.16万元，融资余额8.1亿元",
+          "content": "在东方财富看资讯行情，选东方财富证券一站式开户交易>>\n\n交易所最新数据显示，锐捷网络于2026年7月27日获融资买入3.77亿元，融资偿还3.89亿元，当日融资净偿还1136.16万元。目前，该股融资余额8.10亿，占流通市值比例为0.56%。\n\n该股当日融券卖出600股，融券偿还2500股，融券净偿还1900股。目前，该股融券余量4.82万股，融券余额629.42万元。\n\n免责声明：本文基于AI生产，仅供参考，不构成任何投资建议，据此操作风险自担。东方财富发布此内容旨在传播更多信息，与本平台立场无关。东方财富力求但不保证数据的完全准确，如有错漏请以中国证监会指定上市公司信息披露媒体为准，东方财富不对因该资料全部或部分内容而引致的盈亏承担任何责任。用户个人对服务的使用承担风险，东方财富对此不作任何类型的担保。",
+          "type": "行业",
+          "sentiment": -1,
+          "weight": 1,
+          "final_weight": 0.6,
+          "source_authority": 3,
+          "recency_factor": 1,
+          "source": "东方财富资讯",
+          "llm_reviewed": true,
+          "llm_confidence": 0.3,
+          "llm_is_real_catalyst": false,
+          "llm_reasoning": "融资净偿还偏空无实质催化"
+        },
+        {
+          "date": "2026-07-27 09:43:15",
+          "title": "锐捷网络7月27日盘中跌幅达5%",
+          "content": "",
+          "type": "行业",
+          "sentiment": -1,
+          "weight": 1,
+          "final_weight": 0.51,
+          "source_authority": 3,
+          "recency_factor": 0.85,
+          "source": "东方财富资讯",
+          "llm_reviewed": true,
+          "llm_confidence": 0.1,
+          "llm_is_real_catalyst": false,
+          "llm_reasoning": "盘中跌幅5%"
+        }
+      ]
+    },
+    "SSE:603186": {
+      "name": "华正新材",
+      "score": 46,
+      "score_raw": -1.02,
+      "score_components": {
+        "positive_weight_sum": 3.72,
+        "negative_weight_sum": 4.74,
+        "news_effective_count": 14,
+        "news_dropped_count": 0
+      },
+      "signal": "⚪ No Trade (中性)",
+      "strategy": "情绪中性，无明显方向，观望",
+      "suitable_for": "观望",
+      "confidence": "低",
+      "patterns": [],
+      "positive_factors": [
+        "[行业|w0.6] 华正新材7月28日打开跌停",
+        "[行业|w0.6] 华正新材7月28日快速反弹",
+        "[行业|w0.51] 华正新材7月27日打开涨停"
+      ],
+      "negative_factors": [
+        "[回购|w1.94] 华正新材:浙江华正新材料股份有限公司董事、高级管理人员减持股份结果公告",
+        "[行业|w0.6] 华正新材7月28日盘中跌停",
+        "[行业|w0.6] 华正新材7月28日加速下跌"
+      ],
+      "news_count": 14,
+      "news_dropped": 0,
+      "performance": {
+        "list_fetch_ms": 4755,
+        "candidate_filter_ms": 0,
+        "enrichment_ms": 29058,
+        "raw_news_count": 40,
+        "raw_research_count": 10,
+        "candidate_news_count": 14,
+        "candidate_research_count": 0,
+        "enriched_news_count": 14,
+        "enriched_research_count": 0,
+        "candidate_reasons": {
+          "news": {
+            "no-subject-mention": 2,
+            "noise:\\d{1,2}月\\d{1,2}日(快速上涨|快速回调|涨停|": 4,
+            "dedup": 0,
+            "out_of_window": 20
+          },
+          "research": {
+            "dedup": 0,
+            "out_of_window": 10
+          }
+        },
+        "date_filter_ms": 0,
+        "relevance_ms": 0,
+        "llm_ms": 27943,
+        "scoring_ms": 0
+      },
+      "top_news": [
+        {
+          "date": "2026-07-28 13:20:30",
+          "title": "华正新材7月28日打开跌停",
+          "content": "以下是华正新材在北京时间7月28日13:20分盘口异动快照：\n\n　　在东方财富看资讯行情，选东方财富证券一站式开户交易>>\n\n \n\n  7月28日13点20分，华正新材盘中打开跌停，现报121.7元，成交10.76亿元，换手率5.45%。该股之前于13点20分跌停。\n注：以上信息仅供参考，不对您构成任何投资建议。",
+          "type": "行业",
+          "sentiment": 1,
+          "weight": 1,
+          "final_weight": 0.6,
+          "source_authority": 3,
+          "recency_factor": 1,
+          "source": "东方财富资讯",
+          "llm_reviewed": true,
+          "llm_confidence": 0.2,
+          "llm_is_real_catalyst": false,
+          "llm_reasoning": "盘口异动，打开跌停，无实质催化"
+        },
+        {
+          "date": "2026-07-28 13:20:11",
+          "title": "华正新材7月28日盘中跌停",
+          "content": "以下是华正新材在北京时间7月28日13:20分盘口异动快照：\n\n　　在东方财富看资讯行情，选东方财富证券一站式开户交易>>\n\n \n\n  7月28日13点20分，华正新材盘中跌停，报121.68元，目前封单171手，折合208.07万元。截至目前，成交10.69亿元，换手率5.42%。\n注：以上信息仅供参考，不对您构成任何投资建议。",
+          "type": "行业",
+          "sentiment": -1,
+          "weight": 1,
+          "final_weight": 0.6,
+          "source_authority": 3,
+          "recency_factor": 1,
+          "source": "东方财富资讯",
+          "llm_reviewed": true,
+          "llm_confidence": 0.2,
+          "llm_is_real_catalyst": false,
+          "llm_reasoning": "盘中跌停，纯行情描述"
+        },
+        {
+          "date": "2026-07-28 09:52:55",
+          "title": "华正新材7月28日加速下跌",
+          "content": "",
+          "type": "行业",
+          "sentiment": -1,
+          "weight": 1,
+          "final_weight": 0.6,
+          "source_authority": 3,
+          "recency_factor": 1,
+          "source": "东方财富资讯",
+          "llm_reviewed": true,
+          "llm_confidence": 0.2,
+          "llm_is_real_catalyst": false,
+          "llm_reasoning": "加速下跌，无基本面信息"
+        },
+        {
+          "date": "2026-07-28 09:38:36",
+          "title": "华正新材7月28日快速反弹",
+          "content": "",
+          "type": "行业",
+          "sentiment": 1,
+          "weight": 1,
+          "final_weight": 0.6,
+          "source_authority": 3,
+          "recency_factor": 1,
+          "source": "东方财富资讯",
+          "llm_reviewed": true,
+          "llm_confidence": 0.2,
+          "llm_is_real_catalyst": false,
+          "llm_reasoning": "快速反弹，日内波动"
+        },
+        {
+          "date": "2026-07-28 09:27:27",
+          "title": "华正新材7月28日开盘跌幅达5%",
+          "content": "",
+          "type": "行业",
+          "sentiment": -1,
+          "weight": 1,
+          "final_weight": 0.6,
+          "source_authority": 3,
+          "recency_factor": 1,
+          "source": "东方财富资讯",
+          "llm_reviewed": true,
+          "llm_confidence": 0.2,
+          "llm_is_real_catalyst": false,
+          "llm_reasoning": "开盘跌幅5%，价格波动"
+        }
+      ]
+    },
+    "SZSE:301503": {
+      "name": "智迪科技",
+      "score": 45,
+      "score_raw": -1.3,
+      "score_components": {
+        "positive_weight_sum": 1.5,
+        "negative_weight_sum": 2.8,
+        "news_effective_count": 11,
+        "news_dropped_count": 0
+      },
+      "signal": "⚪ No Trade (中性)",
+      "strategy": "情绪中性，无明显方向，观望",
+      "suitable_for": "观望",
+      "confidence": "低",
+      "patterns": [],
+      "positive_factors": [
+        "[行业|w0.5] 智迪科技：公司磁轴产品主要面向高端电竞产品市场",
+        "[行业|w0.5] 智迪科技：AIPC的普及将带来两方面的增量需求",
+        "[行业|w0.5] 智迪科技：越南子公司是公司重要的海外生产基地"
+      ],
+      "negative_factors": [
+        "[财报|w1.4] 智迪科技：公司业务以外销为主，为全球头部计算机及计算机外设品牌合作提供ODM解决方案",
+        "[财报|w1.4] 【调研快报】智迪科技接待上海佳许投资管理有限公司调研"
+      ],
+      "news_count": 11,
+      "news_dropped": 0,
+      "performance": {
+        "list_fetch_ms": 3342,
+        "candidate_filter_ms": 0,
+        "enrichment_ms": 30312,
+        "raw_news_count": 40,
+        "raw_research_count": 1,
+        "candidate_news_count": 11,
+        "candidate_research_count": 0,
+        "enriched_news_count": 11,
+        "enriched_research_count": 0,
+        "candidate_reasons": {
+          "news": {
+            "noise:融资净(买入|卖出)": 2,
+            "dedup": 0,
+            "out_of_window": 27
+          },
+          "research": {
+            "dedup": 0,
+            "out_of_window": 1
+          }
+        },
+        "date_filter_ms": 0,
+        "relevance_ms": 0,
+        "llm_ms": 31509,
+        "scoring_ms": 0
+      },
+      "top_news": [
+        {
+          "date": "2026-07-28 09:07:49",
+          "title": "智迪科技：融资净偿还5.8万元，融资余额4018.54万元",
+          "content": "全新妙想投研助理，立即体验\n\n交易所最新数据显示，智迪科技于2026年7月27日获融资买入102.98万元，融资偿还108.77万元，当日融资净偿还5.8万元。目前，该股融资余额4018.54万，占流通市值比例为3.46%。\n\n该股当日无融券交易。目前，该股融券余量8100股，融券余额21.21万元。\n\n免责声明：本文基于AI生产，仅供参考，不构成任何投资建议，据此操作风险自担。东方财富发布此内容旨在传播更多信息，与本平台立场无关。东方财富力求但不保证数据的完全准确，如有错漏请以中国证监会指定上市公司信息披露媒体为准，东方财富不对因该资料全部或部分内容而引致的盈亏承担任何责任。用户个人对服务的使用承担风险，东方财富对此不作任何类型的担保。",
+          "type": "行业",
+          "sentiment": 0,
+          "weight": 1,
+          "final_weight": 0.6,
+          "source_authority": 3,
+          "recency_factor": 1,
+          "source": "东方财富资讯",
+          "llm_reviewed": true,
+          "llm_confidence": 0.2,
+          "llm_is_real_catalyst": false,
+          "llm_reasoning": "日常两融数据，无实质影响"
+        },
+        {
+          "date": "2026-07-22 20:23:00",
+          "title": "智迪科技：公司主要客户为国际知名计算机制造商和计算机外设品牌商",
+          "content": "专业金融数据，下一代智能终端\n\n　　证券日报网7月22日讯 ，智迪科技在接受调研时表示，公司主要客户为国际知名计算机制造商和计算机外设品牌商，产品应用于电竞游戏、商务办公等场景。从行业竞争格局来看，全球计算机外设制造产能主要集中于中国与东南亚地区，行业市场化程度高、竞争充分，多数企业规模小、产品技术与附加值偏低。公司依托高效的产品开发能力与快速的市场响应速度、完善的客户服务体系、全流程规模化制造、雄厚的技术积淀、稳定的产品品质以及成熟的全球化交付能力等综合能力形成差异化优势，市场竞争力稳步提升。",
+          "type": "行业",
+          "sentiment": 0,
+          "weight": 1,
+          "final_weight": 0.5,
+          "source_authority": 3,
+          "recency_factor": 0.36,
+          "source": "东方财富资讯",
+          "llm_reviewed": true,
+          "llm_confidence": 0.4,
+          "llm_is_real_catalyst": false,
+          "llm_reasoning": "调研介绍客户与竞争格局，无量化信息"
+        },
+        {
+          "date": "2026-07-22 20:23:00",
+          "title": "智迪科技：公司毛利率波动总体保持在较为稳定的水平",
+          "content": "炒股第一步，先开个股票账户\n\n　　证券日报网7月22日讯 ，智迪科技在接受调研时表示，公司毛利率波动总体保持在较为稳定的水平。公司毛利率主要受报告期内产品结构、原材料价格波动等因素的影响。公司会持续推进供应链整合、加快智能制造产线升级、优化生产工艺与库存管理等措施，多维度改善毛利率水平。产品结构方面，公司也在不断加大研发投入，提升高端产品比例与产品附加值。公司一季度研发费用同比增长27.04%，重点布局无线化、轻量化、高性能游戏外设等方向，提升产品技术含量和溢价能力。通过与全球头部计算机外设品牌的深度合作，公司深度参与客户新品开发，在键鼠品类的设计研发积累了显著的技术优势。",
+          "type": "行业",
+          "sentiment": 0,
+          "weight": 1,
+          "final_weight": 1.08,
+          "source_authority": 3,
+          "recency_factor": 0.36,
+          "source": "东方财富资讯",
+          "llm_reviewed": true,
+          "llm_confidence": 0.5,
+          "llm_is_real_catalyst": true,
+          "llm_reasoning": "提及Q1研发费用+27%，但重点在毛利率说明"
+        },
+        {
+          "date": "2026-07-22 20:23:00",
+          "title": "智迪科技：公司磁轴产品主要面向高端电竞产品市场",
+          "content": "专业金融数据，下一代智能终端\n\n　　证券日报网7月22日讯 ，智迪科技在接受调研时表示，公司磁轴产品主要面向高端电竞产品市场，自量产以来获得品牌客户积极反馈，出货量持续稳步增长，订单交付节奏稳定。公司持续迭代磁轴产品技术方案，不断提升产品竞争力，同时依托成熟的规模化产能保障订单交付，持续深化与头部品牌客户在高端机型上的战略合作，进一步拓宽高端市场份额。",
+          "type": "行业",
+          "sentiment": 1,
+          "weight": 1,
+          "final_weight": 0.5,
+          "source_authority": 3,
+          "recency_factor": 0.36,
+          "source": "东方财富资讯",
+          "llm_reviewed": true,
+          "llm_confidence": 0.6,
+          "llm_is_real_catalyst": false,
+          "llm_reasoning": "磁轴出货增长但无具体数据"
+        },
+        {
+          "date": "2026-07-22 20:23:00",
+          "title": "智迪科技：公司以研发创新与智能制造打造核心竞争优势",
+          "content": "全新妙想投研助理，立即体验\n\n　　证券日报网7月22日讯 ，智迪科技在接受调研时表示，公司以研发创新与智能制造打造核心竞争优势。研发方面，公司搭建专业研发团队，深耕计算机外设核心技术，累计取得多项授权专利。公司紧跟客户需求与行业技术发展趋势，持续加大研发投入，不断优化产品性能，为产品迭代升级与市场拓展筑牢技术根基。智能制造方面，公司着力搭建智能化生产体系，自主研发智能生产与模具制造系统，引入工业机器人、视觉检测等先进设备，实现生产全流程自动化、智能化管控，有效提升生产效率与产品良品率，构建起高效、稳定的智能制造体系，能够充分适配规模化生产与高品质交付的市场要求。",
+          "type": "行业",
+          "sentiment": 0,
+          "weight": 1,
+          "final_weight": 0.5,
+          "source_authority": 3,
+          "recency_factor": 0.36,
+          "source": "东方财富资讯",
+          "llm_reviewed": true,
+          "llm_confidence": 0.3,
+          "llm_is_real_catalyst": false,
+          "llm_reasoning": "研发与智能制造一般性描述"
+        }
+      ]
+    }
+  }
+}

@@ -1,0 +1,44 @@
+
+> tradingview-mcp@1.0.0 review:us
+> node pipeline/5-review/review_us.mjs
+
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+  Stage 5 · 回归检核 (US)
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+📋 ./watchlist/us_selected.txt: 19 只
+📂 对照快照: reports\2026-07-25 (2026-07-25)
+
+🔄 抓取今日日线涨跌幅 (~0.9 min) ...
+  [  1/19] NASDAQ:ACGL        ✗ ohlcv 失败
+  [  2/19] NASDAQ:NWBI        ✗ ohlcv 失败
+  [  3/19] NASDAQ:TTMI        ✗ ohlcv 失败
+  [  4/19] NYSE:CSW           ✗ ohlcv 失败
+  [  5/19] NYSE:DELL          ✗ ohlcv 失败
+  [  6/19] NYSE:GLW           ✗ ohlcv 失败
+  [  7/19] NYSE:LTC           ✗ ohlcv 失败
+  [  8/19] NYSE:MMM           ✗ ohlcv 失败
+  [  9/19] NYSE:PFS           ✗ ohlcv 失败
+  [ 10/19] NYSE:SM            ✗ ohlcv 失败
+  [ 11/19] NYSE:SO            ✗ ohlcv 失败
+  [ 12/19] NYSE:ENVA          ✗ ohlcv 失败
+  [ 13/19] NYSE:IRM           ✗ ohlcv 失败
+  [ 14/19] NASDAQ:WWD         ✗ ohlcv 失败
+  [ 15/19] NYSE:SN            ✗ ohlcv 失败
+  [ 16/19] NASDAQ:BHRB        ✗ ohlcv 失败
+  [ 17/19] NYSE:SXI           ✗ ohlcv 失败
+  [ 18/19] NASDAQ:BGC         ✗ ohlcv 失败
+  [ 19/19] OTC:SMNEY          ✗ ohlcv 失败
+
+✅ 成功 0 只, 失败 19 只
+⚠️  有效样本不足 20 只, top-N 会有重叠或不足
+
+🚀 涨幅 top-10:
+
+📉 跌幅 top-10:
+
+✅ JSON: ./watchlist/us_review.json
+✅ MD:   ./watchlist/us_review.md
+📸 快照: reports\2026-07-26 (15 个文件)
+

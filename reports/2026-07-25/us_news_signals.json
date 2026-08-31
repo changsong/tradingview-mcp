@@ -1,0 +1,946 @@
+{
+  "generated_at": "2026-07-25T13:05:17.512Z",
+  "market": "us",
+  "source": "src/core/usNews.js",
+  "score_scale": "0-100 normalized (neutral=50)",
+  "window": {
+    "from": "2026-07-18",
+    "to": "2026-07-25",
+    "days": 7
+  },
+  "llm_used": true,
+  "performance": {
+    "totals_ms": {
+      "list_fetch_ms": 36037,
+      "enrichment_ms": 57768,
+      "relevance_ms": 0,
+      "llm_ms": 23994,
+      "report_write_ms": 21
+    },
+    "avg_ms": {
+      "list_fetch_ms": 1897,
+      "enrichment_ms": 3040,
+      "relevance_ms": 0,
+      "llm_ms": 1263,
+      "report_write_ms": 1
+    }
+  },
+  "stocks": {
+    "NASDAQ:TTMI": {
+      "name": "TTMI",
+      "score": 66,
+      "score_raw": 3.87,
+      "score_components": {
+        "positive_weight_sum": 3.87,
+        "negative_weight_sum": 0,
+        "news_effective_count": 6,
+        "news_dropped_count": 0
+      },
+      "signal": "GREEN Long (Mid)",
+      "strategy": "Positive sentiment flow — suitable for dip-buy or light momentum entry",
+      "suitable_for": "Buy Dip / Light Momentum",
+      "confidence": "Medium",
+      "patterns": [],
+      "positive_factors": [
+        "[Earnings|w2.27] TTM Technologies (TTMI) to Report Q2 Results: Wall Street Expects Earn",
+        "[Analyst Action|w1.01] TTM Technologies (TTMI) Stock May Be 21% Undervalued As AI Demand Buil",
+        "[Industry|w0.59] Why Is TTM Technologies (TTMI) Stock Soaring Today"
+      ],
+      "negative_factors": [],
+      "news_count": 6,
+      "news_dropped": 0,
+      "performance": {
+        "list_fetch_ms": 1551,
+        "candidate_filter_ms": 0,
+        "enrichment_ms": 1,
+        "raw_news_count": 25,
+        "raw_forum_count": 0,
+        "candidate_news_count": 6,
+        "candidate_forum_count": 0,
+        "enriched_news_count": 6,
+        "enriched_forum_count": 0,
+        "candidate_reasons": {
+          "news": {
+            "no-subject-mention": 5,
+            "dedup": 0,
+            "out_of_window": 14
+          },
+          "forum": {
+            "dedup": 0
+          }
+        },
+        "date_filter_ms": 0,
+        "relevance_ms": 0,
+        "llm_ms": 1,
+        "scoring_ms": 1
+      },
+      "top_news": [
+        {
+          "date": "2026-07-23",
+          "title": "TTM Technologies (TTMI) Following Farnborough Buzz Is The AI Defense Story Still Undervalued",
+          "content": "TTM Technologies (TTMI) is back in focus after its presence at the 2026 Farnborough International Airshow highlighted its printed circuit board and RF systems used in aerospace, defense, and artificial intelligence infrastructure. See our latest analysis for TTM Technologies. After the Farnborough showcase, TTM Technologies has seen mixed short term trading, with the share price down 34.66% over the past month but still up 104.93% year to date. At the same time, the one year total shareholder...",
+          "type": "Industry",
+          "sentiment": 0,
+          "weight": 1,
+          "final_weight": 0.5,
+          "source_authority": 3.5,
+          "recency_factor": 0.6,
+          "source": "Finnhub",
+          "llm_reviewed": true,
+          "llm_confidence": 0.4,
+          "llm_is_real_catalyst": false,
+          "llm_reasoning": "Sector commentary, no hard trigger"
+        },
+        {
+          "date": "2026-07-23",
+          "title": "TTM Technologies (TTMI) Stock May Be 21% Undervalued As AI Demand Builds",
+          "content": "TTM Technologies has delivered a very large 5 year return, yet its valuation checks are split, with a Discounted Cash Flow (DCF) estimate pointing to a discount to intrinsic value while traditional market multiples lean the other way. Over the past 5 years, TTM Technologies has returned about 9.5x an initial investment, which puts extra focus on whether the current price is still supported by fundamentals. Revenue linked to AI infrastructure and aerospace and defense programs can support...",
+          "type": "Analyst Action",
+          "sentiment": 1,
+          "weight": 1,
+          "final_weight": 1.01,
+          "source_authority": 3.5,
+          "recency_factor": 0.6,
+          "source": "Finnhub",
+          "llm_reviewed": true,
+          "llm_confidence": 0.5,
+          "llm_is_real_catalyst": false,
+          "llm_reasoning": "DCF suggests undervaluation, not actionable"
+        },
+        {
+          "date": "2026-07-22",
+          "title": "How Investors May Respond To TTM Technologies (TTMI) Showcasing AI and Defense Electronics at Farnbo",
+          "content": "Earlier this month, TTM Technologies presented at the Farnborough International Airshow in the UK, highlighting its advanced printed circuit board and RF solutions for aerospace, defense, and AI infrastructure applications. The showcase emphasized TTM’s role in supplying complex electronics for AI data centers and mission-critical defense systems, underscoring how deeply it is embedded in next-generation mission hardware supply chains. Next, we’ll examine how this Farnborough spotlight on...",
+          "type": "Industry",
+          "sentiment": 0,
+          "weight": 1,
+          "final_weight": 0.5,
+          "source_authority": 3.5,
+          "recency_factor": 0.5,
+          "source": "Finnhub",
+          "llm_reviewed": true,
+          "llm_confidence": 0.3,
+          "llm_is_real_catalyst": false,
+          "llm_reasoning": "Event recap, no new catalyst"
+        },
+        {
+          "date": "2026-07-22",
+          "title": "TTM Technologies (TTMI) to Report Q2 Results: Wall Street Expects Earnings Growth",
+          "content": "TTM Technologies (TTMI) to Report Q2 Results: Wall Street Expects Earnings Growth\nZacks Equity Research\nWed, July 22, 2026 at 11:00 PM GMT+9 5 min read\nTTMI\n-1.46%\nROG\n-0.95%\n\nWall Street expects a year-over-year increase in earnings on higher revenues when TTM Technologies (TTMI) reports results for the quarter ended June 2026. While this widely-known consensus outlook is important in gauging the company's earnings picture, a powerful factor that could impact its near-term stock price is how the actual results compare to these estimates.\n\nThe stock might move higher if these key numbers top expectations in the upcoming earnings report. On the other hand, if they miss, the stock may move lower.\n\nWhile management's discussion of business conditions on the earnings call will mostly determine the sustainability of the immediate price change and future earnings expectations, it's worth having a handicapping insight into the odds of a positive EPS surprise.\n\nZacks Consensus Estimate\n\nThis printed circuit board maker is expected to post quarterly earnings of $0.92 per share in its upcoming report, which represents a year-over-year change of +58.6%.\n\nRevenues are expected to be $964.55 million, up 32% from the year-ago quarter.\n\nEstimate Revisions Trend\n\nThe consensus EPS estimate for the quarter has been revised 0.48% lower over the last 30 days to the current level. This is essentially a reflection of how the covering analysts have collectively reassessed their initial estimates over this period.\n\nInvestors should keep in mind that an aggregate change may not always reflect the direction of estimate revisions by each of the covering analysts.\n\nPrice, Consensus and EPS Surprise\n\nPrice, Consensus and EPS Surprise Chart for TTMI\nEarnings Whisper\n\nEstimate revisions ahead of a company's earnings release offer clues to the business conditions for the period whose results are coming out. This insight is at the core of our proprietary surprise prediction model -- the Zacks Earnings ESP (Expected Surprise Prediction).\n\nThe Zacks Earnings ESP compares the Most Accurate Estimate to the Zacks Consensus Estimate for the quarter; the Most Accurate Estimate is a more recent version of the Zacks Consensus EPS estimate. The idea here is that analysts revising their estimates right before an earnings release have the latest information, which could potentially be more accurate than what they and others contributing to the consensus had predicted earlier.\n\nThus, a positive or negative Earnings ESP reading theoretically indicates the likely deviation of the actual earnings from the consensus estimate. However, the model's predictive power is significant for positive ESP readings only.\n\nA positive Earnings ESP is a strong predictor of an earnings beat, particularly when combined with a Zacks Rank #1 (Strong Buy), 2 (Buy) or 3 (Hold). Our research shows that stocks with this combination produce a positive surprise nearly 70% of the time, and a solid Zacks Rank actually increases the predictive power of Earnings ESP.\n\nStory Continues\nTerms and Privacy Policy\nPrivacy Dashboard",
+          "type": "Earnings",
+          "sentiment": 1,
+          "weight": 2,
+          "final_weight": 2.27,
+          "source_authority": 3.5,
+          "recency_factor": 0.5,
+          "source": "Finnhub",
+          "llm_reviewed": true,
+          "llm_confidence": 0.8,
+          "llm_is_real_catalyst": true,
+          "llm_reasoning": "Upcoming Q2 report with expected growth"
+        },
+        {
+          "date": "2026-07-21",
+          "title": "Why Is TTM Technologies (TTMI) Stock Soaring Today",
+          "content": "Shares of PCB manufacturing company TTM Technologies (NASDAQ:TTMI) jumped 9.3% in the afternoon session after the company showcased its role in aerospace and defense electronics at the 2026 Farnborough International Airshow.Investors reacted positively to the company's position in high-end mission hardware and growing interest in its offerings for Artificial Intelligence (AI) infrastructure. TTM Technologies supplies complex printed circuit boards (PCBs) and RF systems, which are essential compo",
+          "type": "Industry",
+          "sentiment": 1,
+          "weight": 1,
+          "final_weight": 0.59,
+          "source_authority": 3.5,
+          "recency_factor": 0.42,
+          "source": "Finnhub",
+          "llm_reviewed": true,
+          "llm_confidence": 0.6,
+          "llm_is_real_catalyst": false,
+          "llm_reasoning": "Price jump on airshow showcase, no hard data"
+        }
+      ]
+    },
+    "NASDAQ:ACGL": {
+      "name": "ACGL",
+      "score": 50,
+      "score_raw": 0,
+      "score_components": {
+        "positive_weight_sum": 0,
+        "negative_weight_sum": 0
+      },
+      "signal": "NEUTRAL No Trade (No Data)",
+      "strategy": "LLM unavailable or call failed (no keyword fallback)",
+      "suitable_for": "Watch",
+      "confidence": "-",
+      "patterns": [],
+      "positive_factors": [],
+      "negative_factors": [],
+      "news_count": 0,
+      "news_dropped": 0,
+      "performance": {
+        "list_fetch_ms": 1311,
+        "candidate_filter_ms": 1,
+        "enrichment_ms": 8754,
+        "raw_news_count": 18,
+        "raw_forum_count": 0,
+        "candidate_news_count": 3,
+        "candidate_forum_count": 0,
+        "enriched_news_count": 3,
+        "enriched_forum_count": 0,
+        "candidate_reasons": {
+          "news": {
+            "no-subject-mention": 2,
+            "dedup": 0,
+            "out_of_window": 13
+          },
+          "forum": {
+            "dedup": 0
+          }
+        },
+        "date_filter_ms": 0,
+        "relevance_ms": 0,
+        "llm_ms": 2184,
+        "scoring_ms": 0
+      },
+      "top_news": []
+    },
+    "NASDAQ:NWBI": {
+      "name": "NWBI",
+      "score": 50,
+      "score_raw": 0,
+      "score_components": {
+        "positive_weight_sum": 0,
+        "negative_weight_sum": 0
+      },
+      "signal": "NEUTRAL No Trade (No Data)",
+      "strategy": "No relevant news in window",
+      "suitable_for": "Watch",
+      "confidence": "-",
+      "patterns": [],
+      "positive_factors": [],
+      "negative_factors": [],
+      "news_count": 0,
+      "news_dropped": 0,
+      "performance": {
+        "list_fetch_ms": 1525,
+        "candidate_filter_ms": 0,
+        "enrichment_ms": 0,
+        "raw_news_count": 12,
+        "raw_forum_count": 0,
+        "candidate_news_count": 0,
+        "candidate_forum_count": 0,
+        "enriched_news_count": 0,
+        "enriched_forum_count": 0,
+        "candidate_reasons": {
+          "news": {
+            "dedup": 0,
+            "out_of_window": 12
+          },
+          "forum": {
+            "dedup": 0
+          }
+        },
+        "date_filter_ms": 0,
+        "relevance_ms": 0,
+        "llm_ms": 0,
+        "scoring_ms": 0
+      },
+      "top_news": []
+    },
+    "NYSE:CSW": {
+      "name": "CSW",
+      "score": 50,
+      "score_raw": 0,
+      "score_components": {
+        "positive_weight_sum": 0,
+        "negative_weight_sum": 0
+      },
+      "signal": "NEUTRAL No Trade (No Data)",
+      "strategy": "No relevant news in window",
+      "suitable_for": "Watch",
+      "confidence": "-",
+      "patterns": [],
+      "positive_factors": [],
+      "negative_factors": [],
+      "news_count": 0,
+      "news_dropped": 0,
+      "performance": {
+        "list_fetch_ms": 1805,
+        "candidate_filter_ms": 0,
+        "enrichment_ms": 0,
+        "raw_news_count": 11,
+        "raw_forum_count": 0,
+        "candidate_news_count": 0,
+        "candidate_forum_count": 0,
+        "enriched_news_count": 0,
+        "enriched_forum_count": 0,
+        "candidate_reasons": {
+          "news": {
+            "no-subject-mention": 1,
+            "dedup": 0,
+            "out_of_window": 10
+          },
+          "forum": {
+            "dedup": 0
+          }
+        },
+        "date_filter_ms": 0,
+        "relevance_ms": 0,
+        "llm_ms": 0,
+        "scoring_ms": 0
+      },
+      "top_news": []
+    },
+    "NYSE:DELL": {
+      "name": "DELL",
+      "score": 50,
+      "score_raw": 0,
+      "score_components": {
+        "positive_weight_sum": 0,
+        "negative_weight_sum": 0
+      },
+      "signal": "NEUTRAL No Trade (No Data)",
+      "strategy": "LLM unavailable or call failed (no keyword fallback)",
+      "suitable_for": "Watch",
+      "confidence": "-",
+      "patterns": [],
+      "positive_factors": [],
+      "negative_factors": [],
+      "news_count": 0,
+      "news_dropped": 0,
+      "performance": {
+        "list_fetch_ms": 1227,
+        "candidate_filter_ms": 0,
+        "enrichment_ms": 8215,
+        "raw_news_count": 27,
+        "raw_forum_count": 0,
+        "candidate_news_count": 12,
+        "candidate_forum_count": 0,
+        "enriched_news_count": 12,
+        "enriched_forum_count": 0,
+        "candidate_reasons": {
+          "news": {
+            "no-subject-mention": 9,
+            "dedup": 0,
+            "out_of_window": 6
+          },
+          "forum": {
+            "dedup": 0
+          }
+        },
+        "date_filter_ms": 0,
+        "relevance_ms": 0,
+        "llm_ms": 2306,
+        "scoring_ms": 0
+      },
+      "top_news": []
+    },
+    "NYSE:GLW": {
+      "name": "GLW",
+      "score": 50,
+      "score_raw": 0,
+      "score_components": {
+        "positive_weight_sum": 0,
+        "negative_weight_sum": 0
+      },
+      "signal": "NEUTRAL No Trade (No Data)",
+      "strategy": "LLM unavailable or call failed (no keyword fallback)",
+      "suitable_for": "Watch",
+      "confidence": "-",
+      "patterns": [],
+      "positive_factors": [],
+      "negative_factors": [],
+      "news_count": 0,
+      "news_dropped": 0,
+      "performance": {
+        "list_fetch_ms": 1974,
+        "candidate_filter_ms": 0,
+        "enrichment_ms": 1,
+        "raw_news_count": 31,
+        "raw_forum_count": 0,
+        "candidate_news_count": 4,
+        "candidate_forum_count": 0,
+        "enriched_news_count": 4,
+        "enriched_forum_count": 0,
+        "candidate_reasons": {
+          "news": {
+            "no-subject-mention": 16,
+            "dedup": 0,
+            "out_of_window": 11
+          },
+          "forum": {
+            "dedup": 0
+          }
+        },
+        "date_filter_ms": 0,
+        "relevance_ms": 0,
+        "llm_ms": 2118,
+        "scoring_ms": 0
+      },
+      "top_news": []
+    },
+    "NYSE:LTC": {
+      "name": "LTC",
+      "score": 50,
+      "score_raw": 0,
+      "score_components": {
+        "positive_weight_sum": 0,
+        "negative_weight_sum": 0
+      },
+      "signal": "NEUTRAL No Trade (No Data)",
+      "strategy": "LLM unavailable or call failed (no keyword fallback)",
+      "suitable_for": "Watch",
+      "confidence": "-",
+      "patterns": [],
+      "positive_factors": [],
+      "negative_factors": [],
+      "news_count": 0,
+      "news_dropped": 0,
+      "performance": {
+        "list_fetch_ms": 1178,
+        "candidate_filter_ms": 0,
+        "enrichment_ms": 0,
+        "raw_news_count": 11,
+        "raw_forum_count": 0,
+        "candidate_news_count": 1,
+        "candidate_forum_count": 0,
+        "enriched_news_count": 1,
+        "enriched_forum_count": 0,
+        "candidate_reasons": {
+          "news": {
+            "dedup": 0,
+            "out_of_window": 10
+          },
+          "forum": {
+            "dedup": 0
+          }
+        },
+        "date_filter_ms": 0,
+        "relevance_ms": 0,
+        "llm_ms": 2213,
+        "scoring_ms": 0
+      },
+      "top_news": []
+    },
+    "NYSE:MMM": {
+      "name": "MMM",
+      "score": 50,
+      "score_raw": 0,
+      "score_components": {
+        "positive_weight_sum": 0,
+        "negative_weight_sum": 0
+      },
+      "signal": "NEUTRAL No Trade (No Data)",
+      "strategy": "LLM unavailable or call failed (no keyword fallback)",
+      "suitable_for": "Watch",
+      "confidence": "-",
+      "patterns": [],
+      "positive_factors": [],
+      "negative_factors": [],
+      "news_count": 0,
+      "news_dropped": 0,
+      "performance": {
+        "list_fetch_ms": 5660,
+        "candidate_filter_ms": 0,
+        "enrichment_ms": 9975,
+        "raw_news_count": 30,
+        "raw_forum_count": 0,
+        "candidate_news_count": 4,
+        "candidate_forum_count": 0,
+        "enriched_news_count": 4,
+        "enriched_forum_count": 0,
+        "candidate_reasons": {
+          "news": {
+            "no-subject-mention": 24,
+            "dedup": 0,
+            "out_of_window": 2
+          },
+          "forum": {
+            "dedup": 0
+          }
+        },
+        "date_filter_ms": 0,
+        "relevance_ms": 0,
+        "llm_ms": 2176,
+        "scoring_ms": 0
+      },
+      "top_news": []
+    },
+    "NYSE:PFS": {
+      "name": "PFS",
+      "score": 50,
+      "score_raw": 0,
+      "score_components": {
+        "positive_weight_sum": 0,
+        "negative_weight_sum": 0
+      },
+      "signal": "NEUTRAL No Trade (No Data)",
+      "strategy": "No relevant news in window",
+      "suitable_for": "Watch",
+      "confidence": "-",
+      "patterns": [],
+      "positive_factors": [],
+      "negative_factors": [],
+      "news_count": 0,
+      "news_dropped": 0,
+      "performance": {
+        "list_fetch_ms": 1618,
+        "candidate_filter_ms": 0,
+        "enrichment_ms": 0,
+        "raw_news_count": 11,
+        "raw_forum_count": 0,
+        "candidate_news_count": 0,
+        "candidate_forum_count": 0,
+        "enriched_news_count": 0,
+        "enriched_forum_count": 0,
+        "candidate_reasons": {
+          "news": {
+            "dedup": 0,
+            "out_of_window": 11
+          },
+          "forum": {
+            "dedup": 0
+          }
+        },
+        "date_filter_ms": 0,
+        "relevance_ms": 0,
+        "llm_ms": 0,
+        "scoring_ms": 0
+      },
+      "top_news": []
+    },
+    "NYSE:SM": {
+      "name": "SM",
+      "score": 50,
+      "score_raw": 0,
+      "score_components": {
+        "positive_weight_sum": 0,
+        "negative_weight_sum": 0
+      },
+      "signal": "NEUTRAL No Trade (No Data)",
+      "strategy": "LLM unavailable or call failed (no keyword fallback)",
+      "suitable_for": "Watch",
+      "confidence": "-",
+      "patterns": [],
+      "positive_factors": [],
+      "negative_factors": [],
+      "news_count": 0,
+      "news_dropped": 0,
+      "performance": {
+        "list_fetch_ms": 2809,
+        "candidate_filter_ms": 0,
+        "enrichment_ms": 2459,
+        "raw_news_count": 14,
+        "raw_forum_count": 0,
+        "candidate_news_count": 2,
+        "candidate_forum_count": 0,
+        "enriched_news_count": 2,
+        "enriched_forum_count": 0,
+        "candidate_reasons": {
+          "news": {
+            "dedup": 0,
+            "out_of_window": 12
+          },
+          "forum": {
+            "dedup": 0
+          }
+        },
+        "date_filter_ms": 0,
+        "relevance_ms": 0,
+        "llm_ms": 2139,
+        "scoring_ms": 0
+      },
+      "top_news": []
+    },
+    "NYSE:SO": {
+      "name": "SO",
+      "score": 50,
+      "score_raw": 0,
+      "score_components": {
+        "positive_weight_sum": 0,
+        "negative_weight_sum": 0
+      },
+      "signal": "NEUTRAL No Trade (No Data)",
+      "strategy": "LLM unavailable or call failed (no keyword fallback)",
+      "suitable_for": "Watch",
+      "confidence": "-",
+      "patterns": [],
+      "positive_factors": [],
+      "negative_factors": [],
+      "news_count": 0,
+      "news_dropped": 0,
+      "performance": {
+        "list_fetch_ms": 2669,
+        "candidate_filter_ms": 0,
+        "enrichment_ms": 11386,
+        "raw_news_count": 24,
+        "raw_forum_count": 0,
+        "candidate_news_count": 3,
+        "candidate_forum_count": 0,
+        "enriched_news_count": 3,
+        "enriched_forum_count": 0,
+        "candidate_reasons": {
+          "news": {
+            "no-subject-mention": 15,
+            "dedup": 0,
+            "out_of_window": 6
+          },
+          "forum": {
+            "dedup": 0
+          }
+        },
+        "date_filter_ms": 0,
+        "relevance_ms": 0,
+        "llm_ms": 2217,
+        "scoring_ms": 0
+      },
+      "top_news": []
+    },
+    "NYSE:ENVA": {
+      "name": "ENVA",
+      "score": 50,
+      "score_raw": 0,
+      "score_components": {
+        "positive_weight_sum": 0,
+        "negative_weight_sum": 0
+      },
+      "signal": "NEUTRAL No Trade (No Data)",
+      "strategy": "LLM unavailable or call failed (no keyword fallback)",
+      "suitable_for": "Watch",
+      "confidence": "-",
+      "patterns": [],
+      "positive_factors": [],
+      "negative_factors": [],
+      "news_count": 0,
+      "news_dropped": 0,
+      "performance": {
+        "list_fetch_ms": 2027,
+        "candidate_filter_ms": 0,
+        "enrichment_ms": 2934,
+        "raw_news_count": 15,
+        "raw_forum_count": 0,
+        "candidate_news_count": 3,
+        "candidate_forum_count": 0,
+        "enriched_news_count": 3,
+        "enriched_forum_count": 0,
+        "candidate_reasons": {
+          "news": {
+            "no-subject-mention": 6,
+            "dedup": 0,
+            "out_of_window": 6
+          },
+          "forum": {
+            "dedup": 0
+          }
+        },
+        "date_filter_ms": 0,
+        "relevance_ms": 0,
+        "llm_ms": 2183,
+        "scoring_ms": 0
+      },
+      "top_news": []
+    },
+    "NYSE:IRM": {
+      "name": "IRM",
+      "score": 50,
+      "score_raw": 0,
+      "score_components": {
+        "positive_weight_sum": 0,
+        "negative_weight_sum": 0
+      },
+      "signal": "NEUTRAL No Trade (No Data)",
+      "strategy": "No relevant news in window",
+      "suitable_for": "Watch",
+      "confidence": "-",
+      "patterns": [],
+      "positive_factors": [],
+      "negative_factors": [],
+      "news_count": 0,
+      "news_dropped": 0,
+      "performance": {
+        "list_fetch_ms": 1253,
+        "candidate_filter_ms": 0,
+        "enrichment_ms": 0,
+        "raw_news_count": 12,
+        "raw_forum_count": 0,
+        "candidate_news_count": 0,
+        "candidate_forum_count": 0,
+        "enriched_news_count": 0,
+        "enriched_forum_count": 0,
+        "candidate_reasons": {
+          "news": {
+            "no-subject-mention": 4,
+            "dedup": 0,
+            "out_of_window": 8
+          },
+          "forum": {
+            "dedup": 0
+          }
+        },
+        "date_filter_ms": 0,
+        "relevance_ms": 0,
+        "llm_ms": 0,
+        "scoring_ms": 0
+      },
+      "top_news": []
+    },
+    "NASDAQ:WWD": {
+      "name": "WWD",
+      "score": 50,
+      "score_raw": 0,
+      "score_components": {
+        "positive_weight_sum": 0,
+        "negative_weight_sum": 0
+      },
+      "signal": "NEUTRAL No Trade (No Data)",
+      "strategy": "LLM unavailable or call failed (no keyword fallback)",
+      "suitable_for": "Watch",
+      "confidence": "-",
+      "patterns": [],
+      "positive_factors": [],
+      "negative_factors": [],
+      "news_count": 0,
+      "news_dropped": 0,
+      "performance": {
+        "list_fetch_ms": 1258,
+        "candidate_filter_ms": 0,
+        "enrichment_ms": 7568,
+        "raw_news_count": 15,
+        "raw_forum_count": 0,
+        "candidate_news_count": 1,
+        "candidate_forum_count": 0,
+        "enriched_news_count": 1,
+        "enriched_forum_count": 0,
+        "candidate_reasons": {
+          "news": {
+            "no-subject-mention": 6,
+            "dedup": 0,
+            "out_of_window": 8
+          },
+          "forum": {
+            "dedup": 0
+          }
+        },
+        "date_filter_ms": 0,
+        "relevance_ms": 0,
+        "llm_ms": 2131,
+        "scoring_ms": 0
+      },
+      "top_news": []
+    },
+    "NYSE:SN": {
+      "name": "SN",
+      "score": 50,
+      "score_raw": 0,
+      "score_components": {
+        "positive_weight_sum": 0,
+        "negative_weight_sum": 0
+      },
+      "signal": "NEUTRAL No Trade (No Data)",
+      "strategy": "LLM unavailable or call failed (no keyword fallback)",
+      "suitable_for": "Watch",
+      "confidence": "-",
+      "patterns": [],
+      "positive_factors": [],
+      "negative_factors": [],
+      "news_count": 0,
+      "news_dropped": 0,
+      "performance": {
+        "list_fetch_ms": 1453,
+        "candidate_filter_ms": 0,
+        "enrichment_ms": 6474,
+        "raw_news_count": 20,
+        "raw_forum_count": 0,
+        "candidate_news_count": 3,
+        "candidate_forum_count": 0,
+        "enriched_news_count": 3,
+        "enriched_forum_count": 0,
+        "candidate_reasons": {
+          "news": {
+            "no-subject-mention": 6,
+            "dedup": 0,
+            "out_of_window": 11
+          },
+          "forum": {
+            "dedup": 0
+          }
+        },
+        "date_filter_ms": 0,
+        "relevance_ms": 0,
+        "llm_ms": 2202,
+        "scoring_ms": 0
+      },
+      "top_news": []
+    },
+    "NASDAQ:BHRB": {
+      "name": "BHRB",
+      "score": 50,
+      "score_raw": 0,
+      "score_components": {
+        "positive_weight_sum": 0,
+        "negative_weight_sum": 0
+      },
+      "signal": "NEUTRAL No Trade (No Data)",
+      "strategy": "No relevant news in window",
+      "suitable_for": "Watch",
+      "confidence": "-",
+      "patterns": [],
+      "positive_factors": [],
+      "negative_factors": [],
+      "news_count": 0,
+      "news_dropped": 0,
+      "performance": {
+        "list_fetch_ms": 1247,
+        "candidate_filter_ms": 0,
+        "enrichment_ms": 0,
+        "raw_news_count": 6,
+        "raw_forum_count": 0,
+        "candidate_news_count": 0,
+        "candidate_forum_count": 0,
+        "enriched_news_count": 0,
+        "enriched_forum_count": 0,
+        "candidate_reasons": {
+          "news": {
+            "no-subject-mention": 2,
+            "dedup": 0,
+            "out_of_window": 4
+          },
+          "forum": {
+            "dedup": 0
+          }
+        },
+        "date_filter_ms": 0,
+        "relevance_ms": 0,
+        "llm_ms": 0,
+        "scoring_ms": 0
+      },
+      "top_news": []
+    },
+    "NYSE:SXI": {
+      "name": "SXI",
+      "score": 50,
+      "score_raw": 0,
+      "score_components": {
+        "positive_weight_sum": 0,
+        "negative_weight_sum": 0
+      },
+      "signal": "NEUTRAL No Trade (No Data)",
+      "strategy": "No relevant news in window",
+      "suitable_for": "Watch",
+      "confidence": "-",
+      "patterns": [],
+      "positive_factors": [],
+      "negative_factors": [],
+      "news_count": 0,
+      "news_dropped": 0,
+      "performance": {
+        "list_fetch_ms": 1624,
+        "candidate_filter_ms": 0,
+        "enrichment_ms": 0,
+        "raw_news_count": 11,
+        "raw_forum_count": 0,
+        "candidate_news_count": 0,
+        "candidate_forum_count": 0,
+        "enriched_news_count": 0,
+        "enriched_forum_count": 0,
+        "candidate_reasons": {
+          "news": {
+            "no-subject-mention": 1,
+            "dedup": 0,
+            "out_of_window": 10
+          },
+          "forum": {
+            "dedup": 0
+          }
+        },
+        "date_filter_ms": 0,
+        "relevance_ms": 0,
+        "llm_ms": 0,
+        "scoring_ms": 0
+      },
+      "top_news": []
+    },
+    "NASDAQ:BGC": {
+      "name": "BGC",
+      "score": 50,
+      "score_raw": 0,
+      "score_components": {
+        "positive_weight_sum": 0,
+        "negative_weight_sum": 0
+      },
+      "signal": "NEUTRAL No Trade (No Data)",
+      "strategy": "LLM unavailable or call failed (no keyword fallback)",
+      "suitable_for": "Watch",
+      "confidence": "-",
+      "patterns": [],
+      "positive_factors": [],
+      "negative_factors": [],
+      "news_count": 0,
+      "news_dropped": 0,
+      "performance": {
+        "list_fetch_ms": 2184,
+        "candidate_filter_ms": 0,
+        "enrichment_ms": 1,
+        "raw_news_count": 9,
+        "raw_forum_count": 0,
+        "candidate_news_count": 1,
+        "candidate_forum_count": 0,
+        "enriched_news_count": 1,
+        "enriched_forum_count": 0,
+        "candidate_reasons": {
+          "news": {
+            "dedup": 1,
+            "out_of_window": 7
+          },
+          "forum": {
+            "dedup": 0
+          }
+        },
+        "date_filter_ms": 0,
+        "relevance_ms": 0,
+        "llm_ms": 2124,
+        "scoring_ms": 0
+      },
+      "top_news": []
+    },
+    "OTC:SMNEY": {
+      "name": "OTC:SMNEY",
+      "score": 50,
+      "score_raw": 0,
+      "score_components": {
+        "positive_weight_sum": 0,
+        "negative_weight_sum": 0
+      },
+      "signal": "NEUTRAL No Trade (No Data)",
+      "strategy": "No relevant news in window",
+      "suitable_for": "Watch",
+      "confidence": "-",
+      "patterns": [],
+      "positive_factors": [],
+      "negative_factors": [],
+      "news_count": 0,
+      "news_dropped": 0,
+      "performance": {
+        "list_fetch_ms": 1664,
+        "candidate_filter_ms": 0,
+        "enrichment_ms": 0,
+        "raw_news_count": 0,
+        "raw_forum_count": 0,
+        "candidate_news_count": 0,
+        "candidate_forum_count": 0,
+        "enriched_news_count": 0,
+        "enriched_forum_count": 0,
+        "candidate_reasons": {
+          "news": {
+            "dedup": 0
+          },
+          "forum": {
+            "dedup": 0
+          }
+        },
+        "date_filter_ms": 0,
+        "relevance_ms": 0,
+        "llm_ms": 0,
+        "scoring_ms": 0
+      },
+      "top_news": []
+    }
+  }
+}

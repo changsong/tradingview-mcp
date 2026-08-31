@@ -1,0 +1,1551 @@
+{
+  "generated_at": "2026-08-27T13:54:08.266Z",
+  "market": "us",
+  "source": "src/core/usNews.js",
+  "score_scale": "0-100 normalized (neutral=50)",
+  "window": {
+    "from": "2026-08-20",
+    "to": "2026-08-27",
+    "days": 7
+  },
+  "llm_used": true,
+  "performance": {
+    "totals_ms": {
+      "list_fetch_ms": 91831,
+      "enrichment_ms": 41312,
+      "relevance_ms": 2,
+      "llm_ms": 256708,
+      "report_write_ms": 22
+    },
+    "avg_ms": {
+      "list_fetch_ms": 3280,
+      "enrichment_ms": 1475,
+      "relevance_ms": 0,
+      "llm_ms": 9168,
+      "report_write_ms": 1
+    }
+  },
+  "stocks": {
+    "NYSE:P": {
+      "name": "P",
+      "score": 56,
+      "score_raw": 1.47,
+      "score_components": {
+        "positive_weight_sum": 1.47,
+        "negative_weight_sum": 0,
+        "news_effective_count": 4,
+        "news_dropped_count": 0
+      },
+      "signal": "NEUTRAL No Trade (Weak Bullish)",
+      "strategy": "Mildly positive, insufficient signal — watch for stronger catalyst",
+      "suitable_for": "Watch",
+      "confidence": "Low",
+      "patterns": [],
+      "positive_factors": [
+        "[Industry|w1.47] Everpure (P) Lands Supply Agreement With A Second Top Five Hyperscaler"
+      ],
+      "negative_factors": [],
+      "news_count": 4,
+      "news_dropped": 0,
+      "performance": {
+        "list_fetch_ms": 2922,
+        "candidate_filter_ms": 0,
+        "enrichment_ms": 1759,
+        "raw_news_count": 22,
+        "raw_forum_count": 0,
+        "candidate_news_count": 4,
+        "candidate_forum_count": 0,
+        "enriched_news_count": 4,
+        "enriched_forum_count": 0,
+        "candidate_reasons": {
+          "news": {
+            "no-subject-mention": 15,
+            "dedup": 0,
+            "out_of_window": 3
+          },
+          "forum": {
+            "dedup": 0
+          }
+        },
+        "date_filter_ms": 0,
+        "relevance_ms": 0,
+        "llm_ms": 34960,
+        "scoring_ms": 0
+      },
+      "top_news": [
+        {
+          "date": "2026-08-27",
+          "title": "Everpure, Inc. (P) Q2 2027 Earnings Call Transcript",
+          "content": "",
+          "type": "Earnings",
+          "sentiment": 0,
+          "weight": 1,
+          "final_weight": 0.55,
+          "source_authority": 2.5,
+          "recency_factor": 0.85,
+          "source": "Seeking Alpha",
+          "llm_reviewed": true,
+          "llm_confidence": 0.4,
+          "llm_is_real_catalyst": false,
+          "llm_reasoning": "Empty body, no results"
+        },
+        {
+          "date": "2026-08-26",
+          "title": "Everpure, Inc. (P) Q2 2027 Earnings Call Transcript",
+          "content": "Everpure, Inc. (P) Q2 2027 Earnings Call August 26, 2026 5:00 PM EDTCompany ParticipantsPaul Ziots - Vice President of Investor RelationsCharles Giancarlo -...",
+          "type": "Earnings",
+          "sentiment": 0,
+          "weight": 1,
+          "final_weight": 1.31,
+          "source_authority": 3.5,
+          "recency_factor": 0.72,
+          "source": "Finnhub",
+          "llm_reviewed": true,
+          "llm_confidence": 0.5,
+          "llm_is_real_catalyst": false,
+          "llm_reasoning": "Participants only, no results"
+        },
+        {
+          "date": "2026-08-23",
+          "title": "Everpure (P) Lands Supply Agreement With A Second Top Five Hyperscaler",
+          "content": "Everpure (NYSE:P) has been recognized as a leader in Gartner's Magic Quadrant for Enterprise Storage Platforms. The company announced a major design win and supply agreement with a second top-five hyperscaler for its storage solutions. Management expects the hyperscaler agreement to contribute materially to Everpure's long term revenue opportunity. Both developments underscore Everpure's role in supporting AI and next generation workloads in the enterprise storage market. Everpure is far...",
+          "type": "Industry",
+          "sentiment": 1,
+          "weight": 1,
+          "final_weight": 1.47,
+          "source_authority": 3.5,
+          "recency_factor": 0.42,
+          "source": "Finnhub",
+          "llm_reviewed": true,
+          "llm_confidence": 0.9,
+          "llm_is_real_catalyst": true,
+          "llm_reasoning": "Major supply agreement win"
+        },
+        {
+          "date": "2026-08-21",
+          "title": "Unlocking Q2 Potential of Everpure (P): Exploring Wall Street Estimates for Key Metrics",
+          "content": "Looking beyond Wall Street's top-and-bottom-line estimate forecasts for Everpure (P), delve into some of its key metrics to gain a deeper insight into the company's potential performance for the quarter ended July 2026.",
+          "type": "Earnings",
+          "sentiment": 0,
+          "weight": 1,
+          "final_weight": 0.54,
+          "source_authority": 3.5,
+          "recency_factor": 0.3,
+          "source": "Finnhub",
+          "llm_reviewed": true,
+          "llm_confidence": 0.5,
+          "llm_is_real_catalyst": false,
+          "llm_reasoning": "Estimates preview, no trigger"
+        }
+      ]
+    },
+    "NYSE:NEM": {
+      "name": "NEM",
+      "score": 56,
+      "score_raw": 1.51,
+      "score_components": {
+        "positive_weight_sum": 1.51,
+        "negative_weight_sum": 0,
+        "news_effective_count": 3,
+        "news_dropped_count": 0
+      },
+      "signal": "NEUTRAL No Trade (Weak Bullish)",
+      "strategy": "Mildly positive, insufficient signal — watch for stronger catalyst",
+      "suitable_for": "Watch",
+      "confidence": "Low",
+      "patterns": [],
+      "positive_factors": [
+        "[Industry|w1.01] Newmont (NYSE:NEM) Fits the Growth-at-a-Reasonable-Price Playbook",
+        "[Industry|w0.5] Could Peter Beaven’s Board Role at Newmont (NEM) Quietly Reshape Its R"
+      ],
+      "negative_factors": [],
+      "news_count": 3,
+      "news_dropped": 0,
+      "performance": {
+        "list_fetch_ms": 1368,
+        "candidate_filter_ms": 0,
+        "enrichment_ms": 3791,
+        "raw_news_count": 24,
+        "raw_forum_count": 0,
+        "candidate_news_count": 3,
+        "candidate_forum_count": 0,
+        "enriched_news_count": 3,
+        "enriched_forum_count": 0,
+        "candidate_reasons": {
+          "news": {
+            "no-subject-mention": 12,
+            "dedup": 0,
+            "out_of_window": 9
+          },
+          "forum": {
+            "dedup": 0
+          }
+        },
+        "date_filter_ms": 0,
+        "relevance_ms": 0,
+        "llm_ms": 31947,
+        "scoring_ms": 1
+      },
+      "top_news": [
+        {
+          "date": "2026-08-26",
+          "title": "Newmont (NYSE:NEM) Fits the Growth-at-a-Reasonable-Price Playbook",
+          "content": "Newmont Corp passes Peter Lynch screen with 21% EPS growth, 0.69 PEG, strong balance sheet, and undervalued P/E of 14.6.",
+          "type": "Industry",
+          "sentiment": 1,
+          "weight": 1,
+          "final_weight": 1.01,
+          "source_authority": 3.5,
+          "recency_factor": 0.72,
+          "source": "Finnhub",
+          "llm_reviewed": true,
+          "llm_confidence": 0.7,
+          "llm_is_real_catalyst": false,
+          "llm_reasoning": "GARP valuation screen positive"
+        },
+        {
+          "date": "2026-08-23",
+          "title": "Newmont (NEM) Stock Looks Near Fair Value After A Strong Run",
+          "content": "After a sharp three year run for Newmont stock, the latest checks suggest the shares now trade close to their Discounted Cash Flow intrinsic value while still screening as attractive on traditional market multiples. Newmont has returned very large gains over the past three years, which puts more focus on whether the current price still offers a reasonable margin of safety. Stronger gold prices and new project agreements can support cash flow expectations, while future production changes and...",
+          "type": "Industry",
+          "sentiment": 0,
+          "weight": 1,
+          "final_weight": 0.59,
+          "source_authority": 3.5,
+          "recency_factor": 0.42,
+          "source": "Finnhub",
+          "llm_reviewed": true,
+          "llm_confidence": 0.5,
+          "llm_is_real_catalyst": false,
+          "llm_reasoning": "Near fair value commentary"
+        },
+        {
+          "date": "2026-08-22",
+          "title": "Could Peter Beaven’s Board Role at Newmont (NEM) Quietly Reshape Its Risk and Cash-Flow Playbook?",
+          "content": "Newmont recently appointed former BHP Group Chief Financial Officer Peter Beaven as an independent director and Audit Committee member, adding deep global mining and finance expertise to its board. This move strengthens Newmont’s governance and capital allocation bench at a time when its Nevada Gold Mines joint venture framework has just been updated and disputes resolved. Next, we’ll examine how Beaven’s appointment and enhanced Nevada Gold Mines governance could influence Newmont’s...",
+          "type": "Industry",
+          "sentiment": 1,
+          "weight": 1,
+          "final_weight": 0.5,
+          "source_authority": 3.5,
+          "recency_factor": 0.36,
+          "source": "Finnhub",
+          "llm_reviewed": true,
+          "llm_confidence": 0.5,
+          "llm_is_real_catalyst": false,
+          "llm_reasoning": "Board role positive governance"
+        }
+      ]
+    },
+    "NASDAQ:DASH": {
+      "name": "DASH",
+      "score": 53,
+      "score_raw": 0.7,
+      "score_components": {
+        "positive_weight_sum": 0.7,
+        "negative_weight_sum": 0,
+        "news_effective_count": 1,
+        "news_dropped_count": 0
+      },
+      "signal": "NEUTRAL No Trade (Weak Bullish)",
+      "strategy": "Mildly positive, insufficient signal — watch for stronger catalyst",
+      "suitable_for": "Watch",
+      "confidence": "Low",
+      "patterns": [],
+      "positive_factors": [
+        "[Industry|w0.7] DoorDash, Uber Eats and Instacart Are Thriving as Consumers Cut Back E"
+      ],
+      "negative_factors": [],
+      "news_count": 1,
+      "news_dropped": 0,
+      "performance": {
+        "list_fetch_ms": 4301,
+        "candidate_filter_ms": 1,
+        "enrichment_ms": 128,
+        "raw_news_count": 22,
+        "raw_forum_count": 0,
+        "candidate_news_count": 1,
+        "candidate_forum_count": 0,
+        "enriched_news_count": 1,
+        "enriched_forum_count": 0,
+        "candidate_reasons": {
+          "news": {
+            "no-subject-mention": 7,
+            "dedup": 0,
+            "out_of_window": 14
+          },
+          "forum": {
+            "dedup": 0
+          }
+        },
+        "date_filter_ms": 0,
+        "relevance_ms": 1,
+        "llm_ms": 33,
+        "scoring_ms": 2
+      },
+      "top_news": [
+        {
+          "date": "2026-08-24",
+          "title": "DoorDash, Uber Eats and Instacart Are Thriving as Consumers Cut Back Elsewhere: DASH CFO Explains Wh",
+          "content": "U.S. consumers are pulling back on spending in several areas, but food delivery remains a relatively resilient part of household budgets.\n\nDoorDash Inc. (NASDAQ:DASH), Uber Technologies Inc. (NYSE:UBER) through Uber Eats and Maplebear Inc. (NASDAQ:CART), which operates Instacart, all posted strong sales growth in their latest quarterly results, showing consumers are still willing to pay for delivered restaurant meals and groceries, Business Insider reported Sunday.\n\nDoorDash CEO Tony Xu has been surprised by consumers’ willingness to continue paying for delivery despite higher costs.\n\nDoorDash CFO Ravi Inukonda said the broader food category remains resilient because people eat regularly, noting that \"People eat 21 times a week, whether it’s food or groceries,\" according to the report.\n\nConsumers Cut Back Elsewhere\n\nBroader spending data points to a more cautious consumer. U.S. retail sales fell 0.6% in July, while Walmart posted its slowest quarterly comparable-sales growth since 2020.\n\nLower-income consumers have also become more budget-conscious as inflation continues to weigh on purchasing power. Consumer sentiment remained below pandemic-era levels in August, while inflation exceeded wage growth for the fourth consecutive month.\n\nReal wages fell between December 2020 and 2024 for nearly 40% of workers, while higher prices continue to leave some households with less money available at the end of the month. That can push consumers to prioritize necessities and value while cutting less essential purchases.\n\nSome diners are also moving away from McDonald’s and toward rivals such as Burger King and Chili’s, which have reported sales growth driven in part by value-focused meal deals.\n\nThe delivery apps are also expanding by reaching new customers and adding new offerings. Uber’s delivery gross bookings rose 26% during the second quarter, slightly outpacing growth in its ride-hailing business.\n\nRead Next\nMEDIA\nNvidia’s AI Servers Are About To Get Even More Expensive As Rising Memory Costs Push Prices Up More Than 15%: Report\n\nSome Nvidia Corp (NASDAQ:NVDA) customers have reportedly been informed that prices for servers equipped with its AI chips could increase by more than 15%. Nvidia AI Server Prices Could Rise 15% or More This price\n\n2 min read\nRead this article\nConvenience Keeps Winning\n\nFood delivery can be expensive, but convenience remains a powerful reason consumers keep using it. Business Insider spoke with customers who said delivery saves time, helps them manage household responsibilities and can be worth the additional cost.\n\nTrending\nGet a 1% Match on Your First Deposit of $1,000+\nInvest in Rental Properties Starting at Just $100\nArrived lets investors buy shares of cash-flowing single-family homes and earn passive rental income without the hassle of property management.\nBROWSE PROPERTIES\n\nFor some households, grocery delivery can also be more practical than shopping in person. One consumer said delivery was cheaper than taking public transportation to a nearby store because local convenience-store prices were higher even after delivery costs.\n\nDoorDash is also expanding beyond traditional restaurant delivery. The company has added more stores and grocery options, including regional grocers and The Kroger Co. (NYSE:KR) purchases using SNAP benefits, giving consumers more reasons to use its platform.\n\nFood Costs Keep Rising\n\nThe resilience of delivery comes despite continued pressure on food prices. A basic meal of a cheeseburger, fries and a drink rose 3.2% in price over the past year, with only a handful of U.S. cities averaging below $15.\n\nFood affordability is also straining household finances. More than one-quarter of working-age adults who used credit cards for groceries either could not pay their balances in full or missed minimum payments, while about 20% said they had used long-term savings, including emergency funds, to pay for groceries.\n\nThat creates an unusual consumer picture: households are becoming more selective with spending, but food remains a necessity and convenience can still command a premium.\n\nFor delivery platforms, that could make food and grocery orders more resilient than other forms of discretionary spending, particularly as consumers look for ways to save time without cutting essential purchases entirely.\n\nDisclaimer: This content was partially produced with the help of AI tools and was reviewed and published by Benzinga editors.\n\nRead Next\nMARKETS\nUber Faces Nearly $1 Billion In Fines From Dutch Regulators Over Driver Suspensions Using Automation: Report\n\nUber ordered to pay $966 million fine for automated deactivation of drivers' accounts in the Netherlands, violating GDPR.\n\n2 min read\nRead this article\n\nPhoto courtesy: Shutterstock\n\nMarket News and Data brought to you by Benzinga APIs\n\n© 2026 Benzinga.com. Benzinga does not provide investment advice. All rights reserved.\n\nTo add Benzinga News as your preferred source on Google, click here.",
+          "type": "Industry",
+          "sentiment": 1,
+          "weight": 1,
+          "final_weight": 0.7,
+          "source_authority": 3.5,
+          "recency_factor": 0.5,
+          "source": "Finnhub",
+          "llm_reviewed": true,
+          "llm_confidence": 0.6,
+          "llm_is_real_catalyst": false,
+          "llm_reasoning": "Industry commentary positive"
+        }
+      ]
+    },
+    "NYSE:LTC": {
+      "name": "LTC",
+      "score": 52,
+      "score_raw": 0.5,
+      "score_components": {
+        "positive_weight_sum": 0.5,
+        "negative_weight_sum": 0,
+        "news_effective_count": 1,
+        "news_dropped_count": 0
+      },
+      "signal": "NEUTRAL No Trade (Weak Bullish)",
+      "strategy": "Mildly positive, insufficient signal — watch for stronger catalyst",
+      "suitable_for": "Watch",
+      "confidence": "Low",
+      "patterns": [],
+      "positive_factors": [
+        "[Analyst Action|w0.5] LTC Properties: 'Buy' This 5.6% Yield Before SHOP Growth Accelerates"
+      ],
+      "negative_factors": [],
+      "news_count": 1,
+      "news_dropped": 0,
+      "performance": {
+        "list_fetch_ms": 4166,
+        "candidate_filter_ms": 0,
+        "enrichment_ms": 3002,
+        "raw_news_count": 13,
+        "raw_forum_count": 0,
+        "candidate_news_count": 1,
+        "candidate_forum_count": 0,
+        "enriched_news_count": 1,
+        "enriched_forum_count": 0,
+        "candidate_reasons": {
+          "news": {
+            "dedup": 1,
+            "out_of_window": 11
+          },
+          "forum": {
+            "dedup": 0
+          }
+        },
+        "date_filter_ms": 0,
+        "relevance_ms": 0,
+        "llm_ms": 31,
+        "scoring_ms": 0
+      },
+      "top_news": [
+        {
+          "date": "2026-08-21",
+          "title": "LTC Properties: 'Buy' This 5.6% Yield Before SHOP Growth Accelerates",
+          "content": "LTC Properties remains a compelling income and value pick, currently yielding 5.6% with a forward P/FFO of 14.7x. Learn why LTC stock is a buy.",
+          "type": "Analyst Action",
+          "sentiment": 1,
+          "weight": 1,
+          "final_weight": 0.5,
+          "source_authority": 3.5,
+          "recency_factor": 0.3,
+          "source": "Finnhub",
+          "llm_reviewed": true,
+          "llm_confidence": 0.55,
+          "llm_is_real_catalyst": false,
+          "llm_reasoning": "Positive buy thesis, no catalyst"
+        }
+      ]
+    },
+    "NYSE:RRC": {
+      "name": "RRC",
+      "score": 52,
+      "score_raw": 0.5,
+      "score_components": {
+        "positive_weight_sum": 0.5,
+        "negative_weight_sum": 0,
+        "news_effective_count": 1,
+        "news_dropped_count": 0
+      },
+      "signal": "NEUTRAL No Trade (Weak Bullish)",
+      "strategy": "Mildly positive, insufficient signal — watch for stronger catalyst",
+      "suitable_for": "Watch",
+      "confidence": "Low",
+      "patterns": [],
+      "positive_factors": [
+        "[Industry|w0.5] Range Resources (NYSE:RRC) Shows a High-Quality Technical Breakout Set"
+      ],
+      "negative_factors": [],
+      "news_count": 1,
+      "news_dropped": 0,
+      "performance": {
+        "list_fetch_ms": 1426,
+        "candidate_filter_ms": 0,
+        "enrichment_ms": 3333,
+        "raw_news_count": 12,
+        "raw_forum_count": 0,
+        "candidate_news_count": 1,
+        "candidate_forum_count": 0,
+        "enriched_news_count": 1,
+        "enriched_forum_count": 0,
+        "candidate_reasons": {
+          "news": {
+            "dedup": 0,
+            "out_of_window": 11
+          },
+          "forum": {
+            "dedup": 0
+          }
+        },
+        "date_filter_ms": 0,
+        "relevance_ms": 0,
+        "llm_ms": 14244,
+        "scoring_ms": 0
+      },
+      "top_news": [
+        {
+          "date": "2026-08-25",
+          "title": "Range Resources (NYSE:RRC) Shows a High-Quality Technical Breakout Setup",
+          "content": "RRC stock shows a strong technical breakout setup: 8/10 trend rating, 10/10 setup quality, tight consolidation below resistance.",
+          "type": "Industry",
+          "sentiment": 1,
+          "weight": 1,
+          "final_weight": 0.5,
+          "source_authority": 3.5,
+          "recency_factor": 0.6,
+          "source": "Finnhub",
+          "llm_reviewed": true,
+          "llm_confidence": 0.4,
+          "llm_is_real_catalyst": false,
+          "llm_reasoning": "Technical breakout commentary only"
+        }
+      ]
+    },
+    "NASDAQ:MNST": {
+      "name": "MNST",
+      "score": 52,
+      "score_raw": 0.5,
+      "score_components": {
+        "positive_weight_sum": 0.5,
+        "negative_weight_sum": 0,
+        "news_effective_count": 1,
+        "news_dropped_count": 0
+      },
+      "signal": "NEUTRAL No Trade (Weak Bullish)",
+      "strategy": "Mildly positive, insufficient signal — watch for stronger catalyst",
+      "suitable_for": "Watch",
+      "confidence": "Low",
+      "patterns": [],
+      "positive_factors": [
+        "[Analyst Action|w0.5] Monster Beverage (NASDAQ:MNST) Shows Strong Technical Breakout Setup"
+      ],
+      "negative_factors": [],
+      "news_count": 1,
+      "news_dropped": 0,
+      "performance": {
+        "list_fetch_ms": 3598,
+        "candidate_filter_ms": 1,
+        "enrichment_ms": 7228,
+        "raw_news_count": 13,
+        "raw_forum_count": 0,
+        "candidate_news_count": 1,
+        "candidate_forum_count": 0,
+        "enriched_news_count": 1,
+        "enriched_forum_count": 0,
+        "candidate_reasons": {
+          "news": {
+            "no-subject-mention": 4,
+            "dedup": 0,
+            "out_of_window": 8
+          },
+          "forum": {
+            "dedup": 0
+          }
+        },
+        "date_filter_ms": 0,
+        "relevance_ms": 1,
+        "llm_ms": 71,
+        "scoring_ms": 1
+      },
+      "top_news": [
+        {
+          "date": "2026-08-21",
+          "title": "Monster Beverage (NASDAQ:MNST) Shows Strong Technical Breakout Setup",
+          "content": "Monster Beverage (MNST) earns 9/10 ratings for technical strength and setup, with rising MAs and tight consolidation before a potential breakout.",
+          "type": "Analyst Action",
+          "sentiment": 1,
+          "weight": 1,
+          "final_weight": 0.5,
+          "source_authority": 3.5,
+          "recency_factor": 0.3,
+          "source": "Finnhub",
+          "llm_reviewed": true,
+          "llm_confidence": 0.4,
+          "llm_is_real_catalyst": false,
+          "llm_reasoning": "Technical rating, no hard catalyst"
+        }
+      ]
+    },
+    "NYSE:NEXA": {
+      "name": "NEXA",
+      "score": 52,
+      "score_raw": 0.5,
+      "score_components": {
+        "positive_weight_sum": 0.5,
+        "negative_weight_sum": 0,
+        "news_effective_count": 1,
+        "news_dropped_count": 0
+      },
+      "signal": "NEUTRAL No Trade (Weak Bullish)",
+      "strategy": "Mildly positive, insufficient signal — watch for stronger catalyst",
+      "suitable_for": "Watch",
+      "confidence": "Low",
+      "patterns": [],
+      "positive_factors": [
+        "[Industry|w0.5] NEXA Resources (NYSE:NEXA) Shows High-Growth Leadership and Powerful M"
+      ],
+      "negative_factors": [],
+      "news_count": 1,
+      "news_dropped": 0,
+      "performance": {
+        "list_fetch_ms": 3446,
+        "candidate_filter_ms": 1,
+        "enrichment_ms": 5957,
+        "raw_news_count": 16,
+        "raw_forum_count": 0,
+        "candidate_news_count": 1,
+        "candidate_forum_count": 0,
+        "enriched_news_count": 1,
+        "enriched_forum_count": 0,
+        "candidate_reasons": {
+          "news": {
+            "no-subject-mention": 1,
+            "dedup": 0,
+            "out_of_window": 14
+          },
+          "forum": {
+            "dedup": 0
+          }
+        },
+        "date_filter_ms": 0,
+        "relevance_ms": 0,
+        "llm_ms": 37,
+        "scoring_ms": 0
+      },
+      "top_news": [
+        {
+          "date": "2026-08-22",
+          "title": "NEXA Resources (NYSE:NEXA) Shows High-Growth Leadership and Powerful Momentum",
+          "content": "NEXA Resources passes CANSLIM screen with explosive earnings, high relative strength, low institutional ownership, but balance-sheet risks remain.",
+          "type": "Industry",
+          "sentiment": 1,
+          "weight": 1,
+          "final_weight": 0.5,
+          "source_authority": 3.5,
+          "recency_factor": 0.36,
+          "source": "Finnhub",
+          "llm_reviewed": true,
+          "llm_confidence": 0.5,
+          "llm_is_real_catalyst": false,
+          "llm_reasoning": "CANSLIM screen, no catalyst"
+        }
+      ]
+    },
+    "AMEX:CET": {
+      "name": "CET",
+      "score": 50,
+      "score_raw": 0,
+      "score_components": {
+        "positive_weight_sum": 0,
+        "negative_weight_sum": 0
+      },
+      "signal": "NEUTRAL No Trade (No Data)",
+      "strategy": "No relevant news in window",
+      "suitable_for": "Watch",
+      "confidence": "-",
+      "patterns": [],
+      "positive_factors": [],
+      "negative_factors": [],
+      "news_count": 0,
+      "news_dropped": 0,
+      "performance": {
+        "list_fetch_ms": 4265,
+        "candidate_filter_ms": 0,
+        "enrichment_ms": 0,
+        "raw_news_count": 13,
+        "raw_forum_count": 0,
+        "candidate_news_count": 0,
+        "candidate_forum_count": 0,
+        "enriched_news_count": 0,
+        "enriched_forum_count": 0,
+        "candidate_reasons": {
+          "news": {
+            "dedup": 0,
+            "out_of_window": 13
+          },
+          "forum": {
+            "dedup": 0
+          }
+        },
+        "date_filter_ms": 0,
+        "relevance_ms": 0,
+        "llm_ms": 0,
+        "scoring_ms": 0
+      },
+      "top_news": []
+    },
+    "NASDAQ:ADAM": {
+      "name": "ADAM",
+      "score": 50,
+      "score_raw": 0,
+      "score_components": {
+        "positive_weight_sum": 0,
+        "negative_weight_sum": 0
+      },
+      "signal": "NEUTRAL No Trade (No Data)",
+      "strategy": "No relevant news in window",
+      "suitable_for": "Watch",
+      "confidence": "-",
+      "patterns": [],
+      "positive_factors": [],
+      "negative_factors": [],
+      "news_count": 0,
+      "news_dropped": 0,
+      "performance": {
+        "list_fetch_ms": 5039,
+        "candidate_filter_ms": 0,
+        "enrichment_ms": 0,
+        "raw_news_count": 9,
+        "raw_forum_count": 0,
+        "candidate_news_count": 0,
+        "candidate_forum_count": 0,
+        "enriched_news_count": 0,
+        "enriched_forum_count": 0,
+        "candidate_reasons": {
+          "news": {
+            "dedup": 0,
+            "out_of_window": 9
+          },
+          "forum": {
+            "dedup": 0
+          }
+        },
+        "date_filter_ms": 0,
+        "relevance_ms": 0,
+        "llm_ms": 0,
+        "scoring_ms": 0
+      },
+      "top_news": []
+    },
+    "NYSE:PATH": {
+      "name": "PATH",
+      "score": 50,
+      "score_raw": 0,
+      "score_components": {
+        "positive_weight_sum": 0,
+        "negative_weight_sum": 0
+      },
+      "signal": "NEUTRAL No Trade (No Data)",
+      "strategy": "No relevant news in window",
+      "suitable_for": "Watch",
+      "confidence": "-",
+      "patterns": [],
+      "positive_factors": [],
+      "negative_factors": [],
+      "news_count": 0,
+      "news_dropped": 0,
+      "performance": {
+        "list_fetch_ms": 3380,
+        "candidate_filter_ms": 3,
+        "enrichment_ms": 0,
+        "raw_news_count": 14,
+        "raw_forum_count": 0,
+        "candidate_news_count": 0,
+        "candidate_forum_count": 0,
+        "enriched_news_count": 0,
+        "enriched_forum_count": 0,
+        "candidate_reasons": {
+          "news": {
+            "no-subject-mention": 1,
+            "dedup": 0,
+            "out_of_window": 13
+          },
+          "forum": {
+            "dedup": 0
+          }
+        },
+        "date_filter_ms": 0,
+        "relevance_ms": 0,
+        "llm_ms": 0,
+        "scoring_ms": 0
+      },
+      "top_news": []
+    },
+    "NASDAQ:HRMY": {
+      "name": "HRMY",
+      "score": 50,
+      "score_raw": 0,
+      "score_components": {
+        "positive_weight_sum": 0,
+        "negative_weight_sum": 0
+      },
+      "signal": "NEUTRAL No Trade (No Data)",
+      "strategy": "No relevant news in window",
+      "suitable_for": "Watch",
+      "confidence": "-",
+      "patterns": [],
+      "positive_factors": [],
+      "negative_factors": [],
+      "news_count": 0,
+      "news_dropped": 0,
+      "performance": {
+        "list_fetch_ms": 2972,
+        "candidate_filter_ms": 1,
+        "enrichment_ms": 0,
+        "raw_news_count": 14,
+        "raw_forum_count": 0,
+        "candidate_news_count": 0,
+        "candidate_forum_count": 0,
+        "enriched_news_count": 0,
+        "enriched_forum_count": 0,
+        "candidate_reasons": {
+          "news": {
+            "no-subject-mention": 2,
+            "dedup": 0,
+            "out_of_window": 12
+          },
+          "forum": {
+            "dedup": 0
+          }
+        },
+        "date_filter_ms": 0,
+        "relevance_ms": 0,
+        "llm_ms": 0,
+        "scoring_ms": 0
+      },
+      "top_news": []
+    },
+    "NASDAQ:VRTX": {
+      "name": "VRTX",
+      "score": 50,
+      "score_raw": 0,
+      "score_components": {
+        "positive_weight_sum": 0,
+        "negative_weight_sum": 0
+      },
+      "signal": "NEUTRAL No Trade (No Data)",
+      "strategy": "No relevant news in window",
+      "suitable_for": "Watch",
+      "confidence": "-",
+      "patterns": [],
+      "positive_factors": [],
+      "negative_factors": [],
+      "news_count": 0,
+      "news_dropped": 0,
+      "performance": {
+        "list_fetch_ms": 3161,
+        "candidate_filter_ms": 1,
+        "enrichment_ms": 0,
+        "raw_news_count": 16,
+        "raw_forum_count": 0,
+        "candidate_news_count": 0,
+        "candidate_forum_count": 0,
+        "enriched_news_count": 0,
+        "enriched_forum_count": 0,
+        "candidate_reasons": {
+          "news": {
+            "no-subject-mention": 6,
+            "dedup": 0,
+            "out_of_window": 10
+          },
+          "forum": {
+            "dedup": 0
+          }
+        },
+        "date_filter_ms": 0,
+        "relevance_ms": 0,
+        "llm_ms": 0,
+        "scoring_ms": 0
+      },
+      "top_news": []
+    },
+    "NASDAQ:HOOD": {
+      "name": "HOOD",
+      "score": 50,
+      "score_raw": 0,
+      "score_components": {
+        "positive_weight_sum": 0,
+        "negative_weight_sum": 0
+      },
+      "signal": "NEUTRAL No Trade (No Data)",
+      "strategy": "No relevant news in window",
+      "suitable_for": "Watch",
+      "confidence": "-",
+      "patterns": [],
+      "positive_factors": [],
+      "negative_factors": [],
+      "news_count": 0,
+      "news_dropped": 0,
+      "performance": {
+        "list_fetch_ms": 4121,
+        "candidate_filter_ms": 1,
+        "enrichment_ms": 0,
+        "raw_news_count": 27,
+        "raw_forum_count": 0,
+        "candidate_news_count": 0,
+        "candidate_forum_count": 0,
+        "enriched_news_count": 0,
+        "enriched_forum_count": 0,
+        "candidate_reasons": {
+          "news": {
+            "no-subject-mention": 21,
+            "dedup": 0,
+            "out_of_window": 6
+          },
+          "forum": {
+            "dedup": 0
+          }
+        },
+        "date_filter_ms": 0,
+        "relevance_ms": 0,
+        "llm_ms": 0,
+        "scoring_ms": 0
+      },
+      "top_news": []
+    },
+    "NYSE:LLY": {
+      "name": "LLY",
+      "score": 50,
+      "score_raw": 0,
+      "score_components": {
+        "positive_weight_sum": 0,
+        "negative_weight_sum": 0
+      },
+      "signal": "NEUTRAL No Trade (No Data)",
+      "strategy": "No relevant news in window",
+      "suitable_for": "Watch",
+      "confidence": "-",
+      "patterns": [],
+      "positive_factors": [],
+      "negative_factors": [],
+      "news_count": 0,
+      "news_dropped": 0,
+      "performance": {
+        "list_fetch_ms": 2637,
+        "candidate_filter_ms": 0,
+        "enrichment_ms": 0,
+        "raw_news_count": 6,
+        "raw_forum_count": 0,
+        "candidate_news_count": 0,
+        "candidate_forum_count": 0,
+        "enriched_news_count": 0,
+        "enriched_forum_count": 0,
+        "candidate_reasons": {
+          "news": {
+            "no-subject-mention": 2,
+            "dedup": 0,
+            "out_of_window": 4
+          },
+          "forum": {
+            "dedup": 0
+          }
+        },
+        "date_filter_ms": 0,
+        "relevance_ms": 0,
+        "llm_ms": 0,
+        "scoring_ms": 0
+      },
+      "top_news": []
+    },
+    "NASDAQ:MRVL": {
+      "name": "MRVL",
+      "score": 50,
+      "score_raw": 0,
+      "score_components": {
+        "positive_weight_sum": 0,
+        "negative_weight_sum": 0,
+        "news_effective_count": 1,
+        "news_dropped_count": 0
+      },
+      "signal": "NEUTRAL No Trade (Weak Bullish)",
+      "strategy": "Mildly positive, insufficient signal — watch for stronger catalyst",
+      "suitable_for": "Watch",
+      "confidence": "Low",
+      "patterns": [],
+      "positive_factors": [],
+      "negative_factors": [],
+      "news_count": 1,
+      "news_dropped": 0,
+      "performance": {
+        "list_fetch_ms": 2465,
+        "candidate_filter_ms": 0,
+        "enrichment_ms": 1954,
+        "raw_news_count": 30,
+        "raw_forum_count": 0,
+        "candidate_news_count": 1,
+        "candidate_forum_count": 0,
+        "enriched_news_count": 1,
+        "enriched_forum_count": 0,
+        "candidate_reasons": {
+          "news": {
+            "no-subject-mention": 28,
+            "dedup": 1
+          },
+          "forum": {
+            "dedup": 0
+          }
+        },
+        "date_filter_ms": 0,
+        "relevance_ms": 0,
+        "llm_ms": 5678,
+        "scoring_ms": 0
+      },
+      "top_news": [
+        {
+          "date": "2026-08-26",
+          "title": "Marvell Technology, Inc. (MRVL) Presents at The Six Five Summit: AI Unleashed 2026 Transcript",
+          "content": "Marvell Technology, Inc. (MRVL) The Six Five Summit: AI Unleashed 2026 August 26, 2026 11:00 AM EDTCompany ParticipantsMatthew Murphy - CEO &...",
+          "type": "Industry",
+          "sentiment": 0,
+          "weight": 1,
+          "final_weight": 0.5,
+          "source_authority": 3.5,
+          "recency_factor": 0.72,
+          "source": "Finnhub",
+          "llm_reviewed": true,
+          "llm_confidence": 0.4,
+          "llm_is_real_catalyst": false,
+          "llm_reasoning": "Conference transcript only"
+        }
+      ]
+    },
+    "NYSE:JOE": {
+      "name": "JOE",
+      "score": 50,
+      "score_raw": 0,
+      "score_components": {
+        "positive_weight_sum": 0,
+        "negative_weight_sum": 0
+      },
+      "signal": "NEUTRAL No Trade (No Data)",
+      "strategy": "No relevant news in window",
+      "suitable_for": "Watch",
+      "confidence": "-",
+      "patterns": [],
+      "positive_factors": [],
+      "negative_factors": [],
+      "news_count": 0,
+      "news_dropped": 0,
+      "performance": {
+        "list_fetch_ms": 2457,
+        "candidate_filter_ms": 0,
+        "enrichment_ms": 0,
+        "raw_news_count": 10,
+        "raw_forum_count": 0,
+        "candidate_news_count": 0,
+        "candidate_forum_count": 0,
+        "enriched_news_count": 0,
+        "enriched_forum_count": 0,
+        "candidate_reasons": {
+          "news": {
+            "dedup": 0,
+            "out_of_window": 10
+          },
+          "forum": {
+            "dedup": 0
+          }
+        },
+        "date_filter_ms": 0,
+        "relevance_ms": 0,
+        "llm_ms": 0,
+        "scoring_ms": 0
+      },
+      "top_news": []
+    },
+    "NYSE:FCX": {
+      "name": "FCX",
+      "score": 50,
+      "score_raw": 0,
+      "score_components": {
+        "positive_weight_sum": 0,
+        "negative_weight_sum": 0
+      },
+      "signal": "NEUTRAL No Trade (No Data)",
+      "strategy": "No relevant news in window",
+      "suitable_for": "Watch",
+      "confidence": "-",
+      "patterns": [],
+      "positive_factors": [],
+      "negative_factors": [],
+      "news_count": 0,
+      "news_dropped": 0,
+      "performance": {
+        "list_fetch_ms": 1431,
+        "candidate_filter_ms": 0,
+        "enrichment_ms": 0,
+        "raw_news_count": 12,
+        "raw_forum_count": 0,
+        "candidate_news_count": 0,
+        "candidate_forum_count": 0,
+        "enriched_news_count": 0,
+        "enriched_forum_count": 0,
+        "candidate_reasons": {
+          "news": {
+            "dedup": 0,
+            "out_of_window": 12
+          },
+          "forum": {
+            "dedup": 0
+          }
+        },
+        "date_filter_ms": 0,
+        "relevance_ms": 0,
+        "llm_ms": 0,
+        "scoring_ms": 0
+      },
+      "top_news": []
+    },
+    "NYSE:SCCO": {
+      "name": "SCCO",
+      "score": 50,
+      "score_raw": 0,
+      "score_components": {
+        "positive_weight_sum": 0,
+        "negative_weight_sum": 0
+      },
+      "signal": "NEUTRAL No Trade (No Data)",
+      "strategy": "No relevant news in window",
+      "suitable_for": "Watch",
+      "confidence": "-",
+      "patterns": [],
+      "positive_factors": [],
+      "negative_factors": [],
+      "news_count": 0,
+      "news_dropped": 0,
+      "performance": {
+        "list_fetch_ms": 1756,
+        "candidate_filter_ms": 0,
+        "enrichment_ms": 0,
+        "raw_news_count": 12,
+        "raw_forum_count": 0,
+        "candidate_news_count": 0,
+        "candidate_forum_count": 0,
+        "enriched_news_count": 0,
+        "enriched_forum_count": 0,
+        "candidate_reasons": {
+          "news": {
+            "dedup": 0,
+            "out_of_window": 12
+          },
+          "forum": {
+            "dedup": 0
+          }
+        },
+        "date_filter_ms": 0,
+        "relevance_ms": 0,
+        "llm_ms": 0,
+        "scoring_ms": 0
+      },
+      "top_news": []
+    },
+    "NYSE:WPM": {
+      "name": "WPM",
+      "score": 50,
+      "score_raw": 0,
+      "score_components": {
+        "positive_weight_sum": 0,
+        "negative_weight_sum": 0
+      },
+      "signal": "NEUTRAL No Trade (No Data)",
+      "strategy": "No relevant news in window",
+      "suitable_for": "Watch",
+      "confidence": "-",
+      "patterns": [],
+      "positive_factors": [],
+      "negative_factors": [],
+      "news_count": 0,
+      "news_dropped": 0,
+      "performance": {
+        "list_fetch_ms": 5191,
+        "candidate_filter_ms": 0,
+        "enrichment_ms": 0,
+        "raw_news_count": 13,
+        "raw_forum_count": 0,
+        "candidate_news_count": 0,
+        "candidate_forum_count": 0,
+        "enriched_news_count": 0,
+        "enriched_forum_count": 0,
+        "candidate_reasons": {
+          "news": {
+            "no-subject-mention": 1,
+            "dedup": 0,
+            "out_of_window": 12
+          },
+          "forum": {
+            "dedup": 0
+          }
+        },
+        "date_filter_ms": 0,
+        "relevance_ms": 0,
+        "llm_ms": 0,
+        "scoring_ms": 0
+      },
+      "top_news": []
+    },
+    "NASDAQ:GEN": {
+      "name": "GEN",
+      "score": 50,
+      "score_raw": 0,
+      "score_components": {
+        "positive_weight_sum": 0,
+        "negative_weight_sum": 0
+      },
+      "signal": "NEUTRAL No Trade (No Data)",
+      "strategy": "LLM unavailable or call failed (no keyword fallback)",
+      "suitable_for": "Watch",
+      "confidence": "-",
+      "patterns": [],
+      "positive_factors": [],
+      "negative_factors": [],
+      "news_count": 0,
+      "news_dropped": 0,
+      "performance": {
+        "list_fetch_ms": 2759,
+        "candidate_filter_ms": 1,
+        "enrichment_ms": 6646,
+        "raw_news_count": 16,
+        "raw_forum_count": 0,
+        "candidate_news_count": 5,
+        "candidate_forum_count": 0,
+        "enriched_news_count": 5,
+        "enriched_forum_count": 0,
+        "candidate_reasons": {
+          "news": {
+            "dedup": 3,
+            "out_of_window": 8
+          },
+          "forum": {
+            "dedup": 0
+          }
+        },
+        "date_filter_ms": 0,
+        "relevance_ms": 0,
+        "llm_ms": 85089,
+        "scoring_ms": 0
+      },
+      "top_news": []
+    },
+    "NASDAQ:OSBC": {
+      "name": "OSBC",
+      "score": 50,
+      "score_raw": 0,
+      "score_components": {
+        "positive_weight_sum": 0,
+        "negative_weight_sum": 0
+      },
+      "signal": "NEUTRAL No Trade (No Data)",
+      "strategy": "No relevant news in window",
+      "suitable_for": "Watch",
+      "confidence": "-",
+      "patterns": [],
+      "positive_factors": [],
+      "negative_factors": [],
+      "news_count": 0,
+      "news_dropped": 0,
+      "performance": {
+        "list_fetch_ms": 3873,
+        "candidate_filter_ms": 0,
+        "enrichment_ms": 0,
+        "raw_news_count": 8,
+        "raw_forum_count": 0,
+        "candidate_news_count": 0,
+        "candidate_forum_count": 0,
+        "enriched_news_count": 0,
+        "enriched_forum_count": 0,
+        "candidate_reasons": {
+          "news": {
+            "dedup": 0,
+            "out_of_window": 8
+          },
+          "forum": {
+            "dedup": 0
+          }
+        },
+        "date_filter_ms": 0,
+        "relevance_ms": 0,
+        "llm_ms": 0,
+        "scoring_ms": 0
+      },
+      "top_news": []
+    },
+    "NASDAQ:FWONA": {
+      "name": "FWONA",
+      "score": 50,
+      "score_raw": 0,
+      "score_components": {
+        "positive_weight_sum": 0,
+        "negative_weight_sum": 0
+      },
+      "signal": "NEUTRAL No Trade (No Data)",
+      "strategy": "No relevant news in window",
+      "suitable_for": "Watch",
+      "confidence": "-",
+      "patterns": [],
+      "positive_factors": [],
+      "negative_factors": [],
+      "news_count": 0,
+      "news_dropped": 0,
+      "performance": {
+        "list_fetch_ms": 3341,
+        "candidate_filter_ms": 0,
+        "enrichment_ms": 0,
+        "raw_news_count": 11,
+        "raw_forum_count": 0,
+        "candidate_news_count": 0,
+        "candidate_forum_count": 0,
+        "enriched_news_count": 0,
+        "enriched_forum_count": 0,
+        "candidate_reasons": {
+          "news": {
+            "no-subject-mention": 1,
+            "dedup": 0,
+            "out_of_window": 10
+          },
+          "forum": {
+            "dedup": 0
+          }
+        },
+        "date_filter_ms": 0,
+        "relevance_ms": 0,
+        "llm_ms": 0,
+        "scoring_ms": 0
+      },
+      "top_news": []
+    },
+    "NASDAQ:BHRB": {
+      "name": "BHRB",
+      "score": 50,
+      "score_raw": 0,
+      "score_components": {
+        "positive_weight_sum": 0,
+        "negative_weight_sum": 0
+      },
+      "signal": "NEUTRAL No Trade (No Data)",
+      "strategy": "No relevant news in window",
+      "suitable_for": "Watch",
+      "confidence": "-",
+      "patterns": [],
+      "positive_factors": [],
+      "negative_factors": [],
+      "news_count": 0,
+      "news_dropped": 0,
+      "performance": {
+        "list_fetch_ms": 3080,
+        "candidate_filter_ms": 0,
+        "enrichment_ms": 0,
+        "raw_news_count": 5,
+        "raw_forum_count": 0,
+        "candidate_news_count": 0,
+        "candidate_forum_count": 0,
+        "enriched_news_count": 0,
+        "enriched_forum_count": 0,
+        "candidate_reasons": {
+          "news": {
+            "dedup": 0,
+            "out_of_window": 5
+          },
+          "forum": {
+            "dedup": 0
+          }
+        },
+        "date_filter_ms": 0,
+        "relevance_ms": 0,
+        "llm_ms": 0,
+        "scoring_ms": 0
+      },
+      "top_news": []
+    },
+    "OTC:SBGSY": {
+      "name": "OTC:SBGSY",
+      "score": 50,
+      "score_raw": 0,
+      "score_components": {
+        "positive_weight_sum": 0,
+        "negative_weight_sum": 0
+      },
+      "signal": "NEUTRAL No Trade (No Data)",
+      "strategy": "No relevant news in window",
+      "suitable_for": "Watch",
+      "confidence": "-",
+      "patterns": [],
+      "positive_factors": [],
+      "negative_factors": [],
+      "news_count": 0,
+      "news_dropped": 0,
+      "performance": {
+        "list_fetch_ms": 2708,
+        "candidate_filter_ms": 0,
+        "enrichment_ms": 0,
+        "raw_news_count": 0,
+        "raw_forum_count": 0,
+        "candidate_news_count": 0,
+        "candidate_forum_count": 0,
+        "enriched_news_count": 0,
+        "enriched_forum_count": 0,
+        "candidate_reasons": {
+          "news": {
+            "dedup": 0
+          },
+          "forum": {
+            "dedup": 0
+          }
+        },
+        "date_filter_ms": 0,
+        "relevance_ms": 0,
+        "llm_ms": 0,
+        "scoring_ms": 0
+      },
+      "top_news": []
+    },
+    "NYSE:APD": {
+      "name": "APD",
+      "score": 50,
+      "score_raw": 0,
+      "score_components": {
+        "positive_weight_sum": 0,
+        "negative_weight_sum": 0
+      },
+      "signal": "NEUTRAL No Trade (No Data)",
+      "strategy": "No relevant news in window",
+      "suitable_for": "Watch",
+      "confidence": "-",
+      "patterns": [],
+      "positive_factors": [],
+      "negative_factors": [],
+      "news_count": 0,
+      "news_dropped": 0,
+      "performance": {
+        "list_fetch_ms": 4560,
+        "candidate_filter_ms": 0,
+        "enrichment_ms": 0,
+        "raw_news_count": 12,
+        "raw_forum_count": 0,
+        "candidate_news_count": 0,
+        "candidate_forum_count": 0,
+        "enriched_news_count": 0,
+        "enriched_forum_count": 0,
+        "candidate_reasons": {
+          "news": {
+            "dedup": 0,
+            "out_of_window": 12
+          },
+          "forum": {
+            "dedup": 0
+          }
+        },
+        "date_filter_ms": 0,
+        "relevance_ms": 0,
+        "llm_ms": 0,
+        "scoring_ms": 0
+      },
+      "top_news": []
+    },
+    "NASDAQ:FIVE": {
+      "name": "FIVE",
+      "score": 50,
+      "score_raw": 0,
+      "score_components": {
+        "positive_weight_sum": 0,
+        "negative_weight_sum": 0
+      },
+      "signal": "NEUTRAL No Trade (No Data)",
+      "strategy": "LLM unavailable or call failed (no keyword fallback)",
+      "suitable_for": "Watch",
+      "confidence": "-",
+      "patterns": [],
+      "positive_factors": [],
+      "negative_factors": [],
+      "news_count": 0,
+      "news_dropped": 0,
+      "performance": {
+        "list_fetch_ms": 2993,
+        "candidate_filter_ms": 1,
+        "enrichment_ms": 5445,
+        "raw_news_count": 25,
+        "raw_forum_count": 0,
+        "candidate_news_count": 9,
+        "candidate_forum_count": 0,
+        "enriched_news_count": 9,
+        "enriched_forum_count": 0,
+        "candidate_reasons": {
+          "news": {
+            "no-subject-mention": 5,
+            "dedup": 0,
+            "out_of_window": 11
+          },
+          "forum": {
+            "dedup": 0
+          }
+        },
+        "date_filter_ms": 0,
+        "relevance_ms": 0,
+        "llm_ms": 84591,
+        "scoring_ms": 0
+      },
+      "top_news": []
+    },
+    "NYSE:J": {
+      "name": "J",
+      "score": 50,
+      "score_raw": 0,
+      "score_components": {
+        "positive_weight_sum": 0,
+        "negative_weight_sum": 0
+      },
+      "signal": "NEUTRAL No Trade (No Data)",
+      "strategy": "No relevant news in window",
+      "suitable_for": "Watch",
+      "confidence": "-",
+      "patterns": [],
+      "positive_factors": [],
+      "negative_factors": [],
+      "news_count": 0,
+      "news_dropped": 0,
+      "performance": {
+        "list_fetch_ms": 3673,
+        "candidate_filter_ms": 0,
+        "enrichment_ms": 0,
+        "raw_news_count": 12,
+        "raw_forum_count": 0,
+        "candidate_news_count": 0,
+        "candidate_forum_count": 0,
+        "enriched_news_count": 0,
+        "enriched_forum_count": 0,
+        "candidate_reasons": {
+          "news": {
+            "no-subject-mention": 1,
+            "dedup": 0,
+            "out_of_window": 11
+          },
+          "forum": {
+            "dedup": 0
+          }
+        },
+        "date_filter_ms": 0,
+        "relevance_ms": 0,
+        "llm_ms": 0,
+        "scoring_ms": 0
+      },
+      "top_news": []
+    },
+    "CBOE:CBOE": {
+      "name": "CBOE",
+      "score": 47,
+      "score_raw": -0.72,
+      "score_components": {
+        "positive_weight_sum": 0.5,
+        "negative_weight_sum": 1.22,
+        "news_effective_count": 3,
+        "news_dropped_count": 0
+      },
+      "signal": "NEUTRAL No Trade (Neutral)",
+      "strategy": "No clear directional bias — stay flat",
+      "suitable_for": "Watch",
+      "confidence": "Low",
+      "patterns": [],
+      "positive_factors": [
+        "[Analyst Action|w0.5] Cboe Global Markets Stock Outlook: Is Wall Street Bullish or Bearish?"
+      ],
+      "negative_factors": [
+        "[Policy|w0.72] Kalshi seeks to delay Cboe's binary options contracts on specific line",
+        "[Policy|w0.5] 'Kalshi Looks to Regulators to Delay Competing Products From Cboe' - B"
+      ],
+      "news_count": 3,
+      "news_dropped": 0,
+      "performance": {
+        "list_fetch_ms": 4742,
+        "candidate_filter_ms": 0,
+        "enrichment_ms": 2069,
+        "raw_news_count": 17,
+        "raw_forum_count": 0,
+        "candidate_news_count": 3,
+        "candidate_forum_count": 0,
+        "enriched_news_count": 3,
+        "enriched_forum_count": 0,
+        "candidate_reasons": {
+          "news": {
+            "no-subject-mention": 4,
+            "dedup": 0,
+            "out_of_window": 10
+          },
+          "forum": {
+            "dedup": 0
+          }
+        },
+        "date_filter_ms": 0,
+        "relevance_ms": 0,
+        "llm_ms": 27,
+        "scoring_ms": 1
+      },
+      "top_news": [
+        {
+          "date": "2026-08-25",
+          "title": "'Kalshi Looks to Regulators to Delay Competing Products From Cboe' - Bloomberg",
+          "content": "Never miss a trade again with the fastest news alerts in the world!\n\nThis headline only article is a sample of real-time intelligence Benzinga Pro traders use to win in the markets everyday.\n\nWant the fastest, most accurate stock market intelligence? Want EXCLUSIVE stories originated by Benzinga reporters? Join 10,000+ serious traders in the Benzinga Pro community!",
+          "type": "Policy",
+          "sentiment": -1,
+          "weight": 1,
+          "final_weight": 0.5,
+          "source_authority": 3.5,
+          "recency_factor": 0.6,
+          "source": "Finnhub",
+          "llm_reviewed": true,
+          "llm_confidence": 0.4,
+          "llm_is_real_catalyst": false,
+          "llm_reasoning": "Competitor seeks regulatory delay"
+        },
+        {
+          "date": "2026-08-25",
+          "title": "Kalshi seeks to delay Cboe's binary options contracts on specific line items in earnings reports - r",
+          "content": "",
+          "type": "Policy",
+          "sentiment": -1,
+          "weight": 1,
+          "final_weight": 0.72,
+          "source_authority": 2.5,
+          "recency_factor": 0.6,
+          "source": "Seeking Alpha",
+          "llm_reviewed": true,
+          "llm_confidence": 0.5,
+          "llm_is_real_catalyst": false,
+          "llm_reasoning": "Vague competitor delay report"
+        },
+        {
+          "date": "2026-08-21",
+          "title": "Cboe Global Markets Stock Outlook: Is Wall Street Bullish or Bearish?",
+          "content": "Bull vs bear fork in the road by Lightspring via Shutterstock\n\nHeadquartered in Chicago, Illinois, Cboe Global Markets, Inc. (CBOE) is a global exchange operator providing trading, clearing, and investment solutions across options, futures, equities, and foreign exchange markets. With a market capitalization of $29.3 billion, the company operates major financial markets across North America, Europe, and Asia Pacific, supported by advanced trading technology.\n\nShares of this leading exchange operator have slightly underperformed the broader market over the past year. CBOE has gained 16.7% over this period, while the broader S&P 500 Index ($SPX) has climbed nearly 19.5%. Moreover, the stock has outperformed the index in 2026, rising 17.12% year to date, compared with the S&P 500’s 11.6% gain over the same period.\n\nCBOE has also considerably outperformed the State Street Financial Select Sector SPDR ETF (XLF), which has advanced 7.7% over the past year and 4% year-to-date.\n\nwww.barchart.com\n\nOn July 31, Cboe Global Markets reported its Q2 FY2026 earnings, with shares jumping about 4.6% as results topped estimates and the company raised its outlook. Net revenue grew 24.6% to a record $731.6 million, driven by a 30% increase in Options segment revenue on record index options volumes. Adjusted diluted EPS rose 44.7% to $3.56.\n\nCboe raised its 2026 organic total net revenue growth target to “mid to high teens” from “low double-digit to mid-teens,” and its Cboe Data Vantage organic net revenue growth target to “low teens” from “low double-digit.” \n\nFor the fiscal year ending in December 2026, analysts expect CBOE’s diluted EPS to increase 29.2% year over year to $13.78. However, CBOE has surpassed consensus EPS estimates in each of the past four quarters, which is impressive.\n\nBased on the 18 analysts covering CBOE stock, the consensus rating is a “Hold.” The rating is based on three “Strong Buys,” 12 “Holds,” and three “Strong Sells.”\n\nwww.barchart.com\n\nThe configuration is more bearish than it was two months ago, when the stock had four “Strong Buy” ratings.\n\nOn August 5, BofA analyst Eli Abboud lowered Cboe Global Markets’ price target to $356 from $359 while maintaining a “Neutral” rating, citing higher compensation costs, weaker index options volume, and the earlier-than-expected Cboe Australia sale.\n\nBased on analysts’ estimates, the mean price target of $313.20 implies a 6.5% premium to CBOE’s current share price, while the Street-high price target of $356 suggests a 21% upside.\n\nOn the date of publication, Kritika Sarmah did not have (either directly or indirectly) positions in any of the securities mentioned in this article. All information and data in this article is solely for informational purposes. For more information please view the Barchart Disclosure Policy here.\nMore News from Barchart",
+          "type": "Analyst Action",
+          "sentiment": 1,
+          "weight": 1,
+          "final_weight": 0.5,
+          "source_authority": 3.5,
+          "recency_factor": 0.3,
+          "source": "Finnhub",
+          "llm_reviewed": true,
+          "llm_confidence": 0.6,
+          "llm_is_real_catalyst": false,
+          "llm_reasoning": "Positive earnings recap/outlook"
+        }
+      ]
+    }
+  }
+}

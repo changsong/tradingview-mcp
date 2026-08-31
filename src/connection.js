@@ -2,11 +2,9 @@ import CDP from 'chrome-remote-interface';
 
 let client = null;
 let targetInfo = null;
-// Overridable via TV_CDP_HOST/TV_CDP_PORT (or CDP_HOST/CDP_PORT) env vars.
-// Default is 127.0.0.1, not localhost: on some Windows machines localhost
-// resolves to ::1 first, and Electron's --remote-debugging-port only listens on IPv4.
-export const CDP_HOST = process.env.TV_CDP_HOST || process.env.CDP_HOST || '127.0.0.1';
-export const CDP_PORT = Number(process.env.TV_CDP_PORT || process.env.CDP_PORT) || 9222;
+let _skipLiveness = false;
+const CDP_HOST = '127.0.0.1';
+const CDP_PORT = 9222;
 const MAX_RETRIES = 5;
 const BASE_DELAY = 500;
 
@@ -32,6 +30,16 @@ const KNOWN_PATHS = {
 export { KNOWN_PATHS };
 
 /**
+ * Disable the liveness check in getClient(). Use in batch pipelines that hold
+ * a persistent CDP connection for the entire run. If the connection dies, the
+ * very next Runtime.evaluate() will throw and the pipeline's error handling
+ * will catch it.
+ */
+export function setSkipLiveness(val) {
+  _skipLiveness = val;
+}
+
+/**
  * Sanitize a string for safe interpolation into JavaScript code evaluated via CDP.
  * Uses JSON.stringify to produce a properly escaped JS string literal (with quotes).
  * Prevents injection via quotes, backticks, template literals, or control chars.
@@ -52,11 +60,17 @@ export function requireFinite(value, name) {
 
 export async function getClient() {
   if (client) {
+    if (_skipLiveness) return client;
     try {
-      // Quick liveness check
-      await client.Runtime.evaluate({ expression: '1', returnByValue: true });
+      // Liveness check with 2s timeout — a half-dead WebSocket accepts the
+      // request but never responds, hanging the entire MCP call.
+      await Promise.race([
+        client.Runtime.evaluate({ expression: '1', returnByValue: true }),
+        new Promise((_, reject) => setTimeout(() => reject(new Error('liveness timeout')), 2000)),
+      ]);
       return client;
     } catch {
+      try { await client.close(); } catch {}
       client = null;
       targetInfo = null;
     }
@@ -64,23 +78,26 @@ export async function getClient() {
   return connect();
 }
 
-export async function connect(targetId = null) {
+export async function connect() {
   let lastError;
   for (let attempt = 0; attempt < MAX_RETRIES; attempt++) {
     try {
-      const target = targetId ? await findTargetById(targetId) : await findChartTarget();
+      const target = await findChartTarget();
       if (!target) {
-        throw new Error(targetId
-          ? `CDP target ${targetId} not found — is the tab still open?`
-          : 'No TradingView chart target found. Is TradingView open with a chart?');
+        throw new Error('No TradingView chart target found. Is TradingView open with a chart?');
       }
       targetInfo = target;
       client = await CDP({ host: CDP_HOST, port: CDP_PORT, target: target.id });
 
-      // Enable required domains
-      await client.Runtime.enable();
-      await client.Page.enable();
-      await client.DOM.enable();
+      // Deliberately NOT calling Runtime.enable / Page.enable / DOM.enable.
+      // Runtime.enable causes TV to forward every console.debug() through CDP socket,
+      // and when TV closes, late events on a half-closed socket cause EPIPE errors.
+      // Runtime.evaluate, Input, and Page.captureScreenshot all work without domain enables.
+
+      client.on('disconnect', () => { client = null; targetInfo = null; });
+
+      // Keep chart canvas painting even when tab is backgrounded
+      try { await client.Emulation.setFocusEmulationEnabled({ enabled: true }); } catch {}
 
       return client;
     } catch (err) {
@@ -92,34 +109,26 @@ export async function connect(targetId = null) {
   throw new Error(`CDP connection failed after ${MAX_RETRIES} attempts: ${lastError?.message}`);
 }
 
-/**
- * Re-attach the cached CDP client to a specific target id.
- * Used by tab_switch so subsequent reads (chart_get_state, data_get_*,
- * quote_get, screenshots) follow the activated tab instead of staying
- * glued to the target picked at first connect.
- */
-export async function reconnectTo(targetId) {
-  if (client) {
-    try { await client.close(); } catch { /* already gone */ }
-    client = null;
-    targetInfo = null;
-  }
-  return connect(targetId);
-}
-
 async function findChartTarget() {
-  const resp = await fetch(`http://${CDP_HOST}:${CDP_PORT}/json/list`);
-  const targets = await resp.json();
-  // Prefer targets with tradingview.com/chart in the URL
-  return targets.find(t => t.type === 'page' && /tradingview\.com\/chart/i.test(t.url))
-    || targets.find(t => t.type === 'page' && /tradingview/i.test(t.url))
-    || null;
-}
-
-async function findTargetById(id) {
-  const resp = await fetch(`http://${CDP_HOST}:${CDP_PORT}/json/list`);
-  const targets = await resp.json();
-  return targets.find(t => t.id === id) || null;
+  const ctrl = new AbortController();
+  const t = setTimeout(() => ctrl.abort(), 5000);
+  try {
+    const resp = await fetch(`http://${CDP_HOST}:${CDP_PORT}/json/list`, { signal: ctrl.signal });
+    clearTimeout(t);
+    const targets = await resp.json();
+    // Priority 1: https tradingview.com/chart
+    return targets.find(t => t.type === 'page' && /tradingview\.com\/chart/i.test(t.url))
+      // Priority 2: any https tradingview.com page (not file://)
+      || targets.find(t => t.type === 'page' && /^https?:\/\/.+tradingview/i.test(t.url))
+      // Priority 3: any page mentioning tradingview (fallback, avoids file:// toast windows)
+      || targets.find(t => t.type === 'page' && /tradingview/i.test(t.url) && t.url.startsWith('http'))
+      // Priority 4: TradingView Desktop (Electron) — file:// URLs with "tabbed-window" main window
+      || targets.find(t => t.type === 'page' && /tabbed-window/i.test(t.url))
+      || null;
+  } catch {
+    clearTimeout(t);
+    return null;
+  }
 }
 
 export async function getTargetInfo() {
@@ -152,6 +161,9 @@ export async function evaluateAsync(expression) {
 
 export async function disconnect() {
   if (client) {
+    try { await client.Runtime.disable(); } catch {}
+    try { await client.Page.disable(); } catch {}
+    try { await client.DOM.disable(); } catch {}
     try { await client.close(); } catch {}
     client = null;
     targetInfo = null;

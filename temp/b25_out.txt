@@ -1,0 +1,29 @@
+﻿
++----------------------------------------------------------+
+|  US Stock MTF Analysis (Master v2 — Accuracy Tuned)      |
+|  EMA/RSI/MACD/ADX/Squeeze/OBV + StochRSI + Divergence    |
+|  + Climax/Streak/RetAccel/Support/RR/RS-vs-SPY            |
++----------------------------------------------------------+
+
+Candidates    : 2 stocks
+Sources       : ./watchlist/us_selected.txt + ./watchlist/us_news_signals.md
+Live values   : ON
+RS benchmark  : AMEX:SPY
+
+  Fetching benchmark AMEX:SPY... OK (60 bars)
+  NYSE:J           |||| tech:+23.4  ADX48.1   RS+10.3   align:3/4 (75%)    news:+50  Long [Low]
+  CBOE:CBOE        |||| tech:+39.4  ADX12.8   RS+2.6    align:4/4 (100%)   news:+47  Long [Medium]
+
+========================================================================================================================
+Multi-TF Technical Ranking (v2)
+========================================================================================================================
+ 1. CBOE:CBOE    CBOE:CBOE      tech:+39.4  final:+45.4  ADX:12.8  RS: +2.6  align:4/4 (100%)  Long         [Medium] ⚠ CHOP
+ 2. NYSE:J       NYSE:J         tech:+23.4  final:+14.4  ADX:48.1  RS:+10.3  align:3/4 (75%)   Long         [Low   ] ⚠ FAKE/BEAR-DIV/POOR-RR
+
+Top Entry Candidates Tomorrow (v2 strict gates):
+  None passing all gates — wait for pullback or fresh setup
+
+Report saved: ./watchlist/us_tech_signals.md
+
+Downstream contract JSON saved: ./watchlist/us_tech_signals.json
+

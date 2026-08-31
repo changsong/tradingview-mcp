@@ -1,0 +1,716 @@
+{
+  "optimization_plan_date": "2026-04-22",
+  "strategy": "A Share SQZMOM PRO v6 (Daily)",
+  "analysis_period": "2026-04-21 to 2026-04-22",
+  "strategy_analysis": {
+    "current_metrics": {
+      "total_stocks_tested": 10,
+      "long_signals": 2,
+      "wait_signals": 8,
+      "signal_rate": "20%",
+      "avg_momentum_score": 41,
+      "uptrend_stocks": 5,
+      "uptrend_rate": "50%",
+      "volume_ok_stocks": 3,
+      "volume_ok_rate": "30%",
+      "valid_compression_stocks": 0,
+      "valid_compression_rate": "0%",
+      "valid_stock_filter_rate": "80%",
+      "fake_break_prevention": "100%"
+    },
+    "bottlenecks": [
+      {
+        "id": "B1_SQUEEZE_DETECTION",
+        "name": "Critical: validCompression = 0% (0/10 stocks)",
+        "severity": "CRITICAL",
+        "impact": "PRIMARY BOTTLENECK",
+        "description": "No stocks show valid squeeze compression patterns. This is the #1 reason for low entry signals. The strategy requires BB lower band < KC lower band AND BB upper band > KC upper band simultaneously.",
+        "affected_metrics": [
+          "signal_rate (20% vs potential 60%+)",
+          "entry_opportunities"
+        ],
+        "root_causes": [
+          "Squeeze detection logic too strict",
+          "Current market regime lacks tight range-bound patterns",
+          "Bollinger Band (20, 2.0) and Keltner Channel (20, 1.5) parameters may be misaligned for A-shares",
+          "minSqzBars (3) and maxSqzBars (10) parameters may be restrictive"
+        ]
+      },
+      {
+        "id": "B2_VOLUME_FILTER",
+        "name": "High: Volume filter too strict = 30% (3/10 stocks)",
+        "severity": "HIGH",
+        "impact": "SECONDARY BOTTLENECK",
+        "description": "Only 3 out of 10 stocks meet volume requirement (volume > SMA20 * 1.2). This is very restrictive and filters out many valid entries.",
+        "affected_metrics": [
+          "signal_rate",
+          "entry_opportunities",
+          "trading_frequency"
+        ],
+        "root_causes": [
+          "Multiplier set to 1.2x is too high for A-shares with lower average volumes",
+          "20-bar lookback period may be suboptimal",
+          "No fallback for low-volume but high-quality setups"
+        ]
+      },
+      {
+        "id": "B3_TREND_CONFIRMATION",
+        "name": "Medium: Only 50% uptrend (5/10 stocks)",
+        "severity": "MEDIUM",
+        "impact": "TERTIARY_BOTTLENECK",
+        "description": "Half of stocks don't meet uptrend criteria. EMA(20) > EMA(60) > EMA(200) is restrictive when combined with other conditions.",
+        "affected_metrics": [
+          "entry_opportunities_uptrend_only",
+          "missed_reversal_patterns"
+        ],
+        "root_causes": [
+          "EMA periods (20/60/200) standard but not optimized for A-shares daily timeframe",
+          "No downtrend/reversal signal support",
+          "Requires all three EMAs in perfect alignment"
+        ]
+      },
+      {
+        "id": "B4_MOMENTUM_THRESHOLD",
+        "name": "Medium: Low average momentum = 41/100",
+        "severity": "MEDIUM",
+        "impact": "SIGNAL_QUALITY_ISSUE",
+        "description": "Average momentum score is only 41/100, with minimum threshold at 65. This creates a disconnect between signal opportunity and trade quality.",
+        "affected_metrics": [
+          "score_distribution",
+          "entry_quality"
+        ],
+        "root_causes": [
+          "Score weighting may not reflect A-share market dynamics",
+          "Current scoring: SQZ(30) + ValidComp(15) + Crossover(20) + Volume(15) + Trend(10) + FakeBreak(10) = 100",
+          "validCompression at 0% makes score generation difficult"
+        ]
+      }
+    ],
+    "root_causes": {
+      "market_regime_mismatch": {
+        "description": "Current market is low-volatility with limited squeeze activity",
+        "evidence": "0% squeeze detection, 50% mixed trends, 30% weak volume",
+        "impact": "Strategy designed for volatile, range-bound markets performs poorly in current consolidation phase"
+      },
+      "parameter_misalignment_for_a_shares": {
+        "description": "Parameters were likely calibrated for US/global stocks but A-shares have different characteristics",
+        "evidence": [
+          "0% valid compression (too strict)",
+          "30% volume OK (too restrictive)",
+          "Score averaging only 41/100 (too conservative)"
+        ],
+        "impact": "Parameters don't match A-share trading patterns and volatility profile"
+      },
+      "squeeze_detection_logic": {
+        "description": "Current logic: sqzOff = (BB lower < KC lower) AND (BB upper > KC upper)",
+        "issues": [
+          "Requires BOTH conditions simultaneously",
+          "Bollinger Band 2.0 sigma is conservative",
+          "Keltner Channel 1.5 ATR is moderate",
+          "No alternative squeeze definitions"
+        ],
+        "impact": "0/10 stocks meet criteria - pattern doesn't occur in current market"
+      },
+      "entry_condition_accumulation": {
+        "description": "Strategy requires ALL of: trendUp AND validCompression AND volOK AND validStock AND !fakeBreak",
+        "issues": [
+          "AND logic means failure in ANY condition blocks entry",
+          "No fallback conditions when primary signal unavailable",
+          "No weighted scoring - treats all conditions equally"
+        ],
+        "impact": "Only 2/10 stocks produce LONG signals despite 5/10 in uptrend"
+      }
+    }
+  },
+  "optimization_proposals": [
+    {
+      "id": "OPT1_RELAX_SQUEEZE",
+      "title": "Reduce squeeze detection strictness",
+      "description": "Currently requires BB(20,2.0) < KC(20,1.5) compression. Propose: Measure width ratio instead of strict containment. New logic: BB_width < KC_width * 0.8 (80% of KC width = compressed state). This detects squeeze by width comparison rather than absolute containment.",
+      "category": "CORE_LOGIC",
+      "impact": "HIGH",
+      "complexity": "MEDIUM",
+      "current_behavior": "Requires perfect containment: lowerBB < lowerKC AND upperBB > upperKC",
+      "proposed_behavior": "Accept if BB is significantly narrower than KC, measured by width ratio",
+      "expected_improvement": {
+        "signal_rate": "20% → 45-50% (potential 2x improvement)",
+        "valid_compression_rate": "0% → 40-50%",
+        "entry_opportunities": "2 signals → 4-5 signals",
+        "market_adaptability": "Better suited for A-shares"
+      },
+      "implementation_steps": [
+        "Calculate BB_width = (upperBB - lowerBB)",
+        "Calculate KC_width = (upperKC - lowerKC)",
+        "New condition: sqzOff = BB_width < KC_width * 0.8",
+        "Test with minSqzBars = 2, maxSqzBars = 8 (shortened window)"
+      ],
+      "risks": [
+        "May increase false signals if ratio threshold too loose",
+        "Width-based detection less theoretically pure than containment",
+        "Requires parameter tuning (0.8 multiplier)"
+      ],
+      "mitigations": [
+        "Backtest with different multipliers (0.6, 0.7, 0.8, 0.9)",
+        "Keep momentum threshold at 65 to filter false signals",
+        "Combine with trend confirmation (trendUp still required)"
+      ],
+      "priority": "CRITICAL",
+      "rationale": "validCompression is the #1 bottleneck at 0%. Relaxing to width-ratio method addresses root cause while maintaining signal quality."
+    },
+    {
+      "id": "OPT2_VOLUME_FLEXIBILITY",
+      "title": "Add fallback volume conditions and lower threshold",
+      "description": "Current: volume > SMA20 * 1.2 (30% pass rate). Propose dual-condition: (1) Primary: vol > SMA20 * 1.0 (less strict), OR (2) Fallback: vol > SMA20 * 0.9 when trend is strong and squeeze confirmed. This provides flexibility without compromising signal quality.",
+      "category": "SIGNAL_FILTERING",
+      "impact": "MEDIUM",
+      "complexity": "LOW",
+      "current_behavior": "Requires volume > 1.2x 20-bar SMA",
+      "proposed_behavior": "Primary: volume > 1.0x SMA20, Fallback: volume > 0.9x SMA20 if strong signals elsewhere",
+      "expected_improvement": {
+        "volume_ok_rate": "30% → 60-70%",
+        "entry_opportunities": "+1-2 additional signals",
+        "false_signal_reduction": "Compensated by stricter momentum threshold"
+      },
+      "implementation_steps": [
+        "Change condition 1: volOK = volume > ta.sma(volume,20) * 1.0",
+        "Add condition 2: volOK_alt = volume > ta.sma(volume,20) * 0.9 AND trendUp AND sqz",
+        "Use: volOK = volOK OR volOK_alt"
+      ],
+      "risks": [
+        "Lower threshold may accept thin volume entries",
+        "Need to ensure trend + squeeze presence to compensate"
+      ],
+      "mitigations": [
+        "Only allow fallback when OTHER conditions are strong",
+        "Keep momentum threshold at 65 or higher",
+        "Increase position sizing risk reduction for low-volume trades"
+      ],
+      "priority": "HIGH",
+      "rationale": "Volume is #2 bottleneck at 30%. Fixing multiplier and adding fallback increases entries by 2x without excessive risk."
+    },
+    {
+      "id": "OPT3_HYBRID_ENTRY_CONDITIONS",
+      "title": "Implement hybrid entry logic with weighted conditions",
+      "description": "Replace AND logic with score-based hybrid: Entry if (sqzRelease + momentum + trend + volume) >= threshold, where each component has weight. This creates fallback paths: strong trend can compensate for weak volume, strong momentum can compensate for missing squeeze.",
+      "category": "CORE_LOGIC",
+      "impact": "HIGH",
+      "complexity": "HIGH",
+      "current_behavior": "longCond = trendUp AND canTrade AND validCompression AND not fakeBreak",
+      "proposed_behavior": "Score-based: IF (score >= 65 AND trendUp) OR (score >= 75 AND validCompression) THEN long",
+      "expected_improvement": {
+        "signal_rate": "20% → 40-50%",
+        "entry_opportunities": "+2-3 additional signals",
+        "signal_variety": "Mix of squeeze-based and trend-based entries"
+      },
+      "implementation_steps": [
+        "Create compressiveScore = 30 if validCompression else 0",
+        "Create trendScore = 10 if trendUp else 0",
+        "Create volumeScore = 15 if volOK else 0",
+        "Create momentumScore = min(score - sqz(30) - vol(15) - trend(10), 30)",
+        "New logic: canTrade = (compressiveScore + momentumScore + trendScore + volumeScore >= 65) AND (momentumScore >= 10)"
+      ],
+      "risks": [
+        "May increase false signals without proper calibration",
+        "Score weighting requires backtesting to optimize",
+        "More complex logic to maintain"
+      ],
+      "mitigations": [
+        "Backtest with different weight combinations",
+        "Maintain minimum momentum threshold (10-15)",
+        "Add additional filters (fake break, ST stock, limit-up prevention)"
+      ],
+      "priority": "HIGH",
+      "rationale": "Current AND logic creates binary outcomes (all-or-nothing). Hybrid approach allows partial signals when market conditions partially match, increasing flexibility."
+    },
+    {
+      "id": "OPT4_MOMENTUM_TUNING",
+      "title": "Adjust momentum score weighting and minimum threshold",
+      "description": "Current score distribution: sqz(30) + validComp(15) + crossover(20) + vol(15) + trend(10) + fakeBreak(10). Propose reweight: sqz(25) + trend(25) + momentum(25) + vol(15) + fakeBreak(10) to emphasize trend and momentum over compression in A-share context.",
+      "category": "SIGNAL_FILTERING",
+      "impact": "MEDIUM",
+      "complexity": "MEDIUM",
+      "current_behavior": "Score: sqz(30) + validComp(15) + crossover(20) + vol(15) + trend(10) + fakeBreak(10)",
+      "proposed_behavior": "Score: sqz(25) + trend(25) + momentum(25) + vol(15) + fakeBreak(10), minScore = 55-60",
+      "expected_improvement": {
+        "avg_momentum": "41 → 55-60",
+        "score_distribution": "More stocks reach threshold",
+        "signal_quality": "Balanced between trend and momentum"
+      },
+      "implementation_steps": [
+        "Reduce sqz weight from 30 to 25 (less dependent on squeeze)",
+        "Increase trend weight from 10 to 25 (emphasize direction)",
+        "Add explicit momentum weight 25 (crossover + momentum strength)",
+        "Reduce minScore from 65 to 55-60 to reflect new weighting"
+      ],
+      "risks": [
+        "Lower threshold (55-60 vs 65) may decrease signal quality",
+        "Reweighting changes strategy character fundamentally"
+      ],
+      "mitigations": [
+        "Keep minScore at 60 minimum",
+        "Maintain all existing filters (fakeBreak, validStock, etc)",
+        "Backtest thoroughly before deploying"
+      ],
+      "priority": "MEDIUM",
+      "rationale": "Average momentum only 41/100 suggests scoring doesn't match market conditions. Reweighting toward trend and momentum makes strategy more adaptive to A-shares."
+    },
+    {
+      "id": "OPT5_ALTERNATIVE_TIMEFRAME_SIGNALS",
+      "title": "Add 4H chart confirmation for daily entries",
+      "description": "Current strategy only uses daily timeframe. Propose adding 4-hour (4H) chart squeeze confirmation as alternative validation. If daily shows trend + momentum but lacks squeeze, check if 4H chart shows recent squeeze release. This provides higher-frequency squeeze signals.",
+      "category": "MULTI_TIMEFRAME",
+      "impact": "MEDIUM",
+      "complexity": "HIGH",
+      "current_behavior": "All signals from daily 1D timeframe only",
+      "proposed_behavior": "If daily lacks compression, accept entry if 4H chart shows recent squeeze release + uptrend on both timeframes",
+      "expected_improvement": {
+        "signal_rate": "20% → 35-40% (with 4H alternative)",
+        "squeeze_detection": "More squeeze opportunities from higher timeframe",
+        "entry_timing": "Better alignment with momentum waves"
+      },
+      "implementation_steps": [
+        "Create separate function f_sqz_4h() for 4H chart analysis",
+        "Add condition: validCompression_alt = (sqz_4h and close > ema20_4h)",
+        "New entry: longCond = (trendUp_1D AND canTrade_1D) OR (trendUp_1D AND validCompression_alt)",
+        "Requires script modification to analyze multiple timeframes"
+      ],
+      "risks": [
+        "High implementation complexity in Pine Script",
+        "May over-optimize for specific market period",
+        "4H squeeze may not align with daily trend"
+      ],
+      "mitigations": [
+        "Still require daily trend confirmation (trendUp_1D)",
+        "Keep same risk management rules (ATR stops, position sizing)",
+        "This is advanced optimization - implement after OPT1-4"
+      ],
+      "priority": "LOW",
+      "rationale": "Lower priority because it requires significant script complexity. Better to fix daily parameters first (OPT1-2) before adding complexity."
+    }
+  ],
+  "optimization_priorities": {
+    "critical_tier": [
+      {
+        "rank": 1,
+        "proposal_id": "OPT1_RELAX_SQUEEZE",
+        "title": "Reduce squeeze detection strictness",
+        "reason": "validCompression = 0% is THE critical bottleneck blocking 80% of potential signals",
+        "expected_signal_increase": "20% → 45-50%",
+        "implementation_effort": "MEDIUM (requires logic change in f_sqz function)",
+        "timeline": "1-2 days",
+        "dependencies": "None - can implement immediately"
+      },
+      {
+        "rank": 2,
+        "proposal_id": "OPT2_VOLUME_FLEXIBILITY",
+        "title": "Add fallback volume conditions",
+        "reason": "Volume filter at 30% is secondary bottleneck limiting entry opportunities",
+        "expected_signal_increase": "Current +1-2 signals, +3-4 when combined with OPT1",
+        "implementation_effort": "LOW (simple parameter adjustment)",
+        "timeline": "1 day",
+        "dependencies": "None - can implement with OPT1"
+      }
+    ],
+    "high_priority_tier": [
+      {
+        "rank": 3,
+        "proposal_id": "OPT3_HYBRID_ENTRY_CONDITIONS",
+        "title": "Implement hybrid entry logic",
+        "reason": "Current AND logic too rigid; hybrid approach provides fallback paths",
+        "expected_signal_increase": "40-50% (with OPT1-2) → 50-60% (with hybrid)",
+        "implementation_effort": "HIGH (requires score recalculation)",
+        "timeline": "2-3 days",
+        "dependencies": "OPT1-2 should be implemented first"
+      },
+      {
+        "rank": 4,
+        "proposal_id": "OPT4_MOMENTUM_TUNING",
+        "title": "Reweight momentum scoring",
+        "reason": "Average momentum 41/100 suggests weighting doesn't match A-share dynamics",
+        "expected_signal_increase": "Complements OPT3, improves signal quality",
+        "implementation_effort": "MEDIUM (parameter tuning + testing)",
+        "timeline": "2-3 days",
+        "dependencies": "Works with OPT3"
+      }
+    ],
+    "low_priority_tier": [
+      {
+        "rank": 5,
+        "proposal_id": "OPT5_ALTERNATIVE_TIMEFRAME_SIGNALS",
+        "title": "Add 4H chart confirmation",
+        "reason": "Nice-to-have for higher frequency signals, but complex implementation",
+        "expected_signal_increase": "35-40% additional signals from 4H alternative",
+        "implementation_effort": "HIGH (multi-timeframe complexity)",
+        "timeline": "3-5 days",
+        "dependencies": "Implement after OPT1-4 are proven effective"
+      }
+    ],
+    "implementation_sequence": [
+      {
+        "phase": 1,
+        "name": "Quick Wins (Days 1-2)",
+        "proposals": ["OPT1_RELAX_SQUEEZE", "OPT2_VOLUME_FLEXIBILITY"],
+        "expected_outcome": "Signal rate 20% → 45-50%",
+        "backtest_requirement": "Essential - validate before moving to Phase 2"
+      },
+      {
+        "phase": 2,
+        "name": "Logic Refinement (Days 3-5)",
+        "proposals": ["OPT3_HYBRID_ENTRY_CONDITIONS", "OPT4_MOMENTUM_TUNING"],
+        "expected_outcome": "Signal rate 45-50% → 55-65%, improved signal quality",
+        "backtest_requirement": "Essential - validate before Phase 3"
+      },
+      {
+        "phase": 3,
+        "name": "Advanced Features (Days 6-10)",
+        "proposals": ["OPT5_ALTERNATIVE_TIMEFRAME_SIGNALS"],
+        "expected_outcome": "Signal rate 55-65% → 65-75%, higher frequency opportunities",
+        "backtest_requirement": "Strongly recommended - validate before live trading"
+      }
+    ]
+  },
+  "implementation_details": {
+    "OPT1_technical_approach": {
+      "current_code": "sqzOff = lowerBB < lowerKC and upperBB > upperKC",
+      "issue": "Requires perfect containment - 0% match in current market",
+      "proposed_code": "bb_width = upperBB - lowerBB\nkc_width = upperKC - lowerKC\nsqzOff = bb_width < (kc_width * 0.8) and bb_width > (kc_width * 0.6)",
+      "parameters_to_tune": [
+        "Lower threshold: 0.6 to 0.8 (how tight must compression be)",
+        "Upper threshold: 0.9 to 1.0 (how wide before broken)",
+        "minSqzBars: 3 → 2 (shorter minimum compression bars)",
+        "maxSqzBars: 10 → 8 (shorter maximum compression bars)"
+      ],
+      "expected_results": [
+        "validCompression: 0% → 35-50%",
+        "Total signal increase: 20% → 45-50%"
+      ]
+    },
+    "OPT2_technical_approach": {
+      "current_code": "volOK = volume > ta.sma(volume,20) * 1.2",
+      "issue": "Too restrictive - 30% pass rate filters out valid entries",
+      "proposed_code": "volOK = volume > ta.sma(volume,20) * 1.0 or (volume > ta.sma(volume,20) * 0.9 and trendUp and sqz)",
+      "parameters_to_tune": [
+        "Primary threshold: 1.0x SMA20 (was 1.2x)",
+        "Fallback threshold: 0.9x SMA20 (new alternative)",
+        "Fallback conditions: Requires trend AND squeeze confirmation"
+      ],
+      "expected_results": [
+        "volOK: 30% → 65-75%",
+        "Additional signals: +1-2 per backtest"
+      ]
+    },
+    "OPT3_technical_approach": {
+      "concept": "Replace binary AND conditions with weighted score threshold",
+      "current_logic": "longCond = trendUp AND canTrade AND validCompression AND not fakeBreak",
+      "proposed_logic": "hybrid_score = (sqz ? 25 : 0) + (trendUp ? 25 : 0) + (canTrade ? 25 : 0) + (volOK ? 15 : 0) + (not fakeBreak ? 10 : 0)\nlongCond = (hybrid_score >= 60) AND (not fakeBreak) AND barstate.isconfirmed",
+      "score_paths": [
+        "Path 1: Squeeze Release - sqz + momentum + trend = 25 + 25 + 25 = 75 (sufficient)",
+        "Path 2: Strong Trend - trend + momentum + volume = 25 + 25 + 15 = 65 (acceptable)",
+        "Path 3: No Squeeze - If just trend + volume = 40 (insufficient - correctly blocks)",
+        "All paths: Require additional validation and avoid fake breaks"
+      ]
+    },
+    "OPT4_technical_approach": {
+      "current_weighting": {
+        "sqz_and_momentum": 30,
+        "validCompression": 15,
+        "crossover": 20,
+        "volume": 15,
+        "trend": 10,
+        "fakeBreak_prevention": 10,
+        "total": 100,
+        "minScore": 65
+      },
+      "proposed_weighting": {
+        "squeeze": 25,
+        "trend": 25,
+        "momentum": 25,
+        "volume": 15,
+        "fakeBreak_prevention": 10,
+        "total": 100,
+        "minScore": 55
+      },
+      "rationale": "Emphasize trend and momentum equally with squeeze, reduce pure compression dependency"
+    }
+  },
+  "risk_assessment": {
+    "optimization_risks": [
+      {
+        "risk_id": "R1_OVERSHOOTING",
+        "description": "Over-optimization that increases false signals",
+        "severity": "MEDIUM",
+        "potential_impact": "Win rate decreases from current baseline",
+        "mitigation_strategy": [
+          "Implement OPT1-2 first (most conservative changes)",
+          "Maintain minimum momentum threshold (55-60)",
+          "Keep all risk filters (fakeBreak, validStock, limit-up protection)",
+          "Comprehensive backtest before deployment"
+        ]
+      },
+      {
+        "risk_id": "R2_MARKET_REGIME_SENSITIVITY",
+        "description": "Optimizations designed for current low-squeeze market may fail in high-volatility regimes",
+        "severity": "MEDIUM",
+        "potential_impact": "Too many signals when market becomes volatile",
+        "mitigation_strategy": [
+          "Test parameters across different market conditions (2023-2026 data)",
+          "Keep adaptive thresholds or regime detectors",
+          "Monitor signal frequency in live trading",
+          "Be ready to adjust parameters if regime changes"
+        ]
+      },
+      {
+        "risk_id": "R3_PARAMETER_INTERDEPENDENCY",
+        "description": "Changes to squeeze detection may interact with volume and trend filters unpredictably",
+        "severity": "MEDIUM",
+        "potential_impact": "Signal behavior differs from expectations",
+        "mitigation_strategy": [
+          "Test each optimization independently first",
+          "Then test combinations (OPT1 + OPT2, etc)",
+          "Document all parameter changes",
+          "Create version control for strategy versions"
+        ]
+      },
+      {
+        "risk_id": "R4_SIGNAL_QUALITY_DEGRADATION",
+        "description": "Increased signal frequency may come with lower win rates",
+        "severity": "HIGH",
+        "potential_impact": "More trades but lower profitability",
+        "mitigation_strategy": [
+          "Measure both signal frequency AND win rate in backtest",
+          "Optimize for Profit Factor (Gross Profit / Gross Loss) > 1.5, not just frequency",
+          "Maintain position sizing discipline (1-2% risk per trade)",
+          "Set expectation that 20-30% more signals may come with 5-10% lower win rate"
+        ]
+      },
+      {
+        "risk_id": "R5_IMPLEMENTATION_ERRORS",
+        "description": "Pine Script syntax errors or logic bugs in optimization",
+        "severity": "MEDIUM",
+        "potential_impact": "Strategy stops working entirely",
+        "mitigation_strategy": [
+          "Implement changes carefully with syntax validation",
+          "Test each modification on a single stock first",
+          "Use console logging (alert() calls) for debugging",
+          "Keep backup of original strategy source code"
+        ]
+      }
+    ],
+    "expected_trade_offs": [
+      {
+        "optimization": "OPT1_RELAX_SQUEEZE",
+        "benefit": "Signal frequency 20% → 45-50%",
+        "trade_off": "May include slightly lower-quality squeeze releases",
+        "net_assessment": "POSITIVE - Need to test if false signal rate increases significantly"
+      },
+      {
+        "optimization": "OPT2_VOLUME_FLEXIBILITY",
+        "benefit": "Signal frequency +1-2 additional entries",
+        "trade_off": "Some entries on lower-volume bars",
+        "net_assessment": "POSITIVE - Fallback only triggers when other signals present"
+      },
+      {
+        "optimization": "OPT3_HYBRID_ENTRY_CONDITIONS",
+        "benefit": "More flexible entry paths, potentially higher win rate mix",
+        "trade_off": "More complex logic, harder to debug",
+        "net_assessment": "POSITIVE_IF_EFFECTIVE - Requires thorough backtesting"
+      },
+      {
+        "optimization": "OPT4_MOMENTUM_TUNING",
+        "benefit": "Better score distribution, aligned with A-share dynamics",
+        "trade_off": "Changes strategy character from squeeze-focused to trend-focused",
+        "net_assessment": "NEUTRAL - Depends on market regime; test thoroughly"
+      }
+    ],
+    "validation_requirements": [
+      {
+        "validation": "Historical backtest",
+        "period": "2023-01-01 to 2026-04-22 (full 3+ year history)",
+        "metrics": [
+          "Win rate (target: >50%)",
+          "Profit factor (target: >1.5)",
+          "Max drawdown (target: <25%)",
+          "Signal frequency (expected: 30-50% of stocks)"
+        ]
+      },
+      {
+        "validation": "Paper trading",
+        "period": "2-4 weeks minimum",
+        "metrics": [
+          "Actual vs backtest performance comparison",
+          "Signal generation frequency",
+          "Slippage and commission impact",
+          "Trader execution quality"
+        ]
+      },
+      {
+        "validation": "Live trading",
+        "period": "4-12 weeks with reduced position size (0.25-0.5% per trade)",
+        "metrics": [
+          "Real-world signal generation",
+          "Emotional impact on trading",
+          "Need for parameter adjustment",
+          "Consistency vs backtest results"
+        ]
+      }
+    ]
+  },
+  "timeline_and_dependencies": {
+    "week_1": {
+      "objective": "Implement critical optimizations (OPT1-2)",
+      "days": {
+        "day_1": {
+          "task": "Code OPT1 - Relax squeeze detection",
+          "effort_hours": 2,
+          "deliverable": "Updated strategy with width-ratio squeeze detection"
+        },
+        "day_1_2": {
+          "task": "Code OPT2 - Add fallback volume conditions",
+          "effort_hours": 1,
+          "deliverable": "Updated strategy with dual volume thresholds"
+        },
+        "day_2": {
+          "task": "Backtest combined OPT1+2",
+          "effort_hours": 8,
+          "deliverable": "Full backtest report, validation of improvements"
+        },
+        "day_3": {
+          "task": "Analyze backtest results, document findings",
+          "effort_hours": 4,
+          "deliverable": "Detailed analysis with decision for Phase 2"
+        }
+      }
+    },
+    "week_2": {
+      "objective": "Implement high-priority optimizations (OPT3-4) if Phase 1 successful",
+      "conditional": "Only if Phase 1 shows >40% improvement with win rate maintained",
+      "days": {
+        "day_4_5": {
+          "task": "Code OPT3 - Hybrid entry logic",
+          "effort_hours": 4,
+          "deliverable": "Score-based entry system implemented"
+        },
+        "day_5_6": {
+          "task": "Code OPT4 - Reweight scoring system",
+          "effort_hours": 2,
+          "deliverable": "New momentum weighting system"
+        },
+        "day_7": {
+          "task": "Backtest OPT3+4 combined with OPT1+2",
+          "effort_hours": 8,
+          "deliverable": "Comprehensive backtest showing cumulative improvements"
+        }
+      }
+    },
+    "week_3_4": {
+      "objective": "Paper trading and validation",
+      "task": "Run paper trading with optimized strategy",
+      "duration": "2 weeks minimum",
+      "metrics_tracked": [
+        "Actual signal generation vs backtest predictions",
+        "Win rate and profit factor comparison",
+        "Drawdown and volatility metrics",
+        "Slippage and commission impact"
+      ]
+    }
+  },
+  "success_criteria": {
+    "phase_1_success": {
+      "requirement": "OPT1 + OPT2 must achieve",
+      "criteria": [
+        {
+          "metric": "Signal rate",
+          "baseline": "20%",
+          "target": "40-50%",
+          "acceptable_range": "35-55%"
+        },
+        {
+          "metric": "validCompression rate",
+          "baseline": "0%",
+          "target": "35-50%",
+          "acceptable_range": "25-60%"
+        },
+        {
+          "metric": "Win rate (backtest)",
+          "baseline": "N/A",
+          "target": ">50%",
+          "acceptable_range": ">45%"
+        },
+        {
+          "metric": "Profit factor",
+          "baseline": "N/A",
+          "target": ">1.5",
+          "acceptable_range": ">1.3"
+        }
+      ]
+    },
+    "phase_2_success": {
+      "requirement": "OPT3 + OPT4 must maintain/improve upon Phase 1 results",
+      "criteria": [
+        {
+          "metric": "Signal rate",
+          "baseline": "40-50% (Phase 1 result)",
+          "target": "50-60%",
+          "acceptable_range": "45-65%"
+        },
+        {
+          "metric": "Win rate",
+          "baseline": ">50% (Phase 1)",
+          "target": ">50% (maintain or improve)",
+          "acceptable_range": ">45%"
+        },
+        {
+          "metric": "Profit factor",
+          "baseline": ">1.5 (Phase 1)",
+          "target": ">1.6",
+          "acceptable_range": ">1.5"
+        },
+        {
+          "metric": "Average trade duration",
+          "baseline": "Unknown",
+          "target": "5-15 bars (hold until TP or stop)",
+          "acceptable_range": "3-20 bars"
+        }
+      ]
+    },
+    "final_go_live_criteria": {
+      "requirement": "Must pass ALL of the following before live trading",
+      "criteria": [
+        "Phase 1 backtest shows ≥40% signal rate increase (20% → 40%+)",
+        "Phase 1 backtest shows win rate >48% and profit factor >1.4",
+        "Phase 2 backtest shows win rate >50% and profit factor >1.6",
+        "Paper trading 2+ weeks shows results within 10% of backtest",
+        "Maximum drawdown <25% in backtest",
+        "At least 100+ total trades across 10 stocks in backtest",
+        "No critical Pine Script errors or warnings",
+        "Risk management system fully functional (ATR stops, position sizing)"
+      ]
+    }
+  },
+  "quick_reference_summary": {
+    "current_state": {
+      "problem": "Only 20% of stocks generate LONG signals (2/10), 0% show valid squeeze compression",
+      "root_cause": "Strategy parameters too strict for A-share market; squeeze detection logic requires perfect containment not matching current market regime",
+      "impact": "Very low trading frequency, many missed opportunities"
+    },
+    "optimization_roadmap": {
+      "phase_1_quick_wins": [
+        "OPT1: Change squeeze detection from containment to width-ratio (Expected: 0% → 40% compression rate)",
+        "OPT2: Relax volume filter and add fallback (Expected: 30% → 70% volume pass rate)"
+      ],
+      "phase_2_refinement": [
+        "OPT3: Implement hybrid score-based entry logic (removes rigid AND conditions)",
+        "OPT4: Reweight scoring to emphasize trend and momentum"
+      ],
+      "phase_3_advanced": [
+        "OPT5: Add 4H chart squeeze confirmation (for alternative squeeze signals)"
+      ]
+    },
+    "expected_outcomes": {
+      "optimistic": "Signal rate 20% → 65%, average 6-7 stocks with LONG signals, maintained 55%+ win rate",
+      "realistic": "Signal rate 20% → 50%, average 5 stocks with LONG signals, 50%+ win rate",
+      "conservative": "Signal rate 20% → 40%, average 4 stocks with LONG signals, 48%+ win rate"
+    },
+    "next_immediate_action": "Implement OPT1 (width-ratio squeeze detection) and run backtest on all 10 stocks to measure impact before proceeding to OPT2"
+  }
+}

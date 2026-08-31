@@ -1,0 +1,1379 @@
+{
+  "generated_at": "2026-08-21T12:22:27.137Z",
+  "market": "us",
+  "source": "src/core/usNews.js",
+  "score_scale": "0-100 normalized (neutral=50)",
+  "window": {
+    "from": "2026-08-14",
+    "to": "2026-08-21",
+    "days": 7
+  },
+  "llm_used": true,
+  "performance": {
+    "totals_ms": {
+      "list_fetch_ms": 309664,
+      "enrichment_ms": 2004,
+      "relevance_ms": 0,
+      "llm_ms": 43596,
+      "report_write_ms": 18
+    },
+    "avg_ms": {
+      "list_fetch_ms": 10322,
+      "enrichment_ms": 67,
+      "relevance_ms": 0,
+      "llm_ms": 1453,
+      "report_write_ms": 1
+    }
+  },
+  "stocks": {
+    "NYSE:LLY": {
+      "name": "LLY",
+      "score": 53,
+      "score_raw": 0.6,
+      "score_components": {
+        "positive_weight_sum": 0.6,
+        "negative_weight_sum": 0,
+        "news_effective_count": 1,
+        "news_dropped_count": 0
+      },
+      "signal": "NEUTRAL No Trade (Weak Bullish)",
+      "strategy": "Mildly positive, insufficient signal — watch for stronger catalyst",
+      "suitable_for": "Watch",
+      "confidence": "Low",
+      "patterns": [],
+      "positive_factors": [
+        "[Industry|w0.6] Eli Lilly (NYSE:LLY) Shows Strong Growth and a Compelling Technical Se"
+      ],
+      "negative_factors": [],
+      "news_count": 1,
+      "news_dropped": 0,
+      "performance": {
+        "list_fetch_ms": 10629,
+        "candidate_filter_ms": 0,
+        "enrichment_ms": 1,
+        "raw_news_count": 22,
+        "raw_forum_count": 0,
+        "candidate_news_count": 1,
+        "candidate_forum_count": 0,
+        "enriched_news_count": 1,
+        "enriched_forum_count": 0,
+        "candidate_reasons": {
+          "news": {
+            "no-subject-mention": 13,
+            "dedup": 0,
+            "out_of_window": 8
+          },
+          "forum": {
+            "dedup": 0
+          }
+        },
+        "date_filter_ms": 0,
+        "relevance_ms": 0,
+        "llm_ms": 20196,
+        "scoring_ms": 1
+      },
+      "top_news": [
+        {
+          "date": "2026-08-21",
+          "title": "Eli Lilly (NYSE:LLY) Shows Strong Growth and a Compelling Technical Setup",
+          "content": "This website is using a security service to protect itself from online attacks. The action you just performed triggered the security solution. There are several actions that could trigger this block including submitting a certain word or phrase, a SQL command or malformed data.\nYou can email the site owner to let them know you were blocked. Please include what you were doing when this page came up and the Cloudflare Ray ID found at the bottom of this page.\nCloudflare Ray ID: a2e992953e875585 • Your IP: Click to reveal • Performance & security by Cloudflare",
+          "type": "Industry",
+          "sentiment": 1,
+          "weight": 1,
+          "final_weight": 0.6,
+          "source_authority": 3.5,
+          "recency_factor": 0.85,
+          "source": "Finnhub",
+          "llm_reviewed": true,
+          "llm_confidence": 0.4,
+          "llm_is_real_catalyst": false,
+          "llm_reasoning": "Positive title, no data"
+        }
+      ]
+    },
+    "AMEX:CET": {
+      "name": "CET",
+      "score": 50,
+      "score_raw": 0,
+      "score_components": {
+        "positive_weight_sum": 0,
+        "negative_weight_sum": 0
+      },
+      "signal": "NEUTRAL No Trade (No Data)",
+      "strategy": "No relevant news in window",
+      "suitable_for": "Watch",
+      "confidence": "-",
+      "patterns": [],
+      "positive_factors": [],
+      "negative_factors": [],
+      "news_count": 0,
+      "news_dropped": 0,
+      "performance": {
+        "list_fetch_ms": 10689,
+        "candidate_filter_ms": 0,
+        "enrichment_ms": 0,
+        "raw_news_count": 13,
+        "raw_forum_count": 0,
+        "candidate_news_count": 0,
+        "candidate_forum_count": 0,
+        "enriched_news_count": 0,
+        "enriched_forum_count": 0,
+        "candidate_reasons": {
+          "news": {
+            "dedup": 0,
+            "out_of_window": 13
+          },
+          "forum": {
+            "dedup": 0
+          }
+        },
+        "date_filter_ms": 0,
+        "relevance_ms": 0,
+        "llm_ms": 0,
+        "scoring_ms": 0
+      },
+      "top_news": []
+    },
+    "NASDAQ:ADAM": {
+      "name": "ADAM",
+      "score": 50,
+      "score_raw": 0,
+      "score_components": {
+        "positive_weight_sum": 0,
+        "negative_weight_sum": 0
+      },
+      "signal": "NEUTRAL No Trade (No Data)",
+      "strategy": "No relevant news in window",
+      "suitable_for": "Watch",
+      "confidence": "-",
+      "patterns": [],
+      "positive_factors": [],
+      "negative_factors": [],
+      "news_count": 0,
+      "news_dropped": 0,
+      "performance": {
+        "list_fetch_ms": 10660,
+        "candidate_filter_ms": 0,
+        "enrichment_ms": 0,
+        "raw_news_count": 10,
+        "raw_forum_count": 0,
+        "candidate_news_count": 0,
+        "candidate_forum_count": 0,
+        "enriched_news_count": 0,
+        "enriched_forum_count": 0,
+        "candidate_reasons": {
+          "news": {
+            "no-subject-mention": 1,
+            "dedup": 0,
+            "out_of_window": 9
+          },
+          "forum": {
+            "dedup": 0
+          }
+        },
+        "date_filter_ms": 0,
+        "relevance_ms": 0,
+        "llm_ms": 0,
+        "scoring_ms": 0
+      },
+      "top_news": []
+    },
+    "NASDAQ:SBCF": {
+      "name": "SBCF",
+      "score": 50,
+      "score_raw": 0,
+      "score_components": {
+        "positive_weight_sum": 0,
+        "negative_weight_sum": 0
+      },
+      "signal": "NEUTRAL No Trade (No Data)",
+      "strategy": "No relevant news in window",
+      "suitable_for": "Watch",
+      "confidence": "-",
+      "patterns": [],
+      "positive_factors": [],
+      "negative_factors": [],
+      "news_count": 0,
+      "news_dropped": 0,
+      "performance": {
+        "list_fetch_ms": 10659,
+        "candidate_filter_ms": 0,
+        "enrichment_ms": 0,
+        "raw_news_count": 9,
+        "raw_forum_count": 0,
+        "candidate_news_count": 0,
+        "candidate_forum_count": 0,
+        "enriched_news_count": 0,
+        "enriched_forum_count": 0,
+        "candidate_reasons": {
+          "news": {
+            "dedup": 0,
+            "out_of_window": 9
+          },
+          "forum": {
+            "dedup": 0
+          }
+        },
+        "date_filter_ms": 0,
+        "relevance_ms": 0,
+        "llm_ms": 0,
+        "scoring_ms": 0
+      },
+      "top_news": []
+    },
+    "NYSE:AGM": {
+      "name": "AGM",
+      "score": 50,
+      "score_raw": 0,
+      "score_components": {
+        "positive_weight_sum": 0,
+        "negative_weight_sum": 0
+      },
+      "signal": "NEUTRAL No Trade (No Data)",
+      "strategy": "No relevant news in window",
+      "suitable_for": "Watch",
+      "confidence": "-",
+      "patterns": [],
+      "positive_factors": [],
+      "negative_factors": [],
+      "news_count": 0,
+      "news_dropped": 0,
+      "performance": {
+        "list_fetch_ms": 10655,
+        "candidate_filter_ms": 1,
+        "enrichment_ms": 0,
+        "raw_news_count": 14,
+        "raw_forum_count": 0,
+        "candidate_news_count": 0,
+        "candidate_forum_count": 0,
+        "enriched_news_count": 0,
+        "enriched_forum_count": 0,
+        "candidate_reasons": {
+          "news": {
+            "no-subject-mention": 2,
+            "dedup": 0,
+            "out_of_window": 12
+          },
+          "forum": {
+            "dedup": 0
+          }
+        },
+        "date_filter_ms": 0,
+        "relevance_ms": 0,
+        "llm_ms": 0,
+        "scoring_ms": 0
+      },
+      "top_news": []
+    },
+    "NYSE:HEI": {
+      "name": "HEI",
+      "score": 50,
+      "score_raw": 0,
+      "score_components": {
+        "positive_weight_sum": 0,
+        "negative_weight_sum": 0
+      },
+      "signal": "NEUTRAL No Trade (No Data)",
+      "strategy": "No relevant news in window",
+      "suitable_for": "Watch",
+      "confidence": "-",
+      "patterns": [],
+      "positive_factors": [],
+      "negative_factors": [],
+      "news_count": 0,
+      "news_dropped": 0,
+      "performance": {
+        "list_fetch_ms": 10647,
+        "candidate_filter_ms": 0,
+        "enrichment_ms": 0,
+        "raw_news_count": 12,
+        "raw_forum_count": 0,
+        "candidate_news_count": 0,
+        "candidate_forum_count": 0,
+        "enriched_news_count": 0,
+        "enriched_forum_count": 0,
+        "candidate_reasons": {
+          "news": {
+            "no-subject-mention": 5,
+            "dedup": 0,
+            "out_of_window": 7
+          },
+          "forum": {
+            "dedup": 0
+          }
+        },
+        "date_filter_ms": 0,
+        "relevance_ms": 0,
+        "llm_ms": 0,
+        "scoring_ms": 0
+      },
+      "top_news": []
+    },
+    "NYSE:SON": {
+      "name": "SON",
+      "score": 50,
+      "score_raw": 0,
+      "score_components": {
+        "positive_weight_sum": 0,
+        "negative_weight_sum": 0
+      },
+      "signal": "NEUTRAL No Trade (No Data)",
+      "strategy": "No relevant news in window",
+      "suitable_for": "Watch",
+      "confidence": "-",
+      "patterns": [],
+      "positive_factors": [],
+      "negative_factors": [],
+      "news_count": 0,
+      "news_dropped": 0,
+      "performance": {
+        "list_fetch_ms": 10646,
+        "candidate_filter_ms": 0,
+        "enrichment_ms": 0,
+        "raw_news_count": 12,
+        "raw_forum_count": 0,
+        "candidate_news_count": 0,
+        "candidate_forum_count": 0,
+        "enriched_news_count": 0,
+        "enriched_forum_count": 0,
+        "candidate_reasons": {
+          "news": {
+            "dedup": 0,
+            "out_of_window": 12
+          },
+          "forum": {
+            "dedup": 0
+          }
+        },
+        "date_filter_ms": 0,
+        "relevance_ms": 0,
+        "llm_ms": 0,
+        "scoring_ms": 0
+      },
+      "top_news": []
+    },
+    "NYSE:PATH": {
+      "name": "PATH",
+      "score": 50,
+      "score_raw": 0,
+      "score_components": {
+        "positive_weight_sum": 0,
+        "negative_weight_sum": 0
+      },
+      "signal": "NEUTRAL No Trade (No Data)",
+      "strategy": "No relevant news in window",
+      "suitable_for": "Watch",
+      "confidence": "-",
+      "patterns": [],
+      "positive_factors": [],
+      "negative_factors": [],
+      "news_count": 0,
+      "news_dropped": 0,
+      "performance": {
+        "list_fetch_ms": 10645,
+        "candidate_filter_ms": 0,
+        "enrichment_ms": 0,
+        "raw_news_count": 16,
+        "raw_forum_count": 0,
+        "candidate_news_count": 0,
+        "candidate_forum_count": 0,
+        "enriched_news_count": 0,
+        "enriched_forum_count": 0,
+        "candidate_reasons": {
+          "news": {
+            "no-subject-mention": 3,
+            "dedup": 0,
+            "out_of_window": 13
+          },
+          "forum": {
+            "dedup": 0
+          }
+        },
+        "date_filter_ms": 0,
+        "relevance_ms": 0,
+        "llm_ms": 0,
+        "scoring_ms": 0
+      },
+      "top_news": []
+    },
+    "NASDAQ:DASH": {
+      "name": "DASH",
+      "score": 50,
+      "score_raw": 0,
+      "score_components": {
+        "positive_weight_sum": 0,
+        "negative_weight_sum": 0
+      },
+      "signal": "NEUTRAL No Trade (No Data)",
+      "strategy": "No relevant news in window",
+      "suitable_for": "Watch",
+      "confidence": "-",
+      "patterns": [],
+      "positive_factors": [],
+      "negative_factors": [],
+      "news_count": 0,
+      "news_dropped": 0,
+      "performance": {
+        "list_fetch_ms": 10644,
+        "candidate_filter_ms": 0,
+        "enrichment_ms": 0,
+        "raw_news_count": 17,
+        "raw_forum_count": 0,
+        "candidate_news_count": 0,
+        "candidate_forum_count": 0,
+        "enriched_news_count": 0,
+        "enriched_forum_count": 0,
+        "candidate_reasons": {
+          "news": {
+            "no-subject-mention": 5,
+            "dedup": 0,
+            "out_of_window": 12
+          },
+          "forum": {
+            "dedup": 0
+          }
+        },
+        "date_filter_ms": 0,
+        "relevance_ms": 0,
+        "llm_ms": 0,
+        "scoring_ms": 0
+      },
+      "top_news": []
+    },
+    "NASDAQ:HRMY": {
+      "name": "HRMY",
+      "score": 50,
+      "score_raw": 0,
+      "score_components": {
+        "positive_weight_sum": 0,
+        "negative_weight_sum": 0
+      },
+      "signal": "NEUTRAL No Trade (No Data)",
+      "strategy": "No relevant news in window",
+      "suitable_for": "Watch",
+      "confidence": "-",
+      "patterns": [],
+      "positive_factors": [],
+      "negative_factors": [],
+      "news_count": 0,
+      "news_dropped": 0,
+      "performance": {
+        "list_fetch_ms": 10647,
+        "candidate_filter_ms": 0,
+        "enrichment_ms": 0,
+        "raw_news_count": 14,
+        "raw_forum_count": 0,
+        "candidate_news_count": 0,
+        "candidate_forum_count": 0,
+        "enriched_news_count": 0,
+        "enriched_forum_count": 0,
+        "candidate_reasons": {
+          "news": {
+            "no-subject-mention": 1,
+            "dedup": 0,
+            "out_of_window": 13
+          },
+          "forum": {
+            "dedup": 0
+          }
+        },
+        "date_filter_ms": 0,
+        "relevance_ms": 0,
+        "llm_ms": 0,
+        "scoring_ms": 0
+      },
+      "top_news": []
+    },
+    "NYSE:WT": {
+      "name": "WT",
+      "score": 50,
+      "score_raw": 0,
+      "score_components": {
+        "positive_weight_sum": 0,
+        "negative_weight_sum": 0
+      },
+      "signal": "NEUTRAL No Trade (No Data)",
+      "strategy": "No relevant news in window",
+      "suitable_for": "Watch",
+      "confidence": "-",
+      "patterns": [],
+      "positive_factors": [],
+      "negative_factors": [],
+      "news_count": 0,
+      "news_dropped": 0,
+      "performance": {
+        "list_fetch_ms": 10647,
+        "candidate_filter_ms": 0,
+        "enrichment_ms": 0,
+        "raw_news_count": 8,
+        "raw_forum_count": 0,
+        "candidate_news_count": 0,
+        "candidate_forum_count": 0,
+        "enriched_news_count": 0,
+        "enriched_forum_count": 0,
+        "candidate_reasons": {
+          "news": {
+            "no-subject-mention": 1,
+            "dedup": 0,
+            "out_of_window": 7
+          },
+          "forum": {
+            "dedup": 0
+          }
+        },
+        "date_filter_ms": 0,
+        "relevance_ms": 0,
+        "llm_ms": 0,
+        "scoring_ms": 0
+      },
+      "top_news": []
+    },
+    "NASDAQ:GRAL": {
+      "name": "GRAL",
+      "score": 50,
+      "score_raw": 0,
+      "score_components": {
+        "positive_weight_sum": 0,
+        "negative_weight_sum": 0
+      },
+      "signal": "NEUTRAL No Trade (No Data)",
+      "strategy": "No relevant news in window",
+      "suitable_for": "Watch",
+      "confidence": "-",
+      "patterns": [],
+      "positive_factors": [],
+      "negative_factors": [],
+      "news_count": 0,
+      "news_dropped": 0,
+      "performance": {
+        "list_fetch_ms": 10646,
+        "candidate_filter_ms": 0,
+        "enrichment_ms": 0,
+        "raw_news_count": 12,
+        "raw_forum_count": 0,
+        "candidate_news_count": 0,
+        "candidate_forum_count": 0,
+        "enriched_news_count": 0,
+        "enriched_forum_count": 0,
+        "candidate_reasons": {
+          "news": {
+            "no-subject-mention": 2,
+            "dedup": 0,
+            "out_of_window": 10
+          },
+          "forum": {
+            "dedup": 0
+          }
+        },
+        "date_filter_ms": 0,
+        "relevance_ms": 0,
+        "llm_ms": 0,
+        "scoring_ms": 0
+      },
+      "top_news": []
+    },
+    "NASDAQ:VRTX": {
+      "name": "VRTX",
+      "score": 50,
+      "score_raw": 0,
+      "score_components": {
+        "positive_weight_sum": 0,
+        "negative_weight_sum": 0
+      },
+      "signal": "NEUTRAL No Trade (No Data)",
+      "strategy": "No relevant news in window",
+      "suitable_for": "Watch",
+      "confidence": "-",
+      "patterns": [],
+      "positive_factors": [],
+      "negative_factors": [],
+      "news_count": 0,
+      "news_dropped": 0,
+      "performance": {
+        "list_fetch_ms": 10644,
+        "candidate_filter_ms": 0,
+        "enrichment_ms": 0,
+        "raw_news_count": 12,
+        "raw_forum_count": 0,
+        "candidate_news_count": 0,
+        "candidate_forum_count": 0,
+        "enriched_news_count": 0,
+        "enriched_forum_count": 0,
+        "candidate_reasons": {
+          "news": {
+            "dedup": 0,
+            "out_of_window": 12
+          },
+          "forum": {
+            "dedup": 0
+          }
+        },
+        "date_filter_ms": 0,
+        "relevance_ms": 0,
+        "llm_ms": 0,
+        "scoring_ms": 0
+      },
+      "top_news": []
+    },
+    "NASDAQ:HOOD": {
+      "name": "HOOD",
+      "score": 50,
+      "score_raw": 0,
+      "score_components": {
+        "positive_weight_sum": 0,
+        "negative_weight_sum": 0
+      },
+      "signal": "NEUTRAL No Trade (No Data)",
+      "strategy": "No relevant news in window",
+      "suitable_for": "Watch",
+      "confidence": "-",
+      "patterns": [],
+      "positive_factors": [],
+      "negative_factors": [],
+      "news_count": 0,
+      "news_dropped": 0,
+      "performance": {
+        "list_fetch_ms": 10631,
+        "candidate_filter_ms": 0,
+        "enrichment_ms": 0,
+        "raw_news_count": 27,
+        "raw_forum_count": 0,
+        "candidate_news_count": 0,
+        "candidate_forum_count": 0,
+        "enriched_news_count": 0,
+        "enriched_forum_count": 0,
+        "candidate_reasons": {
+          "news": {
+            "no-subject-mention": 21,
+            "dedup": 0,
+            "out_of_window": 6
+          },
+          "forum": {
+            "dedup": 0
+          }
+        },
+        "date_filter_ms": 0,
+        "relevance_ms": 0,
+        "llm_ms": 0,
+        "scoring_ms": 0
+      },
+      "top_news": []
+    },
+    "NASDAQ:VKTX": {
+      "name": "VKTX",
+      "score": 50,
+      "score_raw": 0,
+      "score_components": {
+        "positive_weight_sum": 0,
+        "negative_weight_sum": 0
+      },
+      "signal": "NEUTRAL No Trade (No Data)",
+      "strategy": "No relevant news in window",
+      "suitable_for": "Watch",
+      "confidence": "-",
+      "patterns": [],
+      "positive_factors": [],
+      "negative_factors": [],
+      "news_count": 0,
+      "news_dropped": 0,
+      "performance": {
+        "list_fetch_ms": 10631,
+        "candidate_filter_ms": 0,
+        "enrichment_ms": 0,
+        "raw_news_count": 13,
+        "raw_forum_count": 0,
+        "candidate_news_count": 0,
+        "candidate_forum_count": 0,
+        "enriched_news_count": 0,
+        "enriched_forum_count": 0,
+        "candidate_reasons": {
+          "news": {
+            "dedup": 0,
+            "out_of_window": 13
+          },
+          "forum": {
+            "dedup": 0
+          }
+        },
+        "date_filter_ms": 0,
+        "relevance_ms": 0,
+        "llm_ms": 0,
+        "scoring_ms": 0
+      },
+      "top_news": []
+    },
+    "NYSE:LTC": {
+      "name": "LTC",
+      "score": 50,
+      "score_raw": 0,
+      "score_components": {
+        "positive_weight_sum": 0,
+        "negative_weight_sum": 0
+      },
+      "signal": "NEUTRAL No Trade (No Data)",
+      "strategy": "No relevant news in window",
+      "suitable_for": "Watch",
+      "confidence": "-",
+      "patterns": [],
+      "positive_factors": [],
+      "negative_factors": [],
+      "news_count": 0,
+      "news_dropped": 0,
+      "performance": {
+        "list_fetch_ms": 4885,
+        "candidate_filter_ms": 0,
+        "enrichment_ms": 0,
+        "raw_news_count": 15,
+        "raw_forum_count": 0,
+        "candidate_news_count": 0,
+        "candidate_forum_count": 0,
+        "enriched_news_count": 0,
+        "enriched_forum_count": 0,
+        "candidate_reasons": {
+          "news": {
+            "no-subject-mention": 2,
+            "dedup": 0,
+            "out_of_window": 13
+          },
+          "forum": {
+            "dedup": 0
+          }
+        },
+        "date_filter_ms": 0,
+        "relevance_ms": 0,
+        "llm_ms": 0,
+        "scoring_ms": 0
+      },
+      "top_news": []
+    },
+    "OTC:ABBNY": {
+      "name": "OTC:ABBNY",
+      "score": 50,
+      "score_raw": 0,
+      "score_components": {
+        "positive_weight_sum": 0,
+        "negative_weight_sum": 0
+      },
+      "signal": "NEUTRAL No Trade (No Data)",
+      "strategy": "No relevant news in window",
+      "suitable_for": "Watch",
+      "confidence": "-",
+      "patterns": [],
+      "positive_factors": [],
+      "negative_factors": [],
+      "news_count": 0,
+      "news_dropped": 0,
+      "performance": {
+        "list_fetch_ms": 10646,
+        "candidate_filter_ms": 0,
+        "enrichment_ms": 0,
+        "raw_news_count": 0,
+        "raw_forum_count": 0,
+        "candidate_news_count": 0,
+        "candidate_forum_count": 0,
+        "enriched_news_count": 0,
+        "enriched_forum_count": 0,
+        "candidate_reasons": {
+          "news": {
+            "dedup": 0
+          },
+          "forum": {
+            "dedup": 0
+          }
+        },
+        "date_filter_ms": 0,
+        "relevance_ms": 0,
+        "llm_ms": 0,
+        "scoring_ms": 0
+      },
+      "top_news": []
+    },
+    "NYSE:LOAR": {
+      "name": "LOAR",
+      "score": 50,
+      "score_raw": 0,
+      "score_components": {
+        "positive_weight_sum": 0,
+        "negative_weight_sum": 0
+      },
+      "signal": "NEUTRAL No Trade (No Data)",
+      "strategy": "LLM unavailable or call failed (no keyword fallback)",
+      "suitable_for": "Watch",
+      "confidence": "-",
+      "patterns": [],
+      "positive_factors": [],
+      "negative_factors": [],
+      "news_count": 0,
+      "news_dropped": 0,
+      "performance": {
+        "list_fetch_ms": 10645,
+        "candidate_filter_ms": 0,
+        "enrichment_ms": 2002,
+        "raw_news_count": 13,
+        "raw_forum_count": 0,
+        "candidate_news_count": 1,
+        "candidate_forum_count": 0,
+        "enriched_news_count": 1,
+        "enriched_forum_count": 0,
+        "candidate_reasons": {
+          "news": {
+            "no-subject-mention": 1,
+            "dedup": 0,
+            "out_of_window": 11
+          },
+          "forum": {
+            "dedup": 0
+          }
+        },
+        "date_filter_ms": 0,
+        "relevance_ms": 0,
+        "llm_ms": 23400,
+        "scoring_ms": 0
+      },
+      "top_news": []
+    },
+    "NYSE:P": {
+      "name": "P",
+      "score": 50,
+      "score_raw": 0,
+      "score_components": {
+        "positive_weight_sum": 0,
+        "negative_weight_sum": 0
+      },
+      "signal": "NEUTRAL No Trade (No Data)",
+      "strategy": "No relevant news in window",
+      "suitable_for": "Watch",
+      "confidence": "-",
+      "patterns": [],
+      "positive_factors": [],
+      "negative_factors": [],
+      "news_count": 0,
+      "news_dropped": 0,
+      "performance": {
+        "list_fetch_ms": 10643,
+        "candidate_filter_ms": 0,
+        "enrichment_ms": 0,
+        "raw_news_count": 14,
+        "raw_forum_count": 0,
+        "candidate_news_count": 0,
+        "candidate_forum_count": 0,
+        "enriched_news_count": 0,
+        "enriched_forum_count": 0,
+        "candidate_reasons": {
+          "news": {
+            "no-subject-mention": 5,
+            "dedup": 0,
+            "out_of_window": 9
+          },
+          "forum": {
+            "dedup": 0
+          }
+        },
+        "date_filter_ms": 0,
+        "relevance_ms": 0,
+        "llm_ms": 0,
+        "scoring_ms": 0
+      },
+      "top_news": []
+    },
+    "NASDAQ:NBIS": {
+      "name": "NBIS",
+      "score": 50,
+      "score_raw": 0,
+      "score_components": {
+        "positive_weight_sum": 0,
+        "negative_weight_sum": 0
+      },
+      "signal": "NEUTRAL No Trade (No Data)",
+      "strategy": "No relevant news in window",
+      "suitable_for": "Watch",
+      "confidence": "-",
+      "patterns": [],
+      "positive_factors": [],
+      "negative_factors": [],
+      "news_count": 0,
+      "news_dropped": 0,
+      "performance": {
+        "list_fetch_ms": 10643,
+        "candidate_filter_ms": 0,
+        "enrichment_ms": 0,
+        "raw_news_count": 35,
+        "raw_forum_count": 0,
+        "candidate_news_count": 0,
+        "candidate_forum_count": 0,
+        "enriched_news_count": 0,
+        "enriched_forum_count": 0,
+        "candidate_reasons": {
+          "news": {
+            "no-subject-mention": 34,
+            "dedup": 0,
+            "out_of_window": 1
+          },
+          "forum": {
+            "dedup": 0
+          }
+        },
+        "date_filter_ms": 0,
+        "relevance_ms": 0,
+        "llm_ms": 0,
+        "scoring_ms": 0
+      },
+      "top_news": []
+    },
+    "NASDAQ:MRVL": {
+      "name": "MRVL",
+      "score": 50,
+      "score_raw": 0,
+      "score_components": {
+        "positive_weight_sum": 0,
+        "negative_weight_sum": 0
+      },
+      "signal": "NEUTRAL No Trade (No Data)",
+      "strategy": "No relevant news in window",
+      "suitable_for": "Watch",
+      "confidence": "-",
+      "patterns": [],
+      "positive_factors": [],
+      "negative_factors": [],
+      "news_count": 0,
+      "news_dropped": 0,
+      "performance": {
+        "list_fetch_ms": 10645,
+        "candidate_filter_ms": 0,
+        "enrichment_ms": 0,
+        "raw_news_count": 33,
+        "raw_forum_count": 0,
+        "candidate_news_count": 0,
+        "candidate_forum_count": 0,
+        "enriched_news_count": 0,
+        "enriched_forum_count": 0,
+        "candidate_reasons": {
+          "news": {
+            "no-subject-mention": 27,
+            "dedup": 0,
+            "out_of_window": 6
+          },
+          "forum": {
+            "dedup": 0
+          }
+        },
+        "date_filter_ms": 0,
+        "relevance_ms": 0,
+        "llm_ms": 0,
+        "scoring_ms": 0
+      },
+      "top_news": []
+    },
+    "NYSE:GRMN": {
+      "name": "GRMN",
+      "score": 50,
+      "score_raw": 0,
+      "score_components": {
+        "positive_weight_sum": 0,
+        "negative_weight_sum": 0
+      },
+      "signal": "NEUTRAL No Trade (No Data)",
+      "strategy": "No relevant news in window",
+      "suitable_for": "Watch",
+      "confidence": "-",
+      "patterns": [],
+      "positive_factors": [],
+      "negative_factors": [],
+      "news_count": 0,
+      "news_dropped": 0,
+      "performance": {
+        "list_fetch_ms": 10643,
+        "candidate_filter_ms": 0,
+        "enrichment_ms": 0,
+        "raw_news_count": 11,
+        "raw_forum_count": 0,
+        "candidate_news_count": 0,
+        "candidate_forum_count": 0,
+        "enriched_news_count": 0,
+        "enriched_forum_count": 0,
+        "candidate_reasons": {
+          "news": {
+            "dedup": 0,
+            "out_of_window": 11
+          },
+          "forum": {
+            "dedup": 0
+          }
+        },
+        "date_filter_ms": 0,
+        "relevance_ms": 0,
+        "llm_ms": 0,
+        "scoring_ms": 0
+      },
+      "top_news": []
+    },
+    "NYSE:RIO": {
+      "name": "RIO",
+      "score": 50,
+      "score_raw": 0,
+      "score_components": {
+        "positive_weight_sum": 0,
+        "negative_weight_sum": 0,
+        "news_effective_count": 1,
+        "news_dropped_count": 0
+      },
+      "signal": "NEUTRAL No Trade (Weak Bullish)",
+      "strategy": "Mildly positive, insufficient signal — watch for stronger catalyst",
+      "suitable_for": "Watch",
+      "confidence": "Low",
+      "patterns": [],
+      "positive_factors": [],
+      "negative_factors": [],
+      "news_count": 1,
+      "news_dropped": 0,
+      "performance": {
+        "list_fetch_ms": 10642,
+        "candidate_filter_ms": 0,
+        "enrichment_ms": 1,
+        "raw_news_count": 7,
+        "raw_forum_count": 0,
+        "candidate_news_count": 1,
+        "candidate_forum_count": 0,
+        "enriched_news_count": 1,
+        "enriched_forum_count": 0,
+        "candidate_reasons": {
+          "news": {
+            "no-subject-mention": 1,
+            "dedup": 0,
+            "out_of_window": 5
+          },
+          "forum": {
+            "dedup": 0
+          }
+        },
+        "date_filter_ms": 0,
+        "relevance_ms": 0,
+        "llm_ms": 0,
+        "scoring_ms": 0
+      },
+      "top_news": [
+        {
+          "date": "2026-08-18",
+          "title": "'McEwen Copper in Talks With Rio as It Seeks $4 Billion Financing' - Bloomberg",
+          "content": "Never miss a trade again with the fastest news alerts in the world!\n\nThis headline only article is a sample of real-time intelligence Benzinga Pro traders use to win in the markets everyday.\n\nWant the fastest, most accurate stock market intelligence? Want EXCLUSIVE stories originated by Benzinga reporters? Join 10,000+ serious traders in the Benzinga Pro community!",
+          "type": "M&A",
+          "sentiment": 0,
+          "weight": 1,
+          "final_weight": 0.5,
+          "source_authority": 3.5,
+          "recency_factor": 0.5,
+          "source": "Finnhub",
+          "llm_reviewed": true,
+          "llm_confidence": 0.4,
+          "llm_is_real_catalyst": false,
+          "llm_reasoning": "Talks only, no firm deal terms"
+        }
+      ]
+    },
+    "NYSE:JOE": {
+      "name": "JOE",
+      "score": 50,
+      "score_raw": 0,
+      "score_components": {
+        "positive_weight_sum": 0,
+        "negative_weight_sum": 0
+      },
+      "signal": "NEUTRAL No Trade (No Data)",
+      "strategy": "No relevant news in window",
+      "suitable_for": "Watch",
+      "confidence": "-",
+      "patterns": [],
+      "positive_factors": [],
+      "negative_factors": [],
+      "news_count": 0,
+      "news_dropped": 0,
+      "performance": {
+        "list_fetch_ms": 10641,
+        "candidate_filter_ms": 0,
+        "enrichment_ms": 0,
+        "raw_news_count": 10,
+        "raw_forum_count": 0,
+        "candidate_news_count": 0,
+        "candidate_forum_count": 0,
+        "enriched_news_count": 0,
+        "enriched_forum_count": 0,
+        "candidate_reasons": {
+          "news": {
+            "dedup": 0,
+            "out_of_window": 10
+          },
+          "forum": {
+            "dedup": 0
+          }
+        },
+        "date_filter_ms": 0,
+        "relevance_ms": 0,
+        "llm_ms": 0,
+        "scoring_ms": 0
+      },
+      "top_news": []
+    },
+    "NYSE:RRC": {
+      "name": "RRC",
+      "score": 50,
+      "score_raw": 0,
+      "score_components": {
+        "positive_weight_sum": 0,
+        "negative_weight_sum": 0
+      },
+      "signal": "NEUTRAL No Trade (No Data)",
+      "strategy": "No relevant news in window",
+      "suitable_for": "Watch",
+      "confidence": "-",
+      "patterns": [],
+      "positive_factors": [],
+      "negative_factors": [],
+      "news_count": 0,
+      "news_dropped": 0,
+      "performance": {
+        "list_fetch_ms": 8612,
+        "candidate_filter_ms": 0,
+        "enrichment_ms": 0,
+        "raw_news_count": 13,
+        "raw_forum_count": 0,
+        "candidate_news_count": 0,
+        "candidate_forum_count": 0,
+        "enriched_news_count": 0,
+        "enriched_forum_count": 0,
+        "candidate_reasons": {
+          "news": {
+            "no-subject-mention": 3,
+            "dedup": 0,
+            "out_of_window": 10
+          },
+          "forum": {
+            "dedup": 0
+          }
+        },
+        "date_filter_ms": 0,
+        "relevance_ms": 0,
+        "llm_ms": 0,
+        "scoring_ms": 0
+      },
+      "top_news": []
+    },
+    "NYSE:NEM": {
+      "name": "NEM",
+      "score": 50,
+      "score_raw": 0,
+      "score_components": {
+        "positive_weight_sum": 0,
+        "negative_weight_sum": 0
+      },
+      "signal": "NEUTRAL No Trade (No Data)",
+      "strategy": "No relevant news in window",
+      "suitable_for": "Watch",
+      "confidence": "-",
+      "patterns": [],
+      "positive_factors": [],
+      "negative_factors": [],
+      "news_count": 0,
+      "news_dropped": 0,
+      "performance": {
+        "list_fetch_ms": 10635,
+        "candidate_filter_ms": 0,
+        "enrichment_ms": 0,
+        "raw_news_count": 27,
+        "raw_forum_count": 0,
+        "candidate_news_count": 0,
+        "candidate_forum_count": 0,
+        "enriched_news_count": 0,
+        "enriched_forum_count": 0,
+        "candidate_reasons": {
+          "news": {
+            "no-subject-mention": 18,
+            "dedup": 0,
+            "out_of_window": 9
+          },
+          "forum": {
+            "dedup": 0
+          }
+        },
+        "date_filter_ms": 0,
+        "relevance_ms": 0,
+        "llm_ms": 0,
+        "scoring_ms": 0
+      },
+      "top_news": []
+    },
+    "NYSE:FCX": {
+      "name": "FCX",
+      "score": 50,
+      "score_raw": 0,
+      "score_components": {
+        "positive_weight_sum": 0,
+        "negative_weight_sum": 0
+      },
+      "signal": "NEUTRAL No Trade (No Data)",
+      "strategy": "No relevant news in window",
+      "suitable_for": "Watch",
+      "confidence": "-",
+      "patterns": [],
+      "positive_factors": [],
+      "negative_factors": [],
+      "news_count": 0,
+      "news_dropped": 0,
+      "performance": {
+        "list_fetch_ms": 8687,
+        "candidate_filter_ms": 0,
+        "enrichment_ms": 0,
+        "raw_news_count": 16,
+        "raw_forum_count": 0,
+        "candidate_news_count": 0,
+        "candidate_forum_count": 0,
+        "enriched_news_count": 0,
+        "enriched_forum_count": 0,
+        "candidate_reasons": {
+          "news": {
+            "no-subject-mention": 4,
+            "dedup": 0,
+            "out_of_window": 12
+          },
+          "forum": {
+            "dedup": 0
+          }
+        },
+        "date_filter_ms": 0,
+        "relevance_ms": 0,
+        "llm_ms": 0,
+        "scoring_ms": 0
+      },
+      "top_news": []
+    },
+    "NYSE:SCCO": {
+      "name": "SCCO",
+      "score": 50,
+      "score_raw": 0,
+      "score_components": {
+        "positive_weight_sum": 0,
+        "negative_weight_sum": 0
+      },
+      "signal": "NEUTRAL No Trade (No Data)",
+      "strategy": "No relevant news in window",
+      "suitable_for": "Watch",
+      "confidence": "-",
+      "patterns": [],
+      "positive_factors": [],
+      "negative_factors": [],
+      "news_count": 0,
+      "news_dropped": 0,
+      "performance": {
+        "list_fetch_ms": 10634,
+        "candidate_filter_ms": 0,
+        "enrichment_ms": 0,
+        "raw_news_count": 13,
+        "raw_forum_count": 0,
+        "candidate_news_count": 0,
+        "candidate_forum_count": 0,
+        "enriched_news_count": 0,
+        "enriched_forum_count": 0,
+        "candidate_reasons": {
+          "news": {
+            "no-subject-mention": 1,
+            "dedup": 0,
+            "out_of_window": 12
+          },
+          "forum": {
+            "dedup": 0
+          }
+        },
+        "date_filter_ms": 0,
+        "relevance_ms": 0,
+        "llm_ms": 0,
+        "scoring_ms": 0
+      },
+      "top_news": []
+    },
+    "NYSE:WPM": {
+      "name": "WPM",
+      "score": 50,
+      "score_raw": 0,
+      "score_components": {
+        "positive_weight_sum": 0,
+        "negative_weight_sum": 0
+      },
+      "signal": "NEUTRAL No Trade (No Data)",
+      "strategy": "No relevant news in window",
+      "suitable_for": "Watch",
+      "confidence": "-",
+      "patterns": [],
+      "positive_factors": [],
+      "negative_factors": [],
+      "news_count": 0,
+      "news_dropped": 0,
+      "performance": {
+        "list_fetch_ms": 10672,
+        "candidate_filter_ms": 0,
+        "enrichment_ms": 0,
+        "raw_news_count": 16,
+        "raw_forum_count": 0,
+        "candidate_news_count": 0,
+        "candidate_forum_count": 0,
+        "enriched_news_count": 0,
+        "enriched_forum_count": 0,
+        "candidate_reasons": {
+          "news": {
+            "no-subject-mention": 4,
+            "dedup": 0,
+            "out_of_window": 12
+          },
+          "forum": {
+            "dedup": 0
+          }
+        },
+        "date_filter_ms": 0,
+        "relevance_ms": 0,
+        "llm_ms": 0,
+        "scoring_ms": 0
+      },
+      "top_news": []
+    },
+    "NASDAQ:MNST\n（内容由AI生成，仅供参考）": {
+      "name": "MNST\n（内容由AI生成，仅供参考）",
+      "score": 50,
+      "score_raw": 0,
+      "score_components": {
+        "positive_weight_sum": 0,
+        "negative_weight_sum": 0
+      },
+      "signal": "NEUTRAL No Trade (No Data)",
+      "strategy": "No relevant news in window",
+      "suitable_for": "Watch",
+      "confidence": "-",
+      "patterns": [],
+      "positive_factors": [],
+      "negative_factors": [],
+      "news_count": 0,
+      "news_dropped": 0,
+      "performance": {
+        "list_fetch_ms": 10671,
+        "candidate_filter_ms": 0,
+        "enrichment_ms": 0,
+        "raw_news_count": 0,
+        "raw_forum_count": 0,
+        "candidate_news_count": 0,
+        "candidate_forum_count": 0,
+        "enriched_news_count": 0,
+        "enriched_forum_count": 0,
+        "candidate_reasons": {
+          "news": {
+            "dedup": 0
+          },
+          "forum": {
+            "dedup": 0
+          }
+        },
+        "date_filter_ms": 0,
+        "relevance_ms": 0,
+        "llm_ms": 0,
+        "scoring_ms": 0
+      },
+      "top_news": []
+    }
+  }
+}

@@ -1,0 +1,1266 @@
+{
+  "generated_at": "2026-07-30T06:32:20.056Z",
+  "market": "cn",
+  "source": "src/core/webNews.js",
+  "score_scale": "0-100 normalized (neutral=50)",
+  "window": {
+    "from": "2026-07-23",
+    "to": "2026-07-30",
+    "days": 7
+  },
+  "llm_used": true,
+  "performance": {
+    "totals_ms": {
+      "list_fetch_ms": 21473,
+      "enrichment_ms": 122438,
+      "relevance_ms": 0,
+      "llm_ms": 420355,
+      "report_write_ms": 15
+    },
+    "avg_ms": {
+      "list_fetch_ms": 2386,
+      "enrichment_ms": 13604,
+      "relevance_ms": 0,
+      "llm_ms": 46706,
+      "report_write_ms": 2
+    }
+  },
+  "stocks": {
+    "SZSE:000333": {
+      "name": "美的集团",
+      "score": 98,
+      "score_raw": 18.36,
+      "score_components": {
+        "positive_weight_sum": 18.36,
+        "negative_weight_sum": 0,
+        "news_effective_count": 7,
+        "news_dropped_count": 0
+      },
+      "signal": "⚠️ No Trade (情绪过热)",
+      "strategy": "情绪分过高但出现过热信号，等待回调低吸，不追高",
+      "suitable_for": "低吸(等回调)",
+      "confidence": "低(风险压制)",
+      "patterns": [
+        "情绪持续增强↑(trend)",
+        "⚠️情绪过热(单边乐观,注意回调)"
+      ],
+      "positive_factors": [
+        "[并购|w3.57] 美的集团：7月，公司旗下威灵机器人部件与佛山市顺德区政府正式签署新制造基地项目合作意向协议",
+        "[并购|w3.57] 美的集团：7月7日 公司旗下库卡与英科医疗、英科再生签署战略合作协议",
+        "[政策|w3.06] 美的集团：数据中心业务领域，美的楼宇连续多年中标中国移动数据中心温控集采订单"
+      ],
+      "negative_factors": [],
+      "news_count": 7,
+      "news_dropped": 0,
+      "performance": {
+        "list_fetch_ms": 1875,
+        "candidate_filter_ms": 0,
+        "enrichment_ms": 13245,
+        "raw_news_count": 40,
+        "raw_research_count": 10,
+        "candidate_news_count": 7,
+        "candidate_research_count": 0,
+        "enriched_news_count": 7,
+        "enriched_research_count": 0,
+        "candidate_reasons": {
+          "news": {
+            "noise:融资净(买入|卖出)": 1,
+            "no-subject-mention": 13,
+            "dedup": 0,
+            "out_of_window": 19
+          },
+          "research": {
+            "dedup": 0,
+            "out_of_window": 10
+          }
+        },
+        "date_filter_ms": 0,
+        "relevance_ms": 0,
+        "llm_ms": 33326,
+        "scoring_ms": 0
+      },
+      "top_news": [
+        {
+          "date": "2026-07-29 21:36:00",
+          "title": "美的集团：7月，公司旗下威灵机器人部件与佛山市顺德区政府正式签署新制造基地项目合作意向协议",
+          "content": "在东方财富看资讯行情，选东方财富证券一站式开户交易>>\n\n　　证券日报网7月29日讯 ，美的集团在接受调研时表示，7月，公司旗下威灵机器人部件与佛山市顺德区政府正式签署新制造基地项目合作意向协议，新基地选址顺德北滘，规划建设5.5万平方米的高标准恒温防震精密厂房。该项目分两期实施，一期于2027年投产，二期于2030年投产，新建30万台减速机产能，以配套工业及人形机器人的生产需求。以新基地为契机，威灵机器人部件将以正向设计、全栈自研实现更多关键技术的突破，以覆盖研发、制造、测试、交付的高可靠保障体系，夯实中国机器人产业供应链基础，助力全球智能装备产业的高质量发展。",
+          "type": "并购",
+          "sentiment": 1,
+          "weight": 4,
+          "final_weight": 3.57,
+          "source_authority": 3,
+          "recency_factor": 0.85,
+          "source": "东方财富资讯",
+          "llm_reviewed": true,
+          "llm_confidence": 0.8,
+          "llm_is_real_catalyst": true,
+          "llm_reasoning": "机器人基地意向协议，规划产能"
+        },
+        {
+          "date": "2026-07-29 21:31:00",
+          "title": "美的集团：7月7日 公司旗下库卡与英科医疗、英科再生签署战略合作协议",
+          "content": "在东方财富看资讯行情，选东方财富证券一站式开户交易>>\n\n　　证券日报网7月29日讯，美的集团在接受调研时表示，7月7日，公司旗下库卡与英科医疗、英科再生签署战略合作协议。合作总规模超3亿元，涵盖1500套工业机器人、500套移动及具身智能机器人、50套自动化立体仓库及配套全链路自动化解决方案。双方将围绕英科两大核心业务全生产链路展开深度协同，聚焦自动装配、智能检测、智慧物流等核心工序落地方案，遵循“单点先行—全基地覆盖—整线攻坚”实施路径，融合AI视觉识别与自适应抓取技术破解小批量多品种生产难点，构建柔性智造体系，树立细分行业升级标杆。",
+          "type": "并购",
+          "sentiment": 1,
+          "weight": 4,
+          "final_weight": 3.57,
+          "source_authority": 3,
+          "recency_factor": 0.85,
+          "source": "东方财富资讯",
+          "llm_reviewed": true,
+          "llm_confidence": 0.9,
+          "llm_is_real_catalyst": true,
+          "llm_reasoning": "库卡签署超3亿战略合作"
+        },
+        {
+          "date": "2026-07-29 21:31:00",
+          "title": "美的集团：数据中心业务领域，美的楼宇连续多年中标中国移动数据中心温控集采订单",
+          "content": "在东方财富看资讯行情，选东方财富证券一站式开户交易>>\n\n　　证券日报网7月29日讯 ，美的集团在接受调研时表示，数据中心业务领域，美的楼宇连续多年中标中国移动数据中心温控集采订单。6月，公司中标中国移动2026年–2028年新一轮低压冷水机组集采项目，中标本次集采70%的份额，进一步巩固公司在数据中心液冷、高效冷水机组赛道的地位。海外市场拓展方面，近期，公司在波黑萨拉热窝市政厅举办巴尔干区域新品发布会，覆盖波黑、塞浦路斯等国家的100余名核心渠道伙伴，现场发布V9 R32多联机、AquaLink水路系统、Mars系列热泵及磁悬浮水机等核心产品，深化巴尔干暖通市场的布局。",
+          "type": "政策",
+          "sentiment": 1,
+          "weight": 3,
+          "final_weight": 3.06,
+          "source_authority": 3,
+          "recency_factor": 0.85,
+          "source": "东方财富资讯",
+          "llm_reviewed": true,
+          "llm_confidence": 0.9,
+          "llm_is_real_catalyst": true,
+          "llm_reasoning": "中标中国移动集采70%份额"
+        },
+        {
+          "date": "2026-07-29 19:21:54",
+          "title": "【调研快报】美的集团接待高瓴资本等14家机构调研",
+          "content": "专业金融数据，下一代智能终端\n\n　　美的集团7月29日公告称，7月29日接待高瓴资本等14家机构调研。接待人员包括公司管理层。\n\n　　公司就以下问题进行了回复：1. 公司回购的进度如何? 公司第五届董事会第七次会议审议通过的 2025 年 15-30 亿回购方案,本年度内回购金额为 14.90 亿元,并于 2026 年 3 月 30 日达回购金额上限。 2026 年 3 月 30 日召开第五届董事会第十三次会议,审议通过了《关于以集中竞价方式回...\n\n点击查看PDF原文\n\n免责声明：本文基于AI生产，仅供参考，不构成任何投资建议，据此操作风险自担。东方财富发布此内容旨在传播更多信息，与本平台立场无关。东方财富力求但不保证数据的完全准确，如有错漏请以中国证监会指定上市公司信息披露媒体为准，东方财富不对因该资料全部或部分内容而引致的盈亏承担任何责任。用户个人对服务的使用承担风险，东方财富对此不作任何类型的担保。",
+          "type": "回购",
+          "sentiment": 1,
+          "weight": 3,
+          "final_weight": 3.06,
+          "source_authority": 3,
+          "recency_factor": 0.85,
+          "source": "东方财富资讯",
+          "llm_reviewed": true,
+          "llm_confidence": 0.8,
+          "llm_is_real_catalyst": true,
+          "llm_reasoning": "已完成回购14.9亿元达上限"
+        },
+        {
+          "date": "2026-07-29 17:52:48",
+          "title": "美的集团：受欧洲持续极端高温影响，美的空调芜湖、广州双基地一月内新增欧洲订单共20万台",
+          "content": "在东方财富看资讯行情，选东方财富证券一站式开户交易>>\n\n　　美的集团7月29日在互动平台表示，受欧洲持续极端高温影响，当地空调需求爆发，美的空调芜湖、广州双基地一月内新增欧洲订单共20万台。PortaSplit移动分体空调自6月新增接单超16万台。7月，法国3万台移动空调紧急订单中2万台已完成发运。",
+          "type": "行业",
+          "sentiment": 1,
+          "weight": 3,
+          "final_weight": 2.55,
+          "source_authority": 3,
+          "recency_factor": 0.85,
+          "source": "东方财富资讯",
+          "llm_reviewed": true,
+          "llm_confidence": 0.9,
+          "llm_is_real_catalyst": true,
+          "llm_reasoning": "欧洲高温带来新增20万台订单"
+        }
+      ]
+    },
+    "SSE:601665": {
+      "name": "齐鲁银行",
+      "score": 87,
+      "score_raw": 8.77,
+      "score_components": {
+        "positive_weight_sum": 8.77,
+        "negative_weight_sum": 0,
+        "news_effective_count": 9,
+        "news_dropped_count": 0
+      },
+      "signal": "⚠️ No Trade (情绪过热)",
+      "strategy": "情绪分过高但出现过热信号，等待回调低吸，不追高",
+      "suitable_for": "低吸(等回调)",
+      "confidence": "低(风险压制)",
+      "patterns": [
+        "⚠️情绪过热(单边乐观,注意回调)"
+      ],
+      "positive_factors": [
+        "[政策|w2.27] 齐鲁银行:齐鲁银行股份有限公司关于高级管理人员任职资格获得核准的公告",
+        "[政策|w1.3] 齐鲁银行：关于高级管理人员任职资格获得核准的公告",
+        "[政策|w1.3] 齐鲁银行：副行长刘振水、刘兰设任职资格获核准"
+      ],
+      "negative_factors": [],
+      "news_count": 9,
+      "news_dropped": 0,
+      "performance": {
+        "list_fetch_ms": 2105,
+        "candidate_filter_ms": 0,
+        "enrichment_ms": 17332,
+        "raw_news_count": 40,
+        "raw_research_count": 10,
+        "candidate_news_count": 9,
+        "candidate_research_count": 0,
+        "enriched_news_count": 9,
+        "enriched_research_count": 0,
+        "candidate_reasons": {
+          "news": {
+            "no-subject-mention": 4,
+            "noise:融资净(买入|卖出)": 2,
+            "dedup": 0,
+            "out_of_window": 25
+          },
+          "research": {
+            "dedup": 0,
+            "out_of_window": 10
+          }
+        },
+        "date_filter_ms": 0,
+        "relevance_ms": 0,
+        "llm_ms": 1,
+        "scoring_ms": 1
+      },
+      "top_news": [
+        {
+          "date": "2026-07-30 07:50:44",
+          "title": "齐鲁银行：融资净偿还658.05万元，融资余额12.48亿元",
+          "content": "全新妙想投研助理，立即体验\n\n交易所最新数据显示，齐鲁银行于2026年7月29日获融资买入4311.27万元，融资偿还4969.32万元，当日融资净偿还658.05万元。目前，该股融资余额12.48亿，占流通市值比例为3.23%。\n\n该股当日融券卖出6.56万股，融券偿还2.82万股，融券净卖出3.74万股。目前，该股融券余量191.53万股，融券余额1200.89万元。\n\n免责声明：本文基于AI生产，仅供参考，不构成任何投资建议，据此操作风险自担。东方财富发布此内容旨在传播更多信息，与本平台立场无关。东方财富力求但不保证数据的完全准确，如有错漏请以中国证监会指定上市公司信息披露媒体为准，东方财富不对因该资料全部或部分内容而引致的盈亏承担任何责任。用户个人对服务的使用承担风险，东方财富对此不作任何类型的担保。",
+          "type": "行业",
+          "sentiment": 0,
+          "weight": 1,
+          "final_weight": 0.6,
+          "source_authority": 3,
+          "recency_factor": 1,
+          "source": "东方财富资讯",
+          "llm_reviewed": true,
+          "llm_confidence": 0.2,
+          "llm_is_real_catalyst": false,
+          "llm_reasoning": "融资数据日常披露，无催化"
+        },
+        {
+          "date": "2026-07-29 07:34:34",
+          "title": "齐鲁银行：融资净偿还1076.9万元，融资余额12.55亿元",
+          "content": "炒股第一步，先开个股票账户\n\n交易所最新数据显示，齐鲁银行于2026年7月28日获融资买入2872.39万元，融资偿还3949.29万元，当日融资净偿还1076.9万元。目前，该股融资余额12.55亿，占流通市值比例为3.27%。\n\n该股当日融券卖出3.53万股，融券偿还4.46万股，融券净偿还9300股。目前，该股融券余量187.79万股，融券余额1169.93万元。\n\n免责声明：本文基于AI生产，仅供参考，不构成任何投资建议，据此操作风险自担。东方财富发布此内容旨在传播更多信息，与本平台立场无关。东方财富力求但不保证数据的完全准确，如有错漏请以中国证监会指定上市公司信息披露媒体为准，东方财富不对因该资料全部或部分内容而引致的盈亏承担任何责任。用户个人对服务的使用承担风险，东方财富对此不作任何类型的担保。",
+          "type": "行业",
+          "sentiment": 0,
+          "weight": 1,
+          "final_weight": 0.51,
+          "source_authority": 3,
+          "recency_factor": 0.85,
+          "source": "东方财富资讯",
+          "llm_reviewed": true,
+          "llm_confidence": 0.2,
+          "llm_is_real_catalyst": false,
+          "llm_reasoning": "融资数据日常披露，无催化"
+        },
+        {
+          "date": "2026-07-25",
+          "title": "齐鲁银行:齐鲁银行股份有限公司关于高级管理人员任职资格获得核准的公告",
+          "content": "人民币业务:吸收公众存款;发放短期、中期和长期贷款;办理国内结算;办理票据贴现;发行金融债券;代理发行、代理兑付、承销政府债券;买卖政府债券;从事同业拆借;提供担保;代理收付款项及代理保险业务;提供保管箱服务;办理地方财政信用周转使用资金委托存贷款业务;证券投资基金销售。外汇业务:外汇存款;外汇贷款;外汇汇款;外币兑换;国际结算;同业外汇拆借;外汇票据的承兑和贴现;外汇借款;外汇担保;结汇、售汇;资信调查、咨询、见证业务。经国务院银行业监督管理机构等审批机关核准的其他业务。\n郑重声明：东方财富网发布此信息的目的在于传播更多信息，与本站立场无关。东方财富网不保证该信息（包括但不限于文字、视频、音频、数据及图表）全部或者部分内容的准确性、真实性、完整性、有效性、及时性、原创性等。相关信息并未经过本网站证实，不对您构成任何投资建议，据此操作，风险自担。",
+          "type": "政策",
+          "sentiment": 1,
+          "weight": 2,
+          "final_weight": 2.27,
+          "source_authority": 4.5,
+          "recency_factor": 0.42,
+          "source": "东方财富公告",
+          "llm_reviewed": true,
+          "llm_confidence": 0.8,
+          "llm_is_real_catalyst": true,
+          "llm_reasoning": "高管任职获监管核准，有利治理"
+        },
+        {
+          "date": "2026-07-24 21:14:00",
+          "title": "齐鲁银行：关于高级管理人员任职资格获得核准的公告",
+          "content": "炒股第一步，先开个股票账户\n\n　　证券日报网讯 7月24日，齐鲁银行发布公告称，近日，公司收到《山东金融监管局关于刘振水齐鲁银行副行长任职资格的批复》（鲁金复〔2026〕271 号）、《山东金融监管局关于刘兰设齐鲁银行副行长任职资格的批复》（鲁金复〔2026〕270号），国家金融监督管理总局山东监管局已核准刘振水先生、刘兰设先生公司副行长任职资格。",
+          "type": "政策",
+          "sentiment": 1,
+          "weight": 1,
+          "final_weight": 1.3,
+          "source_authority": 3,
+          "recency_factor": 0.36,
+          "source": "东方财富资讯",
+          "llm_reviewed": true,
+          "llm_confidence": 0.8,
+          "llm_is_real_catalyst": true,
+          "llm_reasoning": "副行长任职资格获监管批复"
+        },
+        {
+          "date": "2026-07-24 20:42:00",
+          "title": "齐鲁银行：副行长刘振水、刘兰设任职资格获核准",
+          "content": "",
+          "type": "政策",
+          "sentiment": 1,
+          "weight": 1,
+          "final_weight": 1.3,
+          "source_authority": 3,
+          "recency_factor": 0.36,
+          "source": "东方财富资讯",
+          "llm_reviewed": true,
+          "llm_confidence": 0.7,
+          "llm_is_real_catalyst": true,
+          "llm_reasoning": "副行长任职资格获批"
+        }
+      ]
+    },
+    "SSE:603296": {
+      "name": "华勤技术",
+      "score": 78,
+      "score_raw": 12.85,
+      "score_components": {
+        "positive_weight_sum": 17.29,
+        "negative_weight_sum": 4.44,
+        "news_effective_count": 16,
+        "news_dropped_count": 0
+      },
+      "signal": "🟢 Long (强)",
+      "strategy": "多重利好共振，基本面+情绪双支撑，适合追涨或持有",
+      "suitable_for": "追涨 / 持有",
+      "confidence": "高",
+      "patterns": [],
+      "positive_factors": [
+        "[回购|w3.89] 华勤技术:华勤技术关于公司实际控制人增持公司H股股份计划完成的公告",
+        "[并购|w2.65] 华勤技术:华勤技术H股公告-有关在市场上收购晶合集成H股之须予披露交易",
+        "[行业|w2.55] 华勤技术首批轮式双臂机器人F1正式出货"
+      ],
+      "negative_factors": [
+        "[行业|w1.2] 华勤技术：融资净偿还5386.59万元，融资余额10.62亿元",
+        "[行业|w1.02] 华勤技术：融资净偿还1.04亿元，融资余额11.16亿元",
+        "[行业|w0.6] 华勤技术7月30日盘中跌幅达5%"
+      ],
+      "news_count": 16,
+      "news_dropped": 0,
+      "performance": {
+        "list_fetch_ms": 1998,
+        "candidate_filter_ms": 0,
+        "enrichment_ms": 17330,
+        "raw_news_count": 40,
+        "raw_research_count": 10,
+        "candidate_news_count": 16,
+        "candidate_research_count": 0,
+        "enriched_news_count": 16,
+        "enriched_research_count": 0,
+        "candidate_reasons": {
+          "news": {
+            "no-subject-mention": 6,
+            "noise:\\d{1,2}月\\d{1,2}日(快速上涨|快速回调|涨停|": 1,
+            "noise:融资净(买入|卖出)": 1,
+            "dedup": 0,
+            "out_of_window": 16
+          },
+          "research": {
+            "dedup": 0,
+            "out_of_window": 10
+          }
+        },
+        "date_filter_ms": 0,
+        "relevance_ms": 0,
+        "llm_ms": 97712,
+        "scoring_ms": 0
+      },
+      "top_news": [
+        {
+          "date": "2026-07-30 10:21:30",
+          "title": "华勤技术7月30日盘中跌幅达5%",
+          "content": "",
+          "type": "行业",
+          "sentiment": -1,
+          "weight": 1,
+          "final_weight": 0.6,
+          "source_authority": 3,
+          "recency_factor": 1,
+          "source": "东方财富资讯",
+          "llm_reviewed": true,
+          "llm_confidence": 0.2,
+          "llm_is_real_catalyst": false,
+          "llm_reasoning": "盘中跌幅达5%，无实质信息"
+        },
+        {
+          "date": "2026-07-30 10:01:35",
+          "title": "华勤技术7月30日快速反弹",
+          "content": "",
+          "type": "行业",
+          "sentiment": 1,
+          "weight": 1,
+          "final_weight": 0.6,
+          "source_authority": 3,
+          "recency_factor": 1,
+          "source": "东方财富资讯",
+          "llm_reviewed": true,
+          "llm_confidence": 0.2,
+          "llm_is_real_catalyst": false,
+          "llm_reasoning": "快速反弹，价格异动无实质信息"
+        },
+        {
+          "date": "2026-07-30 09:50:49",
+          "title": "华勤技术7月30日加速下跌",
+          "content": "",
+          "type": "行业",
+          "sentiment": -1,
+          "weight": 1,
+          "final_weight": 0.6,
+          "source_authority": 3,
+          "recency_factor": 1,
+          "source": "东方财富资讯",
+          "llm_reviewed": true,
+          "llm_confidence": 0.2,
+          "llm_is_real_catalyst": false,
+          "llm_reasoning": "加速下跌，无实质信息"
+        },
+        {
+          "date": "2026-07-30 07:52:25",
+          "title": "华勤技术：融资净偿还5386.59万元，融资余额10.62亿元",
+          "content": "全新妙想投研助理，立即体验\n\n交易所最新数据显示，华勤技术于2026年7月29日获融资买入2.27亿元，融资偿还2.81亿元，当日融资净偿还5386.59万元。目前，该股融资余额10.62亿，占流通市值比例为1.59%。\n\n该股当日融券卖出4400股，融券偿还2500股，融券净卖出1900股。目前，该股融券余量9.89万股，融券余额827.13万元。\n\n免责声明：本文基于AI生产，仅供参考，不构成任何投资建议，据此操作风险自担。东方财富发布此内容旨在传播更多信息，与本平台立场无关。东方财富力求但不保证数据的完全准确，如有错漏请以中国证监会指定上市公司信息披露媒体为准，东方财富不对因该资料全部或部分内容而引致的盈亏承担任何责任。用户个人对服务的使用承担风险，东方财富对此不作任何类型的担保。",
+          "type": "行业",
+          "sentiment": -1,
+          "weight": 1,
+          "final_weight": 1.2,
+          "source_authority": 3,
+          "recency_factor": 1,
+          "source": "东方财富资讯",
+          "llm_reviewed": true,
+          "llm_confidence": 0.8,
+          "llm_is_real_catalyst": false,
+          "llm_reasoning": "融资净偿还5386.59万元，资金流出"
+        },
+        {
+          "date": "2026-07-29 10:17:08",
+          "title": "华勤技术7月29日盘中跌幅达5%",
+          "content": "以下是华勤技术在北京时间7月29日09:54分盘口异动快照：\n\n　　在东方财富看资讯行情，选东方财富证券一站式开户交易>>\n\n分笔\n\n09:54:00 79.95 69↓\n09:53:57 79.98 261↓\n09:53:54 80.00 103↑\n09:53:51 79.99 177↓\n09:53:48 80.00 521↓\n \n09:53:45 80.02 672↑\n09:53:42 80.00 839↓\n09:53:39 80.02 162↓\n09:53:36 80.04 107↓\n09:53:33 80.09 723↓\n \n报价\n\n卖五 \n\n80.01\n\n 9\n卖四 \n\n80\n\n 772\n卖三 \n\n79.98\n\n 3\n卖二 \n\n79.97\n\n 71\n卖一 \n\n79.95\n\n 4\n\n买一 \n\n79.92\n\n 1\n买二 \n\n79.91\n\n 49\n买三 \n\n79.9\n\n 103\n买四 \n\n79.89\n\n 75\n买五 \n\n79.88\n\n 328\n\n最新：79.95\n涨幅：-5.00%\n涨跌：-4.21\n换手率：1.46%\n成交量：11.69万手\n成交额：9.58亿元\n主力净流入：\n-8313.74万元\n\n  7月29日，华勤技术盘中跌幅达5%，截至9点54分，报79.95元，成交9.58亿元，换手率1.46%。\n注：以上信息仅供参考，不对您构成任何投资建议。",
+          "type": "行业",
+          "sentiment": -1,
+          "weight": 1,
+          "final_weight": 0.51,
+          "source_authority": 3,
+          "recency_factor": 0.85,
+          "source": "东方财富资讯",
+          "llm_reviewed": true,
+          "llm_confidence": 0.2,
+          "llm_is_real_catalyst": false,
+          "llm_reasoning": "盘中跌幅5%，无实质催化信息"
+        }
+      ]
+    },
+    "SSE:601168": {
+      "name": "西部矿业",
+      "score": 75,
+      "score_raw": 23.82,
+      "score_components": {
+        "positive_weight_sum": 27.14,
+        "negative_weight_sum": 3.32,
+        "news_effective_count": 21,
+        "news_dropped_count": 0
+      },
+      "signal": "🟢 Long (强)",
+      "strategy": "多重利好共振，基本面+情绪双支撑，适合追涨或持有",
+      "suitable_for": "追涨 / 持有",
+      "confidence": "高",
+      "patterns": [],
+      "positive_factors": [
+        "[财报|w3.9] 西部矿业(601168.SH)：2026年中报净利润为41.69亿元、同比较去年同期上涨123.03%",
+        "[财报|w3.32] 西部矿业：2026年上半年净利润41.69亿元 同比增长123.03%",
+        "[财报|w3.32] 实控人拟不低于10亿元增持兆易创新股份；西部矿业上半年归母净利润同比增长123%｜公告精选"
+      ],
+      "negative_factors": [
+        "[财报|w3.32] 归母净利润翻倍却现百亿元投资现金净流出！西部矿业上半年净赚近42亿元背后：铜钼暴涨掩盖非铜产能未达标隐忧"
+      ],
+      "news_count": 21,
+      "news_dropped": 0,
+      "performance": {
+        "list_fetch_ms": 2069,
+        "candidate_filter_ms": 0,
+        "enrichment_ms": 9162,
+        "raw_news_count": 40,
+        "raw_research_count": 10,
+        "candidate_news_count": 21,
+        "candidate_research_count": 0,
+        "enriched_news_count": 20,
+        "enriched_research_count": 0,
+        "candidate_reasons": {
+          "news": {
+            "no-subject-mention": 7,
+            "noise:\\d{1,2}月\\d{1,2}日(快速上涨|快速回调|涨停|": 1,
+            "noise:融资净(买入|卖出)": 1,
+            "dedup": 0,
+            "out_of_window": 10
+          },
+          "research": {
+            "dedup": 0,
+            "out_of_window": 10
+          }
+        },
+        "date_filter_ms": 0,
+        "relevance_ms": 0,
+        "llm_ms": 55258,
+        "scoring_ms": 0
+      },
+      "top_news": [
+        {
+          "date": "2026-07-30 09:07:01",
+          "title": "西部矿业(601168.SH)：2026年中报净利润为41.69亿元、同比较去年同期上涨123.03%",
+          "content": "在东方财富看资讯行情，选东方财富证券一站式开户交易>>\n\n　　2026年7月30日，西部矿业(601168.SH)发布2026年中报。\n\n　　公司营业总收入为394.43亿元，较去年同报告期营业总收入增加78.24亿元，实现4年连续上涨，同比较去年同期上涨24.74%。归母净利润为41.69亿元，较去年同报告期归母净利润增加23.00亿元，实现3年连续上涨，同比较去年同期上涨123.03%。经营活动现金净流入为83.49亿元，较去年同报告期经营活动现金净流入增加33.39亿元，同比较去年同期上涨66.65%。\n\n　　公司最新资产负债率为53.72%，较上季度资产负债率减少4.79个百分点，较去年同期资产负债率减少5.25个百分点。\n\n　　公司最新毛利率为23.91%，较上季度毛利率增加1.31个百分点，实现2个季度连续上涨，较去年同期毛利率增加3.93个百分点。最新ROE为18.60%，较去年同期ROE增加7.34个百分点。\n\n　　公司摊薄每股收益为1.75元，较去年同报告期摊薄每股收益增加0.97元，实现3年连续上涨，同比较去年同期上涨124.36%。\n\n　　公司最新总资产周转率为0.63次，较去年同期总资产周转率增加0.05次，实现4年连续上涨，同比较去年同期上涨8.47%。最新存货周转率为5.61次，较去年同期存货周转率增加0.50次，同比较去年同期上涨9.83%。\n\n　　公司股东户数为14.74万户，前十大股东持股数量为10.71亿股，占总股本比例为44.93%，前十大股东持股情况如下：",
+          "type": "财报",
+          "sentiment": 1,
+          "weight": 4,
+          "final_weight": 3.9,
+          "source_authority": 3,
+          "recency_factor": 1,
+          "source": "东方财富资讯",
+          "llm_reviewed": true,
+          "llm_confidence": 0.95,
+          "llm_is_real_catalyst": true,
+          "llm_reasoning": "中报净利同比+123%，业绩大增"
+        },
+        {
+          "date": "2026-07-30",
+          "title": "西部矿业:西部矿业2026年半年度报告",
+          "content": "",
+          "type": "财报",
+          "sentiment": 0,
+          "weight": 6,
+          "final_weight": 5.85,
+          "source_authority": 4.5,
+          "recency_factor": 1,
+          "source": "东方财富公告",
+          "llm_reviewed": true,
+          "llm_confidence": 0.7,
+          "llm_is_real_catalyst": true,
+          "llm_reasoning": "发布半年度报告，但无具体内容"
+        },
+        {
+          "date": "2026-07-30",
+          "title": "西部矿业:西部矿业董事会战略与可持续发展委员会工作细则",
+          "content": "",
+          "type": "政策",
+          "sentiment": 0,
+          "weight": 1,
+          "final_weight": 1.08,
+          "source_authority": 4.5,
+          "recency_factor": 1,
+          "source": "东方财富公告",
+          "llm_reviewed": true,
+          "llm_confidence": 0.1,
+          "llm_is_real_catalyst": false,
+          "llm_reasoning": "战略委员会细则，无催化"
+        },
+        {
+          "date": "2026-07-30",
+          "title": "西部矿业:西部矿业关于召开2026年第三次临时股东会的通知",
+          "content": "",
+          "type": "政策",
+          "sentiment": 0,
+          "weight": 1,
+          "final_weight": 1.08,
+          "source_authority": 4.5,
+          "recency_factor": 1,
+          "source": "东方财富公告",
+          "llm_reviewed": true,
+          "llm_confidence": 0.1,
+          "llm_is_real_catalyst": false,
+          "llm_reasoning": "召开股东会通知，例行事项"
+        },
+        {
+          "date": "2026-07-30",
+          "title": "西部矿业:独立董事候选人声明与承诺(李计发)",
+          "content": "",
+          "type": "政策",
+          "sentiment": 0,
+          "weight": 1,
+          "final_weight": 1.08,
+          "source_authority": 4.5,
+          "recency_factor": 1,
+          "source": "东方财富公告",
+          "llm_reviewed": true,
+          "llm_confidence": 0.1,
+          "llm_is_real_catalyst": false,
+          "llm_reasoning": "独立董事候选人声明，公司治理"
+        }
+      ]
+    },
+    "SZSE:002415": {
+      "name": "海康威视",
+      "score": 73,
+      "score_raw": 11.92,
+      "score_components": {
+        "positive_weight_sum": 14.84,
+        "negative_weight_sum": 2.92,
+        "news_effective_count": 14,
+        "news_dropped_count": 0
+      },
+      "signal": "🟢 Long (中)",
+      "strategy": "情绪偏多，适合低吸或轻仓参与",
+      "suitable_for": "低吸 / 轻仓追",
+      "confidence": "中",
+      "patterns": [
+        "情绪持续增强↑(trend)"
+      ],
+      "positive_factors": [
+        "[分析师动作|w4.08] 2Q26归母净利润环比增长83.9%，AI大模型应用加速落地",
+        "[并购|w3.02] 海康威视：目前机器人IPO申请在排队中",
+        "[分析师动作|w2.88] 创新收入快速增长，毛利率提升，业绩增长超预期"
+      ],
+      "negative_factors": [
+        "[回购|w1.04] 海康威视：目前公司没有回购计划",
+        "[行业|w1.02] 海康威视：融资净偿还5151.6万元，融资余额48.89亿元",
+        "[行业|w0.86] 海康威视：融资净偿还4.4亿元，融资余额49.41亿元"
+      ],
+      "news_count": 14,
+      "news_dropped": 0,
+      "performance": {
+        "list_fetch_ms": 1750,
+        "candidate_filter_ms": 0,
+        "enrichment_ms": 7217,
+        "raw_news_count": 40,
+        "raw_research_count": 10,
+        "candidate_news_count": 11,
+        "candidate_research_count": 3,
+        "enriched_news_count": 11,
+        "enriched_research_count": 3,
+        "candidate_reasons": {
+          "news": {
+            "no-subject-mention": 15,
+            "noise:融资净(买入|卖出)": 1,
+            "dedup": 0,
+            "out_of_window": 13
+          },
+          "research": {
+            "dedup": 0,
+            "out_of_window": 7
+          }
+        },
+        "date_filter_ms": 0,
+        "relevance_ms": 0,
+        "llm_ms": 41875,
+        "scoring_ms": 0
+      },
+      "top_news": [
+        {
+          "date": "2026-07-29 08:59:19",
+          "title": "海康威视：融资净偿还5151.6万元，融资余额48.89亿元",
+          "content": "炒股第一步，先开个股票账户\n\n交易所最新数据显示，海康威视于2026年7月28日获融资买入4.53亿元，融资偿还5.05亿元，当日融资净偿还5151.6万元。目前，该股融资余额48.89亿，占流通市值比例为1.50%。\n\n该股当日融券卖出2.96万股，融券偿还6.82万股，融券净偿还3.86万股。目前，该股融券余量215.55万股，融券余额7790.03万元。\n\n免责声明：本文基于AI生产，仅供参考，不构成任何投资建议，据此操作风险自担。东方财富发布此内容旨在传播更多信息，与本平台立场无关。东方财富力求但不保证数据的完全准确，如有错漏请以中国证监会指定上市公司信息披露媒体为准，东方财富不对因该资料全部或部分内容而引致的盈亏承担任何责任。用户个人对服务的使用承担风险，东方财富对此不作任何类型的担保。",
+          "type": "行业",
+          "sentiment": -1,
+          "weight": 1,
+          "final_weight": 1.02,
+          "source_authority": 3,
+          "recency_factor": 0.85,
+          "source": "东方财富资讯",
+          "llm_reviewed": true,
+          "llm_confidence": 0.9,
+          "llm_is_real_catalyst": false,
+          "llm_reasoning": "融资净偿还显示短期资金流出，非催化"
+        },
+        {
+          "date": "2026-07-28 19:33:00",
+          "title": "海康威视：目前公司没有回购计划",
+          "content": "",
+          "type": "回购",
+          "sentiment": -1,
+          "weight": 1,
+          "final_weight": 1.04,
+          "source_authority": 3,
+          "recency_factor": 0.72,
+          "source": "东方财富资讯",
+          "llm_reviewed": true,
+          "llm_confidence": 0.9,
+          "llm_is_real_catalyst": false,
+          "llm_reasoning": "明确否认回购计划，打消市场预期"
+        },
+        {
+          "date": "2026-07-28 19:31:00",
+          "title": "海康威视：目前机器人IPO申请在排队中",
+          "content": "",
+          "type": "并购",
+          "sentiment": 1,
+          "weight": 3,
+          "final_weight": 3.02,
+          "source_authority": 3,
+          "recency_factor": 0.72,
+          "source": "东方财富资讯",
+          "llm_reviewed": true,
+          "llm_confidence": 0.8,
+          "llm_is_real_catalyst": true,
+          "llm_reasoning": "机器人IPO申请在排队，分拆进展实质"
+        },
+        {
+          "date": "2026-07-28 09:00:01",
+          "title": "海康威视：融资净偿还4.4亿元，融资余额49.41亿元",
+          "content": "炒股第一步，先开个股票账户\n\n交易所最新数据显示，海康威视于2026年7月27日获融资买入8.08亿元，融资偿还12.47亿元，当日融资净偿还4.4亿元。目前，该股融资余额49.41亿，占流通市值比例为1.48%。\n\n该股当日融券卖出6.92万股，融券偿还8.50万股，融券净偿还1.58万股。目前，该股融券余量219.41万股，融券余额8116.03万元。\n\n免责声明：本文基于AI生产，仅供参考，不构成任何投资建议，据此操作风险自担。东方财富发布此内容旨在传播更多信息，与本平台立场无关。东方财富力求但不保证数据的完全准确，如有错漏请以中国证监会指定上市公司信息披露媒体为准，东方财富不对因该资料全部或部分内容而引致的盈亏承担任何责任。用户个人对服务的使用承担风险，东方财富对此不作任何类型的担保。",
+          "type": "行业",
+          "sentiment": -1,
+          "weight": 1,
+          "final_weight": 0.86,
+          "source_authority": 3,
+          "recency_factor": 0.72,
+          "source": "东方财富资讯",
+          "llm_reviewed": true,
+          "llm_confidence": 0.9,
+          "llm_is_real_catalyst": false,
+          "llm_reasoning": "大额融资净偿还，资金加速流出"
+        },
+        {
+          "date": "2026-07-25",
+          "title": "海康威视:2026年7月25日投资者关系活动记录表",
+          "content": "许可项目:Ⅱ、Ⅲ类射线装置生产;Ⅱ、Ⅲ类射线装置销售;放射性同位素生产(除正电子发射计算机断层扫描用放射性药物);Ⅱ、Ⅲ、Ⅳ、Ⅴ类放射源销售;建设工程施工;第二类增值电信业务;在线数据处理与交易处理业务(经营类电子商务);互联网信息服务;通用航空服务(依法须经批准的项目,经相关部门批准后方可开展经营活动,具体经营项目以审批结果为准)。一般项目:数字视频监控系统制造;数字视频监控系统销售;安防设备制造;安防设备销售;物联网设备制造;物联网设备销售;智能无人飞行器制造;智能无人飞行器销售;计算机软硬件及外围设备制造;计算机软硬件及辅助设备批发;通信设备制造;通信设备销售;网络设备制造;网络设备销售;显示器件制造;显示器件销售;仪器仪表制造;仪器仪表销售;智能仪器仪表制造;智能仪器仪表销售;智能车载设备制造;智能车载设备销售;汽车零部件及配件制造;汽车零配件批发;电气信号设备装置制造;电气信号设备装置销售;机械电气设备制造;机械电气设备销售;特种劳动防护用品生产;特种劳动防护用品销售;商用密码产品生产;电子产品销售;数字文化创意技术装备销售;充电桩销售;第二类医疗器械销售;软件开发;网络与信息安全软件开发;软件销售;信息系统集成服务;计算机系统服务;物联网技术研发;物联网技术服务;物联网应用服务;大数据服务;数据处理和存储支持服务;安全系统监控服务;安全技术防范系统设计施工服务;环境保护监测;集中式快速充电站;停车场服务;电子、机械设备维护(不含特种设备);通用设备修理;仪器仪表修理;数字文化创意内容应用服务;健康咨询服务(不含诊疗服务);市场营销策划;技术服务、技术开发、技术咨询、技术交流、技术转让、技术推广;业务培训(不含教育培训、职业技能培训等需取得许可的培训);货物进出口;技术进出口(除依法须经批准的项目外,凭营业执照依法自主开展经营活动)。(以公司登记机关核定的经营范围为准)。\n郑重声明：东方财富网发布此信息的目的在于传播更多信息，与本站立场无关。东方财富网不保证该信息（包括但不限于文字、视频、音频、数据及图表）全部或者部分内容的准确性、真实性、完整性、有效性、及时性、原创性等。相关信息并未经过本网站证实，不对您构成任何投资建议，据此操作，风险自担。",
+          "type": "行业",
+          "sentiment": 0,
+          "weight": 1,
+          "final_weight": 0.76,
+          "source_authority": 4.5,
+          "recency_factor": 0.42,
+          "source": "东方财富公告",
+          "llm_reviewed": true,
+          "llm_confidence": 0.5,
+          "llm_is_real_catalyst": false,
+          "llm_reasoning": "投资者关系记录例行活动，无实质催化"
+        }
+      ]
+    },
+    "SZSE:002371": {
+      "name": "北方华创",
+      "score": 56,
+      "score_raw": 1.66,
+      "score_components": {
+        "positive_weight_sum": 7.16,
+        "negative_weight_sum": 5.5,
+        "news_effective_count": 13,
+        "news_dropped_count": 0
+      },
+      "signal": "⚪ No Trade (微多)",
+      "strategy": "情绪轻微偏多，信号不足，以观望为主",
+      "suitable_for": "观望",
+      "confidence": "低",
+      "patterns": [],
+      "positive_factors": [
+        "[回购|w3.89] 北方华创:2026年员工持股计划第一次持有人会议决议公告",
+        "[回购|w2.16] 北方华创:关于2022年股票期权激励计划首次授予部分第三个行权期采用自主行权模式的提示性公告",
+        "[行业|w0.6] 北方华创7月30日快速反弹"
+      ],
+      "negative_factors": [
+        "[回购|w2.27] 北方华创:关于2022年股票期权激励计划部分股票期权注销完成的公告",
+        "[行业|w0.6] 北方华创7月30日盘中跌幅达5%",
+        "[行业|w0.6] 北方华创：融资净偿还3.1亿元，融资余额33.6亿元"
+      ],
+      "news_count": 13,
+      "news_dropped": 0,
+      "performance": {
+        "list_fetch_ms": 1848,
+        "candidate_filter_ms": 0,
+        "enrichment_ms": 12861,
+        "raw_news_count": 40,
+        "raw_research_count": 10,
+        "candidate_news_count": 13,
+        "candidate_research_count": 0,
+        "enriched_news_count": 13,
+        "enriched_research_count": 0,
+        "candidate_reasons": {
+          "news": {
+            "no-subject-mention": 9,
+            "noise:融资净(买入|卖出)": 1,
+            "dedup": 0,
+            "out_of_window": 17
+          },
+          "research": {
+            "dedup": 0,
+            "out_of_window": 10
+          }
+        },
+        "date_filter_ms": 0,
+        "relevance_ms": 0,
+        "llm_ms": 29928,
+        "scoring_ms": 0
+      },
+      "top_news": [
+        {
+          "date": "2026-07-30 13:22:17",
+          "title": "北方华创7月30日快速反弹",
+          "content": "",
+          "type": "行业",
+          "sentiment": 1,
+          "weight": 1,
+          "final_weight": 0.6,
+          "source_authority": 3,
+          "recency_factor": 1,
+          "source": "东方财富资讯",
+          "llm_reviewed": true,
+          "llm_confidence": 0.2,
+          "llm_is_real_catalyst": false,
+          "llm_reasoning": "盘中快速反弹，无实质催化剂"
+        },
+        {
+          "date": "2026-07-30 10:56:44",
+          "title": "北方华创7月30日盘中跌幅达5%",
+          "content": "以下是北方华创在北京时间7月30日10:56分盘口异动快照：\n\n　　在东方财富看资讯行情，选东方财富证券一站式开户交易>>\n\n分笔\n\n10:56:33 671.01 11↓\n10:56:30 671.20 21↑\n10:56:27 671.15 13↓\n10:56:24 672.04 12↑\n10:56:21 671.48 7↓\n \n10:56:18 672.67 18↑\n10:56:15 672.07 52↓\n10:56:12 672.12 30↑\n10:56:09 672.08 18↑\n10:56:06 672.08 42↑\n \n报价\n\n卖五 \n\n671.98\n\n 1\n卖四 \n\n671.92\n\n 1\n卖三 \n\n671.84\n\n 1\n卖二 \n\n671.2\n\n 19\n卖一 \n\n671.19\n\n 1\n\n买一 \n\n671.01\n\n 3\n买二 \n\n671\n\n 4\n买三 \n\n670.98\n\n 1\n买四 \n\n670.81\n\n 1\n买五 \n\n670.8\n\n 4\n\n最新：671.01\n涨幅：-5.01%\n涨跌：-35.38\n换手率：0.96%\n成交量：6.96万手\n成交额：48.23亿元\n主力净流入：\n-1.64亿元\n\n  7月30日，北方华创盘中跌幅达5%，截至10点56分，报671.01元，成交48.23亿元，换手率0.96%。\n注：以上信息仅供参考，不对您构成任何投资建议。",
+          "type": "行业",
+          "sentiment": -1,
+          "weight": 1,
+          "final_weight": 0.6,
+          "source_authority": 3,
+          "recency_factor": 1,
+          "source": "东方财富资讯",
+          "llm_reviewed": true,
+          "llm_confidence": 0.2,
+          "llm_is_real_catalyst": false,
+          "llm_reasoning": "盘中跌5%，无基本面信息"
+        },
+        {
+          "date": "2026-07-30 09:03:58",
+          "title": "北方华创：融资净偿还3.1亿元，融资余额33.6亿元",
+          "content": "专业金融数据，下一代智能终端\n\n交易所最新数据显示，北方华创于2026年7月29日获融资买入5.56亿元，融资偿还8.65亿元，当日融资净偿还3.1亿元。目前，该股融资余额33.60亿，占流通市值比例为0.66%。\n\n该股当日融券卖出1300股，融券偿还7800股，融券净偿还6500股。目前，该股融券余量7.93万股，融券余额5601.67万元。\n\n免责声明：本文基于AI生产，仅供参考，不构成任何投资建议，据此操作风险自担。东方财富发布此内容旨在传播更多信息，与本平台立场无关。东方财富力求但不保证数据的完全准确，如有错漏请以中国证监会指定上市公司信息披露媒体为准，东方财富不对因该资料全部或部分内容而引致的盈亏承担任何责任。用户个人对服务的使用承担风险，东方财富对此不作任何类型的担保。",
+          "type": "行业",
+          "sentiment": -1,
+          "weight": 1,
+          "final_weight": 0.6,
+          "source_authority": 3,
+          "recency_factor": 1,
+          "source": "东方财富资讯",
+          "llm_reviewed": true,
+          "llm_confidence": 0.3,
+          "llm_is_real_catalyst": false,
+          "llm_reasoning": "融资净偿还3.1亿，资金流出"
+        },
+        {
+          "date": "2026-07-30",
+          "title": "北方华创:关于2022年股票期权激励计划首次授予部分第三个行权期采用自主行权模式的提示性公告",
+          "content": "许可经营项目:组装生产集成电路设备、光伏设备、TFT设备、真空设备、锂离子电池设备、流量计、电子元器件;一般经营项目:销售集成电路设备、光伏设备、TFT设备、真空设备、锂离子电池设备、流量计、电子元器件;技术咨询;技术开发;技术转让;经济贸易咨询;投资及投资管理;货物进出口;技术及出口;代理进出口。\n郑重声明：东方财富网发布此信息的目的在于传播更多信息，与本站立场无关。东方财富网不保证该信息（包括但不限于文字、视频、音频、数据及图表）全部或者部分内容的准确性、真实性、完整性、有效性、及时性、原创性等。相关信息并未经过本网站证实，不对您构成任何投资建议，据此操作，风险自担。",
+          "type": "回购",
+          "sentiment": 1,
+          "weight": 2,
+          "final_weight": 2.16,
+          "source_authority": 4.5,
+          "recency_factor": 1,
+          "source": "东方财富公告",
+          "llm_reviewed": true,
+          "llm_confidence": 0.7,
+          "llm_is_real_catalyst": false,
+          "llm_reasoning": "股权激励行权提示，落实激励计划"
+        },
+        {
+          "date": "2026-07-29 15:56:00",
+          "title": "北方华创成交额超100亿元",
+          "content": "",
+          "type": "行业",
+          "sentiment": 0,
+          "weight": 1,
+          "final_weight": 0.51,
+          "source_authority": 3,
+          "recency_factor": 0.85,
+          "source": "东方财富资讯",
+          "llm_reviewed": true,
+          "llm_confidence": 0.1,
+          "llm_is_real_catalyst": false,
+          "llm_reasoning": "成交额超百亿，无方向性信息"
+        }
+      ]
+    },
+    "SZSE:301165": {
+      "name": "锐捷网络",
+      "score": 47,
+      "score_raw": -0.78,
+      "score_components": {
+        "positive_weight_sum": 6.1,
+        "negative_weight_sum": 6.88,
+        "news_effective_count": 12,
+        "news_dropped_count": 0
+      },
+      "signal": "⚪ No Trade (中性)",
+      "strategy": "情绪中性，无明显方向，观望",
+      "suitable_for": "观望",
+      "confidence": "低",
+      "patterns": [],
+      "positive_factors": [
+        "[并购|w3.02] 奥飞数据与锐捷网络达成战略合作",
+        "[行业|w1.2] 锐捷网络7月30日快速反弹",
+        "[行业|w1.02] 锐捷网络7月29日快速反弹"
+      ],
+      "negative_factors": [
+        "[行业|w1.2] 锐捷网络7月30日加速下跌",
+        "[行业|w1.2] 锐捷网络：融资净偿还1.08亿元，融资余额7.28亿元",
+        "[行业|w1.02] 锐捷网络7月29日盘中跌幅达5%"
+      ],
+      "news_count": 12,
+      "news_dropped": 0,
+      "performance": {
+        "list_fetch_ms": 2129,
+        "candidate_filter_ms": 0,
+        "enrichment_ms": 20143,
+        "raw_news_count": 40,
+        "raw_research_count": 10,
+        "candidate_news_count": 12,
+        "candidate_research_count": 0,
+        "enriched_news_count": 12,
+        "enriched_research_count": 0,
+        "candidate_reasons": {
+          "news": {
+            "noise:\\d{1,2}月\\d{1,2}日(快速上涨|快速回调|涨停|": 2,
+            "no-subject-mention": 5,
+            "noise:融资净(买入|卖出)": 1,
+            "dedup": 0,
+            "out_of_window": 20
+          },
+          "research": {
+            "dedup": 0,
+            "out_of_window": 10
+          }
+        },
+        "date_filter_ms": 0,
+        "relevance_ms": 0,
+        "llm_ms": 51223,
+        "scoring_ms": 0
+      },
+      "top_news": [
+        {
+          "date": "2026-07-30 10:23:36",
+          "title": "锐捷网络7月30日加速下跌",
+          "content": "以下是锐捷网络在北京时间7月30日10:23分盘口异动快照：\n\n　　在东方财富看资讯行情，选东方财富证券一站式开户交易>>\n\n \n\n  7月30日，锐捷网络盘中加速下跌，5分钟内跌幅超过2%，截至10点23分，报102.85元，成交14.08亿元，换手率1.19%。\n注：以上信息仅供参考，不对您构成任何投资建议。",
+          "type": "行业",
+          "sentiment": -1,
+          "weight": 1,
+          "final_weight": 1.2,
+          "source_authority": 3,
+          "recency_factor": 1,
+          "source": "东方财富资讯",
+          "llm_reviewed": true,
+          "llm_confidence": 0.6,
+          "llm_is_real_catalyst": false,
+          "llm_reasoning": "盘中加速下跌，5分钟跌超2%"
+        },
+        {
+          "date": "2026-07-30 10:01:19",
+          "title": "锐捷网络7月30日快速反弹",
+          "content": "",
+          "type": "行业",
+          "sentiment": 1,
+          "weight": 1,
+          "final_weight": 1.2,
+          "source_authority": 3,
+          "recency_factor": 1,
+          "source": "东方财富资讯",
+          "llm_reviewed": true,
+          "llm_confidence": 0.5,
+          "llm_is_real_catalyst": false,
+          "llm_reasoning": "盘中快速反弹，无具体内容"
+        },
+        {
+          "date": "2026-07-30 09:19:01",
+          "title": "锐捷网络：融资净偿还1.08亿元，融资余额7.28亿元",
+          "content": "全新妙想投研助理，立即体验\n\n交易所最新数据显示，锐捷网络于2026年7月29日获融资买入2.41亿元，融资偿还3.49亿元，当日融资净偿还1.08亿元。目前，该股融资余额7.28亿，占流通市值比例为0.62%。\n\n该股当日融券卖出1100股，融券偿还1900股，融券净偿还800股。目前，该股融券余量4.3万股，融券余额451.29万元。\n\n免责声明：本文基于AI生产，仅供参考，不构成任何投资建议，据此操作风险自担。东方财富发布此内容旨在传播更多信息，与本平台立场无关。东方财富力求但不保证数据的完全准确，如有错漏请以中国证监会指定上市公司信息披露媒体为准，东方财富不对因该资料全部或部分内容而引致的盈亏承担任何责任。用户个人对服务的使用承担风险，东方财富对此不作任何类型的担保。",
+          "type": "行业",
+          "sentiment": -1,
+          "weight": 1,
+          "final_weight": 1.2,
+          "source_authority": 3,
+          "recency_factor": 1,
+          "source": "东方财富资讯",
+          "llm_reviewed": true,
+          "llm_confidence": 0.7,
+          "llm_is_real_catalyst": false,
+          "llm_reasoning": "融资净偿还1.08亿，余额7.28亿"
+        },
+        {
+          "date": "2026-07-29 09:55:01",
+          "title": "锐捷网络7月29日盘中跌幅达5%",
+          "content": "",
+          "type": "行业",
+          "sentiment": -1,
+          "weight": 1,
+          "final_weight": 1.02,
+          "source_authority": 3,
+          "recency_factor": 0.85,
+          "source": "东方财富资讯",
+          "llm_reviewed": true,
+          "llm_confidence": 0.5,
+          "llm_is_real_catalyst": false,
+          "llm_reasoning": "盘中跌幅达5%，无正文"
+        },
+        {
+          "date": "2026-07-29 09:54:32",
+          "title": "锐捷网络7月29日加速下跌",
+          "content": "以下是锐捷网络在北京时间7月29日09:42分盘口异动快照：\n\n　　在东方财富看资讯行情，选东方财富证券一站式开户交易>>\n\n \n\n  7月29日，锐捷网络盘中加速下跌，5分钟内跌幅超过2%，截至9点42分，报109.73元，成交8.27亿元，换手率0.67%。\n注：以上信息仅供参考，不对您构成任何投资建议。",
+          "type": "行业",
+          "sentiment": -1,
+          "weight": 1,
+          "final_weight": 1.02,
+          "source_authority": 3,
+          "recency_factor": 0.85,
+          "source": "东方财富资讯",
+          "llm_reviewed": true,
+          "llm_confidence": 0.6,
+          "llm_is_real_catalyst": false,
+          "llm_reasoning": "加速下跌，5分钟跌超2%"
+        }
+      ]
+    },
+    "SSE:603129": {
+      "name": "春风动力",
+      "score": 47,
+      "score_raw": -0.61,
+      "score_components": {
+        "positive_weight_sum": 2.27,
+        "negative_weight_sum": 2.88,
+        "news_effective_count": 10,
+        "news_dropped_count": 0
+      },
+      "signal": "⚪ No Trade (中性)",
+      "strategy": "情绪中性，无明显方向，观望",
+      "suitable_for": "观望",
+      "confidence": "低",
+      "patterns": [],
+      "positive_factors": [
+        "[回购|w2.27] 春风动力:春风动力关于2026年员工持股计划的进展公告"
+      ],
+      "negative_factors": [
+        "[行业|w1.02] 春风动力：融资净偿还1327.11万元，融资余额7379.72万元",
+        "[行业|w0.86] 春风动力：融资净偿还288.63万元，融资余额8706.83万元",
+        "[行业|w0.5] 春风动力：融资净偿还3103.56万元，融资余额8995.46万元"
+      ],
+      "news_count": 10,
+      "news_dropped": 0,
+      "performance": {
+        "list_fetch_ms": 6116,
+        "candidate_filter_ms": 0,
+        "enrichment_ms": 17740,
+        "raw_news_count": 40,
+        "raw_research_count": 10,
+        "candidate_news_count": 10,
+        "candidate_research_count": 0,
+        "enriched_news_count": 10,
+        "enriched_research_count": 0,
+        "candidate_reasons": {
+          "news": {
+            "noise:\\d{1,2}月\\d{1,2}日(快速上涨|快速回调|涨停|": 4,
+            "noise:融资净(买入|卖出)": 1,
+            "noise:开盘价|收盘价": 1,
+            "no-subject-mention": 2,
+            "dedup": 0,
+            "out_of_window": 22
+          },
+          "research": {
+            "dedup": 0,
+            "out_of_window": 10
+          }
+        },
+        "date_filter_ms": 0,
+        "relevance_ms": 0,
+        "llm_ms": 51194,
+        "scoring_ms": 0
+      },
+      "top_news": [
+        {
+          "date": "2026-07-30 09:57:43",
+          "title": "春风动力7月30日快速反弹",
+          "content": "",
+          "type": "行业",
+          "sentiment": 0,
+          "weight": 1,
+          "final_weight": 0.6,
+          "source_authority": 3,
+          "recency_factor": 1,
+          "source": "东方财富资讯",
+          "llm_reviewed": true,
+          "llm_confidence": 0.1,
+          "llm_is_real_catalyst": false,
+          "llm_reasoning": "盘面反弹，无实质内容"
+        },
+        {
+          "date": "2026-07-29 09:50:47",
+          "title": "春风动力7月29日快速反弹",
+          "content": "以下是春风动力在北京时间7月29日09:39分盘口异动快照：\n\n　　在东方财富看资讯行情，选东方财富证券一站式开户交易>>\n\n \n\n  7月29日，春风动力盘中快速反弹，5分钟内涨幅超过2%，截至9点39分，报301.56元，成交5972.77万元，换手率0.13%。\n注：以上信息仅供参考，不对您构成任何投资建议。",
+          "type": "行业",
+          "sentiment": 0,
+          "weight": 1,
+          "final_weight": 0.51,
+          "source_authority": 3,
+          "recency_factor": 0.85,
+          "source": "东方财富资讯",
+          "llm_reviewed": true,
+          "llm_confidence": 0.1,
+          "llm_is_real_catalyst": false,
+          "llm_reasoning": "盘中异动，5分钟涨超2%"
+        },
+        {
+          "date": "2026-07-29 07:35:30",
+          "title": "春风动力：融资净偿还1327.11万元，融资余额7379.72万元",
+          "content": "专业金融数据，下一代智能终端\n\n交易所最新数据显示，春风动力于2026年7月28日获融资买入1967.53万元，融资偿还3294.64万元，当日融资净偿还1327.11万元。目前，该股融资余额7379.72万，占流通市值比例为0.16%。\n\n该股当日融券卖出7900股，融券偿还3000股，融券净卖出4900股。目前，该股融券余量6.78万股，融券余额2037.05万元。\n\n免责声明：本文基于AI生产，仅供参考，不构成任何投资建议，据此操作风险自担。东方财富发布此内容旨在传播更多信息，与本平台立场无关。东方财富力求但不保证数据的完全准确，如有错漏请以中国证监会指定上市公司信息披露媒体为准，东方财富不对因该资料全部或部分内容而引致的盈亏承担任何责任。用户个人对服务的使用承担风险，东方财富对此不作任何类型的担保。",
+          "type": "行业",
+          "sentiment": -1,
+          "weight": 1,
+          "final_weight": 1.02,
+          "source_authority": 3,
+          "recency_factor": 0.85,
+          "source": "东方财富资讯",
+          "llm_reviewed": true,
+          "llm_confidence": 0.6,
+          "llm_is_real_catalyst": false,
+          "llm_reasoning": "融资净偿还，资金流出"
+        },
+        {
+          "date": "2026-07-28 09:38:15",
+          "title": "春风动力7月28日快速反弹",
+          "content": "以下是春风动力在北京时间7月28日09:35分盘口异动快照：\n\n　　全新妙想投研助理，立即体验\n\n分笔\n\n09:35:04 291.14 2↓\n09:35:02 291.15 17↑\n09:34:59 291.15 7↑\n09:34:56 291.15 14↓\n09:34:52 291.39 14↓\n \n09:34:49 291.39 6↑\n09:34:46 291.25 20↑\n09:34:44 290.89 5↑\n09:34:41 289.99 37↑\n09:34:38 289.63 17↑\n \n报价\n\n卖五 \n\n291.77\n\n 1\n卖四 \n\n291.39\n\n 3\n卖三 \n\n291.15\n\n 2\n卖二 \n\n291.14\n\n 4\n卖一 \n\n291.13\n\n 1\n\n买一 \n\n290.3\n\n 2\n买二 \n\n290.26\n\n 1\n买三 \n\n290.25\n\n 1\n买四 \n\n290.24\n\n 2\n买五 \n\n289.75\n\n 1\n\n最新：291.14\n涨幅：-1.28%\n涨跌：-3.76\n换手率：0.11%\n成交量：1623.03手\n成交额：4656.05万元\n主力净流入：\n334.32万元\n\n  7月28日，春风动力盘中快速反弹，5分钟内涨幅超过2%，截至9点35分，报291.14元，成交4656.05万元，换手率0.11%。\n注：以上信息仅供参考，不对您构成任何投资建议。",
+          "type": "行业",
+          "sentiment": 0,
+          "weight": 1,
+          "final_weight": 0.5,
+          "source_authority": 3,
+          "recency_factor": 0.72,
+          "source": "东方财富资讯",
+          "llm_reviewed": true,
+          "llm_confidence": 0.1,
+          "llm_is_real_catalyst": false,
+          "llm_reasoning": "盘中快速反弹，无实质催化"
+        },
+        {
+          "date": "2026-07-28 07:39:53",
+          "title": "春风动力：融资净偿还288.63万元，融资余额8706.83万元",
+          "content": "全新妙想投研助理，立即体验\n\n交易所最新数据显示，春风动力于2026年7月27日获融资买入2359.10万元，融资偿还2647.73万元，当日融资净偿还288.63万元。目前，该股融资余额8706.83万，占流通市值比例为0.19%。\n\n该股当日融券卖出8600股，融券偿还2500股，融券净卖出6100股。目前，该股融券余量6.29万股，融券余额1854.92万元。\n\n免责声明：本文基于AI生产，仅供参考，不构成任何投资建议，据此操作风险自担。东方财富发布此内容旨在传播更多信息，与本平台立场无关。东方财富力求但不保证数据的完全准确，如有错漏请以中国证监会指定上市公司信息披露媒体为准，东方财富不对因该资料全部或部分内容而引致的盈亏承担任何责任。用户个人对服务的使用承担风险，东方财富对此不作任何类型的担保。",
+          "type": "行业",
+          "sentiment": -1,
+          "weight": 1,
+          "final_weight": 0.86,
+          "source_authority": 3,
+          "recency_factor": 0.72,
+          "source": "东方财富资讯",
+          "llm_reviewed": true,
+          "llm_confidence": 0.6,
+          "llm_is_real_catalyst": false,
+          "llm_reasoning": "融资净偿还，资金流出"
+        }
+      ]
+    },
+    "SZSE:300458": {
+      "name": "全志科技",
+      "score": 42,
+      "score_raw": -1.97,
+      "score_components": {
+        "positive_weight_sum": 2.11,
+        "negative_weight_sum": 4.08,
+        "news_effective_count": 10,
+        "news_dropped_count": 0
+      },
+      "signal": "⚪ No Trade (中性)",
+      "strategy": "情绪中性，无明显方向，观望",
+      "suitable_for": "观望",
+      "confidence": "低",
+      "patterns": [
+        "⚠️连续空头压制(3日)"
+      ],
+      "positive_factors": [
+        "[行业|w0.6] 全志科技7月30日快速反弹",
+        "[行业|w0.51] 全志科技7月29日盘中涨幅达5%",
+        "[行业|w0.5] 全志科技7月28日快速反弹"
+      ],
+      "negative_factors": [
+        "[行业|w1.02] 全志科技：融资净偿还3029.94万元，融资余额16.09亿元",
+        "[行业|w0.86] 全志科技：融资净偿还3396.74万元，融资余额16.39亿元",
+        "[行业|w0.6] 全志科技7月30日加速下跌"
+      ],
+      "news_count": 10,
+      "news_dropped": 0,
+      "performance": {
+        "list_fetch_ms": 1583,
+        "candidate_filter_ms": 1,
+        "enrichment_ms": 7408,
+        "raw_news_count": 40,
+        "raw_research_count": 10,
+        "candidate_news_count": 10,
+        "candidate_research_count": 0,
+        "enriched_news_count": 10,
+        "enriched_research_count": 0,
+        "candidate_reasons": {
+          "news": {
+            "no-subject-mention": 4,
+            "noise:融资净(买入|卖出)": 2,
+            "noise:\\d{1,2}月\\d{1,2}日(快速上涨|快速回调|涨停|": 4,
+            "dedup": 0,
+            "out_of_window": 20
+          },
+          "research": {
+            "dedup": 0,
+            "out_of_window": 10
+          }
+        },
+        "date_filter_ms": 0,
+        "relevance_ms": 0,
+        "llm_ms": 59838,
+        "scoring_ms": 0
+      },
+      "top_news": [
+        {
+          "date": "2026-07-30 10:01:27",
+          "title": "全志科技7月30日快速反弹",
+          "content": "",
+          "type": "行业",
+          "sentiment": 1,
+          "weight": 1,
+          "final_weight": 0.6,
+          "source_authority": 3,
+          "recency_factor": 1,
+          "source": "东方财富资讯",
+          "llm_reviewed": true,
+          "llm_confidence": 0.3,
+          "llm_is_real_catalyst": false,
+          "llm_reasoning": "单纯价格反弹描述"
+        },
+        {
+          "date": "2026-07-30 09:37:54",
+          "title": "全志科技7月30日加速下跌",
+          "content": "",
+          "type": "行业",
+          "sentiment": -1,
+          "weight": 1,
+          "final_weight": 0.6,
+          "source_authority": 3,
+          "recency_factor": 1,
+          "source": "东方财富资讯",
+          "llm_reviewed": true,
+          "llm_confidence": 0.3,
+          "llm_is_real_catalyst": false,
+          "llm_reasoning": "加速下跌无实质事件"
+        },
+        {
+          "date": "2026-07-30 09:35:28",
+          "title": "全志科技7月30日盘中跌幅达5%",
+          "content": "",
+          "type": "行业",
+          "sentiment": -1,
+          "weight": 1,
+          "final_weight": 0.6,
+          "source_authority": 3,
+          "recency_factor": 1,
+          "source": "东方财富资讯",
+          "llm_reviewed": true,
+          "llm_confidence": 0.4,
+          "llm_is_real_catalyst": false,
+          "llm_reasoning": "盘中跌5%无实际催化剂"
+        },
+        {
+          "date": "2026-07-29 09:39:01",
+          "title": "全志科技7月29日盘中涨幅达5%",
+          "content": "",
+          "type": "行业",
+          "sentiment": 1,
+          "weight": 1,
+          "final_weight": 0.51,
+          "source_authority": 3,
+          "recency_factor": 0.85,
+          "source": "东方财富资讯",
+          "llm_reviewed": true,
+          "llm_confidence": 0.4,
+          "llm_is_real_catalyst": false,
+          "llm_reasoning": "盘中涨幅5%无实际事件"
+        },
+        {
+          "date": "2026-07-29 08:58:18",
+          "title": "全志科技：融资净偿还3029.94万元，融资余额16.09亿元",
+          "content": "全新妙想投研助理，立即体验\n\n交易所最新数据显示，全志科技于2026年7月28日获融资买入2.73亿元，融资偿还3.04亿元，当日融资净偿还3029.94万元。目前，该股融资余额16.09亿，占流通市值比例为5.03%。\n\n该股当日融券卖出2.51万股，融券偿还4400股，融券净卖出2.07万股。目前，该股融券余量53.92万股，融券余额2119.74万元。\n\n免责声明：本文基于AI生产，仅供参考，不构成任何投资建议，据此操作风险自担。东方财富发布此内容旨在传播更多信息，与本平台立场无关。东方财富力求但不保证数据的完全准确，如有错漏请以中国证监会指定上市公司信息披露媒体为准，东方财富不对因该资料全部或部分内容而引致的盈亏承担任何责任。用户个人对服务的使用承担风险，东方财富对此不作任何类型的担保。",
+          "type": "行业",
+          "sentiment": -1,
+          "weight": 1,
+          "final_weight": 1.02,
+          "source_authority": 3,
+          "recency_factor": 0.85,
+          "source": "东方财富资讯",
+          "llm_reviewed": true,
+          "llm_confidence": 0.6,
+          "llm_is_real_catalyst": false,
+          "llm_reasoning": "融资净偿还3029万，资金流出"
+        }
+      ]
+    }
+  }
+}

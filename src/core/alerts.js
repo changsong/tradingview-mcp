@@ -1,70 +1,215 @@
 /**
  * Core alert logic.
- *
- * Alerts are created / listed / deleted through TradingView's pricealerts REST API
- * (https://pricealerts.tradingview.com) using the desktop app's authenticated session.
- * Requests are sent as text/plain so the browser does not issue a CORS preflight that
- * the endpoint rejects. The create/delete bodies must be wrapped in a `payload` object.
  */
-import { evaluate, evaluateAsync, safeString, requireFinite } from '../connection.js';
+import { evaluate, evaluateAsync, getClient, safeString, requireFinite } from '../connection.js';
+import { setSymbol as setChartSymbol } from './chart.js';
 
-// Map the tool's friendly condition names to TradingView's alert condition types.
-const CONDITION_TYPE_MAP = {
-  crossing: 'cross', cross: 'cross',
-  greater_than: 'greater', greater: 'greater', above: 'greater', '>': 'greater',
-  less_than: 'less', less: 'less', below: 'less', '<': 'less',
-};
+const sleep = (ms) => new Promise((r) => setTimeout(r, ms));
 
-export async function create({ condition, price, message }) {
-  const p = requireFinite(price, 'price');
-  const condType = CONDITION_TYPE_MAP[String(condition || 'crossing').trim().toLowerCase()] || 'cross';
+async function waitFor(predicateExpr, timeoutMs = 5000, intervalMs = 200) {
+  const deadline = Date.now() + timeoutMs;
+  while (Date.now() < deadline) {
+    const ok = await evaluate(`(function(){ try { return !!(${predicateExpr}); } catch(e){ return false; } })()`);
+    if (ok) return true;
+    await sleep(intervalMs);
+  }
+  return false;
+}
 
-  return evaluate(`
+const PRICE_INPUT_FINDER = `
+  (function() {
+    var inputs = document.querySelectorAll('input[type="text"], input[type="number"]');
+    for (var i = 0; i < inputs.length; i++) {
+      var el = inputs[i];
+      if (el.offsetParent === null) continue;
+      var ph = el.placeholder || '';
+      if (/查找|search|find/i.test(ph)) continue;
+      var v = (el.value || '').trim();
+      if (/^-?\\d+(\\.\\d+)?$/.test(v)) return el;
+    }
+    return null;
+  })()
+`;
+
+async function sendEscape() {
+  const c = await getClient();
+  await c.Input.dispatchKeyEvent({ type: 'keyDown', key: 'Escape', code: 'Escape', windowsVirtualKeyCode: 27 });
+  await c.Input.dispatchKeyEvent({ type: 'keyUp', key: 'Escape', code: 'Escape', windowsVirtualKeyCode: 27 });
+}
+
+export async function create({ symbol, price, condition = 'crossing', message } = {}) {
+  const validPrice = requireFinite(price, 'price');
+  if (condition !== 'crossing') {
+    throw new Error(`Unsupported condition: ${condition}. Only "crossing" is supported.`);
+  }
+
+  if (symbol) {
+    await setChartSymbol({ symbol });
+    await sleep(300);
+  }
+
+  const resolvedSymbol = await evaluate(`
     (function() {
-      try {
-        var ms = window.TradingViewApi._activeChartWidgetWV.value()._chartWidget.model().mainSeries();
-        var sym = (ms.proSymbol && ms.proSymbol()) || (ms.symbol && ms.symbol());
-        if (!sym) return { success: false, error: 'Could not read current chart symbol from TradingView' };
-        var price = ${JSON.stringify(p)};
-        var condType = ${safeString(condType)};
-        var msg = ${safeString(message || '')};
-        if (!msg) {
-          var verb = condType === 'greater' ? 'above' : (condType === 'less' ? 'below' : 'crossing');
-          msg = sym.split(':').pop() + ' ' + verb + ' ' + price;
+      try { return window.TradingViewApi._activeChartWidgetWV.value().symbol(); }
+      catch(e) { return null; }
+    })()
+  `);
+
+  const dialogAlreadyOpen = await evaluate(`!!(${PRICE_INPUT_FINDER})`);
+  if (dialogAlreadyOpen) {
+    await sendEscape();
+    await sleep(300);
+  }
+
+  const widgetbarVisible = await evaluate(`
+    (function() {
+      var w = document.querySelector('.widgetbar-widget-alerts');
+      return !!(w && w.offsetParent);
+    })()
+  `);
+  if (!widgetbarVisible) {
+    const opened = await evaluate(`
+      (function() {
+        var btn = document.querySelector('[data-name="alerts"]');
+        if (!btn) return false;
+        btn.click();
+        return true;
+      })()
+    `);
+    if (!opened) throw new Error('Could not find right-toolbar alerts button [data-name="alerts"]');
+    const appeared = await waitFor(`(function(){ var w = document.querySelector('.widgetbar-widget-alerts'); return w && w.offsetParent; })()`, 3000);
+    if (!appeared) throw new Error('Alerts widgetbar did not open within 3s');
+  }
+
+  const createBtnClicked = await evaluate(`
+    (function() {
+      var widget = document.querySelector('.widgetbar-widget-alerts');
+      if (!widget) return { ok: false, reason: 'widget_missing' };
+      var els = widget.querySelectorAll('[title]');
+      for (var i = 0; i < els.length; i++) {
+        var t = els[i].getAttribute('title') || '';
+        if (t === 'Create Alert' || t === '创建警报') {
+          els[i].click();
+          return { ok: true, title: t };
         }
-        var cond = { type: condType, frequency: 'on_first_fire', series: [{ type: 'barset' }, { type: 'value', value: price }], resolution: '1' };
-        var payload = {
-          conditions: [cond],
-          symbol: '={"symbol":"' + sym + '"}',
-          resolution: '1',
-          message: msg,
-          sound_file: 'alert/fired', sound_duration: 0,
-          popup: true, auto_deactivate: true,
-          email: false, sms_over_email: false, mobile_push: true,
-          web_hook: null, name: null,
-          expiration: new Date(Date.now() + 30 * 24 * 3600 * 1000).toISOString(),
-          active: true, ignore_warnings: true
-        };
-        var x = new XMLHttpRequest();
-        x.open('POST', 'https://pricealerts.tradingview.com/create_alert', false);
-        x.withCredentials = true;
-        x.setRequestHeader('Content-Type', 'text/plain;charset=UTF-8');
-        x.send(JSON.stringify({ payload: payload }));
-        var data = {};
-        try { data = JSON.parse(x.responseText); } catch (e) {}
-        if (data.s === 'ok') {
-          return { success: true, source: 'internal_api', symbol: sym, price: price, condition: condType, message: msg, alert_id: (data.r && data.r.alert_id) || null };
-        }
-        return { success: false, source: 'internal_api', error: (data.err && data.err.code) || data.errmsg || ('HTTP ' + x.status), response: (x.responseText || '').slice(0, 200) };
-      } catch (e) {
-        return { success: false, source: 'internal_api', error: e.message };
+      }
+      return { ok: false, reason: 'button_missing', titles: Array.from(els).map(function(b){return b.getAttribute('title');}) };
+    })()
+  `);
+  if (!createBtnClicked || !createBtnClicked.ok) {
+    throw new Error(`Could not click "Create Alert" button (reason: ${createBtnClicked?.reason}, titles seen: ${JSON.stringify(createBtnClicked?.titles)})`);
+  }
+
+  const inputAppeared = await waitFor(PRICE_INPUT_FINDER, 3000);
+  if (!inputAppeared) throw new Error('Alert dialog price input did not appear within 3s');
+
+  const rect = await evaluate(`
+    (function() {
+      var el = ${PRICE_INPUT_FINDER};
+      if (!el) return null;
+      var r = el.getBoundingClientRect();
+      return { x: r.x + r.width / 2, y: r.y + r.height / 2 };
+    })()
+  `);
+  if (!rect) throw new Error('Could not locate price input rect');
+
+  const c = await getClient();
+  for (let i = 1; i <= 3; i++) {
+    await c.Input.dispatchMouseEvent({ type: 'mousePressed',  x: rect.x, y: rect.y, button: 'left', clickCount: i });
+    await c.Input.dispatchMouseEvent({ type: 'mouseReleased', x: rect.x, y: rect.y, button: 'left', clickCount: i });
+  }
+  await sleep(50);
+  await c.Input.insertText({ text: String(validPrice) });
+  await sleep(100);
+
+  await evaluate(`
+    (function() {
+      var el = ${PRICE_INPUT_FINDER};
+      if (el) {
+        el.dispatchEvent(new Event('input', { bubbles: true }));
+        el.dispatchEvent(new Event('change', { bubbles: true }));
       }
     })()
   `);
+
+  if (message) {
+    await evaluate(`
+      (function() {
+        var textareas = document.querySelectorAll('textarea');
+        for (var i = 0; i < textareas.length; i++) {
+          var ta = textareas[i];
+          if (ta.offsetParent === null) continue;
+          var nativeSet = Object.getOwnPropertyDescriptor(HTMLTextAreaElement.prototype, 'value').set;
+          nativeSet.call(ta, ${safeString(message)});
+          ta.dispatchEvent(new Event('input', { bubbles: true }));
+          ta.dispatchEvent(new Event('change', { bubbles: true }));
+          return true;
+        }
+        return false;
+      })()
+    `);
+  }
+
+  const beforeList = await list();
+  const beforeIds = new Set((beforeList.alerts || []).map((a) => a.alert_id));
+
+  const submitRect = await evaluate(`
+    (function() {
+      var btns = document.querySelectorAll('button');
+      for (var i = 0; i < btns.length; i++) {
+        var b = btns[i];
+        if (b.offsetParent === null) continue;
+        var t = (b.textContent || '').trim();
+        if (t === '创建订单' || t === 'Create' || t === 'Create Alert') {
+          var r = b.getBoundingClientRect();
+          return { x: r.x + r.width / 2, y: r.y + r.height / 2, text: t };
+        }
+      }
+      return null;
+    })()
+  `);
+  if (!submitRect) throw new Error('Could not find submit button (expected 创建订单 / Create / Create Alert)');
+
+  await c.Input.dispatchMouseEvent({ type: 'mouseMoved',    x: submitRect.x, y: submitRect.y });
+  await c.Input.dispatchMouseEvent({ type: 'mousePressed',  x: submitRect.x, y: submitRect.y, button: 'left', clickCount: 1 });
+  await c.Input.dispatchMouseEvent({ type: 'mouseReleased', x: submitRect.x, y: submitRect.y, button: 'left', clickCount: 1 });
+
+  const closed = await waitFor(`!(${PRICE_INPUT_FINDER})`, 3000);
+
+  let newAlertId = null;
+  const verifyDeadline = Date.now() + 3000;
+  while (Date.now() < verifyDeadline) {
+    const cur = await list();
+    const candidate = (cur.alerts || []).find((a) => !beforeIds.has(a.alert_id));
+    if (candidate) { newAlertId = candidate.alert_id; break; }
+    await sleep(500);
+  }
+
+  if (!newAlertId) {
+    return {
+      success: false,
+      error: 'Alert dialog submitted but no new alert appeared in API within 3s',
+      symbol: resolvedSymbol,
+      price: validPrice,
+      condition,
+      message: message || null,
+      dialog_closed: !!closed,
+      source: 'ui_click',
+    };
+  }
+
+  return {
+    success: true,
+    symbol: resolvedSymbol,
+    price: validPrice,
+    condition,
+    message: message || null,
+    alert_id: newAlertId,
+    source: 'ui_click',
+  };
 }
 
 export async function list() {
-  // Use pricealerts REST API — returns structured data with alert_id, symbol, price, conditions
   const result = await evaluateAsync(`
     fetch('https://pricealerts.tradingview.com/list_alerts', { credentials: 'include' })
       .then(function(r) { return r.json(); })
@@ -94,35 +239,21 @@ export async function list() {
   return { success: true, alert_count: result?.alerts?.length || 0, source: 'internal_api', alerts: result?.alerts || [], error: result?.error };
 }
 
-export async function deleteAlerts({ delete_all, alert_ids, alert_id } = {}) {
-  // Resolve the set of alert ids to delete.
-  let ids = [];
-  if (Array.isArray(alert_ids)) ids = ids.concat(alert_ids);
-  if (alert_id != null) ids.push(alert_id);
+export async function deleteAlerts({ delete_all }) {
   if (delete_all) {
-    const listed = await list();
-    ids = (listed.alerts || []).map((a) => a.alert_id);
+    const result = await evaluate(`
+      (function() {
+        var alertBtn = document.querySelector('[data-name="alerts"]');
+        if (alertBtn) alertBtn.click();
+        var header = document.querySelector('[data-name="alerts"]');
+        if (header) {
+          header.dispatchEvent(new MouseEvent('contextmenu', { bubbles: true, clientX: 100, clientY: 100 }));
+          return { context_menu_opened: true };
+        }
+        return { context_menu_opened: false };
+      })()
+    `);
+    return { success: true, note: 'Alert deletion requires manual confirmation in the context menu.', context_menu_opened: result?.context_menu_opened || false, source: 'dom_fallback' };
   }
-  ids = ids.filter((x) => x != null);
-  if (!ids.length) {
-    return { success: false, source: 'internal_api', error: delete_all ? 'No alerts to delete.' : 'Provide delete_all: true or an alert_id to delete.' };
-  }
-
-  const result = await evaluate(`
-    (function() {
-      try {
-        var x = new XMLHttpRequest();
-        x.open('POST', 'https://pricealerts.tradingview.com/delete_alerts', false);
-        x.withCredentials = true;
-        x.setRequestHeader('Content-Type', 'text/plain;charset=UTF-8');
-        x.send(JSON.stringify({ payload: { alert_ids: ${JSON.stringify(ids)} } }));
-        var data = {}; try { data = JSON.parse(x.responseText); } catch (e) {}
-        return { ok: data.s === 'ok', status: x.status, response: (x.responseText || '').slice(0, 200) };
-      } catch (e) { return { ok: false, error: e.message }; }
-    })()
-  `);
-  if (result && result.ok) {
-    return { success: true, source: 'internal_api', deleted_count: ids.length, alert_ids: ids };
-  }
-  return { success: false, source: 'internal_api', alert_ids: ids, error: (result && (result.error || result.response)) || 'delete failed' };
+  throw new Error('Individual alert deletion not yet supported. Use delete_all: true.');
 }

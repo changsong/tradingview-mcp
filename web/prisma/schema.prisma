@@ -1,0 +1,120 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+model Stock {
+  id        String        @id @default(cuid())
+  market    String
+  symbol    String
+  name      String?
+  createdAt DateTime      @default(now())
+  updatedAt DateTime      @updatedAt
+  signals   DailySignal[]
+
+  @@unique([market, symbol])
+  @@index([market, name])
+}
+
+model ReportRun {
+  id          String         @id @default(cuid())
+  market      String
+  date        DateTime       @db.Date
+  generatedAt DateTime?
+  status      String         @default("imported")
+  stages      Json
+  sourceDir   String
+  createdAt   DateTime       @default(now())
+  updatedAt   DateTime       @updatedAt
+  artifacts   Artifact[]
+  reviews     ReviewResult[]
+
+  @@unique([market, date])
+  @@index([date])
+}
+
+model DailySignal {
+  id            String     @id @default(cuid())
+  stockId       String
+  market        String
+  date          DateTime   @db.Date
+  symbol        String
+  name          String?
+  newsScore     Float?
+  techScore     Float?
+  combinedScore Float?
+  grade         String?
+  newsSignal    String?
+  techVerdict   String?
+  techType      String?
+  combinedSignal String?
+  price         Float?
+  entry         Float?
+  stop          Float?
+  target        Float?
+  rr            Float?
+  riskFlags     Json?
+  newsRaw       Json?
+  techRaw       Json?
+  combinedRaw   Json?
+  createdAt     DateTime   @default(now())
+  updatedAt     DateTime   @updatedAt
+  stock         Stock      @relation(fields: [stockId], references: [id], onDelete: Cascade)
+  newsItems     NewsItem[]
+
+  @@unique([market, date, symbol])
+  @@index([market, date, combinedScore])
+  @@index([market, symbol, date])
+}
+
+model NewsItem {
+  id            String      @id @default(cuid())
+  dailySignalId String
+  market        String
+  date          DateTime    @db.Date
+  symbol        String
+  title         String
+  url           String?
+  source        String?
+  category      String?
+  publishedAt   DateTime?
+  score         Float?
+  sentiment     String?
+  raw           Json?
+  createdAt     DateTime    @default(now())
+  dailySignal   DailySignal @relation(fields: [dailySignalId], references: [id], onDelete: Cascade)
+
+  @@index([market, date, symbol])
+}
+
+model ReviewResult {
+  id          String    @id @default(cuid())
+  reportRunId String
+  market      String
+  date        DateTime  @db.Date
+  raw         Json
+  createdAt   DateTime  @default(now())
+  reportRun   ReportRun @relation(fields: [reportRunId], references: [id], onDelete: Cascade)
+
+  @@unique([market, date])
+}
+
+model Artifact {
+  id          String    @id @default(cuid())
+  reportRunId String
+  market      String
+  date        DateTime  @db.Date
+  type        String
+  path        String
+  content     String?
+  raw         Json?
+  createdAt   DateTime  @default(now())
+  reportRun   ReportRun @relation(fields: [reportRunId], references: [id], onDelete: Cascade)
+
+  @@unique([market, date, type])
+  @@index([market, date])
+}

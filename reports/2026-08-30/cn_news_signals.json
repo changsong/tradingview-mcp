@@ -1,0 +1,1845 @@
+{
+  "generated_at": "2026-08-30T13:57:11.929Z",
+  "market": "cn",
+  "source": "src/core/webNews.js",
+  "score_scale": "0-100 normalized (neutral=50)",
+  "window": {
+    "from": "2026-08-23",
+    "to": "2026-08-30",
+    "days": 7
+  },
+  "llm_used": true,
+  "performance": {
+    "totals_ms": {
+      "list_fetch_ms": 136784,
+      "enrichment_ms": 295246,
+      "relevance_ms": 1,
+      "llm_ms": 2055964,
+      "report_write_ms": 16
+    },
+    "avg_ms": {
+      "list_fetch_ms": 3908,
+      "enrichment_ms": 8436,
+      "relevance_ms": 0,
+      "llm_ms": 58742,
+      "report_write_ms": 0
+    }
+  },
+  "stocks": {
+    "SSE:603162": {
+      "name": "603162",
+      "score": 62,
+      "score_raw": 2.96,
+      "score_components": {
+        "positive_weight_sum": 2.96,
+        "negative_weight_sum": 0,
+        "news_effective_count": 3,
+        "news_dropped_count": 0
+      },
+      "signal": "🟢 Long (中)",
+      "strategy": "情绪偏多，适合低吸或轻仓参与",
+      "suitable_for": "低吸 / 轻仓追",
+      "confidence": "中",
+      "patterns": [],
+      "positive_factors": [
+        "[回购|w2.27] 海通发展:福建海通发展股份有限公司董事会薪酬与考核委员会关于2026年限制性股票激励计划激励对象名单的核查意见及公示情况说明",
+        "[分析师动作|w0.69] 百船四海皆通达，干散自此迎发展"
+      ],
+      "negative_factors": [],
+      "news_count": 3,
+      "news_dropped": 0,
+      "performance": {
+        "list_fetch_ms": 4009,
+        "candidate_filter_ms": 0,
+        "enrichment_ms": 14005,
+        "raw_news_count": 40,
+        "raw_research_count": 8,
+        "candidate_news_count": 2,
+        "candidate_research_count": 1,
+        "enriched_news_count": 2,
+        "enriched_research_count": 1,
+        "candidate_reasons": {
+          "news": {
+            "no-subject-mention": 6,
+            "noise:\\d{1,2}月\\d{1,2}日(快速上涨|快速回调|涨停|": 3,
+            "dedup": 0,
+            "out_of_window": 29
+          },
+          "research": {
+            "dedup": 0,
+            "out_of_window": 7
+          }
+        },
+        "date_filter_ms": 0,
+        "relevance_ms": 0,
+        "llm_ms": 35703,
+        "scoring_ms": 1
+      },
+      "top_news": [
+        {
+          "date": "2026-08-26",
+          "title": "海通发展:福建海通发展股份有限公司董事会薪酬与考核委员会关于2026年限制性股票激励计划激励对象名单的核查意见及公示情况说明",
+          "content": "国内沿海、长江中下游及珠江三角洲普通货船运输;国内水路货物运输代理业务和国内水路船舶代理业务;船舶维修;船舶经纪;集装箱出租;港湾建设,船舶管理业务;国际船舶普通货物运输(以上均不含危化品)。(依法须经批准的项目,经相关部门批准后方可开展经营活动)\n郑重声明：东方财富网发布此信息的目的在于传播更多信息，与本站立场无关。东方财富网不保证该信息（包括但不限于文字、视频、音频、数据及图表）全部或者部分内容的准确性、真实性、完整性、有效性、及时性、原创性等。相关信息并未经过本网站证实，不对您构成任何投资建议，据此操作，风险自担。",
+          "type": "回购",
+          "sentiment": 1,
+          "weight": 2,
+          "final_weight": 2.27,
+          "source_authority": 4.5,
+          "recency_factor": 0.42,
+          "source": "东方财富公告",
+          "llm_reviewed": true,
+          "llm_confidence": 0.7,
+          "llm_is_real_catalyst": true,
+          "llm_reasoning": "限制性股票激励计划核查及公示推进，官方公告利好"
+        },
+        {
+          "date": "2026-08-25",
+          "title": "海通发展:福建海通发展股份有限公司2026年第三次临时股东会会议资料",
+          "content": "国内沿海、长江中下游及珠江三角洲普通货船运输;国内水路货物运输代理业务和国内水路船舶代理业务;船舶维修;船舶经纪;集装箱出租;港湾建设,船舶管理业务;国际船舶普通货物运输(以上均不含危化品)。(依法须经批准的项目,经相关部门批准后方可开展经营活动)\n郑重声明：东方财富网发布此信息的目的在于传播更多信息，与本站立场无关。东方财富网不保证该信息（包括但不限于文字、视频、音频、数据及图表）全部或者部分内容的准确性、真实性、完整性、有效性、及时性、原创性等。相关信息并未经过本网站证实，不对您构成任何投资建议，据此操作，风险自担。",
+          "type": "行业",
+          "sentiment": 0,
+          "weight": 1,
+          "final_weight": 0.5,
+          "source_authority": 4.5,
+          "recency_factor": 0.36,
+          "source": "东方财富公告",
+          "llm_reviewed": true,
+          "llm_confidence": 0.2,
+          "llm_is_real_catalyst": false,
+          "llm_reasoning": "临时股东会会议资料无实质内容"
+        },
+        {
+          "date": "2026-08-25",
+          "title": "百船四海皆通达，干散自此迎发展",
+          "content": "",
+          "type": "分析师动作",
+          "sentiment": 1,
+          "weight": 1,
+          "final_weight": 0.69,
+          "source_authority": 4,
+          "recency_factor": 0.36,
+          "source": "国金证券",
+          "llm_reviewed": true,
+          "llm_confidence": 0.5,
+          "llm_is_real_catalyst": false,
+          "llm_reasoning": "国金证券研报看好干散，观点非硬催化"
+        }
+      ]
+    },
+    "SZSE:002487": {
+      "name": "002487",
+      "score": 61,
+      "score_raw": 2.62,
+      "score_components": {
+        "positive_weight_sum": 2.62,
+        "negative_weight_sum": 0,
+        "news_effective_count": 2,
+        "news_dropped_count": 0
+      },
+      "signal": "🟢 Long (中)",
+      "strategy": "情绪偏多，适合低吸或轻仓参与",
+      "suitable_for": "低吸 / 轻仓追",
+      "confidence": "中",
+      "patterns": [],
+      "positive_factors": [
+        "[财报|w1.87] 上半年业绩同比增长10%，海工一体化交付能力落地",
+        "[财报|w0.75] 2026年半年报点评：海运节奏拖累Q2发货，出海单吨净利维持高位"
+      ],
+      "negative_factors": [],
+      "news_count": 2,
+      "news_dropped": 0,
+      "performance": {
+        "list_fetch_ms": 867,
+        "candidate_filter_ms": 0,
+        "enrichment_ms": 782,
+        "raw_news_count": 40,
+        "raw_research_count": 10,
+        "candidate_news_count": 0,
+        "candidate_research_count": 2,
+        "enriched_news_count": 0,
+        "enriched_research_count": 2,
+        "candidate_reasons": {
+          "news": {
+            "no-subject-mention": 12,
+            "noise:龙虎榜|大宗交易|盘口异动": 4,
+            "noise:融资净(买入|卖出)": 2,
+            "dedup": 0,
+            "out_of_window": 22
+          },
+          "research": {
+            "dedup": 0,
+            "out_of_window": 8
+          }
+        },
+        "date_filter_ms": 0,
+        "relevance_ms": 0,
+        "llm_ms": 73052,
+        "scoring_ms": 1
+      },
+      "top_news": [
+        {
+          "date": "2026-08-25",
+          "title": "2026年半年报点评：海运节奏拖累Q2发货，出海单吨净利维持高位",
+          "content": "",
+          "type": "财报",
+          "sentiment": 1,
+          "weight": 1,
+          "final_weight": 0.75,
+          "source_authority": 4,
+          "recency_factor": 0.36,
+          "source": "东吴证券",
+          "llm_reviewed": true,
+          "llm_confidence": 0.5,
+          "llm_is_real_catalyst": false,
+          "llm_reasoning": "单吨净利高位但Q2发货受拖累"
+        },
+        {
+          "date": "2026-08-25",
+          "title": "上半年业绩同比增长10%，海工一体化交付能力落地",
+          "content": "",
+          "type": "财报",
+          "sentiment": 1,
+          "weight": 2,
+          "final_weight": 1.87,
+          "source_authority": 4,
+          "recency_factor": 0.36,
+          "source": "国信证券",
+          "llm_reviewed": true,
+          "llm_confidence": 0.9,
+          "llm_is_real_catalyst": true,
+          "llm_reasoning": "上半年业绩同比增长10%"
+        }
+      ]
+    },
+    "SZSE:300602": {
+      "name": "300602",
+      "score": 57,
+      "score_raw": 1.56,
+      "score_components": {
+        "positive_weight_sum": 1.56,
+        "negative_weight_sum": 0,
+        "news_effective_count": 1,
+        "news_dropped_count": 0
+      },
+      "signal": "⚪ No Trade (微多)",
+      "strategy": "情绪轻微偏多，信号不足，以观望为主",
+      "suitable_for": "观望",
+      "confidence": "低",
+      "patterns": [],
+      "positive_factors": [
+        "[财报|w1.56] 2026年中报点评：收入较快增长，AI液冷布局稳步推进"
+      ],
+      "negative_factors": [],
+      "news_count": 1,
+      "news_dropped": 0,
+      "performance": {
+        "list_fetch_ms": 1278,
+        "candidate_filter_ms": 0,
+        "enrichment_ms": 683,
+        "raw_news_count": 40,
+        "raw_research_count": 10,
+        "candidate_news_count": 0,
+        "candidate_research_count": 1,
+        "enriched_news_count": 0,
+        "enriched_research_count": 1,
+        "candidate_reasons": {
+          "news": {
+            "noise:融资净(买入|卖出)": 4,
+            "no-subject-mention": 7,
+            "noise:\\d{1,2}月\\d{1,2}日(快速上涨|快速回调|涨停|": 4,
+            "dedup": 0,
+            "out_of_window": 25
+          },
+          "research": {
+            "dedup": 0,
+            "out_of_window": 9
+          }
+        },
+        "date_filter_ms": 0,
+        "relevance_ms": 0,
+        "llm_ms": 74084,
+        "scoring_ms": 1
+      },
+      "top_news": [
+        {
+          "date": "2026-08-24",
+          "title": "2026年中报点评：收入较快增长，AI液冷布局稳步推进",
+          "content": "",
+          "type": "财报",
+          "sentiment": 1,
+          "weight": 2,
+          "final_weight": 1.56,
+          "source_authority": 4,
+          "recency_factor": 0.3,
+          "source": "国信证券",
+          "llm_reviewed": true,
+          "llm_confidence": 0.8,
+          "llm_is_real_catalyst": true,
+          "llm_reasoning": "中报收入增长，AI液冷推进积极"
+        }
+      ]
+    },
+    "SSE:600388": {
+      "name": "600388",
+      "score": 50,
+      "score_raw": 0,
+      "score_components": {
+        "positive_weight_sum": 0,
+        "negative_weight_sum": 0
+      },
+      "signal": "⚪ No Trade (无数据)",
+      "strategy": "LLM 不可用或调用失败（不走关键字降级）",
+      "suitable_for": "观望",
+      "confidence": "-",
+      "patterns": [],
+      "positive_factors": [],
+      "negative_factors": [],
+      "news_count": 0,
+      "news_dropped": 0,
+      "performance": {
+        "list_fetch_ms": 3341,
+        "candidate_filter_ms": 0,
+        "enrichment_ms": 14936,
+        "raw_news_count": 40,
+        "raw_research_count": 10,
+        "candidate_news_count": 10,
+        "candidate_research_count": 0,
+        "enriched_news_count": 10,
+        "enriched_research_count": 0,
+        "candidate_reasons": {
+          "news": {
+            "no-subject-mention": 5,
+            "noise:融资净(买入|卖出)": 2,
+            "noise:\\d{1,2}月\\d{1,2}日(快速上涨|快速回调|涨停|": 1,
+            "dedup": 2,
+            "out_of_window": 20
+          },
+          "research": {
+            "dedup": 0,
+            "out_of_window": 10
+          }
+        },
+        "date_filter_ms": 0,
+        "relevance_ms": 0,
+        "llm_ms": 125523,
+        "scoring_ms": 0
+      },
+      "top_news": []
+    },
+    "SSE:601665": {
+      "name": "601665",
+      "score": 50,
+      "score_raw": 0,
+      "score_components": {
+        "positive_weight_sum": 0,
+        "negative_weight_sum": 0,
+        "news_effective_count": 6,
+        "news_dropped_count": 0
+      },
+      "signal": "⚪ No Trade (微多)",
+      "strategy": "情绪轻微偏多，信号不足，以观望为主",
+      "suitable_for": "观望",
+      "confidence": "低",
+      "patterns": [],
+      "positive_factors": [],
+      "negative_factors": [],
+      "news_count": 6,
+      "news_dropped": 0,
+      "performance": {
+        "list_fetch_ms": 2997,
+        "candidate_filter_ms": 0,
+        "enrichment_ms": 10221,
+        "raw_news_count": 40,
+        "raw_research_count": 10,
+        "candidate_news_count": 6,
+        "candidate_research_count": 0,
+        "enriched_news_count": 6,
+        "enriched_research_count": 0,
+        "candidate_reasons": {
+          "news": {
+            "no-subject-mention": 11,
+            "noise:融资净(买入|卖出)": 1,
+            "dedup": 0,
+            "out_of_window": 22
+          },
+          "research": {
+            "dedup": 0,
+            "out_of_window": 10
+          }
+        },
+        "date_filter_ms": 0,
+        "relevance_ms": 0,
+        "llm_ms": 54474,
+        "scoring_ms": 0
+      },
+      "top_news": [
+        {
+          "date": "2026-08-29 09:41:18",
+          "title": "齐鲁银行(601665.SH)：2026年中报净利润为31.74亿元、同比较去年同期上涨16.06%",
+          "content": "全新妙想投研助理，立即体验\n\n　　2026年8月29日，齐鲁银行(601665.SH)发布2026年中报。\n\n　　公司营业总收入为74.97亿元，较去年同报告期营业总收入增加7.16亿元，实现5年连续上涨，同比较去年同期上涨10.55%。归母净利润为31.74亿元，较去年同报告期归母净利润增加4.39亿元，实现5年连续上涨，同比较去年同期上涨16.06%。经营活动现金净流入为184.77亿元，较去年同报告期经营活动现金净流入增加75.25亿元，实现2年连续上涨，同比较去年同期上涨68.71%。\n\n　　公司最新资产负债率为93.20%，较上季度资产负债率减少0.53个百分点，较去年同期资产负债率减少0.09个百分点。\n\n　　公司最新ROE为5.38%，在已披露的同业公司中排名第8。\n\n　　公司摊薄每股收益为0.50元。\n\n　　公司最新总资产周转率为0.01次，在已披露的同业公司中排名第8。\n\n　　公司股东户数为4.21万户，前十大股东持股数量为30.20亿股，占总股本比例为49.07%，前十大股东持股情况如下：\n\n暗盘资金榜已更新!这些个股/板块可以关注>",
+          "type": "行业",
+          "sentiment": 0,
+          "weight": 1,
+          "final_weight": 0.5,
+          "source_authority": 3,
+          "recency_factor": 0.72,
+          "source": "东方财富资讯",
+          "llm_reviewed": true,
+          "llm_confidence": 0,
+          "llm_is_real_catalyst": false,
+          "llm_reasoning": ""
+        },
+        {
+          "date": "2026-08-29",
+          "title": "齐鲁银行:齐鲁银行股份有限公司2026年半年度报告",
+          "content": "人民币业务:吸收公众存款;发放短期、中期和长期贷款;办理国内结算;办理票据贴现;发行金融债券;代理发行、代理兑付、承销政府债券;买卖政府债券;从事同业拆借;提供担保;代理收付款项及代理保险业务;提供保管箱服务;办理地方财政信用周转使用资金委托存贷款业务;证券投资基金销售。外汇业务:外汇存款;外汇贷款;外汇汇款;外币兑换;国际结算;同业外汇拆借;外汇票据的承兑和贴现;外汇借款;外汇担保;结汇、售汇;资信调查、咨询、见证业务。经国务院银行业监督管理机构等审批机关核准的其他业务。\n郑重声明：东方财富网发布此信息的目的在于传播更多信息，与本站立场无关。东方财富网不保证该信息（包括但不限于文字、视频、音频、数据及图表）全部或者部分内容的准确性、真实性、完整性、有效性、及时性、原创性等。相关信息并未经过本网站证实，不对您构成任何投资建议，据此操作，风险自担。",
+          "type": "行业",
+          "sentiment": 0,
+          "weight": 1,
+          "final_weight": 0.65,
+          "source_authority": 4.5,
+          "recency_factor": 0.72,
+          "source": "东方财富公告",
+          "llm_reviewed": true,
+          "llm_confidence": 0,
+          "llm_is_real_catalyst": false,
+          "llm_reasoning": ""
+        },
+        {
+          "date": "2026-08-29",
+          "title": "齐鲁银行:齐鲁银行股份有限公司第十届董事会第二次会议决议公告",
+          "content": "人民币业务:吸收公众存款;发放短期、中期和长期贷款;办理国内结算;办理票据贴现;发行金融债券;代理发行、代理兑付、承销政府债券;买卖政府债券;从事同业拆借;提供担保;代理收付款项及代理保险业务;提供保管箱服务;办理地方财政信用周转使用资金委托存贷款业务;证券投资基金销售。外汇业务:外汇存款;外汇贷款;外汇汇款;外币兑换;国际结算;同业外汇拆借;外汇票据的承兑和贴现;外汇借款;外汇担保;结汇、售汇;资信调查、咨询、见证业务。经国务院银行业监督管理机构等审批机关核准的其他业务。\n郑重声明：东方财富网发布此信息的目的在于传播更多信息，与本站立场无关。东方财富网不保证该信息（包括但不限于文字、视频、音频、数据及图表）全部或者部分内容的准确性、真实性、完整性、有效性、及时性、原创性等。相关信息并未经过本网站证实，不对您构成任何投资建议，据此操作，风险自担。",
+          "type": "行业",
+          "sentiment": 0,
+          "weight": 1,
+          "final_weight": 0.65,
+          "source_authority": 4.5,
+          "recency_factor": 0.72,
+          "source": "东方财富公告",
+          "llm_reviewed": true,
+          "llm_confidence": 0,
+          "llm_is_real_catalyst": false,
+          "llm_reasoning": ""
+        },
+        {
+          "date": "2026-08-29",
+          "title": "齐鲁银行:齐鲁银行股份有限公司关于独立董事任职资格获得核准的公告",
+          "content": "人民币业务:吸收公众存款;发放短期、中期和长期贷款;办理国内结算;办理票据贴现;发行金融债券;代理发行、代理兑付、承销政府债券;买卖政府债券;从事同业拆借;提供担保;代理收付款项及代理保险业务;提供保管箱服务;办理地方财政信用周转使用资金委托存贷款业务;证券投资基金销售。外汇业务:外汇存款;外汇贷款;外汇汇款;外币兑换;国际结算;同业外汇拆借;外汇票据的承兑和贴现;外汇借款;外汇担保;结汇、售汇;资信调查、咨询、见证业务。经国务院银行业监督管理机构等审批机关核准的其他业务。\n郑重声明：东方财富网发布此信息的目的在于传播更多信息，与本站立场无关。东方财富网不保证该信息（包括但不限于文字、视频、音频、数据及图表）全部或者部分内容的准确性、真实性、完整性、有效性、及时性、原创性等。相关信息并未经过本网站证实，不对您构成任何投资建议，据此操作，风险自担。",
+          "type": "行业",
+          "sentiment": 0,
+          "weight": 1,
+          "final_weight": 0.65,
+          "source_authority": 4.5,
+          "recency_factor": 0.72,
+          "source": "东方财富公告",
+          "llm_reviewed": true,
+          "llm_confidence": 0,
+          "llm_is_real_catalyst": false,
+          "llm_reasoning": ""
+        },
+        {
+          "date": "2026-08-29",
+          "title": "齐鲁银行:齐鲁银行股份有限公司2026年半年度报告摘要",
+          "content": "",
+          "type": "行业",
+          "sentiment": 0,
+          "weight": 1,
+          "final_weight": 0.65,
+          "source_authority": 4.5,
+          "recency_factor": 0.72,
+          "source": "东方财富公告",
+          "llm_reviewed": true,
+          "llm_confidence": 0,
+          "llm_is_real_catalyst": false,
+          "llm_reasoning": ""
+        }
+      ]
+    },
+    "SSE:601872": {
+      "name": "601872",
+      "score": 50,
+      "score_raw": 0,
+      "score_components": {
+        "positive_weight_sum": 0,
+        "negative_weight_sum": 0
+      },
+      "signal": "⚪ No Trade (无数据)",
+      "strategy": "近期无相关有效新闻",
+      "suitable_for": "观望",
+      "confidence": "-",
+      "patterns": [],
+      "positive_factors": [],
+      "negative_factors": [],
+      "news_count": 0,
+      "news_dropped": 0,
+      "performance": {
+        "list_fetch_ms": 3856,
+        "candidate_filter_ms": 0,
+        "enrichment_ms": 0,
+        "raw_news_count": 40,
+        "raw_research_count": 10,
+        "candidate_news_count": 0,
+        "candidate_research_count": 0,
+        "enriched_news_count": 0,
+        "enriched_research_count": 0,
+        "candidate_reasons": {
+          "news": {
+            "no-subject-mention": 19,
+            "noise:融资净(买入|卖出)": 1,
+            "dedup": 0,
+            "out_of_window": 20
+          },
+          "research": {
+            "dedup": 0,
+            "out_of_window": 10
+          }
+        },
+        "date_filter_ms": 0,
+        "relevance_ms": 0,
+        "llm_ms": 0,
+        "scoring_ms": 0
+      },
+      "top_news": []
+    },
+    "SSE:601899": {
+      "name": "601899",
+      "score": 50,
+      "score_raw": 0,
+      "score_components": {
+        "positive_weight_sum": 0,
+        "negative_weight_sum": 0
+      },
+      "signal": "⚪ No Trade (无数据)",
+      "strategy": "LLM 不可用或调用失败（不走关键字降级）",
+      "suitable_for": "观望",
+      "confidence": "-",
+      "patterns": [],
+      "positive_factors": [],
+      "negative_factors": [],
+      "news_count": 0,
+      "news_dropped": 0,
+      "performance": {
+        "list_fetch_ms": 2899,
+        "candidate_filter_ms": 1,
+        "enrichment_ms": 6327,
+        "raw_news_count": 40,
+        "raw_research_count": 10,
+        "candidate_news_count": 1,
+        "candidate_research_count": 3,
+        "enriched_news_count": 1,
+        "enriched_research_count": 3,
+        "candidate_reasons": {
+          "news": {
+            "no-subject-mention": 19,
+            "noise:龙虎榜|大宗交易|盘口异动": 1,
+            "dedup": 0,
+            "out_of_window": 19
+          },
+          "research": {
+            "dedup": 0,
+            "out_of_window": 7
+          }
+        },
+        "date_filter_ms": 0,
+        "relevance_ms": 0,
+        "llm_ms": 102740,
+        "scoring_ms": 0
+      },
+      "top_news": []
+    },
+    "SSE:603129": {
+      "name": "603129",
+      "score": 50,
+      "score_raw": 0,
+      "score_components": {
+        "positive_weight_sum": 0,
+        "negative_weight_sum": 0
+      },
+      "signal": "⚪ No Trade (无数据)",
+      "strategy": "LLM 不可用或调用失败（不走关键字降级）",
+      "suitable_for": "观望",
+      "confidence": "-",
+      "patterns": [],
+      "positive_factors": [],
+      "negative_factors": [],
+      "news_count": 0,
+      "news_dropped": 0,
+      "performance": {
+        "list_fetch_ms": 2949,
+        "candidate_filter_ms": 0,
+        "enrichment_ms": 6983,
+        "raw_news_count": 40,
+        "raw_research_count": 10,
+        "candidate_news_count": 2,
+        "candidate_research_count": 1,
+        "enriched_news_count": 2,
+        "enriched_research_count": 1,
+        "candidate_reasons": {
+          "news": {
+            "noise:融资净(买入|卖出)": 3,
+            "no-subject-mention": 8,
+            "dedup": 0,
+            "out_of_window": 27
+          },
+          "research": {
+            "dedup": 0,
+            "out_of_window": 9
+          }
+        },
+        "date_filter_ms": 0,
+        "relevance_ms": 0,
+        "llm_ms": 97750,
+        "scoring_ms": 0
+      },
+      "top_news": []
+    },
+    "SSE:603228": {
+      "name": "603228",
+      "score": 50,
+      "score_raw": 0,
+      "score_components": {
+        "positive_weight_sum": 0,
+        "negative_weight_sum": 0
+      },
+      "signal": "⚪ No Trade (无数据)",
+      "strategy": "LLM 不可用或调用失败（不走关键字降级）",
+      "suitable_for": "观望",
+      "confidence": "-",
+      "patterns": [],
+      "positive_factors": [],
+      "negative_factors": [],
+      "news_count": 0,
+      "news_dropped": 0,
+      "performance": {
+        "list_fetch_ms": 2531,
+        "candidate_filter_ms": 1,
+        "enrichment_ms": 6126,
+        "raw_news_count": 40,
+        "raw_research_count": 10,
+        "candidate_news_count": 8,
+        "candidate_research_count": 0,
+        "enriched_news_count": 8,
+        "enriched_research_count": 0,
+        "candidate_reasons": {
+          "news": {
+            "noise:融资净(买入|卖出)": 2,
+            "no-subject-mention": 16,
+            "noise:\\d{1,2}月\\d{1,2}日(快速上涨|快速回调|涨停|": 2,
+            "dedup": 0,
+            "out_of_window": 12
+          },
+          "research": {
+            "dedup": 0,
+            "out_of_window": 10
+          }
+        },
+        "date_filter_ms": 0,
+        "relevance_ms": 0,
+        "llm_ms": 100926,
+        "scoring_ms": 0
+      },
+      "top_news": []
+    },
+    "SSE:603259": {
+      "name": "603259",
+      "score": 50,
+      "score_raw": 0,
+      "score_components": {
+        "positive_weight_sum": 0,
+        "negative_weight_sum": 0
+      },
+      "signal": "⚪ No Trade (无数据)",
+      "strategy": "LLM 不可用或调用失败（不走关键字降级）",
+      "suitable_for": "观望",
+      "confidence": "-",
+      "patterns": [],
+      "positive_factors": [],
+      "negative_factors": [],
+      "news_count": 0,
+      "news_dropped": 0,
+      "performance": {
+        "list_fetch_ms": 3395,
+        "candidate_filter_ms": 0,
+        "enrichment_ms": 10459,
+        "raw_news_count": 40,
+        "raw_research_count": 10,
+        "candidate_news_count": 5,
+        "candidate_research_count": 0,
+        "enriched_news_count": 5,
+        "enriched_research_count": 0,
+        "candidate_reasons": {
+          "news": {
+            "no-subject-mention": 15,
+            "noise:融资净(买入|卖出)": 2,
+            "noise:龙虎榜|大宗交易|盘口异动": 3,
+            "dedup": 1,
+            "out_of_window": 14
+          },
+          "research": {
+            "dedup": 0,
+            "out_of_window": 10
+          }
+        },
+        "date_filter_ms": 0,
+        "relevance_ms": 0,
+        "llm_ms": 103582,
+        "scoring_ms": 0
+      },
+      "top_news": []
+    },
+    "SZSE:000333": {
+      "name": "000333",
+      "score": 50,
+      "score_raw": 0,
+      "score_components": {
+        "positive_weight_sum": 0,
+        "negative_weight_sum": 0
+      },
+      "signal": "⚪ No Trade (无数据)",
+      "strategy": "LLM 不可用或调用失败（不走关键字降级）",
+      "suitable_for": "观望",
+      "confidence": "-",
+      "patterns": [],
+      "positive_factors": [],
+      "negative_factors": [],
+      "news_count": 0,
+      "news_dropped": 0,
+      "performance": {
+        "list_fetch_ms": 8172,
+        "candidate_filter_ms": 0,
+        "enrichment_ms": 6667,
+        "raw_news_count": 40,
+        "raw_research_count": 10,
+        "candidate_news_count": 7,
+        "candidate_research_count": 2,
+        "enriched_news_count": 7,
+        "enriched_research_count": 2,
+        "candidate_reasons": {
+          "news": {
+            "no-subject-mention": 18,
+            "dedup": 0,
+            "out_of_window": 15
+          },
+          "research": {
+            "dedup": 0,
+            "out_of_window": 8
+          }
+        },
+        "date_filter_ms": 0,
+        "relevance_ms": 0,
+        "llm_ms": 152493,
+        "scoring_ms": 0
+      },
+      "top_news": []
+    },
+    "SZSE:300684": {
+      "name": "300684",
+      "score": 50,
+      "score_raw": 0,
+      "score_components": {
+        "positive_weight_sum": 0,
+        "negative_weight_sum": 0
+      },
+      "signal": "⚪ No Trade (无数据)",
+      "strategy": "LLM 不可用或调用失败（不走关键字降级）",
+      "suitable_for": "观望",
+      "confidence": "-",
+      "patterns": [],
+      "positive_factors": [],
+      "negative_factors": [],
+      "news_count": 0,
+      "news_dropped": 0,
+      "performance": {
+        "list_fetch_ms": 882,
+        "candidate_filter_ms": 0,
+        "enrichment_ms": 3749,
+        "raw_news_count": 40,
+        "raw_research_count": 10,
+        "candidate_news_count": 6,
+        "candidate_research_count": 0,
+        "enriched_news_count": 6,
+        "enriched_research_count": 0,
+        "candidate_reasons": {
+          "news": {
+            "no-subject-mention": 13,
+            "noise:\\d{1,2}月\\d{1,2}日(快速上涨|快速回调|涨停|": 4,
+            "noise:融资净(买入|卖出)": 3,
+            "dedup": 0,
+            "out_of_window": 14
+          },
+          "research": {
+            "dedup": 0,
+            "out_of_window": 10
+          }
+        },
+        "date_filter_ms": 0,
+        "relevance_ms": 0,
+        "llm_ms": 155123,
+        "scoring_ms": 0
+      },
+      "top_news": []
+    },
+    "SSE:600489": {
+      "name": "600489",
+      "score": 50,
+      "score_raw": 0,
+      "score_components": {
+        "positive_weight_sum": 0,
+        "negative_weight_sum": 0
+      },
+      "signal": "⚪ No Trade (无数据)",
+      "strategy": "LLM 不可用或调用失败（不走关键字降级）",
+      "suitable_for": "观望",
+      "confidence": "-",
+      "patterns": [],
+      "positive_factors": [],
+      "negative_factors": [],
+      "news_count": 0,
+      "news_dropped": 0,
+      "performance": {
+        "list_fetch_ms": 922,
+        "candidate_filter_ms": 0,
+        "enrichment_ms": 2409,
+        "raw_news_count": 40,
+        "raw_research_count": 10,
+        "candidate_news_count": 9,
+        "candidate_research_count": 1,
+        "enriched_news_count": 9,
+        "enriched_research_count": 1,
+        "candidate_reasons": {
+          "news": {
+            "no-subject-mention": 19,
+            "dedup": 0,
+            "out_of_window": 12
+          },
+          "research": {
+            "dedup": 0,
+            "out_of_window": 9
+          }
+        },
+        "date_filter_ms": 0,
+        "relevance_ms": 0,
+        "llm_ms": 137868,
+        "scoring_ms": 0
+      },
+      "top_news": []
+    },
+    "SSE:600330": {
+      "name": "600330",
+      "score": 50,
+      "score_raw": 0,
+      "score_components": {
+        "positive_weight_sum": 0,
+        "negative_weight_sum": 0
+      },
+      "signal": "⚪ No Trade (无数据)",
+      "strategy": "LLM 不可用或调用失败（不走关键字降级）",
+      "suitable_for": "观望",
+      "confidence": "-",
+      "patterns": [],
+      "positive_factors": [],
+      "negative_factors": [],
+      "news_count": 0,
+      "news_dropped": 0,
+      "performance": {
+        "list_fetch_ms": 1037,
+        "candidate_filter_ms": 0,
+        "enrichment_ms": 5782,
+        "raw_news_count": 40,
+        "raw_research_count": 10,
+        "candidate_news_count": 21,
+        "candidate_research_count": 0,
+        "enriched_news_count": 20,
+        "enriched_research_count": 0,
+        "candidate_reasons": {
+          "news": {
+            "no-subject-mention": 16,
+            "noise:\\d{1,2}月\\d{1,2}日(快速上涨|快速回调|涨停|": 2,
+            "noise:融资净(买入|卖出)": 1,
+            "dedup": 0
+          },
+          "research": {
+            "dedup": 0,
+            "out_of_window": 10
+          }
+        },
+        "date_filter_ms": 0,
+        "relevance_ms": 0,
+        "llm_ms": 103890,
+        "scoring_ms": 0
+      },
+      "top_news": []
+    },
+    "SZSE:300843": {
+      "name": "300843",
+      "score": 50,
+      "score_raw": 0,
+      "score_components": {
+        "positive_weight_sum": 0,
+        "negative_weight_sum": 0
+      },
+      "signal": "⚪ No Trade (无数据)",
+      "strategy": "LLM 不可用或调用失败（不走关键字降级）",
+      "suitable_for": "观望",
+      "confidence": "-",
+      "patterns": [],
+      "positive_factors": [],
+      "negative_factors": [],
+      "news_count": 0,
+      "news_dropped": 0,
+      "performance": {
+        "list_fetch_ms": 17087,
+        "candidate_filter_ms": 0,
+        "enrichment_ms": 5050,
+        "raw_news_count": 40,
+        "raw_research_count": 4,
+        "candidate_news_count": 11,
+        "candidate_research_count": 0,
+        "enriched_news_count": 11,
+        "enriched_research_count": 0,
+        "candidate_reasons": {
+          "news": {
+            "noise:融资净(买入|卖出)": 4,
+            "no-subject-mention": 12,
+            "noise:\\d{1,2}月\\d{1,2}日(快速上涨|快速回调|涨停|": 3,
+            "dedup": 0,
+            "out_of_window": 10
+          },
+          "research": {
+            "dedup": 0,
+            "out_of_window": 4
+          }
+        },
+        "date_filter_ms": 0,
+        "relevance_ms": 0,
+        "llm_ms": 167078,
+        "scoring_ms": 0
+      },
+      "top_news": []
+    },
+    "SSE:605319": {
+      "name": "605319",
+      "score": 50,
+      "score_raw": 0,
+      "score_components": {
+        "positive_weight_sum": 0,
+        "negative_weight_sum": 0
+      },
+      "signal": "⚪ No Trade (无数据)",
+      "strategy": "LLM 不可用或调用失败（不走关键字降级）",
+      "suitable_for": "观望",
+      "confidence": "-",
+      "patterns": [],
+      "positive_factors": [],
+      "negative_factors": [],
+      "news_count": 0,
+      "news_dropped": 0,
+      "performance": {
+        "list_fetch_ms": 2588,
+        "candidate_filter_ms": 0,
+        "enrichment_ms": 3562,
+        "raw_news_count": 40,
+        "raw_research_count": 10,
+        "candidate_news_count": 3,
+        "candidate_research_count": 0,
+        "enriched_news_count": 3,
+        "enriched_research_count": 0,
+        "candidate_reasons": {
+          "news": {
+            "no-subject-mention": 4,
+            "noise:\\d{1,2}月\\d{1,2}日(快速上涨|快速回调|涨停|": 1,
+            "dedup": 0,
+            "out_of_window": 32
+          },
+          "research": {
+            "dedup": 0,
+            "out_of_window": 10
+          }
+        },
+        "date_filter_ms": 0,
+        "relevance_ms": 0,
+        "llm_ms": 129123,
+        "scoring_ms": 0
+      },
+      "top_news": []
+    },
+    "SZSE:300866": {
+      "name": "300866",
+      "score": 50,
+      "score_raw": 0,
+      "score_components": {
+        "positive_weight_sum": 0,
+        "negative_weight_sum": 0
+      },
+      "signal": "⚪ No Trade (无数据)",
+      "strategy": "近期无相关有效新闻",
+      "suitable_for": "观望",
+      "confidence": "-",
+      "patterns": [],
+      "positive_factors": [],
+      "negative_factors": [],
+      "news_count": 0,
+      "news_dropped": 0,
+      "performance": {
+        "list_fetch_ms": 985,
+        "candidate_filter_ms": 0,
+        "enrichment_ms": 0,
+        "raw_news_count": 40,
+        "raw_research_count": 10,
+        "candidate_news_count": 0,
+        "candidate_research_count": 0,
+        "enriched_news_count": 0,
+        "enriched_research_count": 0,
+        "candidate_reasons": {
+          "news": {
+            "no-subject-mention": 18,
+            "noise:\\d{1,2}月\\d{1,2}日(快速上涨|快速回调|涨停|": 1,
+            "noise:融资净(买入|卖出)": 1,
+            "dedup": 0,
+            "out_of_window": 20
+          },
+          "research": {
+            "dedup": 0,
+            "out_of_window": 10
+          }
+        },
+        "date_filter_ms": 0,
+        "relevance_ms": 0,
+        "llm_ms": 0,
+        "scoring_ms": 0
+      },
+      "top_news": []
+    },
+    "SSE:603186": {
+      "name": "603186",
+      "score": 50,
+      "score_raw": 0,
+      "score_components": {
+        "positive_weight_sum": 0,
+        "negative_weight_sum": 0
+      },
+      "signal": "⚪ No Trade (无数据)",
+      "strategy": "近期无相关有效新闻",
+      "suitable_for": "观望",
+      "confidence": "-",
+      "patterns": [],
+      "positive_factors": [],
+      "negative_factors": [],
+      "news_count": 0,
+      "news_dropped": 0,
+      "performance": {
+        "list_fetch_ms": 806,
+        "candidate_filter_ms": 0,
+        "enrichment_ms": 0,
+        "raw_news_count": 40,
+        "raw_research_count": 10,
+        "candidate_news_count": 0,
+        "candidate_research_count": 0,
+        "enriched_news_count": 0,
+        "enriched_research_count": 0,
+        "candidate_reasons": {
+          "news": {
+            "no-subject-mention": 17,
+            "noise:\\d{1,2}月\\d{1,2}日(快速上涨|快速回调|涨停|": 3,
+            "dedup": 0,
+            "out_of_window": 20
+          },
+          "research": {
+            "dedup": 0,
+            "out_of_window": 10
+          }
+        },
+        "date_filter_ms": 0,
+        "relevance_ms": 0,
+        "llm_ms": 0,
+        "scoring_ms": 0
+      },
+      "top_news": []
+    },
+    "SZSE:300017": {
+      "name": "300017",
+      "score": 50,
+      "score_raw": 0,
+      "score_components": {
+        "positive_weight_sum": 0,
+        "negative_weight_sum": 0
+      },
+      "signal": "⚪ No Trade (无数据)",
+      "strategy": "LLM 不可用或调用失败（不走关键字降级）",
+      "suitable_for": "观望",
+      "confidence": "-",
+      "patterns": [],
+      "positive_factors": [],
+      "negative_factors": [],
+      "news_count": 0,
+      "news_dropped": 0,
+      "performance": {
+        "list_fetch_ms": 921,
+        "candidate_filter_ms": 0,
+        "enrichment_ms": 3436,
+        "raw_news_count": 40,
+        "raw_research_count": 10,
+        "candidate_news_count": 5,
+        "candidate_research_count": 0,
+        "enriched_news_count": 5,
+        "enriched_research_count": 0,
+        "candidate_reasons": {
+          "news": {
+            "no-subject-mention": 8,
+            "noise:\\d{1,2}月\\d{1,2}日(快速上涨|快速回调|涨停|": 1,
+            "noise:融资净(买入|卖出)": 4,
+            "dedup": 0,
+            "out_of_window": 22
+          },
+          "research": {
+            "dedup": 0,
+            "out_of_window": 10
+          }
+        },
+        "date_filter_ms": 0,
+        "relevance_ms": 0,
+        "llm_ms": 123335,
+        "scoring_ms": 0
+      },
+      "top_news": []
+    },
+    "SZSE:000977": {
+      "name": "000977",
+      "score": 50,
+      "score_raw": 0,
+      "score_components": {
+        "positive_weight_sum": 0,
+        "negative_weight_sum": 0
+      },
+      "signal": "⚪ No Trade (无数据)",
+      "strategy": "LLM 不可用或调用失败（不走关键字降级）",
+      "suitable_for": "观望",
+      "confidence": "-",
+      "patterns": [],
+      "positive_factors": [],
+      "negative_factors": [],
+      "news_count": 0,
+      "news_dropped": 0,
+      "performance": {
+        "list_fetch_ms": 763,
+        "candidate_filter_ms": 0,
+        "enrichment_ms": 4436,
+        "raw_news_count": 40,
+        "raw_research_count": 10,
+        "candidate_news_count": 9,
+        "candidate_research_count": 0,
+        "enriched_news_count": 9,
+        "enriched_research_count": 0,
+        "candidate_reasons": {
+          "news": {
+            "no-subject-mention": 18,
+            "noise:融资净(买入|卖出)": 1,
+            "dedup": 0,
+            "out_of_window": 12
+          },
+          "research": {
+            "dedup": 0,
+            "out_of_window": 10
+          }
+        },
+        "date_filter_ms": 0,
+        "relevance_ms": 0,
+        "llm_ms": 92912,
+        "scoring_ms": 0
+      },
+      "top_news": []
+    },
+    "SSE:600547": {
+      "name": "600547",
+      "score": 50,
+      "score_raw": 0,
+      "score_components": {
+        "positive_weight_sum": 0,
+        "negative_weight_sum": 0
+      },
+      "signal": "⚪ No Trade (无数据)",
+      "strategy": "LLM 不可用或调用失败（不走关键字降级）",
+      "suitable_for": "观望",
+      "confidence": "-",
+      "patterns": [],
+      "positive_factors": [],
+      "negative_factors": [],
+      "news_count": 0,
+      "news_dropped": 0,
+      "performance": {
+        "list_fetch_ms": 1121,
+        "candidate_filter_ms": 0,
+        "enrichment_ms": 6963,
+        "raw_news_count": 40,
+        "raw_research_count": 10,
+        "candidate_news_count": 15,
+        "candidate_research_count": 0,
+        "enriched_news_count": 15,
+        "enriched_research_count": 0,
+        "candidate_reasons": {
+          "news": {
+            "no-subject-mention": 16,
+            "noise:\\d{1,2}月\\d{1,2}日(快速上涨|快速回调|涨停|": 1,
+            "noise:融资净(买入|卖出)": 2,
+            "dedup": 0,
+            "out_of_window": 6
+          },
+          "research": {
+            "dedup": 0,
+            "out_of_window": 10
+          }
+        },
+        "date_filter_ms": 0,
+        "relevance_ms": 0,
+        "llm_ms": 85240,
+        "scoring_ms": 0
+      },
+      "top_news": []
+    },
+    "SZSE:300340": {
+      "name": "300340",
+      "score": 50,
+      "score_raw": 0,
+      "score_components": {
+        "positive_weight_sum": 0,
+        "negative_weight_sum": 0
+      },
+      "signal": "⚪ No Trade (无数据)",
+      "strategy": "LLM 不可用或调用失败（不走关键字降级）",
+      "suitable_for": "观望",
+      "confidence": "-",
+      "patterns": [],
+      "positive_factors": [],
+      "negative_factors": [],
+      "news_count": 0,
+      "news_dropped": 0,
+      "performance": {
+        "list_fetch_ms": 6900,
+        "candidate_filter_ms": 0,
+        "enrichment_ms": 8180,
+        "raw_news_count": 40,
+        "raw_research_count": 10,
+        "candidate_news_count": 11,
+        "candidate_research_count": 0,
+        "enriched_news_count": 11,
+        "enriched_research_count": 0,
+        "candidate_reasons": {
+          "news": {
+            "no-subject-mention": 6,
+            "noise:\\d{1,2}月\\d{1,2}日(快速上涨|快速回调|涨停|": 2,
+            "dedup": 0,
+            "out_of_window": 21
+          },
+          "research": {
+            "dedup": 0,
+            "out_of_window": 10
+          }
+        },
+        "date_filter_ms": 0,
+        "relevance_ms": 0,
+        "llm_ms": 38767,
+        "scoring_ms": 0
+      },
+      "top_news": []
+    },
+    "SZSE:002475": {
+      "name": "002475",
+      "score": 50,
+      "score_raw": 0,
+      "score_components": {
+        "positive_weight_sum": 0,
+        "negative_weight_sum": 0
+      },
+      "signal": "⚪ No Trade (无数据)",
+      "strategy": "LLM 不可用或调用失败（不走关键字降级）",
+      "suitable_for": "观望",
+      "confidence": "-",
+      "patterns": [],
+      "positive_factors": [],
+      "negative_factors": [],
+      "news_count": 0,
+      "news_dropped": 0,
+      "performance": {
+        "list_fetch_ms": 761,
+        "candidate_filter_ms": 0,
+        "enrichment_ms": 8900,
+        "raw_news_count": 40,
+        "raw_research_count": 10,
+        "candidate_news_count": 12,
+        "candidate_research_count": 0,
+        "enriched_news_count": 12,
+        "enriched_research_count": 0,
+        "candidate_reasons": {
+          "news": {
+            "no-subject-mention": 17,
+            "noise:融资净(买入|卖出)": 1,
+            "dedup": 0,
+            "out_of_window": 10
+          },
+          "research": {
+            "dedup": 0,
+            "out_of_window": 10
+          }
+        },
+        "date_filter_ms": 0,
+        "relevance_ms": 0,
+        "llm_ms": 44009,
+        "scoring_ms": 0
+      },
+      "top_news": []
+    },
+    "SZSE:300308": {
+      "name": "中际旭创",
+      "score": 50,
+      "score_raw": 0,
+      "score_components": {
+        "positive_weight_sum": 0,
+        "negative_weight_sum": 0
+      },
+      "signal": "⚪ No Trade (无数据)",
+      "strategy": "LLM 不可用或调用失败（不走关键字降级）",
+      "suitable_for": "观望",
+      "confidence": "-",
+      "patterns": [],
+      "positive_factors": [],
+      "negative_factors": [],
+      "news_count": 0,
+      "news_dropped": 0,
+      "performance": {
+        "list_fetch_ms": 1007,
+        "candidate_filter_ms": 0,
+        "enrichment_ms": 4448,
+        "raw_news_count": 40,
+        "raw_research_count": 10,
+        "candidate_news_count": 5,
+        "candidate_research_count": 1,
+        "enriched_news_count": 5,
+        "enriched_research_count": 1,
+        "candidate_reasons": {
+          "news": {
+            "no-subject-mention": 17,
+            "dedup": 0,
+            "out_of_window": 18
+          },
+          "research": {
+            "dedup": 0,
+            "out_of_window": 9
+          }
+        },
+        "date_filter_ms": 0,
+        "relevance_ms": 0,
+        "llm_ms": 23076,
+        "scoring_ms": 0
+      },
+      "top_news": []
+    },
+    "SSE:600183": {
+      "name": "600183",
+      "score": 50,
+      "score_raw": 0,
+      "score_components": {
+        "positive_weight_sum": 0,
+        "negative_weight_sum": 0
+      },
+      "signal": "⚪ No Trade (无数据)",
+      "strategy": "LLM 不可用或调用失败（不走关键字降级）",
+      "suitable_for": "观望",
+      "confidence": "-",
+      "patterns": [],
+      "positive_factors": [],
+      "negative_factors": [],
+      "news_count": 0,
+      "news_dropped": 0,
+      "performance": {
+        "list_fetch_ms": 686,
+        "candidate_filter_ms": 0,
+        "enrichment_ms": 2048,
+        "raw_news_count": 40,
+        "raw_research_count": 10,
+        "candidate_news_count": 3,
+        "candidate_research_count": 1,
+        "enriched_news_count": 3,
+        "enriched_research_count": 1,
+        "candidate_reasons": {
+          "news": {
+            "no-subject-mention": 17,
+            "noise:融资净(买入|卖出)": 2,
+            "noise:\\d{1,2}月\\d{1,2}日(快速上涨|快速回调|涨停|": 1,
+            "dedup": 0,
+            "out_of_window": 17
+          },
+          "research": {
+            "dedup": 0,
+            "out_of_window": 9
+          }
+        },
+        "date_filter_ms": 0,
+        "relevance_ms": 0,
+        "llm_ms": 6529,
+        "scoring_ms": 0
+      },
+      "top_news": []
+    },
+    "SZSE:000951": {
+      "name": "000951",
+      "score": 50,
+      "score_raw": 0,
+      "score_components": {
+        "positive_weight_sum": 0,
+        "negative_weight_sum": 0
+      },
+      "signal": "⚪ No Trade (无数据)",
+      "strategy": "LLM 不可用或调用失败（不走关键字降级）",
+      "suitable_for": "观望",
+      "confidence": "-",
+      "patterns": [],
+      "positive_factors": [],
+      "negative_factors": [],
+      "news_count": 0,
+      "news_dropped": 0,
+      "performance": {
+        "list_fetch_ms": 1848,
+        "candidate_filter_ms": 0,
+        "enrichment_ms": 10860,
+        "raw_news_count": 40,
+        "raw_research_count": 10,
+        "candidate_news_count": 21,
+        "candidate_research_count": 2,
+        "enriched_news_count": 20,
+        "enriched_research_count": 2,
+        "candidate_reasons": {
+          "news": {
+            "no-subject-mention": 18,
+            "noise:\\d{1,2}月\\d{1,2}日(快速上涨|快速回调|涨停|": 1,
+            "dedup": 0
+          },
+          "research": {
+            "dedup": 0,
+            "out_of_window": 8
+          }
+        },
+        "date_filter_ms": 0,
+        "relevance_ms": 0,
+        "llm_ms": 3615,
+        "scoring_ms": 0
+      },
+      "top_news": []
+    },
+    "SSE:600186": {
+      "name": "600186",
+      "score": 50,
+      "score_raw": 0,
+      "score_components": {
+        "positive_weight_sum": 0,
+        "negative_weight_sum": 0
+      },
+      "signal": "⚪ No Trade (无数据)",
+      "strategy": "LLM 不可用或调用失败（不走关键字降级）",
+      "suitable_for": "观望",
+      "confidence": "-",
+      "patterns": [],
+      "positive_factors": [],
+      "negative_factors": [],
+      "news_count": 0,
+      "news_dropped": 0,
+      "performance": {
+        "list_fetch_ms": 7515,
+        "candidate_filter_ms": 1,
+        "enrichment_ms": 12743,
+        "raw_news_count": 40,
+        "raw_research_count": 10,
+        "candidate_news_count": 21,
+        "candidate_research_count": 1,
+        "enriched_news_count": 20,
+        "enriched_research_count": 1,
+        "candidate_reasons": {
+          "news": {
+            "no-subject-mention": 18,
+            "noise:\\d{1,2}月\\d{1,2}日(快速上涨|快速回调|涨停|": 1,
+            "dedup": 0
+          },
+          "research": {
+            "dedup": 0,
+            "out_of_window": 9
+          }
+        },
+        "date_filter_ms": 0,
+        "relevance_ms": 0,
+        "llm_ms": 3796,
+        "scoring_ms": 0
+      },
+      "top_news": []
+    },
+    "SSE:601877": {
+      "name": "601877",
+      "score": 50,
+      "score_raw": 0,
+      "score_components": {
+        "positive_weight_sum": 0,
+        "negative_weight_sum": 0
+      },
+      "signal": "⚪ No Trade (无数据)",
+      "strategy": "LLM 不可用或调用失败（不走关键字降级）",
+      "suitable_for": "观望",
+      "confidence": "-",
+      "patterns": [],
+      "positive_factors": [],
+      "negative_factors": [],
+      "news_count": 0,
+      "news_dropped": 0,
+      "performance": {
+        "list_fetch_ms": 6094,
+        "candidate_filter_ms": 0,
+        "enrichment_ms": 13559,
+        "raw_news_count": 40,
+        "raw_research_count": 10,
+        "candidate_news_count": 3,
+        "candidate_research_count": 0,
+        "enriched_news_count": 3,
+        "enriched_research_count": 0,
+        "candidate_reasons": {
+          "news": {
+            "no-subject-mention": 9,
+            "noise:融资净(买入|卖出)": 4,
+            "dedup": 0,
+            "out_of_window": 24
+          },
+          "research": {
+            "dedup": 0,
+            "out_of_window": 10
+          }
+        },
+        "date_filter_ms": 0,
+        "relevance_ms": 0,
+        "llm_ms": 3296,
+        "scoring_ms": 0
+      },
+      "top_news": []
+    },
+    "SZSE:002080": {
+      "name": "002080",
+      "score": 50,
+      "score_raw": 0,
+      "score_components": {
+        "positive_weight_sum": 0,
+        "negative_weight_sum": 0
+      },
+      "signal": "⚪ No Trade (无数据)",
+      "strategy": "近期无相关有效新闻",
+      "suitable_for": "观望",
+      "confidence": "-",
+      "patterns": [],
+      "positive_factors": [],
+      "negative_factors": [],
+      "news_count": 0,
+      "news_dropped": 0,
+      "performance": {
+        "list_fetch_ms": 6055,
+        "candidate_filter_ms": 0,
+        "enrichment_ms": 0,
+        "raw_news_count": 40,
+        "raw_research_count": 10,
+        "candidate_news_count": 0,
+        "candidate_research_count": 0,
+        "enriched_news_count": 0,
+        "enriched_research_count": 0,
+        "candidate_reasons": {
+          "news": {
+            "noise:\\d{1,2}月\\d{1,2}日(快速上涨|快速回调|涨停|": 1,
+            "noise:融资净(买入|卖出)": 2,
+            "no-subject-mention": 17,
+            "dedup": 0,
+            "out_of_window": 20
+          },
+          "research": {
+            "dedup": 0,
+            "out_of_window": 10
+          }
+        },
+        "date_filter_ms": 0,
+        "relevance_ms": 0,
+        "llm_ms": 0,
+        "scoring_ms": 0
+      },
+      "top_news": []
+    },
+    "SZSE:002595": {
+      "name": "002595",
+      "score": 50,
+      "score_raw": 0,
+      "score_components": {
+        "positive_weight_sum": 0,
+        "negative_weight_sum": 0
+      },
+      "signal": "⚪ No Trade (无数据)",
+      "strategy": "LLM 不可用或调用失败（不走关键字降级）",
+      "suitable_for": "观望",
+      "confidence": "-",
+      "patterns": [],
+      "positive_factors": [],
+      "negative_factors": [],
+      "news_count": 0,
+      "news_dropped": 0,
+      "performance": {
+        "list_fetch_ms": 4709,
+        "candidate_filter_ms": 0,
+        "enrichment_ms": 19362,
+        "raw_news_count": 40,
+        "raw_research_count": 10,
+        "candidate_news_count": 10,
+        "candidate_research_count": 0,
+        "enriched_news_count": 10,
+        "enriched_research_count": 0,
+        "candidate_reasons": {
+          "news": {
+            "no-subject-mention": 7,
+            "noise:龙虎榜|大宗交易|盘口异动": 2,
+            "noise:融资净(买入|卖出)": 2,
+            "dedup": 0,
+            "out_of_window": 19
+          },
+          "research": {
+            "dedup": 0,
+            "out_of_window": 10
+          }
+        },
+        "date_filter_ms": 0,
+        "relevance_ms": 0,
+        "llm_ms": 2845,
+        "scoring_ms": 0
+      },
+      "top_news": []
+    },
+    "SZSE:002466": {
+      "name": "002466",
+      "score": 50,
+      "score_raw": 0,
+      "score_components": {
+        "positive_weight_sum": 0,
+        "negative_weight_sum": 0
+      },
+      "signal": "⚪ No Trade (无数据)",
+      "strategy": "LLM 不可用或调用失败（不走关键字降级）",
+      "suitable_for": "观望",
+      "confidence": "-",
+      "patterns": [],
+      "positive_factors": [],
+      "negative_factors": [],
+      "news_count": 0,
+      "news_dropped": 0,
+      "performance": {
+        "list_fetch_ms": 5526,
+        "candidate_filter_ms": 0,
+        "enrichment_ms": 23232,
+        "raw_news_count": 40,
+        "raw_research_count": 10,
+        "candidate_news_count": 7,
+        "candidate_research_count": 1,
+        "enriched_news_count": 7,
+        "enriched_research_count": 1,
+        "candidate_reasons": {
+          "news": {
+            "no-subject-mention": 19,
+            "dedup": 0,
+            "out_of_window": 14
+          },
+          "research": {
+            "dedup": 0,
+            "out_of_window": 9
+          }
+        },
+        "date_filter_ms": 0,
+        "relevance_ms": 0,
+        "llm_ms": 3237,
+        "scoring_ms": 0
+      },
+      "top_news": []
+    },
+    "SZSE:002452": {
+      "name": "002452",
+      "score": 50,
+      "score_raw": 0,
+      "score_components": {
+        "positive_weight_sum": 0,
+        "negative_weight_sum": 0
+      },
+      "signal": "⚪ No Trade (无数据)",
+      "strategy": "LLM 不可用或调用失败（不走关键字降级）",
+      "suitable_for": "观望",
+      "confidence": "-",
+      "patterns": [],
+      "positive_factors": [],
+      "negative_factors": [],
+      "news_count": 0,
+      "news_dropped": 0,
+      "performance": {
+        "list_fetch_ms": 8192,
+        "candidate_filter_ms": 0,
+        "enrichment_ms": 24066,
+        "raw_news_count": 40,
+        "raw_research_count": 10,
+        "candidate_news_count": 8,
+        "candidate_research_count": 1,
+        "enriched_news_count": 8,
+        "enriched_research_count": 1,
+        "candidate_reasons": {
+          "news": {
+            "noise:融资净(买入|卖出)": 4,
+            "no-subject-mention": 11,
+            "dedup": 0,
+            "out_of_window": 17
+          },
+          "research": {
+            "dedup": 0,
+            "out_of_window": 9
+          }
+        },
+        "date_filter_ms": 0,
+        "relevance_ms": 1,
+        "llm_ms": 3034,
+        "scoring_ms": 0
+      },
+      "top_news": []
+    },
+    "SZSE:000408": {
+      "name": "000408",
+      "score": 50,
+      "score_raw": 0,
+      "score_components": {
+        "positive_weight_sum": 0,
+        "negative_weight_sum": 0
+      },
+      "signal": "⚪ No Trade (无数据)",
+      "strategy": "LLM 不可用或调用失败（不走关键字降级）",
+      "suitable_for": "观望",
+      "confidence": "-",
+      "patterns": [],
+      "positive_factors": [],
+      "negative_factors": [],
+      "news_count": 0,
+      "news_dropped": 0,
+      "performance": {
+        "list_fetch_ms": 7205,
+        "candidate_filter_ms": 0,
+        "enrichment_ms": 25661,
+        "raw_news_count": 40,
+        "raw_research_count": 10,
+        "candidate_news_count": 14,
+        "candidate_research_count": 0,
+        "enriched_news_count": 14,
+        "enriched_research_count": 0,
+        "candidate_reasons": {
+          "news": {
+            "no-subject-mention": 15,
+            "noise:融资净(买入|卖出)": 3,
+            "noise:\\d{1,2}月\\d{1,2}日(快速上涨|快速回调|涨停|": 1,
+            "dedup": 0,
+            "out_of_window": 7
+          },
+          "research": {
+            "dedup": 0,
+            "out_of_window": 10
+          }
+        },
+        "date_filter_ms": 0,
+        "relevance_ms": 0,
+        "llm_ms": 3127,
+        "scoring_ms": 0
+      },
+      "top_news": []
+    },
+    "SZSE:002580": {
+      "name": "002580",
+      "score": 50,
+      "score_raw": 0,
+      "score_components": {
+        "positive_weight_sum": 0,
+        "negative_weight_sum": 0
+      },
+      "signal": "⚪ No Trade (无数据)",
+      "strategy": "LLM 不可用或调用失败（不走关键字降级）",
+      "suitable_for": "观望",
+      "confidence": "-",
+      "patterns": [],
+      "positive_factors": [],
+      "negative_factors": [],
+      "news_count": 0,
+      "news_dropped": 0,
+      "performance": {
+        "list_fetch_ms": 7353,
+        "candidate_filter_ms": 1,
+        "enrichment_ms": 16215,
+        "raw_news_count": 40,
+        "raw_research_count": 1,
+        "candidate_news_count": 6,
+        "candidate_research_count": 0,
+        "enriched_news_count": 6,
+        "enriched_research_count": 0,
+        "candidate_reasons": {
+          "news": {
+            "no-subject-mention": 11,
+            "noise:龙虎榜|大宗交易|盘口异动": 6,
+            "noise:\\d{1,2}月\\d{1,2}日(快速上涨|快速回调|涨停|": 2,
+            "dedup": 0,
+            "out_of_window": 15
+          },
+          "research": {
+            "dedup": 0,
+            "out_of_window": 1
+          }
+        },
+        "date_filter_ms": 0,
+        "relevance_ms": 0,
+        "llm_ms": 2776,
+        "scoring_ms": 0
+      },
+      "top_news": []
+    },
+    "SZSE:300882": {
+      "name": "300882",
+      "score": 50,
+      "score_raw": 0,
+      "score_components": {
+        "positive_weight_sum": 0,
+        "negative_weight_sum": 0
+      },
+      "signal": "⚪ No Trade (无数据)",
+      "strategy": "LLM 不可用或调用失败（不走关键字降级）",
+      "suitable_for": "观望",
+      "confidence": "-",
+      "patterns": [],
+      "positive_factors": [],
+      "negative_factors": [],
+      "news_count": 0,
+      "news_dropped": 0,
+      "performance": {
+        "list_fetch_ms": 9527,
+        "candidate_filter_ms": 0,
+        "enrichment_ms": 13396,
+        "raw_news_count": 40,
+        "raw_research_count": 0,
+        "candidate_news_count": 8,
+        "candidate_research_count": 0,
+        "enriched_news_count": 8,
+        "enriched_research_count": 0,
+        "candidate_reasons": {
+          "news": {
+            "noise:融资净(买入|卖出)": 3,
+            "noise:\\d{1,2}月\\d{1,2}日(快速上涨|快速回调|涨停|": 1,
+            "no-subject-mention": 7,
+            "dedup": 0,
+            "out_of_window": 21
+          },
+          "research": {
+            "dedup": 0
+          }
+        },
+        "date_filter_ms": 0,
+        "relevance_ms": 0,
+        "llm_ms": 2961,
+        "scoring_ms": 0
+      },
+      "top_news": []
+    }
+  }
+}

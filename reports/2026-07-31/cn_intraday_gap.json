@@ -1,0 +1,447 @@
+{
+  "generated_at": "2026-07-30T06:40:32.502Z",
+  "market": "cn",
+  "source": "./watchlist/cn_selected.txt",
+  "entry_signal": {
+    "can_enter": false,
+    "signal": "观望",
+    "reason": "隔夜美股上涨 → A股均值回归承压 (回测个股涨概率仅 40.8%)",
+    "strategy": "不入场, 等待下一个美股下跌日"
+  },
+  "overnight_us": {
+    "sp500_pct": 0.59,
+    "nasdaq_pct": 0.44,
+    "dji_pct": 0.65,
+    "avg_pct": 0.56,
+    "contrarian_signal": "US up → CN down (均值回归)"
+  },
+  "sector_flow": {
+    "top_gainers": [
+      {
+        "code": "BK1325",
+        "name": "半导体材料",
+        "change_pct": -7.91,
+        "flow": 10749.74
+      },
+      {
+        "code": "BK1327",
+        "name": "分立器件",
+        "change_pct": -7.53,
+        "flow": 12761.95
+      },
+      {
+        "code": "BK1326",
+        "name": "半导体设备",
+        "change_pct": -7.5,
+        "flow": 43408.95
+      },
+      {
+        "code": "BK1340",
+        "name": "印制电路板",
+        "change_pct": -7.2,
+        "flow": 8810.07
+      },
+      {
+        "code": "BK1328",
+        "name": "集成电路封测",
+        "change_pct": -6.99,
+        "flow": 7119.03
+      }
+    ],
+    "top_losers": [
+      {
+        "code": "BK1575",
+        "name": "白酒Ⅲ",
+        "change_pct": 4.14,
+        "flow": 4446.79
+      },
+      {
+        "code": "BK1277",
+        "name": "白酒Ⅱ",
+        "change_pct": 4.14,
+        "flow": 4446.79
+      },
+      {
+        "code": "BK1519",
+        "name": "电动乘用车",
+        "change_pct": 3.94,
+        "flow": 5068.65
+      },
+      {
+        "code": "BK1451",
+        "name": "厨房电器",
+        "change_pct": 3.87,
+        "flow": 7989.91
+      },
+      {
+        "code": "BK1507",
+        "name": "宠物食品",
+        "change_pct": 3.45,
+        "flow": 1551.07
+      }
+    ]
+  },
+  "model": "external_3d",
+  "formula": "Score = 隔夜外盘·均值回归(±4) + 新闻情绪(±3) + 板块资金流(±2)",
+  "strategy": {
+    "entry_condition": "隔夜美股下跌",
+    "priority_sort": "新闻<60 优先 (回测涨概率 65.1%), 新闻≥60 次之 (回测涨概率 48.8%)",
+    "rationale": "利好出尽是利空 — 高新闻分标的已被热钱透支，反弹力度弱"
+  },
+  "total": 9,
+  "success": 9,
+  "failed": [],
+  "results": [
+    {
+      "symbol": "SZSE:300458",
+      "name": "全志科技",
+      "ok": true,
+      "price": 32.62,
+      "open": 38.58,
+      "high": 39.14,
+      "low": 32.6,
+      "volume": 134605185,
+      "chg_pct": -0.154484,
+      "gap_pct": 0.154484,
+      "real_gap": -0.02919,
+      "candle": "阴",
+      "mkt_contrib": -4,
+      "news_score": 42,
+      "news_signal": "⚪ No Trade (中性)",
+      "news_patterns": [
+        "⚠️连续空头压制(3日)"
+      ],
+      "news_contrib": -3,
+      "sector_score": 2,
+      "matched_boards": [
+        {
+          "board": "电子",
+          "direction": "top",
+          "rank": 1
+        },
+        {
+          "board": "半导体",
+          "direction": "top",
+          "rank": 2
+        }
+      ],
+      "all_boards": [
+        "电子",
+        "半导体",
+        "数字芯片设计",
+        "广东板块",
+        "股权分散"
+      ],
+      "can_enter": false,
+      "entry_label": "⛔ 观望",
+      "priority": -1,
+      "score": -5,
+      "prediction": "偏空"
+    },
+    {
+      "symbol": "SZSE:002371",
+      "name": "北方华创",
+      "ok": true,
+      "price": 683.08,
+      "open": 688.08,
+      "high": 711.73,
+      "low": 643.5,
+      "volume": 15325421,
+      "chg_pct": -0.007267,
+      "gap_pct": 0.007267,
+      "real_gap": -0.025921,
+      "candle": "阴",
+      "mkt_contrib": -4,
+      "news_score": 56,
+      "news_signal": "⚪ No Trade (微多)",
+      "news_patterns": [],
+      "news_contrib": -3,
+      "sector_score": 2,
+      "matched_boards": [
+        {
+          "board": "电子",
+          "direction": "top",
+          "rank": 1
+        },
+        {
+          "board": "半导体",
+          "direction": "top",
+          "rank": 2
+        },
+        {
+          "board": "半导体设备",
+          "direction": "top",
+          "rank": 3
+        }
+      ],
+      "all_boards": [
+        "电子",
+        "半导体",
+        "半导体设备",
+        "北京板块",
+        "科技风格"
+      ],
+      "can_enter": false,
+      "entry_label": "⛔ 观望",
+      "priority": -1,
+      "score": -5,
+      "prediction": "偏空"
+    },
+    {
+      "symbol": "SZSE:301165",
+      "name": "锐捷网络",
+      "ok": true,
+      "price": 104.33,
+      "open": 105.74,
+      "high": 109.3,
+      "low": 99.9,
+      "volume": 25300697,
+      "chg_pct": -0.013335,
+      "gap_pct": 0.013335,
+      "real_gap": 0.007048,
+      "candle": "阴",
+      "mkt_contrib": -4,
+      "news_score": 47,
+      "news_signal": "⚪ No Trade (中性)",
+      "news_patterns": [],
+      "news_contrib": -3,
+      "sector_score": 2,
+      "matched_boards": [
+        {
+          "board": "通信网络设备及器件",
+          "direction": "top",
+          "rank": 3
+        }
+      ],
+      "all_boards": [
+        "通信",
+        "通信设备",
+        "通信网络设备及器件",
+        "福建板块",
+        "高市净率"
+      ],
+      "can_enter": false,
+      "entry_label": "⛔ 观望",
+      "priority": -1,
+      "score": -5,
+      "prediction": "偏空"
+    },
+    {
+      "symbol": "SZSE:000333",
+      "name": "美的集团",
+      "ok": true,
+      "price": 88.88,
+      "open": 87.01,
+      "high": 89.5,
+      "low": 86.5,
+      "volume": 41991793,
+      "chg_pct": 0.021492,
+      "gap_pct": 0.021492,
+      "real_gap": 0,
+      "candle": "阳",
+      "mkt_contrib": -4,
+      "news_score": 98,
+      "news_signal": "⚠️ No Trade (情绪过热)",
+      "news_patterns": [
+        "情绪持续增强↑(trend)",
+        "⚠️情绪过热(单边乐观,注意回调)"
+      ],
+      "news_contrib": 3,
+      "sector_score": 0,
+      "matched_boards": [],
+      "all_boards": [
+        "家用电器",
+        "白色家电",
+        "空调",
+        "广东板块",
+        "趋势股"
+      ],
+      "can_enter": false,
+      "entry_label": "⛔ 观望",
+      "priority": -1,
+      "score": -1,
+      "prediction": "偏空"
+    },
+    {
+      "symbol": "SSE:603296",
+      "name": "华勤技术",
+      "ok": true,
+      "price": 79.85,
+      "open": 82.4,
+      "high": 83.99,
+      "low": 76.66,
+      "volume": 30974363,
+      "chg_pct": -0.030947,
+      "gap_pct": 0.030947,
+      "real_gap": -0.014943,
+      "candle": "阴",
+      "mkt_contrib": -4,
+      "news_score": 78,
+      "news_signal": "🟢 Long (强)",
+      "news_patterns": [],
+      "news_contrib": 3,
+      "sector_score": 2,
+      "matched_boards": [
+        {
+          "board": "电子",
+          "direction": "top",
+          "rank": 1
+        }
+      ],
+      "all_boards": [
+        "电子",
+        "消费电子",
+        "消费电子零部件及组装",
+        "上海板块",
+        "2026中报预增"
+      ],
+      "can_enter": false,
+      "entry_label": "⛔ 观望",
+      "priority": -1,
+      "score": 1,
+      "prediction": "偏多"
+    },
+    {
+      "symbol": "SZSE:002415",
+      "name": "海康威视",
+      "ok": true,
+      "price": 35.75,
+      "open": 35.59,
+      "high": 36.09,
+      "low": 35.13,
+      "volume": 92540745,
+      "chg_pct": 0.004496,
+      "gap_pct": 0.004496,
+      "real_gap": -0.004197,
+      "candle": "阳",
+      "mkt_contrib": -4,
+      "news_score": 73,
+      "news_signal": "🟢 Long (中)",
+      "news_patterns": [
+        "情绪持续增强↑(trend)"
+      ],
+      "news_contrib": 3,
+      "sector_score": 0,
+      "matched_boards": [],
+      "all_boards": [
+        "计算机",
+        "计算机设备",
+        "安防设备",
+        "浙江板块",
+        "趋势股"
+      ],
+      "can_enter": false,
+      "entry_label": "⛔ 观望",
+      "priority": -1,
+      "score": -1,
+      "prediction": "偏空"
+    },
+    {
+      "symbol": "SSE:601665",
+      "name": "齐鲁银行",
+      "ok": true,
+      "price": 6.37,
+      "open": 6.27,
+      "high": 6.37,
+      "low": 6.25,
+      "volume": 63468163,
+      "chg_pct": 0.015949,
+      "gap_pct": 0.015949,
+      "real_gap": 0,
+      "candle": "阳",
+      "mkt_contrib": -4,
+      "news_score": 87,
+      "news_signal": "⚠️ No Trade (情绪过热)",
+      "news_patterns": [
+        "⚠️情绪过热(单边乐观,注意回调)"
+      ],
+      "news_contrib": 3,
+      "sector_score": -2,
+      "matched_boards": [
+        {
+          "board": "银行",
+          "direction": "bottom",
+          "rank": 1
+        }
+      ],
+      "all_boards": [
+        "银行",
+        "银行Ⅱ",
+        "城商行Ⅲ",
+        "山东板块",
+        "低市净率"
+      ],
+      "can_enter": false,
+      "entry_label": "⛔ 观望",
+      "priority": -1,
+      "score": -3,
+      "prediction": "偏空"
+    },
+    {
+      "symbol": "SSE:603129",
+      "name": "春风动力",
+      "ok": true,
+      "price": 306.04,
+      "open": 300,
+      "high": 313,
+      "low": 295.01,
+      "volume": 1972066,
+      "chg_pct": 0.020133,
+      "gap_pct": 0.020133,
+      "real_gap": -0.009901,
+      "candle": "阳",
+      "mkt_contrib": -4,
+      "news_score": 47,
+      "news_signal": "⚪ No Trade (中性)",
+      "news_patterns": [],
+      "news_contrib": -3,
+      "sector_score": 0,
+      "matched_boards": [],
+      "all_boards": [
+        "汽车",
+        "摩托车及其他",
+        "摩托车",
+        "浙江板块",
+        "趋势股"
+      ],
+      "can_enter": false,
+      "entry_label": "⛔ 观望",
+      "priority": -1,
+      "score": -7,
+      "prediction": "偏空"
+    },
+    {
+      "symbol": "SSE:601168",
+      "name": "西部矿业",
+      "ok": true,
+      "price": 36.79,
+      "open": 37.55,
+      "high": 38.16,
+      "low": 36.49,
+      "volume": 67404869,
+      "chg_pct": -0.02024,
+      "gap_pct": 0.02024,
+      "real_gap": 0.017339,
+      "candle": "阴",
+      "mkt_contrib": -4,
+      "news_score": 75,
+      "news_signal": "🟢 Long (强)",
+      "news_patterns": [],
+      "news_contrib": 3,
+      "sector_score": 0,
+      "matched_boards": [],
+      "all_boards": [
+        "有色金属",
+        "工业金属",
+        "铜",
+        "青海板块",
+        "2026中报预增"
+      ],
+      "can_enter": false,
+      "entry_label": "⛔ 观望",
+      "priority": -1,
+      "score": -1,
+      "prediction": "偏空"
+    }
+  ]
+}

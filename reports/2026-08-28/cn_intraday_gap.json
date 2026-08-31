@@ -1,0 +1,176 @@
+{
+  "generated_at": "2026-08-28T06:43:38.812Z",
+  "market": "cn",
+  "source": "./watchlist/cn_selected.txt",
+  "entry_signal": {
+    "can_enter": false,
+    "signal": "观望",
+    "reason": "隔夜美股上涨 → A股均值回归承压 (回测个股涨概率仅 40.8%)",
+    "strategy": "不入场, 等待下一个美股下跌日"
+  },
+  "overnight_us": {
+    "sp500_pct": 0.59,
+    "nasdaq_pct": 0.44,
+    "dji_pct": 0.65,
+    "avg_pct": 0.56,
+    "contrarian_signal": "US up → CN down (均值回归)"
+  },
+  "sector_flow": {
+    "top_gainers": [
+      {
+        "code": "BK1598",
+        "name": "疫苗",
+        "change_pct": -3.49,
+        "flow": 4311.61
+      },
+      {
+        "code": "BK1600",
+        "name": "医疗研发外包",
+        "change_pct": -3.09,
+        "flow": 8489.34
+      },
+      {
+        "code": "BK1592",
+        "name": "通信线缆及配套",
+        "change_pct": -2.94,
+        "flow": 25413.4
+      },
+      {
+        "code": "BK1314",
+        "name": "风电整机",
+        "change_pct": -2.82,
+        "flow": 1383.57
+      },
+      {
+        "code": "BK1602",
+        "name": "诊断服务",
+        "change_pct": -2.65,
+        "flow": 5763.75
+      }
+    ],
+    "top_losers": [
+      {
+        "code": "BK1432",
+        "name": "氮肥",
+        "change_pct": 7.37,
+        "flow": 2123.71
+      },
+      {
+        "code": "BK1518",
+        "name": "种子",
+        "change_pct": 5.54,
+        "flow": 4906.47
+      },
+      {
+        "code": "BK1341",
+        "name": "房产租赁经纪",
+        "change_pct": 5.44,
+        "flow": 1383.14
+      },
+      {
+        "code": "BK1355",
+        "name": "运动服装",
+        "change_pct": 5.43,
+        "flow": 3014.57
+      },
+      {
+        "code": "BK1404",
+        "name": "农用机械",
+        "change_pct": 4.36,
+        "flow": 1797.41
+      }
+    ]
+  },
+  "model": "external_3d",
+  "formula": "Score = 隔夜外盘·均值回归(±4) + 新闻情绪(±3) + 板块资金流(±2)",
+  "strategy": {
+    "entry_condition": "隔夜美股下跌",
+    "priority_sort": "新闻<60 优先 (回测涨概率 65.1%), 新闻≥60 次之 (回测涨概率 48.8%)",
+    "rationale": "利好出尽是利空 — 高新闻分标的已被热钱透支，反弹力度弱"
+  },
+  "total": 20,
+  "success": 0,
+  "failed": [
+    {
+      "symbol": "SSE:600388",
+      "reason": "chart_not_ready"
+    },
+    {
+      "symbol": "SSE:601665",
+      "reason": "chart_not_ready"
+    },
+    {
+      "symbol": "SSE:601872",
+      "reason": "chart_not_ready"
+    },
+    {
+      "symbol": "SSE:601899",
+      "reason": "chart_not_ready"
+    },
+    {
+      "symbol": "SSE:603129",
+      "reason": "chart_not_ready"
+    },
+    {
+      "symbol": "SSE:603162",
+      "reason": "chart_not_ready"
+    },
+    {
+      "symbol": "SSE:603228",
+      "reason": "chart_not_ready"
+    },
+    {
+      "symbol": "SSE:603259",
+      "reason": "chart_not_ready"
+    },
+    {
+      "symbol": "SZSE:000333",
+      "reason": "chart_not_ready"
+    },
+    {
+      "symbol": "SZSE:300684",
+      "reason": "chart_not_ready"
+    },
+    {
+      "symbol": "SSE:600489",
+      "reason": "chart_not_ready"
+    },
+    {
+      "symbol": "SSE:600330",
+      "reason": "chart_not_ready"
+    },
+    {
+      "symbol": "SZSE:300843",
+      "reason": "chart_not_ready"
+    },
+    {
+      "symbol": "SSE:605319",
+      "reason": "chart_not_ready"
+    },
+    {
+      "symbol": "SZSE:300602",
+      "reason": "chart_not_ready"
+    },
+    {
+      "symbol": "SZSE:300866",
+      "reason": "chart_not_ready"
+    },
+    {
+      "symbol": "SSE:605198",
+      "reason": "chart_not_ready"
+    },
+    {
+      "symbol": "SSE:603186",
+      "reason": "chart_not_ready"
+    },
+    {
+      "symbol": "SSE:600172",
+      "reason": "chart_not_ready"
+    },
+    {
+      "symbol": "SZSE:002536",
+      "reason": "chart_not_ready"
+    }
+  ],
+  "results": []
+}

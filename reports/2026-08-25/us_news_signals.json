@@ -1,0 +1,1527 @@
+{
+  "generated_at": "2026-08-24T12:22:49.848Z",
+  "market": "us",
+  "source": "src/core/usNews.js",
+  "score_scale": "0-100 normalized (neutral=50)",
+  "window": {
+    "from": "2026-08-17",
+    "to": "2026-08-24",
+    "days": 7
+  },
+  "llm_used": true,
+  "performance": {
+    "totals_ms": {
+      "list_fetch_ms": 34713,
+      "enrichment_ms": 5540,
+      "relevance_ms": 0,
+      "llm_ms": 140883,
+      "report_write_ms": 21
+    },
+    "avg_ms": {
+      "list_fetch_ms": 1157,
+      "enrichment_ms": 185,
+      "relevance_ms": 0,
+      "llm_ms": 4696,
+      "report_write_ms": 1
+    }
+  },
+  "stocks": {
+    "NYSE:LLY": {
+      "name": "LLY",
+      "score": 70,
+      "score_raw": 4.83,
+      "score_components": {
+        "positive_weight_sum": 4.83,
+        "negative_weight_sum": 0,
+        "news_effective_count": 3,
+        "news_dropped_count": 0
+      },
+      "signal": "GREEN Long (Mid)",
+      "strategy": "Positive sentiment flow — suitable for dip-buy or light momentum entry",
+      "suitable_for": "Buy Dip / Light Momentum",
+      "confidence": "Medium",
+      "patterns": [],
+      "positive_factors": [
+        "[Earnings|w2.73] Eli Lilly (LLY) Is Up 6.4% After UK Clears Foundayo and GLP‑1 Portfoli",
+        "[Policy|w2.1] Bristol-Myers Squibb (BMY) Bets $2.3 Billion on Texas While Eli Lilly "
+      ],
+      "negative_factors": [],
+      "news_count": 3,
+      "news_dropped": 0,
+      "performance": {
+        "list_fetch_ms": 1161,
+        "candidate_filter_ms": 0,
+        "enrichment_ms": 16,
+        "raw_news_count": 27,
+        "raw_forum_count": 0,
+        "candidate_news_count": 3,
+        "candidate_forum_count": 0,
+        "enriched_news_count": 3,
+        "enriched_forum_count": 0,
+        "candidate_reasons": {
+          "news": {
+            "no-subject-mention": 19,
+            "dedup": 0,
+            "out_of_window": 5
+          },
+          "forum": {
+            "dedup": 0
+          }
+        },
+        "date_filter_ms": 0,
+        "relevance_ms": 0,
+        "llm_ms": 38673,
+        "scoring_ms": 0
+      },
+      "top_news": [
+        {
+          "date": "2026-08-22",
+          "title": "Eli Lilly (LLY) Is Up 6.4% After UK Clears Foundayo and GLP‑1 Portfolio Advances - What's Changed",
+          "content": "Eli Lilly recently reported strong revenue growth driven by its Mounjaro and Zepbound obesity and diabetes drugs, raised full-year guidance, advanced its next-generation GLP-1 pipeline, and secured UK approval for Foundayo, its once-daily oral GLP-1 pill for weight management and type 2 diabetes. These developments, alongside vaccine research collaborations and ongoing legal action against unauthorized retatrutide sellers, highlight Lilly’s bid to extend its leadership across injectable,...",
+          "type": "Earnings",
+          "sentiment": 1,
+          "weight": 3,
+          "final_weight": 2.73,
+          "source_authority": 3.5,
+          "recency_factor": 0.6,
+          "source": "Finnhub",
+          "llm_reviewed": true,
+          "llm_confidence": 0.9,
+          "llm_is_real_catalyst": true,
+          "llm_reasoning": "UK approval & raised FY guidance"
+        },
+        {
+          "date": "2026-08-21",
+          "title": "Bristol-Myers Squibb (BMY) Bets $2.3 Billion on Texas While Eli Lilly (LLY) Wins in the UK",
+          "content": "Drugmaker Bristol-Myers Squibb Company (NYSE:BMY) is putting real money behind its confidence in American manufacturing. On August 10, the company said it will spend about $2.3 billion on a new plant in Houston, part of a larger $40 billion U.S. investment pledge. On the very same day, British regulators cleared Eli Lilly and Company (NYSE:LLY)’s […]",
+          "type": "Policy",
+          "sentiment": 1,
+          "weight": 2,
+          "final_weight": 2.1,
+          "source_authority": 3.5,
+          "recency_factor": 0.5,
+          "source": "Finnhub",
+          "llm_reviewed": true,
+          "llm_confidence": 0.7,
+          "llm_is_real_catalyst": true,
+          "llm_reasoning": "UK cleared LLY drug; BMY focus"
+        },
+        {
+          "date": "2026-08-21",
+          "title": "Stock Split Watch: Is Eli Lilly (LLY) Stock Next?",
+          "content": "For aficionados of stock splits, it's an intriguing question: Will Eli Lilly (\nLLY\n+0.88%\n) be the next company to split its stock? It certainly might -- its stock price was recently $1,280 per share. But the honest answer is that no one knows (except, perhaps, Lilly's management).\n\nEli Lilly has split its stock four times -- twice in the 1980s and twice in the 1990s, with the last split happening in October of 1997, nearly 30 years ago. Let's see whether it might do a split again -- and what it means for investors.\n\nImage source: The Motley Fool.\n\nCompanies generally don't have any pressing need to split their stock, but when shares seem unaffordable for average investors, splitting can make sense. (Not every investor realizes this, but these days, some brokerages permit buying fractions of shares, which can solve the problem of an unaffordable share price.)\n\nStock splits tend to excite many investors -- because if you own, say, 200 shares of a company, it can feel great to suddenly own, say, 400 shares (via a 2-for-1 split) or 1,000 shares (via a 5-for-1 split). But they're really mostly nothing burgers. Here's why.\n\nImagine that you own 10 shares of Scruffy's Chicken Shack (ticker: BUKBUK), which is trading at $1,000 per share. The total value of your holding is therefore $10,000. Let's say Scruffy's splits its stock 2-for-1. You'll own 20 shares post-split.\n\nHowever, share prices are adjusted downward proportionately at the split. So a $1,000 stock becomes a $500 one -- and your 20 shares are now worth ... $10,000 (20 times $500). See? Nothing burger.\n\nExpand\nNYSE: LLY\nEli Lilly\nToday's Change\n(0.88%) $11.00\nCurrent Price\n$1,255.40\nKEY DATA POINTS\nMarket Cap\n$1.2T\nMarket cap calculated using publicly traded shares outstanding only. Does not include unlisted, private, or dual-class non-traded shares. Implied market cap may vary.\nDay's Range\n$1230.00 - $1271.22\n52wk Range\n$694.23 - $1292.65\nVolume\n2.5M\nAvg Vol\n3M\nGross Margin\n83.40%\nDividend Yield\n0.53%\n\nPotential stock split aside, should you invest in Eli Lilly? It's worth considering -- because it's doing quite well. Second-quarter revenue was up 48% year over year, largely due to boffo sales for its Mounjaro and Zepbound drugs, which are being used by many to lose weight.\n\nLilly's stock isn't super cheap right now, though, with a recent price-to-earnings (P/E) ratio of 41 -- though that's below its five-year average of 58. Still, it might serve long-term investors well.",
+          "type": "Rumor",
+          "sentiment": 0,
+          "weight": 1,
+          "final_weight": 0.5,
+          "source_authority": 3.5,
+          "recency_factor": 0.5,
+          "source": "Finnhub",
+          "llm_reviewed": true,
+          "llm_confidence": 0.6,
+          "llm_is_real_catalyst": false,
+          "llm_reasoning": "Speculative split commentary"
+        }
+      ]
+    },
+    "NASDAQ:DASH": {
+      "name": "DASH",
+      "score": 57,
+      "score_raw": 1.76,
+      "score_components": {
+        "positive_weight_sum": 1.76,
+        "negative_weight_sum": 0,
+        "news_effective_count": 2,
+        "news_dropped_count": 0
+      },
+      "signal": "NEUTRAL No Trade (Weak Bullish)",
+      "strategy": "Mildly positive, insufficient signal — watch for stronger catalyst",
+      "suitable_for": "Watch",
+      "confidence": "Low",
+      "patterns": [],
+      "positive_factors": [
+        "[Industry|w1.26] DoorDash (DASH) Adds Back To School Retail Delivery In Its Biggest Exp",
+        "[Industry|w0.5] DoorDash (DASH) Stock Trades Up, Here Is Why"
+      ],
+      "negative_factors": [],
+      "news_count": 2,
+      "news_dropped": 0,
+      "performance": {
+        "list_fetch_ms": 828,
+        "candidate_filter_ms": 0,
+        "enrichment_ms": 0,
+        "raw_news_count": 30,
+        "raw_forum_count": 0,
+        "candidate_news_count": 2,
+        "candidate_forum_count": 0,
+        "enriched_news_count": 2,
+        "enriched_forum_count": 0,
+        "candidate_reasons": {
+          "news": {
+            "no-subject-mention": 18,
+            "dedup": 0,
+            "out_of_window": 10
+          },
+          "forum": {
+            "dedup": 0
+          }
+        },
+        "date_filter_ms": 0,
+        "relevance_ms": 0,
+        "llm_ms": 41,
+        "scoring_ms": 0
+      },
+      "top_news": [
+        {
+          "date": "2026-08-19",
+          "title": "DoorDash (DASH) Adds Back To School Retail Delivery In Its Biggest Expansion Yet",
+          "content": "DoorDash (NasdaqGS:DASH) announced new back to school delivery partnerships with Barnes & Noble, Carter's, Kohl's and Gap/Gap Factory, marking its largest push into nationwide retail, books and department stores. The partnerships extend DoorDash's delivery coverage into books, kids' apparel and broader department store categories across the US ahead of the back to school shopping period. These additions expand DoorDash's non food offering and give users more ways to consolidate everyday and...",
+          "type": "Industry",
+          "sentiment": 1,
+          "weight": 1,
+          "final_weight": 1.26,
+          "source_authority": 3.5,
+          "recency_factor": 0.36,
+          "source": "Finnhub",
+          "llm_reviewed": true,
+          "llm_confidence": 0.85,
+          "llm_is_real_catalyst": true,
+          "llm_reasoning": "New retail partnerships"
+        },
+        {
+          "date": "2026-08-19",
+          "title": "DoorDash (DASH) Stock Trades Up, Here Is Why",
+          "content": "Shares of on-demand food delivery service DoorDash (NASDAQ:DASH) jumped 2.4% in the afternoon session after the company announced new retail partnerships with Barnes & Noble, Carter’s, Kohl’s, and Gap to expand on-demand delivery for back-to-school shopping. According to the company’s press release , DoorDash added Barnes & Noble, Carter’s, and Kohl’s to its Marketplace so parents and students can get apparel, books, backpacks, and other school essentials delivered instead of store-hopping. The",
+          "type": "Industry",
+          "sentiment": 1,
+          "weight": 1,
+          "final_weight": 0.5,
+          "source_authority": 3.5,
+          "recency_factor": 0.36,
+          "source": "Finnhub",
+          "llm_reviewed": true,
+          "llm_confidence": 0.75,
+          "llm_is_real_catalyst": false,
+          "llm_reasoning": "Stock up on partnership news"
+        }
+      ]
+    },
+    "NYSE:WT": {
+      "name": "WT",
+      "score": 55,
+      "score_raw": 1.19,
+      "score_components": {
+        "positive_weight_sum": 1.19,
+        "negative_weight_sum": 0,
+        "news_effective_count": 1,
+        "news_dropped_count": 0
+      },
+      "signal": "NEUTRAL No Trade (Weak Bullish)",
+      "strategy": "Mildly positive, insufficient signal — watch for stronger catalyst",
+      "suitable_for": "Watch",
+      "confidence": "Low",
+      "patterns": [],
+      "positive_factors": [
+        "[Industry|w1.19] WisdomTree (NYSE:WT) Shows High Growth Momentum and Breakout Setup"
+      ],
+      "negative_factors": [],
+      "news_count": 1,
+      "news_dropped": 0,
+      "performance": {
+        "list_fetch_ms": 1511,
+        "candidate_filter_ms": 0,
+        "enrichment_ms": 4189,
+        "raw_news_count": 8,
+        "raw_forum_count": 0,
+        "candidate_news_count": 1,
+        "candidate_forum_count": 0,
+        "enriched_news_count": 1,
+        "enriched_forum_count": 0,
+        "candidate_reasons": {
+          "news": {
+            "no-subject-mention": 1,
+            "dedup": 0,
+            "out_of_window": 6
+          },
+          "forum": {
+            "dedup": 0
+          }
+        },
+        "date_filter_ms": 0,
+        "relevance_ms": 0,
+        "llm_ms": 12653,
+        "scoring_ms": 0
+      },
+      "top_news": [
+        {
+          "date": "2026-08-24",
+          "title": "WisdomTree (NYSE:WT) Shows High Growth Momentum and Breakout Setup",
+          "content": "Home\n/\nUSA\n/\nNew York Stock Exchange\n/\nWT\n/\nnews\n/\nWisdomTree (NYSE:WT) Shows High Growth Momentum and Breakout Setup\nBy Mill Chart – Last update: Aug 24, 2026\nQuotes Stocks Mentioned\nArticle Mentions:\nWT\n(23.51 ▲ 3.80%)\n\nHigh growth momentum investing starts with a simple premise: the best opportunities often arrive when earnings acceleration and price strength appear at the same time. That is why screening for a high growth momentum rating alongside technical health and setup quality can narrow the field to names that are both fundamentally dynamic and technically actionable. WISDOMTREE INC (NYSE:WT) is one of the stocks that came through that screen with a balanced profile.\n\nWhat the screen looks for\n\nThe high growth momentum rating combines several earnings-related inputs into one score: EPS and sales growth on a year-over-year and sequential basis, acceleration in those metrics, profit margin trends, earnings surprises, and analyst estimate revisions. A score of 6 out of 10 does not signal perfection; it signals that a stock is displaying enough momentum to merit deeper work. The screen then layers on a technical rating of at least 7 and a setup rating of at least 7, with the goal of finding stocks that are not only rising but also consolidating near a potential breakout.\n\nWisdomTree’s growth numbers, on their own, illustrate why the high growth momentum rating sits at 6. The most recent quarter delivered EPS growth of 72.2% over the same period last year, building on a TTM EPS growth rate of 59.4%. Revenue growth followed a similar path, with the last quarter up 57.3% year over year and the TTM figure at 37.1%. Free cash flow per share also jumped 104.9% over the trailing year.\n\nGrowth snapshot\nHigh Growth Momentum rating: 6 out of 10\nEPS growth (TTM): 59.4%\nEPS growth, last quarter vs. year ago: 72.2%\nRevenue growth (TTM): 37.1%\nSales growth, last quarter vs. year ago: 57.3%\nEPS estimate beats, last 4 quarters: 4 out of 4, average beat 11.2%\nFree cash flow growth: 104.9%\n\nOne nuance worth noting: revenue estimate revisions have been slightly negative over the past three months, and only two of the last four revenue reports beat estimates. The earnings side is cleaner than the revenue side, but the overall trend remains upward. Analysts still model next-quarter EPS growth of 33.6% and sales growth of 46.6%, which suggests the market sees the momentum continuing. Profit margin also expanded to 25.0% in the latest reported quarter from 11.7% in the prior full year, a sign that the growth is becoming higher quality.\n\nTechnical rating and setup quality\n\nOn the technical side, WisdomTree leaves little room for criticism. Its ChartMill technical rating is 10 out of 10. The short term and long term trends are both positive, and the stock is trading near a new 52-week high of 23.54. Relative strength is also impressive: WisdomTree has outperformed 93% of all stocks and 98% of the 235 stocks in the Capital Markets industry over the measured period.\n\nThe setup quality score is 7 out of 10, which is slightly lower but still constructive. The technical report notes that the stock has been consolidating, volatility has decreased, and there is very little resistance above the current price. Large players have shown interest in recent sessions, which can be a useful confirmation when a breakout is being prepared. The report’s suggested setup places an entry near 23.55, just above the ten-day high, with a stop-loss area at 22.64; the worst-case loss is roughly 3.9%. A detailed look at the support and resistance levels can be found in the technical analysis report.\n\nWhy this profile matters\n\nHigh growth momentum strategies, including those inspired by CANSLIM and Minervini, look for stocks with strong fundamentals and relative strength, but they also require a proper buying point. Buying after a large move can leave little room for error. A consolidation gives the investor a defined entry and a clear level to exit if the trade does not work. WisdomTree offers that combination: the growth metrics support the story, and the chart provides a structure where the risk can be managed.\n\nThere are caveats. The setup distance is relatively small, and the technical report notes that the entry and exit levels may be better suited to shorter-term trades. Revenue estimate revisions and revenue beats are less consistent than their earnings counterparts, so the growth story still depends on execution. As with any automatically generated setup, the levels are illustrative and should be checked against upcoming news and earnings events.\n\nConfirmation from other screens\n\nThe same investment profile also shows up in related lists, reinforcing the growth and setup story from another angle.\n\nFastest Growing Stocks: The list highlights WT for \"strong recent growth in both earnings and sales,\" matching the earnings-acceleration part of the thesis.\nBreakout Setups: This screen identifies WT as combining \"technical strength, constructive consolidation, and enough volatility for a potential breakout,\" which aligns with the article’s emphasis on an actionable technical setup.\n\nTogether, these screens confirm that WisdomTree’s strength is not coming from a single narrow indicator.\n\nMore stocks with the same profile\n\nInvestors looking for additional names that combine high growth momentum with strong technicals and a defined setup can run the same methodology in the stock screener. The Stock Screener allows you to filter and sort for these criteria, making it easier to find the next candidate before it breaks out.\n\nDisclaimer: This article is for informational and educational purposes only and does not constitute financial advice or a recommendation to buy or sell any security. Always conduct your own research and consider your risk tolerance before making investment decisions.",
+          "type": "Industry",
+          "sentiment": 1,
+          "weight": 1,
+          "final_weight": 1.19,
+          "source_authority": 3.5,
+          "recency_factor": 0.85,
+          "source": "Finnhub",
+          "llm_reviewed": true,
+          "llm_confidence": 0.5,
+          "llm_is_real_catalyst": false,
+          "llm_reasoning": "Technical breakout commentary"
+        }
+      ]
+    },
+    "NYSE:SON": {
+      "name": "SON",
+      "score": 54,
+      "score_raw": 1,
+      "score_components": {
+        "positive_weight_sum": 1,
+        "negative_weight_sum": 0,
+        "news_effective_count": 2,
+        "news_dropped_count": 0
+      },
+      "signal": "NEUTRAL No Trade (Weak Bullish)",
+      "strategy": "Mildly positive, insufficient signal — watch for stronger catalyst",
+      "suitable_for": "Watch",
+      "confidence": "Low",
+      "patterns": [],
+      "positive_factors": [
+        "[Industry|w0.5] Sonoco Products (SON) Could Be 9% Undervalued After EMEA Consumer Pack",
+        "[Industry|w0.5] Sonoco (SON) Stock Still Looks Cheap As Cash Flow Stays In Focus"
+      ],
+      "negative_factors": [],
+      "news_count": 2,
+      "news_dropped": 0,
+      "performance": {
+        "list_fetch_ms": 781,
+        "candidate_filter_ms": 1,
+        "enrichment_ms": 0,
+        "raw_news_count": 18,
+        "raw_forum_count": 0,
+        "candidate_news_count": 2,
+        "candidate_forum_count": 0,
+        "enriched_news_count": 2,
+        "enriched_forum_count": 0,
+        "candidate_reasons": {
+          "news": {
+            "no-subject-mention": 4,
+            "dedup": 0,
+            "out_of_window": 12
+          },
+          "forum": {
+            "dedup": 0
+          }
+        },
+        "date_filter_ms": 0,
+        "relevance_ms": 0,
+        "llm_ms": 24,
+        "scoring_ms": 1
+      },
+      "top_news": [
+        {
+          "date": "2026-08-19",
+          "title": "Sonoco Products (SON) Could Be 9% Undervalued After EMEA Consumer Packaging Leadership Change",
+          "content": "Sonoco Products (SON) recently named Francesco Giannolo as Vice President and General Manager of its Consumer Packaging business in EMEA. The leadership change gives investors a fresh angle on this long-established packaging stock. See our latest analysis for Sonoco Products. Sonoco Products’ share price has moved to US$57.90, with a 30.49% year to date share price return and a 31.36% total shareholder return over one year, which suggests momentum has been building ahead of the leadership...",
+          "type": "Industry",
+          "sentiment": 1,
+          "weight": 1,
+          "final_weight": 0.5,
+          "source_authority": 3.5,
+          "recency_factor": 0.36,
+          "source": "Finnhub",
+          "llm_reviewed": true,
+          "llm_confidence": 0.4,
+          "llm_is_real_catalyst": false,
+          "llm_reasoning": "Leadership change; valuation commentary"
+        },
+        {
+          "date": "2026-08-19",
+          "title": "Sonoco (SON) Stock Still Looks Cheap As Cash Flow Stays In Focus",
+          "content": "Sonoco Products has delivered a solid 28.9% year to date return, and the valuation checks currently lean cheap, which raises the question of whether the recent share price strength has fully reflected that message. Year to date, Sonoco Products is up 28.9%, which puts recent returns well ahead of its longer term 5 year record and naturally draws attention to how much value is left in the current price. The key support for the valuation is the market's confidence in Sonoco Products' ability...",
+          "type": "Industry",
+          "sentiment": 1,
+          "weight": 1,
+          "final_weight": 0.5,
+          "source_authority": 3.5,
+          "recency_factor": 0.36,
+          "source": "Finnhub",
+          "llm_reviewed": true,
+          "llm_confidence": 0.4,
+          "llm_is_real_catalyst": false,
+          "llm_reasoning": "Valuation/cash flow commentary only"
+        }
+      ]
+    },
+    "NYSE:LTC": {
+      "name": "LTC",
+      "score": 54,
+      "score_raw": 0.84,
+      "score_components": {
+        "positive_weight_sum": 0.84,
+        "negative_weight_sum": 0,
+        "news_effective_count": 1,
+        "news_dropped_count": 0
+      },
+      "signal": "NEUTRAL No Trade (Weak Bullish)",
+      "strategy": "Mildly positive, insufficient signal — watch for stronger catalyst",
+      "suitable_for": "Watch",
+      "confidence": "Low",
+      "patterns": [],
+      "positive_factors": [
+        "[Analyst Action|w0.84] LTC Properties: 'Buy' This 5.6% Yield Before SHOP Growth Accelerates"
+      ],
+      "negative_factors": [],
+      "news_count": 1,
+      "news_dropped": 0,
+      "performance": {
+        "list_fetch_ms": 1095,
+        "candidate_filter_ms": 0,
+        "enrichment_ms": 25,
+        "raw_news_count": 14,
+        "raw_forum_count": 0,
+        "candidate_news_count": 1,
+        "candidate_forum_count": 0,
+        "enriched_news_count": 1,
+        "enriched_forum_count": 0,
+        "candidate_reasons": {
+          "news": {
+            "no-subject-mention": 1,
+            "dedup": 1,
+            "out_of_window": 11
+          },
+          "forum": {
+            "dedup": 0
+          }
+        },
+        "date_filter_ms": 0,
+        "relevance_ms": 0,
+        "llm_ms": 7,
+        "scoring_ms": 0
+      },
+      "top_news": [
+        {
+          "date": "2026-08-21",
+          "title": "LTC Properties: 'Buy' This 5.6% Yield Before SHOP Growth Accelerates",
+          "content": "Home\nDividends Analysis\nREITs Analysis\nReal Estate Analysis\nLTC Properties: 'Buy' This 5.6% Yield Before SHOP Growth Accelerates\nAug 21, 2026, 10:47 AM ETLTC Properties, Inc. (LTC) StockWELL, VTR\nGen Alpha\nInvesting Group\nFollow\nSummary\nLTC Properties remains a compelling income and value pick, currently yielding 5.6% with a forward P/FFO of 14.7x.\nLTC is rapidly transitioning to the higher-growth SHOP model, targeting 75% of NOI from SHOP by 2028 and 15% SHOP NOI growth in 2026.\nPortfolio recycling and equity issuance are temporarily limiting FFO/share growth, but pressures should moderate as SHOP investments scale.\nI maintain a \"Buy\" rating on LTC, citing rising occupancy, favorable demographics, conservative leverage, and a significant valuation discount to peers.\nLooking for a portfolio of ideas like this one? Members of iREIT®+HOYA Capital get exclusive access to our subscriber-only portfolios. Learn More »\n\nRichard Drury/DigitalVision via Getty Images\n\nREITs are sometimes thought of as being bond proxies. That classification can’t be further from the truth, as property values and rents rise in an inflationary environment. As such, they can be great places to park capital to protect the purchasing power of the\n\nMore on my IG service\n\nRead The Full Report on iREIT+Hoya\n\niREIT+HOYA Capital is the premier income-focused investing service on Seeking Alpha. Our focus is on income-producing asset classes that offer the opportunity for sustainable portfolio income, diversification, and inflation hedging. Get started with a Free Two-Week Trial and take a look at our top ideas across our exclusive income-focused portfolios.\n\nWith a focus on REITs, ETFs, Preferreds, and 'Dividend Champions' across asset classes, members gain complete access to our research and our suite of trackers and portfolios targeting premium dividend yields up to 10%. \n\nThis article was written by\n\nGen Alpha\n23.5K Followers\nFollow\nI am Gen Alpha. I have more than 14 years of investment experience, and an MBA in Finance. I focus on stocks that are more defensive in nature, with a medium- to long-term horizon. I provide high-yield, dividend growth investment ideas in the investing group iREIT®+HOYA Capital. The group helps investors achieve dependable monthly income, portfolio diversification, and inflation hedging. It provides investment research on REITs, ETFs, closed-end funds, preferreds, and dividend champions across asset classes. It offers income-focused portfolios targeting dividend yields up to 10%. Learn more.\n\nAnalyst’s Disclosure: I/we have a beneficial long position in the shares of LTC either through stock ownership, options, or other derivatives. I wrote this article myself, and it expresses my own opinions. I am not receiving compensation for it (other than from Seeking Alpha). I have no business relationship with any company whose stock is mentioned in this article.\n\nI am not an investment advisor. This article is for informational purposes and does not constitute as financial advice. Readers are encouraged and expected to perform due diligence and draw their own conclusions prior to making any investment decisions.\n\nSeeking Alpha's Disclosure: Past performance is no guarantee of future results. No recommendation or advice is being given as to whether any investment is suitable for a particular investor. Any views or opinions expressed above may not reflect those of Seeking Alpha as a whole. Seeking Alpha is not a licensed securities dealer, broker or US investment adviser or investment bank. Our analysts are third party authors that include both professional investors and individual investors who may not be licensed or certified by any institute or regulatory body.\n\nLike\nComments\nRECOMMENDED FOR YOU",
+          "type": "Analyst Action",
+          "sentiment": 1,
+          "weight": 1,
+          "final_weight": 0.84,
+          "source_authority": 3.5,
+          "recency_factor": 0.5,
+          "source": "Finnhub",
+          "llm_reviewed": true,
+          "llm_confidence": 0.7,
+          "llm_is_real_catalyst": false,
+          "llm_reasoning": "Maintain Buy, no hard trigger"
+        }
+      ]
+    },
+    "NASDAQ:HOOD": {
+      "name": "HOOD",
+      "score": 52,
+      "score_raw": 0.5,
+      "score_components": {
+        "positive_weight_sum": 0.5,
+        "negative_weight_sum": 0,
+        "news_effective_count": 1,
+        "news_dropped_count": 0
+      },
+      "signal": "NEUTRAL No Trade (Weak Bullish)",
+      "strategy": "Mildly positive, insufficient signal — watch for stronger catalyst",
+      "suitable_for": "Watch",
+      "confidence": "Low",
+      "patterns": [],
+      "positive_factors": [
+        "[Industry|w0.5] Why is HOOD stock up today?"
+      ],
+      "negative_factors": [],
+      "news_count": 1,
+      "news_dropped": 0,
+      "performance": {
+        "list_fetch_ms": 1981,
+        "candidate_filter_ms": 0,
+        "enrichment_ms": 1217,
+        "raw_news_count": 27,
+        "raw_forum_count": 0,
+        "candidate_news_count": 1,
+        "candidate_forum_count": 0,
+        "enriched_news_count": 1,
+        "enriched_forum_count": 0,
+        "candidate_reasons": {
+          "news": {
+            "no-subject-mention": 20,
+            "dedup": 0,
+            "out_of_window": 6
+          },
+          "forum": {
+            "dedup": 0
+          }
+        },
+        "date_filter_ms": 0,
+        "relevance_ms": 0,
+        "llm_ms": 9,
+        "scoring_ms": 0
+      },
+      "top_news": [
+        {
+          "date": "2026-08-21",
+          "title": "Why is HOOD stock up today?",
+          "content": "The Robinhood stock has surged more than 15% today.",
+          "type": "Industry",
+          "sentiment": 1,
+          "weight": 1,
+          "final_weight": 0.5,
+          "source_authority": 3.5,
+          "recency_factor": 0.5,
+          "source": "Finnhub",
+          "llm_reviewed": true,
+          "llm_confidence": 0.3,
+          "llm_is_real_catalyst": false,
+          "llm_reasoning": "Price move only, no catalyst"
+        }
+      ]
+    },
+    "AMEX:CET": {
+      "name": "CET",
+      "score": 50,
+      "score_raw": 0,
+      "score_components": {
+        "positive_weight_sum": 0,
+        "negative_weight_sum": 0
+      },
+      "signal": "NEUTRAL No Trade (No Data)",
+      "strategy": "No relevant news in window",
+      "suitable_for": "Watch",
+      "confidence": "-",
+      "patterns": [],
+      "positive_factors": [],
+      "negative_factors": [],
+      "news_count": 0,
+      "news_dropped": 0,
+      "performance": {
+        "list_fetch_ms": 1650,
+        "candidate_filter_ms": 0,
+        "enrichment_ms": 0,
+        "raw_news_count": 13,
+        "raw_forum_count": 0,
+        "candidate_news_count": 0,
+        "candidate_forum_count": 0,
+        "enriched_news_count": 0,
+        "enriched_forum_count": 0,
+        "candidate_reasons": {
+          "news": {
+            "dedup": 0,
+            "out_of_window": 13
+          },
+          "forum": {
+            "dedup": 0
+          }
+        },
+        "date_filter_ms": 0,
+        "relevance_ms": 0,
+        "llm_ms": 0,
+        "scoring_ms": 0
+      },
+      "top_news": []
+    },
+    "NASDAQ:ADAM": {
+      "name": "ADAM",
+      "score": 50,
+      "score_raw": 0,
+      "score_components": {
+        "positive_weight_sum": 0,
+        "negative_weight_sum": 0
+      },
+      "signal": "NEUTRAL No Trade (No Data)",
+      "strategy": "No relevant news in window",
+      "suitable_for": "Watch",
+      "confidence": "-",
+      "patterns": [],
+      "positive_factors": [],
+      "negative_factors": [],
+      "news_count": 0,
+      "news_dropped": 0,
+      "performance": {
+        "list_fetch_ms": 1392,
+        "candidate_filter_ms": 1,
+        "enrichment_ms": 0,
+        "raw_news_count": 10,
+        "raw_forum_count": 0,
+        "candidate_news_count": 0,
+        "candidate_forum_count": 0,
+        "enriched_news_count": 0,
+        "enriched_forum_count": 0,
+        "candidate_reasons": {
+          "news": {
+            "no-subject-mention": 1,
+            "dedup": 0,
+            "out_of_window": 9
+          },
+          "forum": {
+            "dedup": 0
+          }
+        },
+        "date_filter_ms": 0,
+        "relevance_ms": 0,
+        "llm_ms": 0,
+        "scoring_ms": 0
+      },
+      "top_news": []
+    },
+    "NASDAQ:SBCF": {
+      "name": "SBCF",
+      "score": 50,
+      "score_raw": 0,
+      "score_components": {
+        "positive_weight_sum": 0,
+        "negative_weight_sum": 0
+      },
+      "signal": "NEUTRAL No Trade (No Data)",
+      "strategy": "No relevant news in window",
+      "suitable_for": "Watch",
+      "confidence": "-",
+      "patterns": [],
+      "positive_factors": [],
+      "negative_factors": [],
+      "news_count": 0,
+      "news_dropped": 0,
+      "performance": {
+        "list_fetch_ms": 2117,
+        "candidate_filter_ms": 0,
+        "enrichment_ms": 0,
+        "raw_news_count": 9,
+        "raw_forum_count": 0,
+        "candidate_news_count": 0,
+        "candidate_forum_count": 0,
+        "enriched_news_count": 0,
+        "enriched_forum_count": 0,
+        "candidate_reasons": {
+          "news": {
+            "dedup": 0,
+            "out_of_window": 9
+          },
+          "forum": {
+            "dedup": 0
+          }
+        },
+        "date_filter_ms": 0,
+        "relevance_ms": 0,
+        "llm_ms": 0,
+        "scoring_ms": 0
+      },
+      "top_news": []
+    },
+    "NYSE:AGM": {
+      "name": "AGM",
+      "score": 50,
+      "score_raw": 0,
+      "score_components": {
+        "positive_weight_sum": 0,
+        "negative_weight_sum": 0
+      },
+      "signal": "NEUTRAL No Trade (No Data)",
+      "strategy": "No relevant news in window",
+      "suitable_for": "Watch",
+      "confidence": "-",
+      "patterns": [],
+      "positive_factors": [],
+      "negative_factors": [],
+      "news_count": 0,
+      "news_dropped": 0,
+      "performance": {
+        "list_fetch_ms": 1554,
+        "candidate_filter_ms": 0,
+        "enrichment_ms": 0,
+        "raw_news_count": 14,
+        "raw_forum_count": 0,
+        "candidate_news_count": 0,
+        "candidate_forum_count": 0,
+        "enriched_news_count": 0,
+        "enriched_forum_count": 0,
+        "candidate_reasons": {
+          "news": {
+            "dedup": 0,
+            "out_of_window": 14
+          },
+          "forum": {
+            "dedup": 0
+          }
+        },
+        "date_filter_ms": 0,
+        "relevance_ms": 0,
+        "llm_ms": 0,
+        "scoring_ms": 0
+      },
+      "top_news": []
+    },
+    "NYSE:HEI": {
+      "name": "HEI",
+      "score": 50,
+      "score_raw": 0,
+      "score_components": {
+        "positive_weight_sum": 0,
+        "negative_weight_sum": 0
+      },
+      "signal": "NEUTRAL No Trade (No Data)",
+      "strategy": "No relevant news in window",
+      "suitable_for": "Watch",
+      "confidence": "-",
+      "patterns": [],
+      "positive_factors": [],
+      "negative_factors": [],
+      "news_count": 0,
+      "news_dropped": 0,
+      "performance": {
+        "list_fetch_ms": 999,
+        "candidate_filter_ms": 0,
+        "enrichment_ms": 0,
+        "raw_news_count": 11,
+        "raw_forum_count": 0,
+        "candidate_news_count": 0,
+        "candidate_forum_count": 0,
+        "enriched_news_count": 0,
+        "enriched_forum_count": 0,
+        "candidate_reasons": {
+          "news": {
+            "no-subject-mention": 4,
+            "dedup": 0,
+            "out_of_window": 7
+          },
+          "forum": {
+            "dedup": 0
+          }
+        },
+        "date_filter_ms": 0,
+        "relevance_ms": 0,
+        "llm_ms": 0,
+        "scoring_ms": 0
+      },
+      "top_news": []
+    },
+    "NYSE:PATH": {
+      "name": "PATH",
+      "score": 50,
+      "score_raw": 0,
+      "score_components": {
+        "positive_weight_sum": 0,
+        "negative_weight_sum": 0
+      },
+      "signal": "NEUTRAL No Trade (No Data)",
+      "strategy": "LLM unavailable or call failed (no keyword fallback)",
+      "suitable_for": "Watch",
+      "confidence": "-",
+      "patterns": [],
+      "positive_factors": [],
+      "negative_factors": [],
+      "news_count": 0,
+      "news_dropped": 0,
+      "performance": {
+        "list_fetch_ms": 808,
+        "candidate_filter_ms": 0,
+        "enrichment_ms": 93,
+        "raw_news_count": 26,
+        "raw_forum_count": 0,
+        "candidate_news_count": 3,
+        "candidate_forum_count": 0,
+        "enriched_news_count": 3,
+        "enriched_forum_count": 0,
+        "candidate_reasons": {
+          "news": {
+            "no-subject-mention": 11,
+            "dedup": 0,
+            "out_of_window": 12
+          },
+          "forum": {
+            "dedup": 0
+          }
+        },
+        "date_filter_ms": 0,
+        "relevance_ms": 0,
+        "llm_ms": 89476,
+        "scoring_ms": 0
+      },
+      "top_news": []
+    },
+    "NASDAQ:HRMY": {
+      "name": "HRMY",
+      "score": 50,
+      "score_raw": 0,
+      "score_components": {
+        "positive_weight_sum": 0,
+        "negative_weight_sum": 0
+      },
+      "signal": "NEUTRAL No Trade (No Data)",
+      "strategy": "No relevant news in window",
+      "suitable_for": "Watch",
+      "confidence": "-",
+      "patterns": [],
+      "positive_factors": [],
+      "negative_factors": [],
+      "news_count": 0,
+      "news_dropped": 0,
+      "performance": {
+        "list_fetch_ms": 1588,
+        "candidate_filter_ms": 0,
+        "enrichment_ms": 0,
+        "raw_news_count": 13,
+        "raw_forum_count": 0,
+        "candidate_news_count": 0,
+        "candidate_forum_count": 0,
+        "enriched_news_count": 0,
+        "enriched_forum_count": 0,
+        "candidate_reasons": {
+          "news": {
+            "no-subject-mention": 1,
+            "dedup": 0,
+            "out_of_window": 12
+          },
+          "forum": {
+            "dedup": 0
+          }
+        },
+        "date_filter_ms": 0,
+        "relevance_ms": 0,
+        "llm_ms": 0,
+        "scoring_ms": 0
+      },
+      "top_news": []
+    },
+    "NASDAQ:GRAL": {
+      "name": "GRAL",
+      "score": 50,
+      "score_raw": 0,
+      "score_components": {
+        "positive_weight_sum": 0,
+        "negative_weight_sum": 0
+      },
+      "signal": "NEUTRAL No Trade (No Data)",
+      "strategy": "No relevant news in window",
+      "suitable_for": "Watch",
+      "confidence": "-",
+      "patterns": [],
+      "positive_factors": [],
+      "negative_factors": [],
+      "news_count": 0,
+      "news_dropped": 0,
+      "performance": {
+        "list_fetch_ms": 1142,
+        "candidate_filter_ms": 0,
+        "enrichment_ms": 0,
+        "raw_news_count": 11,
+        "raw_forum_count": 0,
+        "candidate_news_count": 0,
+        "candidate_forum_count": 0,
+        "enriched_news_count": 0,
+        "enriched_forum_count": 0,
+        "candidate_reasons": {
+          "news": {
+            "no-subject-mention": 2,
+            "dedup": 0,
+            "out_of_window": 9
+          },
+          "forum": {
+            "dedup": 0
+          }
+        },
+        "date_filter_ms": 0,
+        "relevance_ms": 0,
+        "llm_ms": 0,
+        "scoring_ms": 0
+      },
+      "top_news": []
+    },
+    "NASDAQ:VRTX": {
+      "name": "VRTX",
+      "score": 50,
+      "score_raw": 0,
+      "score_components": {
+        "positive_weight_sum": 0,
+        "negative_weight_sum": 0
+      },
+      "signal": "NEUTRAL No Trade (No Data)",
+      "strategy": "No relevant news in window",
+      "suitable_for": "Watch",
+      "confidence": "-",
+      "patterns": [],
+      "positive_factors": [],
+      "negative_factors": [],
+      "news_count": 0,
+      "news_dropped": 0,
+      "performance": {
+        "list_fetch_ms": 1382,
+        "candidate_filter_ms": 0,
+        "enrichment_ms": 0,
+        "raw_news_count": 15,
+        "raw_forum_count": 0,
+        "candidate_news_count": 0,
+        "candidate_forum_count": 0,
+        "enriched_news_count": 0,
+        "enriched_forum_count": 0,
+        "candidate_reasons": {
+          "news": {
+            "no-subject-mention": 7,
+            "dedup": 0,
+            "out_of_window": 8
+          },
+          "forum": {
+            "dedup": 0
+          }
+        },
+        "date_filter_ms": 0,
+        "relevance_ms": 0,
+        "llm_ms": 0,
+        "scoring_ms": 0
+      },
+      "top_news": []
+    },
+    "NASDAQ:VKTX": {
+      "name": "VKTX",
+      "score": 50,
+      "score_raw": 0,
+      "score_components": {
+        "positive_weight_sum": 0,
+        "negative_weight_sum": 0
+      },
+      "signal": "NEUTRAL No Trade (No Data)",
+      "strategy": "No relevant news in window",
+      "suitable_for": "Watch",
+      "confidence": "-",
+      "patterns": [],
+      "positive_factors": [],
+      "negative_factors": [],
+      "news_count": 0,
+      "news_dropped": 0,
+      "performance": {
+        "list_fetch_ms": 1135,
+        "candidate_filter_ms": 0,
+        "enrichment_ms": 0,
+        "raw_news_count": 13,
+        "raw_forum_count": 0,
+        "candidate_news_count": 0,
+        "candidate_forum_count": 0,
+        "enriched_news_count": 0,
+        "enriched_forum_count": 0,
+        "candidate_reasons": {
+          "news": {
+            "dedup": 0,
+            "out_of_window": 13
+          },
+          "forum": {
+            "dedup": 0
+          }
+        },
+        "date_filter_ms": 0,
+        "relevance_ms": 0,
+        "llm_ms": 0,
+        "scoring_ms": 0
+      },
+      "top_news": []
+    },
+    "OTC:ABBNY": {
+      "name": "OTC:ABBNY",
+      "score": 50,
+      "score_raw": 0,
+      "score_components": {
+        "positive_weight_sum": 0,
+        "negative_weight_sum": 0
+      },
+      "signal": "NEUTRAL No Trade (No Data)",
+      "strategy": "No relevant news in window",
+      "suitable_for": "Watch",
+      "confidence": "-",
+      "patterns": [],
+      "positive_factors": [],
+      "negative_factors": [],
+      "news_count": 0,
+      "news_dropped": 0,
+      "performance": {
+        "list_fetch_ms": 808,
+        "candidate_filter_ms": 0,
+        "enrichment_ms": 0,
+        "raw_news_count": 0,
+        "raw_forum_count": 0,
+        "candidate_news_count": 0,
+        "candidate_forum_count": 0,
+        "enriched_news_count": 0,
+        "enriched_forum_count": 0,
+        "candidate_reasons": {
+          "news": {
+            "dedup": 0
+          },
+          "forum": {
+            "dedup": 0
+          }
+        },
+        "date_filter_ms": 0,
+        "relevance_ms": 0,
+        "llm_ms": 0,
+        "scoring_ms": 0
+      },
+      "top_news": []
+    },
+    "NYSE:LOAR": {
+      "name": "LOAR",
+      "score": 50,
+      "score_raw": 0,
+      "score_components": {
+        "positive_weight_sum": 0,
+        "negative_weight_sum": 0
+      },
+      "signal": "NEUTRAL No Trade (No Data)",
+      "strategy": "No relevant news in window",
+      "suitable_for": "Watch",
+      "confidence": "-",
+      "patterns": [],
+      "positive_factors": [],
+      "negative_factors": [],
+      "news_count": 0,
+      "news_dropped": 0,
+      "performance": {
+        "list_fetch_ms": 1132,
+        "candidate_filter_ms": 0,
+        "enrichment_ms": 0,
+        "raw_news_count": 11,
+        "raw_forum_count": 0,
+        "candidate_news_count": 0,
+        "candidate_forum_count": 0,
+        "enriched_news_count": 0,
+        "enriched_forum_count": 0,
+        "candidate_reasons": {
+          "news": {
+            "dedup": 0,
+            "out_of_window": 11
+          },
+          "forum": {
+            "dedup": 0
+          }
+        },
+        "date_filter_ms": 0,
+        "relevance_ms": 0,
+        "llm_ms": 0,
+        "scoring_ms": 0
+      },
+      "top_news": []
+    },
+    "NYSE:P": {
+      "name": "P",
+      "score": 50,
+      "score_raw": 0,
+      "score_components": {
+        "positive_weight_sum": 0,
+        "negative_weight_sum": 0
+      },
+      "signal": "NEUTRAL No Trade (No Data)",
+      "strategy": "No relevant news in window",
+      "suitable_for": "Watch",
+      "confidence": "-",
+      "patterns": [],
+      "positive_factors": [],
+      "negative_factors": [],
+      "news_count": 0,
+      "news_dropped": 0,
+      "performance": {
+        "list_fetch_ms": 1095,
+        "candidate_filter_ms": 0,
+        "enrichment_ms": 0,
+        "raw_news_count": 9,
+        "raw_forum_count": 0,
+        "candidate_news_count": 0,
+        "candidate_forum_count": 0,
+        "enriched_news_count": 0,
+        "enriched_forum_count": 0,
+        "candidate_reasons": {
+          "news": {
+            "no-subject-mention": 1,
+            "dedup": 0,
+            "out_of_window": 8
+          },
+          "forum": {
+            "dedup": 0
+          }
+        },
+        "date_filter_ms": 0,
+        "relevance_ms": 0,
+        "llm_ms": 0,
+        "scoring_ms": 0
+      },
+      "top_news": []
+    },
+    "NASDAQ:NBIS": {
+      "name": "NBIS",
+      "score": 50,
+      "score_raw": 0,
+      "score_components": {
+        "positive_weight_sum": 0,
+        "negative_weight_sum": 0
+      },
+      "signal": "NEUTRAL No Trade (No Data)",
+      "strategy": "No relevant news in window",
+      "suitable_for": "Watch",
+      "confidence": "-",
+      "patterns": [],
+      "positive_factors": [],
+      "negative_factors": [],
+      "news_count": 0,
+      "news_dropped": 0,
+      "performance": {
+        "list_fetch_ms": 1085,
+        "candidate_filter_ms": 0,
+        "enrichment_ms": 0,
+        "raw_news_count": 13,
+        "raw_forum_count": 0,
+        "candidate_news_count": 0,
+        "candidate_forum_count": 0,
+        "enriched_news_count": 0,
+        "enriched_forum_count": 0,
+        "candidate_reasons": {
+          "news": {
+            "no-subject-mention": 7,
+            "dedup": 0,
+            "out_of_window": 6
+          },
+          "forum": {
+            "dedup": 0
+          }
+        },
+        "date_filter_ms": 0,
+        "relevance_ms": 0,
+        "llm_ms": 0,
+        "scoring_ms": 0
+      },
+      "top_news": []
+    },
+    "NASDAQ:MRVL": {
+      "name": "MRVL",
+      "score": 50,
+      "score_raw": 0,
+      "score_components": {
+        "positive_weight_sum": 0,
+        "negative_weight_sum": 0
+      },
+      "signal": "NEUTRAL No Trade (No Data)",
+      "strategy": "No relevant news in window",
+      "suitable_for": "Watch",
+      "confidence": "-",
+      "patterns": [],
+      "positive_factors": [],
+      "negative_factors": [],
+      "news_count": 0,
+      "news_dropped": 0,
+      "performance": {
+        "list_fetch_ms": 845,
+        "candidate_filter_ms": 0,
+        "enrichment_ms": 0,
+        "raw_news_count": 10,
+        "raw_forum_count": 0,
+        "candidate_news_count": 0,
+        "candidate_forum_count": 0,
+        "enriched_news_count": 0,
+        "enriched_forum_count": 0,
+        "candidate_reasons": {
+          "news": {
+            "no-subject-mention": 10,
+            "dedup": 0
+          },
+          "forum": {
+            "dedup": 0
+          }
+        },
+        "date_filter_ms": 0,
+        "relevance_ms": 0,
+        "llm_ms": 0,
+        "scoring_ms": 0
+      },
+      "top_news": []
+    },
+    "NYSE:GRMN": {
+      "name": "GRMN",
+      "score": 50,
+      "score_raw": 0,
+      "score_components": {
+        "positive_weight_sum": 0,
+        "negative_weight_sum": 0
+      },
+      "signal": "NEUTRAL No Trade (No Data)",
+      "strategy": "No relevant news in window",
+      "suitable_for": "Watch",
+      "confidence": "-",
+      "patterns": [],
+      "positive_factors": [],
+      "negative_factors": [],
+      "news_count": 0,
+      "news_dropped": 0,
+      "performance": {
+        "list_fetch_ms": 861,
+        "candidate_filter_ms": 0,
+        "enrichment_ms": 0,
+        "raw_news_count": 11,
+        "raw_forum_count": 0,
+        "candidate_news_count": 0,
+        "candidate_forum_count": 0,
+        "enriched_news_count": 0,
+        "enriched_forum_count": 0,
+        "candidate_reasons": {
+          "news": {
+            "dedup": 0,
+            "out_of_window": 11
+          },
+          "forum": {
+            "dedup": 0
+          }
+        },
+        "date_filter_ms": 0,
+        "relevance_ms": 0,
+        "llm_ms": 0,
+        "scoring_ms": 0
+      },
+      "top_news": []
+    },
+    "NYSE:RIO": {
+      "name": "RIO",
+      "score": 50,
+      "score_raw": 0,
+      "score_components": {
+        "positive_weight_sum": 0,
+        "negative_weight_sum": 0
+      },
+      "signal": "NEUTRAL No Trade (No Data)",
+      "strategy": "No relevant news in window",
+      "suitable_for": "Watch",
+      "confidence": "-",
+      "patterns": [],
+      "positive_factors": [],
+      "negative_factors": [],
+      "news_count": 0,
+      "news_dropped": 0,
+      "performance": {
+        "list_fetch_ms": 1583,
+        "candidate_filter_ms": 0,
+        "enrichment_ms": 0,
+        "raw_news_count": 5,
+        "raw_forum_count": 0,
+        "candidate_news_count": 0,
+        "candidate_forum_count": 0,
+        "enriched_news_count": 0,
+        "enriched_forum_count": 0,
+        "candidate_reasons": {
+          "news": {
+            "dedup": 0,
+            "out_of_window": 5
+          },
+          "forum": {
+            "dedup": 0
+          }
+        },
+        "date_filter_ms": 0,
+        "relevance_ms": 0,
+        "llm_ms": 0,
+        "scoring_ms": 0
+      },
+      "top_news": []
+    },
+    "NYSE:JOE": {
+      "name": "JOE",
+      "score": 50,
+      "score_raw": 0,
+      "score_components": {
+        "positive_weight_sum": 0,
+        "negative_weight_sum": 0
+      },
+      "signal": "NEUTRAL No Trade (No Data)",
+      "strategy": "No relevant news in window",
+      "suitable_for": "Watch",
+      "confidence": "-",
+      "patterns": [],
+      "positive_factors": [],
+      "negative_factors": [],
+      "news_count": 0,
+      "news_dropped": 0,
+      "performance": {
+        "list_fetch_ms": 1187,
+        "candidate_filter_ms": 0,
+        "enrichment_ms": 0,
+        "raw_news_count": 9,
+        "raw_forum_count": 0,
+        "candidate_news_count": 0,
+        "candidate_forum_count": 0,
+        "enriched_news_count": 0,
+        "enriched_forum_count": 0,
+        "candidate_reasons": {
+          "news": {
+            "dedup": 0,
+            "out_of_window": 9
+          },
+          "forum": {
+            "dedup": 0
+          }
+        },
+        "date_filter_ms": 0,
+        "relevance_ms": 0,
+        "llm_ms": 0,
+        "scoring_ms": 0
+      },
+      "top_news": []
+    },
+    "NYSE:RRC": {
+      "name": "RRC",
+      "score": 50,
+      "score_raw": 0,
+      "score_components": {
+        "positive_weight_sum": 0,
+        "negative_weight_sum": 0
+      },
+      "signal": "NEUTRAL No Trade (No Data)",
+      "strategy": "No relevant news in window",
+      "suitable_for": "Watch",
+      "confidence": "-",
+      "patterns": [],
+      "positive_factors": [],
+      "negative_factors": [],
+      "news_count": 0,
+      "news_dropped": 0,
+      "performance": {
+        "list_fetch_ms": 794,
+        "candidate_filter_ms": 0,
+        "enrichment_ms": 0,
+        "raw_news_count": 10,
+        "raw_forum_count": 0,
+        "candidate_news_count": 0,
+        "candidate_forum_count": 0,
+        "enriched_news_count": 0,
+        "enriched_forum_count": 0,
+        "candidate_reasons": {
+          "news": {
+            "dedup": 0,
+            "out_of_window": 10
+          },
+          "forum": {
+            "dedup": 0
+          }
+        },
+        "date_filter_ms": 0,
+        "relevance_ms": 0,
+        "llm_ms": 0,
+        "scoring_ms": 0
+      },
+      "top_news": []
+    },
+    "NYSE:NEM": {
+      "name": "NEM",
+      "score": 50,
+      "score_raw": 0,
+      "score_components": {
+        "positive_weight_sum": 0,
+        "negative_weight_sum": 0
+      },
+      "signal": "NEUTRAL No Trade (No Data)",
+      "strategy": "No relevant news in window",
+      "suitable_for": "Watch",
+      "confidence": "-",
+      "patterns": [],
+      "positive_factors": [],
+      "negative_factors": [],
+      "news_count": 0,
+      "news_dropped": 0,
+      "performance": {
+        "list_fetch_ms": 790,
+        "candidate_filter_ms": 0,
+        "enrichment_ms": 0,
+        "raw_news_count": 7,
+        "raw_forum_count": 0,
+        "candidate_news_count": 0,
+        "candidate_forum_count": 0,
+        "enriched_news_count": 0,
+        "enriched_forum_count": 0,
+        "candidate_reasons": {
+          "news": {
+            "no-subject-mention": 1,
+            "dedup": 0,
+            "out_of_window": 6
+          },
+          "forum": {
+            "dedup": 0
+          }
+        },
+        "date_filter_ms": 0,
+        "relevance_ms": 0,
+        "llm_ms": 0,
+        "scoring_ms": 0
+      },
+      "top_news": []
+    },
+    "NYSE:FCX": {
+      "name": "FCX",
+      "score": 50,
+      "score_raw": 0,
+      "score_components": {
+        "positive_weight_sum": 0,
+        "negative_weight_sum": 0
+      },
+      "signal": "NEUTRAL No Trade (No Data)",
+      "strategy": "No relevant news in window",
+      "suitable_for": "Watch",
+      "confidence": "-",
+      "patterns": [],
+      "positive_factors": [],
+      "negative_factors": [],
+      "news_count": 0,
+      "news_dropped": 0,
+      "performance": {
+        "list_fetch_ms": 963,
+        "candidate_filter_ms": 0,
+        "enrichment_ms": 0,
+        "raw_news_count": 12,
+        "raw_forum_count": 0,
+        "candidate_news_count": 0,
+        "candidate_forum_count": 0,
+        "enriched_news_count": 0,
+        "enriched_forum_count": 0,
+        "candidate_reasons": {
+          "news": {
+            "dedup": 0,
+            "out_of_window": 12
+          },
+          "forum": {
+            "dedup": 0
+          }
+        },
+        "date_filter_ms": 0,
+        "relevance_ms": 0,
+        "llm_ms": 0,
+        "scoring_ms": 0
+      },
+      "top_news": []
+    },
+    "NYSE:SCCO": {
+      "name": "SCCO",
+      "score": 50,
+      "score_raw": 0,
+      "score_components": {
+        "positive_weight_sum": 0,
+        "negative_weight_sum": 0
+      },
+      "signal": "NEUTRAL No Trade (No Data)",
+      "strategy": "No relevant news in window",
+      "suitable_for": "Watch",
+      "confidence": "-",
+      "patterns": [],
+      "positive_factors": [],
+      "negative_factors": [],
+      "news_count": 0,
+      "news_dropped": 0,
+      "performance": {
+        "list_fetch_ms": 803,
+        "candidate_filter_ms": 0,
+        "enrichment_ms": 0,
+        "raw_news_count": 12,
+        "raw_forum_count": 0,
+        "candidate_news_count": 0,
+        "candidate_forum_count": 0,
+        "enriched_news_count": 0,
+        "enriched_forum_count": 0,
+        "candidate_reasons": {
+          "news": {
+            "dedup": 0,
+            "out_of_window": 12
+          },
+          "forum": {
+            "dedup": 0
+          }
+        },
+        "date_filter_ms": 0,
+        "relevance_ms": 0,
+        "llm_ms": 0,
+        "scoring_ms": 0
+      },
+      "top_news": []
+    },
+    "NYSE:WPM": {
+      "name": "WPM",
+      "score": 50,
+      "score_raw": 0,
+      "score_components": {
+        "positive_weight_sum": 0,
+        "negative_weight_sum": 0
+      },
+      "signal": "NEUTRAL No Trade (No Data)",
+      "strategy": "No relevant news in window",
+      "suitable_for": "Watch",
+      "confidence": "-",
+      "patterns": [],
+      "positive_factors": [],
+      "negative_factors": [],
+      "news_count": 0,
+      "news_dropped": 0,
+      "performance": {
+        "list_fetch_ms": 840,
+        "candidate_filter_ms": 0,
+        "enrichment_ms": 0,
+        "raw_news_count": 12,
+        "raw_forum_count": 0,
+        "candidate_news_count": 0,
+        "candidate_forum_count": 0,
+        "enriched_news_count": 0,
+        "enriched_forum_count": 0,
+        "candidate_reasons": {
+          "news": {
+            "dedup": 0,
+            "out_of_window": 12
+          },
+          "forum": {
+            "dedup": 0
+          }
+        },
+        "date_filter_ms": 0,
+        "relevance_ms": 0,
+        "llm_ms": 0,
+        "scoring_ms": 0
+      },
+      "top_news": []
+    },
+    "NASDAQ:MNST": {
+      "name": "MNST",
+      "score": 50,
+      "score_raw": 0,
+      "score_components": {
+        "positive_weight_sum": 0,
+        "negative_weight_sum": 0
+      },
+      "signal": "NEUTRAL No Trade (No Data)",
+      "strategy": "No relevant news in window",
+      "suitable_for": "Watch",
+      "confidence": "-",
+      "patterns": [],
+      "positive_factors": [],
+      "negative_factors": [],
+      "news_count": 0,
+      "news_dropped": 0,
+      "performance": {
+        "list_fetch_ms": 803,
+        "candidate_filter_ms": 0,
+        "enrichment_ms": 0,
+        "raw_news_count": 8,
+        "raw_forum_count": 0,
+        "candidate_news_count": 0,
+        "candidate_forum_count": 0,
+        "enriched_news_count": 0,
+        "enriched_forum_count": 0,
+        "candidate_reasons": {
+          "news": {
+            "dedup": 0,
+            "out_of_window": 8
+          },
+          "forum": {
+            "dedup": 0
+          }
+        },
+        "date_filter_ms": 0,
+        "relevance_ms": 0,
+        "llm_ms": 0,
+        "scoring_ms": 0
+      },
+      "top_news": []
+    }
+  }
+}

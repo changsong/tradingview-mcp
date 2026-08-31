@@ -1,0 +1,169 @@
+{
+  "generated_at": "2026-07-31T06:31:07.376Z",
+  "market": "cn",
+  "source": "src/core/webNews.js",
+  "score_scale": "0-100 normalized (neutral=50)",
+  "window": {
+    "from": "2026-07-24",
+    "to": "2026-07-31",
+    "days": 7
+  },
+  "llm_used": true,
+  "performance": {
+    "totals_ms": {
+      "list_fetch_ms": 1354,
+      "enrichment_ms": 5255,
+      "relevance_ms": 0,
+      "llm_ms": 47141,
+      "report_write_ms": 14
+    },
+    "avg_ms": {
+      "list_fetch_ms": 1354,
+      "enrichment_ms": 5255,
+      "relevance_ms": 0,
+      "llm_ms": 47141,
+      "report_write_ms": 14
+    }
+  },
+  "stocks": {
+    "SZSE:300458": {
+      "name": "全志科技",
+      "score": 35,
+      "score_raw": -3.54,
+      "score_components": {
+        "positive_weight_sum": 2.6,
+        "negative_weight_sum": 6.14,
+        "news_effective_count": 10,
+        "news_dropped_count": 0
+      },
+      "signal": "🔴 No Trade / 规避",
+      "strategy": "情绪偏空，建议规避或减仓，等待企稳",
+      "suitable_for": "反转(等企稳)",
+      "confidence": "中",
+      "patterns": [],
+      "positive_factors": [
+        "[行业|w1.02] 全志科技7月30日快速反弹",
+        "[行业|w0.86] 全志科技7月29日盘中涨幅达5%",
+        "[行业|w0.72] 全志科技7月28日快速反弹"
+      ],
+      "negative_factors": [
+        "[行业|w1.2] 全志科技：融资净偿还1.15亿元，融资余额15.22亿元",
+        "[行业|w1.02] 全志科技7月30日加速下跌",
+        "[行业|w1.02] 全志科技7月30日盘中跌幅达5%"
+      ],
+      "news_count": 10,
+      "news_dropped": 0,
+      "performance": {
+        "list_fetch_ms": 1354,
+        "candidate_filter_ms": 1,
+        "enrichment_ms": 5255,
+        "raw_news_count": 40,
+        "raw_research_count": 10,
+        "candidate_news_count": 10,
+        "candidate_research_count": 0,
+        "enriched_news_count": 10,
+        "enriched_research_count": 0,
+        "candidate_reasons": {
+          "news": {
+            "no-subject-mention": 4,
+            "noise:龙虎榜|大宗交易|盘口异动": 3,
+            "noise:融资净(买入|卖出)": 1,
+            "noise:\\d{1,2}月\\d{1,2}日(快速上涨|快速回调|涨停|": 2,
+            "dedup": 0,
+            "out_of_window": 20
+          },
+          "research": {
+            "dedup": 0,
+            "out_of_window": 10
+          }
+        },
+        "date_filter_ms": 0,
+        "relevance_ms": 0,
+        "llm_ms": 47141,
+        "scoring_ms": 1
+      },
+      "top_news": [
+        {
+          "date": "2026-07-31 09:20:30",
+          "title": "全志科技：融资净偿还1.15亿元，融资余额15.22亿元",
+          "content": "在东方财富看资讯行情，选东方财富证券一站式开户交易>>\n\n交易所最新数据显示，全志科技于2026年7月30日获融资买入3.94亿元，融资偿还5.09亿元，当日融资净偿还1.15亿元。目前，该股融资余额15.22亿，占流通市值比例为5.87%。\n\n该股当日融券卖出1.80万股，融券偿还1.53万股，融券净卖出2720股。目前，该股融券余量52.63万股，融券余额1674.55万元。\n\n免责声明：本文基于AI生产，仅供参考，不构成任何投资建议，据此操作风险自担。东方财富发布此内容旨在传播更多信息，与本平台立场无关。东方财富力求但不保证数据的完全准确，如有错漏请以中国证监会指定上市公司信息披露媒体为准，东方财富不对因该资料全部或部分内容而引致的盈亏承担任何责任。用户个人对服务的使用承担风险，东方财富对此不作任何类型的担保。",
+          "type": "行业",
+          "sentiment": -1,
+          "weight": 1,
+          "final_weight": 1.2,
+          "source_authority": 3,
+          "recency_factor": 1,
+          "source": "东方财富资讯",
+          "llm_reviewed": true,
+          "llm_confidence": 0.8,
+          "llm_is_real_catalyst": false,
+          "llm_reasoning": "融资净偿还，资金流出"
+        },
+        {
+          "date": "2026-07-30 10:01:27",
+          "title": "全志科技7月30日快速反弹",
+          "content": "",
+          "type": "行业",
+          "sentiment": 1,
+          "weight": 1,
+          "final_weight": 1.02,
+          "source_authority": 3,
+          "recency_factor": 0.85,
+          "source": "东方财富资讯",
+          "llm_reviewed": true,
+          "llm_confidence": 0.8,
+          "llm_is_real_catalyst": false,
+          "llm_reasoning": "盘中反弹，无实质催化"
+        },
+        {
+          "date": "2026-07-30 09:37:54",
+          "title": "全志科技7月30日加速下跌",
+          "content": "以下是全志科技在北京时间7月30日09:35分盘口异动快照：\n\n　　在东方财富看资讯行情，选东方财富证券一站式开户交易>>\n\n \n\n  7月30日，全志科技盘中加速下跌，5分钟内跌幅超过2%，截至9点35分，报37.37元，成交8.27亿元，换手率2.66%。\n注：以上信息仅供参考，不对您构成任何投资建议。",
+          "type": "行业",
+          "sentiment": -1,
+          "weight": 1,
+          "final_weight": 1.02,
+          "source_authority": 3,
+          "recency_factor": 0.85,
+          "source": "东方财富资讯",
+          "llm_reviewed": true,
+          "llm_confidence": 0.8,
+          "llm_is_real_catalyst": false,
+          "llm_reasoning": "盘中加速下跌，股价异动"
+        },
+        {
+          "date": "2026-07-30 09:35:28",
+          "title": "全志科技7月30日盘中跌幅达5%",
+          "content": "",
+          "type": "行业",
+          "sentiment": -1,
+          "weight": 1,
+          "final_weight": 1.02,
+          "source_authority": 3,
+          "recency_factor": 0.85,
+          "source": "东方财富资讯",
+          "llm_reviewed": true,
+          "llm_confidence": 0.8,
+          "llm_is_real_catalyst": false,
+          "llm_reasoning": "盘中跌幅达5%，股价异动"
+        },
+        {
+          "date": "2026-07-29 09:39:01",
+          "title": "全志科技7月29日盘中涨幅达5%",
+          "content": "",
+          "type": "行业",
+          "sentiment": 1,
+          "weight": 1,
+          "final_weight": 0.86,
+          "source_authority": 3,
+          "recency_factor": 0.72,
+          "source": "东方财富资讯",
+          "llm_reviewed": true,
+          "llm_confidence": 0.8,
+          "llm_is_real_catalyst": false,
+          "llm_reasoning": "盘中涨幅达5%，股价异动"
+        }
+      ]
+    }
+  }
+}

@@ -1,0 +1,399 @@
+{
+  "generated_at": "2026-07-25T06:40:39.721Z",
+  "market": "cn",
+  "source": "./watchlist/cn_selected.txt",
+  "entry_signal": {
+    "can_enter": false,
+    "signal": "观望",
+    "reason": "隔夜美股上涨 → A股均值回归承压 (回测个股涨概率仅 40.8%)",
+    "strategy": "不入场, 等待下一个美股下跌日"
+  },
+  "overnight_us": {
+    "sp500_pct": 0.59,
+    "nasdaq_pct": 0.44,
+    "dji_pct": 0.65,
+    "avg_pct": 0.56,
+    "contrarian_signal": "US up → CN down (均值回归)"
+  },
+  "sector_flow": {
+    "top_gainers": [
+      {
+        "code": "BK1295",
+        "name": "其他数字媒体",
+        "change_pct": -6.81,
+        "flow": 801.85
+      },
+      {
+        "code": "BK1623",
+        "name": "钼",
+        "change_pct": -6.35,
+        "flow": 1345.85
+      },
+      {
+        "code": "BK1500",
+        "name": "医美耗材",
+        "change_pct": -6.12,
+        "flow": 1376.19
+      },
+      {
+        "code": "BK1298",
+        "name": "文字媒体",
+        "change_pct": -6.03,
+        "flow": 2037.14
+      },
+      {
+        "code": "BK1412",
+        "name": "氨纶",
+        "change_pct": -6.02,
+        "flow": 2672.63
+      }
+    ],
+    "top_losers": [
+      {
+        "code": "BK1326",
+        "name": "半导体设备",
+        "change_pct": 3.18,
+        "flow": 49718.64
+      },
+      {
+        "code": "BK1382",
+        "name": "地面兵装Ⅲ",
+        "change_pct": 2.1,
+        "flow": 3323.15
+      },
+      {
+        "code": "BK1229",
+        "name": "地面兵装Ⅱ",
+        "change_pct": 2.1,
+        "flow": 3323.15
+      },
+      {
+        "code": "BK1328",
+        "name": "集成电路封测",
+        "change_pct": 1.87,
+        "flow": 8395.65
+      },
+      {
+        "code": "BK1521",
+        "name": "摩托车",
+        "change_pct": 1.11,
+        "flow": 3362.37
+      }
+    ]
+  },
+  "model": "external_3d",
+  "formula": "Score = 隔夜外盘·均值回归(±4) + 新闻情绪(±3) + 板块资金流(±2)",
+  "strategy": {
+    "entry_condition": "隔夜美股下跌",
+    "priority_sort": "新闻<60 优先 (回测涨概率 65.1%), 新闻≥60 次之 (回测涨概率 48.8%)",
+    "rationale": "利好出尽是利空 — 高新闻分标的已被热钱透支，反弹力度弱"
+  },
+  "total": 9,
+  "success": 8,
+  "failed": [
+    {
+      "symbol": "锛堝唴瀹圭敱AI鐢熸垚锛屼粎渚涘弬鑰冿級",
+      "reason": "chart_not_ready"
+    }
+  ],
+  "results": [
+    {
+      "symbol": "SSE:603259",
+      "name": "SSE:603259",
+      "ok": true,
+      "price": 125,
+      "open": 127.45,
+      "high": 128.45,
+      "low": 123.66,
+      "volume": 44375591,
+      "chg_pct": -0.019223,
+      "gap_pct": 0.019223,
+      "real_gap": 0,
+      "candle": "阴",
+      "mkt_contrib": -4,
+      "news_score": 55,
+      "news_signal": "⚪ No Trade (微多)",
+      "news_patterns": [],
+      "news_contrib": -3,
+      "sector_score": 0,
+      "matched_boards": [],
+      "all_boards": [
+        "医药生物",
+        "医疗服务",
+        "医疗研发外包",
+        "江苏板块",
+        "医药医疗风格"
+      ],
+      "can_enter": false,
+      "entry_label": "⛔ 观望",
+      "priority": -1,
+      "score": -7,
+      "prediction": "偏空"
+    },
+    {
+      "symbol": "SZSE:301345",
+      "name": "301345",
+      "ok": true,
+      "price": 256.9,
+      "open": 233,
+      "high": 258.86,
+      "low": 233,
+      "volume": 2318875,
+      "chg_pct": 0.102575,
+      "gap_pct": 0.102575,
+      "real_gap": -0.01267,
+      "candle": "阳",
+      "mkt_contrib": -4,
+      "news_score": 64,
+      "news_signal": "🟢 Long (中)",
+      "news_patterns": [],
+      "news_contrib": 3,
+      "sector_score": -2,
+      "matched_boards": [
+        {
+          "board": "摩托车",
+          "direction": "bottom",
+          "rank": 3
+        }
+      ],
+      "all_boards": [
+        "汽车",
+        "摩托车及其他",
+        "摩托车",
+        "浙江板块",
+        "2026中报预增"
+      ],
+      "can_enter": false,
+      "entry_label": "⛔ 观望",
+      "priority": -1,
+      "score": -3,
+      "prediction": "偏空"
+    },
+    {
+      "symbol": "SSE:601168",
+      "name": "601168",
+      "ok": true,
+      "price": 36.24,
+      "open": 35.99,
+      "high": 37.39,
+      "low": 35.33,
+      "volume": 81438339,
+      "chg_pct": 0.006946,
+      "gap_pct": 0.006946,
+      "real_gap": -0.04889,
+      "candle": "阳",
+      "mkt_contrib": -4,
+      "news_score": 50,
+      "news_signal": "⚪ No Trade (无数据)",
+      "news_patterns": [],
+      "news_contrib": -3,
+      "sector_score": 2,
+      "matched_boards": [
+        {
+          "board": "工业金属",
+          "direction": "top",
+          "rank": 2
+        },
+        {
+          "board": "铜",
+          "direction": "top",
+          "rank": 3
+        }
+      ],
+      "all_boards": [
+        "有色金属",
+        "工业金属",
+        "铜",
+        "青海板块",
+        "2026中报预增"
+      ],
+      "can_enter": false,
+      "entry_label": "⛔ 观望",
+      "priority": -1,
+      "score": -5,
+      "prediction": "偏空"
+    },
+    {
+      "symbol": "SSE:603129",
+      "name": "603129",
+      "ok": true,
+      "price": 282.95,
+      "open": 268.5,
+      "high": 284.88,
+      "low": 265.1,
+      "volume": 2696155,
+      "chg_pct": 0.053818,
+      "gap_pct": 0.053818,
+      "real_gap": -0.001116,
+      "candle": "阳",
+      "mkt_contrib": -4,
+      "news_score": 50,
+      "news_signal": "⚪ No Trade (无数据)",
+      "news_patterns": [],
+      "news_contrib": -3,
+      "sector_score": -2,
+      "matched_boards": [
+        {
+          "board": "摩托车",
+          "direction": "bottom",
+          "rank": 3
+        }
+      ],
+      "all_boards": [
+        "汽车",
+        "摩托车及其他",
+        "摩托车",
+        "浙江板块",
+        "趋势股"
+      ],
+      "can_enter": false,
+      "entry_label": "⛔ 观望",
+      "priority": -1,
+      "score": -9,
+      "prediction": "偏空"
+    },
+    {
+      "symbol": "SZSE:000977",
+      "name": "000977",
+      "ok": true,
+      "price": 85.31,
+      "open": 87,
+      "high": 89.33,
+      "low": 84.71,
+      "volume": 96114222,
+      "chg_pct": -0.019425,
+      "gap_pct": 0.019425,
+      "real_gap": -0.010914,
+      "candle": "阴",
+      "mkt_contrib": -4,
+      "news_score": 50,
+      "news_signal": "⚪ No Trade (无数据)",
+      "news_patterns": [],
+      "news_contrib": -3,
+      "sector_score": 0,
+      "matched_boards": [],
+      "all_boards": [
+        "计算机",
+        "计算机设备",
+        "其他计算机设备",
+        "山东板块",
+        "2026中报预增"
+      ],
+      "can_enter": false,
+      "entry_label": "⛔ 观望",
+      "priority": -1,
+      "score": -7,
+      "prediction": "偏空"
+    },
+    {
+      "symbol": "SZSE:002156",
+      "name": "002156",
+      "ok": true,
+      "price": 76.64,
+      "open": 68.03,
+      "high": 76.8,
+      "low": 68.03,
+      "volume": 263559324,
+      "chg_pct": 0.126562,
+      "gap_pct": 0.126562,
+      "real_gap": -0.025637,
+      "candle": "阳",
+      "mkt_contrib": -4,
+      "news_score": 50,
+      "news_signal": "⚪ No Trade (无数据)",
+      "news_patterns": [],
+      "news_contrib": -3,
+      "sector_score": -2,
+      "matched_boards": [
+        {
+          "board": "半导体",
+          "direction": "bottom",
+          "rank": 2
+        },
+        {
+          "board": "集成电路封测",
+          "direction": "bottom",
+          "rank": 3
+        }
+      ],
+      "all_boards": [
+        "电子",
+        "半导体",
+        "集成电路封测",
+        "江苏板块",
+        "2026中报预增"
+      ],
+      "can_enter": false,
+      "entry_label": "⛔ 观望",
+      "priority": -1,
+      "score": -9,
+      "prediction": "偏空"
+    },
+    {
+      "symbol": "SZSE:002415",
+      "name": "002415",
+      "ok": true,
+      "price": 35.49,
+      "open": 35.4,
+      "high": 35.78,
+      "low": 34.76,
+      "volume": 78226619,
+      "chg_pct": 0.002542,
+      "gap_pct": 0.002542,
+      "real_gap": -0.010344,
+      "candle": "阳",
+      "mkt_contrib": -4,
+      "news_score": 50,
+      "news_signal": "⚪ No Trade (无数据)",
+      "news_patterns": [],
+      "news_contrib": -3,
+      "sector_score": 0,
+      "matched_boards": [],
+      "all_boards": [
+        "计算机",
+        "计算机设备",
+        "安防设备",
+        "浙江板块",
+        "趋势股"
+      ],
+      "can_enter": false,
+      "entry_label": "⛔ 观望",
+      "priority": -1,
+      "score": -7,
+      "prediction": "偏空"
+    },
+    {
+      "symbol": "SSE:603162",
+      "name": "603162",
+      "ok": true,
+      "price": 11.07,
+      "open": 11.46,
+      "high": 11.55,
+      "low": 10.97,
+      "volume": 47090524,
+      "chg_pct": -0.034031,
+      "gap_pct": 0.034031,
+      "real_gap": -0.004344,
+      "candle": "阴",
+      "mkt_contrib": -4,
+      "news_score": 78,
+      "news_signal": "🟢 Long (强)",
+      "news_patterns": [],
+      "news_contrib": 3,
+      "sector_score": 0,
+      "matched_boards": [],
+      "all_boards": [
+        "交通运输",
+        "航运港口",
+        "航运",
+        "福建板块",
+        "2026中报预增"
+      ],
+      "can_enter": false,
+      "entry_label": "⛔ 观望",
+      "priority": -1,
+      "score": -1,
+      "prediction": "偏空"
+    }
+  ]
+}

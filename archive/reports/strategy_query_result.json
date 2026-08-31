@@ -1,0 +1,247 @@
+{
+  "query_date": "2026-04-22",
+  "query_target": "A Share SQZMOM PRO v6 (Daily)",
+  "query_result": {
+    "exists": true,
+    "accessible": true,
+    "source_retrieved": true,
+    "source_lines": 293,
+    "source_characters": 8557,
+    "status_message": "Strategy found and fully analyzed"
+  },
+  "strategy_info": {
+    "name": "A Share SQZMOM PRO v6 (Daily)",
+    "id": "USER;354b121a5e0145c1baa3b7f1eea0578a",
+    "version": 224.0,
+    "last_modified_timestamp": 1775658955,
+    "last_modified_date": "2025-04-22",
+    "script_type": "strategy",
+    "language": "Pine Script",
+    "language_version": 6,
+    "market": "A-Share (China)",
+    "timeframe": "Daily (D)",
+    "description": "SQZMOM-based momentum strategy with multi-level EMA trend confirmation, partial profit taking, ATR trailing stops, and comprehensive risk filters for A-share daily trading"
+  },
+  "core_indicators": [
+    {
+      "name": "Squeeze Momentum (SQZMOM)",
+      "components": ["Bollinger Bands", "Keltner Channel"],
+      "purpose": "Identify consolidation breakout points"
+    },
+    {
+      "name": "Exponential Moving Averages (EMA)",
+      "levels": [20, 60, 200],
+      "purpose": "Multi-level trend confirmation"
+    },
+    {
+      "name": "Average True Range (ATR)",
+      "period": 14,
+      "uses": ["Stop loss calculation", "Position sizing", "Slippage adjustment"]
+    },
+    {
+      "name": "Volume Analysis",
+      "period": 20,
+      "multiplier": 1.2,
+      "purpose": "Breakout confirmation"
+    }
+  ],
+  "key_parameters": {
+    "bb_length": 20,
+    "bb_multiple": 2.0,
+    "kc_length": 20,
+    "kc_multiple": 1.5,
+    "trend_ema": 60,
+    "market_ema": 200,
+    "risk_percent": 1.0,
+    "min_score": 65,
+    "atr_length": 14,
+    "atr_mult": 2.5,
+    "atr_slippage": 0.1,
+    "cooldown_bars": 3,
+    "min_sqz_bars": 3,
+    "max_sqz_bars": 10,
+    "commission": 0.03,
+    "initial_capital": 100000
+  },
+  "entry_conditions": {
+    "trend": "EMA20 > EMA60 > EMA200 AND close > EMA20",
+    "squeeze": "Valid compression (3-10 bars) with positive momentum",
+    "volume": "volume > 20-MA × 1.2",
+    "score": "≥ 65 points",
+    "filters": [
+      "Non-limit-up",
+      "Non-ST stock",
+      "Non-one-character-limit",
+      "Not overextended",
+      "Limited consecutive limit-ups",
+      "No false breakout",
+      "Cooldown satisfied"
+    ]
+  },
+  "exit_levels": [
+    {
+      "level": 1,
+      "name": "TP1",
+      "trigger": "close >= Entry + Stop Distance",
+      "action": "Close 50%",
+      "type": "Partial profit"
+    },
+    {
+      "level": 2,
+      "name": "ATR Trail",
+      "trigger": "close <= Highest High - ATR × 2.5",
+      "action": "Close all",
+      "type": "Trailing stop"
+    },
+    {
+      "level": 3,
+      "name": "EMA20",
+      "trigger": "close < EMA20",
+      "action": "Close all",
+      "type": "Trend reversal"
+    },
+    {
+      "level": 4,
+      "name": "TP2",
+      "trigger": "high >= Entry + Stop Distance × 2",
+      "action": "Close all",
+      "type": "Secondary target"
+    }
+  ],
+  "scoring_system": {
+    "total_points": 100,
+    "min_entry_score": 65,
+    "components": [
+      {"name": "SQZMOM compression + positive momentum", "points": 30},
+      {"name": "Valid squeeze bars", "points": 15},
+      {"name": "SQZMOM crosses above 0", "points": 20},
+      {"name": "Volume confirmation", "points": 15},
+      {"name": "Uptrend confirmed", "points": 10},
+      {"name": "No false breakout", "points": 10}
+    ]
+  },
+  "position_sizing": {
+    "formula": "max(1, floor(Risk Amount / Stop Distance))",
+    "risk_amount": "Account Equity × Risk % / 100",
+    "stop_distance": "ATR × ATR Multiplier (2.5)",
+    "example": {
+      "account": 100000,
+      "risk_percent": 1.0,
+      "atr": 50,
+      "risk_amount": 1000,
+      "stop_distance": 125,
+      "position_size": 8
+    }
+  },
+  "alerts": {
+    "entry_format": "JSON",
+    "entry_fields": ["action", "symbol", "qty", "type", "side", "entry", "tp1", "tp2", "stop", "score"],
+    "exit_format": "JSON",
+    "exit_fields": ["action", "reason", "symbol"],
+    "exit_reasons": ["TP1", "ATR", "EMA20", "TP2"]
+  },
+  "chart_plots": [
+    {
+      "name": "ATR Trail",
+      "color": "yellow",
+      "type": "line",
+      "description": "Dynamic trailing stop loss"
+    },
+    {
+      "name": "EMA20",
+      "color": "red",
+      "type": "line",
+      "description": "20-period EMA trend line"
+    },
+    {
+      "name": "Score",
+      "color": "default",
+      "type": "character",
+      "symbol": "⭐",
+      "description": "Current score indicator"
+    },
+    {
+      "name": "Status Panel",
+      "color": "red/green",
+      "type": "table",
+      "location": "top-right",
+      "description": "Real-time status display"
+    }
+  ],
+  "risk_filters": {
+    "limit_up_protection": true,
+    "st_stock_filter": true,
+    "false_breakout_detection": true,
+    "consecutive_limit_up_check": "≤ 3 in 10 bars",
+    "cooldown_mechanism": true,
+    "volume_confirmation": true,
+    "overextension_filter": true
+  },
+  "suitable_markets": {
+    "stock_type": "A-shares",
+    "market_phase": "Clear uptrend or rebound",
+    "volatility": "Moderate (2%-8% daily)",
+    "ideal_stocks": [
+      "Mid-cap (¥5B-¥50B market cap)",
+      "Good liquidity (>1M daily volume)",
+      "Clear trend patterns",
+      "Non-ST stocks"
+    ]
+  },
+  "similar_strategies": {
+    "sqzmom_family": [
+      "A Market Stock SQZMOM PRO v1.1 (Sharpe Optimized)",
+      "BTC SQZMOM PRO v1.2 (Stats Validation)",
+      "BTC SQZMOM PRO v2 (15m + 1H Filter)",
+      "BTC SQZMOM PRO v3 (15m + 1H Filter) - RealTime Optimized",
+      "HK Market SQZMOM PRO v1.0 (1H + 30m)",
+      "US Stock SQZMOM Daily PRO v3 (ATR + EMA20 Stop)"
+    ],
+    "alternative_ashare": [
+      "A-Share Bottom Reversal Scanner v3.1 (Structured)",
+      "A股 Top选股评分器 v1.0",
+      "急拉急跌吸筹策略"
+    ]
+  },
+  "files_generated": [
+    "A_Share_SQZMOM_PRO_v6_Daily_source.pine",
+    "STRATEGY_QUERY_REPORT_CN.md",
+    "STRATEGY_QUERY_REPORT_EN.md",
+    "STRATEGY_COMPARISON.txt",
+    "strategy_query_result.json"
+  ],
+  "access_methods": {
+    "cli_list": "npm run tv -- pine list",
+    "cli_open": "npm run tv -- pine open \"A Share SQZMOM PRO v6 (Daily)\"",
+    "cli_get_source": "npm run tv -- pine get",
+    "protocol": "TradingView MCP",
+    "connection": "Chrome DevTools Protocol (CDP) on localhost:9222"
+  },
+  "statistics": {
+    "total_lines": 293,
+    "total_characters": 8557,
+    "code_blocks": {
+      "parameters": "~20 lines",
+      "sqzmom_function": "~20 lines",
+      "squeeze_logic": "~10 lines",
+      "trend_confirmation": "~10 lines",
+      "volume_analysis": "~5 lines",
+      "risk_filters": "~30 lines",
+      "scoring_system": "~10 lines",
+      "atr_handling": "~10 lines",
+      "position_sizing": "~10 lines",
+      "state_machine": "~15 lines",
+      "entry_logic": "~25 lines",
+      "position_management": "~30 lines",
+      "chart_plotting": "~10 lines"
+    }
+  },
+  "metadata": {
+    "query_date": "2026-04-22",
+    "query_tool": "tradingview-mcp",
+    "tool_version": "1.0.0",
+    "data_source": "TradingView Desktop",
+    "total_strategies_in_account": 15,
+    "target_strategy_rank": 3
+  }
+}

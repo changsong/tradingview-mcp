@@ -1,0 +1,31 @@
+﻿
++----------------------------------------------------------+
+|  US Stock MTF Analysis (Master v2 — Accuracy Tuned)      |
+|  EMA/RSI/MACD/ADX/Squeeze/OBV + StochRSI + Divergence    |
+|  + Climax/Streak/RetAccel/Support/RR/RS-vs-SPY            |
++----------------------------------------------------------+
+
+Candidates    : 3 stocks
+Sources       : ./watchlist/us_selected.txt + ./watchlist/us_news_signals.md
+Live values   : ON
+RS benchmark  : AMEX:SPY
+
+  Fetching benchmark AMEX:SPY... OK (60 bars)
+  NYSE:RRC         |||| tech:+52.2  ADX26.3   RS+0.6    align:2/4 (50%)    news:+52  Strong Long [Medium]
+  NYSE:NEM         |||| tech:+20.8  ADX39.3   RS+34.8   align:4/4 (100%)   news:+56  Long [Low]
+  NYSE:FCX         |||| tech:+36.5  ADX24.2   RS+21.1   align:4/4 (100%)   news:+50  Long [Medium]
+
+========================================================================================================================
+Multi-TF Technical Ranking (v2)
+========================================================================================================================
+ 1. NYSE:RRC     NYSE:RRC       tech:+52.2  final:+62.2  ADX:26.3  RS: +0.6  align:2/4 (50%)   Strong Long  [Medium] OK
+ 2. NYSE:FCX     NYSE:FCX       tech:+36.5  final:+24.5  ADX:24.2  RS:+21.1  align:4/4 (100%)  Long         [Medium] ⚠ BULL-TRAP/FAKE
+ 3. NYSE:NEM     NYSE:NEM       tech:+20.8  final: +5.8  ADX:39.3  RS:+34.8  align:4/4 (100%)  Long         [Low   ] ⚠ BULL-TRAP/FAKE/POOR-RR
+
+Top Entry Candidates Tomorrow (v2 strict gates):
+  1. NYSE:RRC(NYSE:RRC) final:+62.2 [Medium] Pullback Buy (Near Support) chase:NO stop:39.73 target:43.1 R/R:30.2
+
+Report saved: ./watchlist/us_tech_signals.md
+
+Downstream contract JSON saved: ./watchlist/us_tech_signals.json
+

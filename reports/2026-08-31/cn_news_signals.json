@@ -1,0 +1,960 @@
+{
+  "generated_at": "2026-08-27T13:58:34.937Z",
+  "market": "cn",
+  "source": "src/core/webNews.js",
+  "score_scale": "0-100 normalized (neutral=50)",
+  "window": {
+    "from": "2026-08-20",
+    "to": "2026-08-27",
+    "days": 7
+  },
+  "llm_used": true,
+  "performance": {
+    "totals_ms": {
+      "list_fetch_ms": 66450,
+      "enrichment_ms": 424311,
+      "relevance_ms": 2,
+      "llm_ms": 3127185,
+      "report_write_ms": 16
+    },
+    "avg_ms": {
+      "list_fetch_ms": 3323,
+      "enrichment_ms": 21216,
+      "relevance_ms": 0,
+      "llm_ms": 156359,
+      "report_write_ms": 1
+    }
+  },
+  "stocks": {
+    "SSE:600388": {
+      "name": "紫金龙净",
+      "score": 50,
+      "score_raw": 0,
+      "score_components": {
+        "positive_weight_sum": 0,
+        "negative_weight_sum": 0
+      },
+      "signal": "⚪ No Trade (无数据)",
+      "strategy": "LLM 不可用或调用失败（不走关键字降级）",
+      "suitable_for": "观望",
+      "confidence": "-",
+      "patterns": [],
+      "positive_factors": [],
+      "negative_factors": [],
+      "news_count": 0,
+      "news_dropped": 0,
+      "performance": {
+        "list_fetch_ms": 3440,
+        "candidate_filter_ms": 0,
+        "enrichment_ms": 19558,
+        "raw_news_count": 40,
+        "raw_research_count": 10,
+        "candidate_news_count": 14,
+        "candidate_research_count": 0,
+        "enriched_news_count": 14,
+        "enriched_research_count": 0,
+        "candidate_reasons": {
+          "news": {
+            "noise:\\d{1,2}月\\d{1,2}日(快速上涨|快速回调|涨停|": 1,
+            "noise:融资净(买入|卖出)": 2,
+            "dedup": 2,
+            "out_of_window": 21
+          },
+          "research": {
+            "dedup": 0,
+            "out_of_window": 10
+          }
+        },
+        "date_filter_ms": 0,
+        "relevance_ms": 0,
+        "llm_ms": 105914,
+        "scoring_ms": 0
+      },
+      "top_news": []
+    },
+    "SSE:601665": {
+      "name": "齐鲁银行",
+      "score": 50,
+      "score_raw": 0,
+      "score_components": {
+        "positive_weight_sum": 0,
+        "negative_weight_sum": 0
+      },
+      "signal": "⚪ No Trade (无数据)",
+      "strategy": "LLM 不可用或调用失败（不走关键字降级）",
+      "suitable_for": "观望",
+      "confidence": "-",
+      "patterns": [],
+      "positive_factors": [],
+      "negative_factors": [],
+      "news_count": 0,
+      "news_dropped": 0,
+      "performance": {
+        "list_fetch_ms": 3438,
+        "candidate_filter_ms": 0,
+        "enrichment_ms": 15366,
+        "raw_news_count": 40,
+        "raw_research_count": 10,
+        "candidate_news_count": 5,
+        "candidate_research_count": 0,
+        "enriched_news_count": 5,
+        "enriched_research_count": 0,
+        "candidate_reasons": {
+          "news": {
+            "no-subject-mention": 2,
+            "noise:融资净(买入|卖出)": 1,
+            "dedup": 0,
+            "out_of_window": 32
+          },
+          "research": {
+            "dedup": 0,
+            "out_of_window": 10
+          }
+        },
+        "date_filter_ms": 0,
+        "relevance_ms": 0,
+        "llm_ms": 89313,
+        "scoring_ms": 0
+      },
+      "top_news": []
+    },
+    "SSE:601872": {
+      "name": "招商轮船",
+      "score": 50,
+      "score_raw": 0,
+      "score_components": {
+        "positive_weight_sum": 0,
+        "negative_weight_sum": 0
+      },
+      "signal": "⚪ No Trade (无数据)",
+      "strategy": "LLM 不可用或调用失败（不走关键字降级）",
+      "suitable_for": "观望",
+      "confidence": "-",
+      "patterns": [],
+      "positive_factors": [],
+      "negative_factors": [],
+      "news_count": 0,
+      "news_dropped": 0,
+      "performance": {
+        "list_fetch_ms": 3836,
+        "candidate_filter_ms": 0,
+        "enrichment_ms": 37535,
+        "raw_news_count": 40,
+        "raw_research_count": 10,
+        "candidate_news_count": 6,
+        "candidate_research_count": 0,
+        "enriched_news_count": 6,
+        "enriched_research_count": 0,
+        "candidate_reasons": {
+          "news": {
+            "no-subject-mention": 7,
+            "noise:融资净(买入|卖出)": 3,
+            "noise:\\d{1,2}月\\d{1,2}日(快速上涨|快速回调|涨停|": 1,
+            "dedup": 0,
+            "out_of_window": 23
+          },
+          "research": {
+            "dedup": 0,
+            "out_of_window": 10
+          }
+        },
+        "date_filter_ms": 0,
+        "relevance_ms": 0,
+        "llm_ms": 154527,
+        "scoring_ms": 0
+      },
+      "top_news": []
+    },
+    "SSE:601899": {
+      "name": "紫金矿业",
+      "score": 50,
+      "score_raw": 0,
+      "score_components": {
+        "positive_weight_sum": 0,
+        "negative_weight_sum": 0
+      },
+      "signal": "⚪ No Trade (无数据)",
+      "strategy": "LLM 不可用或调用失败（不走关键字降级）",
+      "suitable_for": "观望",
+      "confidence": "-",
+      "patterns": [],
+      "positive_factors": [],
+      "negative_factors": [],
+      "news_count": 0,
+      "news_dropped": 0,
+      "performance": {
+        "list_fetch_ms": 3813,
+        "candidate_filter_ms": 0,
+        "enrichment_ms": 35134,
+        "raw_news_count": 40,
+        "raw_research_count": 10,
+        "candidate_news_count": 9,
+        "candidate_research_count": 2,
+        "enriched_news_count": 9,
+        "enriched_research_count": 2,
+        "candidate_reasons": {
+          "news": {
+            "noise:龙虎榜|大宗交易|盘口异动": 1,
+            "no-subject-mention": 15,
+            "noise:融资净(买入|卖出)": 1,
+            "dedup": 0,
+            "out_of_window": 14
+          },
+          "research": {
+            "dedup": 0,
+            "out_of_window": 8
+          }
+        },
+        "date_filter_ms": 0,
+        "relevance_ms": 0,
+        "llm_ms": 156227,
+        "scoring_ms": 0
+      },
+      "top_news": []
+    },
+    "SSE:603129": {
+      "name": "春风动力",
+      "score": 50,
+      "score_raw": 0,
+      "score_components": {
+        "positive_weight_sum": 0,
+        "negative_weight_sum": 0
+      },
+      "signal": "⚪ No Trade (无数据)",
+      "strategy": "LLM 不可用或调用失败（不走关键字降级）",
+      "suitable_for": "观望",
+      "confidence": "-",
+      "patterns": [],
+      "positive_factors": [],
+      "negative_factors": [],
+      "news_count": 0,
+      "news_dropped": 0,
+      "performance": {
+        "list_fetch_ms": 2829,
+        "candidate_filter_ms": 3,
+        "enrichment_ms": 14712,
+        "raw_news_count": 40,
+        "raw_research_count": 10,
+        "candidate_news_count": 8,
+        "candidate_research_count": 1,
+        "enriched_news_count": 8,
+        "enriched_research_count": 1,
+        "candidate_reasons": {
+          "news": {
+            "no-subject-mention": 6,
+            "noise:融资净(买入|卖出)": 2,
+            "dedup": 0,
+            "out_of_window": 24
+          },
+          "research": {
+            "dedup": 0,
+            "out_of_window": 9
+          }
+        },
+        "date_filter_ms": 0,
+        "relevance_ms": 0,
+        "llm_ms": 88361,
+        "scoring_ms": 0
+      },
+      "top_news": []
+    },
+    "SSE:603162": {
+      "name": "海通发展",
+      "score": 50,
+      "score_raw": 0,
+      "score_components": {
+        "positive_weight_sum": 0,
+        "negative_weight_sum": 0
+      },
+      "signal": "⚪ No Trade (无数据)",
+      "strategy": "LLM 不可用或调用失败（不走关键字降级）",
+      "suitable_for": "观望",
+      "confidence": "-",
+      "patterns": [],
+      "positive_factors": [],
+      "negative_factors": [],
+      "news_count": 0,
+      "news_dropped": 0,
+      "performance": {
+        "list_fetch_ms": 3668,
+        "candidate_filter_ms": 0,
+        "enrichment_ms": 12989,
+        "raw_news_count": 40,
+        "raw_research_count": 8,
+        "candidate_news_count": 7,
+        "candidate_research_count": 1,
+        "enriched_news_count": 7,
+        "enriched_research_count": 1,
+        "candidate_reasons": {
+          "news": {
+            "noise:\\d{1,2}月\\d{1,2}日(快速上涨|快速回调|涨停|": 2,
+            "no-subject-mention": 1,
+            "dedup": 0,
+            "out_of_window": 30
+          },
+          "research": {
+            "dedup": 0,
+            "out_of_window": 7
+          }
+        },
+        "date_filter_ms": 0,
+        "relevance_ms": 0,
+        "llm_ms": 93517,
+        "scoring_ms": 0
+      },
+      "top_news": []
+    },
+    "SSE:603228": {
+      "name": "景旺电子",
+      "score": 50,
+      "score_raw": 0,
+      "score_components": {
+        "positive_weight_sum": 0,
+        "negative_weight_sum": 0
+      },
+      "signal": "⚪ No Trade (无数据)",
+      "strategy": "LLM 不可用或调用失败（不走关键字降级）",
+      "suitable_for": "观望",
+      "confidence": "-",
+      "patterns": [],
+      "positive_factors": [],
+      "negative_factors": [],
+      "news_count": 0,
+      "news_dropped": 0,
+      "performance": {
+        "list_fetch_ms": 3744,
+        "candidate_filter_ms": 0,
+        "enrichment_ms": 32479,
+        "raw_news_count": 40,
+        "raw_research_count": 10,
+        "candidate_news_count": 20,
+        "candidate_research_count": 0,
+        "enriched_news_count": 20,
+        "enriched_research_count": 0,
+        "candidate_reasons": {
+          "news": {
+            "no-subject-mention": 6,
+            "noise:\\d{1,2}月\\d{1,2}日(快速上涨|快速回调|涨停|": 2,
+            "noise:融资净(买入|卖出)": 2,
+            "dedup": 0,
+            "out_of_window": 10
+          },
+          "research": {
+            "dedup": 0,
+            "out_of_window": 10
+          }
+        },
+        "date_filter_ms": 0,
+        "relevance_ms": 0,
+        "llm_ms": 159884,
+        "scoring_ms": 0
+      },
+      "top_news": []
+    },
+    "SSE:603259": {
+      "name": "药明康德",
+      "score": 50,
+      "score_raw": 0,
+      "score_components": {
+        "positive_weight_sum": 0,
+        "negative_weight_sum": 0
+      },
+      "signal": "⚪ No Trade (无数据)",
+      "strategy": "LLM 不可用或调用失败（不走关键字降级）",
+      "suitable_for": "观望",
+      "confidence": "-",
+      "patterns": [],
+      "positive_factors": [],
+      "negative_factors": [],
+      "news_count": 0,
+      "news_dropped": 0,
+      "performance": {
+        "list_fetch_ms": 2897,
+        "candidate_filter_ms": 0,
+        "enrichment_ms": 11622,
+        "raw_news_count": 40,
+        "raw_research_count": 10,
+        "candidate_news_count": 12,
+        "candidate_research_count": 0,
+        "enriched_news_count": 12,
+        "enriched_research_count": 0,
+        "candidate_reasons": {
+          "news": {
+            "noise:龙虎榜|大宗交易|盘口异动": 3,
+            "no-subject-mention": 6,
+            "noise:融资净(买入|卖出)": 1,
+            "dedup": 0,
+            "out_of_window": 18
+          },
+          "research": {
+            "dedup": 0,
+            "out_of_window": 10
+          }
+        },
+        "date_filter_ms": 0,
+        "relevance_ms": 1,
+        "llm_ms": 93090,
+        "scoring_ms": 0
+      },
+      "top_news": []
+    },
+    "SZSE:000333": {
+      "name": "美的集团",
+      "score": 50,
+      "score_raw": 0,
+      "score_components": {
+        "positive_weight_sum": 0,
+        "negative_weight_sum": 0
+      },
+      "signal": "⚪ No Trade (无数据)",
+      "strategy": "LLM 不可用或调用失败（不走关键字降级）",
+      "suitable_for": "观望",
+      "confidence": "-",
+      "patterns": [],
+      "positive_factors": [],
+      "negative_factors": [],
+      "news_count": 0,
+      "news_dropped": 0,
+      "performance": {
+        "list_fetch_ms": 801,
+        "candidate_filter_ms": 0,
+        "enrichment_ms": 5025,
+        "raw_news_count": 40,
+        "raw_research_count": 10,
+        "candidate_news_count": 4,
+        "candidate_research_count": 0,
+        "enriched_news_count": 4,
+        "enriched_research_count": 0,
+        "candidate_reasons": {
+          "news": {
+            "no-subject-mention": 9,
+            "dedup": 0,
+            "out_of_window": 27
+          },
+          "research": {
+            "dedup": 0,
+            "out_of_window": 10
+          }
+        },
+        "date_filter_ms": 0,
+        "relevance_ms": 0,
+        "llm_ms": 97696,
+        "scoring_ms": 0
+      },
+      "top_news": []
+    },
+    "SZSE:300684": {
+      "name": "中石科技",
+      "score": 50,
+      "score_raw": 0,
+      "score_components": {
+        "positive_weight_sum": 0,
+        "negative_weight_sum": 0
+      },
+      "signal": "⚪ No Trade (无数据)",
+      "strategy": "LLM 不可用或调用失败（不走关键字降级）",
+      "suitable_for": "观望",
+      "confidence": "-",
+      "patterns": [],
+      "positive_factors": [],
+      "negative_factors": [],
+      "news_count": 0,
+      "news_dropped": 0,
+      "performance": {
+        "list_fetch_ms": 3505,
+        "candidate_filter_ms": 0,
+        "enrichment_ms": 19202,
+        "raw_news_count": 40,
+        "raw_research_count": 10,
+        "candidate_news_count": 17,
+        "candidate_research_count": 0,
+        "enriched_news_count": 17,
+        "enriched_research_count": 0,
+        "candidate_reasons": {
+          "news": {
+            "noise:\\d{1,2}月\\d{1,2}日(快速上涨|快速回调|涨停|": 3,
+            "noise:融资净(买入|卖出)": 2,
+            "no-subject-mention": 4,
+            "dedup": 0,
+            "out_of_window": 14
+          },
+          "research": {
+            "dedup": 0,
+            "out_of_window": 10
+          }
+        },
+        "date_filter_ms": 0,
+        "relevance_ms": 1,
+        "llm_ms": 155476,
+        "scoring_ms": 0
+      },
+      "top_news": []
+    },
+    "SSE:600489": {
+      "name": "中金黄金",
+      "score": 50,
+      "score_raw": 0,
+      "score_components": {
+        "positive_weight_sum": 0,
+        "negative_weight_sum": 0
+      },
+      "signal": "⚪ No Trade (无数据)",
+      "strategy": "LLM 不可用或调用失败（不走关键字降级）",
+      "suitable_for": "观望",
+      "confidence": "-",
+      "patterns": [],
+      "positive_factors": [],
+      "negative_factors": [],
+      "news_count": 0,
+      "news_dropped": 0,
+      "performance": {
+        "list_fetch_ms": 4035,
+        "candidate_filter_ms": 0,
+        "enrichment_ms": 26328,
+        "raw_news_count": 40,
+        "raw_research_count": 10,
+        "candidate_news_count": 14,
+        "candidate_research_count": 0,
+        "enriched_news_count": 14,
+        "enriched_research_count": 0,
+        "candidate_reasons": {
+          "news": {
+            "no-subject-mention": 7,
+            "noise:融资净(买入|卖出)": 3,
+            "dedup": 0,
+            "out_of_window": 16
+          },
+          "research": {
+            "dedup": 0,
+            "out_of_window": 10
+          }
+        },
+        "date_filter_ms": 0,
+        "relevance_ms": 0,
+        "llm_ms": 143734,
+        "scoring_ms": 0
+      },
+      "top_news": []
+    },
+    "SSE:600330": {
+      "name": "天通股份",
+      "score": 50,
+      "score_raw": 0,
+      "score_components": {
+        "positive_weight_sum": 0,
+        "negative_weight_sum": 0
+      },
+      "signal": "⚪ No Trade (无数据)",
+      "strategy": "LLM 不可用或调用失败（不走关键字降级）",
+      "suitable_for": "观望",
+      "confidence": "-",
+      "patterns": [],
+      "positive_factors": [],
+      "negative_factors": [],
+      "news_count": 0,
+      "news_dropped": 0,
+      "performance": {
+        "list_fetch_ms": 3293,
+        "candidate_filter_ms": 0,
+        "enrichment_ms": 34327,
+        "raw_news_count": 40,
+        "raw_research_count": 10,
+        "candidate_news_count": 30,
+        "candidate_research_count": 0,
+        "enriched_news_count": 20,
+        "enriched_research_count": 0,
+        "candidate_reasons": {
+          "news": {
+            "no-subject-mention": 2,
+            "noise:\\d{1,2}月\\d{1,2}日(快速上涨|快速回调|涨停|": 1,
+            "noise:融资净(买入|卖出)": 2,
+            "dedup": 0,
+            "out_of_window": 5
+          },
+          "research": {
+            "dedup": 0,
+            "out_of_window": 10
+          }
+        },
+        "date_filter_ms": 0,
+        "relevance_ms": 0,
+        "llm_ms": 163437,
+        "scoring_ms": 0
+      },
+      "top_news": []
+    },
+    "SZSE:300843": {
+      "name": "胜蓝股份",
+      "score": 50,
+      "score_raw": 0,
+      "score_components": {
+        "positive_weight_sum": 0,
+        "negative_weight_sum": 0
+      },
+      "signal": "⚪ No Trade (无数据)",
+      "strategy": "LLM 不可用或调用失败（不走关键字降级）",
+      "suitable_for": "观望",
+      "confidence": "-",
+      "patterns": [],
+      "positive_factors": [],
+      "negative_factors": [],
+      "news_count": 0,
+      "news_dropped": 0,
+      "performance": {
+        "list_fetch_ms": 6297,
+        "candidate_filter_ms": 0,
+        "enrichment_ms": 15152,
+        "raw_news_count": 40,
+        "raw_research_count": 4,
+        "candidate_news_count": 22,
+        "candidate_research_count": 0,
+        "enriched_news_count": 20,
+        "enriched_research_count": 0,
+        "candidate_reasons": {
+          "news": {
+            "noise:融资净(买入|卖出)": 3,
+            "noise:\\d{1,2}月\\d{1,2}日(快速上涨|快速回调|涨停|": 3,
+            "no-subject-mention": 2,
+            "dedup": 0,
+            "out_of_window": 10
+          },
+          "research": {
+            "dedup": 0,
+            "out_of_window": 4
+          }
+        },
+        "date_filter_ms": 0,
+        "relevance_ms": 0,
+        "llm_ms": 220937,
+        "scoring_ms": 0
+      },
+      "top_news": []
+    },
+    "SSE:605319": {
+      "name": "无锡振华",
+      "score": 50,
+      "score_raw": 0,
+      "score_components": {
+        "positive_weight_sum": 0,
+        "negative_weight_sum": 0
+      },
+      "signal": "⚪ No Trade (无数据)",
+      "strategy": "LLM 不可用或调用失败（不走关键字降级）",
+      "suitable_for": "观望",
+      "confidence": "-",
+      "patterns": [],
+      "positive_factors": [],
+      "negative_factors": [],
+      "news_count": 0,
+      "news_dropped": 0,
+      "performance": {
+        "list_fetch_ms": 1773,
+        "candidate_filter_ms": 0,
+        "enrichment_ms": 23560,
+        "raw_news_count": 40,
+        "raw_research_count": 10,
+        "candidate_news_count": 16,
+        "candidate_research_count": 1,
+        "enriched_news_count": 16,
+        "enriched_research_count": 1,
+        "candidate_reasons": {
+          "news": {
+            "noise:\\d{1,2}月\\d{1,2}日(快速上涨|快速回调|涨停|": 2,
+            "dedup": 0,
+            "out_of_window": 22
+          },
+          "research": {
+            "dedup": 0,
+            "out_of_window": 9
+          }
+        },
+        "date_filter_ms": 0,
+        "relevance_ms": 0,
+        "llm_ms": 181897,
+        "scoring_ms": 0
+      },
+      "top_news": []
+    },
+    "SZSE:300602": {
+      "name": "飞荣达",
+      "score": 50,
+      "score_raw": 0,
+      "score_components": {
+        "positive_weight_sum": 0,
+        "negative_weight_sum": 0
+      },
+      "signal": "⚪ No Trade (无数据)",
+      "strategy": "LLM 不可用或调用失败（不走关键字降级）",
+      "suitable_for": "观望",
+      "confidence": "-",
+      "patterns": [],
+      "positive_factors": [],
+      "negative_factors": [],
+      "news_count": 0,
+      "news_dropped": 0,
+      "performance": {
+        "list_fetch_ms": 2529,
+        "candidate_filter_ms": 2,
+        "enrichment_ms": 43023,
+        "raw_news_count": 40,
+        "raw_research_count": 10,
+        "candidate_news_count": 21,
+        "candidate_research_count": 1,
+        "enriched_news_count": 20,
+        "enriched_research_count": 1,
+        "candidate_reasons": {
+          "news": {
+            "noise:融资净(买入|卖出)": 3,
+            "no-subject-mention": 2,
+            "noise:\\d{1,2}月\\d{1,2}日(快速上涨|快速回调|涨停|": 4,
+            "dedup": 0,
+            "out_of_window": 10
+          },
+          "research": {
+            "dedup": 0,
+            "out_of_window": 9
+          }
+        },
+        "date_filter_ms": 0,
+        "relevance_ms": 0,
+        "llm_ms": 175877,
+        "scoring_ms": 0
+      },
+      "top_news": []
+    },
+    "SZSE:300866": {
+      "name": "安克创新",
+      "score": 50,
+      "score_raw": 0,
+      "score_components": {
+        "positive_weight_sum": 0,
+        "negative_weight_sum": 0
+      },
+      "signal": "⚪ No Trade (无数据)",
+      "strategy": "LLM 不可用或调用失败（不走关键字降级）",
+      "suitable_for": "观望",
+      "confidence": "-",
+      "patterns": [],
+      "positive_factors": [],
+      "negative_factors": [],
+      "news_count": 0,
+      "news_dropped": 0,
+      "performance": {
+        "list_fetch_ms": 1073,
+        "candidate_filter_ms": 0,
+        "enrichment_ms": 7596,
+        "raw_news_count": 40,
+        "raw_research_count": 10,
+        "candidate_news_count": 7,
+        "candidate_research_count": 0,
+        "enriched_news_count": 7,
+        "enriched_research_count": 0,
+        "candidate_reasons": {
+          "news": {
+            "no-subject-mention": 2,
+            "noise:\\d{1,2}月\\d{1,2}日(快速上涨|快速回调|涨停|": 1,
+            "noise:融资净(买入|卖出)": 1,
+            "dedup": 0,
+            "out_of_window": 29
+          },
+          "research": {
+            "dedup": 0,
+            "out_of_window": 10
+          }
+        },
+        "date_filter_ms": 0,
+        "relevance_ms": 0,
+        "llm_ms": 168305,
+        "scoring_ms": 0
+      },
+      "top_news": []
+    },
+    "SSE:605198": {
+      "name": "安德利",
+      "score": 50,
+      "score_raw": 0,
+      "score_components": {
+        "positive_weight_sum": 0,
+        "negative_weight_sum": 0
+      },
+      "signal": "⚪ No Trade (无数据)",
+      "strategy": "LLM 不可用或调用失败（不走关键字降级）",
+      "suitable_for": "观望",
+      "confidence": "-",
+      "patterns": [],
+      "positive_factors": [],
+      "negative_factors": [],
+      "news_count": 0,
+      "news_dropped": 0,
+      "performance": {
+        "list_fetch_ms": 12520,
+        "candidate_filter_ms": 0,
+        "enrichment_ms": 34842,
+        "raw_news_count": 40,
+        "raw_research_count": 1,
+        "candidate_news_count": 20,
+        "candidate_research_count": 0,
+        "enriched_news_count": 20,
+        "enriched_research_count": 0,
+        "candidate_reasons": {
+          "news": {
+            "noise:\\d{1,2}月\\d{1,2}日(快速上涨|快速回调|涨停|": 4,
+            "dedup": 0,
+            "out_of_window": 16
+          },
+          "research": {
+            "dedup": 0,
+            "out_of_window": 1
+          }
+        },
+        "date_filter_ms": 0,
+        "relevance_ms": 0,
+        "llm_ms": 230151,
+        "scoring_ms": 0
+      },
+      "top_news": []
+    },
+    "SSE:603186": {
+      "name": "华正新材",
+      "score": 50,
+      "score_raw": 0,
+      "score_components": {
+        "positive_weight_sum": 0,
+        "negative_weight_sum": 0
+      },
+      "signal": "⚪ No Trade (无数据)",
+      "strategy": "LLM 不可用或调用失败（不走关键字降级）",
+      "suitable_for": "观望",
+      "confidence": "-",
+      "patterns": [],
+      "positive_factors": [],
+      "negative_factors": [],
+      "news_count": 0,
+      "news_dropped": 0,
+      "performance": {
+        "list_fetch_ms": 930,
+        "candidate_filter_ms": 0,
+        "enrichment_ms": 2008,
+        "raw_news_count": 40,
+        "raw_research_count": 10,
+        "candidate_news_count": 9,
+        "candidate_research_count": 0,
+        "enriched_news_count": 9,
+        "enriched_research_count": 0,
+        "candidate_reasons": {
+          "news": {
+            "noise:\\d{1,2}月\\d{1,2}日(快速上涨|快速回调|涨停|": 6,
+            "no-subject-mention": 5,
+            "dedup": 0,
+            "out_of_window": 20
+          },
+          "research": {
+            "dedup": 0,
+            "out_of_window": 10
+          }
+        },
+        "date_filter_ms": 0,
+        "relevance_ms": 0,
+        "llm_ms": 199921,
+        "scoring_ms": 0
+      },
+      "top_news": []
+    },
+    "SSE:600172": {
+      "name": "黄河旋风",
+      "score": 50,
+      "score_raw": 0,
+      "score_components": {
+        "positive_weight_sum": 0,
+        "negative_weight_sum": 0
+      },
+      "signal": "⚪ No Trade (无数据)",
+      "strategy": "LLM 不可用或调用失败（不走关键字降级）",
+      "suitable_for": "观望",
+      "confidence": "-",
+      "patterns": [],
+      "positive_factors": [],
+      "negative_factors": [],
+      "news_count": 0,
+      "news_dropped": 0,
+      "performance": {
+        "list_fetch_ms": 851,
+        "candidate_filter_ms": 0,
+        "enrichment_ms": 18550,
+        "raw_news_count": 40,
+        "raw_research_count": 9,
+        "candidate_news_count": 26,
+        "candidate_research_count": 0,
+        "enriched_news_count": 20,
+        "enriched_research_count": 0,
+        "candidate_reasons": {
+          "news": {
+            "noise:\\d{1,2}月\\d{1,2}日(快速上涨|快速回调|涨停|": 1,
+            "noise:融资净(买入|卖出)": 2,
+            "no-subject-mention": 5,
+            "dedup": 0,
+            "out_of_window": 6
+          },
+          "research": {
+            "dedup": 0,
+            "out_of_window": 9
+          }
+        },
+        "date_filter_ms": 0,
+        "relevance_ms": 0,
+        "llm_ms": 198153,
+        "scoring_ms": 0
+      },
+      "top_news": []
+    },
+    "SZSE:002536": {
+      "name": "飞龙股份",
+      "score": 50,
+      "score_raw": 0,
+      "score_components": {
+        "positive_weight_sum": 0,
+        "negative_weight_sum": 0
+      },
+      "signal": "⚪ No Trade (无数据)",
+      "strategy": "LLM 不可用或调用失败（不走关键字降级）",
+      "suitable_for": "观望",
+      "confidence": "-",
+      "patterns": [],
+      "positive_factors": [],
+      "negative_factors": [],
+      "news_count": 0,
+      "news_dropped": 0,
+      "performance": {
+        "list_fetch_ms": 1178,
+        "candidate_filter_ms": 0,
+        "enrichment_ms": 15303,
+        "raw_news_count": 40,
+        "raw_research_count": 10,
+        "candidate_news_count": 18,
+        "candidate_research_count": 1,
+        "enriched_news_count": 18,
+        "enriched_research_count": 1,
+        "candidate_reasons": {
+          "news": {
+            "noise:龙虎榜|大宗交易|盘口异动": 2,
+            "no-subject-mention": 5,
+            "noise:\\d{1,2}月\\d{1,2}日(快速上涨|快速回调|涨停|": 2,
+            "noise:融资净(买入|卖出)": 2,
+            "noise:开盘价|收盘价": 1,
+            "dedup": 0,
+            "out_of_window": 10
+          },
+          "research": {
+            "dedup": 0,
+            "out_of_window": 9
+          }
+        },
+        "date_filter_ms": 0,
+        "relevance_ms": 0,
+        "llm_ms": 250768,
+        "scoring_ms": 0
+      },
+      "top_news": []
+    }
+  }
+}

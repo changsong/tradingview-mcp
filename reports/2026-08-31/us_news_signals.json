@@ -1,0 +1,1460 @@
+{
+  "generated_at": "2026-08-31T07:52:40.285Z",
+  "market": "us",
+  "source": "src/core/usNews.js",
+  "score_scale": "0-100 normalized (neutral=50)",
+  "window": {
+    "from": "2026-08-24",
+    "to": "2026-08-31",
+    "days": 7
+  },
+  "llm_used": true,
+  "performance": {
+    "totals_ms": {
+      "list_fetch_ms": 30354,
+      "enrichment_ms": 20977,
+      "relevance_ms": 0,
+      "llm_ms": 14416,
+      "report_write_ms": 17
+    },
+    "avg_ms": {
+      "list_fetch_ms": 1084,
+      "enrichment_ms": 749,
+      "relevance_ms": 0,
+      "llm_ms": 515,
+      "report_write_ms": 1
+    }
+  },
+  "stocks": {
+    "NYSE:NEM": {
+      "name": "NEM",
+      "score": 57,
+      "score_raw": 1.6,
+      "score_components": {
+        "positive_weight_sum": 1.6,
+        "negative_weight_sum": 0,
+        "news_effective_count": 2,
+        "news_dropped_count": 0
+      },
+      "signal": "NEUTRAL No Trade (Weak Bullish)",
+      "strategy": "Mildly positive, insufficient signal — watch for stronger catalyst",
+      "suitable_for": "Watch",
+      "confidence": "Low",
+      "patterns": [],
+      "positive_factors": [
+        "[Industry|w1.01] Newmont (NYSE:NEM): A Solid Value Play Backed by Strong Fundamentals",
+        "[Industry|w0.59] Newmont (NYSE:NEM) Fits the Growth-at-a-Reasonable-Price Playbook"
+      ],
+      "negative_factors": [],
+      "news_count": 2,
+      "news_dropped": 0,
+      "performance": {
+        "list_fetch_ms": 1171,
+        "candidate_filter_ms": 0,
+        "enrichment_ms": 2478,
+        "raw_news_count": 19,
+        "raw_forum_count": 0,
+        "candidate_news_count": 2,
+        "candidate_forum_count": 0,
+        "enriched_news_count": 2,
+        "enriched_forum_count": 0,
+        "candidate_reasons": {
+          "news": {
+            "no-subject-mention": 10,
+            "dedup": 0,
+            "out_of_window": 7
+          },
+          "forum": {
+            "dedup": 0
+          }
+        },
+        "date_filter_ms": 0,
+        "relevance_ms": 0,
+        "llm_ms": 19,
+        "scoring_ms": 0
+      },
+      "top_news": [
+        {
+          "date": "2026-08-29",
+          "title": "Newmont (NYSE:NEM): A Solid Value Play Backed by Strong Fundamentals",
+          "content": "Newmont Corp (NEM) is a decent value stock: low P/E, strong profitability, solid balance sheet, and 4.26% dividend yield. Value with low trap risk.",
+          "type": "Industry",
+          "sentiment": 1,
+          "weight": 1,
+          "final_weight": 1.01,
+          "source_authority": 3.5,
+          "recency_factor": 0.72,
+          "source": "Finnhub",
+          "llm_reviewed": true,
+          "llm_confidence": 0.5,
+          "llm_is_real_catalyst": false,
+          "llm_reasoning": "Value commentary, no trigger"
+        },
+        {
+          "date": "2026-08-26",
+          "title": "Newmont (NYSE:NEM) Fits the Growth-at-a-Reasonable-Price Playbook",
+          "content": "Newmont Corp passes Peter Lynch screen with 21% EPS growth, 0.69 PEG, strong balance sheet, and undervalued P/E of 14.6.",
+          "type": "Industry",
+          "sentiment": 1,
+          "weight": 1,
+          "final_weight": 0.59,
+          "source_authority": 3.5,
+          "recency_factor": 0.42,
+          "source": "Finnhub",
+          "llm_reviewed": true,
+          "llm_confidence": 0.5,
+          "llm_is_real_catalyst": false,
+          "llm_reasoning": "Screen commentary, no catalyst"
+        }
+      ]
+    },
+    "NYSE:LTC": {
+      "name": "LTC",
+      "score": 56,
+      "score_raw": 1.5,
+      "score_components": {
+        "positive_weight_sum": 1.5,
+        "negative_weight_sum": 0,
+        "news_effective_count": 1,
+        "news_dropped_count": 0
+      },
+      "signal": "NEUTRAL No Trade (Weak Bullish)",
+      "strategy": "Mildly positive, insufficient signal — watch for stronger catalyst",
+      "suitable_for": "Watch",
+      "confidence": "Low",
+      "patterns": [],
+      "positive_factors": [
+        "[Analyst Action|w1.5] LTC Properties raised to Buy at Deutsche Bank on seniors' housing grow"
+      ],
+      "negative_factors": [],
+      "news_count": 1,
+      "news_dropped": 0,
+      "performance": {
+        "list_fetch_ms": 816,
+        "candidate_filter_ms": 0,
+        "enrichment_ms": 734,
+        "raw_news_count": 11,
+        "raw_forum_count": 0,
+        "candidate_news_count": 1,
+        "candidate_forum_count": 0,
+        "enriched_news_count": 1,
+        "enriched_forum_count": 0,
+        "candidate_reasons": {
+          "news": {
+            "dedup": 0,
+            "out_of_window": 10
+          },
+          "forum": {
+            "dedup": 0
+          }
+        },
+        "date_filter_ms": 0,
+        "relevance_ms": 0,
+        "llm_ms": 39,
+        "scoring_ms": 1
+      },
+      "top_news": [
+        {
+          "date": "2026-08-27",
+          "title": "LTC Properties raised to Buy at Deutsche Bank on seniors' housing growth",
+          "content": "",
+          "type": "Analyst Action",
+          "sentiment": 1,
+          "weight": 2,
+          "final_weight": 1.5,
+          "source_authority": 2.5,
+          "recency_factor": 0.5,
+          "source": "Seeking Alpha",
+          "llm_reviewed": true,
+          "llm_confidence": 0.9,
+          "llm_is_real_catalyst": true,
+          "llm_reasoning": "Upgrade to Buy"
+        }
+      ]
+    },
+    "NYSE:RRC": {
+      "name": "RRC",
+      "score": 52,
+      "score_raw": 0.5,
+      "score_components": {
+        "positive_weight_sum": 0.5,
+        "negative_weight_sum": 0,
+        "news_effective_count": 1,
+        "news_dropped_count": 0
+      },
+      "signal": "NEUTRAL No Trade (Weak Bullish)",
+      "strategy": "Mildly positive, insufficient signal — watch for stronger catalyst",
+      "suitable_for": "Watch",
+      "confidence": "Low",
+      "patterns": [],
+      "positive_factors": [
+        "[Industry|w0.5] Range Resources (NYSE:RRC) Shows a High-Quality Technical Breakout Set"
+      ],
+      "negative_factors": [],
+      "news_count": 1,
+      "news_dropped": 0,
+      "performance": {
+        "list_fetch_ms": 1025,
+        "candidate_filter_ms": 0,
+        "enrichment_ms": 2309,
+        "raw_news_count": 11,
+        "raw_forum_count": 0,
+        "candidate_news_count": 1,
+        "candidate_forum_count": 0,
+        "enriched_news_count": 1,
+        "enriched_forum_count": 0,
+        "candidate_reasons": {
+          "news": {
+            "no-subject-mention": 1,
+            "dedup": 0,
+            "out_of_window": 9
+          },
+          "forum": {
+            "dedup": 0
+          }
+        },
+        "date_filter_ms": 0,
+        "relevance_ms": 0,
+        "llm_ms": 9,
+        "scoring_ms": 0
+      },
+      "top_news": [
+        {
+          "date": "2026-08-25",
+          "title": "Range Resources (NYSE:RRC) Shows a High-Quality Technical Breakout Setup",
+          "content": "RRC stock shows a strong technical breakout setup: 8/10 trend rating, 10/10 setup quality, tight consolidation below resistance.",
+          "type": "Industry",
+          "sentiment": 1,
+          "weight": 1,
+          "final_weight": 0.5,
+          "source_authority": 3.5,
+          "recency_factor": 0.36,
+          "source": "Finnhub",
+          "llm_reviewed": true,
+          "llm_confidence": 0.4,
+          "llm_is_real_catalyst": false,
+          "llm_reasoning": "Technical breakout commentary only"
+        }
+      ]
+    },
+    "AMEX:CET": {
+      "name": "CET",
+      "score": 50,
+      "score_raw": 0,
+      "score_components": {
+        "positive_weight_sum": 0,
+        "negative_weight_sum": 0
+      },
+      "signal": "NEUTRAL No Trade (No Data)",
+      "strategy": "No relevant news in window",
+      "suitable_for": "Watch",
+      "confidence": "-",
+      "patterns": [],
+      "positive_factors": [],
+      "negative_factors": [],
+      "news_count": 0,
+      "news_dropped": 0,
+      "performance": {
+        "list_fetch_ms": 1434,
+        "candidate_filter_ms": 0,
+        "enrichment_ms": 0,
+        "raw_news_count": 13,
+        "raw_forum_count": 0,
+        "candidate_news_count": 0,
+        "candidate_forum_count": 0,
+        "enriched_news_count": 0,
+        "enriched_forum_count": 0,
+        "candidate_reasons": {
+          "news": {
+            "dedup": 0,
+            "out_of_window": 13
+          },
+          "forum": {
+            "dedup": 0
+          }
+        },
+        "date_filter_ms": 0,
+        "relevance_ms": 0,
+        "llm_ms": 0,
+        "scoring_ms": 0
+      },
+      "top_news": []
+    },
+    "NASDAQ:ADAM": {
+      "name": "ADAM",
+      "score": 50,
+      "score_raw": 0,
+      "score_components": {
+        "positive_weight_sum": 0,
+        "negative_weight_sum": 0
+      },
+      "signal": "NEUTRAL No Trade (No Data)",
+      "strategy": "No relevant news in window",
+      "suitable_for": "Watch",
+      "confidence": "-",
+      "patterns": [],
+      "positive_factors": [],
+      "negative_factors": [],
+      "news_count": 0,
+      "news_dropped": 0,
+      "performance": {
+        "list_fetch_ms": 1253,
+        "candidate_filter_ms": 0,
+        "enrichment_ms": 0,
+        "raw_news_count": 10,
+        "raw_forum_count": 0,
+        "candidate_news_count": 0,
+        "candidate_forum_count": 0,
+        "enriched_news_count": 0,
+        "enriched_forum_count": 0,
+        "candidate_reasons": {
+          "news": {
+            "no-subject-mention": 1,
+            "dedup": 0,
+            "out_of_window": 9
+          },
+          "forum": {
+            "dedup": 0
+          }
+        },
+        "date_filter_ms": 0,
+        "relevance_ms": 0,
+        "llm_ms": 0,
+        "scoring_ms": 0
+      },
+      "top_news": []
+    },
+    "NYSE:PATH": {
+      "name": "PATH",
+      "score": 50,
+      "score_raw": 0,
+      "score_components": {
+        "positive_weight_sum": 0,
+        "negative_weight_sum": 0
+      },
+      "signal": "NEUTRAL No Trade (No Data)",
+      "strategy": "No relevant news in window",
+      "suitable_for": "Watch",
+      "confidence": "-",
+      "patterns": [],
+      "positive_factors": [],
+      "negative_factors": [],
+      "news_count": 0,
+      "news_dropped": 0,
+      "performance": {
+        "list_fetch_ms": 1178,
+        "candidate_filter_ms": 0,
+        "enrichment_ms": 0,
+        "raw_news_count": 16,
+        "raw_forum_count": 0,
+        "candidate_news_count": 0,
+        "candidate_forum_count": 0,
+        "enriched_news_count": 0,
+        "enriched_forum_count": 0,
+        "candidate_reasons": {
+          "news": {
+            "no-subject-mention": 2,
+            "dedup": 0,
+            "out_of_window": 14
+          },
+          "forum": {
+            "dedup": 0
+          }
+        },
+        "date_filter_ms": 0,
+        "relevance_ms": 0,
+        "llm_ms": 0,
+        "scoring_ms": 0
+      },
+      "top_news": []
+    },
+    "NASDAQ:DASH": {
+      "name": "DASH",
+      "score": 50,
+      "score_raw": 0,
+      "score_components": {
+        "positive_weight_sum": 0,
+        "negative_weight_sum": 0
+      },
+      "signal": "NEUTRAL No Trade (No Data)",
+      "strategy": "No relevant news in window",
+      "suitable_for": "Watch",
+      "confidence": "-",
+      "patterns": [],
+      "positive_factors": [],
+      "negative_factors": [],
+      "news_count": 0,
+      "news_dropped": 0,
+      "performance": {
+        "list_fetch_ms": 1113,
+        "candidate_filter_ms": 1,
+        "enrichment_ms": 0,
+        "raw_news_count": 14,
+        "raw_forum_count": 0,
+        "candidate_news_count": 0,
+        "candidate_forum_count": 0,
+        "enriched_news_count": 0,
+        "enriched_forum_count": 0,
+        "candidate_reasons": {
+          "news": {
+            "no-subject-mention": 2,
+            "dedup": 0,
+            "out_of_window": 12
+          },
+          "forum": {
+            "dedup": 0
+          }
+        },
+        "date_filter_ms": 0,
+        "relevance_ms": 0,
+        "llm_ms": 0,
+        "scoring_ms": 0
+      },
+      "top_news": []
+    },
+    "NASDAQ:HRMY": {
+      "name": "HRMY",
+      "score": 50,
+      "score_raw": 0,
+      "score_components": {
+        "positive_weight_sum": 0,
+        "negative_weight_sum": 0
+      },
+      "signal": "NEUTRAL No Trade (No Data)",
+      "strategy": "No relevant news in window",
+      "suitable_for": "Watch",
+      "confidence": "-",
+      "patterns": [],
+      "positive_factors": [],
+      "negative_factors": [],
+      "news_count": 0,
+      "news_dropped": 0,
+      "performance": {
+        "list_fetch_ms": 1037,
+        "candidate_filter_ms": 0,
+        "enrichment_ms": 0,
+        "raw_news_count": 14,
+        "raw_forum_count": 0,
+        "candidate_news_count": 0,
+        "candidate_forum_count": 0,
+        "enriched_news_count": 0,
+        "enriched_forum_count": 0,
+        "candidate_reasons": {
+          "news": {
+            "no-subject-mention": 2,
+            "dedup": 0,
+            "out_of_window": 12
+          },
+          "forum": {
+            "dedup": 0
+          }
+        },
+        "date_filter_ms": 0,
+        "relevance_ms": 0,
+        "llm_ms": 0,
+        "scoring_ms": 0
+      },
+      "top_news": []
+    },
+    "NASDAQ:VRTX": {
+      "name": "VRTX",
+      "score": 50,
+      "score_raw": 0,
+      "score_components": {
+        "positive_weight_sum": 0,
+        "negative_weight_sum": 0
+      },
+      "signal": "NEUTRAL No Trade (No Data)",
+      "strategy": "No relevant news in window",
+      "suitable_for": "Watch",
+      "confidence": "-",
+      "patterns": [],
+      "positive_factors": [],
+      "negative_factors": [],
+      "news_count": 0,
+      "news_dropped": 0,
+      "performance": {
+        "list_fetch_ms": 805,
+        "candidate_filter_ms": 0,
+        "enrichment_ms": 0,
+        "raw_news_count": 14,
+        "raw_forum_count": 0,
+        "candidate_news_count": 0,
+        "candidate_forum_count": 0,
+        "enriched_news_count": 0,
+        "enriched_forum_count": 0,
+        "candidate_reasons": {
+          "news": {
+            "no-subject-mention": 5,
+            "dedup": 0,
+            "out_of_window": 9
+          },
+          "forum": {
+            "dedup": 0
+          }
+        },
+        "date_filter_ms": 0,
+        "relevance_ms": 0,
+        "llm_ms": 0,
+        "scoring_ms": 0
+      },
+      "top_news": []
+    },
+    "NASDAQ:HOOD": {
+      "name": "HOOD",
+      "score": 50,
+      "score_raw": 0,
+      "score_components": {
+        "positive_weight_sum": 0,
+        "negative_weight_sum": 0
+      },
+      "signal": "NEUTRAL No Trade (No Data)",
+      "strategy": "No relevant news in window",
+      "suitable_for": "Watch",
+      "confidence": "-",
+      "patterns": [],
+      "positive_factors": [],
+      "negative_factors": [],
+      "news_count": 0,
+      "news_dropped": 0,
+      "performance": {
+        "list_fetch_ms": 964,
+        "candidate_filter_ms": 0,
+        "enrichment_ms": 0,
+        "raw_news_count": 28,
+        "raw_forum_count": 0,
+        "candidate_news_count": 0,
+        "candidate_forum_count": 0,
+        "enriched_news_count": 0,
+        "enriched_forum_count": 0,
+        "candidate_reasons": {
+          "news": {
+            "no-subject-mention": 22,
+            "dedup": 0,
+            "out_of_window": 6
+          },
+          "forum": {
+            "dedup": 0
+          }
+        },
+        "date_filter_ms": 0,
+        "relevance_ms": 0,
+        "llm_ms": 0,
+        "scoring_ms": 0
+      },
+      "top_news": []
+    },
+    "NYSE:LLY": {
+      "name": "LLY",
+      "score": 50,
+      "score_raw": 0,
+      "score_components": {
+        "positive_weight_sum": 0,
+        "negative_weight_sum": 0
+      },
+      "signal": "NEUTRAL No Trade (No Data)",
+      "strategy": "LLM unavailable or call failed (no keyword fallback)",
+      "suitable_for": "Watch",
+      "confidence": "-",
+      "patterns": [],
+      "positive_factors": [],
+      "negative_factors": [],
+      "news_count": 0,
+      "news_dropped": 0,
+      "performance": {
+        "list_fetch_ms": 890,
+        "candidate_filter_ms": 0,
+        "enrichment_ms": 2528,
+        "raw_news_count": 20,
+        "raw_forum_count": 0,
+        "candidate_news_count": 1,
+        "candidate_forum_count": 0,
+        "enriched_news_count": 1,
+        "enriched_forum_count": 0,
+        "candidate_reasons": {
+          "news": {
+            "no-subject-mention": 10,
+            "dedup": 0,
+            "out_of_window": 9
+          },
+          "forum": {
+            "dedup": 0
+          }
+        },
+        "date_filter_ms": 0,
+        "relevance_ms": 0,
+        "llm_ms": 2753,
+        "scoring_ms": 0
+      },
+      "top_news": []
+    },
+    "NYSE:P": {
+      "name": "P",
+      "score": 50,
+      "score_raw": 0,
+      "score_components": {
+        "positive_weight_sum": 0,
+        "negative_weight_sum": 0
+      },
+      "signal": "NEUTRAL No Trade (No Data)",
+      "strategy": "LLM unavailable or call failed (no keyword fallback)",
+      "suitable_for": "Watch",
+      "confidence": "-",
+      "patterns": [],
+      "positive_factors": [],
+      "negative_factors": [],
+      "news_count": 0,
+      "news_dropped": 0,
+      "performance": {
+        "list_fetch_ms": 1138,
+        "candidate_filter_ms": 0,
+        "enrichment_ms": 1587,
+        "raw_news_count": 27,
+        "raw_forum_count": 0,
+        "candidate_news_count": 4,
+        "candidate_forum_count": 0,
+        "enriched_news_count": 4,
+        "enriched_forum_count": 0,
+        "candidate_reasons": {
+          "news": {
+            "no-subject-mention": 20,
+            "dedup": 0,
+            "out_of_window": 3
+          },
+          "forum": {
+            "dedup": 0
+          }
+        },
+        "date_filter_ms": 0,
+        "relevance_ms": 0,
+        "llm_ms": 2776,
+        "scoring_ms": 0
+      },
+      "top_news": []
+    },
+    "NASDAQ:MRVL": {
+      "name": "MRVL",
+      "score": 50,
+      "score_raw": 0,
+      "score_components": {
+        "positive_weight_sum": 0,
+        "negative_weight_sum": 0
+      },
+      "signal": "NEUTRAL No Trade (No Data)",
+      "strategy": "LLM unavailable or call failed (no keyword fallback)",
+      "suitable_for": "Watch",
+      "confidence": "-",
+      "patterns": [],
+      "positive_factors": [],
+      "negative_factors": [],
+      "news_count": 0,
+      "news_dropped": 0,
+      "performance": {
+        "list_fetch_ms": 2682,
+        "candidate_filter_ms": 0,
+        "enrichment_ms": 46,
+        "raw_news_count": 29,
+        "raw_forum_count": 0,
+        "candidate_news_count": 2,
+        "candidate_forum_count": 0,
+        "enriched_news_count": 2,
+        "enriched_forum_count": 0,
+        "candidate_reasons": {
+          "news": {
+            "no-subject-mention": 27,
+            "dedup": 0
+          },
+          "forum": {
+            "dedup": 0
+          }
+        },
+        "date_filter_ms": 0,
+        "relevance_ms": 0,
+        "llm_ms": 2840,
+        "scoring_ms": 0
+      },
+      "top_news": []
+    },
+    "NYSE:JOE": {
+      "name": "JOE",
+      "score": 50,
+      "score_raw": 0,
+      "score_components": {
+        "positive_weight_sum": 0,
+        "negative_weight_sum": 0
+      },
+      "signal": "NEUTRAL No Trade (No Data)",
+      "strategy": "No relevant news in window",
+      "suitable_for": "Watch",
+      "confidence": "-",
+      "patterns": [],
+      "positive_factors": [],
+      "negative_factors": [],
+      "news_count": 0,
+      "news_dropped": 0,
+      "performance": {
+        "list_fetch_ms": 987,
+        "candidate_filter_ms": 0,
+        "enrichment_ms": 0,
+        "raw_news_count": 9,
+        "raw_forum_count": 0,
+        "candidate_news_count": 0,
+        "candidate_forum_count": 0,
+        "enriched_news_count": 0,
+        "enriched_forum_count": 0,
+        "candidate_reasons": {
+          "news": {
+            "dedup": 0,
+            "out_of_window": 9
+          },
+          "forum": {
+            "dedup": 0
+          }
+        },
+        "date_filter_ms": 0,
+        "relevance_ms": 0,
+        "llm_ms": 0,
+        "scoring_ms": 0
+      },
+      "top_news": []
+    },
+    "NYSE:FCX": {
+      "name": "FCX",
+      "score": 50,
+      "score_raw": 0,
+      "score_components": {
+        "positive_weight_sum": 0,
+        "negative_weight_sum": 0,
+        "news_effective_count": 1,
+        "news_dropped_count": 0
+      },
+      "signal": "NEUTRAL No Trade (Weak Bullish)",
+      "strategy": "Mildly positive, insufficient signal — watch for stronger catalyst",
+      "suitable_for": "Watch",
+      "confidence": "Low",
+      "patterns": [],
+      "positive_factors": [],
+      "negative_factors": [],
+      "news_count": 1,
+      "news_dropped": 0,
+      "performance": {
+        "list_fetch_ms": 925,
+        "candidate_filter_ms": 0,
+        "enrichment_ms": 27,
+        "raw_news_count": 21,
+        "raw_forum_count": 0,
+        "candidate_news_count": 1,
+        "candidate_forum_count": 0,
+        "enriched_news_count": 1,
+        "enriched_forum_count": 0,
+        "candidate_reasons": {
+          "news": {
+            "no-subject-mention": 4,
+            "dedup": 0,
+            "out_of_window": 16
+          },
+          "forum": {
+            "dedup": 0
+          }
+        },
+        "date_filter_ms": 0,
+        "relevance_ms": 0,
+        "llm_ms": 8,
+        "scoring_ms": 0
+      },
+      "top_news": [
+        {
+          "date": "2026-08-27",
+          "title": "FCX vs. BHP: Which Copper Mining Giant Should You Bet on Now?",
+          "content": "As of November 1st, 2021 Yahoo’s suite of services will no longer be accessible from mainland China. Yahoo products and services remain unaffected in all other global locations. We thank you for your support and readership.",
+          "type": "Industry",
+          "sentiment": 0,
+          "weight": 1,
+          "final_weight": 0.5,
+          "source_authority": 3.5,
+          "recency_factor": 0.5,
+          "source": "Finnhub",
+          "llm_reviewed": true,
+          "llm_confidence": 0.4,
+          "llm_is_real_catalyst": false,
+          "llm_reasoning": "Comparison, no hard trigger"
+        }
+      ]
+    },
+    "NYSE:SCCO": {
+      "name": "SCCO",
+      "score": 50,
+      "score_raw": 0,
+      "score_components": {
+        "positive_weight_sum": 0,
+        "negative_weight_sum": 0
+      },
+      "signal": "NEUTRAL No Trade (No Data)",
+      "strategy": "No relevant news in window",
+      "suitable_for": "Watch",
+      "confidence": "-",
+      "patterns": [],
+      "positive_factors": [],
+      "negative_factors": [],
+      "news_count": 0,
+      "news_dropped": 0,
+      "performance": {
+        "list_fetch_ms": 1039,
+        "candidate_filter_ms": 0,
+        "enrichment_ms": 0,
+        "raw_news_count": 12,
+        "raw_forum_count": 0,
+        "candidate_news_count": 0,
+        "candidate_forum_count": 0,
+        "enriched_news_count": 0,
+        "enriched_forum_count": 0,
+        "candidate_reasons": {
+          "news": {
+            "dedup": 0,
+            "out_of_window": 12
+          },
+          "forum": {
+            "dedup": 0
+          }
+        },
+        "date_filter_ms": 0,
+        "relevance_ms": 0,
+        "llm_ms": 0,
+        "scoring_ms": 0
+      },
+      "top_news": []
+    },
+    "NYSE:WPM": {
+      "name": "WPM",
+      "score": 50,
+      "score_raw": 0,
+      "score_components": {
+        "positive_weight_sum": 0,
+        "negative_weight_sum": 0
+      },
+      "signal": "NEUTRAL No Trade (No Data)",
+      "strategy": "No relevant news in window",
+      "suitable_for": "Watch",
+      "confidence": "-",
+      "patterns": [],
+      "positive_factors": [],
+      "negative_factors": [],
+      "news_count": 0,
+      "news_dropped": 0,
+      "performance": {
+        "list_fetch_ms": 906,
+        "candidate_filter_ms": 0,
+        "enrichment_ms": 0,
+        "raw_news_count": 16,
+        "raw_forum_count": 0,
+        "candidate_news_count": 0,
+        "candidate_forum_count": 0,
+        "enriched_news_count": 0,
+        "enriched_forum_count": 0,
+        "candidate_reasons": {
+          "news": {
+            "no-subject-mention": 3,
+            "dedup": 0,
+            "out_of_window": 13
+          },
+          "forum": {
+            "dedup": 0
+          }
+        },
+        "date_filter_ms": 0,
+        "relevance_ms": 0,
+        "llm_ms": 0,
+        "scoring_ms": 0
+      },
+      "top_news": []
+    },
+    "NASDAQ:MNST": {
+      "name": "MNST",
+      "score": 50,
+      "score_raw": 0,
+      "score_components": {
+        "positive_weight_sum": 0,
+        "negative_weight_sum": 0
+      },
+      "signal": "NEUTRAL No Trade (No Data)",
+      "strategy": "No relevant news in window",
+      "suitable_for": "Watch",
+      "confidence": "-",
+      "patterns": [],
+      "positive_factors": [],
+      "negative_factors": [],
+      "news_count": 0,
+      "news_dropped": 0,
+      "performance": {
+        "list_fetch_ms": 876,
+        "candidate_filter_ms": 0,
+        "enrichment_ms": 0,
+        "raw_news_count": 10,
+        "raw_forum_count": 0,
+        "candidate_news_count": 0,
+        "candidate_forum_count": 0,
+        "enriched_news_count": 0,
+        "enriched_forum_count": 0,
+        "candidate_reasons": {
+          "news": {
+            "no-subject-mention": 2,
+            "dedup": 0,
+            "out_of_window": 8
+          },
+          "forum": {
+            "dedup": 0
+          }
+        },
+        "date_filter_ms": 0,
+        "relevance_ms": 0,
+        "llm_ms": 0,
+        "scoring_ms": 0
+      },
+      "top_news": []
+    },
+    "NASDAQ:OSBC": {
+      "name": "OSBC",
+      "score": 50,
+      "score_raw": 0,
+      "score_components": {
+        "positive_weight_sum": 0,
+        "negative_weight_sum": 0
+      },
+      "signal": "NEUTRAL No Trade (No Data)",
+      "strategy": "No relevant news in window",
+      "suitable_for": "Watch",
+      "confidence": "-",
+      "patterns": [],
+      "positive_factors": [],
+      "negative_factors": [],
+      "news_count": 0,
+      "news_dropped": 0,
+      "performance": {
+        "list_fetch_ms": 1051,
+        "candidate_filter_ms": 0,
+        "enrichment_ms": 0,
+        "raw_news_count": 8,
+        "raw_forum_count": 0,
+        "candidate_news_count": 0,
+        "candidate_forum_count": 0,
+        "enriched_news_count": 0,
+        "enriched_forum_count": 0,
+        "candidate_reasons": {
+          "news": {
+            "dedup": 0,
+            "out_of_window": 8
+          },
+          "forum": {
+            "dedup": 0
+          }
+        },
+        "date_filter_ms": 0,
+        "relevance_ms": 0,
+        "llm_ms": 0,
+        "scoring_ms": 0
+      },
+      "top_news": []
+    },
+    "NASDAQ:FWONA": {
+      "name": "FWONA",
+      "score": 50,
+      "score_raw": 0,
+      "score_components": {
+        "positive_weight_sum": 0,
+        "negative_weight_sum": 0
+      },
+      "signal": "NEUTRAL No Trade (No Data)",
+      "strategy": "No relevant news in window",
+      "suitable_for": "Watch",
+      "confidence": "-",
+      "patterns": [],
+      "positive_factors": [],
+      "negative_factors": [],
+      "news_count": 0,
+      "news_dropped": 0,
+      "performance": {
+        "list_fetch_ms": 819,
+        "candidate_filter_ms": 0,
+        "enrichment_ms": 0,
+        "raw_news_count": 11,
+        "raw_forum_count": 0,
+        "candidate_news_count": 0,
+        "candidate_forum_count": 0,
+        "enriched_news_count": 0,
+        "enriched_forum_count": 0,
+        "candidate_reasons": {
+          "news": {
+            "no-subject-mention": 1,
+            "dedup": 0,
+            "out_of_window": 10
+          },
+          "forum": {
+            "dedup": 0
+          }
+        },
+        "date_filter_ms": 0,
+        "relevance_ms": 0,
+        "llm_ms": 0,
+        "scoring_ms": 0
+      },
+      "top_news": []
+    },
+    "NASDAQ:BHRB": {
+      "name": "BHRB",
+      "score": 50,
+      "score_raw": 0,
+      "score_components": {
+        "positive_weight_sum": 0,
+        "negative_weight_sum": 0
+      },
+      "signal": "NEUTRAL No Trade (No Data)",
+      "strategy": "No relevant news in window",
+      "suitable_for": "Watch",
+      "confidence": "-",
+      "patterns": [],
+      "positive_factors": [],
+      "negative_factors": [],
+      "news_count": 0,
+      "news_dropped": 0,
+      "performance": {
+        "list_fetch_ms": 1028,
+        "candidate_filter_ms": 0,
+        "enrichment_ms": 0,
+        "raw_news_count": 5,
+        "raw_forum_count": 0,
+        "candidate_news_count": 0,
+        "candidate_forum_count": 0,
+        "enriched_news_count": 0,
+        "enriched_forum_count": 0,
+        "candidate_reasons": {
+          "news": {
+            "dedup": 0,
+            "out_of_window": 5
+          },
+          "forum": {
+            "dedup": 0
+          }
+        },
+        "date_filter_ms": 0,
+        "relevance_ms": 0,
+        "llm_ms": 0,
+        "scoring_ms": 0
+      },
+      "top_news": []
+    },
+    "OTC:SBGSY": {
+      "name": "OTC:SBGSY",
+      "score": 50,
+      "score_raw": 0,
+      "score_components": {
+        "positive_weight_sum": 0,
+        "negative_weight_sum": 0
+      },
+      "signal": "NEUTRAL No Trade (No Data)",
+      "strategy": "No relevant news in window",
+      "suitable_for": "Watch",
+      "confidence": "-",
+      "patterns": [],
+      "positive_factors": [],
+      "negative_factors": [],
+      "news_count": 0,
+      "news_dropped": 0,
+      "performance": {
+        "list_fetch_ms": 814,
+        "candidate_filter_ms": 0,
+        "enrichment_ms": 0,
+        "raw_news_count": 0,
+        "raw_forum_count": 0,
+        "candidate_news_count": 0,
+        "candidate_forum_count": 0,
+        "enriched_news_count": 0,
+        "enriched_forum_count": 0,
+        "candidate_reasons": {
+          "news": {
+            "dedup": 0
+          },
+          "forum": {
+            "dedup": 0
+          }
+        },
+        "date_filter_ms": 0,
+        "relevance_ms": 0,
+        "llm_ms": 0,
+        "scoring_ms": 0
+      },
+      "top_news": []
+    },
+    "NYSE:APD": {
+      "name": "APD",
+      "score": 50,
+      "score_raw": 0,
+      "score_components": {
+        "positive_weight_sum": 0,
+        "negative_weight_sum": 0
+      },
+      "signal": "NEUTRAL No Trade (No Data)",
+      "strategy": "No relevant news in window",
+      "suitable_for": "Watch",
+      "confidence": "-",
+      "patterns": [],
+      "positive_factors": [],
+      "negative_factors": [],
+      "news_count": 0,
+      "news_dropped": 0,
+      "performance": {
+        "list_fetch_ms": 854,
+        "candidate_filter_ms": 0,
+        "enrichment_ms": 0,
+        "raw_news_count": 10,
+        "raw_forum_count": 0,
+        "candidate_news_count": 0,
+        "candidate_forum_count": 0,
+        "enriched_news_count": 0,
+        "enriched_forum_count": 0,
+        "candidate_reasons": {
+          "news": {
+            "dedup": 0,
+            "out_of_window": 10
+          },
+          "forum": {
+            "dedup": 0
+          }
+        },
+        "date_filter_ms": 0,
+        "relevance_ms": 0,
+        "llm_ms": 0,
+        "scoring_ms": 0
+      },
+      "top_news": []
+    },
+    "NASDAQ:FIVE": {
+      "name": "FIVE",
+      "score": 50,
+      "score_raw": 0,
+      "score_components": {
+        "positive_weight_sum": 0,
+        "negative_weight_sum": 0
+      },
+      "signal": "NEUTRAL No Trade (No Data)",
+      "strategy": "LLM unavailable or call failed (no keyword fallback)",
+      "suitable_for": "Watch",
+      "confidence": "-",
+      "patterns": [],
+      "positive_factors": [],
+      "negative_factors": [],
+      "news_count": 0,
+      "news_dropped": 0,
+      "performance": {
+        "list_fetch_ms": 1041,
+        "candidate_filter_ms": 0,
+        "enrichment_ms": 3174,
+        "raw_news_count": 14,
+        "raw_forum_count": 0,
+        "candidate_news_count": 5,
+        "candidate_forum_count": 0,
+        "enriched_news_count": 5,
+        "enriched_forum_count": 0,
+        "candidate_reasons": {
+          "news": {
+            "no-subject-mention": 1,
+            "dedup": 0,
+            "out_of_window": 8
+          },
+          "forum": {
+            "dedup": 0
+          }
+        },
+        "date_filter_ms": 0,
+        "relevance_ms": 0,
+        "llm_ms": 3172,
+        "scoring_ms": 0
+      },
+      "top_news": []
+    },
+    "NYSE:J": {
+      "name": "J",
+      "score": 50,
+      "score_raw": 0,
+      "score_components": {
+        "positive_weight_sum": 0,
+        "negative_weight_sum": 0
+      },
+      "signal": "NEUTRAL No Trade (No Data)",
+      "strategy": "No relevant news in window",
+      "suitable_for": "Watch",
+      "confidence": "-",
+      "patterns": [],
+      "positive_factors": [],
+      "negative_factors": [],
+      "news_count": 0,
+      "news_dropped": 0,
+      "performance": {
+        "list_fetch_ms": 1476,
+        "candidate_filter_ms": 0,
+        "enrichment_ms": 0,
+        "raw_news_count": 10,
+        "raw_forum_count": 0,
+        "candidate_news_count": 0,
+        "candidate_forum_count": 0,
+        "enriched_news_count": 0,
+        "enriched_forum_count": 0,
+        "candidate_reasons": {
+          "news": {
+            "no-subject-mention": 1,
+            "dedup": 0,
+            "out_of_window": 9
+          },
+          "forum": {
+            "dedup": 0
+          }
+        },
+        "date_filter_ms": 0,
+        "relevance_ms": 0,
+        "llm_ms": 0,
+        "scoring_ms": 0
+      },
+      "top_news": []
+    },
+    "NYSE:NEXA": {
+      "name": "NEXA",
+      "score": 50,
+      "score_raw": 0,
+      "score_components": {
+        "positive_weight_sum": 0,
+        "negative_weight_sum": 0
+      },
+      "signal": "NEUTRAL No Trade (No Data)",
+      "strategy": "LLM unavailable or call failed (no keyword fallback)",
+      "suitable_for": "Watch",
+      "confidence": "-",
+      "patterns": [],
+      "positive_factors": [],
+      "negative_factors": [],
+      "news_count": 0,
+      "news_dropped": 0,
+      "performance": {
+        "list_fetch_ms": 1283,
+        "candidate_filter_ms": 0,
+        "enrichment_ms": 3441,
+        "raw_news_count": 16,
+        "raw_forum_count": 0,
+        "candidate_news_count": 4,
+        "candidate_forum_count": 0,
+        "enriched_news_count": 4,
+        "enriched_forum_count": 0,
+        "candidate_reasons": {
+          "news": {
+            "dedup": 1,
+            "out_of_window": 11
+          },
+          "forum": {
+            "dedup": 0
+          }
+        },
+        "date_filter_ms": 0,
+        "relevance_ms": 0,
+        "llm_ms": 2782,
+        "scoring_ms": 0
+      },
+      "top_news": []
+    },
+    "NASDAQ:GEN": {
+      "name": "GEN",
+      "score": 49,
+      "score_raw": -0.23,
+      "score_components": {
+        "positive_weight_sum": 1.2,
+        "negative_weight_sum": 1.43,
+        "news_effective_count": 4,
+        "news_dropped_count": 0
+      },
+      "signal": "NEUTRAL No Trade (Neutral)",
+      "strategy": "No clear directional bias — stay flat",
+      "suitable_for": "Watch",
+      "confidence": "Low",
+      "patterns": [],
+      "positive_factors": [
+        "[M&A|w0.7] Gen Digital: MoneyLion Opens A New Growth Channel At A Low Valuation",
+        "[Industry|w0.5] Gen Digital (NASDAQ:GEN) Shows a Strong Technical Breakout Setup"
+      ],
+      "negative_factors": [
+        "[Industry|w0.84] Ondrej Vlcek Takes Money Off The Table, Sells $4.42M In Gen Digital St",
+        "[Industry|w0.59] Gen Digital Board Member Sold $1.38M In Company Stock"
+      ],
+      "news_count": 4,
+      "news_dropped": 0,
+      "performance": {
+        "list_fetch_ms": 942,
+        "candidate_filter_ms": 0,
+        "enrichment_ms": 1211,
+        "raw_news_count": 15,
+        "raw_forum_count": 0,
+        "candidate_news_count": 4,
+        "candidate_forum_count": 0,
+        "enriched_news_count": 4,
+        "enriched_forum_count": 0,
+        "candidate_reasons": {
+          "news": {
+            "dedup": 1,
+            "out_of_window": 10
+          },
+          "forum": {
+            "dedup": 0
+          }
+        },
+        "date_filter_ms": 0,
+        "relevance_ms": 0,
+        "llm_ms": 10,
+        "scoring_ms": 0
+      },
+      "top_news": [
+        {
+          "date": "2026-08-28",
+          "title": "Ondrej Vlcek Takes Money Off The Table, Sells $4.42M In Gen Digital Stock",
+          "content": "Making a noteworthy insider sell on August 27, Ondrej Vlcek, Board Member at Gen Digital (NASDAQ:GEN), is reported in the latest SEC filing.\nWhat Happened: Vlcek&#39;s decision to sell 152,358 shares of Gen Digital was",
+          "type": "Industry",
+          "sentiment": -1,
+          "weight": 1,
+          "final_weight": 0.84,
+          "source_authority": 3.5,
+          "recency_factor": 0.6,
+          "source": "Finnhub",
+          "llm_reviewed": true,
+          "llm_confidence": 0.6,
+          "llm_is_real_catalyst": false,
+          "llm_reasoning": "Insider sale $4.42M"
+        },
+        {
+          "date": "2026-08-26",
+          "title": "Gen Digital (NASDAQ:GEN) Shows a Strong Technical Breakout Setup",
+          "content": "Gen Digital (GEN) shows a strong technical breakout setup with 8/10 technical rating and 9/10 setup score, featuring tight consolidation and clear levels. Watch for a breakout above 29.33 with a stop near 27.49.",
+          "type": "Industry",
+          "sentiment": 1,
+          "weight": 1,
+          "final_weight": 0.5,
+          "source_authority": 3.5,
+          "recency_factor": 0.42,
+          "source": "Finnhub",
+          "llm_reviewed": true,
+          "llm_confidence": 0.4,
+          "llm_is_real_catalyst": false,
+          "llm_reasoning": "Technical breakout setup"
+        },
+        {
+          "date": "2026-08-26",
+          "title": "Gen Digital Board Member Sold $1.38M In Company Stock",
+          "content": "Ondrej Vlcek, Board Member at Gen Digital (NASDAQ:GEN), disclosed an insider sell on August 25, according to a recent SEC filing.\nWhat Happened: Vlcek&#39;s decision to sell 47,462 shares of Gen Digital was revealed in",
+          "type": "Industry",
+          "sentiment": -1,
+          "weight": 1,
+          "final_weight": 0.59,
+          "source_authority": 3.5,
+          "recency_factor": 0.42,
+          "source": "Finnhub",
+          "llm_reviewed": true,
+          "llm_confidence": 0.6,
+          "llm_is_real_catalyst": false,
+          "llm_reasoning": "Insider sale $1.38M"
+        },
+        {
+          "date": "2026-08-25",
+          "title": "Gen Digital: MoneyLion Opens A New Growth Channel At A Low Valuation",
+          "content": "Gen Digital's MoneyLion acquisition aims to monetize its vast customer base via cross-selling financial and Cyber Safety products. Read why GEN is a cautious Buy.",
+          "type": "M&A",
+          "sentiment": 1,
+          "weight": 1,
+          "final_weight": 0.7,
+          "source_authority": 3.5,
+          "recency_factor": 0.36,
+          "source": "Finnhub",
+          "llm_reviewed": true,
+          "llm_confidence": 0.5,
+          "llm_is_real_catalyst": false,
+          "llm_reasoning": "MoneyLion acquisition commentary"
+        }
+      ]
+    },
+    "CBOE:CBOE": {
+      "name": "CBOE",
+      "score": 45,
+      "score_raw": -1.1,
+      "score_components": {
+        "positive_weight_sum": 0,
+        "negative_weight_sum": 1.1,
+        "news_effective_count": 2,
+        "news_dropped_count": 0
+      },
+      "signal": "NEUTRAL No Trade (Neutral)",
+      "strategy": "No clear directional bias — stay flat",
+      "suitable_for": "Watch",
+      "confidence": "Low",
+      "patterns": [],
+      "positive_factors": [],
+      "negative_factors": [
+        "[Policy|w0.6] 'Kalshi Looks to Regulators to Delay Competing Products From Cboe' - B",
+        "[Policy|w0.5] Kalshi seeks to delay Cboe's binary options contracts on specific line"
+      ],
+      "news_count": 2,
+      "news_dropped": 0,
+      "performance": {
+        "list_fetch_ms": 807,
+        "candidate_filter_ms": 0,
+        "enrichment_ms": 3442,
+        "raw_news_count": 10,
+        "raw_forum_count": 0,
+        "candidate_news_count": 2,
+        "candidate_forum_count": 0,
+        "enriched_news_count": 2,
+        "enriched_forum_count": 0,
+        "candidate_reasons": {
+          "news": {
+            "no-subject-mention": 1,
+            "dedup": 0,
+            "out_of_window": 7
+          },
+          "forum": {
+            "dedup": 0
+          }
+        },
+        "date_filter_ms": 0,
+        "relevance_ms": 0,
+        "llm_ms": 8,
+        "scoring_ms": 0
+      },
+      "top_news": [
+        {
+          "date": "2026-08-25",
+          "title": "'Kalshi Looks to Regulators to Delay Competing Products From Cboe' - Bloomberg",
+          "content": "Never miss a trade again with the fastest news alerts in the world!\n\nThis headline only article is a sample of real-time intelligence Benzinga Pro traders use to win in the markets everyday.\n\nWant the fastest, most accurate stock market intelligence? Want EXCLUSIVE stories originated by Benzinga reporters? Join 10,000+ serious traders in the Benzinga Pro community!",
+          "type": "Policy",
+          "sentiment": -1,
+          "weight": 1,
+          "final_weight": 0.6,
+          "source_authority": 3.5,
+          "recency_factor": 0.36,
+          "source": "Finnhub",
+          "llm_reviewed": true,
+          "llm_confidence": 0.55,
+          "llm_is_real_catalyst": false,
+          "llm_reasoning": "Competitor asks regulators to delay"
+        },
+        {
+          "date": "2026-08-25",
+          "title": "Kalshi seeks to delay Cboe's binary options contracts on specific line items in earnings reports - r",
+          "content": "",
+          "type": "Policy",
+          "sentiment": -1,
+          "weight": 1,
+          "final_weight": 0.5,
+          "source_authority": 2.5,
+          "recency_factor": 0.36,
+          "source": "Seeking Alpha",
+          "llm_reviewed": true,
+          "llm_confidence": 0.6,
+          "llm_is_real_catalyst": false,
+          "llm_reasoning": "Potential regulatory delay threat"
+        }
+      ]
+    }
+  }
+}

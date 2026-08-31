@@ -1,0 +1,1463 @@
+{
+  "generated_at": "2026-07-17T01:15:27.423Z",
+  "market": "cn",
+  "source": "src/core/webNews.js",
+  "score_scale": "0-100 normalized (neutral=50)",
+  "window": {
+    "from": "2026-07-10",
+    "to": "2026-07-17",
+    "days": 7
+  },
+  "llm_used": true,
+  "performance": {
+    "totals_ms": {
+      "list_fetch_ms": 37544,
+      "enrichment_ms": 185017,
+      "relevance_ms": 0,
+      "llm_ms": 39374,
+      "report_write_ms": 14
+    },
+    "avg_ms": {
+      "list_fetch_ms": 3129,
+      "enrichment_ms": 15418,
+      "relevance_ms": 0,
+      "llm_ms": 3281,
+      "report_write_ms": 1
+    }
+  },
+  "stocks": {
+    "SZSE:002747": {
+      "name": "埃斯顿",
+      "score": 90,
+      "score_raw": 14.51,
+      "score_components": {
+        "positive_weight_sum": 16.03,
+        "negative_weight_sum": 1.52,
+        "news_effective_count": 11,
+        "news_dropped_count": 0
+      },
+      "signal": "🟢 Long (强)",
+      "strategy": "多重利好共振，基本面+情绪双支撑，适合追涨或持有",
+      "suitable_for": "追涨 / 持有",
+      "confidence": "高",
+      "patterns": [],
+      "positive_factors": [
+        "[财报|w4.21] 埃斯顿:2026年半年度业绩预告",
+        "[财报|w3.32] 威兆半导体、济南建邦金属材料递表港交所；埃斯顿预计上半年归母净利润同比增长2144.74%至2593.68%丨港交所早参",
+        "[财报|w2.81] 埃斯顿涨近7% 上半年净利润同比预增2145%—2594%"
+      ],
+      "negative_factors": [
+        "[行业|w0.51] 埃斯顿7月16日开盘跌幅达5%",
+        "[行业|w0.51] 埃斯顿：融资净偿还2511.17万元，融资余额9.39亿元",
+        "[行业|w0.5] 埃斯顿：融资净偿还1391.87万元，融资余额9.65亿元"
+      ],
+      "news_count": 11,
+      "news_dropped": 0,
+      "performance": {
+        "list_fetch_ms": 2258,
+        "candidate_filter_ms": 0,
+        "enrichment_ms": 12784,
+        "raw_news_count": 40,
+        "raw_research_count": 10,
+        "candidate_news_count": 11,
+        "candidate_research_count": 0,
+        "enriched_news_count": 11,
+        "enriched_research_count": 0,
+        "candidate_reasons": {
+          "news": {
+            "no-subject-mention": 8,
+            "noise:\\d{1,2}月\\d{1,2}日(快速上涨|快速回调|涨停|": 2,
+            "dedup": 0,
+            "out_of_window": 19
+          },
+          "research": {
+            "dedup": 0,
+            "out_of_window": 10
+          }
+        },
+        "date_filter_ms": 0,
+        "relevance_ms": 0,
+        "llm_ms": 4619,
+        "scoring_ms": 0
+      },
+      "top_news": [
+        {
+          "date": "2026-07-16 10:21:09",
+          "title": "埃斯顿7月16日盘中涨幅达5%",
+          "content": "",
+          "type": "行业",
+          "sentiment": 0,
+          "weight": 1,
+          "final_weight": 0.51,
+          "source_authority": 3,
+          "recency_factor": 0.85,
+          "source": "东方财富资讯",
+          "llm_reviewed": true,
+          "llm_confidence": 0.1,
+          "llm_is_real_catalyst": false,
+          "llm_reasoning": "仅描述股价涨幅，无实质信息"
+        },
+        {
+          "date": "2026-07-16 09:48:53",
+          "title": "埃斯顿7月16日快速反弹",
+          "content": "以下是埃斯顿在北京时间7月16日09:37分盘口异动快照：\n\n　　在东方财富看资讯行情，选东方财富证券一站式开户交易>>\n\n分笔\n\n09:37:03 41.00 917↑\n09:37:00 40.97 354↑\n09:36:57 40.94 502↑\n09:36:54 40.90 394↑\n09:36:51 40.88 362↑\n \n09:36:48 40.82 351↑\n09:36:45 40.77 361↑\n09:36:42 40.72 394↑\n09:36:39 40.63 469↑\n09:36:36 40.58 143↑\n \n报价\n\n卖五 \n\n41.04\n\n 4\n卖四 \n\n41.03\n\n 3\n卖三 \n\n41.02\n\n 6\n卖二 \n\n41.01\n\n 3\n卖一 \n\n41\n\n 1243\n\n买一 \n\n40.98\n\n 347\n买二 \n\n40.97\n\n 169\n买三 \n\n40.96\n\n 38\n买四 \n\n40.95\n\n 750\n买五 \n\n40.94\n\n 108\n\n最新：41\n涨幅：0.24%\n涨跌：0.1\n换手率：1.94%\n成交量：15.21万手\n成交额：6.05亿元\n主力净流入：\n2867.25万元\n\n  7月16日，埃斯顿盘中快速反弹，5分钟内涨幅超过2%，截至9点37分，报41元，成交6.05亿元，换手率1.94%。\n注：以上信息仅供参考，不对您构成任何投资建议。",
+          "type": "行业",
+          "sentiment": 1,
+          "weight": 1,
+          "final_weight": 0.51,
+          "source_authority": 3,
+          "recency_factor": 0.85,
+          "source": "东方财富资讯",
+          "llm_reviewed": true,
+          "llm_confidence": 0.2,
+          "llm_is_real_catalyst": false,
+          "llm_reasoning": "盘口异动，无基本面催化"
+        },
+        {
+          "date": "2026-07-16 09:27:16",
+          "title": "埃斯顿7月16日开盘跌幅达5%",
+          "content": "以下是埃斯顿在北京时间7月16日09:26分盘口异动快照：\n\n　　在东方财富看资讯行情，选东方财富证券一站式开户交易>>\n\n分笔\n\n09:25:00 38.76 17065↓\n09:24:57 38.00 13759↑\n09:24:48 38.00 10415↑\n09:24:39 38.00 9642↑\n09:24:30 38.08 8745↑\n \n09:24:21 38.30 7973↑\n09:24:12 38.50 7115↑\n09:24:03 38.53 6321↑\n09:23:54 38.70 5831↑\n09:23:45 38.89 5402↑\n \n报价\n\n卖五 \n\n38.83\n\n 5\n卖四 \n\n38.82\n\n 1\n卖三 \n\n38.8\n\n 76\n卖二 \n\n38.78\n\n 26\n卖一 \n\n38.77\n\n 1\n\n买一 \n\n38.76\n\n 150\n买二 \n\n38.73\n\n 3\n买三 \n\n38.7\n\n 222\n买四 \n\n38.69\n\n 2\n买五 \n\n38.68\n\n 36\n\n最新：38.76\n涨幅：-5.23%\n涨跌：-2.14\n换手率：0.22%\n成交量：1.71万手\n成交额：6614.32万元\n主力净流入：\n0元\n\n  7月16日，埃斯顿开盘跌幅达5%，截至9点26分，报38.76元，成交6614.32万元，换手率0.22%。\n注：以上信息仅供参考，不对您构成任何投资建议。",
+          "type": "行业",
+          "sentiment": -1,
+          "weight": 1,
+          "final_weight": 0.51,
+          "source_authority": 3,
+          "recency_factor": 0.85,
+          "source": "东方财富资讯",
+          "llm_reviewed": true,
+          "llm_confidence": 0.2,
+          "llm_is_real_catalyst": false,
+          "llm_reasoning": "开盘跌幅，无实质利空"
+        },
+        {
+          "date": "2026-07-16 09:18:28",
+          "title": "埃斯顿：融资净偿还2511.17万元，融资余额9.39亿元",
+          "content": "炒股第一步，先开个股票账户\n\n交易所最新数据显示，埃斯顿于2026年7月15日获融资买入2.56亿元，融资偿还2.82亿元，当日融资净偿还2511.17万元。目前，该股融资余额9.39亿，占流通市值比例为2.94%。\n\n该股当日融券卖出5.15万股，融券偿还2.36万股，融券净卖出2.79万股。目前，该股融券余量28.75万股，融券余额1175.88万元。\n\n免责声明：本文基于AI生产，仅供参考，不构成任何投资建议，据此操作风险自担。东方财富发布此内容旨在传播更多信息，与本平台立场无关。东方财富力求但不保证数据的完全准确，如有错漏请以中国证监会指定上市公司信息披露媒体为准，东方财富不对因该资料全部或部分内容而引致的盈亏承担任何责任。用户个人对服务的使用承担风险，东方财富对此不作任何类型的担保。",
+          "type": "行业",
+          "sentiment": -1,
+          "weight": 1,
+          "final_weight": 0.51,
+          "source_authority": 3,
+          "recency_factor": 0.85,
+          "source": "东方财富资讯",
+          "llm_reviewed": true,
+          "llm_confidence": 0.3,
+          "llm_is_real_catalyst": false,
+          "llm_reasoning": "融资净偿还，资金面信号弱"
+        },
+        {
+          "date": "2026-07-16 07:01:26",
+          "title": "威兆半导体、济南建邦金属材料递表港交所；埃斯顿预计上半年归母净利润同比增长2144.74%至2593.68%丨港交所早参",
+          "content": "全新妙想投研助理，立即体验\n\n　　｜2026年7月16日星期四｜\n\n　　NO.1 威兆半导体、济南建邦金属材料递表港交所\n\n　　据港交所7月14日披露，深圳市威兆半导体股份有限公司（下称威兆半导体）、济南建邦金属材料股份有限公司（下称济南建邦金属材料，前称为建邦材料有限公司）已向港交所主板递交上市申请。据招股书，威兆半导体专注于高性能功率半导体器件的研发、设计与销售；济南建邦金属材料是中国知名的银粉供应商，拥有十多年的运营经验，集研究、开发、生产及销售能力于一体，公司的银粉产品主要用于光伏银浆（生产光伏电池的关键原材料）的生产。\n\n　　点评：两家企业分别属于新能源与半导体两大高景气赛道，港股IPO（首次公开募股）储备持续扩容。\n\n　　NO.2 中国国航预计上半年亏损21亿元到26亿元\n\n　　7月14日，中国国航（HK00753，SH601111）发布公告称，预计2026年半年度归属于上市公司股东的净亏损为21亿元至26亿元。2026年上半年公司经营效益整体呈现增投增产增收特点，其中一季度实现大额盈利，但受中东地缘冲突影响，航油价格高位运行，大幅挤压航空公司盈利空间，预计公司2026年上半年经营业绩出现亏损。\n\n　　点评：航空出行需求稳步回暖，但中东地缘冲突推高航油成本，大幅侵蚀利润，最终拖累公司中期业绩。\n\n　　NO.3 赣锋锂业预计上半年归母净利润约36.5亿元至46亿元\n\n　　7月14日，赣锋锂业（HK01772，SZ002460）公告称，集团2026年上半年归属于公司股东的净利润区间预计为36.5亿元至46亿元。\n\n　　点评：锂盐量价齐升、锂资源产能释放优化成本，储能锂电产销走高。\n\n　　NO.4 埃斯顿预计上半年归母净利润同比增长2144.74%至2593.68%\n\n　　7月14日，埃斯顿（HK02715，SZ002747）公告称，2026年上半年度，公司预计实现归属于母公司股东的净利润为1.5亿元至1.8亿元，同比增长2144.74%至2593.68%；扣除非经常性损益后的净利润为6000万元至7500万元，较上年同期实现扭亏为盈。\n\n　　点评：埃斯顿上半年优化高端产品结构，降本抬升毛利率，叠加参股企业资产重组带来公允增值，多重因素驱动下，业绩大幅爆发。\n\n　　NO.5 港股行情：",
+          "type": "财报",
+          "sentiment": 1,
+          "weight": 3,
+          "final_weight": 3.32,
+          "source_authority": 3,
+          "recency_factor": 0.85,
+          "source": "东方财富资讯",
+          "llm_reviewed": true,
+          "llm_confidence": 0.9,
+          "llm_is_real_catalyst": true,
+          "llm_reasoning": "上半年净利预增超21倍，业绩爆发"
+        }
+      ]
+    },
+    "SZSE:300567": {
+      "name": "精测电子",
+      "score": 88,
+      "score_raw": 53.79,
+      "score_components": {
+        "positive_weight_sum": 57.87,
+        "negative_weight_sum": 4.08,
+        "news_effective_count": 21,
+        "news_dropped_count": 0
+      },
+      "signal": "🟢 Long (强)",
+      "strategy": "多重利好共振，基本面+情绪双支撑，适合追涨或持有",
+      "suitable_for": "追涨 / 持有",
+      "confidence": "高",
+      "patterns": [
+        "情绪持续增强↑(trend)",
+        "催化剂集中(catalyst burst)"
+      ],
+      "positive_factors": [
+        "[并购|w5.35] 精测电子:武汉精测电子集团股份有限公司发行股份、可转换公司债券及支付现金购买资产并募集配套资金暨关联交易预案(摘要)",
+        "[并购|w5.35] 精测电子:武汉精测电子集团股份有限公司关于披露本次交易相关预案的一般风险提示暨公司股票复牌的公告",
+        "[并购|w5.35] 精测电子:武汉精测电子集团股份有限公司董事会关于公司本次交易符合《上市公司重大资产重组管理办法》第十一条、第四十三条和第四十四条规定的说明"
+      ],
+      "negative_factors": [
+        "[并购|w3.57] 重大资产重组！精测电子复牌后跌超13％",
+        "[行业|w0.51] 精测电子7月16日开盘跌幅达5%"
+      ],
+      "news_count": 21,
+      "news_dropped": 0,
+      "performance": {
+        "list_fetch_ms": 7420,
+        "candidate_filter_ms": 0,
+        "enrichment_ms": 27993,
+        "raw_news_count": 40,
+        "raw_research_count": 10,
+        "candidate_news_count": 21,
+        "candidate_research_count": 0,
+        "enriched_news_count": 20,
+        "enriched_research_count": 0,
+        "candidate_reasons": {
+          "news": {
+            "noise:融资净(买入|卖出)": 1,
+            "no-subject-mention": 7,
+            "noise:^.{0,8}重要公告集锦": 1,
+            "dedup": 0,
+            "out_of_window": 10
+          },
+          "research": {
+            "dedup": 0,
+            "out_of_window": 10
+          }
+        },
+        "date_filter_ms": 0,
+        "relevance_ms": 0,
+        "llm_ms": 4026,
+        "scoring_ms": 0
+      },
+      "top_news": [
+        {
+          "date": "2026-07-17",
+          "title": "精测电子:武汉精测电子集团股份有限公司关于为子公司向银行申请授信提供担保的进展公告",
+          "content": "",
+          "type": "财报",
+          "sentiment": 0,
+          "weight": 1,
+          "final_weight": 1.17,
+          "source_authority": 4.5,
+          "recency_factor": 1,
+          "source": "东方财富公告",
+          "llm_reviewed": true,
+          "llm_confidence": 0.3,
+          "llm_is_real_catalyst": false,
+          "llm_reasoning": "仅为担保进展公告，无实质影响"
+        },
+        {
+          "date": "2026-07-17",
+          "title": "精测电子:武汉精测电子集团股份有限公司关于签订日常经营性重大合同的公告",
+          "content": "",
+          "type": "财报",
+          "sentiment": 0,
+          "weight": 1,
+          "final_weight": 1.17,
+          "source_authority": 4.5,
+          "recency_factor": 1,
+          "source": "东方财富公告",
+          "llm_reviewed": true,
+          "llm_confidence": 0.3,
+          "llm_is_real_catalyst": false,
+          "llm_reasoning": "仅为合同签订公告标题，无具体内容"
+        },
+        {
+          "date": "2026-07-16 21:38:52",
+          "title": "精测电子：子公司签2.23亿元半导体前道量检测设备销售合同",
+          "content": "在东方财富看资讯行情，选东方财富证券一站式开户交易>>\n\n　　中证智能财讯精测电子（300567）7月16日晚间公告，近日，控股子公司上海精测半导体技术有限公司与客户签订了销售合同，拟向客户出售膜厚系列产品、OCD设备等半导体前道量检测设备，合同总计金额达2.23亿元。\n\n　　截至本公告披露日，上海精测连续十二月内与该客户及其相关公司签订了多份销售合同，合同累计金额达到3.2975亿元（含本次签订）。\n\n　　资料显示，精测电子主营业务聚焦于半导体、显示及新能源三大核心领域检测系统的研发、生产与销售。深度服务于下游半导体晶圆制造厂商、显示面板制造厂商及新能源锂电池生产厂商，为客户提供全方位的量检测设备与技术支持。\n\n　　公司目前在半导体领域的主营产品分为前道量检测设备、后道电测检测设备、先进封装量检测设备和核心器件等，包括膜厚量测系统、光学关键尺寸量测系统、电子束缺陷检测系统、半导体硅片应力测量设备、明场光学缺陷检测设备和自动检测设备（ATE）等，用于晶圆加工、制造、封测环节的物理参数测量与电性性能检测，是先进制程良率管控核心装备。\n\n　　公司称，本合同的签署，是公司与该客户在原有良好合作基础上进一步加深了双方的合作关系，体现了客户对公司半导体量检测设备的高度认可，有助于拓展公司品牌影响力，提升公司的市场竞争力。\n\n　　核校：王博",
+          "type": "财报",
+          "sentiment": 1,
+          "weight": 3,
+          "final_weight": 3.32,
+          "source_authority": 3,
+          "recency_factor": 0.85,
+          "source": "东方财富资讯",
+          "llm_reviewed": true,
+          "llm_confidence": 0.9,
+          "llm_is_real_catalyst": true,
+          "llm_reasoning": "子公司签2.23亿元半导体设备合同，利好"
+        },
+        {
+          "date": "2026-07-16 21:19:58",
+          "title": "7月16日晚间公告集锦|海光信息预计上半年净利润同比增长41.50%-52.32%，艾力斯预计上半年归母净利润同比增长46.49%，精测电子子公司签订2.23亿元合同",
+          "content": "在东方财富看资讯行情，选东方财富证券一站式开户交易>>\n\n　　——业绩——\n\n　　海光信息：预计2026年上半年归母净利润同比增长41.50%-52.32%\n\n　　海光信息7月16日公告，预计2026年上半年实现营业收入与上年同期（法定披露数据）相比，将增加303,576.49万元到383,576.49万元，同比增长55.56到70.20。预计2026年上半年实现归属于母公司所有者的净利润与上年同期（法定披露数据）相比，将增加49,854.82万元到62,854.82万元，同比增长41.50到52.32。扣除股份支付的影响后，将增加92,478.07万元到105,478.07万元，同比增长74.27到84.71。\n\n　　欧科亿：预计2026年上半年归母净利润3.6亿元-4.2亿元\n\n　　欧科亿7月16日公告，经财务部门初步测算，预计2026年半年度实现归属于母公司所有者的净利润为36,000万元至42,000万元，与上年同期相比，将增加35,922.46万元至41,922.46万元。预计2026年半年度实现归属于母公司所有者的扣除非经常性损益的净利润为35,000万元至40,000万元，与上年同期相比，将增加36,914.72万元至41,914.72万元。\n\n　　艾力斯：预计2026年上半年归母净利润同比增长46.49%\n\n　　艾力斯7月16日公告，预计2026年半年度实现营业收入331,000.00万元，比上年同期增加93,623.74万元，同比增长39.44。公司预计2026年半年度实现归属于母公司所有者的净利润为154,000.00万元，比上年同期增加48,876.47万元，同比增长46.49。公司预计2026年半年度实现归属于母公司所有者扣除非经常性损益后的净利润为136,000.00万元，比上年同期增加45,488.83万元，同比增长50.26。\n\n　　——公司经营——\n\n　　精测电子：控股子公司签订2.23亿元半导体设备销售合同\n\n　　精测电子7月16日公告，公司控股子公司上海精测半导体技术有限公司近日与客户签订了销售合同，拟向客户出售膜厚系列产品、OCD设备等半导体前道量检测设备，合同总计金额达到223,062,000元。截至本公告披露日，上海精测连续十二月内与该客户及其相关公司签订了多份销售合同，合同累计金额达到329,752,080元（含本次签订）。\n\n　　苑东生物：注射用苯磺酸瑞马唑仑获得药品注册证书\n\n　　苑东生物7月16日公告，公司近日收到国家药监局核准签发的注射用苯磺酸瑞马唑仑《药品注册证书》，该药品为化学药品4类，用于非气管插管手术操作中的镇静和麻醉及全身麻醉诱导与维持。公司为国内首家仿制药获批上市，且视同通过一致性评价。\n\n　　首药控股：第四代ALK抑制剂SY-12321获临床试验批准\n\n　　首药控股7月16日公告，公司近日收到国家药监局核准签发的《药物临床试验批准通知书》，第四代ALK抑制剂SY12321胶囊单药在ALK阳性晚期实体瘤的临床试验申请获批。该药物为完全自主研发的1类创新药，旨在解决第三代ALK抑制剂治疗后的耐药问题，临床前研究显示对多种耐药突变具抑制活性。国内尚无同类药物获批上市。\n\n　　航天软件：获得政府补助343万元\n\n　　航天软件7月16日公告，公司于近期收到两笔政府补助款，分别为221万元和122万元，为与收益相关的政府补助，分别占公司2025年度归母净利润绝对值的比例为19.52和10.78。\n\n　　——回购——\n\n　　亿帆医药：回购500万股，使用资金总额5394.36万元\n\n　　亿帆医药7月16日公告，公司今日首次通过回购专用证券账户以集中竞价交易方式回购公司股份5,000,000股，占公司目前总股本的0.41，最高成交价为11.04元股，最低成交价为10.54元股，成交均价为10.79元股，成交总金额为5,394.36万元（不含交易费用）。本次回购符合公司既定回购股份方案及相关法律法规的要求。\n\n　　聚胶股份：拟2400万元-4800万元回购公司股份\n\n　　聚胶股份7月16日公告，拟使用首次公开发行股票取得的部分超募资金及其孳生的利息收入和投资收益以集中竞价交易方式回购公司股份，用于实施员工持股计划或股权激励。本次回购的资金总额不低于人民币2,400万元且不超过人民币4,800万元（均含本数）；回购价格不超过人民币38.67元股（含本数），具体回购股份的数量以回购结束时实际回购的股份数量为准。本次回购实施期限为自公司董事会审议通过本次回购股份方案之日起不超过12个月。按照回购股份价格上限人民币38.67元股，回购金额下限人民币2,400万元测算，预计回购股份数量约为620,636股，占公司当前总股本的0.53；按照回购股份价格上限人民币38.67元股，回购金额上限人民币4,800万元测算，预计回购股份数量约为1,241,272股，占公司当前总股本的1.07。\n\n　　广汇物流：以集中竞价交易方式回购公司股份比例达到1%\n\n　　广汇物流7月16日公告，截至2026年7月16日，公司通过集中竞价交易方式已累计回购股份31,517,600股（含已注销的回购股份17,386,400股），注销后新增累计回购股份14,131,200股，占公司总股本的比例为1.20，与上次披露数相比增加0.40，购买的最高价为10.96元股、最低价为4.16元股，已支付的总金额为165,491,104.07元（不含交易费用）。\n\n　　格林美：拟1亿元-1.6亿元回购公司股份\n\n　　格林美7月16日公告，公司拟使用自有资金或自筹资金以集中竞价方式回购股份，资金总额不低于1亿元且不超过1.6亿元，回购价格不超过10.60元股。按上限测算，预计可回购约1509.43万股，占总股本0.30。回购股份将用于实施股权激励或员工持股计划，实施期限自董事会审议通过之日起12个月内。\n\n　　全新妙想投研助理，立即体验",
+          "type": "财报",
+          "sentiment": 1,
+          "weight": 3,
+          "final_weight": 3.32,
+          "source_authority": 3,
+          "recency_factor": 0.85,
+          "source": "东方财富资讯",
+          "llm_reviewed": true,
+          "llm_confidence": 0.8,
+          "llm_is_real_catalyst": true,
+          "llm_reasoning": "子公司签订2.23亿元合同，正面催化"
+        },
+        {
+          "date": "2026-07-16 20:24:00",
+          "title": "精测电子：公司及子公司无逾期对外担保事项",
+          "content": "",
+          "type": "财报",
+          "sentiment": 0,
+          "weight": 1,
+          "final_weight": 0.66,
+          "source_authority": 3,
+          "recency_factor": 0.85,
+          "source": "东方财富资讯",
+          "llm_reviewed": true,
+          "llm_confidence": 0.3,
+          "llm_is_real_catalyst": false,
+          "llm_reasoning": "无逾期担保，中性信息"
+        }
+      ]
+    },
+    "SZSE:300990": {
+      "name": "同飞股份",
+      "score": 86,
+      "score_raw": 18.4,
+      "score_components": {
+        "positive_weight_sum": 20.91,
+        "negative_weight_sum": 2.51,
+        "news_effective_count": 19,
+        "news_dropped_count": 0
+      },
+      "signal": "🟢 Long (强)",
+      "strategy": "多重利好共振，基本面+情绪双支撑，适合追涨或持有",
+      "suitable_for": "追涨 / 持有",
+      "confidence": "高",
+      "patterns": [],
+      "positive_factors": [
+        "[并购|w3.15] 同飞股份:关于向特定对象发行股票提交募集说明书(注册稿)等申请文件的提示性公告",
+        "[并购|w3.15] 同飞股份:关于确定向特定对象发行股票发行数量上限的公告",
+        "[并购|w3.15] 同飞股份:中信证券股份有限公司关于三河同飞制冷股份有限公司2026年度向特定对象发行股票之上市保荐书"
+      ],
+      "negative_factors": [
+        "[行业|w0.51] 同飞股份7月16日盘中跌幅达5%",
+        "[行业|w0.5] 同飞股份7月15日加速下跌",
+        "[行业|w0.5] 同飞股份7月15日盘中跌幅达5%"
+      ],
+      "news_count": 19,
+      "news_dropped": 0,
+      "performance": {
+        "list_fetch_ms": 2607,
+        "candidate_filter_ms": 0,
+        "enrichment_ms": 30780,
+        "raw_news_count": 40,
+        "raw_research_count": 10,
+        "candidate_news_count": 19,
+        "candidate_research_count": 0,
+        "enriched_news_count": 19,
+        "enriched_research_count": 0,
+        "candidate_reasons": {
+          "news": {
+            "noise:融资净(买入|卖出)": 3,
+            "no-subject-mention": 2,
+            "noise:\\d{1,2}月\\d{1,2}日(快速上涨|快速回调|涨停|": 2,
+            "dedup": 1,
+            "out_of_window": 13
+          },
+          "research": {
+            "dedup": 0,
+            "out_of_window": 10
+          }
+        },
+        "date_filter_ms": 0,
+        "relevance_ms": 0,
+        "llm_ms": 4577,
+        "scoring_ms": 0
+      },
+      "top_news": [
+        {
+          "date": "2026-07-17 09:13:16",
+          "title": "同飞股份：融资净偿还1225.59万元，融资余额3.4亿元",
+          "content": "全新妙想投研助理，立即体验\n\n交易所最新数据显示，同飞股份于2026年7月16日获融资买入5817.19万元，融资偿还7042.78万元，当日融资净偿还1225.59万元。目前，该股融资余额3.40亿，占流通市值比例为3.98%。\n\n该股当日融券卖出3100股，融券偿还1200股，融券净卖出1900股。目前，该股融券余量1.12万股，融券余额122.98万元。\n\n免责声明：本文基于AI生产，仅供参考，不构成任何投资建议，据此操作风险自担。东方财富发布此内容旨在传播更多信息，与本平台立场无关。东方财富力求但不保证数据的完全准确，如有错漏请以中国证监会指定上市公司信息披露媒体为准，东方财富不对因该资料全部或部分内容而引致的盈亏承担任何责任。用户个人对服务的使用承担风险，东方财富对此不作任何类型的担保。",
+          "type": "行业",
+          "sentiment": 0,
+          "weight": 1,
+          "final_weight": 0.6,
+          "source_authority": 3,
+          "recency_factor": 1,
+          "source": "东方财富资讯",
+          "llm_reviewed": true,
+          "llm_confidence": 0.3,
+          "llm_is_real_catalyst": false,
+          "llm_reasoning": "融资数据，无实质催化"
+        },
+        {
+          "date": "2026-07-16 15:37:21",
+          "title": "同飞股份7月16日快速反弹",
+          "content": "",
+          "type": "行业",
+          "sentiment": 1,
+          "weight": 1,
+          "final_weight": 0.51,
+          "source_authority": 3,
+          "recency_factor": 0.85,
+          "source": "东方财富资讯",
+          "llm_reviewed": true,
+          "llm_confidence": 0.2,
+          "llm_is_real_catalyst": false,
+          "llm_reasoning": "仅描述股价反弹，无实质信息"
+        },
+        {
+          "date": "2026-07-16 09:39:30",
+          "title": "同飞股份7月16日盘中跌幅达5%",
+          "content": "",
+          "type": "行业",
+          "sentiment": -1,
+          "weight": 1,
+          "final_weight": 0.51,
+          "source_authority": 3,
+          "recency_factor": 0.85,
+          "source": "东方财富资讯",
+          "llm_reviewed": true,
+          "llm_confidence": 0.2,
+          "llm_is_real_catalyst": false,
+          "llm_reasoning": "仅描述股价下跌，无实质信息"
+        },
+        {
+          "date": "2026-07-15 10:11:32",
+          "title": "同飞股份7月15日快速反弹",
+          "content": "",
+          "type": "行业",
+          "sentiment": 1,
+          "weight": 1,
+          "final_weight": 0.5,
+          "source_authority": 3,
+          "recency_factor": 0.72,
+          "source": "东方财富资讯",
+          "llm_reviewed": true,
+          "llm_confidence": 0.2,
+          "llm_is_real_catalyst": false,
+          "llm_reasoning": "仅描述股价反弹，无实质信息"
+        },
+        {
+          "date": "2026-07-15 09:45:30",
+          "title": "同飞股份7月15日加速下跌",
+          "content": "",
+          "type": "行业",
+          "sentiment": -1,
+          "weight": 1,
+          "final_weight": 0.5,
+          "source_authority": 3,
+          "recency_factor": 0.72,
+          "source": "东方财富资讯",
+          "llm_reviewed": true,
+          "llm_confidence": 0.2,
+          "llm_is_real_catalyst": false,
+          "llm_reasoning": "仅描述股价加速下跌，无实质信息"
+        }
+      ]
+    },
+    "SSE:603296": {
+      "name": "华勤技术",
+      "score": 86,
+      "score_raw": 19.22,
+      "score_components": {
+        "positive_weight_sum": 21.56,
+        "negative_weight_sum": 2.34,
+        "news_effective_count": 13,
+        "news_dropped_count": 0
+      },
+      "signal": "🟢 Long (强)",
+      "strategy": "多重利好共振，基本面+情绪双支撑，适合追涨或持有",
+      "suitable_for": "追涨 / 持有",
+      "confidence": "高",
+      "patterns": [
+        "情绪持续增强↑(trend)"
+      ],
+      "positive_factors": [
+        "[并购|w6.3] 华勤技术:华勤技术H股公告-有关在市场上收购晶合集成H股之须予披露交易",
+        "[并购|w3.57] 华勤技术子公司斥资1.39亿港元增持晶合集成H股",
+        "[并购|w3.57] 华勤技术：华勤通讯斥1.39亿港元增持晶合集成440.97万股H股"
+      ],
+      "negative_factors": [
+        "[财报|w2.34] 华勤技术下跌6.81% 上半年净利润预计增长53.50%—61.50%"
+      ],
+      "news_count": 13,
+      "news_dropped": 0,
+      "performance": {
+        "list_fetch_ms": 2121,
+        "candidate_filter_ms": 0,
+        "enrichment_ms": 6813,
+        "raw_news_count": 40,
+        "raw_research_count": 10,
+        "candidate_news_count": 13,
+        "candidate_research_count": 0,
+        "enriched_news_count": 13,
+        "enriched_research_count": 0,
+        "candidate_reasons": {
+          "news": {
+            "no-subject-mention": 5,
+            "noise:\\d{1,2}月\\d{1,2}日(快速上涨|快速回调|涨停|": 4,
+            "noise:融资净(买入|卖出)": 1,
+            "dedup": 0,
+            "out_of_window": 17
+          },
+          "research": {
+            "dedup": 0,
+            "out_of_window": 10
+          }
+        },
+        "date_filter_ms": 0,
+        "relevance_ms": 0,
+        "llm_ms": 4023,
+        "scoring_ms": 0
+      },
+      "top_news": [
+        {
+          "date": "2026-07-17 07:46:56",
+          "title": "华勤技术：融资净偿还2056.2万元，融资余额11.49亿元",
+          "content": "炒股第一步，先开个股票账户\n\n交易所最新数据显示，华勤技术于2026年7月16日获融资买入1.94亿元，融资偿还2.15亿元，当日融资净偿还2056.2万元。目前，该股融资余额11.49亿，占流通市值比例为1.83%。\n\n该股当日融券卖出7300股，融券偿还4100股，融券净卖出3200股。目前，该股融券余量9.57万股，融券余额752.62万元。\n\n免责声明：本文基于AI生产，仅供参考，不构成任何投资建议，据此操作风险自担。东方财富发布此内容旨在传播更多信息，与本平台立场无关。东方财富力求但不保证数据的完全准确，如有错漏请以中国证监会指定上市公司信息披露媒体为准，东方财富不对因该资料全部或部分内容而引致的盈亏承担任何责任。用户个人对服务的使用承担风险，东方财富对此不作任何类型的担保。",
+          "type": "行业",
+          "sentiment": 0,
+          "weight": 1,
+          "final_weight": 0.6,
+          "source_authority": 3,
+          "recency_factor": 1,
+          "source": "东方财富资讯",
+          "llm_reviewed": true,
+          "llm_confidence": 0.3,
+          "llm_is_real_catalyst": false,
+          "llm_reasoning": "融资净偿还属常规资金变动，无实质催化"
+        },
+        {
+          "date": "2026-07-17",
+          "title": "华勤技术:华勤技术H股公告-有关在市场上收购晶合集成H股之须予披露交易",
+          "content": "",
+          "type": "并购",
+          "sentiment": 1,
+          "weight": 6,
+          "final_weight": 6.3,
+          "source_authority": 4.5,
+          "recency_factor": 1,
+          "source": "东方财富公告",
+          "llm_reviewed": true,
+          "llm_confidence": 0.9,
+          "llm_is_real_catalyst": true,
+          "llm_reasoning": "公告披露收购晶合集成H股，属须予披露交易"
+        },
+        {
+          "date": "2026-07-16 20:43:56",
+          "title": "华勤技术子公司斥资1.39亿港元增持晶合集成H股",
+          "content": "炒股第一步，先开个股票账户\n\n　　7月16日，华勤技术（603296.SH）发布公告，2026年7月16日，公司全资子公司华勤通讯通过港交所场内交易收购440.97万股晶合集成（688249.SH）H股，对应股份占晶合集成已发行股本总额约0.20%，本次交易总代价约1.39亿港元，每股成交均价约31.55港元。本次收购完成后，华勤技术持有晶合集成已发行股本总额比例约为10.20%。本次收购与公司此前的收购事项合并计算构成须披露交易，已获豁免股东批准。公司称收购表明对晶合集成前景有信心，将深化产业协同。（央广财经）",
+          "type": "并购",
+          "sentiment": 1,
+          "weight": 4,
+          "final_weight": 3.57,
+          "source_authority": 3,
+          "recency_factor": 0.85,
+          "source": "东方财富资讯",
+          "llm_reviewed": true,
+          "llm_confidence": 0.9,
+          "llm_is_real_catalyst": true,
+          "llm_reasoning": "子公司增持晶合集成H股，金额明确，产业协同"
+        },
+        {
+          "date": "2026-07-16 20:34:00",
+          "title": "华勤技术：华勤通讯斥1.39亿港元增持晶合集成440.97万股H股",
+          "content": "全新妙想投研助理，立即体验\n\n　　华勤技术（603296/03296）发布公告，公司全资子公司华勤通讯于2026年7月16日在香港联交所进行场内交易，收购晶合集成（688249/02249）H股共计440.97万股，约占晶合集成已发行股本总额的0.20%。\n\n　　此次收购的总代价约为1.39亿港元（不包括交易成本），相当于每股均价约为31.55港元。收购完成后，公司集团持有晶合集成已发行股本总额约10.20%。\n\n　　2026年一季度，华勤技术实现收入407.46亿元，归母净利润10.61亿元。",
+          "type": "并购",
+          "sentiment": 1,
+          "weight": 4,
+          "final_weight": 3.57,
+          "source_authority": 3,
+          "recency_factor": 0.85,
+          "source": "东方财富资讯",
+          "llm_reviewed": true,
+          "llm_confidence": 0.9,
+          "llm_is_real_catalyst": true,
+          "llm_reasoning": "增持晶合集成H股，持股比例升至10.20%"
+        },
+        {
+          "date": "2026-07-16 09:44:46",
+          "title": "华勤技术7月16日快速反弹",
+          "content": "以下是华勤技术在北京时间7月16日09:35分盘口异动快照：\n\n　　在东方财富看资讯行情，选东方财富证券一站式开户交易>>\n\n分笔\n\n09:35:26 77.48 100↑\n09:35:23 77.25 107↑\n09:35:20 77.21 317↑\n09:35:17 77.19 214↑\n09:35:14 77.18 84↑\n \n09:35:11 77.12 145↑\n09:35:08 77.10 68↑\n09:35:05 77.10 141↓\n09:35:02 77.12 214↑\n09:34:59 77.10 105↓\n \n报价\n\n卖五 \n\n77.53\n\n 22\n卖四 \n\n77.52\n\n 10\n卖三 \n\n77.51\n\n 8\n卖二 \n\n77.5\n\n 40\n卖一 \n\n77.49\n\n 5\n\n买一 \n\n77.48\n\n 6\n买二 \n\n77.37\n\n 2\n买三 \n\n77.3\n\n 77\n买四 \n\n77.29\n\n 225\n买五 \n\n77.25\n\n 57\n\n最新：77.48\n涨幅：-0.92%\n涨跌：-0.72\n换手率：0.34%\n成交量：2.73万手\n成交额：2.10亿元\n主力净流入：\n-109.71万元\n\n  7月16日，华勤技术盘中快速反弹，5分钟内涨幅超过2%，截至9点35分，报77.48元，成交2.10亿元，换手率0.34%。\n注：以上信息仅供参考，不对您构成任何投资建议。",
+          "type": "行业",
+          "sentiment": 0,
+          "weight": 1,
+          "final_weight": 0.51,
+          "source_authority": 3,
+          "recency_factor": 0.85,
+          "source": "东方财富资讯",
+          "llm_reviewed": true,
+          "llm_confidence": 0.2,
+          "llm_is_real_catalyst": false,
+          "llm_reasoning": "盘中快速反弹属短期价格波动，无实质催化"
+        }
+      ]
+    },
+    "SZSE:002384": {
+      "name": "东山精密",
+      "score": 84,
+      "score_raw": 13.65,
+      "score_components": {
+        "positive_weight_sum": 14.16,
+        "negative_weight_sum": 0.51,
+        "news_effective_count": 12,
+        "news_dropped_count": 0
+      },
+      "signal": "🟢 Long (强)",
+      "strategy": "多重利好共振，基本面+情绪双支撑，适合追涨或持有",
+      "suitable_for": "追涨 / 持有",
+      "confidence": "高",
+      "patterns": [
+        "情绪持续增强↑(trend)"
+      ],
+      "positive_factors": [
+        "[财报|w4.97] 东山精密:002384投资者关系活动记录表20260715",
+        "[财报|w3.32] 【调研快报】东山精密接待润晖投资等6家机构调研",
+        "[财报|w3.32] 东山精密上半年业绩被光模块业务带飞了，但机构给出的远期盈利预测分歧巨大"
+      ],
+      "negative_factors": [
+        "[行业|w0.51] 东山精密7月16日盘中跌幅达5%"
+      ],
+      "news_count": 12,
+      "news_dropped": 0,
+      "performance": {
+        "list_fetch_ms": 2257,
+        "candidate_filter_ms": 0,
+        "enrichment_ms": 13008,
+        "raw_news_count": 40,
+        "raw_research_count": 10,
+        "candidate_news_count": 12,
+        "candidate_research_count": 0,
+        "enriched_news_count": 12,
+        "enriched_research_count": 0,
+        "candidate_reasons": {
+          "news": {
+            "noise:融资净(买入|卖出)": 1,
+            "no-subject-mention": 9,
+            "dedup": 0,
+            "out_of_window": 18
+          },
+          "research": {
+            "dedup": 0,
+            "out_of_window": 10
+          }
+        },
+        "date_filter_ms": 0,
+        "relevance_ms": 0,
+        "llm_ms": 3459,
+        "scoring_ms": 0
+      },
+      "top_news": [
+        {
+          "date": "2026-07-16 20:32:00",
+          "title": "东山精密：公司光芯片及光模块产能扩建项目正在有序推进中",
+          "content": "",
+          "type": "行业",
+          "sentiment": 1,
+          "weight": 1,
+          "final_weight": 0.51,
+          "source_authority": 3,
+          "recency_factor": 0.85,
+          "source": "东方财富资讯",
+          "llm_reviewed": true,
+          "llm_confidence": 0.4,
+          "llm_is_real_catalyst": false,
+          "llm_reasoning": "产能扩建推进中，但无具体数据"
+        },
+        {
+          "date": "2026-07-16 20:32:00",
+          "title": "东山精密：公司具备完整的光芯片全流程IDM体系，拥有成熟的自研技术与工艺",
+          "content": "",
+          "type": "行业",
+          "sentiment": 1,
+          "weight": 1,
+          "final_weight": 0.51,
+          "source_authority": 3,
+          "recency_factor": 0.85,
+          "source": "东方财富资讯",
+          "llm_reviewed": true,
+          "llm_confidence": 0.3,
+          "llm_is_real_catalyst": false,
+          "llm_reasoning": "描述技术能力，无量化催化"
+        },
+        {
+          "date": "2026-07-16 17:07:03",
+          "title": "【调研快报】东山精密接待润晖投资等6家机构调研",
+          "content": "专业金融数据，下一代智能终端\n\n　　东山精密7月16日公告称，7月15日接待润晖投资等6家机构调研。接待人员包括董事会秘书 冒小燕,投关总监 熊丹。\n\n　　公司就以下问题进行了回复：1、公司近期披露了 2026 年半年度业绩预告,本期业绩实现增长的主要原因是什么? 回复:本期业绩增长一方面依托消费电子、汽车零部件传统业务稳健经营、稳步盈利,夯实公司盈利基本盘;另一方面光模块业务整合成效显现,新增产能爬坡、新客户导入进度符合预期,收入与利润均实现明显增长。同时公司前期布局的...\n\n点击查看PDF原文\n\n免责声明：本文基于AI生产，仅供参考，不构成任何投资建议，据此操作风险自担。东方财富发布此内容旨在传播更多信息，与本平台立场无关。东方财富力求但不保证数据的完全准确，如有错漏请以中国证监会指定上市公司信息披露媒体为准，东方财富不对因该资料全部或部分内容而引致的盈亏承担任何责任。用户个人对服务的使用承担风险，东方财富对此不作任何类型的担保。",
+          "type": "财报",
+          "sentiment": 1,
+          "weight": 3,
+          "final_weight": 3.32,
+          "source_authority": 3,
+          "recency_factor": 0.85,
+          "source": "东方财富资讯",
+          "llm_reviewed": true,
+          "llm_confidence": 0.8,
+          "llm_is_real_catalyst": true,
+          "llm_reasoning": "业绩预告披露，光模块业务增长明确"
+        },
+        {
+          "date": "2026-07-16 11:20:00",
+          "title": "东山精密成交额超200亿元",
+          "content": "专业金融数据，下一代智能终端\n\n　　数据宝统计，截至11:05，东山精密成交额201.21亿元，超200亿元。最新股价上涨3.02%，换手率5.50%。上一交易日该股全天成交额为372.58亿元。\n\n　　据天眼查APP显示，苏州东山精密制造股份有限公司成立于1998年10月28日，注册资本183160.7532万人民币。（数据宝）\n\n　　注：本文系新闻报道，不构成投资建议，股市有风险，投资需谨慎。",
+          "type": "行业",
+          "sentiment": 1,
+          "weight": 1,
+          "final_weight": 0.51,
+          "source_authority": 3,
+          "recency_factor": 0.85,
+          "source": "东方财富资讯",
+          "llm_reviewed": true,
+          "llm_confidence": 0.2,
+          "llm_is_real_catalyst": false,
+          "llm_reasoning": "成交额数据，非实质催化"
+        },
+        {
+          "date": "2026-07-16 10:25:00",
+          "title": "东山精密成交额超100亿元",
+          "content": "在东方财富看资讯行情，选东方财富证券一站式开户交易>>\n\n　　数据宝统计，截至09:51，东山精密成交额105.23亿元，超100亿元。最新股价上涨2.06%，换手率2.94%。上一交易日该股全天成交额为372.58亿元。\n\n　　据天眼查APP显示，苏州东山精密制造股份有限公司成立于1998年10月28日，注册资本183160.7532万人民币。（数据宝）\n\n　　注：本文系新闻报道，不构成投资建议，股市有风险，投资需谨慎。",
+          "type": "行业",
+          "sentiment": 1,
+          "weight": 1,
+          "final_weight": 0.51,
+          "source_authority": 3,
+          "recency_factor": 0.85,
+          "source": "东方财富资讯",
+          "llm_reviewed": true,
+          "llm_confidence": 0.2,
+          "llm_is_real_catalyst": false,
+          "llm_reasoning": "成交额数据，非实质催化"
+        }
+      ]
+    },
+    "SZSE:002536": {
+      "name": "飞龙股份",
+      "score": 70,
+      "score_raw": 7.04,
+      "score_components": {
+        "positive_weight_sum": 8.05,
+        "negative_weight_sum": 1.01,
+        "news_effective_count": 21,
+        "news_dropped_count": 0
+      },
+      "signal": "🟢 Long (中)",
+      "strategy": "情绪偏多，适合低吸或轻仓参与",
+      "suitable_for": "低吸 / 轻仓追",
+      "confidence": "中",
+      "patterns": [
+        "情绪持续增强↑(trend)"
+      ],
+      "positive_factors": [
+        "[并购|w4.54] 飞龙股份:关于境外全资子公司及孙公司增加注册资本并完成工商变更的公告",
+        "[行业|w0.51] 飞龙股份7月16日快速反弹",
+        "[行业|w0.5] 飞龙股份7月14日打开涨停"
+      ],
+      "negative_factors": [
+        "[行业|w0.51] 飞龙股份7月16日盘中跌幅达5%",
+        "[行业|w0.5] 飞龙股份：融资净偿还1.78亿元，融资余额15.76亿元"
+      ],
+      "news_count": 21,
+      "news_dropped": 0,
+      "performance": {
+        "list_fetch_ms": 2564,
+        "candidate_filter_ms": 0,
+        "enrichment_ms": 21469,
+        "raw_news_count": 40,
+        "raw_research_count": 10,
+        "candidate_news_count": 21,
+        "candidate_research_count": 0,
+        "enriched_news_count": 20,
+        "enriched_research_count": 0,
+        "candidate_reasons": {
+          "news": {
+            "noise:\\d{1,2}月\\d{1,2}日(快速上涨|快速回调|涨停|": 5,
+            "noise:融资净(买入|卖出)": 1,
+            "noise:开盘价|收盘价": 1,
+            "no-subject-mention": 2,
+            "dedup": 0,
+            "out_of_window": 10
+          },
+          "research": {
+            "dedup": 0,
+            "out_of_window": 10
+          }
+        },
+        "date_filter_ms": 0,
+        "relevance_ms": 0,
+        "llm_ms": 5042,
+        "scoring_ms": 0
+      },
+      "top_news": [
+        {
+          "date": "2026-07-17 09:01:04",
+          "title": "飞龙股份：融资净偿还7810.83万元，融资余额14.98亿元",
+          "content": "全新妙想投研助理，立即体验\n\n交易所最新数据显示，飞龙股份于2026年7月16日获融资买入2.07亿元，融资偿还2.85亿元，当日融资净偿还7810.83万元。目前，该股融资余额14.98亿，占流通市值比例为5.03%。\n\n该股当日融券卖出4500股，融券偿还1600股，融券净卖出2900股。目前，该股融券余量17.19万股，融券余额939.95万元。\n\n免责声明：本文基于AI生产，仅供参考，不构成任何投资建议，据此操作风险自担。东方财富发布此内容旨在传播更多信息，与本平台立场无关。东方财富力求但不保证数据的完全准确，如有错漏请以中国证监会指定上市公司信息披露媒体为准，东方财富不对因该资料全部或部分内容而引致的盈亏承担任何责任。用户个人对服务的使用承担风险，东方财富对此不作任何类型的担保。",
+          "type": "行业",
+          "sentiment": 0,
+          "weight": 1,
+          "final_weight": 0.6,
+          "source_authority": 3,
+          "recency_factor": 1,
+          "source": "东方财富资讯",
+          "llm_reviewed": true,
+          "llm_confidence": 0.3,
+          "llm_is_real_catalyst": false,
+          "llm_reasoning": "融资数据，无实质催化"
+        },
+        {
+          "date": "2026-07-16 09:49:11",
+          "title": "飞龙股份7月16日快速反弹",
+          "content": "以下是飞龙股份在北京时间7月16日09:37分盘口异动快照：\n\n　　专业金融数据，下一代智能终端\n\n分笔\n\n09:37:06 54.20 30↑\n09:37:03 54.00 205↑\n09:37:00 53.82 125↑\n09:36:57 53.66 115↑\n09:36:54 53.41 505↑\n \n09:36:51 53.31 115↑\n09:36:48 53.24 62↑\n09:36:45 53.20 1362↑\n09:36:42 53.00 113↑\n09:36:39 52.96 283↑\n \n报价\n\n卖五 \n\n54.27\n\n 10\n卖四 \n\n54.23\n\n 5\n卖三 \n\n54.21\n\n 4\n卖二 \n\n54.2\n\n 7\n卖一 \n\n54.19\n\n 1\n\n买一 \n\n54.18\n\n 1\n买二 \n\n54.16\n\n 10\n买三 \n\n54.03\n\n 13\n买四 \n\n54.02\n\n 9\n买五 \n\n54.01\n\n 7\n\n最新：54.2\n涨幅：-3.04%\n涨跌：-1.7\n换手率：1.59%\n成交量：8.64万手\n成交额：4.62亿元\n主力净流入：\n-931.06万元\n\n  7月16日，飞龙股份盘中快速反弹，5分钟内涨幅超过2%，截至9点37分，报54.2元，成交4.62亿元，换手率1.59%。\n注：以上信息仅供参考，不对您构成任何投资建议。",
+          "type": "行业",
+          "sentiment": 1,
+          "weight": 1,
+          "final_weight": 0.51,
+          "source_authority": 3,
+          "recency_factor": 0.85,
+          "source": "东方财富资讯",
+          "llm_reviewed": true,
+          "llm_confidence": 0.2,
+          "llm_is_real_catalyst": false,
+          "llm_reasoning": "盘中反弹，无实质信息"
+        },
+        {
+          "date": "2026-07-16 09:37:35",
+          "title": "飞龙股份7月16日盘中跌幅达5%",
+          "content": "以下是飞龙股份在北京时间7月16日09:32分盘口异动快照：\n\n　　在东方财富看资讯行情，选东方财富证券一站式开户交易>>\n\n分笔\n\n09:32:39 53.01 487↓\n09:32:36 53.20 275↓\n09:32:33 53.33 400↓\n09:32:30 53.41 474↓\n09:32:27 53.48 621↓\n \n09:32:24 53.47 528↑\n09:32:21 53.45 493↓\n09:32:18 53.51 536↓\n09:32:15 53.52 193↓\n09:32:12 53.63 277↓\n \n报价\n\n卖五 \n\n53.16\n\n 2\n卖四 \n\n53.12\n\n 69\n卖三 \n\n53.08\n\n 53\n卖二 \n\n53.02\n\n 26\n卖一 \n\n53.01\n\n 6\n\n买一 \n\n53\n\n 757\n买二 \n\n52.97\n\n 1\n买三 \n\n52.95\n\n 9\n买四 \n\n52.94\n\n 9\n买五 \n\n52.93\n\n 2\n\n最新：53.01\n涨幅：-5.17%\n涨跌：-2.89\n换手率：0.90%\n成交量：4.88万手\n成交额：2.64亿元\n主力净流入：\n-770.94万元\n\n  7月16日，飞龙股份盘中跌幅达5%，截至9点32分，报53.01元，成交2.64亿元，换手率0.90%。\n注：以上信息仅供参考，不对您构成任何投资建议。",
+          "type": "行业",
+          "sentiment": -1,
+          "weight": 1,
+          "final_weight": 0.51,
+          "source_authority": 3,
+          "recency_factor": 0.85,
+          "source": "东方财富资讯",
+          "llm_reviewed": true,
+          "llm_confidence": 0.2,
+          "llm_is_real_catalyst": false,
+          "llm_reasoning": "盘中跌幅，无实质信息"
+        },
+        {
+          "date": "2026-07-15 09:10:38",
+          "title": "飞龙股份：融资净偿还395.86万元，融资余额15.72亿元",
+          "content": "专业金融数据，下一代智能终端\n\n交易所最新数据显示，飞龙股份于2026年7月14日获融资买入1.99亿元，融资偿还2.03亿元，当日融资净偿还395.86万元。目前，该股融资余额15.72亿，占流通市值比例为5.34%。\n\n该股当日融券卖出3300股，融券偿还1900股，融券净卖出1400股。目前，该股融券余量16.4万股，融券余额886.75万元。\n\n免责声明：本文基于AI生产，仅供参考，不构成任何投资建议，据此操作风险自担。东方财富发布此内容旨在传播更多信息，与本平台立场无关。东方财富力求但不保证数据的完全准确，如有错漏请以中国证监会指定上市公司信息披露媒体为准，东方财富不对因该资料全部或部分内容而引致的盈亏承担任何责任。用户个人对服务的使用承担风险，东方财富对此不作任何类型的担保。",
+          "type": "行业",
+          "sentiment": 0,
+          "weight": 1,
+          "final_weight": 0.5,
+          "source_authority": 3,
+          "recency_factor": 0.72,
+          "source": "东方财富资讯",
+          "llm_reviewed": true,
+          "llm_confidence": 0.3,
+          "llm_is_real_catalyst": false,
+          "llm_reasoning": "融资数据，无实质催化"
+        },
+        {
+          "date": "2026-07-15",
+          "title": "飞龙股份:关于境外全资子公司及孙公司增加注册资本并完成工商变更的公告",
+          "content": "一般项目:汽车零部件研发;汽车零部件及配件制造;摩托车零部件研发;摩托车零配件制造;模具制造;通信设备制造;技术服务、技术开发、技术咨询、技术交流、技术转让、技术推广(除依法须经批准的项目外,凭营业执照依法自主开展经营活动)。\n郑重声明：东方财富网发布此信息的目的在于传播更多信息，与本站立场无关。东方财富网不保证该信息（包括但不限于文字、视频、音频、数据及图表）全部或者部分内容的准确性、真实性、完整性、有效性、及时性、原创性等。相关信息并未经过本网站证实，不对您构成任何投资建议，据此操作，风险自担。",
+          "type": "并购",
+          "sentiment": 1,
+          "weight": 5,
+          "final_weight": 4.54,
+          "source_authority": 4.5,
+          "recency_factor": 0.72,
+          "source": "东方财富公告",
+          "llm_reviewed": true,
+          "llm_confidence": 0.7,
+          "llm_is_real_catalyst": true,
+          "llm_reasoning": "境外子公司增资完成工商变更"
+        }
+      ]
+    },
+    "SZSE:301345": {
+      "name": "301345",
+      "score": 69,
+      "score_raw": 4.54,
+      "score_components": {
+        "positive_weight_sum": 4.54,
+        "negative_weight_sum": 0,
+        "news_effective_count": 1,
+        "news_dropped_count": 0
+      },
+      "signal": "🟢 Long (中)",
+      "strategy": "情绪偏多，适合低吸或轻仓参与",
+      "suitable_for": "低吸 / 轻仓追",
+      "confidence": "中",
+      "patterns": [
+        "情绪持续增强↑(trend)"
+      ],
+      "positive_factors": [
+        "[并购|w4.54] 涛涛车业:关于发行境外上市股份(H股)获得中国证监会备案的公告"
+      ],
+      "negative_factors": [],
+      "news_count": 1,
+      "news_dropped": 0,
+      "performance": {
+        "list_fetch_ms": 4701,
+        "candidate_filter_ms": 0,
+        "enrichment_ms": 16905,
+        "raw_news_count": 40,
+        "raw_research_count": 10,
+        "candidate_news_count": 1,
+        "candidate_research_count": 0,
+        "enriched_news_count": 1,
+        "enriched_research_count": 0,
+        "candidate_reasons": {
+          "news": {
+            "no-subject-mention": 10,
+            "noise:融资净(买入|卖出)": 2,
+            "noise:\\d{1,2}月\\d{1,2}日(快速上涨|快速回调|涨停|": 2,
+            "dedup": 0,
+            "out_of_window": 25
+          },
+          "research": {
+            "dedup": 0,
+            "out_of_window": 10
+          }
+        },
+        "date_filter_ms": 0,
+        "relevance_ms": 0,
+        "llm_ms": 8,
+        "scoring_ms": 0
+      },
+      "top_news": [
+        {
+          "date": "2026-07-15",
+          "title": "涛涛车业:关于发行境外上市股份(H股)获得中国证监会备案的公告",
+          "content": "一般项目:非公路休闲车及零配件制造;非公路休闲车及零配件销售;助动车制造;电动自行车销售;电池制造;电池销售;电机制造;塑料制品制造;塑料制品销售;合成纤维制造;合成纤维销售;摩托车零配件制造;摩托车及零部件研发;摩托车及零配件批发;智能车载设备制造;智能车载设备销售;技术服务、技术开发、技术咨询、技术交流、技术转让、技术推广;技术进出口;货物进出口(除依法须经批准的项目外,凭营业执照依法自主开展经营活动)。许可项目:道路机动车辆生产(依法须经批准的项目,经相关部门批准后方可开展经营活动,具体经营项目以审批结果为准)。\n郑重声明：东方财富网发布此信息的目的在于传播更多信息，与本站立场无关。东方财富网不保证该信息（包括但不限于文字、视频、音频、数据及图表）全部或者部分内容的准确性、真实性、完整性、有效性、及时性、原创性等。相关信息并未经过本网站证实，不对您构成任何投资建议，据此操作，风险自担。",
+          "type": "并购",
+          "sentiment": 1,
+          "weight": 5,
+          "final_weight": 4.54,
+          "source_authority": 4.5,
+          "recency_factor": 0.72,
+          "source": "东方财富公告",
+          "llm_reviewed": true,
+          "llm_confidence": 0.9,
+          "llm_is_real_catalyst": true,
+          "llm_reasoning": "H股发行获证监会备案，属重大资本运作"
+        }
+      ]
+    },
+    "SZSE:301165": {
+      "name": "锐捷网络",
+      "score": 63,
+      "score_raw": 3.3,
+      "score_components": {
+        "positive_weight_sum": 6.6,
+        "negative_weight_sum": 3.3,
+        "news_effective_count": 13,
+        "news_dropped_count": 0
+      },
+      "signal": "🟢 Long (中)",
+      "strategy": "情绪偏多，适合低吸或轻仓参与",
+      "suitable_for": "低吸 / 轻仓追",
+      "confidence": "中",
+      "patterns": [],
+      "positive_factors": [
+        "[财报|w3.74] 业绩高增，智算交换机增量明确",
+        "[并购|w0.84] 锐捷网络：公司与联想集团的战略合作将整合双方的技术优势、市场资源和创新能力，促进双方释放智能化新动能",
+        "[行业|w0.51] 锐捷网络7月16日盘中涨幅达5%"
+      ],
+      "negative_factors": [
+        "[分析师动作|w1.8] 高盛下调锐捷网络股份有限公司评级",
+        "[行业|w0.5] 锐捷网络7月14日快速反弹",
+        "[行业|w0.5] 锐捷网络7月14日盘中跌幅达5%"
+      ],
+      "news_count": 13,
+      "news_dropped": 0,
+      "performance": {
+        "list_fetch_ms": 2273,
+        "candidate_filter_ms": 0,
+        "enrichment_ms": 19721,
+        "raw_news_count": 40,
+        "raw_research_count": 10,
+        "candidate_news_count": 12,
+        "candidate_research_count": 1,
+        "enriched_news_count": 12,
+        "enriched_research_count": 1,
+        "candidate_reasons": {
+          "news": {
+            "no-subject-mention": 3,
+            "noise:\\d{1,2}月\\d{1,2}日(快速上涨|快速回调|涨停|": 4,
+            "noise:融资净(买入|卖出)": 1,
+            "dedup": 0,
+            "out_of_window": 20
+          },
+          "research": {
+            "dedup": 0,
+            "out_of_window": 9
+          }
+        },
+        "date_filter_ms": 0,
+        "relevance_ms": 0,
+        "llm_ms": 3433,
+        "scoring_ms": 0
+      },
+      "top_news": [
+        {
+          "date": "2026-07-16 10:23:25",
+          "title": "锐捷网络7月16日盘中涨幅达5%",
+          "content": "",
+          "type": "行业",
+          "sentiment": 1,
+          "weight": 1,
+          "final_weight": 0.51,
+          "source_authority": 3,
+          "recency_factor": 0.85,
+          "source": "东方财富资讯",
+          "llm_reviewed": true,
+          "llm_confidence": 0.3,
+          "llm_is_real_catalyst": false,
+          "llm_reasoning": "仅描述股价涨幅，无实质催化"
+        },
+        {
+          "date": "2026-07-16 09:50:19",
+          "title": "锐捷网络7月16日快速反弹",
+          "content": "以下是锐捷网络在北京时间7月16日09:37分盘口异动快照：\n\n　　在东方财富看资讯行情，选东方财富证券一站式开户交易>>\n\n \n\n  7月16日，锐捷网络盘中快速反弹，5分钟内涨幅超过2%，截至9点37分，报101.25元，成交3.39亿元，换手率0.31%。\n注：以上信息仅供参考，不对您构成任何投资建议。",
+          "type": "行业",
+          "sentiment": 1,
+          "weight": 1,
+          "final_weight": 0.51,
+          "source_authority": 3,
+          "recency_factor": 0.85,
+          "source": "东方财富资讯",
+          "llm_reviewed": true,
+          "llm_confidence": 0.3,
+          "llm_is_real_catalyst": false,
+          "llm_reasoning": "盘口异动快照，无基本面信息"
+        },
+        {
+          "date": "2026-07-15 13:29:27",
+          "title": "锐捷网络7月15日盘中涨幅达5%",
+          "content": "以下是锐捷网络在北京时间7月15日13:29分盘口异动快照：\n\n　　炒股第一步，先开个股票账户\n\n分笔\n\n13:29:18 103.79 336↑\n13:29:15 103.68 302↑\n13:29:12 103.68 561↑\n13:29:09 103.29 1056↑\n13:29:06 102.92 297↑\n \n13:29:03 102.85 39↑\n13:29:00 102.84 370↑\n13:28:57 102.70 66↑\n13:28:54 102.67 140↑\n13:28:51 102.62 65↑\n \n报价\n\n卖五 \n\n103.86\n\n 6\n卖四 \n\n103.85\n\n 5\n卖三 \n\n103.81\n\n 4\n卖二 \n\n103.8\n\n 19\n卖一 \n\n103.79\n\n 15\n\n买一 \n\n103.68\n\n 0\n买二 \n\n103.67\n\n 6\n买三 \n\n103.47\n\n 3\n买四 \n\n103.46\n\n 6\n买五 \n\n103.45\n\n 6\n\n最新：103.79\n涨幅：5.03%\n涨跌：4.97\n换手率：1.95%\n成交量：21.69万手\n成交额：21.71亿元\n主力净流入：\n-6605.17万元\n\n  7月15日，锐捷网络盘中涨幅达5%，截至13点29分，报103.79元，成交21.71亿元，换手率1.95%。\n注：以上信息仅供参考，不对您构成任何投资建议。",
+          "type": "行业",
+          "sentiment": 1,
+          "weight": 1,
+          "final_weight": 0.5,
+          "source_authority": 3,
+          "recency_factor": 0.72,
+          "source": "东方财富资讯",
+          "llm_reviewed": true,
+          "llm_confidence": 0.3,
+          "llm_is_real_catalyst": false,
+          "llm_reasoning": "仅描述股价涨幅，无实质催化"
+        },
+        {
+          "date": "2026-07-15 09:22:34",
+          "title": "锐捷网络：融资净偿还4704.7万元，融资余额5.84亿元",
+          "content": "炒股第一步，先开个股票账户\n\n交易所最新数据显示，锐捷网络于2026年7月14日获融资买入2.51亿元，融资偿还2.98亿元，当日融资净偿还4704.7万元。目前，该股融资余额5.84亿，占流通市值比例为0.53%。\n\n该股当日融券卖出500股，融券偿还4800股，融券净偿还4300股。目前，该股融券余量3.58万股，融券余额353.58万元。\n\n免责声明：本文基于AI生产，仅供参考，不构成任何投资建议，据此操作风险自担。东方财富发布此内容旨在传播更多信息，与本平台立场无关。东方财富力求但不保证数据的完全准确，如有错漏请以中国证监会指定上市公司信息披露媒体为准，东方财富不对因该资料全部或部分内容而引致的盈亏承担任何责任。用户个人对服务的使用承担风险，东方财富对此不作任何类型的担保。",
+          "type": "行业",
+          "sentiment": 0,
+          "weight": 1,
+          "final_weight": 0.5,
+          "source_authority": 3,
+          "recency_factor": 0.72,
+          "source": "东方财富资讯",
+          "llm_reviewed": true,
+          "llm_confidence": 0.4,
+          "llm_is_real_catalyst": false,
+          "llm_reasoning": "融资净偿还，但属常规交易数据"
+        },
+        {
+          "date": "2026-07-14 13:02:20",
+          "title": "锐捷网络7月14日快速反弹",
+          "content": "以下是锐捷网络在北京时间7月14日13:02分盘口异动快照：\n\n　　专业金融数据，下一代智能终端\n\n分笔\n\n13:02:03 95.11 36↑\n13:02:00 95.09 65↓\n13:01:57 95.10 48↑\n13:01:54 95.10 131↑\n13:01:51 95.06 11↑\n \n13:01:48 95.02 111↑\n13:01:45 94.94 45↑\n13:01:42 94.93 36↑\n13:01:39 94.70 65↓\n13:01:36 95.02 21↑\n \n报价\n\n卖五 \n\n95.53\n\n 1\n卖四 \n\n95.44\n\n 2\n卖三 \n\n95.25\n\n 2\n卖二 \n\n95.12\n\n 21\n卖一 \n\n95.11\n\n 2\n\n买一 \n\n95.1\n\n 25\n买二 \n\n95.09\n\n 4\n买三 \n\n95.04\n\n 4\n买四 \n\n94.99\n\n 20\n买五 \n\n94.78\n\n 26\n\n最新：95.11\n涨幅：-9.32%\n涨跌：-9.77\n换手率：2.68%\n成交量：29.80万手\n成交额：29.14亿元\n主力净流入：\n-2.19亿元\n\n  7月14日，锐捷网络盘中快速反弹，5分钟内涨幅超过2%，截至13点02分，报95.11元，成交29.14亿元，换手率2.68%。\n注：以上信息仅供参考，不对您构成任何投资建议。",
+          "type": "行业",
+          "sentiment": -1,
+          "weight": 1,
+          "final_weight": 0.5,
+          "source_authority": 3,
+          "recency_factor": 0.6,
+          "source": "东方财富资讯",
+          "llm_reviewed": true,
+          "llm_confidence": 0.3,
+          "llm_is_real_catalyst": false,
+          "llm_reasoning": "盘中快速反弹，但无基本面支撑"
+        }
+      ]
+    },
+    "SZSE:300684": {
+      "name": "中石科技",
+      "score": 52,
+      "score_raw": 0.51,
+      "score_components": {
+        "positive_weight_sum": 2.01,
+        "negative_weight_sum": 1.5,
+        "news_effective_count": 8,
+        "news_dropped_count": 0
+      },
+      "signal": "⚪ No Trade (微多)",
+      "strategy": "情绪轻微偏多，信号不足，以观望为主",
+      "suitable_for": "观望",
+      "confidence": "低",
+      "patterns": [],
+      "positive_factors": [
+        "[行业|w0.51] 中石科技7月16日盘中涨幅达5%",
+        "[行业|w0.5] 中石科技7月15日快速反弹",
+        "[行业|w0.5] 中石科技7月14日盘中涨幅达5%"
+      ],
+      "negative_factors": [
+        "[行业|w0.5] 中石科技7月14日盘中跌幅达5%",
+        "[行业|w0.5] 中石科技7月14日加速下跌",
+        "[行业|w0.5] 中石科技7月13日盘中跌幅达5%"
+      ],
+      "news_count": 8,
+      "news_dropped": 0,
+      "performance": {
+        "list_fetch_ms": 2063,
+        "candidate_filter_ms": 2,
+        "enrichment_ms": 4501,
+        "raw_news_count": 40,
+        "raw_research_count": 10,
+        "candidate_news_count": 8,
+        "candidate_research_count": 0,
+        "enriched_news_count": 8,
+        "enriched_research_count": 0,
+        "candidate_reasons": {
+          "news": {
+            "no-subject-mention": 4,
+            "noise:\\d{1,2}月\\d{1,2}日(快速上涨|快速回调|涨停|": 6,
+            "noise:融资净(买入|卖出)": 2,
+            "dedup": 0,
+            "out_of_window": 20
+          },
+          "research": {
+            "dedup": 0,
+            "out_of_window": 10
+          }
+        },
+        "date_filter_ms": 0,
+        "relevance_ms": 0,
+        "llm_ms": 4329,
+        "scoring_ms": 1
+      },
+      "top_news": [
+        {
+          "date": "2026-07-16 15:37:34",
+          "title": "中石科技7月16日快速反弹",
+          "content": "",
+          "type": "行业",
+          "sentiment": 0,
+          "weight": 1,
+          "final_weight": 0.51,
+          "source_authority": 3,
+          "recency_factor": 0.85,
+          "source": "东方财富资讯",
+          "llm_reviewed": true,
+          "llm_confidence": 0.1,
+          "llm_is_real_catalyst": false,
+          "llm_reasoning": "仅描述股价快速反弹，无实质信息"
+        },
+        {
+          "date": "2026-07-16 10:02:42",
+          "title": "中石科技7月16日盘中涨幅达5%",
+          "content": "",
+          "type": "行业",
+          "sentiment": 1,
+          "weight": 1,
+          "final_weight": 0.51,
+          "source_authority": 3,
+          "recency_factor": 0.85,
+          "source": "东方财富资讯",
+          "llm_reviewed": true,
+          "llm_confidence": 0.1,
+          "llm_is_real_catalyst": false,
+          "llm_reasoning": "仅描述盘中涨幅达5%，无实质催化"
+        },
+        {
+          "date": "2026-07-15 10:06:15",
+          "title": "中石科技7月15日快速反弹",
+          "content": "以下是中石科技在北京时间7月15日09:43分盘口异动快照：\n\n　　在东方财富看资讯行情，选东方财富证券一站式开户交易>>\n\n分笔\n\n09:43:00 67.35 26↑\n09:42:57 67.26 54↑\n09:42:54 67.20 77↑\n09:42:51 67.07 99↑\n09:42:48 67.06 158↑\n \n09:42:45 66.93 103↑\n09:42:42 66.84 31↑\n09:42:39 66.81 10↓\n09:42:36 66.81 335↑\n09:42:33 66.76 130↓\n \n报价\n\n卖五 \n\n67.6\n\n 12\n卖四 \n\n67.5\n\n 181\n卖三 \n\n67.38\n\n 1\n卖二 \n\n67.37\n\n 7\n卖一 \n\n67.36\n\n 6\n\n买一 \n\n67.22\n\n 2\n买二 \n\n67.21\n\n 2\n买三 \n\n67.2\n\n 11\n买四 \n\n67.16\n\n 100\n买五 \n\n67.15\n\n 11\n\n最新：67.35\n涨幅：0.31%\n涨跌：0.21\n换手率：2.21%\n成交量：4.52万手\n成交额：3.03亿元\n主力净流入：\n2263.55万元\n\n  7月15日，中石科技盘中快速反弹，5分钟内涨幅超过2%，截至9点43分，报67.35元，成交3.03亿元，换手率2.21%。\n注：以上信息仅供参考，不对您构成任何投资建议。",
+          "type": "行业",
+          "sentiment": 1,
+          "weight": 1,
+          "final_weight": 0.5,
+          "source_authority": 3,
+          "recency_factor": 0.72,
+          "source": "东方财富资讯",
+          "llm_reviewed": true,
+          "llm_confidence": 0.2,
+          "llm_is_real_catalyst": false,
+          "llm_reasoning": "盘口异动快照，描述股价反弹，无基本面变化"
+        },
+        {
+          "date": "2026-07-14 13:31:54",
+          "title": "中石科技7月14日盘中涨幅达5%",
+          "content": "以下是中石科技在北京时间7月14日13:31分盘口异动快照：\n\n　　专业金融数据，下一代智能终端\n\n分笔\n\n13:31:30 66.66 1774↑\n13:31:27 66.33 32↓\n13:31:24 66.33 10↓\n13:31:21 66.33 26↓\n13:31:18 66.33 53↑\n \n13:31:15 66.32 37↓\n13:31:12 66.32 36↑\n13:31:09 66.32 5↓\n13:31:06 66.32 19↓\n13:31:03 66.33 63↑\n \n报价\n\n卖五 \n\n66.7\n\n 1\n卖四 \n\n66.69\n\n 1\n卖三 \n\n66.68\n\n 23\n卖二 \n\n66.67\n\n 5\n卖一 \n\n66.66\n\n 125\n\n买一 \n\n66.62\n\n 12\n买二 \n\n66.61\n\n 38\n买三 \n\n66.58\n\n 92\n买四 \n\n66.57\n\n 1\n买五 \n\n66.56\n\n 5\n\n最新：66.66\n涨幅：5.44%\n涨跌：3.44\n换手率：9.41%\n成交量：19.22万手\n成交额：12.08亿元\n主力净流入：\n-3796.04万元\n\n  7月14日，中石科技盘中涨幅达5%，截至13点31分，报66.66元，成交12.08亿元，换手率9.41%。\n注：以上信息仅供参考，不对您构成任何投资建议。",
+          "type": "行业",
+          "sentiment": 1,
+          "weight": 1,
+          "final_weight": 0.5,
+          "source_authority": 3,
+          "recency_factor": 0.6,
+          "source": "东方财富资讯",
+          "llm_reviewed": true,
+          "llm_confidence": 0.2,
+          "llm_is_real_catalyst": false,
+          "llm_reasoning": "盘中涨幅达5%，但主力净流出，无实质利好"
+        },
+        {
+          "date": "2026-07-14 10:56:58",
+          "title": "中石科技7月14日盘中跌幅达5%",
+          "content": "以下是中石科技在北京时间7月14日10:56分盘口异动快照：\n\n　　专业金融数据，下一代智能终端\n\n分笔\n\n10:56:54 60.04 134↓\n10:56:51 60.15 146↓\n10:56:48 60.20 102↑\n10:56:45 60.16 63↓\n10:56:42 60.20 10↓\n \n10:56:39 60.26 24↑\n10:56:36 60.18 132↓\n10:56:33 60.22 22↓\n10:56:30 60.24 74↓\n10:56:27 60.26 30↑\n \n报价\n\n卖五 \n\n60.25\n\n 13\n卖四 \n\n60.24\n\n 3\n卖三 \n\n60.23\n\n 6\n卖二 \n\n60.22\n\n 10\n卖一 \n\n60.2\n\n 5\n\n买一 \n\n60.16\n\n 3\n买二 \n\n60.1\n\n 3\n买三 \n\n60.04\n\n 25\n买四 \n\n60.03\n\n 18\n买五 \n\n60.02\n\n 14\n\n最新：60.04\n涨幅：-5.03%\n涨跌：-3.18\n换手率：5.53%\n成交量：11.31万手\n成交额：7.15亿元\n主力净流入：\n-3804.71万元\n\n  7月14日，中石科技盘中跌幅达5%，截至10点56分，报60.04元，成交7.15亿元，换手率5.53%。\n注：以上信息仅供参考，不对您构成任何投资建议。",
+          "type": "行业",
+          "sentiment": -1,
+          "weight": 1,
+          "final_weight": 0.5,
+          "source_authority": 3,
+          "recency_factor": 0.6,
+          "source": "东方财富资讯",
+          "llm_reviewed": true,
+          "llm_confidence": 0.2,
+          "llm_is_real_catalyst": false,
+          "llm_reasoning": "盘中跌幅达5%，主力净流出，无实质利空"
+        }
+      ]
+    },
+    "SSE:603259": {
+      "name": "药明康德",
+      "score": 50,
+      "score_raw": 0,
+      "score_components": {
+        "positive_weight_sum": 0,
+        "negative_weight_sum": 0
+      },
+      "signal": "⚪ No Trade (无数据)",
+      "strategy": "近期无相关有效新闻",
+      "suitable_for": "观望",
+      "confidence": "-",
+      "patterns": [],
+      "positive_factors": [],
+      "negative_factors": [],
+      "news_count": 0,
+      "news_dropped": 0,
+      "performance": {
+        "list_fetch_ms": 2058,
+        "candidate_filter_ms": 0,
+        "enrichment_ms": 0,
+        "raw_news_count": 40,
+        "raw_research_count": 10,
+        "candidate_news_count": 0,
+        "candidate_research_count": 0,
+        "enriched_news_count": 0,
+        "enriched_research_count": 0,
+        "candidate_reasons": {
+          "news": {
+            "noise:融资净(买入|卖出)": 5,
+            "no-subject-mention": 14,
+            "noise:龙虎榜|大宗交易|盘口异动": 1,
+            "dedup": 0,
+            "out_of_window": 20
+          },
+          "research": {
+            "dedup": 0,
+            "out_of_window": 10
+          }
+        },
+        "date_filter_ms": 0,
+        "relevance_ms": 0,
+        "llm_ms": 0,
+        "scoring_ms": 0
+      },
+      "top_news": []
+    },
+    "SSE:601168": {
+      "name": "601168",
+      "score": 50,
+      "score_raw": 0,
+      "score_components": {
+        "positive_weight_sum": 0,
+        "negative_weight_sum": 0,
+        "news_effective_count": 3,
+        "news_dropped_count": 0
+      },
+      "signal": "⚪ No Trade (微多)",
+      "strategy": "情绪轻微偏多，信号不足，以观望为主",
+      "suitable_for": "观望",
+      "confidence": "低",
+      "patterns": [],
+      "positive_factors": [],
+      "negative_factors": [],
+      "news_count": 3,
+      "news_dropped": 0,
+      "performance": {
+        "list_fetch_ms": 3302,
+        "candidate_filter_ms": 0,
+        "enrichment_ms": 21302,
+        "raw_news_count": 40,
+        "raw_research_count": 10,
+        "candidate_news_count": 3,
+        "candidate_research_count": 0,
+        "enriched_news_count": 3,
+        "enriched_research_count": 0,
+        "candidate_reasons": {
+          "news": {
+            "noise:融资净(买入|卖出)": 1,
+            "no-subject-mention": 19,
+            "dedup": 0,
+            "out_of_window": 17
+          },
+          "research": {
+            "dedup": 0,
+            "out_of_window": 10
+          }
+        },
+        "date_filter_ms": 0,
+        "relevance_ms": 0,
+        "llm_ms": 1644,
+        "scoring_ms": 0
+      },
+      "top_news": [
+        {
+          "date": "2026-07-17",
+          "title": "西部矿业:青海树人律师事务所关于西部矿业股份有限公司2026年第二次临时股东会之法律意见书",
+          "content": "",
+          "type": "政策",
+          "sentiment": 0,
+          "weight": 1,
+          "final_weight": 1.08,
+          "source_authority": 4.5,
+          "recency_factor": 1,
+          "source": "东方财富公告",
+          "llm_reviewed": true,
+          "llm_confidence": 0.3,
+          "llm_is_real_catalyst": false,
+          "llm_reasoning": "法律意见书为程序性文件，无实质影响"
+        },
+        {
+          "date": "2026-07-17",
+          "title": "西部矿业:西部矿业2026年第二次临时股东会决议公告",
+          "content": "",
+          "type": "政策",
+          "sentiment": 0,
+          "weight": 1,
+          "final_weight": 1.08,
+          "source_authority": 4.5,
+          "recency_factor": 1,
+          "source": "东方财富公告",
+          "llm_reviewed": true,
+          "llm_confidence": 0.3,
+          "llm_is_real_catalyst": false,
+          "llm_reasoning": "股东会决议公告为常规程序，无实质催化"
+        },
+        {
+          "date": "2026-07-13",
+          "title": "西部矿业:2026.07.10长江证券、天弘基金、东吴基金等研记录表",
+          "content": "",
+          "type": "分析师动作",
+          "sentiment": 0,
+          "weight": 1,
+          "final_weight": 1.08,
+          "source_authority": 4.5,
+          "recency_factor": 0.5,
+          "source": "东方财富公告",
+          "llm_reviewed": true,
+          "llm_confidence": 0.5,
+          "llm_is_real_catalyst": false,
+          "llm_reasoning": "仅记录调研活动，未披露具体评级或目标价"
+        }
+      ]
+    },
+    "SSE:603129": {
+      "name": "603129",
+      "score": 50,
+      "score_raw": 0,
+      "score_components": {
+        "positive_weight_sum": 0,
+        "negative_weight_sum": 0,
+        "news_effective_count": 4,
+        "news_dropped_count": 0
+      },
+      "signal": "⚪ No Trade (微多)",
+      "strategy": "情绪轻微偏多，信号不足，以观望为主",
+      "suitable_for": "观望",
+      "confidence": "低",
+      "patterns": [],
+      "positive_factors": [],
+      "negative_factors": [],
+      "news_count": 4,
+      "news_dropped": 0,
+      "performance": {
+        "list_fetch_ms": 3920,
+        "candidate_filter_ms": 0,
+        "enrichment_ms": 9741,
+        "raw_news_count": 40,
+        "raw_research_count": 10,
+        "candidate_news_count": 4,
+        "candidate_research_count": 0,
+        "enriched_news_count": 4,
+        "enriched_research_count": 0,
+        "candidate_reasons": {
+          "news": {
+            "no-subject-mention": 12,
+            "noise:\\d{1,2}月\\d{1,2}日(快速上涨|快速回调|涨停|": 2,
+            "dedup": 0,
+            "out_of_window": 22
+          },
+          "research": {
+            "dedup": 0,
+            "out_of_window": 10
+          }
+        },
+        "date_filter_ms": 0,
+        "relevance_ms": 0,
+        "llm_ms": 4214,
+        "scoring_ms": 0
+      },
+      "top_news": [
+        {
+          "date": "2026-07-15",
+          "title": "春风动力:立信会计师事务所(特殊普通合伙)关于浙江春风动力股份有限公司募集资金置换专项鉴证报告",
+          "content": "一般项目:摩托车零配件制造;摩托车及零配件零售;摩托车及零配件批发;摩托车及零部件研发;非公路休闲车及零配件制造;非公路休闲车及零配件销售;汽车零部件及配件制造;汽车零配件批发;汽车零配件零售;娱乐船和运动船销售;助动车制造;助动自行车、代步车及零配件销售;电动自行车销售;日用百货销售;金属材料销售;电子专用设备销售;电子产品销售;通讯设备销售;通讯设备修理;金属制品研发;金属制品销售;塑料制品销售;服饰研发;服装服饰批发;服装服饰零售;鞋帽批发;鞋帽零售;劳动保护用品销售;特种劳动防护用品销售;体育用品及器材批发;体育用品及器材零售;工艺美术品及礼仪用品销售(象牙及其制品除外);电池销售;润滑油销售;技术服务、技术开发、技术咨询、技术交流、技术转让、技术推广;普通货物仓储服务(不含危险化学品等需许可审批的项目);货物进出口。(除依法须经批准的项目外,凭营业执照依法自主开展经营活动)许可项目:道路机动车辆生产。(依法须经批准的项目,经相关部门批准后方可开展经营活动,具体经营项目以相关部门批准文件或许可证件为准)。(分支机构经营场所设在:杭州市临平区临平街道绿洲路16号)\n郑重声明：东方财富网发布此信息的目的在于传播更多信息，与本站立场无关。东方财富网不保证该信息（包括但不限于文字、视频、音频、数据及图表）全部或者部分内容的准确性、真实性、完整性、有效性、及时性、原创性等。相关信息并未经过本网站证实，不对您构成任何投资建议，据此操作，风险自担。",
+          "type": "财报",
+          "sentiment": 0,
+          "weight": 1,
+          "final_weight": 0.84,
+          "source_authority": 4.5,
+          "recency_factor": 0.72,
+          "source": "东方财富公告",
+          "llm_reviewed": true,
+          "llm_confidence": 0.3,
+          "llm_is_real_catalyst": false,
+          "llm_reasoning": "仅为募集资金置换鉴证报告，无业绩数据"
+        },
+        {
+          "date": "2026-07-15",
+          "title": "春风动力:春风动力关于使用募集资金置换预先投入募投项目及已支付发行费用的自筹资金的公告",
+          "content": "一般项目:摩托车零配件制造;摩托车及零配件零售;摩托车及零配件批发;摩托车及零部件研发;非公路休闲车及零配件制造;非公路休闲车及零配件销售;汽车零部件及配件制造;汽车零配件批发;汽车零配件零售;娱乐船和运动船销售;助动车制造;助动自行车、代步车及零配件销售;电动自行车销售;日用百货销售;金属材料销售;电子专用设备销售;电子产品销售;通讯设备销售;通讯设备修理;金属制品研发;金属制品销售;塑料制品销售;服饰研发;服装服饰批发;服装服饰零售;鞋帽批发;鞋帽零售;劳动保护用品销售;特种劳动防护用品销售;体育用品及器材批发;体育用品及器材零售;工艺美术品及礼仪用品销售(象牙及其制品除外);电池销售;润滑油销售;技术服务、技术开发、技术咨询、技术交流、技术转让、技术推广;普通货物仓储服务(不含危险化学品等需许可审批的项目);货物进出口。(除依法须经批准的项目外,凭营业执照依法自主开展经营活动)许可项目:道路机动车辆生产。(依法须经批准的项目,经相关部门批准后方可开展经营活动,具体经营项目以相关部门批准文件或许可证件为准)。(分支机构经营场所设在:杭州市临平区临平街道绿洲路16号)\n郑重声明：东方财富网发布此信息的目的在于传播更多信息，与本站立场无关。东方财富网不保证该信息（包括但不限于文字、视频、音频、数据及图表）全部或者部分内容的准确性、真实性、完整性、有效性、及时性、原创性等。相关信息并未经过本网站证实，不对您构成任何投资建议，据此操作，风险自担。",
+          "type": "财报",
+          "sentiment": 0,
+          "weight": 1,
+          "final_weight": 0.84,
+          "source_authority": 4.5,
+          "recency_factor": 0.72,
+          "source": "东方财富公告",
+          "llm_reviewed": true,
+          "llm_confidence": 0.3,
+          "llm_is_real_catalyst": false,
+          "llm_reasoning": "公告内容为资金置换，无实质业绩影响"
+        },
+        {
+          "date": "2026-07-15",
+          "title": "春风动力:华泰联合证券有限责任公司关于浙江春风动力股份有限公司使用募集资金置换预先投入募投项目及已支付发行费用的自筹资金的核查意见",
+          "content": "一般项目:摩托车零配件制造;摩托车及零配件零售;摩托车及零配件批发;摩托车及零部件研发;非公路休闲车及零配件制造;非公路休闲车及零配件销售;汽车零部件及配件制造;汽车零配件批发;汽车零配件零售;娱乐船和运动船销售;助动车制造;助动自行车、代步车及零配件销售;电动自行车销售;日用百货销售;金属材料销售;电子专用设备销售;电子产品销售;通讯设备销售;通讯设备修理;金属制品研发;金属制品销售;塑料制品销售;服饰研发;服装服饰批发;服装服饰零售;鞋帽批发;鞋帽零售;劳动保护用品销售;特种劳动防护用品销售;体育用品及器材批发;体育用品及器材零售;工艺美术品及礼仪用品销售(象牙及其制品除外);电池销售;润滑油销售;技术服务、技术开发、技术咨询、技术交流、技术转让、技术推广;普通货物仓储服务(不含危险化学品等需许可审批的项目);货物进出口。(除依法须经批准的项目外,凭营业执照依法自主开展经营活动)许可项目:道路机动车辆生产。(依法须经批准的项目,经相关部门批准后方可开展经营活动,具体经营项目以相关部门批准文件或许可证件为准)。(分支机构经营场所设在:杭州市临平区临平街道绿洲路16号)\n郑重声明：东方财富网发布此信息的目的在于传播更多信息，与本站立场无关。东方财富网不保证该信息（包括但不限于文字、视频、音频、数据及图表）全部或者部分内容的准确性、真实性、完整性、有效性、及时性、原创性等。相关信息并未经过本网站证实，不对您构成任何投资建议，据此操作，风险自担。",
+          "type": "财报",
+          "sentiment": 0,
+          "weight": 1,
+          "final_weight": 0.84,
+          "source_authority": 4.5,
+          "recency_factor": 0.72,
+          "source": "东方财富公告",
+          "llm_reviewed": true,
+          "llm_confidence": 0.3,
+          "llm_is_real_catalyst": false,
+          "llm_reasoning": "券商核查意见，无新增催化信息"
+        },
+        {
+          "date": "2026-07-15",
+          "title": "春风动力:春风动力第六届董事会第十八次会议决议公告",
+          "content": "一般项目:摩托车零配件制造;摩托车及零配件零售;摩托车及零配件批发;摩托车及零部件研发;非公路休闲车及零配件制造;非公路休闲车及零配件销售;汽车零部件及配件制造;汽车零配件批发;汽车零配件零售;娱乐船和运动船销售;助动车制造;助动自行车、代步车及零配件销售;电动自行车销售;日用百货销售;金属材料销售;电子专用设备销售;电子产品销售;通讯设备销售;通讯设备修理;金属制品研发;金属制品销售;塑料制品销售;服饰研发;服装服饰批发;服装服饰零售;鞋帽批发;鞋帽零售;劳动保护用品销售;特种劳动防护用品销售;体育用品及器材批发;体育用品及器材零售;工艺美术品及礼仪用品销售(象牙及其制品除外);电池销售;润滑油销售;技术服务、技术开发、技术咨询、技术交流、技术转让、技术推广;普通货物仓储服务(不含危险化学品等需许可审批的项目);货物进出口。(除依法须经批准的项目外,凭营业执照依法自主开展经营活动)许可项目:道路机动车辆生产。(依法须经批准的项目,经相关部门批准后方可开展经营活动,具体经营项目以相关部门批准文件或许可证件为准)。(分支机构经营场所设在:杭州市临平区临平街道绿洲路16号)\n郑重声明：东方财富网发布此信息的目的在于传播更多信息，与本站立场无关。东方财富网不保证该信息（包括但不限于文字、视频、音频、数据及图表）全部或者部分内容的准确性、真实性、完整性、有效性、及时性、原创性等。相关信息并未经过本网站证实，不对您构成任何投资建议，据此操作，风险自担。",
+          "type": "财报",
+          "sentiment": 0,
+          "weight": 1,
+          "final_weight": 0.84,
+          "source_authority": 4.5,
+          "recency_factor": 0.72,
+          "source": "东方财富公告",
+          "llm_reviewed": true,
+          "llm_confidence": 0.3,
+          "llm_is_real_catalyst": false,
+          "llm_reasoning": "董事会决议公告，内容为常规程序性事项"
+        }
+      ]
+    }
+  }
+}

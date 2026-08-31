@@ -1,0 +1,253 @@
+//@version=6
+// =====================================================================
+// A股 Top选股策略 v6（基于 v5 PRO 回测分析，针对 5 大病灶的针对性修复）
+// 修复点：
+//   1. 加 ATR 硬止损 + 最大亏损 2% 截断（v5 完全没有止损）
+//   2. 启用大盘 regime 过滤（v5 把 market_ok 注释掉了）
+//   3. 加 7 天冷却（v5 没有，24% 信号在 <5 天内重入）
+//   4. 入场延迟一根 + 追高过滤（v5 当根收盘直接入场，22% 入场即被甩）
+//   5. 盈利≥3% 后切换 EMA20 trailing，让赢家飞（v5 EMA10 出场把好票割得太早）
+// =====================================================================
+strategy("A股 Top选股策略 v6",
+     overlay=true,
+     initial_capital=100000,
+     pyramiding=0,
+     default_qty_type=strategy.fixed,
+     process_orders_on_close=true,
+     calc_on_every_tick=false)
+
+//=========================
+// 参数
+//=========================
+ema10Len = input.int(10,  "EMA短")
+ema20Len = input.int(20,  "EMA中(trailing)")
+ema60Len = input.int(60,  "EMA长")
+adxLen   = input.int(14,  "ADX 周期")
+atrLen   = input.int(14,  "ATR 周期")
+
+risk_pct      = input.float(1.0, "单笔风险 %")
+maxLossPct    = input.float(2.0, "硬止损 % (v6新增)")
+atrStopMult   = input.float(2.0, "ATR 止损倍数 (v6新增)")
+fastBadPct    = input.float(1.5, "入场≤2bar 反向>=X% 立即砍 (v6新增)")
+fastBadBars   = input.int(2,     "快速亏损观察 bars")
+
+cooldownBars  = input.int(7,     "冷却 bars (v6 7天)")
+trailGateProfitPct = input.float(3.0, "盈利≥X% 后切 EMA20 trailing (v6新增)")
+
+useMarketRegime  = input.bool(true,  "启用大盘 regime 过滤 (v6 取消注释)")
+useDelayedEntry  = input.bool(true,  "入场延迟一根+0.5*ATR 追高过滤 (v6新增)")
+
+//=========================
+// 均线 / ATR / ADX
+//=========================
+ema10 = ta.ema(close, ema10Len)
+ema20 = ta.ema(close, ema20Len)
+ema60 = ta.ema(close, ema60Len)
+atr   = ta.atr(atrLen)
+
+f_adx(len) =>
+    up      = ta.change(high)
+    down    = -ta.change(low)
+    plusDM  = (up > down and up > 0) ? up : 0
+    minusDM = (down > up and down > 0) ? down : 0
+    tr_val  = ta.rma(ta.tr(true), len)
+    plusDI  = 100 * ta.rma(plusDM, len) / tr_val
+    minusDI = 100 * ta.rma(minusDM, len) / tr_val
+    dx      = 100 * math.abs(plusDI - minusDI) / (plusDI + minusDI)
+    ta.rma(dx, len)
+adx = f_adx(adxLen)
+
+//=========================
+// SQZMOM
+//=========================
+f_sqzmom() => ta.linreg(close - (high + low) / 2, 20, 0)
+sqzD = f_sqzmom()
+sqzW = request.security(syminfo.tickerid, "W", f_sqzmom())
+
+//=========================
+// 评分（沿用 v5）
+//=========================
+trend_score = 0.0
+trend_score += close > ema10 ? 10 : 0
+trend_score += ema10 > ema10[1] ? 10 : 0
+trend_score += close > ema60 ? 10 : 0
+trend_score += adx > 20 ? 5 : 0
+trend_score += adx > 25 ? 5 : 0
+
+pullback_score = 0.0
+dist = math.abs(close - ema10) / ema10
+pullback_score += dist < 0.02  ? 10 : 0
+pullback_score += dist < 0.015 ? 5  : 0
+drop_pct = (close - close[1]) / close[1] * 100
+pullback_score += (drop_pct < -1 and drop_pct > -5) ? 10 : 0
+
+vol_score = 0.0
+vol_ma = ta.sma(volume, 5)
+vol_score += volume < vol_ma       ? 10 : 0
+vol_score += volume > vol_ma * 0.5 ? 10 : 0
+
+sqz_score = 0.0
+sqz_score += (sqzD > 0 and sqzD[1] <= 0) ? 15 : 0
+sqz_score += (sqzD > sqzD[1])            ? 5  : 0
+sqz_score += sqzW > 0                    ? 5  : 0
+
+score = trend_score + pullback_score + vol_score + sqz_score
+
+//=========================
+// 大盘 / 资金过滤
+//=========================
+index_close  = request.security("SSE:000001", timeframe.period, close)
+index_ema50  = ta.ema(index_close, 50)
+index_ema200 = ta.ema(index_close, 200)
+market_ok    = not useMarketRegime or (index_close > index_ema200 and index_ema50 > index_ema200)
+
+hs300         = request.security("SSE:510300", timeframe.period, close)
+hs300_ema50   = ta.ema(hs300, 50)
+capital_flow_ok = hs300 > hs300_ema50
+
+limit_up = (close - close[1]) / close[1] > 0.095
+
+//=========================
+// 冷却计数器
+//=========================
+var int barsSinceExit = 9999
+if strategy.position_size == 0
+    barsSinceExit += 1
+
+//=========================
+// 入场延迟 + 追高过滤 (v6)
+//=========================
+// 信号根：当根收盘满足所有条件 → 标记下一根再判断是否入场
+signal_raw =
+     score >= 80
+ and close > ema10
+ and capital_flow_ok
+ and market_ok
+ and not limit_up
+
+var bool armEntry = false
+var float armPrice = na
+if signal_raw and strategy.position_size == 0 and barsSinceExit >= cooldownBars
+    armEntry := true
+    armPrice := close
+else
+    armEntry := armEntry  // hold until consumed/cleared
+
+// 次日入场条件：开盘价不能高于信号根收盘 + 0.5*ATR（避免追高）
+delayedOK = not useDelayedEntry or (open <= armPrice + 0.5 * atr)
+canEnter = armEntry and delayedOK and strategy.position_size == 0
+
+//=========================
+// 仓位计算（基于 ATR 止损 → 正确的 1% 风险）
+//=========================
+stopDist = atr * atrStopMult
+qty      = math.max(1, math.floor(strategy.equity * risk_pct / 100 / stopDist))
+
+//=========================
+// 入场
+//=========================
+var float entryPrice = na
+var float hardStop   = na
+var float maxLossStop = na
+var float highestSinceEntry = na
+var bool  trailMode  = false
+var int   barsInTrade = 0
+
+if canEnter
+    strategy.entry("LONG", strategy.long, qty)
+    entryPrice        := open
+    hardStop          := open - atr * atrStopMult
+    maxLossStop       := open * (1.0 - maxLossPct / 100.0)
+    highestSinceEntry := high
+    trailMode         := false
+    barsInTrade       := 0
+    armEntry          := false
+    armPrice          := na
+    alert(
+      '{"symbol":"'+syminfo.ticker+'","type":"cn","side":"LONG","action":"ENTRY"' +
+      ',"qty":'+str.tostring(qty) +
+      ',"price":'+str.tostring(open) +
+      ',"score":'+str.tostring(score)+'}',
+      alert.freq_once_per_bar_close)
+
+// 信号未被消费就过期（armEntry 仅持 1 根）
+if armEntry and not canEnter
+    armEntry := false
+    armPrice := na
+
+//=========================
+// 持仓管理 (v6: 硬止损 + trailing + score 退出)
+//=========================
+if strategy.position_size > 0
+    barsInTrade       += 1
+    highestSinceEntry := math.max(highestSinceEntry, high)
+
+    // trail 切换：盈利达 3% → 把 stop 上移到 EMA20
+    profitPct = (high - entryPrice) / entryPrice * 100
+    if profitPct >= trailGateProfitPct
+        trailMode := true
+
+    // 决定本根止损位
+    float currentStop = trailMode ? math.max(ema20, hardStop) : hardStop
+
+    // 1. 最大亏损硬底（任何时候触发）
+    bool exitMaxLoss = close <= maxLossStop
+
+    // 2. 快速亏损：入场后 ≤2 bar 回撤 ≥1.5%
+    bool exitFastBad = (barsInTrade <= fastBadBars) and ((entryPrice - close) / entryPrice * 100 >= fastBadPct)
+
+    // 3. trailing/ATR stop
+    bool exitTrail = close <= currentStop
+
+    // 4. 评分退场 / EMA10 失守（沿用 v5 主动退场，但只在 trailMode 之前才生效）
+    bool exitScore = (not trailMode) and (score < 60 or close < ema10)
+
+    string reason = ""
+    if exitMaxLoss
+        reason := "MaxLoss"
+    else if exitFastBad
+        reason := "FastBad"
+    else if exitTrail
+        reason := trailMode ? "EMA20Trail" : "ATRStop"
+    else if exitScore
+        reason := "ScoreExit"
+
+    if reason != ""
+        strategy.close("LONG", reason)
+        barsSinceExit := 0
+        entryPrice        := na
+        hardStop          := na
+        maxLossStop       := na
+        highestSinceEntry := na
+        trailMode         := false
+        barsInTrade       := 0
+        alert(
+          '{"symbol":"'+syminfo.ticker+'","type":"cn","side":"LONG","action":"EXIT","reason":"'+reason+
+          '","price":'+str.tostring(close)+'}',
+          alert.freq_once_per_bar_close)
+
+//=========================
+// 图形
+//=========================
+plot(ema10, color=color.yellow,  title="EMA10")
+plot(ema20, color=color.orange,  title="EMA20 (trailing)")
+plot(ema60, color=color.blue,    title="EMA60")
+plot(strategy.position_size > 0 ? hardStop : na,    color=color.red,    title="HardStop", style=plot.style_linebr)
+plot(strategy.position_size > 0 ? maxLossStop : na, color=color.fuchsia, title="MaxLoss",  style=plot.style_linebr)
+
+plotshape(canEnter,     title="BUY",  style=shape.triangleup,   location=location.belowbar, color=color.green, size=size.small)
+plotshape(signal_raw and not canEnter, title="SignalSkipped", style=shape.xcross, location=location.belowbar, color=color.gray, size=size.tiny)
+
+// 状态面板
+var table panel = table.new(position.top_right, 2, 5)
+if barstate.islast
+    table.cell(panel, 0, 0, "Score")
+    table.cell(panel, 1, 0, str.tostring(score, "#"))
+    table.cell(panel, 0, 1, "Market OK")
+    table.cell(panel, 1, 1, market_ok ? "Y" : "N")
+    table.cell(panel, 0, 2, "CapFlow OK")
+    table.cell(panel, 1, 2, capital_flow_ok ? "Y" : "N")
+    table.cell(panel, 0, 3, "Cooldown")
+    table.cell(panel, 1, 3, str.tostring(barsSinceExit) + "/" + str.tostring(cooldownBars))
+    table.cell(panel, 0, 4, "TrailMode")
+    table.cell(panel, 1, 4, trailMode ? "Y" : "N")

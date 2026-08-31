@@ -38,17 +38,31 @@ export async function getState({ _deps } = {}) {
 }
 
 export async function setSymbol({ symbol, _deps }) {
-  const { evaluateAsync, waitForChartReady } = _resolve(_deps);
+  const { evaluate, evaluateAsync, waitForChartReady } = _resolve(_deps);
+
+  // Capture current bar fingerprint BEFORE switching, so we can detect when
+  // the new symbol's bars have actually loaded (vs stale bars from old symbol).
+  const prevFp = await evaluate(`
+    (function() {
+      try {
+        var bars = window.TradingViewApi._activeChartWidgetWV.value()._chartWidget.model().mainSeries().bars();
+        var last = bars.valueAt(bars.lastIndex());
+        if (last) return { time: last[0], close: last[4] };
+      } catch(e) {}
+      return null;
+    })()
+  `);
+
   await evaluateAsync(`
     (function() {
       var chart = ${CHART_API};
       return new Promise(function(resolve) {
         chart.setSymbol(${safeString(symbol)}, {});
-        setTimeout(resolve, 500);
+        setTimeout(resolve, 50);
       });
     })()
   `);
-  const ready = await waitForChartReady(symbol);
+  const ready = await waitForChartReady(symbol, null, _deps?.timeout, _deps?.pollInterval, prevFp);
   return { success: true, symbol, chart_ready: ready };
 }
 
@@ -60,7 +74,7 @@ export async function setTimeframe({ timeframe, _deps }) {
       chart.setResolution(${safeString(timeframe)}, {});
     })()
   `);
-  const ready = await waitForChartReady(null, timeframe);
+  const ready = await waitForChartReady(null, timeframe, _deps?.timeout, _deps?.pollInterval);
   return { success: true, timeframe, chart_ready: ready };
 }
 
@@ -89,57 +103,18 @@ export async function manageIndicator({ action, indicator, entity_id, inputs: in
   const inputs = inputsRaw ? (typeof inputsRaw === 'string' ? JSON.parse(inputsRaw) : inputsRaw) : undefined;
 
   if (action === 'add') {
+    const inputArr = inputs ? Object.entries(inputs).map(([k, v]) => ({ id: k, value: v })) : [];
     const before = await evaluate(`${CHART_API}.getAllStudies().map(function(s) { return s.id; })`);
     await evaluate(`
       (function() {
         var chart = ${CHART_API};
-        chart.createStudy(${safeString(indicator)}, false, false, []);
+        chart.createStudy(${safeString(indicator)}, false, false, ${JSON.stringify(inputArr)});
       })()
     `);
     await new Promise(r => setTimeout(r, 1500));
     const after = await evaluate(`${CHART_API}.getAllStudies().map(function(s) { return s.id; })`);
     const newIds = (after || []).filter(id => !(before || []).includes(id));
-    const entityId = newIds[0] || null;
-
-    // createStudy's inputs argument is unreliable across builds (#249): the
-    // study is created with defaults regardless. Apply overrides afterward
-    // via the study's own getInputValues/setInputValues, then read back to
-    // report what actually took.
-    let appliedInputs;
-    if (entityId && inputs && Object.keys(inputs).length) {
-      const result = await evaluate(`
-        (function() {
-          var chart = ${CHART_API};
-          var study = chart.getStudyById(${safeString(entityId)});
-          if (!study || typeof study.getInputValues !== 'function') return { error: 'inputs unsupported for this study' };
-          var current = study.getInputValues();
-          var overrides = ${JSON.stringify(inputs)};
-          var applied = {}, unknown = [];
-          var byId = {};
-          for (var i = 0; i < current.length; i++) byId[current[i].id] = true;
-          for (var k in overrides) {
-            if (byId[k]) { for (var j = 0; j < current.length; j++) { if (current[j].id === k) current[j].value = overrides[k]; } applied[k] = overrides[k]; }
-            else unknown.push(k);
-          }
-          study.setInputValues(current);
-          var after = study.getInputValues();
-          var confirmed = {};
-          for (var m = 0; m < after.length; m++) { if (applied.hasOwnProperty(after[m].id)) confirmed[after[m].id] = after[m].value; }
-          return { confirmed: confirmed, unknown: unknown };
-        })()
-      `);
-      if (result?.error) appliedInputs = { error: result.error };
-      else appliedInputs = { applied: result?.confirmed || {}, ...(result?.unknown?.length && { unknown_inputs: result.unknown }) };
-    }
-
-    return {
-      success: newIds.length > 0,
-      action: 'add',
-      indicator,
-      entity_id: entityId,
-      new_study_count: newIds.length,
-      ...(appliedInputs && { inputs: appliedInputs }),
-    };
+    return { success: newIds.length > 0, action: 'add', indicator, entity_id: newIds[0] || null, new_study_count: newIds.length };
   } else if (action === 'remove') {
     if (!entity_id) throw new Error('entity_id required for remove action. Use chart_get_state to find study IDs.');
     await evaluate(`
@@ -169,23 +144,6 @@ export async function setVisibleRange({ from, to, _deps }) {
   const { evaluate } = _resolve(_deps);
   const f = requireFinite(from, 'from');
   const t = requireFinite(to, 'to');
-
-  // Ensure enough history is loaded to cover `from`. The chart lazy-loads bars
-  // (~300 initially), so without this a multi-year range clamps to whatever is
-  // already loaded. Page back via requestMoreData until the earliest loaded bar
-  // reaches `from`, the feed runs out, or a guard trips.
-  for (let i = 0; i < 25; i++) {
-    const state = await evaluate(`(function() {
-      var ms = ${CHART_API}._chartWidget.model().mainSeries();
-      var b = ms.bars(); var fv = b.valueAt(b.firstIndex());
-      var more = true; try { more = ms.requestMoreDataAvailable(); } catch (e) {}
-      return { firstTime: fv && fv[0], more: more };
-    })()`);
-    if (!state || state.firstTime == null || state.firstTime <= f || !state.more) break;
-    await evaluate(`(function() { try { ${CHART_API}._chartWidget.model().mainSeries().requestMoreData(1000); } catch (e) {} })()`);
-    await new Promise(r => setTimeout(r, 1800));
-  }
-
   await evaluate(`
     (function() {
       var chart = ${CHART_API};
@@ -214,7 +172,7 @@ export async function setVisibleRange({ from, to, _deps }) {
   return { success: true, requested: { from, to }, actual: actual || { from: 0, to: 0 } };
 }
 
-export async function scrollToDate({ date, _deps } = {}) {
+export async function scrollToDate({ date, _deps }) {
   const { evaluate } = _resolve(_deps);
   let timestamp;
   if (/^\d+$/.test(date)) timestamp = Number(date);
@@ -254,8 +212,7 @@ export async function scrollToDate({ date, _deps } = {}) {
   return { success: true, date, centered_on: timestamp, resolution, window: { from, to } };
 }
 
-export async function symbolInfo({ _deps } = {}) {
-  const { evaluate } = _resolve(_deps);
+export async function symbolInfo() {
   const result = await evaluate(`
     (function() {
       var chart = ${CHART_API};

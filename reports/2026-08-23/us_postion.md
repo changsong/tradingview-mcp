@@ -1,0 +1,44 @@
+NASDAQ:MPWR,NYSE:ENVA,NYSE:PIPR,NASDAQ:RMBS,NYSE:SON,NYSE:PFS,NYSE:TRNO,NASDAQ:OSBC,NYSE:GRMN,NYSE:JOE,NASDAQ:BHRB,NYSE:SPNT,NYSE:WTM,NASDAQ:ORRF,NASDAQ:BGC,NASDAQ:USLM,NYSE:AIR,NYSE:CSW
+
+
+claude --dangerously-skip-permissions
+
+## 研报及新闻分析 5-10分钟
+利用 ./src/core/usNew.js 获取这些股票: NYSE:ENVA,NYSE:PWR,NYSE:ST,NASE:AROC 的新闻，包含研报，快讯，新闻等，进行 市场情绪倾向（看涨/看跌/中性比例），对股价的潜在影响预测（利好/利空因素），关键风险和机会点 请将新闻转化为“可交易信号”，最好是最近5天最重要新闻。 
+1.抓取并筛选高影响力新闻(去噪)
+2.对每条新闻打标签:
+  -类型:政策/财报/并购/行业/黑天鹅/传闻
+  -情绪:+1/0/-1
+  -影响权重:1~5
+3.构建情绪指数:
+  - Sentiment Score =Σ(情绪 × 权重)  
+4.识别关键模式(重点)
+  -情绪持续增强(trend)
+  -情绪反转(reversal)
+  -情绪背离(pricevsnews)
+4.输出交易信号:
+  - Long / Short / No Trade
+  -触发原因(必须可解释)
+  -是否适合:追涨/低吸/反转
+【重点】
+必须识别:
+  -是否已经提前炒作
+  -是否存在情绪过热
+  -是否是假利好  
+
+## 技术面分析
+使用 ./scripts/launch_tv_debug.bat 启动TradigView, 使用 analyze_tech_us_mtf.mjs 对这些股票进行技术面分析，比如：趋势结构（Trend）,动能系统（Momentum）,波动压缩与释放（Volatility），成交量行为（Volume）,量价时空, 关键结构位（Structure）,资金行为模拟（高级）等相关的技术指标。通过不同时间周期: 1h，4h，1d,1w 进行分析，如果明天入手，哪支股票明天开始最可能上涨的概率最大，有最大的涨幅，基于的理由是什么。
+【交易信号判断】必须给出：
+1. 结论：看多 / 看空 / 观望
+2. 类型：
+ - 突破型
+ - 回调低吸
+ - 反转
+3. 是否适合追涨：YES / NO
+4. 关键风险
+  - 是否接近压力位
+  - 是否动能衰减
+  - 是否存在诱多/假突破
+
+### 合并分析
+1. 请根据以上的股票的研报及新闻分析、技术面分析，综合判断这些股票中哪些是最值得介入的，统一进行排序，介入的价位是多少，止损的价位是多少，卖出的价位是多少 

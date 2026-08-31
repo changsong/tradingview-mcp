@@ -49,11 +49,7 @@ export async function openPanel({ panel, action }) {
           else { if (typeof bwb.showWidget === 'function') bwb.showWidget(widgetName); }
           performed = 'opened';
         } else if (action === 'close' || (action === 'toggle' && isOpen)) {
-          // hideWidget(name) was removed in newer TradingView builds; fall back to
-          // close() (minimizes the bottom panel) and then hide() (hides the bar).
           if (typeof bwb.hideWidget === 'function') bwb.hideWidget(widgetName);
-          else if (typeof bwb.close === 'function') bwb.close();
-          else if (typeof bwb.hide === 'function') bwb.hide();
           performed = 'closed';
         }
         return { was_open: isOpen, performed: performed };
@@ -62,23 +58,18 @@ export async function openPanel({ panel, action }) {
     if (result && result.error) throw new Error(result.error);
     return { success: true, panel, action, was_open: result?.was_open ?? false, performed: result?.performed ?? 'unknown' };
   } else {
-    // Newer TV builds renamed the right-rail buttons (watchlist is now
-    // data-name="base", aria "Watchlist, details, and news"; alerts is
-    // data-name="alerts") — keep legacy selectors as fallbacks.
     const selectorMap = {
-      'watchlist': { dataNames: ['base-watchlist-widget-button', 'base'], ariaLabels: ['Watchlist', 'Watchlist, details, and news'] },
-      'alerts': { dataNames: ['alerts-button', 'alerts'], ariaLabels: ['Alerts'] },
-      'trading': { dataNames: ['trading-button'], ariaLabels: ['Trading Panel'] },
+      'watchlist': { dataName: 'base-watchlist-widget-button', ariaLabel: 'Watchlist' },
+      'alerts': { dataName: 'alerts-button', ariaLabel: 'Alerts' },
+      'trading': { dataName: 'trading-button', ariaLabel: 'Trading Panel' },
     };
     const sel = selectorMap[panel];
     const result = await evaluate(`
       (function() {
-        var dataNames = ${JSON.stringify(sel.dataNames)};
-        var ariaLabels = ${JSON.stringify(sel.ariaLabels)};
+        var dataName = ${JSON.stringify(sel.dataName)};
+        var ariaLabel = ${JSON.stringify(sel.ariaLabel)};
         var action = ${JSON.stringify(action)};
-        var btn = null;
-        for (var d = 0; d < dataNames.length && !btn; d++) btn = document.querySelector('[data-name="' + dataNames[d] + '"]');
-        for (var a = 0; a < ariaLabels.length && !btn; a++) btn = document.querySelector('[aria-label="' + ariaLabels[a] + '"]');
+        var btn = document.querySelector('[data-name="' + dataName + '"]') || document.querySelector('[aria-label="' + ariaLabel + '"]');
         if (!btn) return { error: 'Button not found for panel: ' + ${JSON.stringify(panel)} };
         var isActive = btn.getAttribute('aria-pressed') === 'true' || btn.classList.contains('isActive') || btn.classList.toString().indexOf('active') !== -1 || btn.classList.toString().indexOf('Active') !== -1;
         var rightArea = document.querySelector('[class*="layout__area--right"]');
@@ -132,7 +123,7 @@ export async function layoutSwitch({ name }) {
     new Promise(function(resolve) {
       try {
         var target = ${escaped};
-        if (/^\\d+$/.test(target)) { window.TradingViewApi.loadChartFromServer(target); resolve({success: true, method: 'loadChartFromServer', id: target, source: 'internal_api'}); return; }
+        if (/^\\d+$/.test(target)) { window.TradingViewApi.loadChartFromServer(target); setTimeout(function() { resolve({success: true, method: 'loadChartFromServer', id: target, source: 'internal_api'}); }, 2000); return; }
         window.TradingViewApi.getSavedCharts(function(charts) {
           if (!charts || !Array.isArray(charts)) { resolve({success: false, error: 'getSavedCharts returned no data', source: 'internal_api'}); return; }
           var match = null;
@@ -141,7 +132,7 @@ export async function layoutSwitch({ name }) {
           if (!match) { resolve({success: false, error: 'Layout "' + target + '" not found.', source: 'internal_api'}); return; }
           var chartId = match.id || match.chartId;
           window.TradingViewApi.loadChartFromServer(chartId);
-          resolve({success: true, method: 'loadChartFromServer', id: chartId, name: match.name || match.title, source: 'internal_api'});
+          setTimeout(function() { resolve({success: true, method: 'loadChartFromServer', id: chartId, name: match.name || match.title, source: 'internal_api'}); }, 2000);
         });
         setTimeout(function() { resolve({success: false, error: 'getSavedCharts timed out', source: 'internal_api'}); }, 5000);
       } catch(e) { resolve({success: false, error: e.message, source: 'internal_api'}); }

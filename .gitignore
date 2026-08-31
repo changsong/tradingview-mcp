@@ -4,4 +4,24 @@ scripts/current.pine
 temp_*
 *.log
 discovery-log.json
-rules.json
+
+# Xueqiu cookies (sensitive data)
+xueqiu_cookies.json
+
+# Environment variables (API keys)
+.env
+
+# LLM response cache (auto-generated, large)
+watchlist/.cache/
+
+# PDF disk cache for 巨潮 announcements (auto-fetched on demand)
+pdf/
+
+# HTML article body cache (auto-fetched on demand)
+article_cache/
+
+# GitNexus knowledge graph index
+.gitnexus/
+
+# Windows crash dumps
+*.stackdump

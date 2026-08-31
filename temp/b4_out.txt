@@ -1,0 +1,35 @@
+﻿
++----------------------------------------------------------+
+|  US Stock MTF Analysis (Master v2 — Accuracy Tuned)      |
+|  EMA/RSI/MACD/ADX/Squeeze/OBV + StochRSI + Divergence    |
+|  + Climax/Streak/RetAccel/Support/RR/RS-vs-SPY            |
++----------------------------------------------------------+
+
+Candidates    : 5 stocks
+Sources       : ./watchlist/us_selected.txt + ./watchlist/us_news_signals.md
+Live values   : ON
+RS benchmark  : AMEX:SPY
+
+  Fetching benchmark AMEX:SPY... OK (60 bars)
+  NASDAQ:ADAM      |||| tech:+14.1  ADX27.3   RS+6.4    align:1/4 (25%)    news:+50  Long [Low]
+  NASDAQ:HOOD      |||| tech:+32.5  ADX20.3   RS+23.6   align:4/4 (100%)   news:+50  Long [Medium]
+  NYSE:LTC         |||| tech:+36.8  ADX19.2   RS-2.1    align:4/4 (100%)   news:+52  Long [Low]
+  NYSE:LLY         |||| tech:+28.2  ADX19.9   RS-1.3    align:0/4 (0%)     news:+50  Long [Low]
+  NYSE:P           |||| tech:+12.1  ADX29.3   RS+26     align:0/4 (0%)     news:+56  Long [Low]
+
+========================================================================================================================
+Multi-TF Technical Ranking (v2)
+========================================================================================================================
+ 1. NYSE:LLY     NYSE:LLY       tech:+28.2  final:+34.2  ADX:19.9  RS: -1.3  align:0/4 (0%)    Long         [Low   ] ⚠ CHOP
+ 2. NYSE:LTC     NYSE:LTC       tech:+36.8  final:+29.8  ADX:19.2  RS: -2.1  align:4/4 (100%)  Long         [Low   ] ⚠ FAKE/CHOP/POOR-RR
+ 3. NASDAQ:HOOD  NASDAQ:HOOD    tech:+32.5  final:+29.5  ADX:20.3  RS:+23.6  align:4/4 (100%)  Long         [Medium] ⚠ FAKE/POOR-RR
+ 4. NASDAQ:ADAM  NASDAQ:ADAM    tech:+14.1  final:+21.1  ADX:27.3  RS: +6.4  align:1/4 (25%)   Long         [Low   ] ⚠ POOR-RR
+ 5. NYSE:P       NYSE:P         tech:+12.1  final:+19.1  ADX:29.3  RS:  +26  align:0/4 (0%)    Long         [Low   ] ⚠ POOR-RR
+
+Top Entry Candidates Tomorrow (v2 strict gates):
+  None passing all gates — wait for pullback or fresh setup
+
+Report saved: ./watchlist/us_tech_signals.md
+
+Downstream contract JSON saved: ./watchlist/us_tech_signals.json
+
