@@ -1,0 +1,1649 @@
+{
+  "generated_at": "2026-09-17T06:42:04.986Z",
+  "market": "cn",
+  "source": "src/core/webNews.js",
+  "score_scale": "0-100 normalized (neutral=50)",
+  "window": {
+    "from": "2026-09-10",
+    "to": "2026-09-17",
+    "days": 7
+  },
+  "llm_used": true,
+  "performance": {
+    "totals_ms": {
+      "list_fetch_ms": 39932,
+      "enrichment_ms": 89771,
+      "relevance_ms": 0,
+      "llm_ms": 4701717,
+      "report_write_ms": 11
+    },
+    "avg_ms": {
+      "list_fetch_ms": 1426,
+      "enrichment_ms": 3206,
+      "relevance_ms": 0,
+      "llm_ms": 167918,
+      "report_write_ms": 0
+    }
+  },
+  "stocks": {
+    "SZSE:300394": {
+      "name": "天孚通信",
+      "score": 59,
+      "score_raw": 2.13,
+      "score_components": {
+        "positive_weight_sum": 2.13,
+        "negative_weight_sum": 0,
+        "news_effective_count": 3,
+        "news_dropped_count": 0
+      },
+      "signal": "⚪ No Trade (微多)",
+      "strategy": "情绪轻微偏多，信号不足，以观望为主",
+      "suitable_for": "观望",
+      "confidence": "低",
+      "patterns": [],
+      "positive_factors": [
+        "[行业|w1.02] 天孚通信9月16日盘中涨幅达5%",
+        "[行业|w0.6] 天孚通信9月17日盘中涨幅达5%",
+        "[行业|w0.51] 天孚通信成交额超100亿元"
+      ],
+      "negative_factors": [],
+      "news_count": 3,
+      "news_dropped": 0,
+      "performance": {
+        "list_fetch_ms": 2136,
+        "candidate_filter_ms": 0,
+        "enrichment_ms": 2074,
+        "raw_news_count": 40,
+        "raw_research_count": 10,
+        "candidate_news_count": 3,
+        "candidate_research_count": 0,
+        "enriched_news_count": 3,
+        "enriched_research_count": 0,
+        "candidate_reasons": {
+          "news": {
+            "no-subject-mention": 15,
+            "noise:\\d{1,2}月\\d{1,2}日(快速上涨|快速回调|涨停|": 1,
+            "noise:融资净(买入|卖出)": 2,
+            "dedup": 0,
+            "out_of_window": 19
+          },
+          "research": {
+            "dedup": 0,
+            "out_of_window": 10
+          }
+        },
+        "date_filter_ms": 0,
+        "relevance_ms": 0,
+        "llm_ms": 159055,
+        "scoring_ms": 1
+      },
+      "top_news": [
+        {
+          "date": "2026-09-17 10:05:43",
+          "title": "天孚通信9月17日盘中涨幅达5%",
+          "content": "以下是天孚通信在北京时间9月17日10:05分盘口异动快照：\n\n　　专业金融数据，下一代智能终端\n\n \n\n  9月17日，天孚通信盘中涨幅达5%，截至10点05分，报282元，成交56.52亿元，换手率1.87%。\n注：以上信息仅供参考，不对您构成任何投资建议。\n暗盘资金榜已更新!这些个股/板块可以关注>",
+          "type": "行业",
+          "sentiment": 1,
+          "weight": 1,
+          "final_weight": 0.6,
+          "source_authority": 3,
+          "recency_factor": 1,
+          "source": "东方财富资讯",
+          "llm_reviewed": true,
+          "llm_confidence": 0.4,
+          "llm_is_real_catalyst": false,
+          "llm_reasoning": "盘中涨幅5%属行情数据，无基本面催化"
+        },
+        {
+          "date": "2026-09-16 14:31:00",
+          "title": "天孚通信成交额超100亿元",
+          "content": "炒股第一步，先开个股票账户\n\n　　数据宝统计，截至14:12，天孚通信成交额100.26亿元，超100亿元。最新股价上涨4.86%，换手率3.45%。上一交易日该股全天成交额为81.38亿元。（数据宝）\n\n　　注：本文系新闻报道，不构成投资建议，股市有风险，投资需谨慎。\n\n暗盘资金榜已更新!这些个股/板块可以关注>",
+          "type": "行业",
+          "sentiment": 1,
+          "weight": 1,
+          "final_weight": 0.51,
+          "source_authority": 3,
+          "recency_factor": 0.85,
+          "source": "东方财富资讯",
+          "llm_reviewed": true,
+          "llm_confidence": 0.4,
+          "llm_is_real_catalyst": false,
+          "llm_reasoning": "成交额超百亿属量价数据，无硬催化"
+        },
+        {
+          "date": "2026-09-16 10:32:03",
+          "title": "天孚通信9月16日盘中涨幅达5%",
+          "content": "以下是天孚通信在北京时间9月16日10:31分盘口异动快照：\n\n　　在东方财富看资讯行情，选东方财富证券一站式开户交易>>\n\n分笔\n\n10:31:57 270.28 176↑\n10:31:54 270.13 63↑\n10:31:51 270.11 85↑\n10:31:48 270.09 108↑\n10:31:45 270.06 62↑\n \n10:31:42 270.05 131↑\n10:31:39 270.04 118↑\n10:31:36 270.00 703↑\n10:31:33 270.00 592↑\n10:31:30 269.99 174↓\n \n报价\n\n卖五 \n\n270.32\n\n 15\n卖四 \n\n270.31\n\n 11\n卖三 \n\n270.3\n\n 53\n卖二 \n\n270.29\n\n 3\n卖一 \n\n270.28\n\n 8\n\n买一 \n\n270.27\n\n 4\n买二 \n\n270.25\n\n 3\n买三 \n\n270.24\n\n 1\n买四 \n\n270.23\n\n 1\n买五 \n\n270.22\n\n 5\n\n最新：270.28\n涨幅：5.01%\n涨跌：12.9\n换手率：1.84%\n成交量：19.98万手\n成交额：52.82亿元\n主力净流入：\n7.04亿元\n\n  9月16日，天孚通信盘中涨幅达5%，截至10点31分，报270.28元，成交52.82亿元，换手率1.84%。\n注：以上信息仅供参考，不对您构成任何投资建议。\n暗盘资金榜已更新!这些个股/板块可以关注>",
+          "type": "行业",
+          "sentiment": 1,
+          "weight": 1,
+          "final_weight": 1.02,
+          "source_authority": 3,
+          "recency_factor": 0.85,
+          "source": "东方财富资讯",
+          "llm_reviewed": true,
+          "llm_confidence": 0.5,
+          "llm_is_real_catalyst": false,
+          "llm_reasoning": "主力净流入7亿，量价异动非基本面催化"
+        }
+      ]
+    },
+    "SZSE:300408": {
+      "name": "三环集团",
+      "score": 54,
+      "score_raw": 0.95,
+      "score_components": {
+        "positive_weight_sum": 2.56,
+        "negative_weight_sum": 1.61,
+        "news_effective_count": 5,
+        "news_dropped_count": 0
+      },
+      "signal": "⚪ No Trade (微多)",
+      "strategy": "情绪轻微偏多，信号不足，以观望为主",
+      "suitable_for": "观望",
+      "confidence": "低",
+      "patterns": [],
+      "positive_factors": [
+        "[回购|w1.84] 三环集团:君合律师事务所上海分所关于潮州三环(集团)股份有限公司2026年A股员工持股计划(草案)的法律意见书",
+        "[行业|w0.72] 三环集团9月14日盘中涨幅达5%"
+      ],
+      "negative_factors": [
+        "[行业|w0.6] 三环集团：融资净偿还5598.97万元，融资余额35.32亿元",
+        "[行业|w0.51] 三环集团：融资净偿还1.53亿元，融资余额35.88亿元",
+        "[行业|w0.5] 三环集团：融资净偿还1.18亿元，融资余额37.41亿元"
+      ],
+      "news_count": 5,
+      "news_dropped": 0,
+      "performance": {
+        "list_fetch_ms": 750,
+        "candidate_filter_ms": 0,
+        "enrichment_ms": 12,
+        "raw_news_count": 40,
+        "raw_research_count": 10,
+        "candidate_news_count": 5,
+        "candidate_research_count": 0,
+        "enriched_news_count": 5,
+        "enriched_research_count": 0,
+        "candidate_reasons": {
+          "news": {
+            "no-subject-mention": 15,
+            "noise:\\d{1,2}月\\d{1,2}日(快速上涨|快速回调|涨停|": 1,
+            "dedup": 0,
+            "out_of_window": 19
+          },
+          "research": {
+            "dedup": 0,
+            "out_of_window": 10
+          }
+        },
+        "date_filter_ms": 0,
+        "relevance_ms": 0,
+        "llm_ms": 7,
+        "scoring_ms": 0
+      },
+      "top_news": [
+        {
+          "date": "2026-09-17 09:02:38",
+          "title": "三环集团：融资净偿还5598.97万元，融资余额35.32亿元",
+          "content": "全新妙想投研助理，立即体验\n\n交易所最新数据显示，三环集团于2026年9月16日获融资买入4.83亿元，融资偿还5.39亿元，当日融资净偿还5598.97万元。目前，该股融资余额35.32亿，占流通市值比例为1.45%。\n\n该股当日融券卖出3600股，融券偿还7300股，融券净偿还3700股。目前，该股融券余量25.32万股，融券余额3288.56万元。\n\n免责声明：本文基于AI生产，仅供参考，不构成任何投资建议，据此操作风险自担。东方财富发布此内容旨在传播更多信息，与本平台立场无关。东方财富力求但不保证数据的完全准确，如有错漏请以中国证监会指定上市公司信息披露媒体为准，东方财富不对因该资料全部或部分内容而引致的盈亏承担任何责任。用户个人对服务的使用承担风险，东方财富对此不作任何类型的担保。\n\n暗盘资金榜已更新!这些个股/板块可以关注>",
+          "type": "行业",
+          "sentiment": -1,
+          "weight": 1,
+          "final_weight": 0.6,
+          "source_authority": 3,
+          "recency_factor": 1,
+          "source": "东方财富资讯",
+          "llm_reviewed": true,
+          "llm_confidence": 0.4,
+          "llm_is_real_catalyst": false,
+          "llm_reasoning": "融资净偿还，杠杆资金流出"
+        },
+        {
+          "date": "2026-09-16 09:01:33",
+          "title": "三环集团：融资净偿还1.53亿元，融资余额35.88亿元",
+          "content": "专业金融数据，下一代智能终端\n\n交易所最新数据显示，三环集团于2026年9月15日获融资买入4.29亿元，融资偿还5.82亿元，当日融资净偿还1.53亿元。目前，该股融资余额35.88亿，占流通市值比例为1.52%。\n\n该股当日融券卖出3300股，融券偿还4800股，融券净偿还1500股。目前，该股融券余量25.69万股，融券余额3242.33万元。\n\n免责声明：本文基于AI生产，仅供参考，不构成任何投资建议，据此操作风险自担。东方财富发布此内容旨在传播更多信息，与本平台立场无关。东方财富力求但不保证数据的完全准确，如有错漏请以中国证监会指定上市公司信息披露媒体为准，东方财富不对因该资料全部或部分内容而引致的盈亏承担任何责任。用户个人对服务的使用承担风险，东方财富对此不作任何类型的担保。\n\n暗盘资金榜已更新!这些个股/板块可以关注>",
+          "type": "行业",
+          "sentiment": -1,
+          "weight": 1,
+          "final_weight": 0.51,
+          "source_authority": 3,
+          "recency_factor": 0.85,
+          "source": "东方财富资讯",
+          "llm_reviewed": true,
+          "llm_confidence": 0.4,
+          "llm_is_real_catalyst": false,
+          "llm_reasoning": "融资净偿还1.53亿，资金偏空"
+        },
+        {
+          "date": "2026-09-16",
+          "title": "三环集团:君合律师事务所上海分所关于潮州三环(集团)股份有限公司2026年A股员工持股计划(草案)的法律意见书",
+          "content": "电子元器件制造;电子元器件零售;电子元器件批发;电力电子元器件制造;电力电子元器件销售;电子元器件与机电组件设备制造;电子元器件与机电组件设备销售;电容器及其配套设备制造;电容器及其配套设备销售;其他电子器件制造;光电子器件制造;光电子器件销售;光通信设备制造;光通信设备销售;电子专用材料研发;电子专用材料制造;电子专用材料销售;电子专用设备制造;电子专用设备销售;电子、机械设备维护(不含特种设备);新材料技术研发;新型陶瓷材料销售;特种陶瓷制品制造;特种陶瓷制品销售;模具销售;模具制造;半导体分立器件制造;半导体分立器件销售;半导体器件专用设备制造;半导体器件专用设备销售;电池制造;电池销售;电池零配件生产;电池零配件销售;发电机及发电机组制造;发电机及发电机组销售;新能源原动设备制造;新能源原动设备销售;先进电力电子装置销售;余热余压余气利用技术研发;余热发电关键技术研发;热力生产和供应;气体、液体分离及纯净设备制造;气体、液体分离及纯净设备销售;发电技术服务;新兴能源技术研发;合同能源管理;储能技术服务;节能管理服务;工程和技术研究和试验发展;家用电器研发;家用电器制造;家用电器销售;家用电器零配件销售;智能家庭消费设备制造;智能家庭消费设备销售;技术进出口;货物进出口;技术服务、技术开发、技术咨询、技术交流、技术转让、技术推广。(除依法须经批准的项目外,凭营业执照依法自主开展经营活动)\n郑重声明：东方财富网发布此信息的目的在于传播更多信息，与本站立场无关。东方财富网不保证该信息（包括但不限于文字、视频、音频、数据及图表）全部或者部分内容的准确性、真实性、完整性、有效性、及时性、原创性等。相关信息并未经过本网站证实，不对您构成任何投资建议，据此操作，风险自担。",
+          "type": "回购",
+          "sentiment": 1,
+          "weight": 2,
+          "final_weight": 1.84,
+          "source_authority": 4.5,
+          "recency_factor": 0.85,
+          "source": "东方财富公告",
+          "llm_reviewed": true,
+          "llm_confidence": 0.55,
+          "llm_is_real_catalyst": false,
+          "llm_reasoning": "员工持股计划草案法律意见，偏多"
+        },
+        {
+          "date": "2026-09-15 09:12:04",
+          "title": "三环集团：融资净偿还1.18亿元，融资余额37.41亿元",
+          "content": "炒股第一步，先开个股票账户\n\n交易所最新数据显示，三环集团于2026年9月14日获融资买入7.88亿元，融资偿还9.05亿元，当日融资净偿还1.18亿元。目前，该股融资余额37.41亿，占流通市值比例为1.59%。\n\n该股当日融券卖出6500股，融券偿还3800股，融券净卖出2700股。目前，该股融券余量25.84万股，融券余额3251.45万元。\n\n免责声明：本文基于AI生产，仅供参考，不构成任何投资建议，据此操作风险自担。东方财富发布此内容旨在传播更多信息，与本平台立场无关。东方财富力求但不保证数据的完全准确，如有错漏请以中国证监会指定上市公司信息披露媒体为准，东方财富不对因该资料全部或部分内容而引致的盈亏承担任何责任。用户个人对服务的使用承担风险，东方财富对此不作任何类型的担保。\n\n暗盘资金榜已更新!这些个股/板块可以关注>",
+          "type": "行业",
+          "sentiment": -1,
+          "weight": 1,
+          "final_weight": 0.5,
+          "source_authority": 3,
+          "recency_factor": 0.72,
+          "source": "东方财富资讯",
+          "llm_reviewed": true,
+          "llm_confidence": 0.4,
+          "llm_is_real_catalyst": false,
+          "llm_reasoning": "融资净偿还1.18亿，资金偏空"
+        },
+        {
+          "date": "2026-09-14 10:22:15",
+          "title": "三环集团9月14日盘中涨幅达5%",
+          "content": "以下是三环集团在北京时间9月14日10:22分盘口异动快照：\n\n　　在东方财富看资讯行情，选东方财富证券一站式开户交易>>\n\n \n\n  9月14日，三环集团盘中涨幅达5%，截至10点22分，报130.66元，成交56.47亿元，换手率2.38%。\n注：以上信息仅供参考，不对您构成任何投资建议。\n暗盘资金榜已更新!这些个股/板块可以关注>",
+          "type": "行业",
+          "sentiment": 1,
+          "weight": 1,
+          "final_weight": 0.72,
+          "source_authority": 3,
+          "recency_factor": 0.6,
+          "source": "东方财富资讯",
+          "llm_reviewed": true,
+          "llm_confidence": 0.5,
+          "llm_is_real_catalyst": false,
+          "llm_reasoning": "盘中涨5%，价格异动"
+        }
+      ]
+    },
+    "SSE:601665": {
+      "name": "齐鲁银行",
+      "score": 50,
+      "score_raw": 0,
+      "score_components": {
+        "positive_weight_sum": 0,
+        "negative_weight_sum": 0
+      },
+      "signal": "⚪ No Trade (无数据)",
+      "strategy": "LLM 不可用或调用失败（不走关键字降级）",
+      "suitable_for": "观望",
+      "confidence": "-",
+      "patterns": [],
+      "positive_factors": [],
+      "negative_factors": [],
+      "news_count": 0,
+      "news_dropped": 0,
+      "performance": {
+        "list_fetch_ms": 2495,
+        "candidate_filter_ms": 0,
+        "enrichment_ms": 20,
+        "raw_news_count": 40,
+        "raw_research_count": 10,
+        "candidate_news_count": 3,
+        "candidate_research_count": 0,
+        "enriched_news_count": 3,
+        "enriched_research_count": 0,
+        "candidate_reasons": {
+          "news": {
+            "noise:融资净(买入|卖出)": 3,
+            "no-subject-mention": 3,
+            "dedup": 0,
+            "out_of_window": 31
+          },
+          "research": {
+            "dedup": 0,
+            "out_of_window": 10
+          }
+        },
+        "date_filter_ms": 0,
+        "relevance_ms": 0,
+        "llm_ms": 118934,
+        "scoring_ms": 0
+      },
+      "top_news": []
+    },
+    "SSE:603162": {
+      "name": "海通发展",
+      "score": 50,
+      "score_raw": 0,
+      "score_components": {
+        "positive_weight_sum": 0,
+        "negative_weight_sum": 0
+      },
+      "signal": "⚪ No Trade (无数据)",
+      "strategy": "LLM 不可用或调用失败（不走关键字降级）",
+      "suitable_for": "观望",
+      "confidence": "-",
+      "patterns": [],
+      "positive_factors": [],
+      "negative_factors": [],
+      "news_count": 0,
+      "news_dropped": 0,
+      "performance": {
+        "list_fetch_ms": 2526,
+        "candidate_filter_ms": 0,
+        "enrichment_ms": 12014,
+        "raw_news_count": 40,
+        "raw_research_count": 8,
+        "candidate_news_count": 14,
+        "candidate_research_count": 0,
+        "enriched_news_count": 14,
+        "enriched_research_count": 0,
+        "candidate_reasons": {
+          "news": {
+            "noise:\\d{1,2}月\\d{1,2}日(快速上涨|快速回调|涨停|": 5,
+            "dedup": 0,
+            "out_of_window": 21
+          },
+          "research": {
+            "dedup": 0,
+            "out_of_window": 8
+          }
+        },
+        "date_filter_ms": 0,
+        "relevance_ms": 0,
+        "llm_ms": 228248,
+        "scoring_ms": 0
+      },
+      "top_news": []
+    },
+    "SSE:600330": {
+      "name": "天通股份",
+      "score": 50,
+      "score_raw": 0,
+      "score_components": {
+        "positive_weight_sum": 0,
+        "negative_weight_sum": 0
+      },
+      "signal": "⚪ No Trade (无数据)",
+      "strategy": "LLM 不可用或调用失败（不走关键字降级）",
+      "suitable_for": "观望",
+      "confidence": "-",
+      "patterns": [],
+      "positive_factors": [],
+      "negative_factors": [],
+      "news_count": 0,
+      "news_dropped": 0,
+      "performance": {
+        "list_fetch_ms": 1919,
+        "candidate_filter_ms": 2,
+        "enrichment_ms": 7918,
+        "raw_news_count": 40,
+        "raw_research_count": 10,
+        "candidate_news_count": 9,
+        "candidate_research_count": 0,
+        "enriched_news_count": 9,
+        "enriched_research_count": 0,
+        "candidate_reasons": {
+          "news": {
+            "noise:融资净(买入|卖出)": 2,
+            "no-subject-mention": 11,
+            "noise:\\d{1,2}月\\d{1,2}日(快速上涨|快速回调|涨停|": 2,
+            "dedup": 0,
+            "out_of_window": 16
+          },
+          "research": {
+            "dedup": 0,
+            "out_of_window": 10
+          }
+        },
+        "date_filter_ms": 0,
+        "relevance_ms": 0,
+        "llm_ms": 219853,
+        "scoring_ms": 0
+      },
+      "top_news": []
+    },
+    "SZSE:300866": {
+      "name": "安克创新",
+      "score": 50,
+      "score_raw": 0,
+      "score_components": {
+        "positive_weight_sum": 0,
+        "negative_weight_sum": 0
+      },
+      "signal": "⚪ No Trade (无数据)",
+      "strategy": "LLM 不可用或调用失败（不走关键字降级）",
+      "suitable_for": "观望",
+      "confidence": "-",
+      "patterns": [],
+      "positive_factors": [],
+      "negative_factors": [],
+      "news_count": 0,
+      "news_dropped": 0,
+      "performance": {
+        "list_fetch_ms": 2510,
+        "candidate_filter_ms": 0,
+        "enrichment_ms": 4531,
+        "raw_news_count": 40,
+        "raw_research_count": 10,
+        "candidate_news_count": 13,
+        "candidate_research_count": 0,
+        "enriched_news_count": 13,
+        "enriched_research_count": 0,
+        "candidate_reasons": {
+          "news": {
+            "no-subject-mention": 3,
+            "noise:融资净(买入|卖出)": 2,
+            "dedup": 0,
+            "out_of_window": 22
+          },
+          "research": {
+            "dedup": 0,
+            "out_of_window": 10
+          }
+        },
+        "date_filter_ms": 0,
+        "relevance_ms": 0,
+        "llm_ms": 115455,
+        "scoring_ms": 0
+      },
+      "top_news": []
+    },
+    "SSE:605198": {
+      "name": "安德利",
+      "score": 50,
+      "score_raw": 0,
+      "score_components": {
+        "positive_weight_sum": 0,
+        "negative_weight_sum": 0
+      },
+      "signal": "⚪ No Trade (无数据)",
+      "strategy": "LLM 不可用或调用失败（不走关键字降级）",
+      "suitable_for": "观望",
+      "confidence": "-",
+      "patterns": [],
+      "positive_factors": [],
+      "negative_factors": [],
+      "news_count": 0,
+      "news_dropped": 0,
+      "performance": {
+        "list_fetch_ms": 2496,
+        "candidate_filter_ms": 0,
+        "enrichment_ms": 3309,
+        "raw_news_count": 40,
+        "raw_research_count": 1,
+        "candidate_news_count": 9,
+        "candidate_research_count": 0,
+        "enriched_news_count": 9,
+        "enriched_research_count": 0,
+        "candidate_reasons": {
+          "news": {
+            "no-subject-mention": 1,
+            "noise:\\d{1,2}月\\d{1,2}日(快速上涨|快速回调|涨停|": 5,
+            "dedup": 0,
+            "out_of_window": 25
+          },
+          "research": {
+            "dedup": 0,
+            "out_of_window": 1
+          }
+        },
+        "date_filter_ms": 0,
+        "relevance_ms": 0,
+        "llm_ms": 116529,
+        "scoring_ms": 0
+      },
+      "top_news": []
+    },
+    "SSE:600172": {
+      "name": "黄河旋风",
+      "score": 50,
+      "score_raw": 0,
+      "score_components": {
+        "positive_weight_sum": 0,
+        "negative_weight_sum": 0
+      },
+      "signal": "⚪ No Trade (无数据)",
+      "strategy": "LLM 不可用或调用失败（不走关键字降级）",
+      "suitable_for": "观望",
+      "confidence": "-",
+      "patterns": [],
+      "positive_factors": [],
+      "negative_factors": [],
+      "news_count": 0,
+      "news_dropped": 0,
+      "performance": {
+        "list_fetch_ms": 2498,
+        "candidate_filter_ms": 0,
+        "enrichment_ms": 7323,
+        "raw_news_count": 40,
+        "raw_research_count": 9,
+        "candidate_news_count": 16,
+        "candidate_research_count": 0,
+        "enriched_news_count": 16,
+        "enriched_research_count": 0,
+        "candidate_reasons": {
+          "news": {
+            "noise:融资净(买入|卖出)": 3,
+            "no-subject-mention": 9,
+            "noise:\\d{1,2}月\\d{1,2}日(快速上涨|快速回调|涨停|": 1,
+            "noise:龙虎榜|大宗交易|盘口异动": 1,
+            "dedup": 0,
+            "out_of_window": 10
+          },
+          "research": {
+            "dedup": 0,
+            "out_of_window": 9
+          }
+        },
+        "date_filter_ms": 0,
+        "relevance_ms": 0,
+        "llm_ms": 116232,
+        "scoring_ms": 0
+      },
+      "top_news": []
+    },
+    "SSE:600186": {
+      "name": "莲花控股",
+      "score": 50,
+      "score_raw": 0,
+      "score_components": {
+        "positive_weight_sum": 0,
+        "negative_weight_sum": 0
+      },
+      "signal": "⚪ No Trade (无数据)",
+      "strategy": "LLM 不可用或调用失败（不走关键字降级）",
+      "suitable_for": "观望",
+      "confidence": "-",
+      "patterns": [],
+      "positive_factors": [],
+      "negative_factors": [],
+      "news_count": 0,
+      "news_dropped": 0,
+      "performance": {
+        "list_fetch_ms": 2519,
+        "candidate_filter_ms": 0,
+        "enrichment_ms": 7890,
+        "raw_news_count": 40,
+        "raw_research_count": 10,
+        "candidate_news_count": 13,
+        "candidate_research_count": 1,
+        "enriched_news_count": 13,
+        "enriched_research_count": 1,
+        "candidate_reasons": {
+          "news": {
+            "noise:融资净(买入|卖出)": 2,
+            "no-subject-mention": 11,
+            "dedup": 0,
+            "out_of_window": 14
+          },
+          "research": {
+            "dedup": 0,
+            "out_of_window": 9
+          }
+        },
+        "date_filter_ms": 0,
+        "relevance_ms": 0,
+        "llm_ms": 229229,
+        "scoring_ms": 0
+      },
+      "top_news": []
+    },
+    "SSE:601872": {
+      "name": "招商轮船",
+      "score": 50,
+      "score_raw": 0,
+      "score_components": {
+        "positive_weight_sum": 0,
+        "negative_weight_sum": 0
+      },
+      "signal": "⚪ No Trade (无数据)",
+      "strategy": "LLM 不可用或调用失败（不走关键字降级）",
+      "suitable_for": "观望",
+      "confidence": "-",
+      "patterns": [],
+      "positive_factors": [],
+      "negative_factors": [],
+      "news_count": 0,
+      "news_dropped": 0,
+      "performance": {
+        "list_fetch_ms": 2528,
+        "candidate_filter_ms": 0,
+        "enrichment_ms": 12080,
+        "raw_news_count": 40,
+        "raw_research_count": 10,
+        "candidate_news_count": 7,
+        "candidate_research_count": 0,
+        "enriched_news_count": 7,
+        "enriched_research_count": 0,
+        "candidate_reasons": {
+          "news": {
+            "no-subject-mention": 7,
+            "noise:\\d{1,2}月\\d{1,2}日(快速上涨|快速回调|涨停|": 3,
+            "noise:融资净(买入|卖出)": 3,
+            "dedup": 1,
+            "out_of_window": 19
+          },
+          "research": {
+            "dedup": 0,
+            "out_of_window": 10
+          }
+        },
+        "date_filter_ms": 0,
+        "relevance_ms": 0,
+        "llm_ms": 223988,
+        "scoring_ms": 0
+      },
+      "top_news": []
+    },
+    "SSE:603228": {
+      "name": "景旺电子",
+      "score": 50,
+      "score_raw": 0,
+      "score_components": {
+        "positive_weight_sum": 0,
+        "negative_weight_sum": 0
+      },
+      "signal": "⚪ No Trade (无数据)",
+      "strategy": "LLM 不可用或调用失败（不走关键字降级）",
+      "suitable_for": "观望",
+      "confidence": "-",
+      "patterns": [],
+      "positive_factors": [],
+      "negative_factors": [],
+      "news_count": 0,
+      "news_dropped": 0,
+      "performance": {
+        "list_fetch_ms": 667,
+        "candidate_filter_ms": 0,
+        "enrichment_ms": 3163,
+        "raw_news_count": 40,
+        "raw_research_count": 10,
+        "candidate_news_count": 6,
+        "candidate_research_count": 0,
+        "enriched_news_count": 6,
+        "enriched_research_count": 0,
+        "candidate_reasons": {
+          "news": {
+            "noise:融资净(买入|卖出)": 4,
+            "noise:\\d{1,2}月\\d{1,2}日(快速上涨|快速回调|涨停|": 2,
+            "no-subject-mention": 2,
+            "dedup": 0,
+            "out_of_window": 26
+          },
+          "research": {
+            "dedup": 0,
+            "out_of_window": 10
+          }
+        },
+        "date_filter_ms": 0,
+        "relevance_ms": 0,
+        "llm_ms": 210270,
+        "scoring_ms": 0
+      },
+      "top_news": []
+    },
+    "SZSE:002536": {
+      "name": "飞龙股份",
+      "score": 50,
+      "score_raw": 0,
+      "score_components": {
+        "positive_weight_sum": 0,
+        "negative_weight_sum": 0
+      },
+      "signal": "⚪ No Trade (无数据)",
+      "strategy": "LLM 不可用或调用失败（不走关键字降级）",
+      "suitable_for": "观望",
+      "confidence": "-",
+      "patterns": [],
+      "positive_factors": [],
+      "negative_factors": [],
+      "news_count": 0,
+      "news_dropped": 0,
+      "performance": {
+        "list_fetch_ms": 2288,
+        "candidate_filter_ms": 0,
+        "enrichment_ms": 1604,
+        "raw_news_count": 40,
+        "raw_research_count": 10,
+        "candidate_news_count": 17,
+        "candidate_research_count": 1,
+        "enriched_news_count": 17,
+        "enriched_research_count": 1,
+        "candidate_reasons": {
+          "news": {
+            "noise:\\d{1,2}月\\d{1,2}日(快速上涨|快速回调|涨停|": 1,
+            "noise:融资净(买入|卖出)": 2,
+            "no-subject-mention": 4,
+            "dedup": 0,
+            "out_of_window": 16
+          },
+          "research": {
+            "dedup": 0,
+            "out_of_window": 9
+          }
+        },
+        "date_filter_ms": 0,
+        "relevance_ms": 0,
+        "llm_ms": 231335,
+        "scoring_ms": 0
+      },
+      "top_news": []
+    },
+    "SZSE:002463": {
+      "name": "沪电股份",
+      "score": 50,
+      "score_raw": 0,
+      "score_components": {
+        "positive_weight_sum": 0,
+        "negative_weight_sum": 0
+      },
+      "signal": "⚪ No Trade (无数据)",
+      "strategy": "LLM 不可用或调用失败（不走关键字降级）",
+      "suitable_for": "观望",
+      "confidence": "-",
+      "patterns": [],
+      "positive_factors": [],
+      "negative_factors": [],
+      "news_count": 0,
+      "news_dropped": 0,
+      "performance": {
+        "list_fetch_ms": 914,
+        "candidate_filter_ms": 0,
+        "enrichment_ms": 10,
+        "raw_news_count": 40,
+        "raw_research_count": 10,
+        "candidate_news_count": 6,
+        "candidate_research_count": 0,
+        "enriched_news_count": 6,
+        "enriched_research_count": 0,
+        "candidate_reasons": {
+          "news": {
+            "no-subject-mention": 14,
+            "noise:融资净(买入|卖出)": 2,
+            "dedup": 0,
+            "out_of_window": 18
+          },
+          "research": {
+            "dedup": 0,
+            "out_of_window": 10
+          }
+        },
+        "date_filter_ms": 0,
+        "relevance_ms": 0,
+        "llm_ms": 224015,
+        "scoring_ms": 0
+      },
+      "top_news": []
+    },
+    "SZSE:002916": {
+      "name": "深南电路",
+      "score": 50,
+      "score_raw": 0,
+      "score_components": {
+        "positive_weight_sum": 0,
+        "negative_weight_sum": 0
+      },
+      "signal": "⚪ No Trade (无数据)",
+      "strategy": "LLM 不可用或调用失败（不走关键字降级）",
+      "suitable_for": "观望",
+      "confidence": "-",
+      "patterns": [],
+      "positive_factors": [],
+      "negative_factors": [],
+      "news_count": 0,
+      "news_dropped": 0,
+      "performance": {
+        "list_fetch_ms": 691,
+        "candidate_filter_ms": 0,
+        "enrichment_ms": 1396,
+        "raw_news_count": 40,
+        "raw_research_count": 10,
+        "candidate_news_count": 7,
+        "candidate_research_count": 0,
+        "enriched_news_count": 7,
+        "enriched_research_count": 0,
+        "candidate_reasons": {
+          "news": {
+            "noise:融资净(买入|卖出)": 4,
+            "no-subject-mention": 8,
+            "noise:\\d{1,2}月\\d{1,2}日(快速上涨|快速回调|涨停|": 1,
+            "noise:龙虎榜|大宗交易|盘口异动": 1,
+            "dedup": 0,
+            "out_of_window": 19
+          },
+          "research": {
+            "dedup": 0,
+            "out_of_window": 10
+          }
+        },
+        "date_filter_ms": 0,
+        "relevance_ms": 0,
+        "llm_ms": 125656,
+        "scoring_ms": 0
+      },
+      "top_news": []
+    },
+    "SSE:603083": {
+      "name": "剑桥科技",
+      "score": 50,
+      "score_raw": 0,
+      "score_components": {
+        "positive_weight_sum": 0,
+        "negative_weight_sum": 0
+      },
+      "signal": "⚪ No Trade (无数据)",
+      "strategy": "LLM 不可用或调用失败（不走关键字降级）",
+      "suitable_for": "观望",
+      "confidence": "-",
+      "patterns": [],
+      "positive_factors": [],
+      "negative_factors": [],
+      "news_count": 0,
+      "news_dropped": 0,
+      "performance": {
+        "list_fetch_ms": 612,
+        "candidate_filter_ms": 0,
+        "enrichment_ms": 1456,
+        "raw_news_count": 40,
+        "raw_research_count": 10,
+        "candidate_news_count": 14,
+        "candidate_research_count": 0,
+        "enriched_news_count": 14,
+        "enriched_research_count": 0,
+        "candidate_reasons": {
+          "news": {
+            "no-subject-mention": 12,
+            "dedup": 0,
+            "out_of_window": 14
+          },
+          "research": {
+            "dedup": 0,
+            "out_of_window": 10
+          }
+        },
+        "date_filter_ms": 0,
+        "relevance_ms": 0,
+        "llm_ms": 211194,
+        "scoring_ms": 0
+      },
+      "top_news": []
+    },
+    "SZSE:002015": {
+      "name": "协鑫能科",
+      "score": 50,
+      "score_raw": 0,
+      "score_components": {
+        "positive_weight_sum": 0,
+        "negative_weight_sum": 0
+      },
+      "signal": "⚪ No Trade (无数据)",
+      "strategy": "LLM 不可用或调用失败（不走关键字降级）",
+      "suitable_for": "观望",
+      "confidence": "-",
+      "patterns": [],
+      "positive_factors": [],
+      "negative_factors": [],
+      "news_count": 0,
+      "news_dropped": 0,
+      "performance": {
+        "list_fetch_ms": 1101,
+        "candidate_filter_ms": 0,
+        "enrichment_ms": 74,
+        "raw_news_count": 40,
+        "raw_research_count": 10,
+        "candidate_news_count": 8,
+        "candidate_research_count": 0,
+        "enriched_news_count": 8,
+        "enriched_research_count": 0,
+        "candidate_reasons": {
+          "news": {
+            "noise:融资净(买入|卖出)": 3,
+            "no-subject-mention": 2,
+            "noise:\\d{1,2}月\\d{1,2}日(快速上涨|快速回调|涨停|": 1,
+            "dedup": 0,
+            "out_of_window": 26
+          },
+          "research": {
+            "dedup": 0,
+            "out_of_window": 10
+          }
+        },
+        "date_filter_ms": 0,
+        "relevance_ms": 0,
+        "llm_ms": 156920,
+        "scoring_ms": 0
+      },
+      "top_news": []
+    },
+    "SSE:601869": {
+      "name": "长飞光纤",
+      "score": 50,
+      "score_raw": 0,
+      "score_components": {
+        "positive_weight_sum": 0,
+        "negative_weight_sum": 0
+      },
+      "signal": "⚪ No Trade (无数据)",
+      "strategy": "LLM 不可用或调用失败（不走关键字降级）",
+      "suitable_for": "观望",
+      "confidence": "-",
+      "patterns": [],
+      "positive_factors": [],
+      "negative_factors": [],
+      "news_count": 0,
+      "news_dropped": 0,
+      "performance": {
+        "list_fetch_ms": 652,
+        "candidate_filter_ms": 0,
+        "enrichment_ms": 2340,
+        "raw_news_count": 40,
+        "raw_research_count": 10,
+        "candidate_news_count": 8,
+        "candidate_research_count": 0,
+        "enriched_news_count": 8,
+        "enriched_research_count": 0,
+        "candidate_reasons": {
+          "news": {
+            "no-subject-mention": 12,
+            "noise:融资净(买入|卖出)": 2,
+            "dedup": 0,
+            "out_of_window": 18
+          },
+          "research": {
+            "dedup": 0,
+            "out_of_window": 10
+          }
+        },
+        "date_filter_ms": 0,
+        "relevance_ms": 0,
+        "llm_ms": 215972,
+        "scoring_ms": 0
+      },
+      "top_news": []
+    },
+    "SZSE:002636": {
+      "name": "金安国纪",
+      "score": 50,
+      "score_raw": 0,
+      "score_components": {
+        "positive_weight_sum": 0,
+        "negative_weight_sum": 0
+      },
+      "signal": "⚪ No Trade (无数据)",
+      "strategy": "LLM 不可用或调用失败（不走关键字降级）",
+      "suitable_for": "观望",
+      "confidence": "-",
+      "patterns": [],
+      "positive_factors": [],
+      "negative_factors": [],
+      "news_count": 0,
+      "news_dropped": 0,
+      "performance": {
+        "list_fetch_ms": 660,
+        "candidate_filter_ms": 0,
+        "enrichment_ms": 1157,
+        "raw_news_count": 40,
+        "raw_research_count": 6,
+        "candidate_news_count": 8,
+        "candidate_research_count": 0,
+        "enriched_news_count": 8,
+        "enriched_research_count": 0,
+        "candidate_reasons": {
+          "news": {
+            "noise:融资净(买入|卖出)": 3,
+            "no-subject-mention": 8,
+            "noise:\\d{1,2}月\\d{1,2}日(快速上涨|快速回调|涨停|": 3,
+            "dedup": 0,
+            "out_of_window": 18
+          },
+          "research": {
+            "dedup": 0,
+            "out_of_window": 6
+          }
+        },
+        "date_filter_ms": 0,
+        "relevance_ms": 0,
+        "llm_ms": 179194,
+        "scoring_ms": 0
+      },
+      "top_news": []
+    },
+    "SSE:600183": {
+      "name": "生益科技",
+      "score": 50,
+      "score_raw": 0,
+      "score_components": {
+        "positive_weight_sum": 0,
+        "negative_weight_sum": 0
+      },
+      "signal": "⚪ No Trade (无数据)",
+      "strategy": "LLM 不可用或调用失败（不走关键字降级）",
+      "suitable_for": "观望",
+      "confidence": "-",
+      "patterns": [],
+      "positive_factors": [],
+      "negative_factors": [],
+      "news_count": 0,
+      "news_dropped": 0,
+      "performance": {
+        "list_fetch_ms": 615,
+        "candidate_filter_ms": 0,
+        "enrichment_ms": 1073,
+        "raw_news_count": 40,
+        "raw_research_count": 10,
+        "candidate_news_count": 3,
+        "candidate_research_count": 0,
+        "enriched_news_count": 3,
+        "enriched_research_count": 0,
+        "candidate_reasons": {
+          "news": {
+            "no-subject-mention": 17,
+            "noise:融资净(买入|卖出)": 2,
+            "dedup": 0,
+            "out_of_window": 18
+          },
+          "research": {
+            "dedup": 0,
+            "out_of_window": 10
+          }
+        },
+        "date_filter_ms": 0,
+        "relevance_ms": 0,
+        "llm_ms": 126950,
+        "scoring_ms": 0
+      },
+      "top_news": []
+    },
+    "SZSE:300903": {
+      "name": "科翔股份",
+      "score": 50,
+      "score_raw": 0,
+      "score_components": {
+        "positive_weight_sum": 0,
+        "negative_weight_sum": 0
+      },
+      "signal": "⚪ No Trade (无数据)",
+      "strategy": "LLM 不可用或调用失败（不走关键字降级）",
+      "suitable_for": "观望",
+      "confidence": "-",
+      "patterns": [],
+      "positive_factors": [],
+      "negative_factors": [],
+      "news_count": 0,
+      "news_dropped": 0,
+      "performance": {
+        "list_fetch_ms": 904,
+        "candidate_filter_ms": 0,
+        "enrichment_ms": 5059,
+        "raw_news_count": 40,
+        "raw_research_count": 2,
+        "candidate_news_count": 15,
+        "candidate_research_count": 0,
+        "enriched_news_count": 15,
+        "enriched_research_count": 0,
+        "candidate_reasons": {
+          "news": {
+            "noise:\\d{1,2}月\\d{1,2}日(快速上涨|快速回调|涨停|": 2,
+            "noise:融资净(买入|卖出)": 2,
+            "no-subject-mention": 7,
+            "noise:龙虎榜|大宗交易|盘口异动": 2,
+            "dedup": 1,
+            "out_of_window": 11
+          },
+          "research": {
+            "dedup": 0,
+            "out_of_window": 2
+          }
+        },
+        "date_filter_ms": 0,
+        "relevance_ms": 0,
+        "llm_ms": 207847,
+        "scoring_ms": 0
+      },
+      "top_news": []
+    },
+    "SSE:603766": {
+      "name": "隆鑫通用",
+      "score": 50,
+      "score_raw": 0,
+      "score_components": {
+        "positive_weight_sum": 0,
+        "negative_weight_sum": 0,
+        "news_effective_count": 6,
+        "news_dropped_count": 0
+      },
+      "signal": "⚪ No Trade (微多)",
+      "strategy": "情绪轻微偏多，信号不足，以观望为主",
+      "suitable_for": "观望",
+      "confidence": "低",
+      "patterns": [],
+      "positive_factors": [],
+      "negative_factors": [],
+      "news_count": 6,
+      "news_dropped": 0,
+      "performance": {
+        "list_fetch_ms": 636,
+        "candidate_filter_ms": 0,
+        "enrichment_ms": 12,
+        "raw_news_count": 40,
+        "raw_research_count": 10,
+        "candidate_news_count": 6,
+        "candidate_research_count": 0,
+        "enriched_news_count": 6,
+        "enriched_research_count": 0,
+        "candidate_reasons": {
+          "news": {
+            "noise:融资净(买入|卖出)": 2,
+            "no-subject-mention": 1,
+            "dedup": 0,
+            "out_of_window": 31
+          },
+          "research": {
+            "dedup": 0,
+            "out_of_window": 10
+          }
+        },
+        "date_filter_ms": 0,
+        "relevance_ms": 0,
+        "llm_ms": 6,
+        "scoring_ms": 0
+      },
+      "top_news": [
+        {
+          "date": "2026-09-16 07:44:49",
+          "title": "隆鑫通用：融资净偿还561.71万元，融资余额1.61亿元",
+          "content": "专业金融数据，下一代智能终端\n\n交易所最新数据显示，隆鑫通用于2026年9月15日获融资买入1674.01万元，融资偿还2235.72万元，当日融资净偿还561.71万元。目前，该股融资余额1.61亿，占流通市值比例为0.52%。\n\n该股当日融券卖出3.31万股，融券偿还3.90万股，融券净偿还5900股。目前，该股融券余量41.04万股，融券余额620.52万元。\n\n免责声明：本文基于AI生产，仅供参考，不构成任何投资建议，据此操作风险自担。东方财富发布此内容旨在传播更多信息，与本平台立场无关。东方财富力求但不保证数据的完全准确，如有错漏请以中国证监会指定上市公司信息披露媒体为准，东方财富不对因该资料全部或部分内容而引致的盈亏承担任何责任。用户个人对服务的使用承担风险，东方财富对此不作任何类型的担保。\n\n暗盘资金榜已更新!这些个股/板块可以关注>",
+          "type": "行业",
+          "sentiment": 0,
+          "weight": 1,
+          "final_weight": 0.51,
+          "source_authority": 3,
+          "recency_factor": 0.85,
+          "source": "东方财富资讯",
+          "llm_reviewed": true,
+          "llm_confidence": 0,
+          "llm_is_real_catalyst": false,
+          "llm_reasoning": ""
+        },
+        {
+          "date": "2026-09-16",
+          "title": "隆鑫通用:隆鑫通用动力股份有限公司关于参加重庆辖区2026年投资者网上集体接待日活动的公告",
+          "content": "许可经营项目:开发、生产、销售:内燃机(在许可证核定范围及有效期内经营)。一般经营项目:开发、销售:摩托车及零部件、汽油机及零部件、汽车零部件;开发、生产、销售:农业机具、林业机具、园林机械、非公路用车、普通机械及电器产品;批发、零售:金属材料(不含稀贵金属)、橡塑制品、货物及技术进出口;商贸信息咨询。\n郑重声明：东方财富网发布此信息的目的在于传播更多信息，与本站立场无关。东方财富网不保证该信息（包括但不限于文字、视频、音频、数据及图表）全部或者部分内容的准确性、真实性、完整性、有效性、及时性、原创性等。相关信息并未经过本网站证实，不对您构成任何投资建议，据此操作，风险自担。",
+          "type": "行业",
+          "sentiment": 0,
+          "weight": 1,
+          "final_weight": 0.76,
+          "source_authority": 4.5,
+          "recency_factor": 0.85,
+          "source": "东方财富公告",
+          "llm_reviewed": true,
+          "llm_confidence": 0,
+          "llm_is_real_catalyst": false,
+          "llm_reasoning": ""
+        },
+        {
+          "date": "2026-09-15 07:51:34",
+          "title": "隆鑫通用：融资净偿还43.54万元，融资余额1.66亿元",
+          "content": "全新妙想投研助理，立即体验\n\n交易所最新数据显示，隆鑫通用于2026年9月14日获融资买入783.16万元，融资偿还826.70万元，当日融资净偿还43.54万元。目前，该股融资余额1.66亿，占流通市值比例为0.55%。\n\n该股当日融券卖出3.99万股，融券偿还4500股，融券净卖出3.54万股。目前，该股融券余量41.63万股，融券余额616.54万元。\n\n免责声明：本文基于AI生产，仅供参考，不构成任何投资建议，据此操作风险自担。东方财富发布此内容旨在传播更多信息，与本平台立场无关。东方财富力求但不保证数据的完全准确，如有错漏请以中国证监会指定上市公司信息披露媒体为准，东方财富不对因该资料全部或部分内容而引致的盈亏承担任何责任。用户个人对服务的使用承担风险，东方财富对此不作任何类型的担保。\n\n暗盘资金榜已更新!这些个股/板块可以关注>",
+          "type": "行业",
+          "sentiment": 0,
+          "weight": 1,
+          "final_weight": 0.5,
+          "source_authority": 3,
+          "recency_factor": 0.72,
+          "source": "东方财富资讯",
+          "llm_reviewed": true,
+          "llm_confidence": 0,
+          "llm_is_real_catalyst": false,
+          "llm_reasoning": ""
+        },
+        {
+          "date": "2026-09-14 14:56:31",
+          "title": "隆鑫通用9月14日盘中涨幅达5%",
+          "content": "以下是隆鑫通用在北京时间9月14日14:56分盘口异动快照：\n\n　　全新妙想投研助理，立即体验\n\n \n\n  9月14日，隆鑫通用盘中涨幅达5%，截至14点56分，报14.85元，成交3.01亿元，换手率1.01%。\n注：以上信息仅供参考，不对您构成任何投资建议。\n暗盘资金榜已更新!这些个股/板块可以关注>",
+          "type": "行业",
+          "sentiment": 0,
+          "weight": 1,
+          "final_weight": 0.5,
+          "source_authority": 3,
+          "recency_factor": 0.6,
+          "source": "东方财富资讯",
+          "llm_reviewed": true,
+          "llm_confidence": 0,
+          "llm_is_real_catalyst": false,
+          "llm_reasoning": ""
+        },
+        {
+          "date": "2026-09-12 07:46:10",
+          "title": "隆鑫通用：融资净偿还614.56万元，融资余额1.67亿元",
+          "content": "专业金融数据，下一代智能终端\n\n交易所最新数据显示，隆鑫通用于2026年9月11日获融资买入529.15万元，融资偿还1143.72万元，当日融资净偿还614.56万元。目前，该股融资余额1.67亿，占流通市值比例为0.57%。\n\n该股当日融券卖出7.28万股，融券偿还8800股，融券净卖出6.4万股。目前，该股融券余量38.09万股，融券余额538.21万元。\n\n免责声明：本文基于AI生产，仅供参考，不构成任何投资建议，据此操作风险自担。东方财富发布此内容旨在传播更多信息，与本平台立场无关。东方财富力求但不保证数据的完全准确，如有错漏请以中国证监会指定上市公司信息披露媒体为准，东方财富不对因该资料全部或部分内容而引致的盈亏承担任何责任。用户个人对服务的使用承担风险，东方财富对此不作任何类型的担保。\n\n暗盘资金榜已更新!这些个股/板块可以关注>",
+          "type": "行业",
+          "sentiment": 0,
+          "weight": 1,
+          "final_weight": 0.5,
+          "source_authority": 3,
+          "recency_factor": 0.42,
+          "source": "东方财富资讯",
+          "llm_reviewed": true,
+          "llm_confidence": 0,
+          "llm_is_real_catalyst": false,
+          "llm_reasoning": ""
+        }
+      ]
+    },
+    "SZSE:000333": {
+      "name": "美的集团",
+      "score": 50,
+      "score_raw": 0,
+      "score_components": {
+        "positive_weight_sum": 0,
+        "negative_weight_sum": 0
+      },
+      "signal": "⚪ No Trade (无数据)",
+      "strategy": "LLM 不可用或调用失败（不走关键字降级）",
+      "suitable_for": "观望",
+      "confidence": "-",
+      "patterns": [],
+      "positive_factors": [],
+      "negative_factors": [],
+      "news_count": 0,
+      "news_dropped": 0,
+      "performance": {
+        "list_fetch_ms": 715,
+        "candidate_filter_ms": 0,
+        "enrichment_ms": 1945,
+        "raw_news_count": 40,
+        "raw_research_count": 10,
+        "candidate_news_count": 17,
+        "candidate_research_count": 0,
+        "enriched_news_count": 17,
+        "enriched_research_count": 0,
+        "candidate_reasons": {
+          "news": {
+            "noise:融资净(买入|卖出)": 1,
+            "no-subject-mention": 4,
+            "dedup": 0,
+            "out_of_window": 18
+          },
+          "research": {
+            "dedup": 0,
+            "out_of_window": 10
+          }
+        },
+        "date_filter_ms": 0,
+        "relevance_ms": 0,
+        "llm_ms": 216330,
+        "scoring_ms": 0
+      },
+      "top_news": []
+    },
+    "SZSE:300499": {
+      "name": "高澜股份",
+      "score": 50,
+      "score_raw": 0,
+      "score_components": {
+        "positive_weight_sum": 0,
+        "negative_weight_sum": 0
+      },
+      "signal": "⚪ No Trade (无数据)",
+      "strategy": "LLM 不可用或调用失败（不走关键字降级）",
+      "suitable_for": "观望",
+      "confidence": "-",
+      "patterns": [],
+      "positive_factors": [],
+      "negative_factors": [],
+      "news_count": 0,
+      "news_dropped": 0,
+      "performance": {
+        "list_fetch_ms": 919,
+        "candidate_filter_ms": 0,
+        "enrichment_ms": 25,
+        "raw_news_count": 40,
+        "raw_research_count": 8,
+        "candidate_news_count": 9,
+        "candidate_research_count": 0,
+        "enriched_news_count": 9,
+        "enriched_research_count": 0,
+        "candidate_reasons": {
+          "news": {
+            "noise:\\d{1,2}月\\d{1,2}日(快速上涨|快速回调|涨停|": 1,
+            "no-subject-mention": 4,
+            "noise:融资净(买入|卖出)": 1,
+            "dedup": 0,
+            "out_of_window": 25
+          },
+          "research": {
+            "dedup": 0,
+            "out_of_window": 8
+          }
+        },
+        "date_filter_ms": 0,
+        "relevance_ms": 0,
+        "llm_ms": 207221,
+        "scoring_ms": 0
+      },
+      "top_news": []
+    },
+    "SSE:603186": {
+      "name": "华正新材",
+      "score": 50,
+      "score_raw": 0,
+      "score_components": {
+        "positive_weight_sum": 0,
+        "negative_weight_sum": 0
+      },
+      "signal": "⚪ No Trade (无数据)",
+      "strategy": "LLM 不可用或调用失败（不走关键字降级）",
+      "suitable_for": "观望",
+      "confidence": "-",
+      "patterns": [],
+      "positive_factors": [],
+      "negative_factors": [],
+      "news_count": 0,
+      "news_dropped": 0,
+      "performance": {
+        "list_fetch_ms": 596,
+        "candidate_filter_ms": 0,
+        "enrichment_ms": 1991,
+        "raw_news_count": 40,
+        "raw_research_count": 10,
+        "candidate_news_count": 8,
+        "candidate_research_count": 0,
+        "enriched_news_count": 8,
+        "enriched_research_count": 0,
+        "candidate_reasons": {
+          "news": {
+            "no-subject-mention": 16,
+            "noise:\\d{1,2}月\\d{1,2}日(快速上涨|快速回调|涨停|": 1,
+            "dedup": 0,
+            "out_of_window": 15
+          },
+          "research": {
+            "dedup": 0,
+            "out_of_window": 10
+          }
+        },
+        "date_filter_ms": 0,
+        "relevance_ms": 0,
+        "llm_ms": 189951,
+        "scoring_ms": 0
+      },
+      "top_news": []
+    },
+    "SZSE:300179": {
+      "name": "四方达",
+      "score": 50,
+      "score_raw": 0,
+      "score_components": {
+        "positive_weight_sum": 0,
+        "negative_weight_sum": 0
+      },
+      "signal": "⚪ No Trade (无数据)",
+      "strategy": "LLM 不可用或调用失败（不走关键字降级）",
+      "suitable_for": "观望",
+      "confidence": "-",
+      "patterns": [],
+      "positive_factors": [],
+      "negative_factors": [],
+      "news_count": 0,
+      "news_dropped": 0,
+      "performance": {
+        "list_fetch_ms": 839,
+        "candidate_filter_ms": 0,
+        "enrichment_ms": 3526,
+        "raw_news_count": 40,
+        "raw_research_count": 8,
+        "candidate_news_count": 13,
+        "candidate_research_count": 0,
+        "enriched_news_count": 13,
+        "enriched_research_count": 0,
+        "candidate_reasons": {
+          "news": {
+            "noise:\\d{1,2}月\\d{1,2}日(快速上涨|快速回调|涨停|": 4,
+            "noise:融资净(买入|卖出)": 2,
+            "no-subject-mention": 8,
+            "dedup": 0,
+            "out_of_window": 13
+          },
+          "research": {
+            "dedup": 0,
+            "out_of_window": 8
+          }
+        },
+        "date_filter_ms": 0,
+        "relevance_ms": 0,
+        "llm_ms": 226266,
+        "scoring_ms": 0
+      },
+      "top_news": []
+    },
+    "SSE:603002": {
+      "name": "宏昌电子",
+      "score": 50,
+      "score_raw": 0,
+      "score_components": {
+        "positive_weight_sum": 0,
+        "negative_weight_sum": 0
+      },
+      "signal": "⚪ No Trade (无数据)",
+      "strategy": "LLM 不可用或调用失败（不走关键字降级）",
+      "suitable_for": "观望",
+      "confidence": "-",
+      "patterns": [],
+      "positive_factors": [],
+      "negative_factors": [],
+      "news_count": 0,
+      "news_dropped": 0,
+      "performance": {
+        "list_fetch_ms": 799,
+        "candidate_filter_ms": 0,
+        "enrichment_ms": 5888,
+        "raw_news_count": 40,
+        "raw_research_count": 6,
+        "candidate_news_count": 18,
+        "candidate_research_count": 0,
+        "enriched_news_count": 18,
+        "enriched_research_count": 0,
+        "candidate_reasons": {
+          "news": {
+            "no-subject-mention": 9,
+            "noise:\\d{1,2}月\\d{1,2}日(快速上涨|快速回调|涨停|": 2,
+            "noise:^.{0,8}重要公告集锦": 1,
+            "dedup": 0,
+            "out_of_window": 10
+          },
+          "research": {
+            "dedup": 0,
+            "out_of_window": 6
+          }
+        },
+        "date_filter_ms": 0,
+        "relevance_ms": 0,
+        "llm_ms": 217402,
+        "scoring_ms": 0
+      },
+      "top_news": []
+    },
+    "SZSE:000636": {
+      "name": "风华高科",
+      "score": 50,
+      "score_raw": 0,
+      "score_components": {
+        "positive_weight_sum": 0,
+        "negative_weight_sum": 0
+      },
+      "signal": "⚪ No Trade (无数据)",
+      "strategy": "LLM 不可用或调用失败（不走关键字降级）",
+      "suitable_for": "观望",
+      "confidence": "-",
+      "patterns": [],
+      "positive_factors": [],
+      "negative_factors": [],
+      "news_count": 0,
+      "news_dropped": 0,
+      "performance": {
+        "list_fetch_ms": 3300,
+        "candidate_filter_ms": 0,
+        "enrichment_ms": 1359,
+        "raw_news_count": 40,
+        "raw_research_count": 10,
+        "candidate_news_count": 10,
+        "candidate_research_count": 0,
+        "enriched_news_count": 10,
+        "enriched_research_count": 0,
+        "candidate_reasons": {
+          "news": {
+            "noise:融资净(买入|卖出)": 3,
+            "no-subject-mention": 9,
+            "noise:\\d{1,2}月\\d{1,2}日(快速上涨|快速回调|涨停|": 1,
+            "dedup": 0,
+            "out_of_window": 17
+          },
+          "research": {
+            "dedup": 0,
+            "out_of_window": 10
+          }
+        },
+        "date_filter_ms": 0,
+        "relevance_ms": 0,
+        "llm_ms": 227650,
+        "scoring_ms": 0
+      },
+      "top_news": []
+    },
+    "SSE:603129": {
+      "name": "春风动力",
+      "score": 44,
+      "score_raw": -1.33,
+      "score_components": {
+        "positive_weight_sum": 0.69,
+        "negative_weight_sum": 2.02,
+        "news_effective_count": 5,
+        "news_dropped_count": 0
+      },
+      "signal": "⚪ No Trade (中性)",
+      "strategy": "情绪中性，无明显方向，观望",
+      "suitable_for": "观望",
+      "confidence": "低",
+      "patterns": [],
+      "positive_factors": [
+        "[分析师动作|w0.69] 2026年中报点评：业绩符合我们预期，四轮&两轮双曲线动能充沛"
+      ],
+      "negative_factors": [
+        "[行业|w0.51] 春风动力9月16日盘中跌幅达5%",
+        "[行业|w0.51] 春风动力9月16日加速下跌",
+        "[行业|w0.5] 春风动力：融资净偿还645.21万元，融资余额9211.64万元"
+      ],
+      "news_count": 5,
+      "news_dropped": 0,
+      "performance": {
+        "list_fetch_ms": 647,
+        "candidate_filter_ms": 0,
+        "enrichment_ms": 522,
+        "raw_news_count": 40,
+        "raw_research_count": 10,
+        "candidate_news_count": 4,
+        "candidate_research_count": 1,
+        "enriched_news_count": 4,
+        "enriched_research_count": 1,
+        "candidate_reasons": {
+          "news": {
+            "noise:融资净(买入|卖出)": 3,
+            "dedup": 0,
+            "out_of_window": 33
+          },
+          "research": {
+            "dedup": 0,
+            "out_of_window": 9
+          }
+        },
+        "date_filter_ms": 0,
+        "relevance_ms": 0,
+        "llm_ms": 8,
+        "scoring_ms": 0
+      },
+      "top_news": [
+        {
+          "date": "2026-09-16 10:25:30",
+          "title": "春风动力9月16日盘中跌幅达5%",
+          "content": "以下是春风动力在北京时间9月16日10:25分盘口异动快照：\n\n　　专业金融数据，下一代智能终端\n\n \n\n  9月16日，春风动力盘中跌幅达5%，截至10点25分，报289元，成交1.90亿元，换手率0.41%。\n注：以上信息仅供参考，不对您构成任何投资建议。\n暗盘资金榜已更新!这些个股/板块可以关注>",
+          "type": "行业",
+          "sentiment": -1,
+          "weight": 1,
+          "final_weight": 0.51,
+          "source_authority": 3,
+          "recency_factor": 0.85,
+          "source": "东方财富资讯",
+          "llm_reviewed": true,
+          "llm_confidence": 0.3,
+          "llm_is_real_catalyst": false,
+          "llm_reasoning": "盘面异动无明确催化"
+        },
+        {
+          "date": "2026-09-16 10:18:52",
+          "title": "春风动力9月16日加速下跌",
+          "content": "以下是春风动力在北京时间9月16日10:18分盘口异动快照：\n\n　　在东方财富看资讯行情，选东方财富证券一站式开户交易>>\n\n分笔\n\n10:18:42 292.43 34↓\n10:18:39 292.77 9↓\n10:18:36 292.80 1↓\n10:18:33 293.20 24↓\n10:18:30 292.95 47↓\n \n10:18:27 293.23 6↓\n10:18:24 293.25 13↓\n10:18:21 293.32 3↓\n10:18:18 293.54 2↑\n10:18:12 293.21 11↓\n \n报价\n\n卖五 \n\n293.16\n\n 4\n卖四 \n\n292.81\n\n 8\n卖三 \n\n292.78\n\n 1\n卖二 \n\n292.77\n\n 1\n卖一 \n\n292.64\n\n 2\n\n买一 \n\n292.43\n\n 1\n买二 \n\n292.42\n\n 3\n买三 \n\n292.41\n\n 1\n买四 \n\n292.26\n\n 3\n买五 \n\n292.25\n\n 1\n\n最新：292.43\n涨幅：-3.96%\n涨跌：-12.07\n换手率：0.33%\n成交量：5039手\n成交额：1.52亿元\n主力净流入：\n-73.10万元\n\n  9月16日，春风动力盘中加速下跌，5分钟内跌幅超过2%，截至10点18分，报292.43元，成交1.52亿元，换手率0.33%。\n注：以上信息仅供参考，不对您构成任何投资建议。\n暗盘资金榜已更新!这些个股/板块可以关注>",
+          "type": "行业",
+          "sentiment": -1,
+          "weight": 1,
+          "final_weight": 0.51,
+          "source_authority": 3,
+          "recency_factor": 0.85,
+          "source": "东方财富资讯",
+          "llm_reviewed": true,
+          "llm_confidence": 0.3,
+          "llm_is_real_catalyst": false,
+          "llm_reasoning": "盘中加速下跌无明确催化"
+        },
+        {
+          "date": "2026-09-15 07:49:02",
+          "title": "春风动力：融资净偿还645.21万元，融资余额9211.64万元",
+          "content": "在东方财富看资讯行情，选东方财富证券一站式开户交易>>\n\n交易所最新数据显示，春风动力于2026年9月14日获融资买入954.34万元，融资偿还1599.54万元，当日融资净偿还645.21万元。目前，该股融资余额9211.64万，占流通市值比例为0.20%。\n\n该股当日融券卖出3200股，融券偿还700股，融券净卖出2500股。目前，该股融券余量6.9万股，融券余额2069.17万元。\n\n免责声明：本文基于AI生产，仅供参考，不构成任何投资建议，据此操作风险自担。东方财富发布此内容旨在传播更多信息，与本平台立场无关。东方财富力求但不保证数据的完全准确，如有错漏请以中国证监会指定上市公司信息披露媒体为准，东方财富不对因该资料全部或部分内容而引致的盈亏承担任何责任。用户个人对服务的使用承担风险，东方财富对此不作任何类型的担保。\n\n暗盘资金榜已更新!这些个股/板块可以关注>",
+          "type": "行业",
+          "sentiment": -1,
+          "weight": 1,
+          "final_weight": 0.5,
+          "source_authority": 3,
+          "recency_factor": 0.72,
+          "source": "东方财富资讯",
+          "llm_reviewed": true,
+          "llm_confidence": 0.4,
+          "llm_is_real_catalyst": false,
+          "llm_reasoning": "融资净偿还资金流出"
+        },
+        {
+          "date": "2026-09-11 07:56:55",
+          "title": "春风动力：融资净偿还44.17万元，融资余额9540.96万元",
+          "content": "在东方财富看资讯行情，选东方财富证券一站式开户交易>>\n\n交易所最新数据显示，春风动力于2026年9月10日获融资买入390.74万元，融资偿还434.91万元，当日融资净偿还44.17万元。目前，该股融资余额9540.96万，占流通市值比例为0.22%。\n\n该股当日融券卖出700股，融券偿还500股，融券净卖出200股。目前，该股融券余量6.42万股，融券余额1843.82万元。\n\n免责声明：本文基于AI生产，仅供参考，不构成任何投资建议，据此操作风险自担。东方财富发布此内容旨在传播更多信息，与本平台立场无关。东方财富力求但不保证数据的完全准确，如有错漏请以中国证监会指定上市公司信息披露媒体为准，东方财富不对因该资料全部或部分内容而引致的盈亏承担任何责任。用户个人对服务的使用承担风险，东方财富对此不作任何类型的担保。\n\n暗盘资金榜已更新!这些个股/板块可以关注>",
+          "type": "行业",
+          "sentiment": -1,
+          "weight": 1,
+          "final_weight": 0.5,
+          "source_authority": 3,
+          "recency_factor": 0.36,
+          "source": "东方财富资讯",
+          "llm_reviewed": true,
+          "llm_confidence": 0.4,
+          "llm_is_real_catalyst": false,
+          "llm_reasoning": "融资净偿还额较小"
+        },
+        {
+          "date": "2026-09-11",
+          "title": "2026年中报点评：业绩符合我们预期，四轮&两轮双曲线动能充沛",
+          "content": "",
+          "type": "分析师动作",
+          "sentiment": 1,
+          "weight": 1,
+          "final_weight": 0.69,
+          "source_authority": 4,
+          "recency_factor": 0.36,
+          "source": "东吴证券",
+          "llm_reviewed": true,
+          "llm_confidence": 0.7,
+          "llm_is_real_catalyst": false,
+          "llm_reasoning": "券商中报点评符合预期"
+        }
+      ]
+    }
+  }
+}

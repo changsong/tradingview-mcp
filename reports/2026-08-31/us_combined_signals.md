@@ -9,20 +9,26 @@
 
 | Rank | Name | Symbol | Combined | Grade | Tech | News | News Signal | Type | Entry | Stop | Target | R/R | Risks |
 |------|------|--------|----------|-------|------|------|------------|------|-------|------|--------|-----|-------|
-| 1 | **FIVE** | NASDAQ:FIVE | **59.4** | ⚪C | 57.3 | 50 | NEUTRAL No Trade (No Data) | Breakout (Squeeze Release) | 21.57 | 18.72 | 25.38 | 1.3:1 | near_resist/low_rr |
-| 2 | **OSBC** | NASDAQ:OSBC | **50.4** | ⚪C | 50.6 | 50 | NEUTRAL No Trade (No Data) | Reversal (MACD Cross) | 64.84 | 60.95 | 70.03 | 1.3:1 | chop |
-| 3 | **WPM** | NYSE:WPM | **48.5** | ⚪C | 39.2 | 50 | NEUTRAL No Trade (No Data) | Breakout (Squeeze Release) | 18.85 | 17.61 | 20.43 | 1.3:1 | near_resist/chop/low_rr |
-| 4 | **FWONA** | NASDAQ:FWONA | **48.5** | ⚪C | 39.1 | 50 | NEUTRAL No Trade (No Data) | Breakout (Squeeze Release) | 50.05 | 46.58 | 54.52 | 1.3:1 | near_resist/chop/low_rr |
-| 5 | **LTC** | NYSE:LTC | **46.5** | ⚪C | 40.2 | 56 | NEUTRAL No Trade (Weak Bullish) | Pullback Buy (Near Support) | 21.1 | 19.71 | 23.13 | 1.5:1 | chop |
-| 6 | **VRTX** | NASDAQ:VRTX | **45.2** | ⚪C | 33.6 | 50 | NEUTRAL No Trade (No Data) | Breakout (Squeeze Release) | 1.18 | 1.07 | 1.33 | 1.4:1 | low_rr |
-| 7 | **CET** | AMEX:CET | **43.2** | ⚪C | 38.6 | 50 | NEUTRAL No Trade (No Data) | Pullback Buy (Near Support) | 9.15 | 8.64 | 9.94 | 1.5:1 | near_resist/low_rr |
-| 8 | **PATH** | NYSE:PATH | **43.2** | ⚪C | 30.3 | 50 | NEUTRAL No Trade (No Data) | Trend Follow (HH/HL Intact) | 43.93 | 39.78 | 50.02 | 1.5:1 | near_resist/chop/low_rr |
-| 9 | **RRC** | NYSE:RRC | **42.2** | ⚪C | 27.3 | 52 | NEUTRAL No Trade (Weak Bullish) | Breakout (Squeeze Release) | 17.36 | 16.34 | 18.65 | 1.3:1 | near_resist/chop |
-| 10 | **SCCO** | NYSE:SCCO | **39.9** | ⚪C | 24.8 | 50 | NEUTRAL No Trade (No Data) | Breakout (Squeeze Release) | 32.21 | 30.14 | 34.84 | 1.3:1 | near_resist/chop/low_rr |
-| 11 | **DASH** | NASDAQ:DASH | **38** | ⚪C | 21.7 | 50 | NEUTRAL No Trade (No Data) | Trend Follow (HH/HL Intact) | 236.74 | 225.38 | 253.41 | 1.5:1 | fake_break/bull_trap/near_resist/low_rr |
-| 12 | **NEM** | NYSE:NEM | **34.9** | ⚪C | 20.2 | 57 | NEUTRAL No Trade (Weak Bullish) | Pullback Buy (Near Support) | 28.21 | 25.15 | 32.13 | 1.3:1 | near_resist/chop |
-| 13 | **GEN** | NASDAQ:GEN | **34.6** | ⚪C | 25 | 49 | NEUTRAL No Trade (Neutral) | Pullback Buy (Near Support) | 48.75 | 45.63 | 53.35 | 1.5:1 | near_resist/chop |
-| 14 | **MRVL** | NASDAQ:MRVL | **32.2** | ⚪C | 20.3 | 50 | NEUTRAL No Trade (No Data) | Pullback Buy (Near Support) | 9.1 | 8.09 | 10.39 | 1.3:1 | fake_break/near_resist/bear_div/low_rr |
+| 1 | **RRC** | NYSE:RRC | **58.8** | ⚪C | 64.6 | 50 | NEUTRAL No Trade (No Data) | Pullback Buy (Near Support) | 40.84 | 39.55 | 43.37 | 2:1 | near_resist |
+| 2 | **APD** | NYSE:APD | **54.6** | ⚪C | 57.6 | 50 | NEUTRAL No Trade (No Data) | Reversal (MACD Cross) | 308.09 | 299.31 | 319.8 | 1.3:1 | near_resist/chop/low_rr |
+| 3 | **FCX** | NYSE:FCX | **51.5** | ⚪C | 44.2 | 50 | NEUTRAL No Trade (Weak Bullish) | Trend Follow (HH/HL Intact) | 76.45 | 72.21 | 82.67 | 1.5:1 | OK |
+| 4 | **FIVE** | NASDAQ:FIVE | **49.3** | ⚪C | 48.8 | 50 | NEUTRAL No Trade (No Data) | Pullback Buy (Near Support) | 238.26 | 223.51 | 260.27 | 1.5:1 | mom_decay/near_resist/low_rr |
+| 5 | **HOOD** | NASDAQ:HOOD | **49.2** | ⚪C | 48.7 | 50 | NEUTRAL No Trade (No Data) | Pullback Buy (Near Support) | 102.7 | 92.17 | 116.35 | 1.3:1 | OK |
+| 6 | **JOE** | NYSE:JOE | **49.1** | ⚪C | 48.5 | 50 | NEUTRAL No Trade (No Data) | Pullback Buy (Near Support) | 66.31 | 64.49 | 70.15 | 2.1:1 | mom_decay/near_resist/bear_div |
+| 7 | **NEM** | NYSE:NEM | **49** | ⚪C | 40 | 50 | NEUTRAL No Trade (No Data) | Trend Follow (HH/HL Intact) | 127.98 | 120.88 | 138.4 | 1.5:1 | near_resist/low_rr |
+| 8 | **OTC:SBGSY** | OTC:SBGSY | **46.9** | ⚪C | 44.9 | 50 | NEUTRAL No Trade (No Data) | Pullback Buy (Near Support) | 68.79 | 67.47 | 72.21 | 2.6:1 | mom_decay/near_resist/chop/low_rr |
+| 9 | **WPM** | NYSE:WPM | **46.4** | ⚪C | 35.7 | 50 | NEUTRAL No Trade (No Data) | Trend Follow (HH/HL Intact) | 153.33 | 144.36 | 166.49 | 1.5:1 | near_resist/low_rr |
+| 10 | **SCCO** | NYSE:SCCO | **45** | ⚪C | 33.3 | 50 | NEUTRAL No Trade (No Data) | Trend Follow (HH/HL Intact) | 209.8 | 196.58 | 229.19 | 1.5:1 | near_resist/low_rr |
+| 11 | **VRTX** | NASDAQ:VRTX | **44.6** | ⚪C | 32.7 | 50 | NEUTRAL No Trade (No Data) | Trend Follow (HH/HL Intact) | 541.69 | 522.19 | 570.29 | 1.5:1 | near_resist/bear_div/low_rr |
+| 12 | **OSBC** | NASDAQ:OSBC | **44.5** | ⚪C | 40.9 | 50 | NEUTRAL No Trade (No Data) | Pullback Buy (Near Support) | 24.86 | 24.48 | 26 | 3:1 | mom_decay/near_resist |
+| 13 | **ADAM** | NASDAQ:ADAM | **43.8** | ⚪C | 31.4 | 50 | NEUTRAL No Trade (No Data) | Trend Continuation | 9.8 | 9.49 | 10.25 | 1.5:1 | mom_decay/low_rr |
+| 14 | **FWONA** | NASDAQ:FWONA | **42.6** | ⚪C | 37.6 | 50 | NEUTRAL No Trade (No Data) | Pullback Buy (Near Support) | 92.02 | 89.12 | 97.72 | 2:1 | mom_decay/near_resist/chop |
+| 15 | **DASH** | NASDAQ:DASH | **39.4** | ⚪C | 24 | 50 | NEUTRAL No Trade (No Data) | Trend Follow (HH/HL Intact) | 236.74 | 225.38 | 253.41 | 1.5:1 | fake_break/bull_trap/near_resist/low_rr |
+| 16 | **LLY** | NYSE:LLY | **39.1** | ⚪C | 31.9 | 50 | NEUTRAL No Trade (No Data) | Pullback Buy (Near Support) | 1156.99 | 1099.43 | 1249.79 | 1.6:1 | mom_decay/near_resist/chop/low_rr |
+| 17 | **CBOE** | CBOE:CBOE | **38.5** | ⚪C | 25.1 | 46 | NEUTRAL No Trade (Neutral) | Trend Continuation | 310.45 | 296.48 | 330.94 | 1.5:1 | near_resist/chop/low_rr |
+| 18 | **MRVL** | NASDAQ:MRVL | **37.1** | ⚪C | 28.5 | 50 | NEUTRAL No Trade (No Data) | Pullback Buy (Near Support) | 213.37 | 183.69 | 249.55 | 1.2:1 | near_resist/chop/low_rr |
+| 19 | **CET** | AMEX:CET | **36.7** | ⚪C | 27.8 | 50 | NEUTRAL No Trade (No Data) | Pullback Buy (Near Support) | 53.97 | 53.48 | 56.11 | 4.4:1 | mom_decay/near_resist/chop/low_rr |
+| 20 | **J** | NYSE:J | **33.4** | ⚪C | 22.4 | 50 | NEUTRAL No Trade (No Data) | Pullback Buy (Near Support) | 149.7 | 145.6 | 158.36 | 2.1:1 | fake_break/near_resist/bear_div/low_rr |
 
 ---
 
@@ -35,4 +41,4 @@
 3. **R/R below 1.5:1** — reduce size or skip.
 4. **Position sizing**: Grade A 30%, B 20%, C+ (post-pullback) 15%, max 30% per name.
 
-*Generated: 2026/8/31 16:04:40*
+*Generated: 2026/8/31 21:00:43*

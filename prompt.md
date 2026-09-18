@@ -11,7 +11,7 @@
 
 ## 上升趋势股票过滤
 ### A股 40分钟左右
-使用 `./scripts/launch_tv_debug.bat` 启动TradingView，设置图表周期为天。然后执行：
+使用 `./scripts/launch_tv_debug.bat` 启动TradingView，请使用策略名为：A_Share_SQZMOM_PRO_v27_Daily 的策略, 设置图表周期为天。然后执行：
 ```bash
 npm run scan:cn
 # 等价：node pipeline/1-scan/scan_stocks.js --symbols=filepath=./watchlist/cn.txt --output=./watchlist/cn_selected.txt

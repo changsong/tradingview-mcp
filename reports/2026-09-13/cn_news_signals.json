@@ -1,0 +1,1106 @@
+{
+  "generated_at": "2026-09-12T00:30:39.963Z",
+  "market": "cn",
+  "source": "src/core/webNews.js (东方财富/新浪/巨潮) + lib 本地组件链",
+  "classifier": "local dictionaries (no LLM; DEEPSEEK_API_KEY absent)",
+  "score_scale": "0-100 normalized (neutral=50)",
+  "window": {
+    "from": "2026-09-05",
+    "to": "2026-09-12",
+    "days": 7
+  },
+  "llm_used": false,
+  "stocks": {
+    "SZSE:002452": {
+      "name": "002452",
+      "score": 69,
+      "score_raw": 4.65,
+      "score_components": {
+        "positive_weight_sum": 4.65,
+        "negative_weight_sum": 0,
+        "news_effective_count": 3,
+        "news_dropped_count": 47
+      },
+      "signal": "🟢 Long (中)",
+      "strategy": "情绪偏多，适合低吸或轻仓参与",
+      "suitable_for": "低吸 / 轻仓追",
+      "confidence": "中",
+      "patterns": [],
+      "positive_factors": [
+        "[行业|w2.7] 长高电气:关于全资子公司在国家电网中标的公告",
+        "[财报|w1.95] 长高电气(002452.SZ)：全资子公司合计中标国家电网约2.99亿元项目，占2025年营收17.96%"
+      ],
+      "negative_factors": [],
+      "news_count": 3,
+      "news_dropped": 47,
+      "top_news": [
+        {
+          "date": "2026-09-09",
+          "title": "长高电气:关于“长高转债”开始转股的提示性公告",
+          "content": "",
+          "type": "行业",
+          "sentiment": 0,
+          "weight": 3,
+          "final_weight": 2.7,
+          "source_authority": 4.5,
+          "recency_factor": 0.6,
+          "source": "东方财富公告"
+        },
+        {
+          "date": "2026-09-09",
+          "title": "长高电气:关于全资子公司在国家电网中标的公告",
+          "content": "",
+          "type": "行业",
+          "sentiment": 1,
+          "weight": 3,
+          "final_weight": 2.7,
+          "source_authority": 4.5,
+          "recency_factor": 0.6,
+          "source": "东方财富公告"
+        },
+        {
+          "date": "2026-09-08 20:30:51",
+          "title": "长高电气(002452.SZ)：全资子公司合计中标国家电网约2.99亿元项目，占2025年营收17.96%",
+          "content": "",
+          "type": "财报",
+          "sentiment": 1,
+          "weight": 2,
+          "final_weight": 1.95,
+          "source_authority": 3,
+          "recency_factor": 0.5,
+          "source": "东方财富资讯"
+        }
+      ]
+    },
+    "SSE:600362": {
+      "name": "600362",
+      "score": 59,
+      "score_raw": 3.74,
+      "score_components": {
+        "positive_weight_sum": 3.74,
+        "negative_weight_sum": 0,
+        "news_effective_count": 5,
+        "news_dropped_count": 45
+      },
+      "signal": "⚪ No Trade (微多)",
+      "strategy": "情绪轻微偏多，信号不足，以观望为主",
+      "suitable_for": "观望",
+      "confidence": "低",
+      "patterns": [],
+      "positive_factors": [
+        "[财报|w3.74] 公司深度报告：半年业绩创历史新高，多个参控股项目打开成长空间"
+      ],
+      "negative_factors": [],
+      "news_count": 5,
+      "news_dropped": 45,
+      "top_news": [
+        {
+          "date": "2026-09-11",
+          "title": "江西铜业:江西铜业股份有限公司2026年度第四期中期票据(并购)发行情况公告",
+          "content": "",
+          "type": "并购",
+          "sentiment": 0,
+          "weight": 5,
+          "final_weight": 5.35,
+          "source_authority": 4.5,
+          "recency_factor": 0.85,
+          "source": "东方财富公告"
+        },
+        {
+          "date": "2026-09-10",
+          "title": "江西铜业股份有限公司2026年度第四期中期票据（并购）发行情况公告",
+          "content": "",
+          "type": "并购",
+          "sentiment": 0,
+          "weight": 5,
+          "final_weight": 5.04,
+          "source_authority": 5,
+          "recency_factor": 0.72,
+          "source": "巨潮资讯"
+        },
+        {
+          "date": "2026-09-09",
+          "title": "江西铜业:江西铜业股份有限公司关于召开2026年半年度业绩说明会的公告",
+          "content": "",
+          "type": "财报",
+          "sentiment": 0,
+          "weight": 4,
+          "final_weight": 3.51,
+          "source_authority": 4.5,
+          "recency_factor": 0.6,
+          "source": "东方财富公告"
+        },
+        {
+          "date": "2026-09-08",
+          "title": "江西铜业股份有限公司关于召开2026年半年度业绩说明会的公告",
+          "content": "",
+          "type": "财报",
+          "sentiment": 0,
+          "weight": 3,
+          "final_weight": 3.25,
+          "source_authority": 5,
+          "recency_factor": 0.5,
+          "source": "巨潮资讯"
+        },
+        {
+          "date": "2026-09-10",
+          "title": "公司深度报告：半年业绩创历史新高，多个参控股项目打开成长空间",
+          "content": "",
+          "type": "财报",
+          "sentiment": 1,
+          "weight": 4,
+          "final_weight": 3.74,
+          "source_authority": 4,
+          "recency_factor": 0.72,
+          "source": "开源证券"
+        }
+      ]
+    },
+    "SZSE:002463": {
+      "name": "002463",
+      "score": 59,
+      "score_raw": 2.1,
+      "score_components": {
+        "positive_weight_sum": 2.1,
+        "negative_weight_sum": 0,
+        "news_effective_count": 3,
+        "news_dropped_count": 47
+      },
+      "signal": "⚪ No Trade (微多)",
+      "strategy": "情绪轻微偏多，信号不足，以观望为主",
+      "suitable_for": "观望",
+      "confidence": "低",
+      "patterns": [],
+      "positive_factors": [
+        "[并购|w2.1] 上证早知道｜301085，签订算力大单；002463，获机构净买入8.88亿元；600825，筹划重大资产重组"
+      ],
+      "negative_factors": [],
+      "news_count": 3,
+      "news_dropped": 47,
+      "top_news": [
+        {
+          "date": "2026-09-08 06:46:00",
+          "title": "上证早知道｜301085，签订算力大单；002463，获机构净买入8.88亿元；600825，筹划重大资产重组",
+          "content": "",
+          "type": "并购",
+          "sentiment": 1,
+          "weight": 2,
+          "final_weight": 2.1,
+          "source_authority": 3,
+          "recency_factor": 0.5,
+          "source": "东方财富资讯"
+        },
+        {
+          "date": "2026-09-08",
+          "title": "沪电股份:2026年9月8日投资者关系活动记录表",
+          "content": "",
+          "type": "行业",
+          "sentiment": 0,
+          "weight": 2,
+          "final_weight": 2.25,
+          "source_authority": 4.5,
+          "recency_factor": 0.5,
+          "source": "东方财富公告"
+        },
+        {
+          "date": "2026-09-07",
+          "title": "沪电股份:2026年9月7日投资者关系活动记录表",
+          "content": "",
+          "type": "行业",
+          "sentiment": 0,
+          "weight": 2,
+          "final_weight": 1.89,
+          "source_authority": 4.5,
+          "recency_factor": 0.42,
+          "source": "东方财富公告"
+        }
+      ]
+    },
+    "SSE:600388": {
+      "name": "600388",
+      "score": 50,
+      "score_raw": 0,
+      "score_components": {
+        "positive_weight_sum": 0,
+        "negative_weight_sum": 0
+      },
+      "signal": "⚪ No Trade (无数据)",
+      "strategy": "窗口内无相关有效新闻",
+      "suitable_for": "观望",
+      "confidence": "-",
+      "patterns": [],
+      "positive_factors": [],
+      "negative_factors": [],
+      "news_count": 0,
+      "news_dropped": 50,
+      "top_news": []
+    },
+    "SSE:601665": {
+      "name": "601665",
+      "score": 50,
+      "score_raw": 0,
+      "score_components": {
+        "positive_weight_sum": 0,
+        "negative_weight_sum": 0
+      },
+      "signal": "⚪ No Trade (无数据)",
+      "strategy": "窗口内无相关有效新闻",
+      "suitable_for": "观望",
+      "confidence": "-",
+      "patterns": [],
+      "positive_factors": [],
+      "negative_factors": [],
+      "news_count": 0,
+      "news_dropped": 50,
+      "top_news": []
+    },
+    "SSE:603162": {
+      "name": "603162",
+      "score": 50,
+      "score_raw": 0,
+      "score_components": {
+        "positive_weight_sum": 0,
+        "negative_weight_sum": 0,
+        "news_effective_count": 2,
+        "news_dropped_count": 46
+      },
+      "signal": "⚪ No Trade (微多)",
+      "strategy": "情绪轻微偏多，信号不足，以观望为主",
+      "suitable_for": "观望",
+      "confidence": "低",
+      "patterns": [],
+      "positive_factors": [],
+      "negative_factors": [],
+      "news_count": 2,
+      "news_dropped": 46,
+      "top_news": [
+        {
+          "date": "2026-09-11",
+          "title": "海通发展:福建海通发展股份有限公司关于与租赁公司开展船舶融资租赁及经营性租赁业务并提供担保的进展公告",
+          "content": "",
+          "type": "行业",
+          "sentiment": 0,
+          "weight": 4,
+          "final_weight": 3.82,
+          "source_authority": 4.5,
+          "recency_factor": 0.85,
+          "source": "东方财富公告"
+        },
+        {
+          "date": "2026-09-10",
+          "title": "海通发展:福建海通发展股份有限公司关于公司2024年股票期权与限制性股票激励计划预留授予第二个行权期自主行权实施公告",
+          "content": "",
+          "type": "回购",
+          "sentiment": 0,
+          "weight": 4,
+          "final_weight": 3.89,
+          "source_authority": 4.5,
+          "recency_factor": 0.72,
+          "source": "东方财富公告"
+        }
+      ]
+    },
+    "SSE:600330": {
+      "name": "600330",
+      "score": 50,
+      "score_raw": 0,
+      "score_components": {
+        "positive_weight_sum": 0,
+        "negative_weight_sum": 0,
+        "news_effective_count": 2,
+        "news_dropped_count": 48
+      },
+      "signal": "⚪ No Trade (微多)",
+      "strategy": "情绪轻微偏多，信号不足，以观望为主",
+      "suitable_for": "观望",
+      "confidence": "低",
+      "patterns": [],
+      "positive_factors": [],
+      "negative_factors": [],
+      "news_count": 2,
+      "news_dropped": 48,
+      "top_news": [
+        {
+          "date": "2026-09-12",
+          "title": "天通股份:天通股份关于筹划发行H股股票并在香港联合交易所有限公司上市的提示性公告",
+          "content": "",
+          "type": "行业",
+          "sentiment": 0,
+          "weight": 5,
+          "final_weight": 4.5,
+          "source_authority": 4.5,
+          "recency_factor": 1,
+          "source": "东方财富公告"
+        },
+        {
+          "date": "2026-09-11",
+          "title": "天通股份关于筹划发行H股股票并在香港联合交易所有限公司上市的提示性公告",
+          "content": "",
+          "type": "行业",
+          "sentiment": 0,
+          "weight": 4,
+          "final_weight": 4.25,
+          "source_authority": 5,
+          "recency_factor": 0.85,
+          "source": "巨潮资讯"
+        }
+      ]
+    },
+    "SZSE:300866": {
+      "name": "300866",
+      "score": 50,
+      "score_raw": 0,
+      "score_components": {
+        "positive_weight_sum": 0,
+        "negative_weight_sum": 0
+      },
+      "signal": "⚪ No Trade (无数据)",
+      "strategy": "窗口内无相关有效新闻",
+      "suitable_for": "观望",
+      "confidence": "-",
+      "patterns": [],
+      "positive_factors": [],
+      "negative_factors": [],
+      "news_count": 0,
+      "news_dropped": 50,
+      "top_news": []
+    },
+    "SSE:605198": {
+      "name": "605198",
+      "score": 50,
+      "score_raw": 0,
+      "score_components": {
+        "positive_weight_sum": 0,
+        "negative_weight_sum": 0
+      },
+      "signal": "⚪ No Trade (无数据)",
+      "strategy": "窗口内无相关有效新闻",
+      "suitable_for": "观望",
+      "confidence": "-",
+      "patterns": [],
+      "positive_factors": [],
+      "negative_factors": [],
+      "news_count": 0,
+      "news_dropped": 41,
+      "top_news": []
+    },
+    "SSE:600172": {
+      "name": "600172",
+      "score": 50,
+      "score_raw": 0,
+      "score_components": {
+        "positive_weight_sum": 0,
+        "negative_weight_sum": 0,
+        "news_effective_count": 6,
+        "news_dropped_count": 43
+      },
+      "signal": "⚪ No Trade (微多)",
+      "strategy": "情绪轻微偏多，信号不足，以观望为主",
+      "suitable_for": "观望",
+      "confidence": "低",
+      "patterns": [],
+      "positive_factors": [],
+      "negative_factors": [],
+      "news_count": 6,
+      "news_dropped": 43,
+      "top_news": [
+        {
+          "date": "2026-09-12",
+          "title": "黄河旋风:河南世纪通律师事务所关于河南黄河旋风股份有限公司2026年第四次临时股东会的法律意见书",
+          "content": "",
+          "type": "行业",
+          "sentiment": 0,
+          "weight": 5,
+          "final_weight": 4.5,
+          "source_authority": 4.5,
+          "recency_factor": 1,
+          "source": "东方财富公告"
+        },
+        {
+          "date": "2026-09-12",
+          "title": "黄河旋风:2026年第四次临时股东会决议公告",
+          "content": "",
+          "type": "行业",
+          "sentiment": 0,
+          "weight": 5,
+          "final_weight": 4.5,
+          "source_authority": 4.5,
+          "recency_factor": 1,
+          "source": "东方财富公告"
+        },
+        {
+          "date": "2026-09-11",
+          "title": "2026年第四次临时股东会决议公告",
+          "content": "",
+          "type": "行业",
+          "sentiment": 0,
+          "weight": 4,
+          "final_weight": 4.25,
+          "source_authority": 5,
+          "recency_factor": 0.85,
+          "source": "巨潮资讯"
+        },
+        {
+          "date": "2026-09-11",
+          "title": "河南世纪通律师事务所关于河南黄河旋风股份有限公司2026年第四次临时股东会的法律意见书",
+          "content": "",
+          "type": "行业",
+          "sentiment": 0,
+          "weight": 4,
+          "final_weight": 4.25,
+          "source_authority": 5,
+          "recency_factor": 0.85,
+          "source": "巨潮资讯"
+        },
+        {
+          "date": "2026-09-09",
+          "title": "黄河旋风:河南黄河旋风股份有限公司2026年第五次临时股东会会议资料",
+          "content": "",
+          "type": "行业",
+          "sentiment": 0,
+          "weight": 3,
+          "final_weight": 2.7,
+          "source_authority": 4.5,
+          "recency_factor": 0.6,
+          "source": "东方财富公告"
+        }
+      ]
+    },
+    "SSE:600186": {
+      "name": "600186",
+      "score": 50,
+      "score_raw": 0,
+      "score_components": {
+        "positive_weight_sum": 0,
+        "negative_weight_sum": 0,
+        "news_effective_count": 2,
+        "news_dropped_count": 48
+      },
+      "signal": "⚪ No Trade (微多)",
+      "strategy": "情绪轻微偏多，信号不足，以观望为主",
+      "suitable_for": "观望",
+      "confidence": "低",
+      "patterns": [],
+      "positive_factors": [],
+      "negative_factors": [],
+      "news_count": 2,
+      "news_dropped": 48,
+      "top_news": [
+        {
+          "date": "2026-09-12",
+          "title": "莲花控股:莲花控股股份有限公司关于为控股子公司提供担保的进展公告",
+          "content": "",
+          "type": "并购",
+          "sentiment": 0,
+          "weight": 6,
+          "final_weight": 6.3,
+          "source_authority": 4.5,
+          "recency_factor": 1,
+          "source": "东方财富公告"
+        },
+        {
+          "date": "2026-09-11",
+          "title": "莲花控股股份有限公司关于为控股子公司提供担保的进展公告",
+          "content": "",
+          "type": "并购",
+          "sentiment": 0,
+          "weight": 6,
+          "final_weight": 5.95,
+          "source_authority": 5,
+          "recency_factor": 0.85,
+          "source": "巨潮资讯"
+        }
+      ]
+    },
+    "SSE:601168": {
+      "name": "601168",
+      "score": 50,
+      "score_raw": 0,
+      "score_components": {
+        "positive_weight_sum": 0,
+        "negative_weight_sum": 0
+      },
+      "signal": "⚪ No Trade (无数据)",
+      "strategy": "窗口内无相关有效新闻",
+      "suitable_for": "观望",
+      "confidence": "-",
+      "patterns": [],
+      "positive_factors": [],
+      "negative_factors": [],
+      "news_count": 0,
+      "news_dropped": 50,
+      "top_news": []
+    },
+    "SSE:601083": {
+      "name": "601083",
+      "score": 50,
+      "score_raw": 0,
+      "score_components": {
+        "positive_weight_sum": 0,
+        "negative_weight_sum": 0
+      },
+      "signal": "⚪ No Trade (无数据)",
+      "strategy": "窗口内无相关有效新闻",
+      "suitable_for": "观望",
+      "confidence": "-",
+      "patterns": [],
+      "positive_factors": [],
+      "negative_factors": [],
+      "news_count": 0,
+      "news_dropped": 44,
+      "top_news": []
+    },
+    "SZSE:300990": {
+      "name": "300990",
+      "score": 50,
+      "score_raw": 0,
+      "score_components": {
+        "positive_weight_sum": 0,
+        "negative_weight_sum": 0,
+        "news_effective_count": 1,
+        "news_dropped_count": 49
+      },
+      "signal": "⚪ No Trade (微多)",
+      "strategy": "情绪轻微偏多，信号不足，以观望为主",
+      "suitable_for": "观望",
+      "confidence": "低",
+      "patterns": [],
+      "positive_factors": [],
+      "negative_factors": [],
+      "news_count": 1,
+      "news_dropped": 49,
+      "top_news": [
+        {
+          "date": "2026-09-10",
+          "title": "同飞股份:关于参加2026年河北辖区上市公司投资者网上集体接待日暨2026年半年报业绩说明会的公告",
+          "content": "",
+          "type": "财报",
+          "sentiment": 0,
+          "weight": 4,
+          "final_weight": 4.21,
+          "source_authority": 4.5,
+          "recency_factor": 0.72,
+          "source": "东方财富公告"
+        }
+      ]
+    },
+    "SSE:601872": {
+      "name": "601872",
+      "score": 50,
+      "score_raw": 0,
+      "score_components": {
+        "positive_weight_sum": 0,
+        "negative_weight_sum": 0,
+        "news_effective_count": 1,
+        "news_dropped_count": 49
+      },
+      "signal": "⚪ No Trade (微多)",
+      "strategy": "情绪轻微偏多，信号不足，以观望为主",
+      "suitable_for": "观望",
+      "confidence": "低",
+      "patterns": [],
+      "positive_factors": [],
+      "negative_factors": [],
+      "news_count": 1,
+      "news_dropped": 49,
+      "top_news": [
+        {
+          "date": "2026-09-07",
+          "title": "招商轮船:投资者关系活动记录表-20260907v4",
+          "content": "",
+          "type": "行业",
+          "sentiment": 0,
+          "weight": 2,
+          "final_weight": 1.89,
+          "source_authority": 4.5,
+          "recency_factor": 0.42,
+          "source": "东方财富公告"
+        }
+      ]
+    },
+    "SZSE:000776": {
+      "name": "000776",
+      "score": 50,
+      "score_raw": 0,
+      "score_components": {
+        "positive_weight_sum": 0,
+        "negative_weight_sum": 0,
+        "news_effective_count": 16,
+        "news_dropped_count": 34
+      },
+      "signal": "⚪ No Trade (微多)",
+      "strategy": "情绪轻微偏多，信号不足，以观望为主",
+      "suitable_for": "观望",
+      "confidence": "低",
+      "patterns": [],
+      "positive_factors": [],
+      "negative_factors": [],
+      "news_count": 16,
+      "news_dropped": 34,
+      "top_news": [
+        {
+          "date": "2026-09-12",
+          "title": "广发证券:H股公告",
+          "content": "",
+          "type": "行业",
+          "sentiment": 0,
+          "weight": 5,
+          "final_weight": 4.5,
+          "source_authority": 4.5,
+          "recency_factor": 1,
+          "source": "东方财富公告"
+        },
+        {
+          "date": "2026-09-11",
+          "title": "广发证券:关于参加2026年广东辖区投资者集体接待日暨辖区上市公司中报业绩说明会活动的公告",
+          "content": "",
+          "type": "财报",
+          "sentiment": 0,
+          "weight": 5,
+          "final_weight": 4.97,
+          "source_authority": 4.5,
+          "recency_factor": 0.85,
+          "source": "东方财富公告"
+        },
+        {
+          "date": "2026-09-11",
+          "title": "H股公告",
+          "content": "",
+          "type": "行业",
+          "sentiment": 0,
+          "weight": 4,
+          "final_weight": 4.25,
+          "source_authority": 5,
+          "recency_factor": 0.85,
+          "source": "巨潮资讯"
+        },
+        {
+          "date": "2026-09-10",
+          "title": "广发证券:2026年9月10日投资者关系活动记录表",
+          "content": "",
+          "type": "行业",
+          "sentiment": 0,
+          "weight": 3,
+          "final_weight": 3.24,
+          "source_authority": 4.5,
+          "recency_factor": 0.72,
+          "source": "东方财富公告"
+        },
+        {
+          "date": "2026-09-10",
+          "title": "关于参加2026年广东辖区投资者集体接待日暨辖区上市公司中报业绩说明会活动的公告",
+          "content": "",
+          "type": "财报",
+          "sentiment": 0,
+          "weight": 5,
+          "final_weight": 4.68,
+          "source_authority": 5,
+          "recency_factor": 0.72,
+          "source": "巨潮资讯"
+        }
+      ]
+    },
+    "SSE:603228": {
+      "name": "603228",
+      "score": 50,
+      "score_raw": 0,
+      "score_components": {
+        "positive_weight_sum": 0,
+        "negative_weight_sum": 0,
+        "news_effective_count": 9,
+        "news_dropped_count": 41
+      },
+      "signal": "⚪ No Trade (微多)",
+      "strategy": "情绪轻微偏多，信号不足，以观望为主",
+      "suitable_for": "观望",
+      "confidence": "低",
+      "patterns": [],
+      "positive_factors": [],
+      "negative_factors": [],
+      "news_count": 9,
+      "news_dropped": 41,
+      "top_news": [
+        {
+          "date": "2026-09-09",
+          "title": "景旺电子:北京观韬(深圳)律师事务所关于深圳市景旺电子股份有限公司2026年第二次临时股东会的法律意见书",
+          "content": "",
+          "type": "行业",
+          "sentiment": 0,
+          "weight": 3,
+          "final_weight": 2.7,
+          "source_authority": 4.5,
+          "recency_factor": 0.6,
+          "source": "东方财富公告"
+        },
+        {
+          "date": "2026-09-09",
+          "title": "景旺电子:景旺电子关于刊发H股发行聆讯后资料集的公告",
+          "content": "",
+          "type": "行业",
+          "sentiment": 0,
+          "weight": 3,
+          "final_weight": 2.7,
+          "source_authority": 4.5,
+          "recency_factor": 0.6,
+          "source": "东方财富公告"
+        },
+        {
+          "date": "2026-09-09",
+          "title": "景旺电子:景旺电子2026年第二次临时股东会决议公告",
+          "content": "",
+          "type": "行业",
+          "sentiment": 0,
+          "weight": 3,
+          "final_weight": 2.7,
+          "source_authority": 4.5,
+          "recency_factor": 0.6,
+          "source": "东方财富公告"
+        },
+        {
+          "date": "2026-09-08",
+          "title": "景旺电子:景旺电子第五届董事会第十四次会议决议公告",
+          "content": "",
+          "type": "行业",
+          "sentiment": 0,
+          "weight": 2,
+          "final_weight": 2.25,
+          "source_authority": 4.5,
+          "recency_factor": 0.5,
+          "source": "东方财富公告"
+        },
+        {
+          "date": "2026-09-08",
+          "title": "景旺电子:景旺电子股票交易异常波动公告",
+          "content": "",
+          "type": "行业",
+          "sentiment": 0,
+          "weight": 2,
+          "final_weight": 2.25,
+          "source_authority": 4.5,
+          "recency_factor": 0.5,
+          "source": "东方财富公告"
+        }
+      ]
+    },
+    "SZSE:300394": {
+      "name": "300394",
+      "score": 50,
+      "score_raw": 0,
+      "score_components": {
+        "positive_weight_sum": 0,
+        "negative_weight_sum": 0,
+        "news_effective_count": 1,
+        "news_dropped_count": 49
+      },
+      "signal": "⚪ No Trade (微多)",
+      "strategy": "情绪轻微偏多，信号不足，以观望为主",
+      "suitable_for": "观望",
+      "confidence": "低",
+      "patterns": [],
+      "positive_factors": [],
+      "negative_factors": [],
+      "news_count": 1,
+      "news_dropped": 49,
+      "top_news": [
+        {
+          "date": "2026-09-09",
+          "title": "天孚通信:2026年半年度权益分派实施公告",
+          "content": "",
+          "type": "行业",
+          "sentiment": 0,
+          "weight": 3,
+          "final_weight": 2.7,
+          "source_authority": 4.5,
+          "recency_factor": 0.6,
+          "source": "东方财富公告"
+        }
+      ]
+    },
+    "SZSE:300857": {
+      "name": "300857",
+      "score": 50,
+      "score_raw": 0,
+      "score_components": {
+        "positive_weight_sum": 0,
+        "negative_weight_sum": 0,
+        "news_effective_count": 1,
+        "news_dropped_count": 49
+      },
+      "signal": "⚪ No Trade (微多)",
+      "strategy": "情绪轻微偏多，信号不足，以观望为主",
+      "suitable_for": "观望",
+      "confidence": "低",
+      "patterns": [],
+      "positive_factors": [],
+      "negative_factors": [],
+      "news_count": 1,
+      "news_dropped": 49,
+      "top_news": [
+        {
+          "date": "2026-09-09",
+          "title": "协创数据:关于公司以部分自有资产抵押向银行申请授信的进展公告",
+          "content": "",
+          "type": "行业",
+          "sentiment": 0,
+          "weight": 3,
+          "final_weight": 2.7,
+          "source_authority": 4.5,
+          "recency_factor": 0.6,
+          "source": "东方财富公告"
+        }
+      ]
+    },
+    "SSE:601899": {
+      "name": "601899",
+      "score": 50,
+      "score_raw": 0,
+      "score_components": {
+        "positive_weight_sum": 0,
+        "negative_weight_sum": 0
+      },
+      "signal": "⚪ No Trade (无数据)",
+      "strategy": "窗口内无相关有效新闻",
+      "suitable_for": "观望",
+      "confidence": "-",
+      "patterns": [],
+      "positive_factors": [],
+      "negative_factors": [],
+      "news_count": 0,
+      "news_dropped": 50,
+      "top_news": []
+    },
+    "SZSE:002536": {
+      "name": "002536",
+      "score": 50,
+      "score_raw": 0,
+      "score_components": {
+        "positive_weight_sum": 0,
+        "negative_weight_sum": 0
+      },
+      "signal": "⚪ No Trade (无数据)",
+      "strategy": "窗口内无相关有效新闻",
+      "suitable_for": "观望",
+      "confidence": "-",
+      "patterns": [],
+      "positive_factors": [],
+      "negative_factors": [],
+      "news_count": 0,
+      "news_dropped": 50,
+      "top_news": []
+    },
+    "SZSE:002916": {
+      "name": "002916",
+      "score": 50,
+      "score_raw": 0,
+      "score_components": {
+        "positive_weight_sum": 0,
+        "negative_weight_sum": 0,
+        "news_effective_count": 10,
+        "news_dropped_count": 40
+      },
+      "signal": "⚪ No Trade (微多)",
+      "strategy": "情绪轻微偏多，信号不足，以观望为主",
+      "suitable_for": "观望",
+      "confidence": "低",
+      "patterns": [
+        "催化剂集中(catalyst burst)"
+      ],
+      "positive_factors": [],
+      "negative_factors": [],
+      "news_count": 10,
+      "news_dropped": 40,
+      "top_news": [
+        {
+          "date": "2026-09-12",
+          "title": "深南电路:关于回购注销部分限制性股票减少注册资本暨通知债权人的公告",
+          "content": "",
+          "type": "回购",
+          "sentiment": 0,
+          "weight": 5,
+          "final_weight": 5.4,
+          "source_authority": 4.5,
+          "recency_factor": 1,
+          "source": "东方财富公告"
+        },
+        {
+          "date": "2026-09-12",
+          "title": "深南电路:2026年第三次临时股东会决议公告",
+          "content": "",
+          "type": "行业",
+          "sentiment": 0,
+          "weight": 5,
+          "final_weight": 4.5,
+          "source_authority": 4.5,
+          "recency_factor": 1,
+          "source": "东方财富公告"
+        },
+        {
+          "date": "2026-09-12",
+          "title": "深南电路:北京市嘉源律师事务所关于深南电路股份有限公司2026年第三次临时股东会的法律意见书",
+          "content": "",
+          "type": "行业",
+          "sentiment": 0,
+          "weight": 5,
+          "final_weight": 4.5,
+          "source_authority": 4.5,
+          "recency_factor": 1,
+          "source": "东方财富公告"
+        },
+        {
+          "date": "2026-09-09",
+          "title": "深南电路:2026年9月7日-9月9日投资者关系活动记录表",
+          "content": "",
+          "type": "行业",
+          "sentiment": 0,
+          "weight": 3,
+          "final_weight": 2.7,
+          "source_authority": 4.5,
+          "recency_factor": 0.6,
+          "source": "东方财富公告"
+        },
+        {
+          "date": "2026-09-09",
+          "title": "深南电路:第四届董事会第二十次会议决议公告",
+          "content": "",
+          "type": "行业",
+          "sentiment": 0,
+          "weight": 3,
+          "final_weight": 2.7,
+          "source_authority": 4.5,
+          "recency_factor": 0.6,
+          "source": "东方财富公告"
+        }
+      ]
+    },
+    "SSE:603083": {
+      "name": "603083",
+      "score": 50,
+      "score_raw": 0,
+      "score_components": {
+        "positive_weight_sum": 0,
+        "negative_weight_sum": 0,
+        "news_effective_count": 8,
+        "news_dropped_count": 42
+      },
+      "signal": "⚪ No Trade (微多)",
+      "strategy": "情绪轻微偏多，信号不足，以观望为主",
+      "suitable_for": "观望",
+      "confidence": "低",
+      "patterns": [
+        "催化剂集中(catalyst burst)"
+      ],
+      "positive_factors": [],
+      "negative_factors": [],
+      "news_count": 8,
+      "news_dropped": 42,
+      "top_news": [
+        {
+          "date": "2026-09-12",
+          "title": "剑桥科技:第五届董事会薪酬与考核委员会第十次会议决议",
+          "content": "",
+          "type": "行业",
+          "sentiment": 0,
+          "weight": 5,
+          "final_weight": 4.5,
+          "source_authority": 4.5,
+          "recency_factor": 1,
+          "source": "东方财富公告"
+        },
+        {
+          "date": "2026-09-12",
+          "title": "剑桥科技:第五届董事会审计委员会第十七次会议决议",
+          "content": "",
+          "type": "行业",
+          "sentiment": 0,
+          "weight": 5,
+          "final_weight": 4.5,
+          "source_authority": 4.5,
+          "recency_factor": 1,
+          "source": "东方财富公告"
+        },
+        {
+          "date": "2026-09-12",
+          "title": "剑桥科技:关于调整2024年股票期权激励计划股票期权行权价格的公告",
+          "content": "",
+          "type": "行业",
+          "sentiment": 0,
+          "weight": 5,
+          "final_weight": 4.5,
+          "source_authority": 4.5,
+          "recency_factor": 1,
+          "source": "东方财富公告"
+        },
+        {
+          "date": "2026-09-12",
+          "title": "剑桥科技:第五届董事会第三十五次会议决议公告",
+          "content": "",
+          "type": "行业",
+          "sentiment": 0,
+          "weight": 5,
+          "final_weight": 4.5,
+          "source_authority": 4.5,
+          "recency_factor": 1,
+          "source": "东方财富公告"
+        },
+        {
+          "date": "2026-09-12",
+          "title": "剑桥科技:上海君澜律师事务所关于上海剑桥科技股份有限公司2024年股票期权激励计划调整行权价格及行权相关事项之法律意见书",
+          "content": "",
+          "type": "行业",
+          "sentiment": 0,
+          "weight": 5,
+          "final_weight": 4.5,
+          "source_authority": 4.5,
+          "recency_factor": 1,
+          "source": "东方财富公告"
+        }
+      ]
+    },
+    "SZSE:002015": {
+      "name": "002015",
+      "score": 50,
+      "score_raw": 0,
+      "score_components": {
+        "positive_weight_sum": 0,
+        "negative_weight_sum": 0,
+        "news_effective_count": 2,
+        "news_dropped_count": 48
+      },
+      "signal": "⚪ No Trade (微多)",
+      "strategy": "情绪轻微偏多，信号不足，以观望为主",
+      "suitable_for": "观望",
+      "confidence": "低",
+      "patterns": [],
+      "positive_factors": [],
+      "negative_factors": [],
+      "news_count": 2,
+      "news_dropped": 48,
+      "top_news": [
+        {
+          "date": "2026-09-09",
+          "title": "协鑫能科:关于与专业投资机构共同投资的公告",
+          "content": "",
+          "type": "行业",
+          "sentiment": 0,
+          "weight": 3,
+          "final_weight": 2.7,
+          "source_authority": 4.5,
+          "recency_factor": 0.6,
+          "source": "东方财富公告"
+        },
+        {
+          "date": "2026-09-08",
+          "title": "关于与专业投资机构共同投资的公告",
+          "content": "",
+          "type": "行业",
+          "sentiment": 0,
+          "weight": 3,
+          "final_weight": 2.5,
+          "source_authority": 5,
+          "recency_factor": 0.5,
+          "source": "巨潮资讯"
+        }
+      ]
+    }
+  }
+}

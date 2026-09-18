@@ -1,0 +1,220 @@
+{
+  "generated_at": "2026-08-21T02:24:50.320Z",
+  "market": "us",
+  "source": "./watchlist/us_selected.txt",
+  "entry_signal": {
+    "can_enter": false,
+    "signal": "观望",
+    "reason": "隔夜美股上涨 → A股均值回归承压 (回测个股涨概率仅 40.8%)",
+    "strategy": "不入场, 等待下一个美股下跌日"
+  },
+  "overnight_us": {
+    "sp500_pct": 0.59,
+    "nasdaq_pct": 0.44,
+    "dji_pct": 0.65,
+    "avg_pct": 0.56,
+    "contrarian_signal": "US up → CN down (均值回归)"
+  },
+  "sector_flow": {
+    "top_gainers": [
+      {
+        "code": "BK1518",
+        "name": "种子",
+        "change_pct": -7.56,
+        "flow": 4011.04
+      },
+      {
+        "code": "BK1517",
+        "name": "食用菌",
+        "change_pct": -5.88,
+        "flow": 1323.89
+      },
+      {
+        "code": "BK1261",
+        "name": "种植业",
+        "change_pct": -5.78,
+        "flow": 2454.81
+      },
+      {
+        "code": "BK1510",
+        "name": "其他养殖",
+        "change_pct": -5.15,
+        "flow": 908.44
+      },
+      {
+        "code": "BK1515",
+        "name": "粮食种植",
+        "change_pct": -4.75,
+        "flow": 926.28
+      }
+    ],
+    "top_losers": [
+      {
+        "code": "BK1616",
+        "name": "白银",
+        "change_pct": 5.7,
+        "flow": 5445.56
+      },
+      {
+        "code": "BK1621",
+        "name": "锂",
+        "change_pct": 5.38,
+        "flow": 15511.79
+      },
+      {
+        "code": "BK1015",
+        "name": "能源金属",
+        "change_pct": 4.12,
+        "flow": 844.23
+      },
+      {
+        "code": "BK1625",
+        "name": "钨",
+        "change_pct": 3.7,
+        "flow": 8984.32
+      },
+      {
+        "code": "BK0732",
+        "name": "贵金属",
+        "change_pct": 3.46,
+        "flow": 2769.46
+      }
+    ]
+  },
+  "model": "external_3d",
+  "formula": "Score = 隔夜外盘·均值回归(±4) + 新闻情绪(±3) + 板块资金流(±2)",
+  "strategy": {
+    "entry_condition": "隔夜美股下跌",
+    "priority_sort": "新闻<60 优先 (回测涨概率 65.1%), 新闻≥60 次之 (回测涨概率 48.8%)",
+    "rationale": "利好出尽是利空 — 高新闻分标的已被热钱透支，反弹力度弱"
+  },
+  "total": 31,
+  "success": 0,
+  "failed": [
+    {
+      "symbol": "AMEX:CET",
+      "reason": "chart_not_ready"
+    },
+    {
+      "symbol": "NASDAQ:ADAM",
+      "reason": "chart_not_ready"
+    },
+    {
+      "symbol": "NASDAQ:SBCF",
+      "reason": "chart_not_ready"
+    },
+    {
+      "symbol": "NYSE:AGM",
+      "reason": "chart_not_ready"
+    },
+    {
+      "symbol": "NYSE:HEI",
+      "reason": "chart_not_ready"
+    },
+    {
+      "symbol": "NYSE:SON",
+      "reason": "chart_not_ready"
+    },
+    {
+      "symbol": "NYSE:PATH",
+      "reason": "chart_not_ready"
+    },
+    {
+      "symbol": "NASDAQ:DASH",
+      "reason": "chart_not_ready"
+    },
+    {
+      "symbol": "NASDAQ:HRMY",
+      "reason": "chart_not_ready"
+    },
+    {
+      "symbol": "NYSE:WT",
+      "reason": "chart_not_ready"
+    },
+    {
+      "symbol": "NASDAQ:GRAL",
+      "reason": "chart_not_ready"
+    },
+    {
+      "symbol": "NASDAQ:VRTX",
+      "reason": "chart_not_ready"
+    },
+    {
+      "symbol": "NASDAQ:HOOD",
+      "reason": "chart_not_ready"
+    },
+    {
+      "symbol": "NASDAQ:VKTX",
+      "reason": "chart_not_ready"
+    },
+    {
+      "symbol": "NYSE:LTC",
+      "reason": "chart_not_ready"
+    },
+    {
+      "symbol": "NYSE:LLY",
+      "reason": "chart_not_ready"
+    },
+    {
+      "symbol": "OTC:ABBNY",
+      "reason": "chart_not_ready"
+    },
+    {
+      "symbol": "NYSE:LOAR",
+      "reason": "chart_not_ready"
+    },
+    {
+      "symbol": "NYSE:P",
+      "reason": "chart_not_ready"
+    },
+    {
+      "symbol": "NASDAQ:NBIS",
+      "reason": "chart_not_ready"
+    },
+    {
+      "symbol": "NASDAQ:MRVL",
+      "reason": "chart_not_ready"
+    },
+    {
+      "symbol": "NYSE:GRMN",
+      "reason": "chart_not_ready"
+    },
+    {
+      "symbol": "NYSE:RIO",
+      "reason": "chart_not_ready"
+    },
+    {
+      "symbol": "NYSE:JOE",
+      "reason": "chart_not_ready"
+    },
+    {
+      "symbol": "NYSE:RRC",
+      "reason": "chart_not_ready"
+    },
+    {
+      "symbol": "NYSE:NEM",
+      "reason": "chart_not_ready"
+    },
+    {
+      "symbol": "NYSE:FCX",
+      "reason": "chart_not_ready"
+    },
+    {
+      "symbol": "NYSE:SCCO",
+      "reason": "chart_not_ready"
+    },
+    {
+      "symbol": "NYSE:WPM",
+      "reason": "chart_not_ready"
+    },
+    {
+      "symbol": "NASDAQ:MNST",
+      "reason": "chart_not_ready"
+    },
+    {
+      "symbol": "（内容由AI生成，仅供参考）",
+      "reason": "chart_not_ready"
+    }
+  ],
+  "results": []
+}

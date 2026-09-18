@@ -1,0 +1,4026 @@
+{
+  "generated_at": "2026-09-09T12:30:36.271Z",
+  "market": "us",
+  "source": "Finnhub company-news (same endpoint as src/core/usNews.js) + local component chain",
+  "classifer": "local dictionaries (no LLM; DeepSeek 402 unavailable)",
+  "score_scale": "0-100 normalized (neutral=50)",
+  "window": {
+    "from": "2026-09-02",
+    "to": "2026-09-09",
+    "days": 7
+  },
+  "llm_used": false,
+  "stocks": {
+    "NYSE:C": {
+      "ticker": "C",
+      "score": 86,
+      "score_raw": 9.22,
+      "score_components": {
+        "positive_weight_sum": 9.22,
+        "negative_weight_sum": 0,
+        "news_effective_count": 9,
+        "news_dropped_count": 21
+      },
+      "signal": "WARN No Trade (Overheated)",
+      "strategy": "Score very high but overheated — wait for pullback to buy dip",
+      "suitable_for": "Buy Dip (wait for pullback)",
+      "confidence": "Low (risk present)",
+      "patterns": [
+        "Sentiment Strengthening UP (trend)",
+        "WARNING: Overheated Sentiment (one-sided bullish)"
+      ],
+      "positive_factors": [
+        "[Earnings|w2.76] Citigroup's Restructuring Is Working, And Valuation Has Not Caught Up",
+        "[Industry|w1.8] Citi turns more bullish on trucking stocks",
+        "[Industry|w1.5] C Nears China Brokerage License: Can Onshore Expansion Boost Growth?"
+      ],
+      "negative_factors": [],
+      "news_count": 9,
+      "news_dropped": 21,
+      "sources": [
+        "ok"
+      ],
+      "top_news": [
+        {
+          "date": "2026-09-09",
+          "title": "Citigroup's Restructuring Is Working, And Valuation Has Not Caught Up",
+          "content": "Citigroup's turnaround is finally appearing in the numbers, with stronger revenue, improving returns, and accelerating EPS growth. Learn more about C stock here.",
+          "type": "Earnings",
+          "sentiment": 1,
+          "weight": 3,
+          "final_weight": 2.76,
+          "source_authority": 2.5,
+          "recency_factor": 0.85,
+          "source": "SeekingAlpha"
+        },
+        {
+          "date": "2026-09-08",
+          "title": "Citi turns more bullish on trucking stocks",
+          "content": "Investing.com -- Citi has turned more positive on trucking and logistics stocks, upgrading Old Dominion Freight Line and C.H. Robinson to Buy in a note Tuesday after both fell from their summer highs.",
+          "type": "Industry",
+          "sentiment": 1,
+          "weight": 2,
+          "final_weight": 1.8,
+          "source_authority": 2.5,
+          "recency_factor": 0.72,
+          "source": "Yahoo"
+        },
+        {
+          "date": "2026-09-07",
+          "title": "DBS, Citi Complete First Weekend Cross-Border Payment",
+          "content": "DBS (SGX: D05) and Citi (NYSE: $C) have completed a cross-border US dollar payment between Singapore and the United...",
+          "type": "Industry",
+          "sentiment": 0,
+          "weight": 2,
+          "final_weight": 1.5,
+          "source_authority": 2.5,
+          "recency_factor": 0.6,
+          "source": "Yahoo"
+        },
+        {
+          "date": "2026-09-07",
+          "title": "Citigroup (C) Moves Deeper Into China’s Capital Markets as Competition Intensifies",
+          "content": "Citigroup Inc. (NYSE:C) is reportedly expecting Chinese regulatory approval for its wholly owned mainland brokerage business as soon as September 2026. The bank applied for the licence in late 2021 and has spent the intervening years building out the business in preparation for approval. Citi now pl",
+          "type": "Rumor",
+          "sentiment": 1,
+          "weight": 1,
+          "final_weight": 0.9,
+          "source_authority": 2.5,
+          "recency_factor": 0.6,
+          "source": "Yahoo"
+        },
+        {
+          "date": "2026-09-07",
+          "title": "C Nears China Brokerage License: Can Onshore Expansion Boost Growth?",
+          "content": "Citigroup is nearing a China brokerage license that could deepen client ties and help raise investment-banking wallet share above 6%. Can it boost growth?",
+          "type": "Industry",
+          "sentiment": 1,
+          "weight": 2,
+          "final_weight": 1.5,
+          "source_authority": 2.5,
+          "recency_factor": 0.6,
+          "source": "Yahoo"
+        }
+      ]
+    },
+    "NYSE:DELL": {
+      "ticker": "DELL",
+      "score": 86,
+      "score_raw": 22.65,
+      "score_components": {
+        "positive_weight_sum": 22.65,
+        "negative_weight_sum": 0,
+        "news_effective_count": 16,
+        "news_dropped_count": 14
+      },
+      "signal": "WARN No Trade (Overheated)",
+      "strategy": "Score very high but overheated — wait for pullback to buy dip",
+      "suitable_for": "Buy Dip (wait for pullback)",
+      "confidence": "Low (risk present)",
+      "patterns": [
+        "Sentiment Strengthening UP (trend)",
+        "WARNING: Overheated Sentiment (one-sided bullish)"
+      ],
+      "positive_factors": [
+        "[Earnings|w2.76] Trump’s 5 words helped drive a massive 350% rally so what’s next?",
+        "[Earnings|w2.34] Dell (DELL) Q2 2027 Earnings Call Transcript",
+        "[Earnings|w2.34] Snowflake Expands in Cloud Analytics: Can It Challenge DELL & ORCL?"
+      ],
+      "negative_factors": [],
+      "news_count": 16,
+      "news_dropped": 14,
+      "sources": [
+        "ok"
+      ],
+      "top_news": [
+        {
+          "date": "2026-09-09",
+          "title": "Latest Dell Technologies Research Reveals that AI Ambition Outpaces Readiness Across Singapore",
+          "content": "Enterprises across Singapore have moved beyond debating whether AI delivers value and are now navigating how to deploy it at scale, securely and sustainably. According to the Dell Technologies Modern Enterprise Readiness Study 2026, a survey based on 2,950 business and IT decision-makers across 35 c",
+          "type": "Industry",
+          "sentiment": 1,
+          "weight": 2,
+          "final_weight": 2.13,
+          "source_authority": 2.5,
+          "recency_factor": 0.85,
+          "source": "Yahoo"
+        },
+        {
+          "date": "2026-09-09",
+          "title": "Why Did DELL, ROIV, SHEL Stocks Surge To 52-Week Highs Today?",
+          "content": "Investors rewarded three very different catalysts spanning artificial intelligence, biotechnology, and energy.",
+          "type": "Industry",
+          "sentiment": 1,
+          "weight": 2,
+          "final_weight": 2.13,
+          "source_authority": 2.5,
+          "recency_factor": 0.85,
+          "source": "Yahoo"
+        },
+        {
+          "date": "2026-09-09",
+          "title": "Trump’s 5 words helped drive a massive 350% rally so what’s next?",
+          "content": "Dell now expects $192 billion in revenue, with a $95 billion AI-server backlog supporting its growth outlook.",
+          "type": "Earnings",
+          "sentiment": 1,
+          "weight": 3,
+          "final_weight": 2.76,
+          "source_authority": 2.5,
+          "recency_factor": 0.85,
+          "source": "Yahoo"
+        },
+        {
+          "date": "2026-09-08",
+          "title": "Dell vs. HPE: Which Top AI Server Stock Is the Better Buy?",
+          "content": "Dell Technologies (DELL) and Hewlett Packard Enterprise (HPE) have become two of the most important names in enterprise infrastructure.",
+          "type": "Industry",
+          "sentiment": 1,
+          "weight": 2,
+          "final_weight": 1.8,
+          "source_authority": 2.5,
+          "recency_factor": 0.72,
+          "source": "Yahoo"
+        },
+        {
+          "date": "2026-09-08",
+          "title": "Dell (DELL) Q2 2027 Earnings Call Transcript",
+          "content": "Record AI server orders of $60.9 billion fuel record revenue and earnings growth.",
+          "type": "Earnings",
+          "sentiment": 1,
+          "weight": 2,
+          "final_weight": 2.34,
+          "source_authority": 2.5,
+          "recency_factor": 0.72,
+          "source": "Yahoo"
+        }
+      ]
+    },
+    "NASDAQ:FIVE": {
+      "ticker": "FIVE",
+      "score": 82,
+      "score_raw": 16.95,
+      "score_components": {
+        "positive_weight_sum": 16.95,
+        "negative_weight_sum": 0,
+        "news_effective_count": 23,
+        "news_dropped_count": 7
+      },
+      "signal": "WARN No Trade (Overheated)",
+      "strategy": "Score very high but overheated — wait for pullback to buy dip",
+      "suitable_for": "Buy Dip (wait for pullback)",
+      "confidence": "Low (risk present)",
+      "patterns": [
+        "Sentiment Strengthening UP (trend)",
+        "WARNING: Overheated Sentiment (one-sided bullish)"
+      ],
+      "positive_factors": [
+        "[Earnings|w2.34] Five Below (NASDAQ:FIVE) Delivers High Growth and Improving Fundamenta",
+        "[Earnings|w1.36] Five Below (NASDAQ:FIVE): High Growth Momentum With a Breakout Setup",
+        "[Earnings|w1.36] What Just Happened With Five Below (FIVE)?"
+      ],
+      "negative_factors": [],
+      "news_count": 23,
+      "news_dropped": 7,
+      "sources": [
+        "ok"
+      ],
+      "top_news": [
+        {
+          "date": "2026-09-08",
+          "title": "Five Below (FIVE) Is Up 4.26% in One Week: What You Should Know",
+          "content": "Does Five Below (FIVE) have what it takes to be a top stock pick for momentum investors? Let's find out.",
+          "type": "Industry",
+          "sentiment": 0,
+          "weight": 2,
+          "final_weight": 1.8,
+          "source_authority": 2.5,
+          "recency_factor": 0.72,
+          "source": "Yahoo"
+        },
+        {
+          "date": "2026-09-08",
+          "title": "Five Below (NASDAQ:FIVE) Delivers High Growth and Improving Fundamentals",
+          "content": "Five Below passes all eight Little Book growth filters, with strong earnings revisions, margin expansion, and 25% ROE making it a standout pick.",
+          "type": "Earnings",
+          "sentiment": 1,
+          "weight": 2,
+          "final_weight": 2.34,
+          "source_authority": 2.5,
+          "recency_factor": 0.72,
+          "source": "ChartMill"
+        },
+        {
+          "date": "2026-09-05",
+          "title": "Five Below wins over shoppers with major strategy shift",
+          "content": "Company sales jumped 23% as more shoppers visited its stores.",
+          "type": "Industry",
+          "sentiment": 0,
+          "weight": 1,
+          "final_weight": 1.05,
+          "source_authority": 2.5,
+          "recency_factor": 0.42,
+          "source": "Yahoo"
+        },
+        {
+          "date": "2026-09-05",
+          "title": "Five Below (NASDAQ:FIVE): High Growth Momentum With a Breakout Setup",
+          "content": "FIVE BELOW stock passes high growth momentum screen with strong EPS growth, perfect technical rating, and usable setup. Buy stop near $263.88 identified.",
+          "type": "Earnings",
+          "sentiment": 1,
+          "weight": 1,
+          "final_weight": 1.36,
+          "source_authority": 2.5,
+          "recency_factor": 0.42,
+          "source": "ChartMill"
+        },
+        {
+          "date": "2026-09-05",
+          "title": "Stronger Q2 Results, Raised Outlook And Buybacks Might Change The Case For Investing In Five Below (FIVE)",
+          "content": "In the past week, Five Below reported second-quarter 2026 results showing sales rising to US$1,261.49 million and net income to US$221.4 million, alongside sharply higher earnings per share and stronger performance for the first six months of the fiscal year. The company also raised its full-year 20",
+          "type": "Earnings",
+          "sentiment": 0,
+          "weight": 1,
+          "final_weight": 1.36,
+          "source_authority": 2.5,
+          "recency_factor": 0.42,
+          "source": "Yahoo"
+        }
+      ]
+    },
+    "NYSE:ETN": {
+      "ticker": "ETN",
+      "score": 80,
+      "score_raw": 8.51,
+      "score_components": {
+        "positive_weight_sum": 9.64,
+        "negative_weight_sum": 1.13,
+        "news_effective_count": 12,
+        "news_dropped_count": 16
+      },
+      "signal": "RED No Trade / Short",
+      "strategy": "Black swan risk — avoid until event clarity",
+      "suitable_for": "Reversal (wait for bottom confirmation)",
+      "confidence": "High",
+      "patterns": [
+        "Sentiment Strengthening UP (trend)",
+        "WARNING: Sentiment Divergence (black swan masked by noise)"
+      ],
+      "positive_factors": [
+        "[Analyst Action|w2.16] UBS Upgrades Eaton Corp to Buy, Raises Price Target to $515",
+        "[Analyst Action|w2.16] Eaton Shares Rise After UBS Upgrade to Buy",
+        "[Earnings|w0.97] Eaton: Strong Secular Growth, But Valuation Limits Upside"
+      ],
+      "negative_factors": [
+        "[Black Swan|w1.13] Eaton Stock Looks Expensive Until You Price The Factory Ramp"
+      ],
+      "news_count": 12,
+      "news_dropped": 16,
+      "sources": [
+        "ok"
+      ],
+      "top_news": [
+        {
+          "date": "2026-09-08",
+          "title": "UBS Upgrades Eaton Corp to Buy, Raises Price Target to $515",
+          "content": "UBS  analyst Amit Mehrotra   upgrades Eaton Corp (NYSE:ETN) from Neutral to Buy and raises the price target from $450 to $515.",
+          "type": "Analyst Action",
+          "sentiment": 1,
+          "weight": 2,
+          "final_weight": 2.16,
+          "source_authority": 2.5,
+          "recency_factor": 0.72,
+          "source": "Benzinga"
+        },
+        {
+          "date": "2026-09-08",
+          "title": "Eaton Shares Rise After UBS Upgrade to Buy",
+          "content": "Eaton (NYSE:ETN) shares rose 3. 1% in premarket trading after UBS upgraded the power management company to Buy from Neutral and increased its price target to $515 from $450.",
+          "type": "Analyst Action",
+          "sentiment": 1,
+          "weight": 2,
+          "final_weight": 2.16,
+          "source_authority": 2.5,
+          "recency_factor": 0.72,
+          "source": "Yahoo"
+        },
+        {
+          "date": "2026-09-07",
+          "title": "VWDRY vs. ETN: Which Stock Is the Better Value Option?",
+          "content": "VWDRY vs. ETN: Which Stock Is the Better Value Option?",
+          "type": "Industry",
+          "sentiment": 0,
+          "weight": 2,
+          "final_weight": 1.5,
+          "source_authority": 2.5,
+          "recency_factor": 0.6,
+          "source": "Yahoo"
+        },
+        {
+          "date": "2026-09-04",
+          "title": "$100 Invested In Eaton Corp 5 Years Ago Would Be Worth This Much Today",
+          "content": "Eaton Corp (NYSE:ETN) has outperformed the market over the past 5 years by 8.93% on an annualized basis producing an average annual return of 20.21%. Currently, Eaton Corp has a market capitalization of $162.20 billion.",
+          "type": "Analyst Action",
+          "sentiment": 0,
+          "weight": 1,
+          "final_weight": 1.08,
+          "source_authority": 2.5,
+          "recency_factor": 0.36,
+          "source": "Benzinga"
+        },
+        {
+          "date": "2026-09-04",
+          "title": "Eaton to Boost U.S. Power Capacity With $242M Arkansas Plant",
+          "content": "ETN plans a $242M Arkansas plant to double U.S. Fibrebond capacity, ease constraints and support AI, grid modernization and electrification.",
+          "type": "Industry",
+          "sentiment": 1,
+          "weight": 1,
+          "final_weight": 0.9,
+          "source_authority": 2.5,
+          "recency_factor": 0.36,
+          "source": "Yahoo"
+        }
+      ]
+    },
+    "NYSE:FCX": {
+      "ticker": "FCX",
+      "score": 77,
+      "score_raw": 6.55,
+      "score_components": {
+        "positive_weight_sum": 6.55,
+        "negative_weight_sum": 0,
+        "news_effective_count": 5,
+        "news_dropped_count": 22
+      },
+      "signal": "GREEN Long (Strong)",
+      "strategy": "Multiple bullish catalysts converging — strong sentiment + fundamental support",
+      "suitable_for": "Momentum / Hold",
+      "confidence": "High",
+      "patterns": [],
+      "positive_factors": [
+        "[Earnings|w2.34] Freeport-McMoRan shares surge as copper hits record $14,694/ton",
+        "[Earnings|w1.63] Copper Just Soared to an All-Time High, but This Stock Is Still a Grea",
+        "[Industry|w1.5] Freeport-McMoRan Has Ripped 44% in 2026. What Would It Take to Get FCX"
+      ],
+      "negative_factors": [],
+      "news_count": 5,
+      "news_dropped": 22,
+      "sources": [
+        "ok"
+      ],
+      "top_news": [
+        {
+          "date": "2026-09-08",
+          "title": "Freeport-McMoRan shares surge as copper hits record $14,694/ton",
+          "content": "Each 10-cent rise in the copper price is worth approximately $390 million in annual EBITDA for Freeport-McMoRan, per its own management sensitivity model, making Tuesday's record-setting session a material earnings event in real time.",
+          "type": "Earnings",
+          "sentiment": 1,
+          "weight": 2,
+          "final_weight": 2.34,
+          "source_authority": 2.5,
+          "recency_factor": 0.72,
+          "source": "Yahoo"
+        },
+        {
+          "date": "2026-09-07",
+          "title": "Freeport-McMoRan Has Ripped 44% in 2026. What Would It Take to Get FCX Stock Up to $100?",
+          "content": "Copper's explosive rally has sent FCX shares surging nearly halfway toward a triple-digit price tag, but the path to $100 runs through a precise set of conditions that have nothing to do with Freeport-McMoRan's own execution.",
+          "type": "Industry",
+          "sentiment": 1,
+          "weight": 2,
+          "final_weight": 1.5,
+          "source_authority": 2.5,
+          "recency_factor": 0.6,
+          "source": "Yahoo"
+        },
+        {
+          "date": "2026-09-06",
+          "title": "Copper Just Soared to an All-Time High, but This Stock Is Still a Great Value",
+          "content": "The current copper price supports Freeport-McMoRan's valuation, and its end-market and production outlook are excellent.",
+          "type": "Earnings",
+          "sentiment": 1,
+          "weight": 2,
+          "final_weight": 1.63,
+          "source_authority": 2.5,
+          "recency_factor": 0.5,
+          "source": "Yahoo"
+        },
+        {
+          "date": "2026-09-04",
+          "title": "How Is Freeport-McMoRan’s Stock Performance Compared to Other Copper Stocks",
+          "content": "While Freeport-McMoRan has underperformed its industry peers over the past year, analysts remain highly bullish on its future prospects.",
+          "type": "Analyst Action",
+          "sentiment": 1,
+          "weight": 1,
+          "final_weight": 1.08,
+          "source_authority": 2.5,
+          "recency_factor": 0.36,
+          "source": "Yahoo"
+        },
+        {
+          "date": "2026-09-03",
+          "title": "Freeport-McMoRan (FCX) Stock Falls Amid Market Uptick: What Investors Need to Know",
+          "content": "Freeport-McMoRan (FCX) closed the most recent trading day at $72.56, moving 1.85% from the previous trading session.",
+          "type": "Industry",
+          "sentiment": 0,
+          "weight": 1,
+          "final_weight": 0.75,
+          "source_authority": 2.5,
+          "recency_factor": 0.3,
+          "source": "Yahoo"
+        }
+      ]
+    },
+    "NASDAQ:SNDK": {
+      "ticker": "SNDK",
+      "score": 76,
+      "score_raw": 6.48,
+      "score_components": {
+        "positive_weight_sum": 6.48,
+        "negative_weight_sum": 0,
+        "news_effective_count": 6,
+        "news_dropped_count": 24
+      },
+      "signal": "GREEN Long (Strong)",
+      "strategy": "Multiple bullish catalysts converging — strong sentiment + fundamental support",
+      "suitable_for": "Momentum / Hold",
+      "confidence": "High",
+      "patterns": [],
+      "positive_factors": [
+        "[Earnings|w2.34] Sandisk (NASDAQ:SNDK): A Value Opportunity Backed by Strong Fundamenta",
+        "[Earnings|w2.34] What's Going On With Sandisk Stock Tuesday?",
+        "[Industry|w1.8] Sandisk Is The Only Memory Bet That Makes Sense"
+      ],
+      "negative_factors": [],
+      "news_count": 6,
+      "news_dropped": 24,
+      "sources": [
+        "ok"
+      ],
+      "top_news": [
+        {
+          "date": "2026-09-08",
+          "title": "Can SanDisk Stock Keep Climbing When It Cannot Make Enough To Sell?",
+          "content": "SanDisk (SNDK) finished fiscal 2026 with $20.2 billion in revenue, and its stock has returned roughly 2,700% over the past twelve months, while the shares still sit about 25% below their 52-week high. Anyone buying now is asking one question. What powers the next leg, when the company has already sa",
+          "type": "Earnings",
+          "sentiment": 0,
+          "weight": 2,
+          "final_weight": 2.34,
+          "source_authority": 2.5,
+          "recency_factor": 0.72,
+          "source": "Yahoo"
+        },
+        {
+          "date": "2026-09-08",
+          "title": "Sandisk Corporation (SNDK) Presents at Citi's 2026 Global TMT Conference Transcript",
+          "content": "Sandisk Corporation (SNDK) Citi's 2026 Global TMT Conference September 8, 2026 12:35 PM EDTCompany ParticipantsLuis Visoso - Executive VP &...",
+          "type": "Industry",
+          "sentiment": 0,
+          "weight": 2,
+          "final_weight": 1.8,
+          "source_authority": 2.5,
+          "recency_factor": 0.72,
+          "source": "SeekingAlpha"
+        },
+        {
+          "date": "2026-09-08",
+          "title": "Sandisk Is The Only Memory Bet That Makes Sense",
+          "content": "Sandisk Corporation Strong Buy: NAND supply discipline, and contracted price floors protect downside, HBF tech adds AI memory upside. Click for this SNDK stock update.",
+          "type": "Industry",
+          "sentiment": 1,
+          "weight": 2,
+          "final_weight": 1.8,
+          "source_authority": 2.5,
+          "recency_factor": 0.72,
+          "source": "SeekingAlpha"
+        },
+        {
+          "date": "2026-09-08",
+          "title": "Sandisk: NAND Just Had A Game-Changing Week",
+          "content": "Sandisk Corporation is poised for an AI-driven NAND flash supercycle as agentic inference boosts storage demand. Click for this SNDK stock update.",
+          "type": "Industry",
+          "sentiment": 0,
+          "weight": 2,
+          "final_weight": 1.8,
+          "source_authority": 2.5,
+          "recency_factor": 0.72,
+          "source": "SeekingAlpha"
+        },
+        {
+          "date": "2026-09-08",
+          "title": "Sandisk (NASDAQ:SNDK): A Value Opportunity Backed by Strong Fundamentals",
+          "content": "Discover why Sandisk (SNDK) stands out in a Decent Value screen: strong valuation, debt-free balance sheet, high margins, and cyclical upside.",
+          "type": "Earnings",
+          "sentiment": 1,
+          "weight": 2,
+          "final_weight": 2.34,
+          "source_authority": 2.5,
+          "recency_factor": 0.72,
+          "source": "ChartMill"
+        }
+      ]
+    },
+    "NASDAQ:MU": {
+      "ticker": "MU",
+      "score": 74,
+      "score_raw": 8.88,
+      "score_components": {
+        "positive_weight_sum": 8.88,
+        "negative_weight_sum": 0,
+        "news_effective_count": 9,
+        "news_dropped_count": 21
+      },
+      "signal": "GREEN Long (Mid)",
+      "strategy": "Positive sentiment flow — suitable for dip-buy or light momentum entry",
+      "suitable_for": "Buy Dip / Light Momentum",
+      "confidence": "Medium",
+      "patterns": [
+        "Sentiment Strengthening UP (trend)"
+      ],
+      "positive_factors": [
+        "[Earnings|w2.76] SpaceX, Nvidia Lead Schwab Buys As Software Rally Spurs Profit-Taking ",
+        "[Analyst Action|w2.16] Micron: Left In The Dirt As Peers Continue To Outperform It",
+        "[Policy|w2.16] Buy 5 High ROE Stocks as Rate Hike Fears Keep Markets at Bay"
+      ],
+      "negative_factors": [],
+      "news_count": 9,
+      "news_dropped": 21,
+      "sources": [
+        "ok"
+      ],
+      "top_news": [
+        {
+          "date": "2026-09-09",
+          "title": "SpaceX, Nvidia Lead Schwab Buys As Software Rally Spurs Profit-Taking – Trading Gauge Posts First Dip Since April",
+          "content": "Clients bought SPCX, NVDA, MU, INTC, and GOOGL, while net selling PLTR, MSFT, NOW, CRM, and ORCL.",
+          "type": "Earnings",
+          "sentiment": 1,
+          "weight": 3,
+          "final_weight": 2.76,
+          "source_authority": 2.5,
+          "recency_factor": 0.85,
+          "source": "Yahoo"
+        },
+        {
+          "date": "2026-09-08",
+          "title": "Druckenmiller Exited Micron and Bought Alphabet. The AI Risks Moved With Him",
+          "content": "Micron Technology, Inc. (NASDAQ:MU) and Alphabet Inc. (NASDAQ:GOOGL) offer two ways to invest in AI demand. One sells essential memory; the other must turn computing capacity into services customers will pay for. Insider Monkey’s tracked worksheet sample counted 184 Micron holders in Q2 2026 versus ",
+          "type": "Industry",
+          "sentiment": 0,
+          "weight": 2,
+          "final_weight": 1.8,
+          "source_authority": 2.5,
+          "recency_factor": 0.72,
+          "source": "Yahoo"
+        },
+        {
+          "date": "2026-09-08",
+          "title": "Micron (MU) Falls More Steeply Than Broader Market: What Investors Need to Know",
+          "content": "The latest trading day saw Micron (MU) settling at $1, representing a -1.61% change from its previous close.",
+          "type": "Industry",
+          "sentiment": 0,
+          "weight": 2,
+          "final_weight": 1.8,
+          "source_authority": 2.5,
+          "recency_factor": 0.72,
+          "source": "Yahoo"
+        },
+        {
+          "date": "2026-09-08",
+          "title": "Micron: Left In The Dirt As Peers Continue To Outperform It",
+          "content": "Micron Technology is rated Sell as HBM share slips and DRAM oversupply looms amid China competition. Click for this MU update.",
+          "type": "Analyst Action",
+          "sentiment": 1,
+          "weight": 2,
+          "final_weight": 2.16,
+          "source_authority": 2.5,
+          "recency_factor": 0.72,
+          "source": "SeekingAlpha"
+        },
+        {
+          "date": "2026-09-08",
+          "title": "Micron's Crash May Set Up Another Leg Higher",
+          "content": "Micron Technology sees tighter DRAM supply by 2027 as AI boosts HBM demand; $22B in customer deals add visibility. Click for this MU update.",
+          "type": "Industry",
+          "sentiment": 0,
+          "weight": 2,
+          "final_weight": 1.8,
+          "source_authority": 2.5,
+          "recency_factor": 0.72,
+          "source": "SeekingAlpha"
+        }
+      ]
+    },
+    "NYSE:LTC": {
+      "ticker": "LTC",
+      "score": 71,
+      "score_raw": 4.99,
+      "score_components": {
+        "positive_weight_sum": 4.99,
+        "negative_weight_sum": 0,
+        "news_effective_count": 4,
+        "news_dropped_count": 3
+      },
+      "signal": "GREEN Long (Mid)",
+      "strategy": "Positive sentiment flow — suitable for dip-buy or light momentum entry",
+      "suitable_for": "Buy Dip / Light Momentum",
+      "confidence": "Medium",
+      "patterns": [
+        "Sentiment Strengthening UP (trend)"
+      ],
+      "positive_factors": [
+        "[Earnings|w2.76] LTC (LTC) Completed a $200M Senior-Housing Acquisition. Can Higher Ope",
+        "[Analyst Action|w1.26] LTC Properties Upgraded To Buy, A Monthly Income Opportunity Driven By",
+        "[Earnings|w0.97] Is LTC Properties (LTC) Cheap As It Expands SHOP With A Minnesota Acqu"
+      ],
+      "negative_factors": [],
+      "news_count": 4,
+      "news_dropped": 3,
+      "sources": [
+        "ok"
+      ],
+      "top_news": [
+        {
+          "date": "2026-09-09",
+          "title": "LTC (LTC) Completed a $200M Senior-Housing Acquisition. Can Higher Operating Exposure Beat the Income It Divested?",
+          "content": "LTC Properties, Inc. (NYSE:LTC), a senior housing and health care REIT, completed a $200 million acquisition of four Minnesota senior-housing communities on September 2. The properties contain 453 independent living, assisted living, and memory care units and have an average age of nine years. Lifes",
+          "type": "Earnings",
+          "sentiment": 1,
+          "weight": 3,
+          "final_weight": 2.76,
+          "source_authority": 2.5,
+          "recency_factor": 0.85,
+          "source": "Yahoo"
+        },
+        {
+          "date": "2026-09-05",
+          "title": "LTC Properties Upgraded To Buy, A Monthly Income Opportunity Driven By Senior Care (Rating Upgrade)",
+          "content": "LTC Properties (LTC) upgraded to Buy: demographic tailwinds, IL/AL shift, FFO growth, and monthly dividends.",
+          "type": "Analyst Action",
+          "sentiment": 1,
+          "weight": 1,
+          "final_weight": 1.26,
+          "source_authority": 2.5,
+          "recency_factor": 0.42,
+          "source": "SeekingAlpha"
+        },
+        {
+          "date": "2026-09-03",
+          "title": "Is LTC Properties (LTC) Cheap As It Expands SHOP With A Minnesota Acquisition?",
+          "content": "LTC Properties focuses on SHOP growth after new Minnesota acquisition LTC Properties (LTC) recently announced a US$200 million purchase of four senior housing operating portfolio communities in Minnesota, alongside higher 2026 investment guidance linked to its SHOP focused expansion. The Minnesota a",
+          "type": "Earnings",
+          "sentiment": 1,
+          "weight": 1,
+          "final_weight": 0.97,
+          "source_authority": 2.5,
+          "recency_factor": 0.3,
+          "source": "Yahoo"
+        },
+        {
+          "date": "2026-09-03",
+          "title": "LTC Properties (LTC) Doubles Down On Senior Housing Bet",
+          "content": "On August 5, LTC Properties (NYSE:LTC) reported second-quarter results for the period ended June 30, 2026, and the numbers show a real estate investment trust leaning harder into a strategy it only started a year ago. Total revenue climbed to $98.9 million from $60.2 million a year earlier, and net ",
+          "type": "Earnings",
+          "sentiment": 0,
+          "weight": 1,
+          "final_weight": 0.97,
+          "source_authority": 2.5,
+          "recency_factor": 0.3,
+          "source": "Yahoo"
+        }
+      ]
+    },
+    "NASDAQ:RELY": {
+      "ticker": "RELY",
+      "score": 71,
+      "score_raw": 4.98,
+      "score_components": {
+        "positive_weight_sum": 4.98,
+        "negative_weight_sum": 0,
+        "news_effective_count": 5,
+        "news_dropped_count": 3
+      },
+      "signal": "WARN Long (Cautious)",
+      "strategy": "Bullish lean but risk flags present — small position, tight stop",
+      "suitable_for": "Buy Dip (small size)",
+      "confidence": "Medium (risk present)",
+      "patterns": [
+        "WARNING: Overheated Sentiment (one-sided bullish)"
+      ],
+      "positive_factors": [
+        "[Earnings|w1.17] Remitly’s (RELY) Record Growth Meets One-Time Tax Boosts And Take-Rate",
+        "[Earnings|w0.97] Remitly (RELY) Stock May Be Overvalued With Little Room For Error",
+        "[Earnings|w0.97] Remitly Global (RELY) Is a Great Choice for 'Trend' Investors, Here's "
+      ],
+      "negative_factors": [],
+      "news_count": 5,
+      "news_dropped": 3,
+      "sources": [
+        "ok"
+      ],
+      "top_news": [
+        {
+          "date": "2026-09-04",
+          "title": "Remitly’s (RELY) Record Growth Meets One-Time Tax Boosts And Take-Rate Questions",
+          "content": "On August 5, Remitly (NASDAQ:RELY) reported second-quarter results that set records across nearly every line the company chooses to highlight, then raised its full-year outlook on top of it. Revenue, adjusted EBITDA, and net income all hit new highs for the quarter ended June 30, 2026, while active ",
+          "type": "Earnings",
+          "sentiment": 1,
+          "weight": 1,
+          "final_weight": 1.17,
+          "source_authority": 2.5,
+          "recency_factor": 0.36,
+          "source": "Yahoo"
+        },
+        {
+          "date": "2026-09-04",
+          "title": "New Strong Buy Stocks for September 4th",
+          "content": "TXO, CBRL, GLBE, MQ and RELY have been added to the Zacks Rank #1 (Strong Buy) List on September 4, 2026.",
+          "type": "Industry",
+          "sentiment": 1,
+          "weight": 1,
+          "final_weight": 0.9,
+          "source_authority": 2.5,
+          "recency_factor": 0.36,
+          "source": "Yahoo"
+        },
+        {
+          "date": "2026-09-03",
+          "title": "Remitly (RELY) Stock May Be Overvalued With Little Room For Error",
+          "content": "Remitly Global has seen a very strong run this year, yet the stock currently screens as expensive on broad valuation checks, which raises questions about how much optimism is already reflected in the price. The stock is up 102.9% year to date, which suggests expectations for the business are already",
+          "type": "Earnings",
+          "sentiment": 1,
+          "weight": 1,
+          "final_weight": 0.97,
+          "source_authority": 2.5,
+          "recency_factor": 0.3,
+          "source": "Yahoo"
+        },
+        {
+          "date": "2026-09-03",
+          "title": "Remitly Global (RELY) Is a Great Choice for 'Trend' Investors, Here's Why",
+          "content": "Remitly Global (RELY) could be a great choice for investors looking to make a profit from fundamentally strong stocks that are currently on the move. It is one of the several stocks that made it through our \"Recent Price Strength\" screen.",
+          "type": "Earnings",
+          "sentiment": 1,
+          "weight": 1,
+          "final_weight": 0.97,
+          "source_authority": 2.5,
+          "recency_factor": 0.3,
+          "source": "Yahoo"
+        },
+        {
+          "date": "2026-09-03",
+          "title": "Why Remitly Global Stock Popped 17.4% Last Month",
+          "content": "It posted another strong earnings report last month.",
+          "type": "Earnings",
+          "sentiment": 1,
+          "weight": 1,
+          "final_weight": 0.97,
+          "source_authority": 2.5,
+          "recency_factor": 0.3,
+          "source": "Yahoo"
+        }
+      ]
+    },
+    "NYSE:APH": {
+      "ticker": "APH",
+      "score": 70,
+      "score_raw": 4.71,
+      "score_components": {
+        "positive_weight_sum": 6.28,
+        "negative_weight_sum": 1.57,
+        "news_effective_count": 7,
+        "news_dropped_count": 8
+      },
+      "signal": "RED No Trade / Short",
+      "strategy": "Black swan risk — avoid until event clarity",
+      "suitable_for": "Reversal (wait for bottom confirmation)",
+      "confidence": "High",
+      "patterns": [
+        "WARNING: Sentiment Divergence (black swan masked by noise)"
+      ],
+      "positive_factors": [
+        "[Earnings|w2.34] Amphenol (NYSE:APH): High Growth Momentum Meets Breakout Setup",
+        "[Industry|w1.8] Amphenol Corp.: The World Electrifies And Content Opportunity Continue",
+        "[Earnings|w1.17] Amphenol (APH) Upgraded to Strong Buy: Here's Why"
+      ],
+      "negative_factors": [
+        "[Black Swan|w1.57] Amphenol (NYSE:APH) Flags High-Quality Breakout Setup on Strong Techni"
+      ],
+      "news_count": 7,
+      "news_dropped": 8,
+      "sources": [
+        "ok"
+      ],
+      "top_news": [
+        {
+          "date": "2026-09-08",
+          "title": "Amphenol (NYSE:APH): High Growth Momentum Meets Breakout Setup",
+          "content": "Amphenol Corp (APH) shows high growth momentum with strong earnings, breakout potential, and top technical ratings. Perfect for growth investors.",
+          "type": "Earnings",
+          "sentiment": 1,
+          "weight": 2,
+          "final_weight": 2.34,
+          "source_authority": 2.5,
+          "recency_factor": 0.72,
+          "source": "ChartMill"
+        },
+        {
+          "date": "2026-09-08",
+          "title": "Amphenol Corp.: The World Electrifies And Content Opportunity Continues To Grow",
+          "content": "Baron Durable Advantage Fund highlights its position in Amphenol Corporation following strong Q1 2026 performance. Read the full analysis for more details.",
+          "type": "Industry",
+          "sentiment": 1,
+          "weight": 2,
+          "final_weight": 1.8,
+          "source_authority": 2.5,
+          "recency_factor": 0.72,
+          "source": "SeekingAlpha"
+        },
+        {
+          "date": "2026-09-05",
+          "title": "Amphenol (NYSE:APH) Flags High-Quality Breakout Setup on Strong Technicals",
+          "content": "Amphenol (APH) shows a strong technical 8/10 and setup quality 9/10, forming a consolidation near support with defined breakout risk.",
+          "type": "Black Swan",
+          "sentiment": -1,
+          "weight": 2,
+          "final_weight": 1.57,
+          "source_authority": 2.5,
+          "recency_factor": 0.42,
+          "source": "ChartMill"
+        },
+        {
+          "date": "2026-09-04",
+          "title": "Amphenol (APH) Upgraded to Strong Buy: Here's Why",
+          "content": "Amphenol (APH) might move higher on growing optimism about its earnings prospects, which is reflected by its upgrade to a Zacks Rank #1 (Strong Buy).",
+          "type": "Earnings",
+          "sentiment": 1,
+          "weight": 1,
+          "final_weight": 1.17,
+          "source_authority": 2.5,
+          "recency_factor": 0.36,
+          "source": "Yahoo"
+        },
+        {
+          "date": "2026-09-04",
+          "title": "Apple’s New Foldable iPhone Could Cost $2,000, Citi Says: TSMC, Amphenol Among Stocks To Watch",
+          "content": "Citi expects the iPhone 18 Pro and Pro Max models to cost about $200 more than their predecessors.",
+          "type": "Industry",
+          "sentiment": 0,
+          "weight": 1,
+          "final_weight": 0.9,
+          "source_authority": 2.5,
+          "recency_factor": 0.36,
+          "source": "Yahoo"
+        }
+      ]
+    },
+    "NYSE:PWR": {
+      "ticker": "PWR",
+      "score": 70,
+      "score_raw": 4.81,
+      "score_components": {
+        "positive_weight_sum": 4.81,
+        "negative_weight_sum": 0,
+        "news_effective_count": 5,
+        "news_dropped_count": 19
+      },
+      "signal": "GREEN Long (Mid)",
+      "strategy": "Positive sentiment flow — suitable for dip-buy or light momentum entry",
+      "suitable_for": "Buy Dip / Light Momentum",
+      "confidence": "Medium",
+      "patterns": [],
+      "positive_factors": [
+        "[Industry|w1.5] 5 Top-Ranked Growth Stocks to Strengthen Your Portfolio in September",
+        "[Earnings|w1.36] Is Rising Analyst Optimism Around PWR’s Dividend Sharpening Quanta’s G",
+        "[Industry|w1.05] Quanta Services (PWR) Stock Trades At A Premium To Fair Value"
+      ],
+      "negative_factors": [],
+      "news_count": 5,
+      "news_dropped": 19,
+      "sources": [
+        "ok"
+      ],
+      "top_news": [
+        {
+          "date": "2026-09-08",
+          "title": "Quanta Services (PWR) Rises As Market Takes a Dip: Key Facts",
+          "content": "Quanta Services (PWR) closed the most recent trading day at $639.05, moving +2.34% from the previous trading session.",
+          "type": "Industry",
+          "sentiment": 0,
+          "weight": 2,
+          "final_weight": 1.8,
+          "source_authority": 2.5,
+          "recency_factor": 0.72,
+          "source": "Yahoo"
+        },
+        {
+          "date": "2026-09-07",
+          "title": "5 Top-Ranked Growth Stocks to Strengthen Your Portfolio in September",
+          "content": "AI-driven demand, record backlogs and data center growth are powering five growth stocks - FIX, PWR, STX, SNDK and SMTC - for September.",
+          "type": "Industry",
+          "sentiment": 1,
+          "weight": 2,
+          "final_weight": 1.5,
+          "source_authority": 2.5,
+          "recency_factor": 0.6,
+          "source": "Yahoo"
+        },
+        {
+          "date": "2026-09-05",
+          "title": "Quanta Services (PWR) Stock Trades At A Premium To Fair Value",
+          "content": "Quanta Services stock has delivered very strong multi year returns, yet the current share price screens as expensive when checked against an intrinsic value estimate and market based multiples. For investors, the puzzle is whether the recent strength in Quanta Services is now fully reflected in the ",
+          "type": "Industry",
+          "sentiment": 1,
+          "weight": 1,
+          "final_weight": 1.05,
+          "source_authority": 2.5,
+          "recency_factor": 0.42,
+          "source": "Yahoo"
+        },
+        {
+          "date": "2026-09-05",
+          "title": "Is Rising Analyst Optimism Around PWR’s Dividend Sharpening Quanta’s Grid Expansion Investment Case?",
+          "content": "Quanta Services, Inc. previously declared a quarterly cash dividend of US$0.11 per share, or US$0.44 on an annualized basis, payable on October 9, 2026 to shareholders of record as of October 1, 2026. Alongside this dividend, Quanta has attracted broadly favorable analyst views and upward earnings e",
+          "type": "Earnings",
+          "sentiment": 1,
+          "weight": 1,
+          "final_weight": 1.36,
+          "source_authority": 2.5,
+          "recency_factor": 0.42,
+          "source": "Yahoo"
+        },
+        {
+          "date": "2026-09-04",
+          "title": "Wall Street Analysts See Quanta Services (PWR) as a Buy: Should You Invest?",
+          "content": "According to the average brokerage recommendation (ABR), one should invest in Quanta Services (PWR). It is debatable whether this highly sought-after metric is effective because Wall Street analysts' recommendations tend to be overly optimistic. Would it be worth investing in the stock?",
+          "type": "Industry",
+          "sentiment": 1,
+          "weight": 1,
+          "final_weight": 0.9,
+          "source_authority": 2.5,
+          "recency_factor": 0.36,
+          "source": "Yahoo"
+        }
+      ]
+    },
+    "NASDAQ:ADI": {
+      "ticker": "ADI",
+      "score": 70,
+      "score_raw": 4.8,
+      "score_components": {
+        "positive_weight_sum": 4.8,
+        "negative_weight_sum": 0,
+        "news_effective_count": 4,
+        "news_dropped_count": 4
+      },
+      "signal": "GREEN Long (Mid)",
+      "strategy": "Positive sentiment flow — suitable for dip-buy or light momentum entry",
+      "suitable_for": "Buy Dip / Light Momentum",
+      "confidence": "Medium",
+      "patterns": [],
+      "positive_factors": [
+        "[Earnings|w1.95] ADI Declines 5.6% in a Month: Time to Buy, Sell or Hold the Stock?",
+        "[Earnings|w1.95] Analog Devices (NASDAQ:ADI) Surfaces on Best Dividend Screen with Soli",
+        "[Rumor|w0.9] Buy These 5 Semiconductor Stocks as Sales Skyrocket on Solid AI Demand"
+      ],
+      "negative_factors": [],
+      "news_count": 4,
+      "news_dropped": 4,
+      "sources": [
+        "ok"
+      ],
+      "top_news": [
+        {
+          "date": "2026-09-07",
+          "title": "ADI Declines 5.6% in a Month: Time to Buy, Sell or Hold the Stock?",
+          "content": "Analog Devices' AI data center and industrial strength are boosting growth and margins, despite intense competition and a premium valuation.",
+          "type": "Earnings",
+          "sentiment": 1,
+          "weight": 2,
+          "final_weight": 1.95,
+          "source_authority": 2.5,
+          "recency_factor": 0.6,
+          "source": "Yahoo"
+        },
+        {
+          "date": "2026-09-07",
+          "title": "Buy These 5 Semiconductor Stocks as Sales Skyrocket on Solid AI Demand",
+          "content": "ADI, TSM, TXN, NVDA and ACMR could benefit as surging semiconductor sales and solid AI demand fuel optimism for chip stocks.",
+          "type": "Rumor",
+          "sentiment": 1,
+          "weight": 1,
+          "final_weight": 0.9,
+          "source_authority": 2.5,
+          "recency_factor": 0.6,
+          "source": "Yahoo"
+        },
+        {
+          "date": "2026-09-07",
+          "title": "Analog Devices (NASDAQ:ADI) Surfaces on Best Dividend Screen with Solid Dividend Growth Backed by Strong Profitability",
+          "content": "Analog Devices (ADI) passes dividend screen with solid profitability, 1.88% yield, and 10% dividend growth, though health rating is average.",
+          "type": "Earnings",
+          "sentiment": 1,
+          "weight": 2,
+          "final_weight": 1.95,
+          "source_authority": 2.5,
+          "recency_factor": 0.6,
+          "source": "ChartMill"
+        },
+        {
+          "date": "2026-09-04",
+          "title": "Is Analog Devices (ADI) Outperforming Other Computer and Technology Stocks This Year?",
+          "content": "Here is how Analog Devices (ADI) and ASM International NV (ASMIY) have performed compared to their sector so far this year.",
+          "type": "Analyst Action",
+          "sentiment": 0,
+          "weight": 1,
+          "final_weight": 1.08,
+          "source_authority": 2.5,
+          "recency_factor": 0.36,
+          "source": "Yahoo"
+        }
+      ]
+    },
+    "NYSE:AR": {
+      "ticker": "AR",
+      "score": 68,
+      "score_raw": 4.39,
+      "score_components": {
+        "positive_weight_sum": 4.39,
+        "negative_weight_sum": 0,
+        "news_effective_count": 3,
+        "news_dropped_count": 4
+      },
+      "signal": "GREEN Long (Mid)",
+      "strategy": "Positive sentiment flow — suitable for dip-buy or light momentum entry",
+      "suitable_for": "Buy Dip / Light Momentum",
+      "confidence": "Medium",
+      "patterns": [],
+      "positive_factors": [
+        "[Earnings|w2.76] Antero Resources (NYSE:AR): High Growth Momentum Aligns With a Breakou",
+        "[Earnings|w1.63] Antero Resources (AR) Stock Looks Like A Bargain On Earnings"
+      ],
+      "negative_factors": [],
+      "news_count": 3,
+      "news_dropped": 4,
+      "sources": [
+        "ok"
+      ],
+      "top_news": [
+        {
+          "date": "2026-09-09",
+          "title": "Antero Resources (NYSE:AR): High Growth Momentum Aligns With a Breakout Setup",
+          "content": "Antero Resources shows accelerating earnings and sales growth with strong technical momentum and a bullish consolidation setup, making it a high-growth breakout candidate to monitor.",
+          "type": "Earnings",
+          "sentiment": 1,
+          "weight": 3,
+          "final_weight": 2.76,
+          "source_authority": 2.5,
+          "recency_factor": 0.85,
+          "source": "ChartMill"
+        },
+        {
+          "date": "2026-09-06",
+          "title": "Antero Resources: The El Nino May Not Dominate Year Ahead Prospects",
+          "content": "Antero Resources (AR) stands to benefit from rising natural gas demand despite typical El Nino-driven weakness.",
+          "type": "Industry",
+          "sentiment": 0,
+          "weight": 1,
+          "final_weight": 1.25,
+          "source_authority": 2.5,
+          "recency_factor": 0.5,
+          "source": "SeekingAlpha"
+        },
+        {
+          "date": "2026-09-06",
+          "title": "Antero Resources (AR) Stock Looks Like A Bargain On Earnings",
+          "content": "Antero Resources has delivered strong long term share price gains, yet current valuation checks still suggest the stock screens on the cheap side. That mix of solid 5 year performance and a high value score is what investors now need to weigh. Over the past 5 years, Antero Resources has returned 147",
+          "type": "Earnings",
+          "sentiment": 1,
+          "weight": 2,
+          "final_weight": 1.63,
+          "source_authority": 2.5,
+          "recency_factor": 0.5,
+          "source": "Yahoo"
+        }
+      ]
+    },
+    "NASDAQ:RKLB": {
+      "ticker": "RKLB",
+      "score": 67,
+      "score_raw": 5.07,
+      "score_components": {
+        "positive_weight_sum": 6.87,
+        "negative_weight_sum": 1.8,
+        "news_effective_count": 8,
+        "news_dropped_count": 22
+      },
+      "signal": "GREEN Long (Mid)",
+      "strategy": "Positive sentiment flow — suitable for dip-buy or light momentum entry",
+      "suitable_for": "Buy Dip / Light Momentum",
+      "confidence": "Medium",
+      "patterns": [],
+      "positive_factors": [
+        "[Earnings|w2.34] Rocket Lab: Time To Pounce (Rating Upgrade)",
+        "[Industry|w2.13] Nasdaq, Dow, S&P 500 Futures Mixed As Oil Hits $100 Again: QCOM, ORCL,",
+        "[Industry|w1.5] Can Rocket Lab's SDN Contracts Boost Growth Opportunities?"
+      ],
+      "negative_factors": [
+        "[Industry|w1.8] How Far Could RKLB Stock Fall In The Next Shock?"
+      ],
+      "news_count": 8,
+      "news_dropped": 22,
+      "sources": [
+        "ok"
+      ],
+      "top_news": [
+        {
+          "date": "2026-09-09",
+          "title": "Nasdaq, Dow, S&P 500 Futures Mixed As Oil Hits $100 Again: QCOM, ORCL, AAPL, AMD, TSLA, RKLB, HOOD, GME In Focus",
+          "content": "Retail sentiment on Stocktwits remained ‘bullish’ on SPY and QQQ.",
+          "type": "Industry",
+          "sentiment": 1,
+          "weight": 2,
+          "final_weight": 2.13,
+          "source_authority": 2.5,
+          "recency_factor": 0.85,
+          "source": "Yahoo"
+        },
+        {
+          "date": "2026-09-09",
+          "title": "RKLB Stock Extends Gains Overnight: Cathie Wood’s ARK Adds To Rocket Lab Stake On New Space Solar Catalyst",
+          "content": "Cathie Wood’s ARK Space Exploration & Innovation ETF (ARKX) bought 2,341 RKLB shares on Tuesday worth about $154,000.",
+          "type": "M&A",
+          "sentiment": 0,
+          "weight": 3,
+          "final_weight": 2.98,
+          "source_authority": 2.5,
+          "recency_factor": 0.85,
+          "source": "Yahoo"
+        },
+        {
+          "date": "2026-09-08",
+          "title": "Rocket Lab Introduces New Solar Cell — Can RKLB Tackle Supply Chain Constraints In The Space Power Industry?",
+          "content": "Rocket Lab says the new cell cuts weight by 40%, delivers 31.5% efficiency, and removes the need for germanium.",
+          "type": "Industry",
+          "sentiment": 0,
+          "weight": 2,
+          "final_weight": 1.8,
+          "source_authority": 2.5,
+          "recency_factor": 0.72,
+          "source": "Yahoo"
+        },
+        {
+          "date": "2026-09-08",
+          "title": "Rocket Lab Introduces High-Efficiency Solar Cell to Reduce Reliance on Supply-Constrained Critical Minerals",
+          "content": "Rocket Lab Headquarters Rocket Lab Introduces High-Efficiency Solar Cell to Reduce Reliance on Supply-Constrained Critical Minerals. LONG BEACH, Calif., Sept. 08, 2026 (GLOBE NEWSWIRE) -- Rocket Lab Corporation (Nasdaq: RKLB), a global leader in launch services and space systems, today announced the",
+          "type": "Industry",
+          "sentiment": 0,
+          "weight": 2,
+          "final_weight": 1.8,
+          "source_authority": 2.5,
+          "recency_factor": 0.72,
+          "source": "Yahoo"
+        },
+        {
+          "date": "2026-09-08",
+          "title": "How Far Could RKLB Stock Fall In The Next Shock?",
+          "content": "Rocket Lab (RKLB) trades near $64, about 57% below the high it set inside the last year, though it is still up 49.5% over twelve months against 19.7% for the S&P 500. The business did not break along the way. What changed is the wait: how long before Neutron flies, and how much cash goes out first.",
+          "type": "Industry",
+          "sentiment": -1,
+          "weight": 2,
+          "final_weight": 1.8,
+          "source_authority": 2.5,
+          "recency_factor": 0.72,
+          "source": "Yahoo"
+        }
+      ]
+    },
+    "NYSE:ELF": {
+      "ticker": "ELF",
+      "score": 66,
+      "score_raw": 3.74,
+      "score_components": {
+        "positive_weight_sum": 3.74,
+        "negative_weight_sum": 0,
+        "news_effective_count": 7,
+        "news_dropped_count": 3
+      },
+      "signal": "GREEN Long (Mid)",
+      "strategy": "Positive sentiment flow — suitable for dip-buy or light momentum entry",
+      "suitable_for": "Buy Dip / Light Momentum",
+      "confidence": "Medium",
+      "patterns": [],
+      "positive_factors": [
+        "[Earnings|w1.63] e.l.f. Beauty (ELF) Stock Looks Reasonable On Cash Flow Yet Stretched ",
+        "[Earnings|w1.36] Why Did e.l.f. Beauty (ELF) Move Today?",
+        "[Industry|w0.75] 4 Cosmetics Stocks Showing Strength Amid Industry Headwinds"
+      ],
+      "negative_factors": [],
+      "news_count": 7,
+      "news_dropped": 3,
+      "sources": [
+        "ok"
+      ],
+      "top_news": [
+        {
+          "date": "2026-09-09",
+          "title": "Naturium Expands North American Retail Presence, Launching Exclusively at Sephora Mexico and With Expansion Into Sephora",
+          "content": "LOS ANGELES, September 09, 2026--Today, Naturium, a brand from e.l.f. Beauty (NYSE: ELF), announced its expansion with Sephora across Canada and Mexico, bringing its biocompatible, clinically effective skincare to new consumers across North America. Delivering affordable luxury for head-to-toe skinc",
+          "type": "Industry",
+          "sentiment": 0,
+          "weight": 2,
+          "final_weight": 2.13,
+          "source_authority": 2.5,
+          "recency_factor": 0.85,
+          "source": "Yahoo"
+        },
+        {
+          "date": "2026-09-08",
+          "title": "Escape \"Unglammy Valley\" with e.l.f. Cosmetic’s Soft Glam Satin Foundation",
+          "content": "OAKLAND, Calif., September 08, 2026--e.l.f. Cosmetics, a brand from e.l.f. Beauty (NYSE: ELF), launches today the bold new awareness campaign \"Unglammy Valley,\" highlighting its Soft Glam Satin Foundation. A playful e.l.f. twist on the \"uncanny valley\" phenomenon, the campaign brings horror and humo",
+          "type": "Industry",
+          "sentiment": 0,
+          "weight": 2,
+          "final_weight": 1.8,
+          "source_authority": 2.5,
+          "recency_factor": 0.72,
+          "source": "Yahoo"
+        },
+        {
+          "date": "2026-09-06",
+          "title": "e.l.f. Beauty (ELF) Stock Looks Reasonable On Cash Flow Yet Stretched On Earnings",
+          "content": "e.l.f. Beauty stock has delivered a very strong 5 year return, yet current checks point to a company that looks expensive on most traditional metrics even though the latest intrinsic value estimate suggests the shares are trading close to fair value. Over the past 5 years, e.l.f. Beauty has returned",
+          "type": "Earnings",
+          "sentiment": 1,
+          "weight": 2,
+          "final_weight": 1.63,
+          "source_authority": 2.5,
+          "recency_factor": 0.5,
+          "source": "Yahoo"
+        },
+        {
+          "date": "2026-09-05",
+          "title": "Why Did e.l.f. Beauty (ELF) Move Today?",
+          "content": "e.l.f. Beauty (ELF) drew fresh investor attention after reporting fiscal 2027 results that topped expectations and prompted management to lift full year sales and adjusted earnings guidance, supported by Rhode demand and international revenue. e.l.f. Beauty’s latest guidance lift comes after a stron",
+          "type": "Earnings",
+          "sentiment": 1,
+          "weight": 1,
+          "final_weight": 1.36,
+          "source_authority": 2.5,
+          "recency_factor": 0.42,
+          "source": "Yahoo"
+        },
+        {
+          "date": "2026-09-05",
+          "title": "e.l.f. Beauty (ELF) Starts 12 Week Board Leadership Course At UC Berkeley",
+          "content": "e.l.f. Beauty (NYSE: ELF) is expanding its Change the Board Game initiative to UC Berkeley with a new 12-week course focused on boardroom diversity and leadership education. The program is designed to educate students on governance, leadership pathways and inclusive decision making at the board leve",
+          "type": "Industry",
+          "sentiment": 0,
+          "weight": 1,
+          "final_weight": 1.05,
+          "source_authority": 2.5,
+          "recency_factor": 0.42,
+          "source": "Yahoo"
+        }
+      ]
+    },
+    "NASDAQ:CRWD": {
+      "ticker": "CRWD",
+      "score": 65,
+      "score_raw": 6.02,
+      "score_components": {
+        "positive_weight_sum": 6.02,
+        "negative_weight_sum": 0,
+        "news_effective_count": 16,
+        "news_dropped_count": 14
+      },
+      "signal": "WARN Long (Cautious)",
+      "strategy": "Bullish lean but risk flags present — small position, tight stop",
+      "suitable_for": "Buy Dip (small size)",
+      "confidence": "Medium (risk present)",
+      "patterns": [
+        "WARNING: Overheated Sentiment (one-sided bullish)"
+      ],
+      "positive_factors": [
+        "[Analyst Action|w1.26] CrowdStrike (CRWD) Stock Faces High Expectations After Strong Gains, D",
+        "[Industry|w1.25] Up 90% in 2026, This Cybersecurity Growth Stock Under $300 Is the Best",
+        "[Earnings|w1.17] CrowdStrike and Palo Alto Made the SaaSmageddon Survivor List. Can AI "
+      ],
+      "negative_factors": [],
+      "news_count": 16,
+      "news_dropped": 14,
+      "sources": [
+        "ok"
+      ],
+      "top_news": [
+        {
+          "date": "2026-09-08",
+          "title": "CrowdStrike vs. OKTA: What Revenue Trends Between These Cybersecurity Giants Tell Investors",
+          "content": "CrowdStrike's revenue has nearly doubled in eight quarters while OKTA's has grown steadily — but the profitability picture tells a starkly different story.",
+          "type": "Earnings",
+          "sentiment": 0,
+          "weight": 2,
+          "final_weight": 2.34,
+          "source_authority": 2.5,
+          "recency_factor": 0.72,
+          "source": "Yahoo"
+        },
+        {
+          "date": "2026-09-08",
+          "title": "If You Invested $100 In CrowdStrike Holdings Stock 5 Years Ago, You Would Have This Much Today",
+          "content": "CrowdStrike Holdings (NASDAQ:CRWD) has outperformed the market over the past 5 years by 15.38% on an annualized basis producing an average annual return of 26.8%. Currently, CrowdStrike Holdings has a market",
+          "type": "Analyst Action",
+          "sentiment": 0,
+          "weight": 2,
+          "final_weight": 2.16,
+          "source_authority": 2.5,
+          "recency_factor": 0.72,
+          "source": "Benzinga"
+        },
+        {
+          "date": "2026-09-07",
+          "title": "CrowdStrike Holdings, Inc. (CRWD) Presents at Fal.con, Las Vegas - Slideshow",
+          "content": "2026-09-07. The following slide deck was published by CrowdStrike Holdings, Inc.",
+          "type": "Industry",
+          "sentiment": 0,
+          "weight": 2,
+          "final_weight": 1.5,
+          "source_authority": 2.5,
+          "recency_factor": 0.6,
+          "source": "SeekingAlpha"
+        },
+        {
+          "date": "2026-09-07",
+          "title": "Brokers Suggest Investing in CrowdStrike (CRWD): Read This Before Placing a Bet",
+          "content": "According to the average brokerage recommendation (ABR), one should invest in CrowdStrike (CRWD). It is debatable whether this highly sought-after metric is effective because Wall Street analysts' recommendations tend to be overly optimistic. Would it be worth investing in the stock?",
+          "type": "Industry",
+          "sentiment": 0,
+          "weight": 2,
+          "final_weight": 1.5,
+          "source_authority": 2.5,
+          "recency_factor": 0.6,
+          "source": "Yahoo"
+        },
+        {
+          "date": "2026-09-06",
+          "title": "CrowdStrike (CRWD)’s CEO Warns AI Is Exposing Gaps in Legacy Cybersecurity Tools",
+          "content": "CrowdStrike Holdings, Inc. (NASDAQ:CRWD) CEO George Kurtz said AI is exposing gaps in corporate cybersecurity defenses that older, legacy tools cannot handle, speaking on CNBC’s “Mad Money” a day after the company posted record quarterly results that sent shares up more than 20% to a record-high clo",
+          "type": "Earnings",
+          "sentiment": 0,
+          "weight": 2,
+          "final_weight": 1.63,
+          "source_authority": 2.5,
+          "recency_factor": 0.5,
+          "source": "Yahoo"
+        }
+      ]
+    },
+    "NYSE:OKLO": {
+      "ticker": "OKLO",
+      "score": 65,
+      "score_raw": 4,
+      "score_components": {
+        "positive_weight_sum": 4,
+        "negative_weight_sum": 0,
+        "news_effective_count": 9,
+        "news_dropped_count": 18
+      },
+      "signal": "GREEN Long (Mid)",
+      "strategy": "Positive sentiment flow — suitable for dip-buy or light momentum entry",
+      "suitable_for": "Buy Dip / Light Momentum",
+      "confidence": "Medium",
+      "patterns": [],
+      "positive_factors": [
+        "[Industry|w2.13] NuScale Stock vs. Oklo Stock: Wall Street Says Buy One and Sell the Ot",
+        "[Earnings|w0.97] Better Small Modular Reactor Stock to Buy After the Sell-Off: Oklo vs.",
+        "[Industry|w0.9] Nuclear Stock Face-Off: Is NuScale Power or Oklo the Better Buy Right "
+      ],
+      "negative_factors": [],
+      "news_count": 9,
+      "news_dropped": 18,
+      "sources": [
+        "ok"
+      ],
+      "top_news": [
+        {
+          "date": "2026-09-09",
+          "title": "NuScale Stock vs. Oklo Stock: Wall Street Says Buy One and Sell the Other.",
+          "content": "Despite its tumble this year, analysts see a brighter future for Oklo than for NuScale.",
+          "type": "Industry",
+          "sentiment": 1,
+          "weight": 2,
+          "final_weight": 2.13,
+          "source_authority": 2.5,
+          "recency_factor": 0.85,
+          "source": "Yahoo"
+        },
+        {
+          "date": "2026-09-08",
+          "title": "NuScale And Oklo Heat Up, These Leveraged Nuclear ETFs Are Soaring Past 30%",
+          "content": "ETFs tied to NuScale surged more than 30% Tuesday as renewed investor interest in nuclear energy sent SMR, Oklo shares higher.",
+          "type": "Industry",
+          "sentiment": 0,
+          "weight": 2,
+          "final_weight": 1.8,
+          "source_authority": 2.5,
+          "recency_factor": 0.72,
+          "source": "Benzinga"
+        },
+        {
+          "date": "2026-09-08",
+          "title": "NuScale Power Spikes 13%, Oklo Climbs 7%: Is the Nuclear Selloff Finally Exhausted?",
+          "content": "Small modular reactor stocks are surging against a red broad market, but with NuScale and Oklo still deep in the red for the year, the real question is whether this is a genuine bottom or just another bounce trap in a brutal downtrend.",
+          "type": "Industry",
+          "sentiment": 0,
+          "weight": 2,
+          "final_weight": 1.8,
+          "source_authority": 2.5,
+          "recency_factor": 0.72,
+          "source": "Yahoo"
+        },
+        {
+          "date": "2026-09-08",
+          "title": "OKLO Stock Rises Premarket: Here's Why This Strategist Sees A 'Bigger Opportunity'",
+          "content": "Shay Boloor, chief market strategist at Futrum Equities, said in a post on X that a bigger opportunity for the company lies in its fuel cycle.",
+          "type": "Industry",
+          "sentiment": 0,
+          "weight": 2,
+          "final_weight": 1.8,
+          "source_authority": 2.5,
+          "recency_factor": 0.72,
+          "source": "Yahoo"
+        },
+        {
+          "date": "2026-09-07",
+          "title": "Is Oklo at $41 a Bargain or a Trap? Here's the Answer.",
+          "content": "Oklo doesn't generate meaningful revenue, so an investment today is a bet on its future.",
+          "type": "Earnings",
+          "sentiment": 0,
+          "weight": 2,
+          "final_weight": 1.95,
+          "source_authority": 2.5,
+          "recency_factor": 0.6,
+          "source": "Yahoo"
+        }
+      ]
+    },
+    "NASDAQ:PGY": {
+      "ticker": "PGY",
+      "score": 63,
+      "score_raw": 3.16,
+      "score_components": {
+        "positive_weight_sum": 3.16,
+        "negative_weight_sum": 0,
+        "news_effective_count": 2,
+        "news_dropped_count": 3
+      },
+      "signal": "GREEN Long (Mid)",
+      "strategy": "Positive sentiment flow — suitable for dip-buy or light momentum entry",
+      "suitable_for": "Buy Dip / Light Momentum",
+      "confidence": "Medium",
+      "patterns": [],
+      "positive_factors": [
+        "[Industry|w1.8] Pagaya Technologies (NASDAQ:PGY) Pairs Strong Growth with a Promising ",
+        "[Earnings|w1.36] Pagaya Posted a Record $45 Million Profit. Is AI Lending Finally Worki"
+      ],
+      "negative_factors": [],
+      "news_count": 2,
+      "news_dropped": 3,
+      "sources": [
+        "ok"
+      ],
+      "top_news": [
+        {
+          "date": "2026-09-08",
+          "title": "Pagaya Technologies (NASDAQ:PGY) Pairs Strong Growth with a Promising Technical Setup",
+          "content": "Pagaya Technologies (PGY) shows strong growth, reasonable valuation, and a bullish technical setup near a breakout. A compelling growth-plus-timing pick.",
+          "type": "Industry",
+          "sentiment": 1,
+          "weight": 2,
+          "final_weight": 1.8,
+          "source_authority": 2.5,
+          "recency_factor": 0.72,
+          "source": "ChartMill"
+        },
+        {
+          "date": "2026-09-05",
+          "title": "Pagaya Posted a Record $45 Million Profit. Is AI Lending Finally Working?",
+          "content": "On July 30, Pagaya Technologies reported a record $45 million of GAAP net income attributable to shareholders in the second quarter, giving investors a concrete profitability milestone after years of emphasis on network expansion. Pagaya Technologies Ltd. (NASDAQ:PGY) uses machine-learning models to",
+          "type": "Earnings",
+          "sentiment": 1,
+          "weight": 1,
+          "final_weight": 1.36,
+          "source_authority": 2.5,
+          "recency_factor": 0.42,
+          "source": "Yahoo"
+        }
+      ]
+    },
+    "NYSE:ASX": {
+      "ticker": "ASX",
+      "score": 62,
+      "score_raw": 2.76,
+      "score_components": {
+        "positive_weight_sum": 2.76,
+        "negative_weight_sum": 0,
+        "news_effective_count": 2,
+        "news_dropped_count": 3
+      },
+      "signal": "GREEN Long (Mid)",
+      "strategy": "Positive sentiment flow — suitable for dip-buy or light momentum entry",
+      "suitable_for": "Buy Dip / Light Momentum",
+      "confidence": "Medium",
+      "patterns": [],
+      "positive_factors": [
+        "[Earnings|w2.76] ASE Technology Holding (NYSE:ASX) Clears the Minervini Trend and High-"
+      ],
+      "negative_factors": [],
+      "news_count": 2,
+      "news_dropped": 3,
+      "sources": [
+        "ok"
+      ],
+      "top_news": [
+        {
+          "date": "2026-09-09",
+          "title": "ASE Technology Holding (NYSE:ASX) Clears the Minervini Trend and High-Growth Screen",
+          "content": "ASE Technology tops Mark Minervini’s trend and growth screens with accelerating earnings and strong price momentum, but a weak setup rating suggests waiting for a pullback before buying.",
+          "type": "Earnings",
+          "sentiment": 1,
+          "weight": 3,
+          "final_weight": 2.76,
+          "source_authority": 2.5,
+          "recency_factor": 0.85,
+          "source": "ChartMill"
+        },
+        {
+          "date": "2026-09-09",
+          "title": "ASE Technology Holding Co., Ltd. Announces Monthly Net Revenues*",
+          "content": "ASE Technology Holding Co., Ltd. (NYSE: ASX, TAIEX: 3711, \"ASEH\" or the \"Company\"), announces its unaudited consolidated net revenues for August 2026.",
+          "type": "Earnings",
+          "sentiment": 0,
+          "weight": 3,
+          "final_weight": 2.76,
+          "source_authority": 2.5,
+          "recency_factor": 0.85,
+          "source": "Yahoo"
+        }
+      ]
+    },
+    "NASDAQ:HOOD": {
+      "ticker": "HOOD",
+      "score": 60,
+      "score_raw": 10.65,
+      "score_components": {
+        "positive_weight_sum": 12.45,
+        "negative_weight_sum": 1.8,
+        "news_effective_count": 25,
+        "news_dropped_count": 5
+      },
+      "signal": "GREEN Long (Mid)",
+      "strategy": "Positive sentiment flow — suitable for dip-buy or light momentum entry",
+      "suitable_for": "Buy Dip / Light Momentum",
+      "confidence": "Medium",
+      "patterns": [],
+      "positive_factors": [
+        "[Analyst Action|w2.55] HOOD Stock Ticks Up Overnight — Why This Analyst Sees Upside Of Over 1",
+        "[Earnings|w2.34] Robinhood Enters IPO Underwriting: Can IB Be the Next Growth Avenue?",
+        "[Analyst Action|w2.16] Jefferies Maintains Buy on Robinhood Markets, Raises Price Target to $"
+      ],
+      "negative_factors": [
+        "[Industry|w1.8] How To Take Advantage Of This Rising Stock With Reduced Risk"
+      ],
+      "news_count": 25,
+      "news_dropped": 5,
+      "sources": [
+        "ok"
+      ],
+      "top_news": [
+        {
+          "date": "2026-09-09",
+          "title": "Interactive Brokers Offers What Robinhood And Schwab Simply Can't",
+          "content": "Interactive Brokers stands out as a global financial operating system, not just another online broker. Check out why IBKR stock is a buy.",
+          "type": "Industry",
+          "sentiment": 0,
+          "weight": 2,
+          "final_weight": 2.13,
+          "source_authority": 2.5,
+          "recency_factor": 0.85,
+          "source": "SeekingAlpha"
+        },
+        {
+          "date": "2026-09-09",
+          "title": "HOOD Stock Ticks Up Overnight — Why This Analyst Sees Upside Of Over 19% From Here",
+          "content": "Jefferies raised the price target on Robinhood to $140 from $127 and kept a ‘Buy’ rating, as per The Fly — an upside of more than 19% from its last close.",
+          "type": "Analyst Action",
+          "sentiment": 1,
+          "weight": 3,
+          "final_weight": 2.55,
+          "source_authority": 2.5,
+          "recency_factor": 0.85,
+          "source": "Yahoo"
+        },
+        {
+          "date": "2026-09-08",
+          "title": "Bernstein has a new message for Robinhood investors",
+          "content": "The analyst firm reaffirmed its view on Robinhood as the stock remains in focus on Wall Street.",
+          "type": "Industry",
+          "sentiment": 0,
+          "weight": 2,
+          "final_weight": 1.8,
+          "source_authority": 2.5,
+          "recency_factor": 0.72,
+          "source": "Yahoo"
+        },
+        {
+          "date": "2026-09-08",
+          "title": "Goldman, Jefferies Reset Robinhood Stock Price Targets",
+          "content": "Two Wall Street giants see a much bigger opportunity emerging",
+          "type": "Industry",
+          "sentiment": 0,
+          "weight": 2,
+          "final_weight": 1.8,
+          "source_authority": 2.5,
+          "recency_factor": 0.72,
+          "source": "Yahoo"
+        },
+        {
+          "date": "2026-09-08",
+          "title": "Why AMC CEO Adam Aron Dislikes Robinhood’s New Tokenized Assets",
+          "content": "Aron has raised concerns around investor rights and securities regulation.",
+          "type": "Policy",
+          "sentiment": 0,
+          "weight": 2,
+          "final_weight": 2.16,
+          "source_authority": 2.5,
+          "recency_factor": 0.72,
+          "source": "Yahoo"
+        }
+      ]
+    },
+    "NYSE:NEM": {
+      "ticker": "NEM",
+      "score": 60,
+      "score_raw": 2.34,
+      "score_components": {
+        "positive_weight_sum": 3.24,
+        "negative_weight_sum": 0.9,
+        "news_effective_count": 5,
+        "news_dropped_count": 13
+      },
+      "signal": "GREEN Long (Mid)",
+      "strategy": "Positive sentiment flow — suitable for dip-buy or light momentum entry",
+      "suitable_for": "Buy Dip / Light Momentum",
+      "confidence": "Medium",
+      "patterns": [],
+      "positive_factors": [
+        "[Earnings|w2.34] Bond Yields Are Pressuring Gold, But Miners May Tell a Different Story",
+        "[Industry|w0.9] Is Newmont (NEM) a Buy as Wall Street Analysts Look Optimistic?"
+      ],
+      "negative_factors": [
+        "[Industry|w0.9] Newmont Corporation (NEM) Registers a Bigger Fall Than the Market: Imp"
+      ],
+      "news_count": 5,
+      "news_dropped": 13,
+      "sources": [
+        "ok"
+      ],
+      "top_news": [
+        {
+          "date": "2026-09-08",
+          "title": "Is Newmont Stock Outperforming the Nasdaq?",
+          "content": "As Newmont has surpassed the broader Nasdaq Composite over the past year, Wall Street analysts remain strongly optimistic about the stock’s prospects.",
+          "type": "Analyst Action",
+          "sentiment": 0,
+          "weight": 2,
+          "final_weight": 2.16,
+          "source_authority": 2.5,
+          "recency_factor": 0.72,
+          "source": "Yahoo"
+        },
+        {
+          "date": "2026-09-08",
+          "title": "Can NEM Maintain Earnings Momentum Amid Production Challenges?",
+          "content": "NEM faces production challenges as lower output and higher costs pressure 2026 goals.",
+          "type": "Earnings",
+          "sentiment": 0,
+          "weight": 2,
+          "final_weight": 2.34,
+          "source_authority": 2.5,
+          "recency_factor": 0.72,
+          "source": "Yahoo"
+        },
+        {
+          "date": "2026-09-08",
+          "title": "Bond Yields Are Pressuring Gold, But Miners May Tell a Different Story",
+          "content": "As Treasury yields near multi-year highs and central banks repatriate gold, Newmont and Barrick Mining trade at discounted valuations despite strong margins, cash flow, and buyback programs.",
+          "type": "Earnings",
+          "sentiment": 1,
+          "weight": 2,
+          "final_weight": 2.34,
+          "source_authority": 2.5,
+          "recency_factor": 0.72,
+          "source": "Yahoo"
+        },
+        {
+          "date": "2026-09-04",
+          "title": "Newmont Corporation (NEM) Registers a Bigger Fall Than the Market: Important Facts to Note",
+          "content": "In the latest trading session, Newmont Corporation (NEM) closed at $128.09, marking a -1.79% move from the previous day.",
+          "type": "Industry",
+          "sentiment": -1,
+          "weight": 1,
+          "final_weight": 0.9,
+          "source_authority": 2.5,
+          "recency_factor": 0.36,
+          "source": "Yahoo"
+        },
+        {
+          "date": "2026-09-04",
+          "title": "Is Newmont (NEM) a Buy as Wall Street Analysts Look Optimistic?",
+          "content": "The average brokerage recommendation (ABR) for Newmont (NEM) is equivalent to a Buy. The overly optimistic recommendations of Wall Street analysts make the effectiveness of this highly sought-after metric questionable. So, is it worth buying the stock?",
+          "type": "Industry",
+          "sentiment": 1,
+          "weight": 1,
+          "final_weight": 0.9,
+          "source_authority": 2.5,
+          "recency_factor": 0.36,
+          "source": "Yahoo"
+        }
+      ]
+    },
+    "NASDAQ:OLLI": {
+      "ticker": "OLLI",
+      "score": 60,
+      "score_raw": 2.57,
+      "score_components": {
+        "positive_weight_sum": 6.51,
+        "negative_weight_sum": 3.94,
+        "news_effective_count": 14,
+        "news_dropped_count": 16
+      },
+      "signal": "GREEN Long (Mid)",
+      "strategy": "Positive sentiment flow — suitable for dip-buy or light momentum entry",
+      "suitable_for": "Buy Dip / Light Momentum",
+      "confidence": "Medium",
+      "patterns": [],
+      "positive_factors": [
+        "[Earnings|w0.97] Ollie's Bargain Outlet Delivers Q2 Earnings Beat Amid Tough Macro Envi",
+        "[Earnings|w0.97] OLLI Q2 Earnings Beat Estimates on Tariff Refunds, Sales Miss",
+        "[Earnings|w0.97] Ollie's (OLLI) Stock Is Up, What You Need To Know"
+      ],
+      "negative_factors": [
+        "[Earnings|w1.17] Has Ollie's Bargain Outlet Holdings (OLLI) Become Too Expensive?",
+        "[Earnings|w0.97] OLLI Q2 Deep Dive: Higher Margins and Store Expansion Offset Same-Stor",
+        "[Analyst Action|w0.9] Goldman Sachs Maintains Buy on Ollie's Bargain Outlet, Lowers Price Ta"
+      ],
+      "news_count": 14,
+      "news_dropped": 16,
+      "sources": [
+        "ok"
+      ],
+      "top_news": [
+        {
+          "date": "2026-09-04",
+          "title": "Has Ollie's Bargain Outlet Holdings (OLLI) Become Too Expensive?",
+          "content": "Ollie's Bargain Outlet Holdings has seen its share price fall sharply over the past year, yet current checks suggest the stock still trades at a premium to what its cash flow and market multiples imply as a reasonable level. The stock is down 44.9% over the past year, which puts recent sentiment und",
+          "type": "Earnings",
+          "sentiment": -1,
+          "weight": 1,
+          "final_weight": 1.17,
+          "source_authority": 2.5,
+          "recency_factor": 0.36,
+          "source": "Yahoo"
+        },
+        {
+          "date": "2026-09-04",
+          "title": "Ollie's Bargain Outlet Holdings, Inc. (OLLI) Q2 2026 Earnings Call Transcript",
+          "content": "Ollieâs (OLLI) Q2 FY2026 earnings recap: comps -1.8%, tariff refunds boosted margin/EPS",
+          "type": "Earnings",
+          "sentiment": 0,
+          "weight": 1,
+          "final_weight": 1.17,
+          "source_authority": 2.5,
+          "recency_factor": 0.36,
+          "source": "SeekingAlpha"
+        },
+        {
+          "date": "2026-09-03",
+          "title": "Ollie's Bargain Outlet Q2 Results Establish 'Fundamental Bottom,' RBC Says",
+          "content": "Ollie's Bargain Outlet's (OLLI) Q2 results should give investors confidence that the company has fou",
+          "type": "Earnings",
+          "sentiment": 0,
+          "weight": 1,
+          "final_weight": 0.97,
+          "source_authority": 2.5,
+          "recency_factor": 0.3,
+          "source": "Yahoo"
+        },
+        {
+          "date": "2026-09-03",
+          "title": "Ollie's Bargain Outlet Delivers Q2 Earnings Beat Amid Tough Macro Environment, BofA Securities Says",
+          "content": "Ollie's Bargain Outlet (OLLI) reported fiscal Q2 earnings above consensus, but the outlook remains c",
+          "type": "Earnings",
+          "sentiment": 1,
+          "weight": 1,
+          "final_weight": 0.97,
+          "source_authority": 2.5,
+          "recency_factor": 0.3,
+          "source": "Yahoo"
+        },
+        {
+          "date": "2026-09-03",
+          "title": "Goldman Sachs Maintains Buy on Ollie's Bargain Outlet, Lowers Price Target to $100",
+          "content": "Goldman Sachs  analyst Kate McShane   maintains Ollie&#39;s Bargain Outlet (NASDAQ:OLLI) with a Buy and lowers the price target from $112 to $100.",
+          "type": "Analyst Action",
+          "sentiment": -1,
+          "weight": 1,
+          "final_weight": 0.9,
+          "source_authority": 2.5,
+          "recency_factor": 0.3,
+          "source": "Benzinga"
+        }
+      ]
+    },
+    "NYSE:RRC": {
+      "ticker": "RRC",
+      "score": 59,
+      "score_raw": 2.16,
+      "score_components": {
+        "positive_weight_sum": 2.16,
+        "negative_weight_sum": 0,
+        "news_effective_count": 1,
+        "news_dropped_count": 2
+      },
+      "signal": "NEUTRAL No Trade (Weak Bullish)",
+      "strategy": "Mildly positive, insufficient signal — watch for stronger catalyst",
+      "suitable_for": "Watch",
+      "confidence": "Low",
+      "patterns": [],
+      "positive_factors": [
+        "[Analyst Action|w2.16] Barclays Maintains Equal-Weight on Range Resources, Raises Price Targe"
+      ],
+      "negative_factors": [],
+      "news_count": 1,
+      "news_dropped": 2,
+      "sources": [
+        "ok"
+      ],
+      "top_news": [
+        {
+          "date": "2026-09-08",
+          "title": "Barclays Maintains Equal-Weight on Range Resources, Raises Price Target to $42",
+          "content": "Barclays  analyst Betty Jiang   maintains Range Resources (NYSE:RRC) with a Equal-Weight and raises the price target from $40 to $42.",
+          "type": "Analyst Action",
+          "sentiment": 1,
+          "weight": 2,
+          "final_weight": 2.16,
+          "source_authority": 2.5,
+          "recency_factor": 0.72,
+          "source": "Benzinga"
+        }
+      ]
+    },
+    "NYSE:WPM": {
+      "ticker": "WPM",
+      "score": 58,
+      "score_raw": 1.8,
+      "score_components": {
+        "positive_weight_sum": 1.8,
+        "negative_weight_sum": 0,
+        "news_effective_count": 3,
+        "news_dropped_count": 10
+      },
+      "signal": "NEUTRAL No Trade (Weak Bullish)",
+      "strategy": "Mildly positive, insufficient signal — watch for stronger catalyst",
+      "suitable_for": "Watch",
+      "confidence": "Low",
+      "patterns": [],
+      "positive_factors": [
+        "[Industry|w1.8] Wheaton Precious Metals (NYSE:WPM) Combines High Growth Momentum with "
+      ],
+      "negative_factors": [],
+      "news_count": 3,
+      "news_dropped": 10,
+      "sources": [
+        "ok"
+      ],
+      "top_news": [
+        {
+          "date": "2026-09-08",
+          "title": "Wheaton Precious Metals (NYSE:WPM) Combines High Growth Momentum with a Tight Breakout Setup",
+          "content": "Wheaton Precious Metals shines with strong growth momentum, top technical rating, and a favorable consolidation setup for potential breakout.",
+          "type": "Industry",
+          "sentiment": 1,
+          "weight": 2,
+          "final_weight": 1.8,
+          "source_authority": 2.5,
+          "recency_factor": 0.72,
+          "source": "ChartMill"
+        },
+        {
+          "date": "2026-09-07",
+          "title": "Here's How Much $1000 Invested In Wheaton Precious Metals 10 Years Ago Would Be Worth Today",
+          "content": "Wheaton Precious Metals (NYSE:WPM) has outperformed the market over the past 10 years by 5.52% on an annualized basis producing an average annual return of 19.23%. Currently, Wheaton Precious Metals has a market",
+          "type": "Analyst Action",
+          "sentiment": 0,
+          "weight": 2,
+          "final_weight": 1.8,
+          "source_authority": 2.5,
+          "recency_factor": 0.6,
+          "source": "Benzinga"
+        },
+        {
+          "date": "2026-09-04",
+          "title": "TECK or WPM: Which Is the Better Value Stock Right Now?",
+          "content": "TECK vs. WPM: Which Stock Is the Better Value Option?",
+          "type": "Industry",
+          "sentiment": 0,
+          "weight": 1,
+          "final_weight": 0.9,
+          "source_authority": 2.5,
+          "recency_factor": 0.36,
+          "source": "Yahoo"
+        }
+      ]
+    },
+    "NYSE:HG": {
+      "ticker": "HG",
+      "score": 58,
+      "score_raw": 1.8,
+      "score_components": {
+        "positive_weight_sum": 1.8,
+        "negative_weight_sum": 0,
+        "news_effective_count": 2,
+        "news_dropped_count": 2
+      },
+      "signal": "NEUTRAL No Trade (Weak Bullish)",
+      "strategy": "Mildly positive, insufficient signal — watch for stronger catalyst",
+      "suitable_for": "Watch",
+      "confidence": "Low",
+      "patterns": [],
+      "positive_factors": [
+        "[Industry|w1.8] Hamilton Insurance (HG) is a Great Momentum Stock: Should You Buy?"
+      ],
+      "negative_factors": [],
+      "news_count": 2,
+      "news_dropped": 2,
+      "sources": [
+        "ok"
+      ],
+      "top_news": [
+        {
+          "date": "2026-09-08",
+          "title": "Hamilton Insurance (HG) is a Great Momentum Stock: Should You Buy?",
+          "content": "Does Hamilton Insurance (HG) have what it takes to be a top stock pick for momentum investors? Let's find out.",
+          "type": "Industry",
+          "sentiment": 1,
+          "weight": 2,
+          "final_weight": 1.8,
+          "source_authority": 2.5,
+          "recency_factor": 0.72,
+          "source": "Yahoo"
+        },
+        {
+          "date": "2026-09-07",
+          "title": "Is Assurant (AIZ) Outperforming Other Finance Stocks This Year?",
+          "content": "Here is how Assurant (AIZ) and Hamilton Insurance (HG) have performed compared to their sector so far this year.",
+          "type": "Analyst Action",
+          "sentiment": 0,
+          "weight": 2,
+          "final_weight": 1.8,
+          "source_authority": 2.5,
+          "recency_factor": 0.6,
+          "source": "Yahoo"
+        }
+      ]
+    },
+    "NYSE:TSM": {
+      "ticker": "TSM",
+      "score": 58,
+      "score_raw": 1.8,
+      "score_components": {
+        "positive_weight_sum": 1.8,
+        "negative_weight_sum": 0,
+        "news_effective_count": 1,
+        "news_dropped_count": 29
+      },
+      "signal": "NEUTRAL No Trade (Weak Bullish)",
+      "strategy": "Mildly positive, insufficient signal — watch for stronger catalyst",
+      "suitable_for": "Watch",
+      "confidence": "Low",
+      "patterns": [],
+      "positive_factors": [
+        "[Industry|w1.8] TSMC, IBD Stock Of The Day, Rises Above Early Buy Point As Chip Stocks"
+      ],
+      "negative_factors": [],
+      "news_count": 1,
+      "news_dropped": 29,
+      "sources": [
+        "ok"
+      ],
+      "top_news": [
+        {
+          "date": "2026-09-08",
+          "title": "TSMC, IBD Stock Of The Day, Rises Above Early Buy Point As Chip Stocks Rally",
+          "content": "Taiwan Semiconductor Manufacturing is the IBD Stock Of The Day. TSM stock hit an early-entry buy point on Tuesday.",
+          "type": "Industry",
+          "sentiment": 1,
+          "weight": 2,
+          "final_weight": 1.8,
+          "source_authority": 2.5,
+          "recency_factor": 0.72,
+          "source": "Yahoo"
+        }
+      ]
+    },
+    "NYSE:J": {
+      "ticker": "J",
+      "score": 58,
+      "score_raw": 1.95,
+      "score_components": {
+        "positive_weight_sum": 1.95,
+        "negative_weight_sum": 0,
+        "news_effective_count": 2,
+        "news_dropped_count": 5
+      },
+      "signal": "NEUTRAL No Trade (Weak Bullish)",
+      "strategy": "Mildly positive, insufficient signal — watch for stronger catalyst",
+      "suitable_for": "Watch",
+      "confidence": "Low",
+      "patterns": [],
+      "positive_factors": [
+        "[Earnings|w1.95] Jacobs (J) Backlog Hits $28.9B As Guidance Rises Again"
+      ],
+      "negative_factors": [],
+      "news_count": 2,
+      "news_dropped": 5,
+      "sources": [
+        "ok"
+      ],
+      "top_news": [
+        {
+          "date": "2026-09-07",
+          "title": "Jacobs (J) Backlog Hits $28.9B As Guidance Rises Again",
+          "content": "On August 4, Jacobs Solutions (NYSE:J) reported fiscal third-quarter results for the period ended June 26, and the numbers landed well ahead of where the company started the year. Gross revenue jumped 34.5% year over year to $4.1 billion, backlog swelled to a record $28.9 billion, and management rai",
+          "type": "Earnings",
+          "sentiment": 1,
+          "weight": 2,
+          "final_weight": 1.95,
+          "source_authority": 2.5,
+          "recency_factor": 0.6,
+          "source": "Yahoo"
+        },
+        {
+          "date": "2026-09-03",
+          "title": "Why Is Jacobs Solutions (J) Up 1.7% Since Last Earnings Report?",
+          "content": "Jacobs Solutions (J) reported earnings 30 days ago. What's next for the stock? We take a look at earnings estimates for some clues.",
+          "type": "Earnings",
+          "sentiment": 0,
+          "weight": 1,
+          "final_weight": 0.97,
+          "source_authority": 2.5,
+          "recency_factor": 0.3,
+          "source": "Yahoo"
+        }
+      ]
+    },
+    "NASDAQ:MPWR": {
+      "ticker": "MPWR",
+      "score": 58,
+      "score_raw": 1.8,
+      "score_components": {
+        "positive_weight_sum": 1.8,
+        "negative_weight_sum": 0,
+        "news_effective_count": 3,
+        "news_dropped_count": 5
+      },
+      "signal": "NEUTRAL No Trade (Weak Bullish)",
+      "strategy": "Mildly positive, insufficient signal — watch for stronger catalyst",
+      "suitable_for": "Watch",
+      "confidence": "Low",
+      "patterns": [],
+      "positive_factors": [
+        "[Industry|w0.9] What Is The Market Really Expecting From MPWR Stock?",
+        "[Analyst Action|w0.9] StoneX Initiates Coverage On Monolithic Power Systems with Buy Rating,"
+      ],
+      "negative_factors": [],
+      "news_count": 3,
+      "news_dropped": 5,
+      "sources": [
+        "ok"
+      ],
+      "top_news": [
+        {
+          "date": "2026-09-05",
+          "title": "Monolithic Power Revenue Jumped 48%. Can AI Power Chips Keep the Momentum Going?",
+          "content": "On July 30, Monolithic Power Systems reported second-quarter revenue of $980.6 million, up 47.6% from a year earlier and 21.9% sequentially. The pace puts its AI opportunity into reported results. Monolithic Power Systems, Inc. (NASDAQ:MPWR) does not sell AI accelerators. It supplies the power-manag",
+          "type": "Earnings",
+          "sentiment": 0,
+          "weight": 1,
+          "final_weight": 1.36,
+          "source_authority": 2.5,
+          "recency_factor": 0.42,
+          "source": "Yahoo"
+        },
+        {
+          "date": "2026-09-04",
+          "title": "What Is The Market Really Expecting From MPWR Stock?",
+          "content": "This is a year of concentrated hyper-growth for Monolithic Power Systems. The company is fueling data centers while accelerating its transition from a chip supplier into a full solutions provider.",
+          "type": "Industry",
+          "sentiment": 1,
+          "weight": 1,
+          "final_weight": 0.9,
+          "source_authority": 2.5,
+          "recency_factor": 0.36,
+          "source": "Yahoo"
+        },
+        {
+          "date": "2026-09-03",
+          "title": "StoneX Initiates Coverage On Monolithic Power Systems with Buy Rating, Announces Price Target of $1800",
+          "content": "StoneX  analyst Gary Mobley   initiates coverage on Monolithic Power Systems (NASDAQ:MPWR) with a Buy rating and announces Price Target of $1800.",
+          "type": "Analyst Action",
+          "sentiment": 1,
+          "weight": 1,
+          "final_weight": 0.9,
+          "source_authority": 2.5,
+          "recency_factor": 0.3,
+          "source": "Benzinga"
+        }
+      ]
+    },
+    "NYSE:AJG": {
+      "ticker": "AJG",
+      "score": 57,
+      "score_raw": 1.72,
+      "score_components": {
+        "positive_weight_sum": 3.67,
+        "negative_weight_sum": 1.95,
+        "news_effective_count": 5,
+        "news_dropped_count": 3
+      },
+      "signal": "NEUTRAL No Trade (Weak Bullish)",
+      "strategy": "Mildly positive, insufficient signal — watch for stronger catalyst",
+      "suitable_for": "Watch",
+      "confidence": "Low",
+      "patterns": [],
+      "positive_factors": [
+        "[Earnings|w1.95] Arthur J. Gallagher Stock: Is AJG Underperforming the Financial Servic",
+        "[Earnings|w0.97] Do You Believe Arthur J. Gallagher (AJG) Could Deliver Mid-Teens EPS G",
+        "[Industry|w0.75] The Zacks Analyst Blog Highlights Willis Towers Watson, Arthur J. Gall"
+      ],
+      "negative_factors": [
+        "[Earnings|w1.95] AJG's Risk Management Business Outpaces Brokerage Organic Growth"
+      ],
+      "news_count": 5,
+      "news_dropped": 3,
+      "sources": [
+        "ok"
+      ],
+      "top_news": [
+        {
+          "date": "2026-09-07",
+          "title": "Arthur J. Gallagher Stock: Is AJG Underperforming the Financial Service Sector?",
+          "content": "While Arthur J. Gallagher has underperformed relative to the financial service sector over the past year, Wall Street analysts maintain a bullish outlook on its prospects.",
+          "type": "Earnings",
+          "sentiment": 1,
+          "weight": 2,
+          "final_weight": 1.95,
+          "source_authority": 2.5,
+          "recency_factor": 0.6,
+          "source": "Yahoo"
+        },
+        {
+          "date": "2026-09-07",
+          "title": "AJG's Risk Management Business Outpaces Brokerage Organic Growth",
+          "content": "AJG's Risk Management business outpaces Brokerage, with strong organic growth, new business and retention supporting broader revenue growth.",
+          "type": "Earnings",
+          "sentiment": -1,
+          "weight": 2,
+          "final_weight": 1.95,
+          "source_authority": 2.5,
+          "recency_factor": 0.6,
+          "source": "Yahoo"
+        },
+        {
+          "date": "2026-09-03",
+          "title": "Arthur J. Gallagher & Co. to Host Regularly Scheduled Quarterly Investor Meeting with Management",
+          "content": "Arthur J. Gallagher & Co. will be hosting its regularly scheduled quarterly management meeting on Wednesday, September 23, from 3:00 p.m. until approximately 5:00 p.m. CT. This quarter's meeting will take place virtually via conference call. During the call, the company's operating and financial lea",
+          "type": "Earnings",
+          "sentiment": 0,
+          "weight": 1,
+          "final_weight": 0.97,
+          "source_authority": 2.5,
+          "recency_factor": 0.3,
+          "source": "Yahoo"
+        },
+        {
+          "date": "2026-09-03",
+          "title": "Do You Believe Arthur J. Gallagher (AJG) Could Deliver Mid-Teens EPS Growth for Years?",
+          "content": "Eagle Capital Management, an investment management company, released its second quarter 2026 investor letter. A copy of the letter can be downloaded here. In the quarter, Eagle Capital Management discussed how enthusiasm around AI capital spending has driven strong S&P 500 earnings growth while also",
+          "type": "Earnings",
+          "sentiment": 1,
+          "weight": 1,
+          "final_weight": 0.97,
+          "source_authority": 2.5,
+          "recency_factor": 0.3,
+          "source": "Yahoo"
+        },
+        {
+          "date": "2026-09-03",
+          "title": "The Zacks Analyst Blog Highlights Willis Towers Watson, Arthur J. Gallagher and Aon",
+          "content": "WTW, AJG and AON are finding new growth drivers as insurance pricing fades, with organic growth fueled by volume, retention and share gains.",
+          "type": "Industry",
+          "sentiment": 1,
+          "weight": 1,
+          "final_weight": 0.75,
+          "source_authority": 2.5,
+          "recency_factor": 0.3,
+          "source": "Yahoo"
+        }
+      ]
+    },
+    "NYSE:CRC": {
+      "ticker": "CRC",
+      "score": 55,
+      "score_raw": 1.17,
+      "score_components": {
+        "positive_weight_sum": 1.17,
+        "negative_weight_sum": 0,
+        "news_effective_count": 4,
+        "news_dropped_count": 2
+      },
+      "signal": "NEUTRAL No Trade (Weak Bullish)",
+      "strategy": "Mildly positive, insufficient signal — watch for stronger catalyst",
+      "suitable_for": "Watch",
+      "confidence": "Low",
+      "patterns": [],
+      "positive_factors": [
+        "[Earnings|w1.17] Meridian Contrarian Fund Cuts California Resources Corp. (CRC) in Anti"
+      ],
+      "negative_factors": [],
+      "news_count": 4,
+      "news_dropped": 2,
+      "sources": [
+        "ok"
+      ],
+      "top_news": [
+        {
+          "date": "2026-09-04",
+          "title": "Meridian Contrarian Fund Cuts California Resources Corp. (CRC) in Anticipation of Downturn",
+          "content": "Meridian Funds, managed by ArrowMark Partners, released its second-quarter 2026 investor letter for “Meridian Contrarian Fund”. The letter can be downloaded here. U.S. equity markets experienced a strong recovery in Q2 2026, driven by improved sentiment following de-escalation of geopolitical tensio",
+          "type": "Earnings",
+          "sentiment": 1,
+          "weight": 1,
+          "final_weight": 1.17,
+          "source_authority": 2.5,
+          "recency_factor": 0.36,
+          "source": "Yahoo"
+        },
+        {
+          "date": "2026-09-04",
+          "title": "Seaport Global Initiates Coverage of California Resources (CRC) at Neutral",
+          "content": "",
+          "type": "Analyst Action",
+          "sentiment": 0,
+          "weight": 1,
+          "final_weight": 1.08,
+          "source_authority": 2.5,
+          "recency_factor": 0.36,
+          "source": "Fintel"
+        },
+        {
+          "date": "2026-09-03",
+          "title": "What Is California Resources (CRC) Building With Its Midstream Deal And Carbon Push?",
+          "content": "California Resources Corporation (NYSE:CRC) has closed its acquisition of Crimson Midstream Holdings, expanding its energy infrastructure footprint in California. The company outlined new carbon capture projects in its 2025 Sustainability Update, including operational infrastructure aimed at long te",
+          "type": "M&A",
+          "sentiment": 0,
+          "weight": 1,
+          "final_weight": 1.05,
+          "source_authority": 2.5,
+          "recency_factor": 0.3,
+          "source": "Yahoo"
+        },
+        {
+          "date": "2026-09-03",
+          "title": "Seaport Global Initiates Coverage On California Resources with Neutral Rating",
+          "content": "Seaport Global  analyst Vin Lovaglio   initiates coverage on California Resources (NYSE:CRC) with a Neutral rating.",
+          "type": "Analyst Action",
+          "sentiment": 0,
+          "weight": 1,
+          "final_weight": 0.9,
+          "source_authority": 2.5,
+          "recency_factor": 0.3,
+          "source": "Benzinga"
+        }
+      ]
+    },
+    "NASDAQ:VRTX": {
+      "ticker": "VRTX",
+      "score": 54,
+      "score_raw": 0.96,
+      "score_components": {
+        "positive_weight_sum": 2.76,
+        "negative_weight_sum": 1.8,
+        "news_effective_count": 6,
+        "news_dropped_count": 13
+      },
+      "signal": "NEUTRAL No Trade (Weak Bullish)",
+      "strategy": "Mildly positive, insufficient signal — watch for stronger catalyst",
+      "suitable_for": "Watch",
+      "confidence": "Low",
+      "patterns": [],
+      "positive_factors": [
+        "[Earnings|w2.76] Vertex Pharmaceuticals: Solid Growth But Valuation Still Requires Flaw"
+      ],
+      "negative_factors": [
+        "[Industry|w1.8] Vertex Pharmaceuticals (VRTX) Suffers a Larger Drop Than the General M"
+      ],
+      "news_count": 6,
+      "news_dropped": 13,
+      "sources": [
+        "ok"
+      ],
+      "top_news": [
+        {
+          "date": "2026-09-09",
+          "title": "Vertex Pharmaceuticals: Solid Growth But Valuation Still Requires Flawless Execution",
+          "content": "Vertex Pharmaceuticals (VRTX) rated Hold: CF growth is solid but valuation, margin pressure and new-launch execution risks cap upside.",
+          "type": "Earnings",
+          "sentiment": 1,
+          "weight": 3,
+          "final_weight": 2.76,
+          "source_authority": 2.5,
+          "recency_factor": 0.85,
+          "source": "SeekingAlpha"
+        },
+        {
+          "date": "2026-09-08",
+          "title": "Goldman Sachs Just Added Vertex Pharmaceuticals to Its Conviction List. Here's the Bull Case for the Big Biotech Stock",
+          "content": "The company has tremendous prospects.",
+          "type": "Industry",
+          "sentiment": 0,
+          "weight": 2,
+          "final_weight": 1.8,
+          "source_authority": 2.5,
+          "recency_factor": 0.72,
+          "source": "Yahoo"
+        },
+        {
+          "date": "2026-09-08",
+          "title": "Vertex Pharmaceuticals (VRTX) Suffers a Larger Drop Than the General Market: Key Insights",
+          "content": "In the most recent trading session, Vertex Pharmaceuticals (VRTX) closed at $528.9, indicating a -3.15% shift from the previous trading day.",
+          "type": "Industry",
+          "sentiment": -1,
+          "weight": 2,
+          "final_weight": 1.8,
+          "source_authority": 2.5,
+          "recency_factor": 0.72,
+          "source": "Yahoo"
+        },
+        {
+          "date": "2026-09-08",
+          "title": "Investors Heavily Search Vertex Pharmaceuticals Incorporated (VRTX): Here is What You Need to Know",
+          "content": "Vertex (VRTX) has received quite a bit of attention from Zacks.com users lately. Therefore, it is wise to be aware of the facts that can impact the stock's prospects.",
+          "type": "Industry",
+          "sentiment": 0,
+          "weight": 2,
+          "final_weight": 1.8,
+          "source_authority": 2.5,
+          "recency_factor": 0.72,
+          "source": "Yahoo"
+        },
+        {
+          "date": "2026-09-04",
+          "title": "Here's How Much $100 Invested In Vertex Pharmaceuticals 20 Years Ago Would Be Worth Today",
+          "content": "Vertex Pharmaceuticals (NASDAQ:VRTX) has outperformed the market over the past 20 years by 5.61% on an annualized basis producing an average annual return of 14.84%. Currently, Vertex Pharmaceuticals has a market",
+          "type": "Analyst Action",
+          "sentiment": 0,
+          "weight": 1,
+          "final_weight": 1.08,
+          "source_authority": 2.5,
+          "recency_factor": 0.36,
+          "source": "Benzinga"
+        }
+      ]
+    },
+    "NYSE:WT": {
+      "ticker": "WT",
+      "score": 54,
+      "score_raw": 0.96,
+      "score_components": {
+        "positive_weight_sum": 2.96,
+        "negative_weight_sum": 2,
+        "news_effective_count": 5,
+        "news_dropped_count": 2
+      },
+      "signal": "NEUTRAL No Trade (Weak Bullish)",
+      "strategy": "Mildly positive, insufficient signal — watch for stronger catalyst",
+      "suitable_for": "Watch",
+      "confidence": "Low",
+      "patterns": [],
+      "positive_factors": [
+        "[Industry|w1.25] WisdomTree (WT) Stock Looks Fully Priced On New Tokenized Funds",
+        "[Policy|w1.08] SoFi, WisdomTree, Ridgepost Capital, Ares, and S&P Global Shares Are S",
+        "[Rumor|w0.63] WisdomTree (WT) Could Be 6% Overvalued As Tokenized Funds Gain Tractio"
+      ],
+      "negative_factors": [
+        "[Industry|w1.25] Did Stable Sea’s New Tokenized Funds Push Just Shift WisdomTree's (WT)",
+        "[Industry|w0.75] WISDOMTREE EURO STOXX 50® 3X DAILY SHORT SECURITIES ISIN: XS3306517502"
+      ],
+      "news_count": 5,
+      "news_dropped": 2,
+      "sources": [
+        "ok"
+      ],
+      "top_news": [
+        {
+          "date": "2026-09-06",
+          "title": "Did Stable Sea’s New Tokenized Funds Push Just Shift WisdomTree's (WT) Investment Narrative?",
+          "content": "In August 2026, Stable Sea Inc. expanded its relationship with WisdomTree by adding two more tokenized, SEC-registered fixed income funds, WTSIX and FLTTX, to the Stable Sea Terminal alongside the existing WTGXX offering. This move broadens onchain access to income-oriented cash management tools for",
+          "type": "Industry",
+          "sentiment": -1,
+          "weight": 1,
+          "final_weight": 1.25,
+          "source_authority": 2.5,
+          "recency_factor": 0.5,
+          "source": "Yahoo"
+        },
+        {
+          "date": "2026-09-06",
+          "title": "WisdomTree (WT) Stock Looks Fully Priced On New Tokenized Funds",
+          "content": "WisdomTree stock has delivered a very strong 5 year return, yet the current valuation checks suggest the shares now lean expensive rather than offering clear value. After such a run, buyers are weighing the recent momentum against a low value score and an overvalued read on market multiples. WisdomT",
+          "type": "Industry",
+          "sentiment": 1,
+          "weight": 1,
+          "final_weight": 1.25,
+          "source_authority": 2.5,
+          "recency_factor": 0.5,
+          "source": "Yahoo"
+        },
+        {
+          "date": "2026-09-05",
+          "title": "WisdomTree (WT) Could Be 6% Overvalued As Tokenized Funds Gain Traction",
+          "content": "Stable Sea Inc.'s decision to add two new WisdomTree (WT) tokenized funds to its Stable Sea Terminal gives corporate treasury teams another way to handle operating cash within a digital workflow. WisdomTree shares have gained momentum over 2026, with a 30 day share price return of 12.98% and a 90 da",
+          "type": "Rumor",
+          "sentiment": 1,
+          "weight": 1,
+          "final_weight": 0.63,
+          "source_authority": 2.5,
+          "recency_factor": 0.42,
+          "source": "Yahoo"
+        },
+        {
+          "date": "2026-09-04",
+          "title": "SoFi, WisdomTree, Ridgepost Capital, Ares, and S&P Global Shares Are Soaring, What You Need To Know",
+          "content": "A number of stocks jumped in the afternoon session after Federal Reserve Governor Christopher Waller signaled support for holding interest rates steady amid emerging signs of disinflation. During a Reuters NEXT Newsmaker interview, Governor Waller stated that if the positive economic trends seen ove",
+          "type": "Policy",
+          "sentiment": 1,
+          "weight": 1,
+          "final_weight": 1.08,
+          "source_authority": 2.5,
+          "recency_factor": 0.36,
+          "source": "Yahoo"
+        },
+        {
+          "date": "2026-09-03",
+          "title": "WISDOMTREE EURO STOXX 50® 3X DAILY SHORT SECURITIES ISIN: XS3306517502  PROPOSED AMENDMENT TO THE PRINCIPAL AMOUNT OF TH",
+          "content": "3 September 2026 LEI: 2138003QW2ZAYZODBU23 LSE Code: 3EUS WISDOMTREE MULTI ASSET ISSUER PUBLIC LIMITED COMPANY(a public company incorporated with limited liability in Ireland)WISDOMTREE EURO STOXX 50® 3X DAILY SHORT SECURITIESISIN: XS3306517502 PROPOSED AMENDMENT TO THE PRINCIPAL AMOUNT OF THE AFFEC",
+          "type": "Industry",
+          "sentiment": -1,
+          "weight": 1,
+          "final_weight": 0.75,
+          "source_authority": 2.5,
+          "recency_factor": 0.3,
+          "source": "Yahoo"
+        }
+      ]
+    },
+    "NASDAQ:ADUS": {
+      "ticker": "ADUS",
+      "score": 54,
+      "score_raw": 1.05,
+      "score_components": {
+        "positive_weight_sum": 1.05,
+        "negative_weight_sum": 0,
+        "news_effective_count": 2,
+        "news_dropped_count": 2
+      },
+      "signal": "NEUTRAL No Trade (Weak Bullish)",
+      "strategy": "Mildly positive, insufficient signal — watch for stronger catalyst",
+      "suitable_for": "Watch",
+      "confidence": "Low",
+      "patterns": [],
+      "positive_factors": [
+        "[Industry|w1.05] Quality Investing Spotlight: Addus HomeCare (NASDAQ:ADUS)"
+      ],
+      "negative_factors": [],
+      "news_count": 2,
+      "news_dropped": 2,
+      "sources": [
+        "ok"
+      ],
+      "top_news": [
+        {
+          "date": "2026-09-08",
+          "title": "Addus HomeCare to Participate in the 2026 Jefferies Healthcare Services and Technology Conference",
+          "content": "FRISCO, Texas, September 08, 2026--Addus HomeCare Corporation (Nasdaq: ADUS), a provider of home care services, today announced that Brian Poff, Executive Vice President and Chief Financial Officer, and Brad Bickham, Chief Operating Officer on an Interim Basis, will participate in the 2026 Jefferies",
+          "type": "Industry",
+          "sentiment": 0,
+          "weight": 2,
+          "final_weight": 1.8,
+          "source_authority": 2.5,
+          "recency_factor": 0.72,
+          "source": "Yahoo"
+        },
+        {
+          "date": "2026-09-05",
+          "title": "Quality Investing Spotlight: Addus HomeCare (NASDAQ:ADUS)",
+          "content": "Addus HomeCare (ADUS) passes quality screen: 136% ROIC, 22.5% EBIT growth, low debt, strong cash flow. A solid quality holding candidate.",
+          "type": "Industry",
+          "sentiment": 1,
+          "weight": 1,
+          "final_weight": 1.05,
+          "source_authority": 2.5,
+          "recency_factor": 0.42,
+          "source": "ChartMill"
+        }
+      ]
+    },
+    "NYSE:MS": {
+      "ticker": "MS",
+      "score": 54,
+      "score_raw": 0.9,
+      "score_components": {
+        "positive_weight_sum": 0.9,
+        "negative_weight_sum": 0,
+        "news_effective_count": 4,
+        "news_dropped_count": 26
+      },
+      "signal": "NEUTRAL No Trade (Weak Bullish)",
+      "strategy": "Mildly positive, insufficient signal — watch for stronger catalyst",
+      "suitable_for": "Watch",
+      "confidence": "Low",
+      "patterns": [],
+      "positive_factors": [
+        "[Industry|w0.9] Are You Looking for a High-Growth Dividend Stock?"
+      ],
+      "negative_factors": [],
+      "news_count": 4,
+      "news_dropped": 26,
+      "sources": [
+        "ok"
+      ],
+      "top_news": [
+        {
+          "date": "2026-09-09",
+          "title": "Morgan Stanley Is Too Expensive",
+          "content": "Morgan Stanley surged on capital markets strength but now trades at a premium valuation. Click here to read my latest analysis of MS stock.",
+          "type": "Industry",
+          "sentiment": 0,
+          "weight": 2,
+          "final_weight": 2.13,
+          "source_authority": 2.5,
+          "recency_factor": 0.85,
+          "source": "SeekingAlpha"
+        },
+        {
+          "date": "2026-09-07",
+          "title": "Investors Heavily Search Morgan Stanley (MS): Here is What You Need to Know",
+          "content": "Morgan Stanley (MS) has received quite a bit of attention from Zacks.com users lately. Therefore, it is wise to be aware of the facts that can impact the stock's prospects.",
+          "type": "Industry",
+          "sentiment": 0,
+          "weight": 2,
+          "final_weight": 1.5,
+          "source_authority": 2.5,
+          "recency_factor": 0.6,
+          "source": "Yahoo"
+        },
+        {
+          "date": "2026-09-04",
+          "title": "Market Chatter: Anthropic May Give Morgan Stanley, Goldman Sachs Key Roles in $2 Trillion IPO",
+          "content": "Anthropic could give Morgan Stanley (MS) and Goldman Sachs (GS) key roles in handling its market deb",
+          "type": "Industry",
+          "sentiment": 0,
+          "weight": 1,
+          "final_weight": 0.9,
+          "source_authority": 2.5,
+          "recency_factor": 0.36,
+          "source": "Yahoo"
+        },
+        {
+          "date": "2026-09-04",
+          "title": "Are You Looking for a High-Growth Dividend Stock?",
+          "content": "Dividends are one of the best benefits to being a shareholder, but finding a great dividend stock is no easy task. Does Morgan Stanley (MS) have what it takes? Let's find out.",
+          "type": "Industry",
+          "sentiment": 1,
+          "weight": 1,
+          "final_weight": 0.9,
+          "source_authority": 2.5,
+          "recency_factor": 0.36,
+          "source": "Yahoo"
+        }
+      ]
+    },
+    "NASDAQ:VSAT": {
+      "ticker": "VSAT",
+      "score": 54,
+      "score_raw": 0.9,
+      "score_components": {
+        "positive_weight_sum": 0.9,
+        "negative_weight_sum": 0,
+        "news_effective_count": 4,
+        "news_dropped_count": 3
+      },
+      "signal": "NEUTRAL No Trade (Weak Bullish)",
+      "strategy": "Mildly positive, insufficient signal — watch for stronger catalyst",
+      "suitable_for": "Watch",
+      "confidence": "Low",
+      "patterns": [],
+      "positive_factors": [
+        "[Industry|w0.9] Space Rally Is Narrower Than It Looks as One Mega-Cap Masks Sector Slu"
+      ],
+      "negative_factors": [],
+      "news_count": 4,
+      "news_dropped": 3,
+      "sources": [
+        "ok"
+      ],
+      "top_news": [
+        {
+          "date": "2026-09-08",
+          "title": "DAL Stock Drops: Jefferies Sees Possible Snag To In-Cabin Experience Owing To SPCX-VSAT Spectrum Fight",
+          "content": "Delta uses Viasat today and has chosen Amazon’s Leo network as its next-generation Wi-Fi provider.",
+          "type": "Industry",
+          "sentiment": 0,
+          "weight": 2,
+          "final_weight": 1.8,
+          "source_authority": 2.5,
+          "recency_factor": 0.72,
+          "source": "Yahoo"
+        },
+        {
+          "date": "2026-09-04",
+          "title": "Space Rally Is Narrower Than It Looks as One Mega-Cap Masks Sector Slump",
+          "content": "Space theme's gains hide a narrow rally: mega-cap SPCX surges while most space stocks fall, with RKLB, ASTS, and VSAT diverging.",
+          "type": "Industry",
+          "sentiment": 1,
+          "weight": 1,
+          "final_weight": 0.9,
+          "source_authority": 2.5,
+          "recency_factor": 0.36,
+          "source": "ChartMill"
+        },
+        {
+          "date": "2026-09-04",
+          "title": "A Congress Member Sold Up To $15K In Viasat Stock: Here's What You Need To Know",
+          "content": "A September filing shows that Representative Jonathan Jackson reported a sale in Viasat (NASDAQ:VSAT), valued between $1,001 and $15,000. The transaction date is listed as August 28, 2026, with the report published on",
+          "type": "Policy",
+          "sentiment": 0,
+          "weight": 1,
+          "final_weight": 1.08,
+          "source_authority": 2.5,
+          "recency_factor": 0.36,
+          "source": "Benzinga"
+        },
+        {
+          "date": "2026-09-03",
+          "title": "ViaSat (VSAT) Down 13.7% Since Last Earnings Report: Can It Rebound?",
+          "content": "ViaSat (VSAT) reported earnings 30 days ago. What's next for the stock? We take a look at earnings estimates for some clues.",
+          "type": "Earnings",
+          "sentiment": 0,
+          "weight": 1,
+          "final_weight": 0.97,
+          "source_authority": 2.5,
+          "recency_factor": 0.3,
+          "source": "Yahoo"
+        }
+      ]
+    },
+    "NASDAQ:KRYS": {
+      "ticker": "KRYS",
+      "score": 53,
+      "score_raw": 0.75,
+      "score_components": {
+        "positive_weight_sum": 0.75,
+        "negative_weight_sum": 0,
+        "news_effective_count": 2,
+        "news_dropped_count": 2
+      },
+      "signal": "NEUTRAL No Trade (Weak Bullish)",
+      "strategy": "Mildly positive, insufficient signal — watch for stronger catalyst",
+      "suitable_for": "Watch",
+      "confidence": "Low",
+      "patterns": [],
+      "positive_factors": [
+        "[Industry|w0.75] Krystal Stock Gains 13.4% in a Month: What Is Driving the Rally?"
+      ],
+      "negative_factors": [],
+      "news_count": 2,
+      "news_dropped": 2,
+      "sources": [
+        "ok"
+      ],
+      "top_news": [
+        {
+          "date": "2026-09-03",
+          "title": "Krystal Stock Gains 13.4% in a Month: What Is Driving the Rally?",
+          "content": "KRYS' Vyjuvek growth and expanding genetic medicine pipeline boost investor confidence as the company advances toward multi-product growth.",
+          "type": "Industry",
+          "sentiment": 1,
+          "weight": 1,
+          "final_weight": 0.75,
+          "source_authority": 2.5,
+          "recency_factor": 0.3,
+          "source": "Yahoo"
+        },
+        {
+          "date": "2026-09-03",
+          "title": "Krystal Biotech to Present at 2026 Cantor Global Healthcare Conference",
+          "content": "PITTSBURGH, Sept. 03, 2026 (GLOBE NEWSWIRE) -- Krystal Biotech, Inc. (the “Company”) (NASDAQ: KRYS) today announced that the Company will participate in the 2026 Cantor Global Healthcare Conference on September 10, 2026, in New York. Management will take part in a fireside chat scheduled at 3:55 pm ",
+          "type": "Industry",
+          "sentiment": 0,
+          "weight": 1,
+          "final_weight": 0.75,
+          "source_authority": 2.5,
+          "recency_factor": 0.3,
+          "source": "Yahoo"
+        }
+      ]
+    },
+    "NASDAQ:AAPL": {
+      "ticker": "AAPL",
+      "score": 51,
+      "score_raw": 1.26,
+      "score_components": {
+        "positive_weight_sum": 10.41,
+        "negative_weight_sum": 9.15,
+        "news_effective_count": 26,
+        "news_dropped_count": 4
+      },
+      "signal": "NEUTRAL No Trade (Weak Bullish)",
+      "strategy": "Mildly positive, insufficient signal — watch for stronger catalyst",
+      "suitable_for": "Watch",
+      "confidence": "Low",
+      "patterns": [],
+      "positive_factors": [
+        "[Analyst Action|w2.55] Apple's Upcoming Product Event: Is It Time To Upgrade?",
+        "[Industry|w2.13] Apple’s Rally Pressures New CEO to Deliver on Foldable iPhone",
+        "[Industry|w2.13] Nasdaq, Dow, S&P 500 Futures Mixed As Oil Hits $100 Again: QCOM, ORCL,"
+      ],
+      "negative_factors": [
+        "[Earnings|w2.76] ​From Apple To NVIDIA: Big Tech's Volatility Calendar Is Loaded",
+        "[Industry|w2.13] Dow Jones Futures Fall As Oil Prices Push Stocks Toward Breaking Point",
+        "[Industry|w2.13] Dow Jones Futures Fall As Brent Oil Prices Hit $100, Apple iPhone Even"
+      ],
+      "news_count": 26,
+      "news_dropped": 4,
+      "sources": [
+        "ok"
+      ],
+      "top_news": [
+        {
+          "date": "2026-09-09",
+          "title": "Why Apple investors probably don't need to worry about a $2,000 iPhone price tag",
+          "content": "The data shows people have bought ever-pricier new iPhones anyway.",
+          "type": "Industry",
+          "sentiment": 0,
+          "weight": 2,
+          "final_weight": 2.13,
+          "source_authority": 2.5,
+          "recency_factor": 0.85,
+          "source": "Yahoo"
+        },
+        {
+          "date": "2026-09-09",
+          "title": "Apple’s Foldable iPhone Could Become The ‘Birkin Of Smartphones’ In China, Analyst Says – But Others Think The Odds Are ",
+          "content": "Apple is expected to unveil its first foldable iPhone Wednesday, with the device reportedly starting at about $2,199.",
+          "type": "Rumor",
+          "sentiment": 0,
+          "weight": 1,
+          "final_weight": 1.27,
+          "source_authority": 2.5,
+          "recency_factor": 0.85,
+          "source": "Yahoo"
+        },
+        {
+          "date": "2026-09-09",
+          "title": "Apple expected to unveil first foldable iPhone under new CEO John Ternus",
+          "content": "Apple (NASDAQ:AAPL) is expected to introduce its first foldable iPhone at a product event on Wednesday at the company’s headquarters in Cupertino, California, according to the supplied report. The event would mark the first major iPhone launch under new Chief Executive John Ternus and could represen",
+          "type": "Industry",
+          "sentiment": 0,
+          "weight": 2,
+          "final_weight": 2.13,
+          "source_authority": 2.5,
+          "recency_factor": 0.85,
+          "source": "Yahoo"
+        },
+        {
+          "date": "2026-09-09",
+          "title": "Apple’s (AAPL) “Surprise and Shine” Event Tests Its Foldable iPhone Against Huawei and Xiaomi",
+          "content": "Wall Street sees Apple Inc. (NASDAQ:AAPL) entering a significant hardware cycle ahead of its “Surprise and Shine” event streaming live on Wednesday, September 9, 2026. Bank of America, in particular, expects a broad slate of new Apple devices led by new iPhones and a Foldable iPhone. On September 8,",
+          "type": "Industry",
+          "sentiment": 0,
+          "weight": 2,
+          "final_weight": 2.13,
+          "source_authority": 2.5,
+          "recency_factor": 0.85,
+          "source": "Yahoo"
+        },
+        {
+          "date": "2026-09-09",
+          "title": "Dow Jones Futures Fall As Oil Prices Push Stocks Toward Breaking Point; Apple iPhone Event Due",
+          "content": "Stocks fell Tuesday as oil prices and Treasury yields rose, but AMD and HPE led AI plays flashing buy signals. An Apple iPhone event is on tap.",
+          "type": "Industry",
+          "sentiment": -1,
+          "weight": 2,
+          "final_weight": 2.13,
+          "source_authority": 2.5,
+          "recency_factor": 0.85,
+          "source": "Yahoo"
+        }
+      ]
+    },
+    "NASDAQ:GEN": {
+      "ticker": "GEN",
+      "score": 50,
+      "score_raw": 0,
+      "score_components": {
+        "positive_weight_sum": 0,
+        "negative_weight_sum": 0,
+        "news_effective_count": 2,
+        "news_dropped_count": 0
+      },
+      "signal": "NEUTRAL No Trade (Weak Bullish)",
+      "strategy": "Mildly positive, insufficient signal — watch for stronger catalyst",
+      "suitable_for": "Watch",
+      "confidence": "Low",
+      "patterns": [],
+      "positive_factors": [],
+      "negative_factors": [],
+      "news_count": 2,
+      "news_dropped": 0,
+      "sources": [
+        "ok"
+      ],
+      "top_news": [
+        {
+          "date": "2026-09-08",
+          "title": "Is GEN DIGITAL INC (GEN) Stock Outpacing Its Business Services Peers This Year?",
+          "content": "Here is how Gen Digital (GEN) and Ingram Micro (INGM) have performed compared to their sector so far this year.",
+          "type": "Industry",
+          "sentiment": 0,
+          "weight": 2,
+          "final_weight": 1.8,
+          "source_authority": 2.5,
+          "recency_factor": 0.72,
+          "source": "Yahoo"
+        },
+        {
+          "date": "2026-09-08",
+          "title": "Gen Named One of Fast Company's Best Workplaces for Innovators",
+          "content": "Gen (NASDAQ: GEN), the global leader powering digital freedom behind its trusted brands Norton, Avast, LifeLock and MoneyLion, has been named one of Fast Company's Best Workplaces for Innovators 2026.",
+          "type": "Industry",
+          "sentiment": 0,
+          "weight": 2,
+          "final_weight": 1.8,
+          "source_authority": 2.5,
+          "recency_factor": 0.72,
+          "source": "Yahoo"
+        }
+      ]
+    },
+    "NASDAQ:PRGS": {
+      "ticker": "PRGS",
+      "score": 50,
+      "score_raw": 0,
+      "score_components": {
+        "positive_weight_sum": 0,
+        "negative_weight_sum": 0
+      },
+      "signal": "NEUTRAL No Trade (No relevant news)",
+      "strategy": "No relevant news in window",
+      "suitable_for": "Watch",
+      "confidence": "-",
+      "patterns": [],
+      "positive_factors": [],
+      "negative_factors": [],
+      "news_count": 0,
+      "news_dropped": 2,
+      "sources": [
+        "ok"
+      ],
+      "top_news": []
+    },
+    "NYSE:HGTY": {
+      "ticker": "HGTY",
+      "score": 50,
+      "score_raw": 0,
+      "score_components": {
+        "positive_weight_sum": 0,
+        "negative_weight_sum": 0
+      },
+      "signal": "NEUTRAL No Trade (No relevant news)",
+      "strategy": "No relevant news in window",
+      "suitable_for": "Watch",
+      "confidence": "-",
+      "patterns": [],
+      "positive_factors": [],
+      "negative_factors": [],
+      "news_count": 0,
+      "news_dropped": 1,
+      "sources": [
+        "ok"
+      ],
+      "top_news": []
+    },
+    "NYSE:RIO": {
+      "ticker": "RIO",
+      "score": 50,
+      "score_raw": 0,
+      "score_components": {
+        "positive_weight_sum": 0,
+        "negative_weight_sum": 0,
+        "news_effective_count": 3,
+        "news_dropped_count": 5
+      },
+      "signal": "NEUTRAL No Trade (Weak Bullish)",
+      "strategy": "Mildly positive, insufficient signal — watch for stronger catalyst",
+      "suitable_for": "Watch",
+      "confidence": "Low",
+      "patterns": [],
+      "positive_factors": [],
+      "negative_factors": [],
+      "news_count": 3,
+      "news_dropped": 5,
+      "sources": [
+        "ok"
+      ],
+      "top_news": [
+        {
+          "date": "2026-09-08",
+          "title": "Rio Tinto to take over Queensland’s Aurukun Bauxite Project",
+          "content": "The project is held under a mineral development licence rather than a granted mining lease.",
+          "type": "Industry",
+          "sentiment": 0,
+          "weight": 2,
+          "final_weight": 1.8,
+          "source_authority": 2.5,
+          "recency_factor": 0.72,
+          "source": "Yahoo"
+        },
+        {
+          "date": "2026-09-08",
+          "title": "Domestic Metals commences drilling at Rio Tinto joint venture Smart Creek project",
+          "content": "Domestic Metals Corp (TSX-V:DMCU, OTCQB:DMCUF, FRA:03E0) has kicked off a 9,000-metre diamond drill program at its Smart Creek Project in Montana, targeting high-grade porphyry copper mineralization identified through the company's 2025-2026 exploration campaign. In a statement Tuesday, the...",
+          "type": "M&A",
+          "sentiment": 0,
+          "weight": 3,
+          "final_weight": 2.52,
+          "source_authority": 2.5,
+          "recency_factor": 0.72,
+          "source": "Yahoo"
+        },
+        {
+          "date": "2026-09-08",
+          "title": "Ngarlawangga Aboriginal Corporation and Rio Tinto sign Interim Modernised Agreement",
+          "content": "KARRATHA, Australia, September 08, 2026--Ngarlawangga Aboriginal Corporation and Rio Tinto have signed an Interim Modernised Agreement, strengthening their partnership and delivering long-term benefits for the Ngarlawangga People.",
+          "type": "Industry",
+          "sentiment": 0,
+          "weight": 2,
+          "final_weight": 1.8,
+          "source_authority": 2.5,
+          "recency_factor": 0.72,
+          "source": "Yahoo"
+        }
+      ]
+    },
+    "NYSE:CF": {
+      "ticker": "CF",
+      "score": 50,
+      "score_raw": 0,
+      "score_components": {
+        "positive_weight_sum": 0,
+        "negative_weight_sum": 0,
+        "news_effective_count": 1,
+        "news_dropped_count": 6
+      },
+      "signal": "NEUTRAL No Trade (Weak Bullish)",
+      "strategy": "Mildly positive, insufficient signal — watch for stronger catalyst",
+      "suitable_for": "Watch",
+      "confidence": "Low",
+      "patterns": [],
+      "positive_factors": [],
+      "negative_factors": [],
+      "news_count": 1,
+      "news_dropped": 6,
+      "sources": [
+        "ok"
+      ],
+      "top_news": [
+        {
+          "date": "2026-09-04",
+          "title": "CF (CF) Up 18.1% Since Last Earnings Report: Can It Continue?",
+          "content": "CF (CF) reported earnings 30 days ago. What's next for the stock? We take a look at earnings estimates for some clues.",
+          "type": "Earnings",
+          "sentiment": 0,
+          "weight": 1,
+          "final_weight": 1.17,
+          "source_authority": 2.5,
+          "recency_factor": 0.36,
+          "source": "Yahoo"
+        }
+      ]
+    },
+    "NASDAQ:OSBC": {
+      "ticker": "OSBC",
+      "score": 50,
+      "score_raw": 0,
+      "score_components": {
+        "positive_weight_sum": 0,
+        "negative_weight_sum": 0
+      },
+      "signal": "NEUTRAL No Trade (No relevant news)",
+      "strategy": "No relevant news in window",
+      "suitable_for": "Watch",
+      "confidence": "-",
+      "patterns": [],
+      "positive_factors": [],
+      "negative_factors": [],
+      "news_count": 0,
+      "news_dropped": 1,
+      "sources": [
+        "ok"
+      ],
+      "top_news": []
+    },
+    "NASDAQ:NWBI": {
+      "ticker": "NWBI",
+      "score": 50,
+      "score_raw": 0,
+      "score_components": {
+        "positive_weight_sum": 0,
+        "negative_weight_sum": 0
+      },
+      "signal": "NEUTRAL No Trade (No Data)",
+      "strategy": "Finnhub ok: no news in window",
+      "suitable_for": "Watch",
+      "confidence": "-",
+      "patterns": [],
+      "positive_factors": [],
+      "negative_factors": [],
+      "news_count": 0,
+      "news_dropped": 0,
+      "sources": [
+        "ok"
+      ],
+      "top_news": []
+    },
+    "NASDAQ:BGC": {
+      "ticker": "BGC",
+      "score": 50,
+      "score_raw": 0,
+      "score_components": {
+        "positive_weight_sum": 0,
+        "negative_weight_sum": 0
+      },
+      "signal": "NEUTRAL No Trade (No Data)",
+      "strategy": "Finnhub ok: no news in window",
+      "suitable_for": "Watch",
+      "confidence": "-",
+      "patterns": [],
+      "positive_factors": [],
+      "negative_factors": [],
+      "news_count": 0,
+      "news_dropped": 0,
+      "sources": [
+        "ok"
+      ],
+      "top_news": []
+    },
+    "NASDAQ:NVDA": {
+      "ticker": "NVDA",
+      "score": 50,
+      "score_raw": 0,
+      "score_components": {
+        "positive_weight_sum": 0,
+        "negative_weight_sum": 0
+      },
+      "signal": "NEUTRAL No Trade (No relevant news)",
+      "strategy": "No relevant news in window",
+      "suitable_for": "Watch",
+      "confidence": "-",
+      "patterns": [],
+      "positive_factors": [],
+      "negative_factors": [],
+      "news_count": 0,
+      "news_dropped": 30,
+      "sources": [
+        "ok"
+      ],
+      "top_news": []
+    },
+    "OTC:SMNEY": {
+      "ticker": "OTC:SMNEY",
+      "score": 50,
+      "score_raw": 0,
+      "score_components": {
+        "positive_weight_sum": 0,
+        "negative_weight_sum": 0
+      },
+      "signal": "NEUTRAL No Trade (No Data)",
+      "strategy": "Finnhub ok: no news in window",
+      "suitable_for": "Watch",
+      "confidence": "-",
+      "patterns": [],
+      "positive_factors": [],
+      "negative_factors": [],
+      "news_count": 0,
+      "news_dropped": 0,
+      "sources": [
+        "ok"
+      ],
+      "top_news": []
+    },
+    "NYSE:SPNT": {
+      "ticker": "SPNT",
+      "score": 50,
+      "score_raw": 0,
+      "score_components": {
+        "positive_weight_sum": 0,
+        "negative_weight_sum": 0
+      },
+      "signal": "NEUTRAL No Trade (No Data)",
+      "strategy": "Finnhub ok: no news in window",
+      "suitable_for": "Watch",
+      "confidence": "-",
+      "patterns": [],
+      "positive_factors": [],
+      "negative_factors": [],
+      "news_count": 0,
+      "news_dropped": 0,
+      "sources": [
+        "ok"
+      ],
+      "top_news": []
+    },
+    "NYSE:AGM": {
+      "ticker": "AGM",
+      "score": 50,
+      "score_raw": 0,
+      "score_components": {
+        "positive_weight_sum": 0,
+        "negative_weight_sum": 0,
+        "news_effective_count": 1,
+        "news_dropped_count": 0
+      },
+      "signal": "NEUTRAL No Trade (Weak Bullish)",
+      "strategy": "Mildly positive, insufficient signal — watch for stronger catalyst",
+      "suitable_for": "Watch",
+      "confidence": "Low",
+      "patterns": [],
+      "positive_factors": [],
+      "negative_factors": [],
+      "news_count": 1,
+      "news_dropped": 0,
+      "sources": [
+        "ok"
+      ],
+      "top_news": [
+        {
+          "date": "2026-09-04",
+          "title": "Is Citigroup (C) Outperforming Other Finance Stocks This Year?",
+          "content": "Here is how Citigroup (C) and Federal Agricultural Mortgage (AGM) have performed compared to their sector so far this year.",
+          "type": "Analyst Action",
+          "sentiment": 0,
+          "weight": 1,
+          "final_weight": 1.08,
+          "source_authority": 2.5,
+          "recency_factor": 0.36,
+          "source": "Yahoo"
+        }
+      ]
+    },
+    "NASDAQ:CBRS": {
+      "ticker": "CBRS",
+      "score": 50,
+      "score_raw": 0,
+      "score_components": {
+        "positive_weight_sum": 0,
+        "negative_weight_sum": 0,
+        "news_effective_count": 1,
+        "news_dropped_count": 12
+      },
+      "signal": "NEUTRAL No Trade (Weak Bullish)",
+      "strategy": "Mildly positive, insufficient signal — watch for stronger catalyst",
+      "suitable_for": "Watch",
+      "confidence": "Low",
+      "patterns": [],
+      "positive_factors": [],
+      "negative_factors": [],
+      "news_count": 1,
+      "news_dropped": 12,
+      "sources": [
+        "ok"
+      ],
+      "top_news": [
+        {
+          "date": "2026-09-04",
+          "title": "Coatue Opened Positions in Intel and Cerebras. Is the AI Chip Trade Broadening Beyond NVIDIA?",
+          "content": "Coatue Management’s Q2 filing disclosed a new position in Intel and, for the first time, a reportable position in newly public Cerebras. Coatue reported 12,084,027 Intel shares and roughly 7.01 million Cerebras shares at June 30. Intel Corporation (NASDAQ:INTC) offers manufacturing and established d",
+          "type": "Industry",
+          "sentiment": 0,
+          "weight": 1,
+          "final_weight": 0.9,
+          "source_authority": 2.5,
+          "recency_factor": 0.36,
+          "source": "Yahoo"
+        }
+      ]
+    },
+    "NYSE:BAP": {
+      "ticker": "BAP",
+      "score": 50,
+      "score_raw": 0,
+      "score_components": {
+        "positive_weight_sum": 0,
+        "negative_weight_sum": 0,
+        "news_effective_count": 1,
+        "news_dropped_count": 1
+      },
+      "signal": "NEUTRAL No Trade (Weak Bullish)",
+      "strategy": "Mildly positive, insufficient signal — watch for stronger catalyst",
+      "suitable_for": "Watch",
+      "confidence": "Low",
+      "patterns": [],
+      "positive_factors": [],
+      "negative_factors": [],
+      "news_count": 1,
+      "news_dropped": 1,
+      "sources": [
+        "ok"
+      ],
+      "top_news": [
+        {
+          "date": "2026-09-04",
+          "title": "Bapcor (ASX:BAP) Shares See Fair Value Lift As Analysts Reassess Key Assumptions",
+          "content": "Bapcor is back in focus after analysts lifted the fair value estimate from A$0.59 to A$0.70, signalling a recalibration of what the stock might be worth under updated assumptions. The shift in the price target reflects recent research that balances a more constructive view on valuation with ongoing ",
+          "type": "Industry",
+          "sentiment": 0,
+          "weight": 1,
+          "final_weight": 0.9,
+          "source_authority": 2.5,
+          "recency_factor": 0.36,
+          "source": "Yahoo"
+        }
+      ]
+    },
+    "NASDAQ:LIN": {
+      "ticker": "LIN",
+      "score": 50,
+      "score_raw": 0,
+      "score_components": {
+        "positive_weight_sum": 0,
+        "negative_weight_sum": 0,
+        "news_effective_count": 2,
+        "news_dropped_count": 1
+      },
+      "signal": "NEUTRAL No Trade (Weak Bullish)",
+      "strategy": "Mildly positive, insufficient signal — watch for stronger catalyst",
+      "suitable_for": "Watch",
+      "confidence": "Low",
+      "patterns": [],
+      "positive_factors": [],
+      "negative_factors": [],
+      "news_count": 2,
+      "news_dropped": 1,
+      "sources": [
+        "ok"
+      ],
+      "top_news": [
+        {
+          "date": "2026-09-03",
+          "title": "Lindian Resources locks in Carester partnership and long-term rare earths offtake",
+          "content": "Lindian Resources Ltd (ASX:LIN, OTC:LINIF) has strengthened its push into downstream rare earth processing through a strategic partnership with French separation specialist Carester SAS. The partnership advances the development of an 8,000-tonne-per-annum rare earth oxide separation facility...",
+          "type": "Industry",
+          "sentiment": 0,
+          "weight": 1,
+          "final_weight": 0.75,
+          "source_authority": 2.5,
+          "recency_factor": 0.3,
+          "source": "Yahoo"
+        },
+        {
+          "date": "2026-09-03",
+          "title": "STRATEGIC PARTNERSHIP WITH CARESTER FOR OXIDE SEPARATION DEVELOPMENT AND 10-YEAR OFFTAKE AGREEMENT",
+          "content": "Lindian Resources Limited (\"Lindian\" or the \"Company\") (ASX: LIN) is pleased to announce that it has executed a Technology and Engineering Services Agreement and a long-term binding Offtake Agreement, for the development of an Oxide Separation Facility with Carester SAS (\"Carester\").",
+          "type": "Industry",
+          "sentiment": 0,
+          "weight": 1,
+          "final_weight": 0.75,
+          "source_authority": 2.5,
+          "recency_factor": 0.3,
+          "source": "Yahoo"
+        }
+      ]
+    },
+    "NYSE:TT": {
+      "ticker": "TT",
+      "score": 50,
+      "score_raw": 0,
+      "score_components": {
+        "positive_weight_sum": 0,
+        "negative_weight_sum": 0,
+        "news_effective_count": 2,
+        "news_dropped_count": 13
+      },
+      "signal": "NEUTRAL No Trade (Weak Bullish)",
+      "strategy": "Mildly positive, insufficient signal — watch for stronger catalyst",
+      "suitable_for": "Watch",
+      "confidence": "Low",
+      "patterns": [],
+      "positive_factors": [],
+      "negative_factors": [],
+      "news_count": 2,
+      "news_dropped": 13,
+      "sources": [
+        "ok"
+      ],
+      "top_news": [
+        {
+          "date": "2026-09-09",
+          "title": "Thermo King Expands All-Electric EV Series to Advance Urban Cold Chain Transport Across Asia Pacific Region",
+          "content": "Thermo King® – a strategic brand of global climate innovator Trane Technologies (NYSE: TT), announced four new models in its all-electric EV series for Asia Pacific: the EV500S, EV500e, EV300e and EV200e. Designed with a highly integrated electric drive solution, the new lineup helps customers impro",
+          "type": "Industry",
+          "sentiment": 0,
+          "weight": 2,
+          "final_weight": 2.13,
+          "source_authority": 2.5,
+          "recency_factor": 0.85,
+          "source": "Yahoo"
+        },
+        {
+          "date": "2026-09-03",
+          "title": "Trane Technologies to Present at the Morgan Stanley Laguna Conference",
+          "content": "SWORDS, Ireland, September 03, 2026--Trane Technologies plc (NYSE: TT) a global climate innovator, today announced that company leadership will participate in a fireside chat at the Morgan Stanley Laguna Conference. They will speak at 10:45 a.m. PST on Tuesday, September 15, 2026.",
+          "type": "Industry",
+          "sentiment": 0,
+          "weight": 1,
+          "final_weight": 0.75,
+          "source_authority": 2.5,
+          "recency_factor": 0.3,
+          "source": "Yahoo"
+        }
+      ]
+    },
+    "NYSE:FSS": {
+      "ticker": "FSS",
+      "score": 50,
+      "score_raw": 0,
+      "score_components": {
+        "positive_weight_sum": 0,
+        "negative_weight_sum": 0
+      },
+      "signal": "NEUTRAL No Trade (No relevant news)",
+      "strategy": "No relevant news in window",
+      "suitable_for": "Watch",
+      "confidence": "-",
+      "patterns": [],
+      "positive_factors": [],
+      "negative_factors": [],
+      "news_count": 0,
+      "news_dropped": 3,
+      "sources": [
+        "ok"
+      ],
+      "top_news": []
+    },
+    "NYSE:SXI": {
+      "ticker": "SXI",
+      "score": 50,
+      "score_raw": 0,
+      "score_components": {
+        "positive_weight_sum": 0,
+        "negative_weight_sum": 0
+      },
+      "signal": "NEUTRAL No Trade (No Data)",
+      "strategy": "Finnhub ok: no news in window",
+      "suitable_for": "Watch",
+      "confidence": "-",
+      "patterns": [],
+      "positive_factors": [],
+      "negative_factors": [],
+      "news_count": 0,
+      "news_dropped": 0,
+      "sources": [
+        "ok"
+      ],
+      "top_news": []
+    },
+    "NYSE:MOD": {
+      "ticker": "MOD",
+      "score": 50,
+      "score_raw": 0,
+      "score_components": {
+        "positive_weight_sum": 0,
+        "negative_weight_sum": 0,
+        "news_effective_count": 2,
+        "news_dropped_count": 3
+      },
+      "signal": "NEUTRAL No Trade (Weak Bullish)",
+      "strategy": "Mildly positive, insufficient signal — watch for stronger catalyst",
+      "suitable_for": "Watch",
+      "confidence": "Low",
+      "patterns": [],
+      "positive_factors": [],
+      "negative_factors": [],
+      "news_count": 2,
+      "news_dropped": 3,
+      "sources": [
+        "ok"
+      ],
+      "top_news": [
+        {
+          "date": "2026-09-08",
+          "title": "Modine (MOD) Sees a More Significant Dip Than Broader Market: Some Facts to Know",
+          "content": "Modine (MOD) concluded the recent trading session at $192.35, signifying a -1.19% move from its prior day's close.",
+          "type": "Industry",
+          "sentiment": 0,
+          "weight": 2,
+          "final_weight": 1.8,
+          "source_authority": 2.5,
+          "recency_factor": 0.72,
+          "source": "Yahoo"
+        },
+        {
+          "date": "2026-09-03",
+          "title": "Wall Street Analysts Think Modine (MOD) Is a Good Investment: Is It?",
+          "content": "Based on the average brokerage recommendation (ABR), Modine (MOD) should be added to one's portfolio. Wall Street analysts' overly optimistic recommendations cast doubt on the effectiveness of this highly sought-after metric. So, is the stock worth buying?",
+          "type": "Industry",
+          "sentiment": 0,
+          "weight": 1,
+          "final_weight": 0.75,
+          "source_authority": 2.5,
+          "recency_factor": 0.3,
+          "source": "Yahoo"
+        }
+      ]
+    },
+    "NYSE:DTM": {
+      "ticker": "DTM",
+      "score": 50,
+      "score_raw": 0,
+      "score_components": {
+        "positive_weight_sum": 0,
+        "negative_weight_sum": 0
+      },
+      "signal": "NEUTRAL No Trade (No relevant news)",
+      "strategy": "No relevant news in window",
+      "suitable_for": "Watch",
+      "confidence": "-",
+      "patterns": [],
+      "positive_factors": [],
+      "negative_factors": [],
+      "news_count": 0,
+      "news_dropped": 1,
+      "sources": [
+        "ok"
+      ],
+      "top_news": []
+    },
+    "NYSE:WLK": {
+      "ticker": "WLK",
+      "score": 50,
+      "score_raw": 0,
+      "score_components": {
+        "positive_weight_sum": 0,
+        "negative_weight_sum": 0,
+        "news_effective_count": 1,
+        "news_dropped_count": 1
+      },
+      "signal": "NEUTRAL No Trade (Weak Bullish)",
+      "strategy": "Mildly positive, insufficient signal — watch for stronger catalyst",
+      "suitable_for": "Watch",
+      "confidence": "Low",
+      "patterns": [],
+      "positive_factors": [],
+      "negative_factors": [],
+      "news_count": 1,
+      "news_dropped": 1,
+      "sources": [
+        "ok"
+      ],
+      "top_news": [
+        {
+          "date": "2026-09-03",
+          "title": "Why Is Westlake (WLK) Down 3.1% Since Last Earnings Report?",
+          "content": "Westlake (WLK) reported earnings 30 days ago. What's next for the stock? We take a look at earnings estimates for some clues.",
+          "type": "Earnings",
+          "sentiment": 0,
+          "weight": 1,
+          "final_weight": 0.97,
+          "source_authority": 2.5,
+          "recency_factor": 0.3,
+          "source": "Yahoo"
+        }
+      ]
+    },
+    "NYSE:LAR": {
+      "ticker": "LAR",
+      "score": 50,
+      "score_raw": 0,
+      "score_components": {
+        "positive_weight_sum": 0,
+        "negative_weight_sum": 0
+      },
+      "signal": "NEUTRAL No Trade (No Data)",
+      "strategy": "Finnhub HTTP 429: no news in window",
+      "suitable_for": "Watch",
+      "confidence": "-",
+      "patterns": [],
+      "positive_factors": [],
+      "negative_factors": [],
+      "news_count": 0,
+      "news_dropped": 0,
+      "sources": [
+        "HTTP 429"
+      ],
+      "top_news": []
+    },
+    "OTC:SMTGY": {
+      "ticker": "OTC:SMTGY",
+      "score": 50,
+      "score_raw": 0,
+      "score_components": {
+        "positive_weight_sum": 0,
+        "negative_weight_sum": 0
+      },
+      "signal": "NEUTRAL No Trade (No Data)",
+      "strategy": "Finnhub HTTP 429: no news in window",
+      "suitable_for": "Watch",
+      "confidence": "-",
+      "patterns": [],
+      "positive_factors": [],
+      "negative_factors": [],
+      "news_count": 0,
+      "news_dropped": 0,
+      "sources": [
+        "HTTP 429"
+      ],
+      "top_news": []
+    },
+    "NASDAQ:GRAL": {
+      "ticker": "GRAL",
+      "score": 50,
+      "score_raw": 0,
+      "score_components": {
+        "positive_weight_sum": 0,
+        "negative_weight_sum": 0
+      },
+      "signal": "NEUTRAL No Trade (No Data)",
+      "strategy": "Finnhub HTTP 429: no news in window",
+      "suitable_for": "Watch",
+      "confidence": "-",
+      "patterns": [],
+      "positive_factors": [],
+      "negative_factors": [],
+      "news_count": 0,
+      "news_dropped": 0,
+      "sources": [
+        "HTTP 429"
+      ],
+      "top_news": []
+    },
+    "NASDAQ:LITE": {
+      "ticker": "LITE",
+      "score": 50,
+      "score_raw": 0,
+      "score_components": {
+        "positive_weight_sum": 0,
+        "negative_weight_sum": 0
+      },
+      "signal": "NEUTRAL No Trade (No Data)",
+      "strategy": "Finnhub HTTP 429: no news in window",
+      "suitable_for": "Watch",
+      "confidence": "-",
+      "patterns": [],
+      "positive_factors": [],
+      "negative_factors": [],
+      "news_count": 0,
+      "news_dropped": 0,
+      "sources": [
+        "HTTP 429"
+      ],
+      "top_news": []
+    },
+    "OTC:SBGSY": {
+      "ticker": "OTC:SBGSY",
+      "score": 50,
+      "score_raw": 0,
+      "score_components": {
+        "positive_weight_sum": 0,
+        "negative_weight_sum": 0
+      },
+      "signal": "NEUTRAL No Trade (No Data)",
+      "strategy": "Finnhub HTTP 429: no news in window",
+      "suitable_for": "Watch",
+      "confidence": "-",
+      "patterns": [],
+      "positive_factors": [],
+      "negative_factors": [],
+      "news_count": 0,
+      "news_dropped": 0,
+      "sources": [
+        "HTTP 429"
+      ],
+      "top_news": []
+    },
+    "NASDAQ:ASML": {
+      "ticker": "ASML",
+      "score": 50,
+      "score_raw": 0,
+      "score_components": {
+        "positive_weight_sum": 0,
+        "negative_weight_sum": 0
+      },
+      "signal": "NEUTRAL No Trade (No Data)",
+      "strategy": "Finnhub HTTP 429: no news in window",
+      "suitable_for": "Watch",
+      "confidence": "-",
+      "patterns": [],
+      "positive_factors": [],
+      "negative_factors": [],
+      "news_count": 0,
+      "news_dropped": 0,
+      "sources": [
+        "HTTP 429"
+      ],
+      "top_news": []
+    },
+    "NYSE:JCI": {
+      "ticker": "JCI",
+      "score": 50,
+      "score_raw": 0,
+      "score_components": {
+        "positive_weight_sum": 0,
+        "negative_weight_sum": 0
+      },
+      "signal": "NEUTRAL No Trade (No Data)",
+      "strategy": "Finnhub HTTP 429: no news in window",
+      "suitable_for": "Watch",
+      "confidence": "-",
+      "patterns": [],
+      "positive_factors": [],
+      "negative_factors": [],
+      "news_count": 0,
+      "news_dropped": 0,
+      "sources": [
+        "HTTP 429"
+      ],
+      "top_news": []
+    },
+    "NASDAQ:NBIS": {
+      "ticker": "NBIS",
+      "score": 50,
+      "score_raw": 0,
+      "score_components": {
+        "positive_weight_sum": 0,
+        "negative_weight_sum": 0
+      },
+      "signal": "NEUTRAL No Trade (No Data)",
+      "strategy": "Finnhub HTTP 429: no news in window",
+      "suitable_for": "Watch",
+      "confidence": "-",
+      "patterns": [],
+      "positive_factors": [],
+      "negative_factors": [],
+      "news_count": 0,
+      "news_dropped": 0,
+      "sources": [
+        "HTTP 429"
+      ],
+      "top_news": []
+    },
+    "NYSE:SMP": {
+      "ticker": "SMP",
+      "score": 50,
+      "score_raw": 0,
+      "score_components": {
+        "positive_weight_sum": 0,
+        "negative_weight_sum": 0
+      },
+      "signal": "NEUTRAL No Trade (No Data)",
+      "strategy": "Finnhub HTTP 429: no news in window",
+      "suitable_for": "Watch",
+      "confidence": "-",
+      "patterns": [],
+      "positive_factors": [],
+      "negative_factors": [],
+      "news_count": 0,
+      "news_dropped": 0,
+      "sources": [
+        "HTTP 429"
+      ],
+      "top_news": []
+    },
+    "NASDAQ:AMD": {
+      "ticker": "AMD",
+      "score": 50,
+      "score_raw": 0,
+      "score_components": {
+        "positive_weight_sum": 0,
+        "negative_weight_sum": 0
+      },
+      "signal": "NEUTRAL No Trade (No Data)",
+      "strategy": "Finnhub HTTP 429: no news in window",
+      "suitable_for": "Watch",
+      "confidence": "-",
+      "patterns": [],
+      "positive_factors": [],
+      "negative_factors": [],
+      "news_count": 0,
+      "news_dropped": 0,
+      "sources": [
+        "HTTP 429"
+      ],
+      "top_news": []
+    },
+    "NASDAQ:STX": {
+      "ticker": "STX",
+      "score": 50,
+      "score_raw": 0,
+      "score_components": {
+        "positive_weight_sum": 0,
+        "negative_weight_sum": 0
+      },
+      "signal": "NEUTRAL No Trade (No Data)",
+      "strategy": "Finnhub HTTP 429: no news in window",
+      "suitable_for": "Watch",
+      "confidence": "-",
+      "patterns": [],
+      "positive_factors": [],
+      "negative_factors": [],
+      "news_count": 0,
+      "news_dropped": 0,
+      "sources": [
+        "HTTP 429"
+      ],
+      "top_news": []
+    },
+    "NYSE:SM": {
+      "ticker": "SM",
+      "score": 50,
+      "score_raw": 0,
+      "score_components": {
+        "positive_weight_sum": 0,
+        "negative_weight_sum": 0
+      },
+      "signal": "NEUTRAL No Trade (No Data)",
+      "strategy": "Finnhub HTTP 429: no news in window",
+      "suitable_for": "Watch",
+      "confidence": "-",
+      "patterns": [],
+      "positive_factors": [],
+      "negative_factors": [],
+      "news_count": 0,
+      "news_dropped": 0,
+      "sources": [
+        "HTTP 429"
+      ],
+      "top_news": []
+    },
+    "NYSE:HPE": {
+      "ticker": "HPE",
+      "score": 50,
+      "score_raw": 0,
+      "score_components": {
+        "positive_weight_sum": 0,
+        "negative_weight_sum": 0
+      },
+      "signal": "NEUTRAL No Trade (No Data)",
+      "strategy": "Finnhub HTTP 429: no news in window",
+      "suitable_for": "Watch",
+      "confidence": "-",
+      "patterns": [],
+      "positive_factors": [],
+      "negative_factors": [],
+      "news_count": 0,
+      "news_dropped": 0,
+      "sources": [
+        "HTTP 429"
+      ],
+      "top_news": []
+    },
+    "NYSE:SCCO": {
+      "ticker": "SCCO",
+      "score": 50,
+      "score_raw": 0,
+      "score_components": {
+        "positive_weight_sum": 0,
+        "negative_weight_sum": 0
+      },
+      "signal": "NEUTRAL No Trade (No Data)",
+      "strategy": "Finnhub HTTP 429: no news in window",
+      "suitable_for": "Watch",
+      "confidence": "-",
+      "patterns": [],
+      "positive_factors": [],
+      "negative_factors": [],
+      "news_count": 0,
+      "news_dropped": 0,
+      "sources": [
+        "HTTP 429"
+      ],
+      "top_news": []
+    },
+    "NYSE:NEXA": {
+      "ticker": "NEXA",
+      "score": 50,
+      "score_raw": 0,
+      "score_components": {
+        "positive_weight_sum": 0,
+        "negative_weight_sum": 0
+      },
+      "signal": "NEUTRAL No Trade (No Data)",
+      "strategy": "Finnhub HTTP 429: no news in window",
+      "suitable_for": "Watch",
+      "confidence": "-",
+      "patterns": [],
+      "positive_factors": [],
+      "negative_factors": [],
+      "news_count": 0,
+      "news_dropped": 0,
+      "sources": [
+        "HTTP 429"
+      ],
+      "top_news": []
+    },
+    "NYSE:SON": {
+      "ticker": "SON",
+      "score": 47,
+      "score_raw": -0.79,
+      "score_components": {
+        "positive_weight_sum": 1.08,
+        "negative_weight_sum": 1.87,
+        "news_effective_count": 4,
+        "news_dropped_count": 5
+      },
+      "signal": "NEUTRAL No Trade (Neutral)",
+      "strategy": "No clear directional bias — stay flat",
+      "suitable_for": "Watch",
+      "confidence": "Low",
+      "patterns": [],
+      "positive_factors": [
+        "[Analyst Action|w1.08] B of A Securities downgrades Sonoco Products (SON) to Neutral from Buy"
+      ],
+      "negative_factors": [
+        "[Earnings|w0.97] Sonoco Products' Estimates Likely to Decline Over Coming Quarters, Bof",
+        "[Analyst Action|w0.9] B of A Securities Downgrades Sonoco Products to Neutral, Lowers Price "
+      ],
+      "news_count": 4,
+      "news_dropped": 5,
+      "sources": [
+        "ok"
+      ],
+      "top_news": [
+        {
+          "date": "2026-09-04",
+          "title": "B of A Securities downgrades Sonoco Products (SON) to Neutral from Buy",
+          "content": "",
+          "type": "Analyst Action",
+          "sentiment": 1,
+          "weight": 1,
+          "final_weight": 1.08,
+          "source_authority": 2.5,
+          "recency_factor": 0.36,
+          "source": "Fintel"
+        },
+        {
+          "date": "2026-09-03",
+          "title": "Sonoco Products' Estimates Likely to Decline Over Coming Quarters, BofA Says",
+          "content": "Sonoco Products' (SON) earnings estimates are more likely to move lower than higher over the coming",
+          "type": "Earnings",
+          "sentiment": -1,
+          "weight": 1,
+          "final_weight": 0.97,
+          "source_authority": 2.5,
+          "recency_factor": 0.3,
+          "source": "Yahoo"
+        },
+        {
+          "date": "2026-09-03",
+          "title": "This Sonoco Analyst Is No Longer Bullish; Here Are Top 4 Downgrades For Thursday",
+          "content": "Analysts downgraded Ultragenyx, Moderna and Sonoco; targets fell for RARE and SON but rose for MRNA.",
+          "type": "Analyst Action",
+          "sentiment": 0,
+          "weight": 1,
+          "final_weight": 0.9,
+          "source_authority": 2.5,
+          "recency_factor": 0.3,
+          "source": "Benzinga"
+        },
+        {
+          "date": "2026-09-03",
+          "title": "B of A Securities Downgrades Sonoco Products to Neutral, Lowers Price Target to $60",
+          "content": "B of A Securities  analyst George Staphos   downgrades Sonoco Products (NYSE:SON) from Buy to Neutral and lowers the price target from $69 to $60.",
+          "type": "Analyst Action",
+          "sentiment": -1,
+          "weight": 1,
+          "final_weight": 0.9,
+          "source_authority": 2.5,
+          "recency_factor": 0.3,
+          "source": "Benzinga"
+        }
+      ]
+    },
+    "NASDAQ:HRMY": {
+      "ticker": "HRMY",
+      "score": 45,
+      "score_raw": -1.13,
+      "score_components": {
+        "positive_weight_sum": 0,
+        "negative_weight_sum": 1.13,
+        "news_effective_count": 2,
+        "news_dropped_count": 1
+      },
+      "signal": "RED No Trade / Short",
+      "strategy": "Black swan risk — avoid until event clarity",
+      "suitable_for": "Reversal (wait for bottom confirmation)",
+      "confidence": "High",
+      "patterns": [],
+      "positive_factors": [],
+      "negative_factors": [
+        "[Black Swan|w1.13] Harmony Biosciences Announces Poster Presentations at the 16th Europea"
+      ],
+      "news_count": 2,
+      "news_dropped": 1,
+      "sources": [
+        "ok"
+      ],
+      "top_news": [
+        {
+          "date": "2026-09-03",
+          "title": "Why Is Harmony Biosciences (HRMY) Up 12.1% Since Last Earnings Report?",
+          "content": "Harmony Biosciences (HRMY) reported earnings 30 days ago. What's next for the stock? We take a look at earnings estimates for some clues.",
+          "type": "Earnings",
+          "sentiment": 0,
+          "weight": 1,
+          "final_weight": 0.97,
+          "source_authority": 2.5,
+          "recency_factor": 0.3,
+          "source": "Yahoo"
+        },
+        {
+          "date": "2026-09-03",
+          "title": "Harmony Biosciences Announces Poster Presentations at the 16th European Epilepsy Congress",
+          "content": "PLYMOUTH MEETING, Pa., Sept. 03, 2026 (GLOBE NEWSWIRE) -- Harmony Biosciences Holdings, Inc. (Nasdaq: HRMY) today announced that it will present encore data from the company’s investigation of EPX-100 (clemizole hydrochloride) at the 16th European Epilepsy Congress being held from September 5-9, in ",
+          "type": "Black Swan",
+          "sentiment": -1,
+          "weight": 1,
+          "final_weight": 1.13,
+          "source_authority": 2.5,
+          "recency_factor": 0.3,
+          "source": "Yahoo"
+        }
+      ]
+    }
+  }
+}

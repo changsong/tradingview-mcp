@@ -1,0 +1,1184 @@
+{
+  "generated_at": "2026-09-14T06:35:26.097Z",
+  "market": "cn",
+  "source": "src/core/webNews.js",
+  "score_scale": "0-100 normalized (neutral=50)",
+  "window": {
+    "from": "2026-09-07",
+    "to": "2026-09-14",
+    "days": 7
+  },
+  "llm_used": true,
+  "performance": {
+    "totals_ms": {
+      "list_fetch_ms": 60047,
+      "enrichment_ms": 59173,
+      "relevance_ms": 0,
+      "llm_ms": 1817261,
+      "report_write_ms": 14
+    },
+    "avg_ms": {
+      "list_fetch_ms": 2859,
+      "enrichment_ms": 2818,
+      "relevance_ms": 0,
+      "llm_ms": 86536,
+      "report_write_ms": 1
+    }
+  },
+  "stocks": {
+    "SSE:603083": {
+      "name": "603083",
+      "score": 66,
+      "score_raw": 3.89,
+      "score_components": {
+        "positive_weight_sum": 3.89,
+        "negative_weight_sum": 0,
+        "news_effective_count": 7,
+        "news_dropped_count": 0
+      },
+      "signal": "🟢 Long (中)",
+      "strategy": "情绪偏多，适合低吸或轻仓参与",
+      "suitable_for": "低吸 / 轻仓追",
+      "confidence": "中",
+      "patterns": [],
+      "positive_factors": [
+        "[回购|w3.89] 剑桥科技:关于2024年股票期权激励计划第二个行权期行权条件成就的公告"
+      ],
+      "negative_factors": [],
+      "news_count": 7,
+      "news_dropped": 0,
+      "performance": {
+        "list_fetch_ms": 3666,
+        "candidate_filter_ms": 0,
+        "enrichment_ms": 4778,
+        "raw_news_count": 40,
+        "raw_research_count": 10,
+        "candidate_news_count": 7,
+        "candidate_research_count": 0,
+        "enriched_news_count": 7,
+        "enriched_research_count": 0,
+        "candidate_reasons": {
+          "news": {
+            "no-subject-mention": 20,
+            "dedup": 0,
+            "out_of_window": 13
+          },
+          "research": {
+            "dedup": 0,
+            "out_of_window": 10
+          }
+        },
+        "date_filter_ms": 0,
+        "relevance_ms": 0,
+        "llm_ms": 89977,
+        "scoring_ms": 0
+      },
+      "top_news": [
+        {
+          "date": "2026-09-12",
+          "title": "剑桥科技:第五届董事会薪酬与考核委员会第十次会议决议",
+          "content": "",
+          "type": "回购",
+          "sentiment": 0,
+          "weight": 1,
+          "final_weight": 0.78,
+          "source_authority": 4.5,
+          "recency_factor": 0.72,
+          "source": "东方财富公告",
+          "llm_reviewed": true,
+          "llm_confidence": 0.3,
+          "llm_is_real_catalyst": false,
+          "llm_reasoning": "薪酬考核会议，无实质内容"
+        },
+        {
+          "date": "2026-09-12",
+          "title": "剑桥科技:第五届董事会审计委员会第十七次会议决议",
+          "content": "开发、设计、制作计算机和通信软件,计算机和通信网络设备维护;生产光纤交换机等电信终端设备(仅限分支机构经营),销售自产产品,并提供相关技术服务、咨询服务以及相关的产品的维修和再制造业务;商务信息咨询,企业管理咨询,市场营销策划,通讯设备批发,通信设备制造(除卫星电视广播地面接收设施及关键生产),计算机、软件及辅助设备批发,从事货物及技术进出口业务。【依法须经批准的项目,经相关部门批准后方可开展经营活动】\n郑重声明：东方财富网发布此信息的目的在于传播更多信息，与本站立场无关。东方财富网不保证该信息（包括但不限于文字、视频、音频、数据及图表）全部或者部分内容的准确性、真实性、完整性、有效性、及时性、原创性等。相关信息并未经过本网站证实，不对您构成任何投资建议，据此操作，风险自担。",
+          "type": "行业",
+          "sentiment": 0,
+          "weight": 1,
+          "final_weight": 0.65,
+          "source_authority": 4.5,
+          "recency_factor": 0.72,
+          "source": "东方财富公告",
+          "llm_reviewed": true,
+          "llm_confidence": 0.2,
+          "llm_is_real_catalyst": false,
+          "llm_reasoning": "经营范围公告，无实质影响"
+        },
+        {
+          "date": "2026-09-12",
+          "title": "剑桥科技:关于调整2024年股票期权激励计划股票期权行权价格的公告",
+          "content": "",
+          "type": "回购",
+          "sentiment": 0,
+          "weight": 4,
+          "final_weight": 3.89,
+          "source_authority": 4.5,
+          "recency_factor": 0.72,
+          "source": "东方财富公告",
+          "llm_reviewed": true,
+          "llm_confidence": 0.7,
+          "llm_is_real_catalyst": true,
+          "llm_reasoning": "官方公告调整行权价，属股权激励"
+        },
+        {
+          "date": "2026-09-12",
+          "title": "剑桥科技:第五届董事会第三十五次会议决议公告",
+          "content": "",
+          "type": "回购",
+          "sentiment": 0,
+          "weight": 1,
+          "final_weight": 0.78,
+          "source_authority": 4.5,
+          "recency_factor": 0.72,
+          "source": "东方财富公告",
+          "llm_reviewed": true,
+          "llm_confidence": 0.4,
+          "llm_is_real_catalyst": false,
+          "llm_reasoning": "董事会决议涉及多项议案，具体不明"
+        },
+        {
+          "date": "2026-09-12",
+          "title": "剑桥科技:上海君澜律师事务所关于上海剑桥科技股份有限公司2024年股票期权激励计划调整行权价格及行权相关事项之法律意见书",
+          "content": "",
+          "type": "回购",
+          "sentiment": 0,
+          "weight": 2,
+          "final_weight": 1.56,
+          "source_authority": 4.5,
+          "recency_factor": 0.72,
+          "source": "东方财富公告",
+          "llm_reviewed": true,
+          "llm_confidence": 0.5,
+          "llm_is_real_catalyst": false,
+          "llm_reasoning": "法律意见书属程序性文件"
+        }
+      ]
+    },
+    "SZSE:002015": {
+      "name": "002015",
+      "score": 61,
+      "score_raw": 2.52,
+      "score_components": {
+        "positive_weight_sum": 2.52,
+        "negative_weight_sum": 0,
+        "news_effective_count": 2,
+        "news_dropped_count": 0
+      },
+      "signal": "🟢 Long (中)",
+      "strategy": "情绪偏多，适合低吸或轻仓参与",
+      "suitable_for": "低吸 / 轻仓追",
+      "confidence": "中",
+      "patterns": [],
+      "positive_factors": [
+        "[并购|w2.52] 关于与专业投资机构共同投资的公告"
+      ],
+      "negative_factors": [],
+      "news_count": 2,
+      "news_dropped": 0,
+      "performance": {
+        "list_fetch_ms": 1803,
+        "candidate_filter_ms": 0,
+        "enrichment_ms": 262,
+        "raw_news_count": 40,
+        "raw_research_count": 10,
+        "candidate_news_count": 2,
+        "candidate_research_count": 0,
+        "enriched_news_count": 2,
+        "enriched_research_count": 0,
+        "candidate_reasons": {
+          "news": {
+            "no-subject-mention": 14,
+            "noise:\\d{1,2}月\\d{1,2}日(快速上涨|快速回调|涨停|": 1,
+            "noise:融资净(买入|卖出)": 3,
+            "dedup": 0,
+            "out_of_window": 20
+          },
+          "research": {
+            "dedup": 0,
+            "out_of_window": 10
+          }
+        },
+        "date_filter_ms": 0,
+        "relevance_ms": 0,
+        "llm_ms": 1,
+        "scoring_ms": 0
+      },
+      "top_news": [
+        {
+          "date": "2026-09-09",
+          "title": "协鑫能科:关于与专业投资机构共同投资的公告",
+          "content": "许可项目:建设工程设计;保险兼业代理业务;发电业务、输电业务、供(配)电业务(依法须经批准的项目,经相关部门批准后方可开展经营活动,具体经营项目以审批结果为准)一般项目:发电技术服务;热力生产和供应;电力行业高效节能技术研发;技术服务、技术开发、技术咨询、技术交流、技术转让、技术推广;以自有资金从事投资活动;对外承包工程;工程管理服务;电气设备销售;人工智能基础资源与技术平台;人工智能行业应用系统集成服务;数据处理服务;计算机系统服务;软件开发;合同能源管理;企业管理;供应链管理服务;互联网数据服务;煤炭及制品销售(除依法须经批准的项目外,凭营业执照依法自主开展经营活动)\n郑重声明：东方财富网发布此信息的目的在于传播更多信息，与本站立场无关。东方财富网不保证该信息（包括但不限于文字、视频、音频、数据及图表）全部或者部分内容的准确性、真实性、完整性、有效性、及时性、原创性等。相关信息并未经过本网站证实，不对您构成任何投资建议，据此操作，风险自担。",
+          "type": "并购",
+          "sentiment": 0,
+          "weight": 1,
+          "final_weight": 0.53,
+          "source_authority": 4.5,
+          "recency_factor": 0.42,
+          "source": "东方财富公告",
+          "llm_reviewed": true,
+          "llm_confidence": 0.3,
+          "llm_is_real_catalyst": false,
+          "llm_reasoning": "公告正文无实质投资细节"
+        },
+        {
+          "date": "2026-09-08",
+          "title": "关于与专业投资机构共同投资的公告",
+          "content": "证券代码：002015 \t证券简称：协鑫能科 \t公告编号：2026-077\n协鑫能源科技股份有限公司\n关于与专业投资机构共同投资的公告\n本公司及董事会全体成员保证信息披露的内容真实、准确、完整，没有虚假\n记载、误导性陈述或重大遗漏。\n一、与专业投资机构共同投资情况概述\n1、本次投资基本情况\n近日，协鑫能源科技股份有限公司（以下简称“公司”）全资子公司鑫未来\n（苏州）产业投资有限公司（以下简称“鑫未来”）作为有限合伙人（LP）之一\n与普通合伙人（GP）天津砺思明棠企业管理咨询合伙企业（有限合伙）（以下简\n称“砺思明棠”或“普通合伙人”或“执行事务合伙人”）及其他有限合伙人共\n同签署《天津砺思星深股权投资合伙企业（有限合伙）合伙协议》\t（以下简称“《合\n伙协议》”或“本协议”）。公司全资子公司鑫未来拟以自有资金认缴出资 \t1 \t亿元\n人民币，参与认购天津砺思星深股权投资合伙企业（有限合伙）（以下简称“砺\n思星深”或“本合伙企业”或“本基金”）合伙份额。\n根据上述最新签署的《合伙协议》，本基金首次募集规模为 \t17.4 \t亿元人民币，\n将主要投向新兴科技相关领域。\n根据上述最新签署的《合伙协议》，本合伙企业采取受托管理方式，执行事\n务合伙人为普通合伙人砺思明棠，基金管理人为海南砺思私募基金管理有限公司\n（以下简称“砺思私募基金”），砺思私募基金系在中国证券投资基金业协会登记\n备案的私募基金管理人。公司本次投资构成与专业投资机构共同投资。\n目前本基金处于募集阶段，尚需在登记机关办理变更登记和在中国证券投资\n基金业协会办理备案手续。\n2、审议程序\n根据《深圳证券交易所股票上市规则》《公司章程》等有关规定，本次投资\n事项属于公司管理层决策权限，无需提交公司董事会及股东会审议。\n\n-- 1 of 10 --\n\n3、其他事项说明\n根据《深圳证券交易所股票上市规则》《上市公司重大资产重组管理办法》\n相关规定，本次投资事项不构成关联交易，亦不构成重大资产重组。\n经查询，截至本公告披露日，公司全资子公司鑫未来不是失信被执行人。\n二、合作方的基本情况\n1、普通合伙人/执行事务合伙人\n（1）名称：天津砺思明棠企业管理咨询合伙企业（有限合伙）\n（2）类型：有限合伙企业\n（3）成立时间：2026-05-11\n（4）注册资本：8,000 \t万元\n（5）统一社会信用代码：91120104MA82Q1BK1H\n（6）注册地址：天津市南开区科研东路西侧天津科技广场 \t5-1-1402-10（天\n开园）\n（7）执行事务合伙人：天津砺思明钧企业管理咨询有限公司（委派代表：\n何子器）\n（8）经营范围：一般项目：企业管理咨询；企业管理；财务咨询；信息咨\n询服务（不含许可类信息咨询服务）。\t（除依法须经批准的项目外，凭营业执照依\n法自主开展经营活动）\n（9）合伙人情况：\n序号 \t合伙人名称 \t认缴出资额（万元） \t出资比例\n1 \t天津砺思明钧企业管理咨询有限公司 \t1,200.00 \t15.00%\n2 \t曹曦 \t6,800.00 \t85.00%\n合计 \t8,000.00 \t100%\n（10）实际控制人：曹曦\n（11）经查询，截至本公告披露日，砺思明棠不是失信被执行人。\n（12）关联关系或其他利益关系说明：砺思明棠与公司及公司控股股东、实\n际控制人、持股 \t5%以上的股东、董事、高级管理人员之间不存在关联关系或利\n益安排，与其他参与本次投资的有限合伙人不存在一致行动关系，未以直接或间\n\n-- 2 of 10 --\n\n接形式持有公司股份。\n2、基金管理人\n（1）名称：海南砺思私募基金管理有限公司\n（2）类型：有限责任公司（自然人投资或控股）\n（3）成立时间：2021-09-10\n（4）注册资本：10,000 \t万元\n（5）统一社会信用代码：91460000MAA9209P6C\n（6）私募基金管理人登记编号：P1073165\n（7）注册地址：海南省三亚市吉阳区迎宾路中铁置业广场 \t3 \t楼 \t310 \t室 \tA-001\n号\n（8）法定代表人：曹曦\n（9）经营范围：一般项目：私募股权投资基金管理、创业投资基金管理服\n务（须在中国证券投资基金业协会完成登记备案后方可从事经营活动）（除许可\n业务外，可自主依法经营法律法规非禁止或限制的项目）\n（10）股东情况：\n序号 \t股东名称 \t认缴出资额（万元） \t持股比例\n1 \t曹曦 \t9,900.00 \t99.00%\n2 \t何子器 \t100.00 \t1.00%\n合计 \t10,000.00 \t100%\n（11）实际控制人：曹曦\n（12）经查询，截至本公告披露日，砺思私募基金不是失信被执行人。\n（13）关联关系或其他利益关系说明：砺思私募基金与公司及公司控股股东、\n实际控制人、持股 \t5%以上的股东、董事、高级管理人员之间不存在关联关系或\n利益安排，与其他参与本次投资的有限合伙人不存在一致行动关系，未以直接或\n间接形式持有公司股份。\n3、其他有限合伙人\n（1）截至本公告披露日，本基金尚处于募集阶段，其他有限合伙人尚未完\n全确定，最终合伙人及募集规模情况以登记机关登记为准。\n（2）关联关系或其他利益关系说明：截至本公告披露日，已签署《合伙协\n\n-- 3 of 10 --\n\n议》的其他有限合伙人与公司及公司控股股东、实际控制人、持股 \t5%以上的股\n东、董事、高级管理人员之间不存在关联关系或利益安排；其他有限合伙人之间，\n以及其他有限合伙人与普通合伙人、基金管理人之间不存在一致行动关系；其他\n有限合伙人未以直接或间接形式持有公司股份。\n三、本次投资的合伙企业基本情况\n本合伙企业已于 \t2026 \t年 \t7 \t月由普通合伙人砺思明棠和有限合伙人曹曦注册\n设立。结合近日最新签署的《合伙协议》，本次投资的合伙企业基本情况如下：\n1、名称：天津砺思星深股权投资合伙企业（有限合伙）\t（以企业注册登记机\n关最终核准登记的名称为准）\n2、类型：有限合伙企业\n3、成立时间：2026-07-17\n4、统一社会信用代码：91120116MAKJRXJU4N\n5、主要经营场所：天津自贸试验区（空港经济区）中心大道华盈大厦 \t318\n房间（纳百川（天津）商务秘书有限公司托管第 \t883 \t号）。\n6、执行事务合伙人：天津砺思明棠企业管理咨询合伙企业（有限合伙）\n7、基金管理人：海南砺思私募基金管理有限公司\n8、经营范围：一般项目：以自有资金从事投资活动；创业投资（限投资未\n上市企业）；自有资金投资的资产管理服务。\t（除依法须经批准的项目外，凭营业\n执照依法自主开展经营活动）许可项目：投资管理。（依法须经批准的项目，经\n相关部门批准后方可开展经营活动，具体经营项目以相关部门批准文件或许可证\n件为准）（以企业注册登记机关最终核准登记的经营范围为准）。\n9、变更前合伙人、认缴出资情况：\n序号 \t合伙人名称 \t类型 认缴出资额\n（万元） 出资比例\n1 天津砺思明棠企业管理咨询合伙企业（有限合\n伙） 普通合伙人 \t100.00 \t4.76%\n2 \t曹曦 \t有限合伙人 \t2,000.00 \t95.24%\n合计 \t2,100.00 \t100%\n10、根据最新《合伙协议》，变更后合伙人、首次募集规模情况：\n\n-- 4 of 10 --\n\n序号 \t合伙人名称 \t类型 认缴出资额\n（万元） 出资比例\n1 天津砺思明棠企业管理咨询合伙企业（有限合\n伙） 普通合伙人 \t1,000.00 \t0.57%\n2 \t鑫未来（苏州）产业投资有限公司 \t有限合伙人 \t10,000.00 \t5.75%\n3 \t其他有限合伙人 \t有限合伙人 \t163,000.00 \t93.68%\n合计 \t174,000.00 \t100%\n注：最终合伙人及募集规模情况以登记机关登记为准。\n11、经查询，截至本公告披露日，砺思星深不是失信被执行人。\n四、《合伙协议》主要内容\n1、合伙企业\n（1）合伙目的\n通过直接或间接的股权投资等投资行为或从事与投资相关的活动，实现合伙\n企业的资本增值，为合伙人创造投资回报。\n（2）合伙期限\n合伙企业的经营期限自首次交割日起算，至首次交割日的第七个周年日止。\n此后，经执行事务合伙人自行决定，可延长合伙企业的经营期限两次，每次不超\n过一年；此后，经执行事务合伙人提出并经合伙人会议同意，经营期限可继续延\n长。\n合伙企业首次交割日起至首次交割日的第四个周年日的期间为合伙企业的\n“投资期”；投资期届满至合伙企业的经营期限（包括延长期）届满的期间为“退\n出期”。\n（3）管理费\n在合伙企业经营期限内，除非本协议另有约定或经管理人另行减免，每一有\n限合伙人应按照本协议的相关约定支付管理费。\n2、合伙人及其出资\n（1）合伙人\n合伙企业仅接纳一名普通合伙人，即天津砺思明棠企业管理咨询合伙企业\n（有限合伙）。\n\n-- 5 of 10 --\n\n（2）合伙人的出资\n合伙企业的认缴出资总额由全体合伙人认缴和实际缴纳。除非本协议另有约\n定或执行事务合伙人另行同意，所有合伙人之出资方式均为人民币现金出资。\n（3）出资缴付\n除非执行事务合伙人和有限合伙人另有约定，执行事务合伙人将提前三个工\n作日向有限合伙人发出缴款通知，各有限合伙人应一次性缴付其全部认缴出资额。\n3、普通合伙人\n（1）执行事务合伙人\n全体合伙人在此一致同意委任普通合伙人为合伙企业的执行事务合伙人。\n（2）执行事务合伙人的权利\n全体合伙人一致认可，除本协议另有约定外，执行事务合伙人享有对合伙企\n业事务独占及排他的执行权。\n（3）无限责任\n合伙企业对其债务，应先以其全部财产进行清偿，不能清偿的部分由普通合\n伙人承担无限连带责任。\n4、有限合伙人\n（1）有限责任\n有限合伙人以其认缴出资额为限对合伙企业债务承担责任。\n（2）有限合伙人的权利\n有限合伙人有本协议授予的权利，包括根据相关适用法律和规范及本协议的\n规定，就相关事项行使表决权、获得定期报告、参与分配、转让合伙权益等。\n（3）不得执行合伙事务\n有限合伙人不执行合伙企业事务，不得对外代表合伙企业。有限合伙人不得\n参与管理或控制合伙企业的投资业务或其他以合伙企业名义进行的活动、交易和\n业务，或代表合伙企业签署文件，或从事其他对合伙企业形成约束的行为。\n5、投资业务\n（1）投资策略\n合伙企业将主要投向新兴科技相关领域。\n\n-- 6 of 10 --\n\n（2）投资管理及现金管理\n合伙企业的投资决策、投资退出以及投后管理等事务由执行事务合伙人负责。\n合伙企业的全部闲置现金资产，包括但不限于待投资、待分配及合伙企业费用备\n付的现金，可以临时投资方式进行管理。\n执行事务合伙人和管理人应对于合伙企业完成投资后对被投资企业进行持\n续监控，防范投资风险，并在适宜的时机实现投资退出。\n合伙企业投资退出的方式包括但不限于：\n1）合伙企业协助被投资企业或其关联方在中国境内或境外直接或间接首次\n公开发行上市后出售部分或全部被投资企业或其关联方股票而退出；\n2）合伙企业直接出让部分或全部被投资企业股权、出资份额或资产实现退\n出；以及\n3）被投资企业解散、清算后，合伙企业就被投资企业的财产获得分配。\n6、收益分配与亏损分担\n（1）收益分配\n合伙企业的可分配资金，应在合伙企业取得该等收入后的六十日内或其他经\n执行事务合伙人合理确定的时点尽快进行分配。\n（2）亏损分担\n除本协议另有约定，合伙企业的与项目投资相关的亏损和债务由全体合伙人\n按照投资成本分摊比例分摊，其他亏损和债务由全体合伙人按照各自的认缴出资\n额比例分担。\n7、委托管理\n合伙企业采取受托管理的管理方式，由普通合伙人及/或其指定的第三方基\n金管理机构担任合伙企业的管理人，向合伙企业提供投资管理、行政管理、日常\n运营管理等方面的服务。本协议签署时管理人为执行事务合伙人的关联方海南砺\n思私募基金管理有限公司。\n8、合伙人会议表决\n合伙人临时会议讨论事项，除本协议有明确约定的外，经执行事务合伙人同\n意和持有超过百分之五十合伙权益的有限合伙人同意通过方可做出决议。\n9、合伙权益转让及退伙\n\n-- 7 of 10 --\n\n（1）有限合伙人权益转让\n未经执行事务合伙人事先书面同意，有限合伙人不得以任何方式直接或间接\n转让其在合伙企业的全部或部分合伙权益，也不得将该等合伙权益直接或间接质\n押、抵押或设定其他任何形式的担保或以其他方式处置给任何第三方。不符合本\n协议规定之合伙权益转让皆无效，并可能导致执行事务合伙人认定该转让方成为\n违约合伙人并要求其承担违约责任。\n除非经执行事务合伙人另行同意，拟转让合伙权益的有限合伙人应至少提前\n四十日向执行事务合伙人提出全部或部分转让其持有的合伙权益的申请并委托\n执行事务合伙人通知其他有限合伙人。\n（2）普通合伙人权益转让\n除非经合伙人会议同意，普通合伙人不应向任何非关联方全部或部分转让其\n持有的任何合伙权益。普通合伙人向其关联方全部或部分转让合伙权益无需经任\n何有限合伙人同意。如普通合伙人出现清算、破产、解散等法定退伙情形，合伙\n企业进入清算程序。\n（3）有限合伙人退伙\n经执行事务合伙人事先书面同意，有限合伙人可依据本协议约定转让其持有\n的合伙权益或通过其他方式减少其对合伙企业的认缴出资额和实缴出资额，除此\n之外，有限合伙人不得提出退伙或提前收回出资额的要求。\n（4）普通合伙人退伙\n普通合伙人在此承诺，除非适用法律和规范或本协议另有规定或经合伙人临\n时会议同意，在合伙企业按照本协议约定解散或清算之前，普通合伙人始终履行\n本协议项下的职责；在合伙企业解散或清算之前，不得要求退伙，且其自身亦不\n会采取任何行动主动解散或终止。普通合伙人发生《合伙企业法》规定被视为当\n然退伙的情形之一时，当然退伙。普通合伙人当然退伙时，合伙企业应当解散。\n10、协议生效、终止\n本协议于全体合伙人共同有效签署之日起生效，至合伙企业注销登记且本协\n议所述权利义务均履行完毕后终止。\n五、本次投资目的、对公司的影响和存在的风险\n\n-- 8 of 10 --\n\n1、本次投资目的和对公司的影响\n公司作为有限合伙人参与本次基金投资，旨在充分利用专业投资机构的专业\n资源及其投资管理优势，在保障公司主营业务正常开展的前提下，挖掘优质投资\n机会，优化公司投资结构，提升资金投资收益水平和资产运作能力。\n本次投资符合公司发展战略，符合公司及全体股东的利益。本次投资的资金\n来源为公司自有资金，不影响公司正常的生产经营活动，对公司财务状况和经营\n成果不会造成重大影响。\n2、存在的风险\n本次投资可能因宏观经济、行业周期、监管政策、投资标的经营管理、交易\n方案等因素影响，存在一定的投资不确定性及风险，具体包括但不限于：\n（1）本次投资的合伙企业尚需办理变更登记、基金备案等手续，具体实施\n情况和进度尚存在不确定性；\n（2）受宏观经济环境和行业周期变化等因素影响，可能因决策失误或行业\n环境发生重大变化，导致投资后标的企业不能实现预期效益，存在投资收益不及\n预期甚至投资失败及亏损的风险；\n（3）投资基金具有周期长、流动性较低的特点，本次投资存在回收期较长、\n短期内不能为公司贡献利润的风险；\n（4）法律与监管风险、不可抗力事件风险及其他操作风险。\n公司已充分认识到本次投资所面临的不确定性及风险，后续将及时了解本基\n金的运作情况，时刻关注投资标的经营管理情况，并督促基金管理人防范投资风\n险，尽力维护公司投资资金的安全。\n六、其他说明\n1、公司控股股东、实际控制人、持股 \t5%以上股东以及公司董事、高级管理\n人员未参与本基金份额认购，前述人员也不存在在本基金任职的情形。\n2、公司对本基金投资决策不具有一票否决权。\n3、公司本次与专业投资机构合作事项不会导致同业竞争及关联交易。\n4、公司在本次与专业投资机构共同投资前十二个月内不存在将超募资金用\n于永久性补充流动资金的情形。\n\n-- 9 of 10 --\n\n5、本次投资的合伙企业不纳入公司合并报表范围，公司将依据《企业会计\n准则》相关规定进行会计处理。\n6、公司将积极跟进本次投资事项的进展情况，严格按照相关规定及时履行\n信息披露义务。敬请广大投资者注意投资风险。\n七、备查文件\n1、《天津砺思星深股权投资合伙企业（有限合伙）合伙协议》。\n特此公告。\n协鑫能源科技股份有限公司董事会\n2026 \t年 \t9 \t月 \t9 \t日\n\n-- 10 of 10 --",
+          "type": "并购",
+          "sentiment": 1,
+          "weight": 3,
+          "final_weight": 2.52,
+          "source_authority": 5,
+          "recency_factor": 0.36,
+          "source": "巨潮资讯",
+          "llm_reviewed": true,
+          "llm_confidence": 0.9,
+          "llm_is_real_catalyst": true,
+          "llm_reasoning": "子公司出资1亿参设基金"
+        }
+      ]
+    },
+    "SZSE:300394": {
+      "name": "300394",
+      "score": 60,
+      "score_raw": 2.46,
+      "score_components": {
+        "positive_weight_sum": 2.46,
+        "negative_weight_sum": 0,
+        "news_effective_count": 1,
+        "news_dropped_count": 0
+      },
+      "signal": "🟢 Long (中)",
+      "strategy": "情绪偏多，适合低吸或轻仓参与",
+      "suitable_for": "低吸 / 轻仓追",
+      "confidence": "中",
+      "patterns": [],
+      "positive_factors": [
+        "[财报|w2.46] 天孚通信:2026年半年度权益分派实施公告"
+      ],
+      "negative_factors": [],
+      "news_count": 1,
+      "news_dropped": 0,
+      "performance": {
+        "list_fetch_ms": 3321,
+        "candidate_filter_ms": 0,
+        "enrichment_ms": 9894,
+        "raw_news_count": 40,
+        "raw_research_count": 10,
+        "candidate_news_count": 1,
+        "candidate_research_count": 0,
+        "enriched_news_count": 1,
+        "enriched_research_count": 0,
+        "candidate_reasons": {
+          "news": {
+            "no-subject-mention": 19,
+            "noise:龙虎榜|大宗交易|盘口异动": 1,
+            "dedup": 0,
+            "out_of_window": 19
+          },
+          "research": {
+            "dedup": 0,
+            "out_of_window": 10
+          }
+        },
+        "date_filter_ms": 0,
+        "relevance_ms": 0,
+        "llm_ms": 1,
+        "scoring_ms": 1
+      },
+      "top_news": [
+        {
+          "date": "2026-09-09",
+          "title": "天孚通信:2026年半年度权益分派实施公告",
+          "content": "",
+          "type": "财报",
+          "sentiment": 1,
+          "weight": 2,
+          "final_weight": 2.46,
+          "source_authority": 4.5,
+          "recency_factor": 0.42,
+          "source": "东方财富公告",
+          "llm_reviewed": true,
+          "llm_confidence": 0.6,
+          "llm_is_real_catalyst": true,
+          "llm_reasoning": "半年度权益分派实施，官方公告落地，偏正面。"
+        }
+      ]
+    },
+    "SSE:601665": {
+      "name": "601665",
+      "score": 50,
+      "score_raw": 0,
+      "score_components": {
+        "positive_weight_sum": 0,
+        "negative_weight_sum": 0
+      },
+      "signal": "⚪ No Trade (无数据)",
+      "strategy": "近期无相关有效新闻",
+      "suitable_for": "观望",
+      "confidence": "-",
+      "patterns": [],
+      "positive_factors": [],
+      "negative_factors": [],
+      "news_count": 0,
+      "news_dropped": 0,
+      "performance": {
+        "list_fetch_ms": 2772,
+        "candidate_filter_ms": 2,
+        "enrichment_ms": 0,
+        "raw_news_count": 40,
+        "raw_research_count": 10,
+        "candidate_news_count": 0,
+        "candidate_research_count": 0,
+        "enriched_news_count": 0,
+        "enriched_research_count": 0,
+        "candidate_reasons": {
+          "news": {
+            "no-subject-mention": 9,
+            "noise:融资净(买入|卖出)": 1,
+            "dedup": 0,
+            "out_of_window": 30
+          },
+          "research": {
+            "dedup": 0,
+            "out_of_window": 10
+          }
+        },
+        "date_filter_ms": 0,
+        "relevance_ms": 0,
+        "llm_ms": 0,
+        "scoring_ms": 0
+      },
+      "top_news": []
+    },
+    "SSE:603162": {
+      "name": "603162",
+      "score": 50,
+      "score_raw": 0,
+      "score_components": {
+        "positive_weight_sum": 0,
+        "negative_weight_sum": 0
+      },
+      "signal": "⚪ No Trade (无数据)",
+      "strategy": "LLM 不可用或调用失败（不走关键字降级）",
+      "suitable_for": "观望",
+      "confidence": "-",
+      "patterns": [],
+      "positive_factors": [],
+      "negative_factors": [],
+      "news_count": 0,
+      "news_dropped": 0,
+      "performance": {
+        "list_fetch_ms": 3931,
+        "candidate_filter_ms": 0,
+        "enrichment_ms": 4024,
+        "raw_news_count": 40,
+        "raw_research_count": 8,
+        "candidate_news_count": 2,
+        "candidate_research_count": 0,
+        "enriched_news_count": 2,
+        "enriched_research_count": 0,
+        "candidate_reasons": {
+          "news": {
+            "no-subject-mention": 12,
+            "noise:\\d{1,2}月\\d{1,2}日(快速上涨|快速回调|涨停|": 4,
+            "noise:龙虎榜|大宗交易|盘口异动": 4,
+            "dedup": 0,
+            "out_of_window": 18
+          },
+          "research": {
+            "dedup": 0,
+            "out_of_window": 8
+          }
+        },
+        "date_filter_ms": 0,
+        "relevance_ms": 0,
+        "llm_ms": 100596,
+        "scoring_ms": 0
+      },
+      "top_news": []
+    },
+    "SSE:600330": {
+      "name": "600330",
+      "score": 50,
+      "score_raw": 0,
+      "score_components": {
+        "positive_weight_sum": 0,
+        "negative_weight_sum": 0
+      },
+      "signal": "⚪ No Trade (无数据)",
+      "strategy": "LLM 不可用或调用失败（不走关键字降级）",
+      "suitable_for": "观望",
+      "confidence": "-",
+      "patterns": [],
+      "positive_factors": [],
+      "negative_factors": [],
+      "news_count": 0,
+      "news_dropped": 0,
+      "performance": {
+        "list_fetch_ms": 3464,
+        "candidate_filter_ms": 0,
+        "enrichment_ms": 178,
+        "raw_news_count": 40,
+        "raw_research_count": 10,
+        "candidate_news_count": 2,
+        "candidate_research_count": 0,
+        "enriched_news_count": 2,
+        "enriched_research_count": 0,
+        "candidate_reasons": {
+          "news": {
+            "no-subject-mention": 18,
+            "noise:\\d{1,2}月\\d{1,2}日(快速上涨|快速回调|涨停|": 1,
+            "noise:^.{0,8}重要公告集锦": 1,
+            "dedup": 0,
+            "out_of_window": 18
+          },
+          "research": {
+            "dedup": 0,
+            "out_of_window": 10
+          }
+        },
+        "date_filter_ms": 0,
+        "relevance_ms": 0,
+        "llm_ms": 101992,
+        "scoring_ms": 0
+      },
+      "top_news": []
+    },
+    "SZSE:300866": {
+      "name": "300866",
+      "score": 50,
+      "score_raw": 0,
+      "score_components": {
+        "positive_weight_sum": 0,
+        "negative_weight_sum": 0
+      },
+      "signal": "⚪ No Trade (无数据)",
+      "strategy": "近期无相关有效新闻",
+      "suitable_for": "观望",
+      "confidence": "-",
+      "patterns": [],
+      "positive_factors": [],
+      "negative_factors": [],
+      "news_count": 0,
+      "news_dropped": 0,
+      "performance": {
+        "list_fetch_ms": 2897,
+        "candidate_filter_ms": 0,
+        "enrichment_ms": 0,
+        "raw_news_count": 40,
+        "raw_research_count": 10,
+        "candidate_news_count": 0,
+        "candidate_research_count": 0,
+        "enriched_news_count": 0,
+        "enriched_research_count": 0,
+        "candidate_reasons": {
+          "news": {
+            "noise:融资净(买入|卖出)": 3,
+            "no-subject-mention": 5,
+            "dedup": 0,
+            "out_of_window": 32
+          },
+          "research": {
+            "dedup": 0,
+            "out_of_window": 10
+          }
+        },
+        "date_filter_ms": 0,
+        "relevance_ms": 0,
+        "llm_ms": 0,
+        "scoring_ms": 0
+      },
+      "top_news": []
+    },
+    "SSE:605198": {
+      "name": "605198",
+      "score": 50,
+      "score_raw": 0,
+      "score_components": {
+        "positive_weight_sum": 0,
+        "negative_weight_sum": 0
+      },
+      "signal": "⚪ No Trade (无数据)",
+      "strategy": "近期无相关有效新闻",
+      "suitable_for": "观望",
+      "confidence": "-",
+      "patterns": [],
+      "positive_factors": [],
+      "negative_factors": [],
+      "news_count": 0,
+      "news_dropped": 0,
+      "performance": {
+        "list_fetch_ms": 3799,
+        "candidate_filter_ms": 0,
+        "enrichment_ms": 0,
+        "raw_news_count": 40,
+        "raw_research_count": 1,
+        "candidate_news_count": 0,
+        "candidate_research_count": 0,
+        "enriched_news_count": 0,
+        "enriched_research_count": 0,
+        "candidate_reasons": {
+          "news": {
+            "no-subject-mention": 11,
+            "noise:\\d{1,2}月\\d{1,2}日(快速上涨|快速回调|涨停|": 5,
+            "dedup": 0,
+            "out_of_window": 24
+          },
+          "research": {
+            "dedup": 0,
+            "out_of_window": 1
+          }
+        },
+        "date_filter_ms": 0,
+        "relevance_ms": 0,
+        "llm_ms": 0,
+        "scoring_ms": 0
+      },
+      "top_news": []
+    },
+    "SSE:600172": {
+      "name": "600172",
+      "score": 50,
+      "score_raw": 0,
+      "score_components": {
+        "positive_weight_sum": 0,
+        "negative_weight_sum": 0
+      },
+      "signal": "⚪ No Trade (无数据)",
+      "strategy": "LLM 不可用或调用失败（不走关键字降级）",
+      "suitable_for": "观望",
+      "confidence": "-",
+      "patterns": [],
+      "positive_factors": [],
+      "negative_factors": [],
+      "news_count": 0,
+      "news_dropped": 0,
+      "performance": {
+        "list_fetch_ms": 2910,
+        "candidate_filter_ms": 0,
+        "enrichment_ms": 3548,
+        "raw_news_count": 40,
+        "raw_research_count": 9,
+        "candidate_news_count": 6,
+        "candidate_research_count": 0,
+        "enriched_news_count": 6,
+        "enriched_research_count": 0,
+        "candidate_reasons": {
+          "news": {
+            "no-subject-mention": 18,
+            "noise:\\d{1,2}月\\d{1,2}日(快速上涨|快速回调|涨停|": 2,
+            "dedup": 0,
+            "out_of_window": 14
+          },
+          "research": {
+            "dedup": 0,
+            "out_of_window": 9
+          }
+        },
+        "date_filter_ms": 0,
+        "relevance_ms": 0,
+        "llm_ms": 105472,
+        "scoring_ms": 0
+      },
+      "top_news": []
+    },
+    "SSE:600186": {
+      "name": "600186",
+      "score": 50,
+      "score_raw": 0,
+      "score_components": {
+        "positive_weight_sum": 0,
+        "negative_weight_sum": 0
+      },
+      "signal": "⚪ No Trade (无数据)",
+      "strategy": "LLM 不可用或调用失败（不走关键字降级）",
+      "suitable_for": "观望",
+      "confidence": "-",
+      "patterns": [],
+      "positive_factors": [],
+      "negative_factors": [],
+      "news_count": 0,
+      "news_dropped": 0,
+      "performance": {
+        "list_fetch_ms": 3808,
+        "candidate_filter_ms": 0,
+        "enrichment_ms": 2841,
+        "raw_news_count": 40,
+        "raw_research_count": 10,
+        "candidate_news_count": 2,
+        "candidate_research_count": 0,
+        "enriched_news_count": 2,
+        "enriched_research_count": 0,
+        "candidate_reasons": {
+          "news": {
+            "no-subject-mention": 16,
+            "noise:\\d{1,2}月\\d{1,2}日(快速上涨|快速回调|涨停|": 2,
+            "noise:融资净(买入|卖出)": 2,
+            "dedup": 0,
+            "out_of_window": 18
+          },
+          "research": {
+            "dedup": 0,
+            "out_of_window": 10
+          }
+        },
+        "date_filter_ms": 0,
+        "relevance_ms": 0,
+        "llm_ms": 102569,
+        "scoring_ms": 0
+      },
+      "top_news": []
+    },
+    "SZSE:002452": {
+      "name": "002452",
+      "score": 50,
+      "score_raw": 0,
+      "score_components": {
+        "positive_weight_sum": 0,
+        "negative_weight_sum": 0
+      },
+      "signal": "⚪ No Trade (无数据)",
+      "strategy": "LLM 不可用或调用失败（不走关键字降级）",
+      "suitable_for": "观望",
+      "confidence": "-",
+      "patterns": [],
+      "positive_factors": [],
+      "negative_factors": [],
+      "news_count": 0,
+      "news_dropped": 0,
+      "performance": {
+        "list_fetch_ms": 3912,
+        "candidate_filter_ms": 0,
+        "enrichment_ms": 4,
+        "raw_news_count": 40,
+        "raw_research_count": 10,
+        "candidate_news_count": 3,
+        "candidate_research_count": 0,
+        "enriched_news_count": 3,
+        "enriched_research_count": 0,
+        "candidate_reasons": {
+          "news": {
+            "noise:融资净(买入|卖出)": 1,
+            "no-subject-mention": 9,
+            "dedup": 0,
+            "out_of_window": 27
+          },
+          "research": {
+            "dedup": 0,
+            "out_of_window": 10
+          }
+        },
+        "date_filter_ms": 0,
+        "relevance_ms": 0,
+        "llm_ms": 100033,
+        "scoring_ms": 0
+      },
+      "top_news": []
+    },
+    "SSE:601872": {
+      "name": "601872",
+      "score": 50,
+      "score_raw": 0,
+      "score_components": {
+        "positive_weight_sum": 0,
+        "negative_weight_sum": 0
+      },
+      "signal": "⚪ No Trade (无数据)",
+      "strategy": "近期无相关有效新闻",
+      "suitable_for": "观望",
+      "confidence": "-",
+      "patterns": [],
+      "positive_factors": [],
+      "negative_factors": [],
+      "news_count": 0,
+      "news_dropped": 0,
+      "performance": {
+        "list_fetch_ms": 2908,
+        "candidate_filter_ms": 0,
+        "enrichment_ms": 0,
+        "raw_news_count": 40,
+        "raw_research_count": 10,
+        "candidate_news_count": 0,
+        "candidate_research_count": 0,
+        "enriched_news_count": 0,
+        "enriched_research_count": 0,
+        "candidate_reasons": {
+          "news": {
+            "no-subject-mention": 13,
+            "noise:\\d{1,2}月\\d{1,2}日(快速上涨|快速回调|涨停|": 4,
+            "noise:融资净(买入|卖出)": 3,
+            "dedup": 0,
+            "out_of_window": 20
+          },
+          "research": {
+            "dedup": 0,
+            "out_of_window": 10
+          }
+        },
+        "date_filter_ms": 0,
+        "relevance_ms": 0,
+        "llm_ms": 0,
+        "scoring_ms": 0
+      },
+      "top_news": []
+    },
+    "SSE:603228": {
+      "name": "景旺电子",
+      "score": 50,
+      "score_raw": 0,
+      "score_components": {
+        "positive_weight_sum": 0,
+        "negative_weight_sum": 0
+      },
+      "signal": "⚪ No Trade (无数据)",
+      "strategy": "LLM 不可用或调用失败（不走关键字降级）",
+      "suitable_for": "观望",
+      "confidence": "-",
+      "patterns": [],
+      "positive_factors": [],
+      "negative_factors": [],
+      "news_count": 0,
+      "news_dropped": 0,
+      "performance": {
+        "list_fetch_ms": 3041,
+        "candidate_filter_ms": 0,
+        "enrichment_ms": 12254,
+        "raw_news_count": 40,
+        "raw_research_count": 10,
+        "candidate_news_count": 21,
+        "candidate_research_count": 0,
+        "enriched_news_count": 20,
+        "enriched_research_count": 0,
+        "candidate_reasons": {
+          "news": {
+            "noise:融资净(买入|卖出)": 2,
+            "noise:\\d{1,2}月\\d{1,2}日(快速上涨|快速回调|涨停|": 2,
+            "no-subject-mention": 4,
+            "dedup": 0,
+            "out_of_window": 11
+          },
+          "research": {
+            "dedup": 0,
+            "out_of_window": 10
+          }
+        },
+        "date_filter_ms": 0,
+        "relevance_ms": 0,
+        "llm_ms": 187524,
+        "scoring_ms": 0
+      },
+      "top_news": []
+    },
+    "SZSE:300857": {
+      "name": "协创数据",
+      "score": 50,
+      "score_raw": 0,
+      "score_components": {
+        "positive_weight_sum": 0,
+        "negative_weight_sum": 0
+      },
+      "signal": "⚪ No Trade (无数据)",
+      "strategy": "LLM 不可用或调用失败（不走关键字降级）",
+      "suitable_for": "观望",
+      "confidence": "-",
+      "patterns": [],
+      "positive_factors": [],
+      "negative_factors": [],
+      "news_count": 0,
+      "news_dropped": 0,
+      "performance": {
+        "list_fetch_ms": 6077,
+        "candidate_filter_ms": 0,
+        "enrichment_ms": 6715,
+        "raw_news_count": 40,
+        "raw_research_count": 10,
+        "candidate_news_count": 4,
+        "candidate_research_count": 0,
+        "enriched_news_count": 4,
+        "enriched_research_count": 0,
+        "candidate_reasons": {
+          "news": {
+            "no-subject-mention": 8,
+            "noise:融资净(买入|卖出)": 3,
+            "noise:\\d{1,2}月\\d{1,2}日(快速上涨|快速回调|涨停|": 1,
+            "dedup": 0,
+            "out_of_window": 24
+          },
+          "research": {
+            "dedup": 0,
+            "out_of_window": 10
+          }
+        },
+        "date_filter_ms": 0,
+        "relevance_ms": 0,
+        "llm_ms": 191771,
+        "scoring_ms": 0
+      },
+      "top_news": []
+    },
+    "SZSE:002536": {
+      "name": "002536",
+      "score": 50,
+      "score_raw": 0,
+      "score_components": {
+        "positive_weight_sum": 0,
+        "negative_weight_sum": 0
+      },
+      "signal": "⚪ No Trade (无数据)",
+      "strategy": "近期无相关有效新闻",
+      "suitable_for": "观望",
+      "confidence": "-",
+      "patterns": [],
+      "positive_factors": [],
+      "negative_factors": [],
+      "news_count": 0,
+      "news_dropped": 0,
+      "performance": {
+        "list_fetch_ms": 1322,
+        "candidate_filter_ms": 0,
+        "enrichment_ms": 0,
+        "raw_news_count": 40,
+        "raw_research_count": 10,
+        "candidate_news_count": 0,
+        "candidate_research_count": 0,
+        "enriched_news_count": 0,
+        "enriched_research_count": 0,
+        "candidate_reasons": {
+          "news": {
+            "no-subject-mention": 11,
+            "noise:融资净(买入|卖出)": 3,
+            "noise:\\d{1,2}月\\d{1,2}日(快速上涨|快速回调|涨停|": 1,
+            "dedup": 0,
+            "out_of_window": 25
+          },
+          "research": {
+            "dedup": 0,
+            "out_of_window": 10
+          }
+        },
+        "date_filter_ms": 0,
+        "relevance_ms": 0,
+        "llm_ms": 0,
+        "scoring_ms": 0
+      },
+      "top_news": []
+    },
+    "SZSE:002463": {
+      "name": "002463",
+      "score": 50,
+      "score_raw": 0,
+      "score_components": {
+        "positive_weight_sum": 0,
+        "negative_weight_sum": 0
+      },
+      "signal": "⚪ No Trade (无数据)",
+      "strategy": "LLM 不可用或调用失败（不走关键字降级）",
+      "suitable_for": "观望",
+      "confidence": "-",
+      "patterns": [],
+      "positive_factors": [],
+      "negative_factors": [],
+      "news_count": 0,
+      "news_dropped": 0,
+      "performance": {
+        "list_fetch_ms": 635,
+        "candidate_filter_ms": 0,
+        "enrichment_ms": 1,
+        "raw_news_count": 40,
+        "raw_research_count": 10,
+        "candidate_news_count": 2,
+        "candidate_research_count": 0,
+        "enriched_news_count": 2,
+        "enriched_research_count": 0,
+        "candidate_reasons": {
+          "news": {
+            "no-subject-mention": 15,
+            "noise:龙虎榜|大宗交易|盘口异动": 1,
+            "noise:融资净(买入|卖出)": 2,
+            "noise:\\d{1,2}月\\d{1,2}日(快速上涨|快速回调|涨停|": 1,
+            "dedup": 0,
+            "out_of_window": 19
+          },
+          "research": {
+            "dedup": 0,
+            "out_of_window": 10
+          }
+        },
+        "date_filter_ms": 0,
+        "relevance_ms": 0,
+        "llm_ms": 187196,
+        "scoring_ms": 0
+      },
+      "top_news": []
+    },
+    "SZSE:002916": {
+      "name": "002916",
+      "score": 50,
+      "score_raw": 0,
+      "score_components": {
+        "positive_weight_sum": 0,
+        "negative_weight_sum": 0
+      },
+      "signal": "⚪ No Trade (无数据)",
+      "strategy": "LLM 不可用或调用失败（不走关键字降级）",
+      "suitable_for": "观望",
+      "confidence": "-",
+      "patterns": [],
+      "positive_factors": [],
+      "negative_factors": [],
+      "news_count": 0,
+      "news_dropped": 0,
+      "performance": {
+        "list_fetch_ms": 676,
+        "candidate_filter_ms": 0,
+        "enrichment_ms": 4620,
+        "raw_news_count": 40,
+        "raw_research_count": 10,
+        "candidate_news_count": 10,
+        "candidate_research_count": 0,
+        "enriched_news_count": 10,
+        "enriched_research_count": 0,
+        "candidate_reasons": {
+          "news": {
+            "no-subject-mention": 18,
+            "noise:龙虎榜|大宗交易|盘口异动": 1,
+            "noise:融资净(买入|卖出)": 1,
+            "dedup": 0,
+            "out_of_window": 10
+          },
+          "research": {
+            "dedup": 0,
+            "out_of_window": 10
+          }
+        },
+        "date_filter_ms": 0,
+        "relevance_ms": 0,
+        "llm_ms": 98188,
+        "scoring_ms": 0
+      },
+      "top_news": []
+    },
+    "SSE:601869": {
+      "name": "601869",
+      "score": 50,
+      "score_raw": 0,
+      "score_components": {
+        "positive_weight_sum": 0,
+        "negative_weight_sum": 0,
+        "news_effective_count": 2,
+        "news_dropped_count": 0
+      },
+      "signal": "⚪ No Trade (微多)",
+      "strategy": "情绪轻微偏多，信号不足，以观望为主",
+      "suitable_for": "观望",
+      "confidence": "低",
+      "patterns": [],
+      "positive_factors": [],
+      "negative_factors": [],
+      "news_count": 2,
+      "news_dropped": 0,
+      "performance": {
+        "list_fetch_ms": 1403,
+        "candidate_filter_ms": 0,
+        "enrichment_ms": 4849,
+        "raw_news_count": 40,
+        "raw_research_count": 10,
+        "candidate_news_count": 2,
+        "candidate_research_count": 0,
+        "enriched_news_count": 2,
+        "enriched_research_count": 0,
+        "candidate_reasons": {
+          "news": {
+            "no-subject-mention": 18,
+            "noise:融资净(买入|卖出)": 2,
+            "dedup": 0,
+            "out_of_window": 18
+          },
+          "research": {
+            "dedup": 0,
+            "out_of_window": 10
+          }
+        },
+        "date_filter_ms": 0,
+        "relevance_ms": 0,
+        "llm_ms": 76549,
+        "scoring_ms": 0
+      },
+      "top_news": [
+        {
+          "date": "2026-09-12",
+          "title": "长飞光纤:长飞光纤光缆股份有限公司2026年第二次临时股东会决议公告",
+          "content": "",
+          "type": "政策",
+          "sentiment": 0,
+          "weight": 1,
+          "final_weight": 0.78,
+          "source_authority": 4.5,
+          "recency_factor": 0.72,
+          "source": "东方财富公告",
+          "llm_reviewed": true,
+          "llm_confidence": 0.3,
+          "llm_is_real_catalyst": false,
+          "llm_reasoning": "股东会决议公告无实质内容"
+        },
+        {
+          "date": "2026-09-12",
+          "title": "长飞光纤:关于长飞光纤光缆股份有限公司2026年第一次临时股东会的法律意见书",
+          "content": "研究、开发、生产和销售预制棒、光纤、光缆、通信线缆、特种线缆、以及与其相关的器件、附件、组件和材料;专用设备以及与通信相关产品的制造;提供与上述产品相关的工程及技术服务。公司从事在本章程生效日前尚未开展的业务,由公司股东大会决定。如果需要,公司应把有关文件(如可行性研究报告)提交有关部门备案,并在开展该业务之前取得一切必要的行政许可、批准和执照。\n郑重声明：东方财富网发布此信息的目的在于传播更多信息，与本站立场无关。东方财富网不保证该信息（包括但不限于文字、视频、音频、数据及图表）全部或者部分内容的准确性、真实性、完整性、有效性、及时性、原创性等。相关信息并未经过本网站证实，不对您构成任何投资建议，据此操作，风险自担。",
+          "type": "政策",
+          "sentiment": 0,
+          "weight": 1,
+          "final_weight": 0.78,
+          "source_authority": 4.5,
+          "recency_factor": 0.72,
+          "source": "东方财富公告",
+          "llm_reviewed": true,
+          "llm_confidence": 0.3,
+          "llm_is_real_catalyst": false,
+          "llm_reasoning": "法律意见书仅述经营范围"
+        }
+      ]
+    },
+    "SSE:605319": {
+      "name": "605319",
+      "score": 50,
+      "score_raw": 0,
+      "score_components": {
+        "positive_weight_sum": 0,
+        "negative_weight_sum": 0
+      },
+      "signal": "⚪ No Trade (无数据)",
+      "strategy": "LLM 不可用或调用失败（不走关键字降级）",
+      "suitable_for": "观望",
+      "confidence": "-",
+      "patterns": [],
+      "positive_factors": [],
+      "negative_factors": [],
+      "news_count": 0,
+      "news_dropped": 0,
+      "performance": {
+        "list_fetch_ms": 3818,
+        "candidate_filter_ms": 0,
+        "enrichment_ms": 1919,
+        "raw_news_count": 40,
+        "raw_research_count": 10,
+        "candidate_news_count": 4,
+        "candidate_research_count": 0,
+        "enriched_news_count": 4,
+        "enriched_research_count": 0,
+        "candidate_reasons": {
+          "news": {
+            "no-subject-mention": 7,
+            "noise:\\d{1,2}月\\d{1,2}日(快速上涨|快速回调|涨停|": 1,
+            "dedup": 0,
+            "out_of_window": 28
+          },
+          "research": {
+            "dedup": 0,
+            "out_of_window": 10
+          }
+        },
+        "date_filter_ms": 0,
+        "relevance_ms": 0,
+        "llm_ms": 187575,
+        "scoring_ms": 0
+      },
+      "top_news": []
+    },
+    "SZSE:002636": {
+      "name": "002636",
+      "score": 50,
+      "score_raw": 0,
+      "score_components": {
+        "positive_weight_sum": 0,
+        "negative_weight_sum": 0
+      },
+      "signal": "⚪ No Trade (无数据)",
+      "strategy": "LLM 不可用或调用失败（不走关键字降级）",
+      "suitable_for": "观望",
+      "confidence": "-",
+      "patterns": [],
+      "positive_factors": [],
+      "negative_factors": [],
+      "news_count": 0,
+      "news_dropped": 0,
+      "performance": {
+        "list_fetch_ms": 3278,
+        "candidate_filter_ms": 0,
+        "enrichment_ms": 1347,
+        "raw_news_count": 40,
+        "raw_research_count": 6,
+        "candidate_news_count": 2,
+        "candidate_research_count": 0,
+        "enriched_news_count": 2,
+        "enriched_research_count": 0,
+        "candidate_reasons": {
+          "news": {
+            "no-subject-mention": 19,
+            "noise:\\d{1,2}月\\d{1,2}日(快速上涨|快速回调|涨停|": 1,
+            "dedup": 0,
+            "out_of_window": 18
+          },
+          "research": {
+            "dedup": 0,
+            "out_of_window": 6
+          }
+        },
+        "date_filter_ms": 0,
+        "relevance_ms": 0,
+        "llm_ms": 181060,
+        "scoring_ms": 0
+      },
+      "top_news": []
+    },
+    "SSE:600183": {
+      "name": "生益科技",
+      "score": 50,
+      "score_raw": 0,
+      "score_components": {
+        "positive_weight_sum": 0,
+        "negative_weight_sum": 0
+      },
+      "signal": "⚪ No Trade (无数据)",
+      "strategy": "LLM 不可用或调用失败（不走关键字降级）",
+      "suitable_for": "观望",
+      "confidence": "-",
+      "patterns": [],
+      "positive_factors": [],
+      "negative_factors": [],
+      "news_count": 0,
+      "news_dropped": 0,
+      "performance": {
+        "list_fetch_ms": 606,
+        "candidate_filter_ms": 0,
+        "enrichment_ms": 1939,
+        "raw_news_count": 40,
+        "raw_research_count": 10,
+        "candidate_news_count": 3,
+        "candidate_research_count": 0,
+        "enriched_news_count": 3,
+        "enriched_research_count": 0,
+        "candidate_reasons": {
+          "news": {
+            "no-subject-mention": 15,
+            "noise:融资净(买入|卖出)": 2,
+            "dedup": 0,
+            "out_of_window": 20
+          },
+          "research": {
+            "dedup": 0,
+            "out_of_window": 10
+          }
+        },
+        "date_filter_ms": 0,
+        "relevance_ms": 0,
+        "llm_ms": 106757,
+        "scoring_ms": 0
+      },
+      "top_news": []
+    }
+  }
+}

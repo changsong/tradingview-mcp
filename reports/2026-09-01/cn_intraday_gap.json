@@ -1,0 +1,212 @@
+{
+  "generated_at": "2026-09-01T06:45:38.666Z",
+  "market": "cn",
+  "source": "./watchlist/cn_selected.txt",
+  "entry_signal": {
+    "can_enter": false,
+    "signal": "观望",
+    "reason": "隔夜美股上涨 → A股均值回归承压 (回测个股涨概率仅 40.8%)",
+    "strategy": "不入场, 等待下一个美股下跌日"
+  },
+  "overnight_us": {
+    "sp500_pct": 0.59,
+    "nasdaq_pct": 0.44,
+    "dji_pct": 0.65,
+    "avg_pct": 0.56,
+    "contrarian_signal": "US up → CN down (均值回归)"
+  },
+  "sector_flow": {
+    "top_gainers": [
+      {
+        "code": "BK1625",
+        "name": "钨",
+        "change_pct": -4.62,
+        "flow": 8453.5
+      },
+      {
+        "code": "BK1325",
+        "name": "半导体材料",
+        "change_pct": -4.13,
+        "flow": 12833.08
+      },
+      {
+        "code": "BK1039",
+        "name": "电子化学品Ⅱ",
+        "change_pct": -3.86,
+        "flow": 3252.87
+      },
+      {
+        "code": "BK1332",
+        "name": "电子化学品Ⅲ",
+        "change_pct": -3.86,
+        "flow": 3252.87
+      },
+      {
+        "code": "BK1469",
+        "name": "涂料",
+        "change_pct": -3.62,
+        "flow": 1011.11
+      }
+    ],
+    "top_losers": [
+      {
+        "code": "BK1296",
+        "name": "视频媒体",
+        "change_pct": 20.02,
+        "flow": 985.22
+      },
+      {
+        "code": "BK1518",
+        "name": "种子",
+        "change_pct": 11.95,
+        "flow": 5311.37
+      },
+      {
+        "code": "BK1261",
+        "name": "种植业",
+        "change_pct": 8.23,
+        "flow": 3022.53
+      },
+      {
+        "code": "BK1298",
+        "name": "文字媒体",
+        "change_pct": 6.74,
+        "flow": 2973.17
+      },
+      {
+        "code": "BK1515",
+        "name": "粮食种植",
+        "change_pct": 6.5,
+        "flow": 1038.18
+      }
+    ]
+  },
+  "model": "external_3d",
+  "formula": "Score = 隔夜外盘·均值回归(±4) + 新闻情绪(±3) + 板块资金流(±2)",
+  "strategy": {
+    "entry_condition": "隔夜美股下跌",
+    "priority_sort": "新闻<60 优先 (回测涨概率 65.1%), 新闻≥60 次之 (回测涨概率 48.8%)",
+    "rationale": "利好出尽是利空 — 高新闻分标的已被热钱透支，反弹力度弱"
+  },
+  "total": 29,
+  "success": 0,
+  "failed": [
+    {
+      "symbol": "SSE:600388",
+      "reason": "chart_not_ready"
+    },
+    {
+      "symbol": "SSE:601665",
+      "reason": "chart_not_ready"
+    },
+    {
+      "symbol": "SSE:601872",
+      "reason": "chart_not_ready"
+    },
+    {
+      "symbol": "SSE:601899",
+      "reason": "chart_not_ready"
+    },
+    {
+      "symbol": "SSE:603162",
+      "reason": "chart_not_ready"
+    },
+    {
+      "symbol": "SSE:603228",
+      "reason": "chart_not_ready"
+    },
+    {
+      "symbol": "SSE:603259",
+      "reason": "chart_not_ready"
+    },
+    {
+      "symbol": "SZSE:000333",
+      "reason": "chart_not_ready"
+    },
+    {
+      "symbol": "SSE:600489",
+      "reason": "chart_not_ready"
+    },
+    {
+      "symbol": "SSE:600330",
+      "reason": "chart_not_ready"
+    },
+    {
+      "symbol": "SZSE:300843",
+      "reason": "chart_not_ready"
+    },
+    {
+      "symbol": "SSE:605319",
+      "reason": "chart_not_ready"
+    },
+    {
+      "symbol": "SZSE:300602",
+      "reason": "chart_not_ready"
+    },
+    {
+      "symbol": "SZSE:300866",
+      "reason": "chart_not_ready"
+    },
+    {
+      "symbol": "SSE:605198",
+      "reason": "chart_not_ready"
+    },
+    {
+      "symbol": "SSE:603186",
+      "reason": "chart_not_ready"
+    },
+    {
+      "symbol": "SSE:600172",
+      "reason": "chart_not_ready"
+    },
+    {
+      "symbol": "SZSE:300017",
+      "reason": "chart_not_ready"
+    },
+    {
+      "symbol": "SZSE:002469",
+      "reason": "chart_not_ready"
+    },
+    {
+      "symbol": "SSE:600186",
+      "reason": "chart_not_ready"
+    },
+    {
+      "symbol": "SSE:600686",
+      "reason": "chart_not_ready"
+    },
+    {
+      "symbol": "SSE:600481",
+      "reason": "chart_not_ready"
+    },
+    {
+      "symbol": "SZSE:000975",
+      "reason": "chart_not_ready"
+    },
+    {
+      "symbol": "SZSE:002080",
+      "reason": "chart_not_ready"
+    },
+    {
+      "symbol": "SZSE:002452",
+      "reason": "chart_not_ready"
+    },
+    {
+      "symbol": "SZSE:002922",
+      "reason": "chart_not_ready"
+    },
+    {
+      "symbol": "SSE:600362",
+      "reason": "chart_not_ready"
+    },
+    {
+      "symbol": "SSE:601168",
+      "reason": "chart_not_ready"
+    },
+    {
+      "symbol": "SZSE:300274",
+      "reason": "chart_not_ready"
+    }
+  ],
+  "results": []
+}
