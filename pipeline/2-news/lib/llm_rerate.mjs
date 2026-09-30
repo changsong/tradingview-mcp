@@ -28,10 +28,16 @@ const __filename = fileURLToPath(import.meta.url);
 const __dirname = dirname(__filename);
 dotenv.config({ path: resolve(__dirname, '..', '..', '..', '.env') });
 
-const MODEL       = process.env.DEEPSEEK_MODEL || 'deepseek-v4-pro';
+const MODEL       = process.env.DEEPSEEK_MODEL || 'deepseek-flash';
 const ENDPOINT    = 'https://api.deepseek.com/v1/chat/completions';
 const CACHE_DIR   = resolve('./watchlist/.cache');
-const REQ_TIMEOUT_MS = 45_000;
+
+// The DeepSeek v4 family (deepseek-flash / deepseek-v4-pro) emits chain-of-thought that is
+// billed against max_tokens, so it needs a larger cap and more wall-clock time than the
+// 45s/800-token budget that was sized for deepseek-chat.
+const IS_REASONING_MODEL = /reasoner|deepseek-v4|flash/i.test(MODEL);
+const REQ_TIMEOUT_MS = IS_REASONING_MODEL ? 120_000 : 45_000;
+const MAX_TOKENS     = parseInt(process.env.LLM_RERATE_MAX_TOKENS) || 16_000;
 
 const SYSTEM_PROMPT_CN = `你是一位严谨的中国股市新闻分析师。你的任务是判断每条新闻对该股票的真实交易价值：
 1. sentiment: -2(严重利空) -1(利空) 0(中性) +1(利好) +2(严重利好)；
@@ -137,7 +143,7 @@ async function callDeepSeek(items, { symbol, name, market }) {
       },
       body: JSON.stringify({
         model: MODEL,
-        max_tokens: 800,
+        max_tokens: MAX_TOKENS,
         temperature: 0.1,
         messages: [
           { role: 'system', content: sys },
@@ -153,9 +159,14 @@ async function callDeepSeek(items, { symbol, name, market }) {
     const body = await resp.text().catch(() => '');
     throw new Error(`HTTP ${resp.status}: ${body.slice(0, 200)}`);
   }
-  const data = await resp.json();
-  const text = data?.choices?.[0]?.message?.content;
-  if (!text) throw new Error('empty response content');
+  const data   = await resp.json();
+  const choice = data?.choices?.[0];
+  // Reasoning models that exhaust the cap mid-thought return empty/partial content.
+  if (choice?.finish_reason === 'length') {
+    throw new Error(`truncated at max_tokens=${MAX_TOKENS} (finish_reason=length)`);
+  }
+  const text = choice?.message?.content;
+  if (!text) throw new Error(`empty response content (finish_reason=${choice?.finish_reason ?? 'unknown'})`);
   return text;
 }
 
@@ -241,7 +252,8 @@ function round2(v)  { return Math.round(v * 100) / 100; }
 function cachePathFor(symbol, items) {
   const titleSig   = items.map(it => `${(it.title || '').slice(0, 30)}|${it.date || ''}`).join('§');
   const contentSig = items.map(it => (it.content || '').slice(0, 80)).join('|');
-  const hash = createHash('md5').update(titleSig + contentSig).digest('hex').slice(0, 12);
+  // MODEL is part of the key so one model's verdict is never replayed as another's.
+  const hash = createHash('md5').update(`${MODEL}§${titleSig}${contentSig}`).digest('hex').slice(0, 12);
   const safeSym = String(symbol).replace(/[^A-Za-z0-9_]/g, '_');
   return resolve(CACHE_DIR, `news_llm_${safeSym}_${hash}.json`);
 }
@@ -250,6 +262,7 @@ function readCache(p) {
   if (!existsSync(p)) return null;
   try {
     const j = JSON.parse(readFileSync(p, 'utf8'));
+    if (j?.model && j.model !== MODEL) return null;
     if (Array.isArray(j?.results)) return j.results;
   } catch {}
   return null;

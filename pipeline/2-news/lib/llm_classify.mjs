@@ -18,13 +18,18 @@ import {
   cachePathFor,
   readCache,
   writeCache,
+  DEFAULT_MAX_TOKENS,
+  TruncatedResponseError,
 } from './llm_common.mjs';
 import { createLimiter } from '../../../src/core/concurrency.js';
 
-// deepseek-reasoner: each item needs ~120 tokens for JSON output (5 fields).
-// max_tokens for the call is 2500, so keep batch ≤ 20 items to avoid truncation.
-// Using 10 as a safe margin: 10 × 120 = 1200 tokens, well within budget.
 const BATCH_SIZE = 10;
+
+// Reasoning models emit chain-of-thought before the JSON answer, and both draw from the
+// same max_tokens budget. 16000 covers ~2k reasoning + ~2k answer per 10-item batch with
+// headroom; if a batch still truncates, classifyChunkWithRetry halves it rather than
+// retrying the identical call.
+const MAX_TOKENS = parseInt(process.env.LLM_CLASSIFY_MAX_TOKENS) || DEFAULT_MAX_TOKENS;
 
 // Limit concurrent LLM API calls to avoid overwhelming the DeepSeek API
 const LLM_CONCURRENCY = parseInt(process.env.LLM_CONCURRENCY) || 6;
@@ -131,7 +136,10 @@ function pickBody(it) {
   return String(it.content || it.summary || it.snippet || it.digest || it.description || it.selftext || '').replace(/\s+/g, ' ').trim();
 }
 
-function buildUserMessage(items, symbol, name, market) {
+// baseIdx is the offset of this batch within the full item list. Labels are absolute so a
+// chunk's idx always identifies the same item globally — otherwise every chunk restarts at
+// [0] and the indices collide, which breaks alignment once batches are split.
+function buildUserMessage(items, symbol, name, market, baseIdx = 0) {
   const isCn = market === 'cn';
   const displayName = Array.isArray(name) ? name[0] : (name || symbol);
   const head = isCn
@@ -140,30 +148,44 @@ function buildUserMessage(items, symbol, name, market) {
 
   const list = items.map((it, idx) => {
     const body = pickBody(it);
-    return `[${idx}] type=${it.type || '-'} | date=${(it.date || '-').slice(0, 10)} | source=${it.source || '-'}\nTITLE: ${(it.title || '').slice(0, 200)}\nBODY: ${body.slice(0, 1500)}`;
+    return `[${baseIdx + idx}] type=${it.type || '-'} | date=${(it.date || '-').slice(0, 10)} | source=${it.source || '-'}\nTITLE: ${(it.title || '').slice(0, 200)}\nBODY: ${body.slice(0, 1500)}`;
   }).join('\n\n');
 
+  const last = baseIdx + items.length - 1;
   const tail = isCn
-    ? `\n\n直接输出 JSON 数组（不要任何前缀/后缀/markdown），长度=${items.length}，按 [0]~[${items.length - 1}] 顺序。`
-    : `\n\nOutput raw JSON array only (no prefix/suffix/markdown), length=${items.length}, in [0]~[${items.length - 1}] order.`;
+    ? `\n\n直接输出 JSON 数组（不要任何前缀/后缀/markdown），长度=${items.length}，按 [${baseIdx}]~[${last}] 顺序，idx 用上面的编号。`
+    : `\n\nOutput raw JSON array only (no prefix/suffix/markdown), length=${items.length}, in [${baseIdx}]~[${last}] order, with idx set to the numbers above.`;
 
   return `${head}\n\n${list}${tail}`;
 }
 
 // ─── Per-chunk retry helper ───────────────────────────────────────────────────
-async function classifyChunkWithRetry(chunk, { symbol, name, market, chunkIdx }) {
+async function classifyChunkWithRetry(chunk, { symbol, name, market, chunkIdx, baseIdx }) {
   for (let attempt = 0; attempt < 2; attempt++) {
     if (attempt > 0) await new Promise(r => setTimeout(r, 2000));
     let raw;
     try {
       raw = await callChat({
         system: buildSystemPrompt(market),
-        user:   buildUserMessage(chunk, symbol, name, market),
-        max_tokens: 2500,
+        user:   buildUserMessage(chunk, symbol, name, market, baseIdx),
+        max_tokens: MAX_TOKENS,
         temperature: 0,
       });
     } catch (err) {
       process.stderr.write(`  [LLM-classify] ${symbol} chunk${chunkIdx} fail (attempt ${attempt + 1}): ${err.message}\n`);
+      // A retry with the same prompt and cap truncates identically. Halving the batch
+      // shrinks the answer, so recurse as two sub-batches instead. These sub-calls
+      // deliberately bypass llmLimiter: this one already holds a slot, and re-entering a
+      // fixed-pool semaphore while awaiting more slots deadlocks.
+      if (err instanceof TruncatedResponseError && chunk.length > 1) {
+        const mid = Math.ceil(chunk.length / 2);
+        process.stderr.write(`  [LLM-classify] ${symbol} chunk${chunkIdx} splitting ${chunk.length} → ${mid}+${chunk.length - mid}\n`);
+        const halves = await Promise.all([
+          classifyChunkWithRetry(chunk.slice(0, mid), { symbol, name, market, chunkIdx: `${chunkIdx}a`, baseIdx }),
+          classifyChunkWithRetry(chunk.slice(mid),    { symbol, name, market, chunkIdx: `${chunkIdx}b`, baseIdx: baseIdx + mid }),
+        ]);
+        return halves.every(Boolean) ? halves.flat() : null;
+      }
       continue;
     }
     const parsed = safeParseJsonArray(raw);
@@ -189,16 +211,16 @@ export async function classifyByLLM(items, { symbol, name, market }) {
   const cached = readCache(cachePath);
   if (cached) return alignResults(items, cached, market);
 
-  // 大批量分块（每片 BATCH_SIZE 条）
+  // 大批量分块（每片 BATCH_SIZE 条），baseIdx 记录每片在全量列表中的起始位置
   const chunks = [];
   for (let i = 0; i < items.length; i += BATCH_SIZE) {
-    chunks.push(items.slice(i, i + BATCH_SIZE));
+    chunks.push({ items: items.slice(i, i + BATCH_SIZE), baseIdx: i });
   }
 
   // Process all chunks in parallel (with LLM API concurrency limit)
   const chunkResults = await Promise.all(
-    chunks.map((chunk, chunkIdx) =>
-      llmLimiter(() => classifyChunkWithRetry(chunk, { symbol, name, market, chunkIdx }))
+    chunks.map((c, chunkIdx) =>
+      llmLimiter(() => classifyChunkWithRetry(c.items, { symbol, name, market, chunkIdx, baseIdx: c.baseIdx }))
     )
   );
 
@@ -216,8 +238,18 @@ export async function classifyByLLM(items, { symbol, name, market }) {
 
 /** 把 LLM 返回数组对齐到 items 的索引（按 idx 字段优先，缺失则按位置） */
 function alignResults(items, llmResults, market) {
+  // Batch labels are absolute, so idx is authoritative. The positional fallback only
+  // applies when the counts match (nothing split or dropped); otherwise it would pair an
+  // item with a neighbouring batch's answer.
+  const byIdx = new Map();
+  for (const r of llmResults) {
+    const i = Number(r?.idx);
+    if (Number.isInteger(i) && !byIdx.has(i)) byIdx.set(i, r);
+  }
+  const positional = llmResults.length === items.length ? llmResults : null;
+
   return items.map((it, i) => {
-    const ans = llmResults.find(r => Number(r?.idx) === i) ?? llmResults[i] ?? {};
+    const ans = byIdx.get(i) ?? positional?.[i] ?? {};
     return {
       type: normalizeType(ans.type, market),
       sentiment: clampSent(ans.sentiment),

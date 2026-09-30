@@ -14,11 +14,30 @@ const __filename = fileURLToPath(import.meta.url);
 const __dirname  = dirname(__filename);
 dotenv.config({ path: resolve(__dirname, '..', '..', '..', '.env') });
 
-export const MODEL       = process.env.DEEPSEEK_MODEL || 'deepseek-v4-pro';
+export const MODEL       = process.env.DEEPSEEK_MODEL || 'deepseek-flash';
 export const ENDPOINT    = 'https://api.deepseek.com/v1/chat/completions';
 export const CACHE_DIR   = resolve('./watchlist/.cache');
-// deepseek-reasoner does chain-of-thought, needs more time than a simple chat model
-export const REQ_TIMEOUT_MS = MODEL.includes('reasoner') ? 120_000 : 60_000;
+
+// The DeepSeek v4 family (deepseek-flash / deepseek-v4-pro) and deepseek-reasoner all
+// emit chain-of-thought before the answer, so they need more wall-clock time than a
+// plain chat model. Name matching is the only signal available up front.
+export const IS_REASONING_MODEL = /reasoner|deepseek-v4|flash/i.test(MODEL);
+export const REQ_TIMEOUT_MS = IS_REASONING_MODEL ? 120_000 : 60_000;
+
+// Reasoning tokens are billed against max_tokens, so a budget sized for the JSON answer
+// alone truncates the response. Measured on a 10-item classify batch: ~1.5-2k reasoning
+// + ~2k answer, so 16000 leaves headroom without costing anything extra (billing is on
+// tokens generated, not on the cap).
+export const DEFAULT_MAX_TOKENS = 16_000;
+
+/** Thrown when the model hit the token cap before finishing its answer. */
+export class TruncatedResponseError extends Error {
+  constructor(maxTokens) {
+    super(`truncated at max_tokens=${maxTokens} (finish_reason=length)`);
+    this.name = 'TruncatedResponseError';
+    this.maxTokens = maxTokens;
+  }
+}
 
 let _envChecked = false;
 let _hasKey     = false;
@@ -36,7 +55,7 @@ export function isLLMEnabled() {
  * @param {{system: string, user: string, max_tokens?: number, temperature?: number}} opts
  * @returns {Promise<string>} message content
  */
-export async function callChat({ system, user, max_tokens = 1200, temperature = 0.1 }) {
+export async function callChat({ system, user, max_tokens = DEFAULT_MAX_TOKENS, temperature = 0.1 }) {
   const ctrl  = new AbortController();
   const timer = setTimeout(() => ctrl.abort(), REQ_TIMEOUT_MS);
   let resp;
@@ -66,12 +85,16 @@ export async function callChat({ system, user, max_tokens = 1200, temperature = 
     const body = await resp.text().catch(() => '');
     throw new Error(`HTTP ${resp.status}: ${body.slice(0, 200)}`);
   }
-  const data = await resp.json();
-  const msg  = data?.choices?.[0]?.message;
-  // deepseek-reasoner returns reasoning_content (chain-of-thought) + content (final answer).
-  // If content is empty (model only emitted reasoning), fall back to reasoning_content.
-  const text = msg?.content || msg?.reasoning_content;
-  if (!text) throw new Error('empty response content');
+  const data   = await resp.json();
+  const choice = data?.choices?.[0];
+  // A reasoning model that exhausts max_tokens mid-thought returns empty or partial
+  // `content`, with the chain-of-thought in `reasoning_content`. That CoT is never a valid
+  // answer, so surface truncation explicitly and let the caller shrink its request.
+  if (choice?.finish_reason === 'length') {
+    throw new TruncatedResponseError(max_tokens);
+  }
+  const text = choice?.message?.content;
+  if (!text) throw new Error(`empty response content (finish_reason=${choice?.finish_reason ?? 'unknown'})`);
   return text;
 }
 
@@ -144,7 +167,9 @@ function repairJson(s) {
 export function cachePathFor(prefix, symbol, items) {
   const titleSig   = items.map(it => `${(it.title || '').slice(0, 30)}|${it.date || ''}`).join('§');
   const contentSig = items.map(it => (it.content || '').slice(0, 80)).join('|');
-  const hash = createHash('md5').update(titleSig + contentSig).digest('hex').slice(0, 12);
+  // MODEL is part of the key: a cache entry written by one model must not be served as
+  // another model's classification (results are model-dependent, unlike the raw input).
+  const hash = createHash('md5').update(`${MODEL}§${titleSig}${contentSig}`).digest('hex').slice(0, 12);
   const safeSym = String(symbol).replace(/[^A-Za-z0-9_]/g, '_');
   return resolve(CACHE_DIR, `${prefix}_${safeSym}_${hash}.json`);
 }
@@ -153,6 +178,7 @@ export function readCache(p) {
   if (!existsSync(p)) return null;
   try {
     const j = JSON.parse(readFileSync(p, 'utf8'));
+    if (j?.model && j.model !== MODEL) return null;
     if (Array.isArray(j?.results)) return j.results;
   } catch {}
   return null;
