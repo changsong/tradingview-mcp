@@ -186,7 +186,9 @@ async function classifyChunkWithRetry(chunk, { symbol, name, market, chunkIdx, b
         ]);
         return halves.every(Boolean) ? halves.flat() : null;
       }
-      continue;
+      // callChat already retried with the next key. Looping here would stack a second round
+      // of API calls on top of that, so give up and let the caller record the failure.
+      return null;
     }
     const parsed = safeParseJsonArray(raw);
     if (parsed) return parsed;

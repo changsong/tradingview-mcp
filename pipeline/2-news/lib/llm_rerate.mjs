@@ -19,6 +19,7 @@
 import { readFileSync, writeFileSync, existsSync, mkdirSync } from 'fs';
 import { resolve } from 'path';
 import { createHash } from 'crypto';
+import { callChat, hasApiKeys } from './llm_common.mjs';
 
 // 加载 .env（从项目根目录）
 import dotenv from 'dotenv';
@@ -29,15 +30,8 @@ const __dirname = dirname(__filename);
 dotenv.config({ path: resolve(__dirname, '..', '..', '..', '.env') });
 
 const MODEL       = process.env.DEEPSEEK_MODEL || 'deepseek-flash';
-const ENDPOINT    = 'https://api.deepseek.com/v1/chat/completions';
 const CACHE_DIR   = resolve('./watchlist/.cache');
-
-// The DeepSeek v4 family (deepseek-flash / deepseek-v4-pro) emits chain-of-thought that is
-// billed against max_tokens, so it needs a larger cap and more wall-clock time than the
-// 45s/800-token budget that was sized for deepseek-chat.
-const IS_REASONING_MODEL = /reasoner|deepseek-v4|flash/i.test(MODEL);
-const REQ_TIMEOUT_MS = IS_REASONING_MODEL ? 120_000 : 45_000;
-const MAX_TOKENS     = parseInt(process.env.LLM_RERATE_MAX_TOKENS) || 16_000;
+const MAX_TOKENS  = parseInt(process.env.LLM_RERATE_MAX_TOKENS) || 16_000;
 
 const SYSTEM_PROMPT_CN = `你是一位严谨的中国股市新闻分析师。你的任务是判断每条新闻对该股票的真实交易价值：
 1. sentiment: -2(严重利空) -1(利空) 0(中性) +1(利好) +2(严重利好)；
@@ -69,16 +63,9 @@ Important rules:
 Respond with strict JSON (no markdown). Format:
 [{"idx":0,"sentiment":1,"is_real_catalyst":true,"confidence":0.85},...]`;
 
-let _envChecked = false;
-let _hasKey     = false;
-
-export function isLLMEnabled() {
-  if (!_envChecked) {
-    _hasKey = !!process.env.DEEPSEEK_API_KEY;
-    _envChecked = true;
-  }
-  return _hasKey;
-}
+// Key parsing (including the multi-key round-robin) lives in llm_common so both
+// classifiers agree on which keys exist.
+export function isLLMEnabled() { return hasApiKeys(); }
 
 /**
  * @param {object} args
@@ -125,49 +112,16 @@ export async function rerateTopNews({ topItems, symbol, name, market }) {
 }
 
 // ─── HTTP 调用 (DeepSeek OpenAI-compatible API) ────────────────────────────────
+// Delegates to the shared callChat so key round-robin, key failover and truncation
+// handling stay in one place.
 async function callDeepSeek(items, { symbol, name, market }) {
   const sys = market === 'cn' ? SYSTEM_PROMPT_CN : SYSTEM_PROMPT_US;
-  const userMsg = buildUserMessage(items, symbol, name, market);
-
-  const ctrl = new AbortController();
-  const timer = setTimeout(() => ctrl.abort(), REQ_TIMEOUT_MS);
-
-  let resp;
-  try {
-    resp = await fetch(ENDPOINT, {
-      method: 'POST',
-      signal: ctrl.signal,
-      headers: {
-        'Content-Type': 'application/json',
-        'Authorization': `Bearer ${process.env.DEEPSEEK_API_KEY}`,
-      },
-      body: JSON.stringify({
-        model: MODEL,
-        max_tokens: MAX_TOKENS,
-        temperature: 0.1,
-        messages: [
-          { role: 'system', content: sys },
-          { role: 'user', content: userMsg },
-        ],
-      }),
-    });
-  } finally {
-    clearTimeout(timer);
-  }
-
-  if (!resp.ok) {
-    const body = await resp.text().catch(() => '');
-    throw new Error(`HTTP ${resp.status}: ${body.slice(0, 200)}`);
-  }
-  const data   = await resp.json();
-  const choice = data?.choices?.[0];
-  // Reasoning models that exhaust the cap mid-thought return empty/partial content.
-  if (choice?.finish_reason === 'length') {
-    throw new Error(`truncated at max_tokens=${MAX_TOKENS} (finish_reason=length)`);
-  }
-  const text = choice?.message?.content;
-  if (!text) throw new Error(`empty response content (finish_reason=${choice?.finish_reason ?? 'unknown'})`);
-  return text;
+  return callChat({
+    system: sys,
+    user: buildUserMessage(items, symbol, name, market),
+    max_tokens: MAX_TOKENS,
+    temperature: 0.1,
+  });
 }
 
 function buildUserMessage(items, symbol, name, market) {

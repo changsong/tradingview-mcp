@@ -39,23 +39,63 @@ export class TruncatedResponseError extends Error {
   }
 }
 
-let _envChecked = false;
-let _hasKey     = false;
-export function isLLMEnabled() {
-  if (!_envChecked) {
-    _hasKey = !!process.env.DEEPSEEK_API_KEY;
-    _envChecked = true;
-  }
-  return _hasKey;
+// DEEPSEEK_API_KEY may hold several keys, separated by comma / semicolon / whitespace.
+// They are consumed round-robin so concurrent work spreads across them.
+const API_KEYS = (process.env.DEEPSEEK_API_KEY || '')
+  .split(/[\s,;]+/)
+  .map(k => k.trim())
+  .filter(Boolean);
+
+let _keyCursor = 0;
+
+export function hasApiKeys() { return API_KEYS.length > 0; }
+export function isLLMEnabled() { return hasApiKeys(); }
+
+/** Round-robin position of the next key, advancing the shared cursor. */
+function nextKeyIndex() {
+  const i = _keyCursor % API_KEYS.length;
+  _keyCursor = (i + 1) % API_KEYS.length;
+  return i;
 }
 
 // ─── DeepSeek HTTP ───────────────────────────────────────────────────────────
 /**
- * Low-level chat completion call.
+ * Chat completion call with key failover.
+ *
+ * At most two attempts. The second uses the next key in the round-robin, so a bad or
+ * rate-limited key fails over rather than retrying itself; with a single key configured it
+ * reuses that key as a plain retry. Nothing beyond that — callers must treat a throw as
+ * final, otherwise attempts stack up across layers.
+ *
  * @param {{system: string, user: string, max_tokens?: number, temperature?: number}} opts
  * @returns {Promise<string>} message content
  */
 export async function callChat({ system, user, max_tokens = DEFAULT_MAX_TOKENS, temperature = 0.1 }) {
+  if (!hasApiKeys()) throw new Error('DEEPSEEK_API_KEY is not set');
+
+  const first = nextKeyIndex();
+  const keys  = API_KEYS.length > 1
+    ? [API_KEYS[first], API_KEYS[(first + 1) % API_KEYS.length]]
+    : [API_KEYS[first], API_KEYS[first]];
+
+  let lastErr;
+  for (let i = 0; i < keys.length; i++) {
+    try {
+      return await callChatOnce({ system, user, max_tokens, temperature, apiKey: keys[i] });
+    } catch (err) {
+      lastErr = err;
+      // Truncation is a token-budget problem, not a key problem — another key can't help.
+      if (err instanceof TruncatedResponseError) throw err;
+      if (i + 1 < keys.length) {
+        const same = keys[i + 1] === keys[i];
+        process.stderr.write(`  [LLM] request failed (${err.message}); retrying with ${same ? 'the same key' : 'next key'}\n`);
+      }
+    }
+  }
+  throw lastErr;
+}
+
+async function callChatOnce({ system, user, max_tokens, temperature, apiKey }) {
   const ctrl  = new AbortController();
   const timer = setTimeout(() => ctrl.abort(), REQ_TIMEOUT_MS);
   let resp;
@@ -65,7 +105,7 @@ export async function callChat({ system, user, max_tokens = DEFAULT_MAX_TOKENS, 
       signal: ctrl.signal,
       headers: {
         'Content-Type': 'application/json',
-        'Authorization': `Bearer ${process.env.DEEPSEEK_API_KEY}`,
+        'Authorization': `Bearer ${apiKey}`,
       },
       body: JSON.stringify({
         model: MODEL,
