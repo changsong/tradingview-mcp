@@ -16,6 +16,7 @@ import { readFileSync, writeFileSync } from 'fs';
 import { fileURLToPath } from 'url';
 import { dirname, resolve } from 'path';
 import { searchHKNews, extractHKCode } from '../../src/core/hkNews.js';
+import { closeSharedBrowser } from '../../src/core/browserScraper.js';
 import { analyzeStockData } from './lib/analyze.mjs';
 import { isLLMEnabled, MODEL } from './lib/llm_common.mjs';
 import { pruneWatchlist } from './lib/prune_watchlist.mjs';
@@ -306,7 +307,13 @@ async function main() {
   }
 }
 
-main().catch(err => {
-  console.error('致命错误:', err);
-  process.exit(1);
-});
+main()
+  .catch(err => {
+    console.error('致命错误:', err);
+    process.exitCode = 1;
+  })
+  .finally(async () => {
+    // 不关闭共享 Chromium 的话事件循环不会排空，进程永不返回。
+    await closeSharedBrowser();
+    process.exit(process.exitCode ?? 0);
+  });

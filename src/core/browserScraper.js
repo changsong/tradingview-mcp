@@ -43,6 +43,7 @@ const CHROME_EXECUTABLE = findChrome();
 // Each call creates an isolated context (browser.newContext) and closes only the context.
 let _sharedBrowser = null;
 let _browserInitPromise = null;
+let _closePromise = null;
 
 // Max concurrent browser contexts to prevent memory exhaustion.
 const MAX_CONTEXTS = parseInt(process.env.BROWSER_MAX_CONTEXTS) || 8;
@@ -66,6 +67,7 @@ async function getSharedBrowser() {
       launchOptions.executablePath = CHROME_EXECUTABLE;
     }
     _sharedBrowser = await chromium.launch(launchOptions);
+    _closePromise = null;
     return _sharedBrowser;
   })();
 
@@ -76,12 +78,33 @@ async function getSharedBrowser() {
   }
 }
 
-// Clean up on exit
+// Clean up on exit. 'exit' handlers run synchronously, so the close below can only be
+// requested, never awaited — by the time the loop reaches here the process is already
+// going down. Scripts that need a real teardown must await closeSharedBrowser() instead.
 process.on('exit', () => {
   if (_sharedBrowser) {
     _sharedBrowser.close().catch(() => {});
   }
 });
+
+/**
+ * Close the shared browser and wait for Chromium to actually exit.
+ *
+ * A live Chromium child keeps the Node event loop open, so a script that finishes all its
+ * work still never returns — and the 'exit' handler above can never fire, because the
+ * browser it would close is exactly what is preventing the exit. Callers must await this
+ * before process.exit(). Idempotent; a later launch resets the close cycle.
+ *
+ * @returns {Promise<void>}
+ */
+export async function closeSharedBrowser() {
+  if (!_closePromise) {
+    const browser = _sharedBrowser;
+    _sharedBrowser = null;
+    _closePromise = (browser ? browser.close() : Promise.resolve()).catch(() => {});
+  }
+  return _closePromise;
+}
 
 // Prioritized selectors for article body extraction (English + Chinese sites)
 const ARTICLE_SELECTORS = [

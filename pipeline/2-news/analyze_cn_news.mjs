@@ -17,6 +17,7 @@ import { fileURLToPath } from 'url';
 import { dirname, resolve } from 'path';
 import { performance } from 'node:perf_hooks';
 import { searchNews, extractCode } from '../../src/core/webNews.js';
+import { closeSharedBrowser } from '../../src/core/browserScraper.js';
 import { analyzeStockData } from './lib/analyze.mjs';
 import { filterRelevantCandidates } from './lib/relevance.mjs';
 import { isLLMEnabled, MODEL } from './lib/llm_common.mjs';
@@ -402,7 +403,13 @@ async function main() {
   }
 }
 
-main().catch(err => {
-  console.error('致命错误:', err);
-  process.exit(1);
-});
+main()
+  .catch(err => {
+    console.error('致命错误:', err);
+    process.exitCode = 1;
+  })
+  .finally(async () => {
+    // 不关闭共享 Chromium 的话事件循环不会排空，进程永不返回（full:cn 的 spawn 会一直等 close）。
+    await closeSharedBrowser();
+    process.exit(process.exitCode ?? 0);
+  });

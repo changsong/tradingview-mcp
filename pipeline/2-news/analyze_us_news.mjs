@@ -16,6 +16,7 @@ import { fileURLToPath } from 'url';
 import { dirname, resolve } from 'path';
 import { performance } from 'node:perf_hooks';
 import { searchUSNews } from '../../src/core/usNews.js';
+import { closeSharedBrowser } from '../../src/core/browserScraper.js';
 import { analyzeStockData } from './lib/analyze.mjs';
 import { filterRelevantCandidates } from './lib/relevance.mjs';
 import { isLLMEnabled, MODEL } from './lib/llm_common.mjs';
@@ -403,7 +404,14 @@ async function main() {
   }
 }
 
-main().catch(err => {
-  console.error('Fatal:', err);
-  process.exit(1);
-});
+main()
+  .catch(err => {
+    console.error('Fatal:', err);
+    process.exitCode = 1;
+  })
+  .finally(async () => {
+    // Without this the shared Chromium keeps the event loop alive and the process never
+    // returns, stalling `full:us` at this stage forever.
+    await closeSharedBrowser();
+    process.exit(process.exitCode ?? 0);
+  });

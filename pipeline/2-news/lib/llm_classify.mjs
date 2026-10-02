@@ -31,8 +31,11 @@ const BATCH_SIZE = 10;
 // retrying the identical call.
 const MAX_TOKENS = parseInt(process.env.LLM_CLASSIFY_MAX_TOKENS) || DEFAULT_MAX_TOKENS;
 
-// Limit concurrent LLM API calls to avoid overwhelming the DeepSeek API
-const LLM_CONCURRENCY = parseInt(process.env.LLM_CONCURRENCY) || 6;
+// Limit concurrent LLM API calls. Keys are consumed round-robin (llm_common.mjs), so this
+// is budgeted against the key pool: at 6, a 55-symbol market (~110 chunks) ran in ~19 serial
+// rounds and pushed `news:us` past 10 minutes. Raise further only if the pool grows; a
+// single-key setup should lower it to avoid rate limits.
+const LLM_CONCURRENCY = parseInt(process.env.LLM_CONCURRENCY) || 15;
 const llmLimiter = createLimiter(LLM_CONCURRENCY);
 
 // ─── 类型 taxonomy（与 lib/dictionaries.mjs 中规则严格一致） ────────────────
