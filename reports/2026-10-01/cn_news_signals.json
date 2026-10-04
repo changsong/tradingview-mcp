@@ -1,0 +1,647 @@
+{
+  "generated_at": "2026-10-01T06:30:56.786Z",
+  "market": "cn",
+  "source": "src/core/webNews.js",
+  "score_scale": "0-100 normalized (neutral=50)",
+  "window": {
+    "from": "2026-09-24",
+    "to": "2026-10-01",
+    "days": 7
+  },
+  "llm_used": true,
+  "performance": {
+    "totals_ms": {
+      "list_fetch_ms": 23166,
+      "enrichment_ms": 25039,
+      "relevance_ms": 0,
+      "llm_ms": 8384,
+      "report_write_ms": 13
+    },
+    "avg_ms": {
+      "list_fetch_ms": 2896,
+      "enrichment_ms": 3130,
+      "relevance_ms": 0,
+      "llm_ms": 1048,
+      "report_write_ms": 2
+    }
+  },
+  "stocks": {
+    "SZSE:301099": {
+      "name": "301099",
+      "score": 89,
+      "score_raw": 21.4,
+      "score_components": {
+        "positive_weight_sum": 21.4,
+        "negative_weight_sum": 0,
+        "news_effective_count": 10,
+        "news_dropped_count": 0
+      },
+      "signal": "⚠️ No Trade (情绪过热)",
+      "strategy": "情绪分过高但出现过热信号，等待回调低吸，不追高",
+      "suitable_for": "低吸(等回调)",
+      "confidence": "低(风险压制)",
+      "patterns": [
+        "情绪持续增强↑(trend)",
+        "⚠️情绪过热(单边乐观,注意回调)"
+      ],
+      "positive_factors": [
+        "[并购|w5.35] 2-1重大资产重组报告书(申报稿)(上海雅创电子集团股份有限公司)",
+        "[并购|w5.35] 雅创电子:雅创电子发行股份及支付现金购买资产并募集配套资金报告书(草案)摘要(修订稿)",
+        "[并购|w2.14] 3-2法律意见书(申报稿)(上海雅创电子集团股份有限公司)"
+      ],
+      "negative_factors": [],
+      "news_count": 10,
+      "news_dropped": 0,
+      "performance": {
+        "list_fetch_ms": 2925,
+        "candidate_filter_ms": 0,
+        "enrichment_ms": 5487,
+        "raw_news_count": 40,
+        "raw_research_count": 4,
+        "candidate_news_count": 10,
+        "candidate_research_count": 0,
+        "enriched_news_count": 10,
+        "enriched_research_count": 0,
+        "candidate_reasons": {
+          "news": {
+            "no-subject-mention": 12,
+            "noise:\\d{1,2}月\\d{1,2}日(快速上涨|快速回调|涨停|": 2,
+            "dedup": 0,
+            "out_of_window": 16
+          },
+          "research": {
+            "dedup": 0,
+            "out_of_window": 4
+          }
+        },
+        "date_filter_ms": 0,
+        "relevance_ms": 0,
+        "llm_ms": 6,
+        "scoring_ms": 0
+      },
+      "top_news": [
+        {
+          "date": "2026-09-30",
+          "title": "2-1重大资产重组报告书(申报稿)(上海雅创电子集团股份有限公司)",
+          "content": "",
+          "type": "并购",
+          "sentiment": 1,
+          "weight": 5,
+          "final_weight": 5.35,
+          "source_authority": 4.5,
+          "recency_factor": 0.85,
+          "source": "东方财富公告",
+          "llm_reviewed": true,
+          "llm_confidence": 0.9,
+          "llm_is_real_catalyst": true,
+          "llm_reasoning": "重大资产重组报告书申报稿，并购推进"
+        },
+        {
+          "date": "2026-09-30",
+          "title": "4-1本次重大资产重组涉及的拟购买资产最近两年及一期的财务报告和审计报告(确实无法提供的，应当说明原因及相关资产的财务状况和经营成果)(申报稿)(上海雅创电子集团股份有限公司)",
+          "content": "",
+          "type": "财报",
+          "sentiment": 0,
+          "weight": 2,
+          "final_weight": 1.99,
+          "source_authority": 4.5,
+          "recency_factor": 0.85,
+          "source": "东方财富公告",
+          "llm_reviewed": true,
+          "llm_confidence": 0.7,
+          "llm_is_real_catalyst": false,
+          "llm_reasoning": "拟购买资产财务审计报告，程序性"
+        },
+        {
+          "date": "2026-09-30",
+          "title": "3-2法律意见书(申报稿)(上海雅创电子集团股份有限公司)",
+          "content": "",
+          "type": "并购",
+          "sentiment": 1,
+          "weight": 2,
+          "final_weight": 2.14,
+          "source_authority": 4.5,
+          "recency_factor": 0.85,
+          "source": "东方财富公告",
+          "llm_reviewed": true,
+          "llm_confidence": 0.8,
+          "llm_is_real_catalyst": false,
+          "llm_reasoning": "重组法律意见书申报稿，程序推进"
+        },
+        {
+          "date": "2026-09-30",
+          "title": "4-2本次重大资产重组涉及的拟购买资产的评估报告及评估说明，或者估值报告(申报稿)(上海雅创电子集团股份有限公司)",
+          "content": "",
+          "type": "并购",
+          "sentiment": 1,
+          "weight": 2,
+          "final_weight": 2.14,
+          "source_authority": 4.5,
+          "recency_factor": 0.85,
+          "source": "东方财富公告",
+          "llm_reviewed": true,
+          "llm_confidence": 0.8,
+          "llm_is_real_catalyst": false,
+          "llm_reasoning": "拟购买资产评估报告申报稿，程序性"
+        },
+        {
+          "date": "2026-09-30",
+          "title": "3-1独立财务顾问报告(申报稿)(上海雅创电子集团股份有限公司)",
+          "content": "",
+          "type": "并购",
+          "sentiment": 1,
+          "weight": 2,
+          "final_weight": 2.14,
+          "source_authority": 4.5,
+          "recency_factor": 0.85,
+          "source": "东方财富公告",
+          "llm_reviewed": true,
+          "llm_confidence": 0.8,
+          "llm_is_real_catalyst": false,
+          "llm_reasoning": "独立财务顾问报告申报稿，程序推进"
+        }
+      ]
+    },
+    "SZSE:001389": {
+      "name": "001389",
+      "score": 84,
+      "score_raw": 12.86,
+      "score_components": {
+        "positive_weight_sum": 12.86,
+        "negative_weight_sum": 0,
+        "news_effective_count": 10,
+        "news_dropped_count": 0
+      },
+      "signal": "🟢 Long (强)",
+      "strategy": "多重利好共振，基本面+情绪双支撑，适合追涨或持有",
+      "suitable_for": "追涨 / 持有",
+      "confidence": "高",
+      "patterns": [],
+      "positive_factors": [
+        "[回购|w4.59] 广合科技:H股公告-建议采纳A股激励计划及H股激励计划",
+        "[回购|w4.59] 广合科技:2026年A股股票期权与限制性股票激励计划(草案)摘要",
+        "[回购|w1.84] 广合科技:上海市锦天城(深圳)律师事务所关于广州广合科技股份有限公司2026年股票期权与限制性股票激励计划的法律意见书"
+      ],
+      "negative_factors": [],
+      "news_count": 10,
+      "news_dropped": 0,
+      "performance": {
+        "list_fetch_ms": 2965,
+        "candidate_filter_ms": 0,
+        "enrichment_ms": 8095,
+        "raw_news_count": 40,
+        "raw_research_count": 10,
+        "candidate_news_count": 10,
+        "candidate_research_count": 0,
+        "enriched_news_count": 10,
+        "enriched_research_count": 0,
+        "candidate_reasons": {
+          "news": {
+            "no-subject-mention": 12,
+            "noise:\\d{1,2}月\\d{1,2}日(快速上涨|快速回调|涨停|": 2,
+            "dedup": 0,
+            "out_of_window": 16
+          },
+          "research": {
+            "dedup": 0,
+            "out_of_window": 10
+          }
+        },
+        "date_filter_ms": 0,
+        "relevance_ms": 0,
+        "llm_ms": 8358,
+        "scoring_ms": 0
+      },
+      "top_news": [
+        {
+          "date": "2026-09-30",
+          "title": "6-1发行人最近三年的财务报告及其审计报告以及最近一期的财务报告(申报稿)(广州广合科技股份有限公司)",
+          "content": "",
+          "type": "财报",
+          "sentiment": 0,
+          "weight": 1,
+          "final_weight": 0.99,
+          "source_authority": 4.5,
+          "recency_factor": 0.85,
+          "source": "东方财富公告",
+          "llm_reviewed": true,
+          "llm_confidence": 0.3,
+          "llm_is_real_catalyst": false,
+          "llm_reasoning": "发行申报稿财务报告，无具体数据"
+        },
+        {
+          "date": "2026-09-30",
+          "title": "3-3上市保荐书(申报稿)(广州广合科技股份有限公司)",
+          "content": "",
+          "type": "并购",
+          "sentiment": 0,
+          "weight": 1,
+          "final_weight": 1.07,
+          "source_authority": 4.5,
+          "recency_factor": 0.85,
+          "source": "东方财富公告",
+          "llm_reviewed": true,
+          "llm_confidence": 0.3,
+          "llm_is_real_catalyst": false,
+          "llm_reasoning": "上市保荐书申报稿，发行流程文件"
+        },
+        {
+          "date": "2026-09-30",
+          "title": "3-1证券发行保荐书(申报稿)(广州广合科技股份有限公司)",
+          "content": "",
+          "type": "并购",
+          "sentiment": 0,
+          "weight": 1,
+          "final_weight": 1.07,
+          "source_authority": 4.5,
+          "recency_factor": 0.85,
+          "source": "东方财富公告",
+          "llm_reviewed": true,
+          "llm_confidence": 0.3,
+          "llm_is_real_catalyst": false,
+          "llm_reasoning": "证券发行保荐书申报稿，无实质催化"
+        },
+        {
+          "date": "2026-09-30",
+          "title": "4-1法律意见书(申报稿)(广州广合科技股份有限公司)",
+          "content": "电力电子技术服务;智能机器系统技术服务;无人机系统技术服务;信息系统安全服务;电子元件及组件制造;印制电路板制造;货物进出口(专营专控商品除外)\n郑重声明：东方财富网发布此信息的目的在于传播更多信息，与本站立场无关。东方财富网不保证该信息（包括但不限于文字、视频、音频、数据及图表）全部或者部分内容的准确性、真实性、完整性、有效性、及时性、原创性等。相关信息并未经过本网站证实，不对您构成任何投资建议，据此操作，风险自担。",
+          "type": "并购",
+          "sentiment": 0,
+          "weight": 1,
+          "final_weight": 1.07,
+          "source_authority": 4.5,
+          "recency_factor": 0.85,
+          "source": "东方财富公告",
+          "llm_reviewed": true,
+          "llm_confidence": 0.3,
+          "llm_is_real_catalyst": false,
+          "llm_reasoning": "法律意见书申报稿，仅程序性文件"
+        },
+        {
+          "date": "2026-09-30",
+          "title": "1-1募集说明书(申报稿)(广州广合科技股份有限公司)",
+          "content": "",
+          "type": "并购",
+          "sentiment": 0,
+          "weight": 1,
+          "final_weight": 1.07,
+          "source_authority": 4.5,
+          "recency_factor": 0.85,
+          "source": "东方财富公告",
+          "llm_reviewed": true,
+          "llm_confidence": 0.35,
+          "llm_is_real_catalyst": false,
+          "llm_reasoning": "募集说明书申报稿，发行尚未获批"
+        }
+      ]
+    },
+    "SZSE:002636": {
+      "name": "002636",
+      "score": 50,
+      "score_raw": 0,
+      "score_components": {
+        "positive_weight_sum": 0,
+        "negative_weight_sum": 0
+      },
+      "signal": "⚪ No Trade (无数据)",
+      "strategy": "近期无相关有效新闻",
+      "suitable_for": "观望",
+      "confidence": "-",
+      "patterns": [],
+      "positive_factors": [],
+      "negative_factors": [],
+      "news_count": 0,
+      "news_dropped": 0,
+      "performance": {
+        "list_fetch_ms": 2977,
+        "candidate_filter_ms": 0,
+        "enrichment_ms": 0,
+        "raw_news_count": 40,
+        "raw_research_count": 6,
+        "candidate_news_count": 0,
+        "candidate_research_count": 0,
+        "enriched_news_count": 0,
+        "enriched_research_count": 0,
+        "candidate_reasons": {
+          "news": {
+            "no-subject-mention": 5,
+            "noise:融资净(买入|卖出)": 1,
+            "noise:\\d{1,2}月\\d{1,2}日(快速上涨|快速回调|涨停|": 1,
+            "dedup": 0,
+            "out_of_window": 33
+          },
+          "research": {
+            "dedup": 0,
+            "out_of_window": 6
+          }
+        },
+        "date_filter_ms": 0,
+        "relevance_ms": 0,
+        "llm_ms": 0,
+        "scoring_ms": 0
+      },
+      "top_news": []
+    },
+    "SSE:603259": {
+      "name": "603259",
+      "score": 50,
+      "score_raw": 0,
+      "score_components": {
+        "positive_weight_sum": 0,
+        "negative_weight_sum": 0,
+        "news_effective_count": 3,
+        "news_dropped_count": 0
+      },
+      "signal": "⚪ No Trade (微多)",
+      "strategy": "情绪轻微偏多，信号不足，以观望为主",
+      "suitable_for": "观望",
+      "confidence": "低",
+      "patterns": [],
+      "positive_factors": [],
+      "negative_factors": [],
+      "news_count": 3,
+      "news_dropped": 0,
+      "performance": {
+        "list_fetch_ms": 2461,
+        "candidate_filter_ms": 2,
+        "enrichment_ms": 3827,
+        "raw_news_count": 40,
+        "raw_research_count": 10,
+        "candidate_news_count": 3,
+        "candidate_research_count": 0,
+        "enriched_news_count": 3,
+        "enriched_research_count": 0,
+        "candidate_reasons": {
+          "news": {
+            "no-subject-mention": 17,
+            "noise:龙虎榜|大宗交易|盘口异动": 2,
+            "noise:融资净(买入|卖出)": 1,
+            "dedup": 0,
+            "out_of_window": 17
+          },
+          "research": {
+            "dedup": 0,
+            "out_of_window": 10
+          }
+        },
+        "date_filter_ms": 0,
+        "relevance_ms": 0,
+        "llm_ms": 10,
+        "scoring_ms": 1
+      },
+      "top_news": [
+        {
+          "date": "2026-09-30",
+          "title": "药明康德:无锡药明康德新药开发股份有限公司章程(2026年第二次修订)",
+          "content": "开发研究及报批新药,医药中间体和精细化工产品(不含危险化学品)的研发;医药科技、生物技术、组合化学、有机化学、医疗科技、检测技术、计算机科技的技术开发、技术转让、技术服务和技术咨询;一类医疗器械、药品的批发,机械设备及零配件的销售;自营和代理各类商品及技术的进出口业务(国家限定企业经营或禁止进出口的商品和技术除外);企业管理咨询、医药信息咨询、健康咨询(不含诊疗活动、心理咨询);房屋租赁;会议及展览服务;利用自有资金对外投资。(依法须经批准的项目,经相关部门批准后方可开展经营活动)\n郑重声明：东方财富网发布此信息的目的在于传播更多信息，与本站立场无关。东方财富网不保证该信息（包括但不限于文字、视频、音频、数据及图表）全部或者部分内容的准确性、真实性、完整性、有效性、及时性、原创性等。相关信息并未经过本网站证实，不对您构成任何投资建议，据此操作，风险自担。",
+          "type": "政策",
+          "sentiment": 0,
+          "weight": 1,
+          "final_weight": 0.92,
+          "source_authority": 4.5,
+          "recency_factor": 0.85,
+          "source": "东方财富公告",
+          "llm_reviewed": true,
+          "llm_confidence": 0.2,
+          "llm_is_real_catalyst": false,
+          "llm_reasoning": "章程修订例行公告，无实质催化"
+        },
+        {
+          "date": "2026-09-30",
+          "title": "药明康德:国浩律师(上海)事务所关于无锡药明康德新药开发股份有限公司2026年第一次临时股东会的法律意见书",
+          "content": "",
+          "type": "政策",
+          "sentiment": 0,
+          "weight": 1,
+          "final_weight": 0.92,
+          "source_authority": 4.5,
+          "recency_factor": 0.85,
+          "source": "东方财富公告",
+          "llm_reviewed": true,
+          "llm_confidence": 0.15,
+          "llm_is_real_catalyst": false,
+          "llm_reasoning": "律师法律意见书，程序性文件"
+        },
+        {
+          "date": "2026-09-30",
+          "title": "药明康德:2026年第一次临时股东会决议公告",
+          "content": "开发研究及报批新药,医药中间体和精细化工产品(不含危险化学品)的研发;医药科技、生物技术、组合化学、有机化学、医疗科技、检测技术、计算机科技的技术开发、技术转让、技术服务和技术咨询;一类医疗器械、药品的批发,机械设备及零配件的销售;自营和代理各类商品及技术的进出口业务(国家限定企业经营或禁止进出口的商品和技术除外);企业管理咨询、医药信息咨询、健康咨询(不含诊疗活动、心理咨询);房屋租赁;会议及展览服务;利用自有资金对外投资。(依法须经批准的项目,经相关部门批准后方可开展经营活动)\n郑重声明：东方财富网发布此信息的目的在于传播更多信息，与本站立场无关。东方财富网不保证该信息（包括但不限于文字、视频、音频、数据及图表）全部或者部分内容的准确性、真实性、完整性、有效性、及时性、原创性等。相关信息并未经过本网站证实，不对您构成任何投资建议，据此操作，风险自担。",
+          "type": "政策",
+          "sentiment": 0,
+          "weight": 1,
+          "final_weight": 0.92,
+          "source_authority": 4.5,
+          "recency_factor": 0.85,
+          "source": "东方财富公告",
+          "llm_reviewed": true,
+          "llm_confidence": 0.2,
+          "llm_is_real_catalyst": false,
+          "llm_reasoning": "临时股东会决议，例行程序无影响"
+        }
+      ]
+    },
+    "SZSE:300684": {
+      "name": "300684",
+      "score": 50,
+      "score_raw": 0,
+      "score_components": {
+        "positive_weight_sum": 0,
+        "negative_weight_sum": 0,
+        "news_effective_count": 1,
+        "news_dropped_count": 0
+      },
+      "signal": "⚪ No Trade (微多)",
+      "strategy": "情绪轻微偏多，信号不足，以观望为主",
+      "suitable_for": "观望",
+      "confidence": "低",
+      "patterns": [],
+      "positive_factors": [],
+      "negative_factors": [],
+      "news_count": 1,
+      "news_dropped": 0,
+      "performance": {
+        "list_fetch_ms": 3014,
+        "candidate_filter_ms": 0,
+        "enrichment_ms": 7630,
+        "raw_news_count": 40,
+        "raw_research_count": 10,
+        "candidate_news_count": 1,
+        "candidate_research_count": 0,
+        "enriched_news_count": 1,
+        "enriched_research_count": 0,
+        "candidate_reasons": {
+          "news": {
+            "no-subject-mention": 10,
+            "noise:\\d{1,2}月\\d{1,2}日(快速上涨|快速回调|涨停|": 3,
+            "noise:融资净(买入|卖出)": 1,
+            "dedup": 0,
+            "out_of_window": 25
+          },
+          "research": {
+            "dedup": 0,
+            "out_of_window": 10
+          }
+        },
+        "date_filter_ms": 0,
+        "relevance_ms": 0,
+        "llm_ms": 10,
+        "scoring_ms": 1
+      },
+      "top_news": [
+        {
+          "date": "2026-09-30",
+          "title": "中石科技:关于控股股东、实际控制人及其一致行动人协议转让公司部分股份完成过户登记的公告",
+          "content": "",
+          "type": "并购",
+          "sentiment": 0,
+          "weight": 2,
+          "final_weight": 2.14,
+          "source_authority": 4.5,
+          "recency_factor": 0.85,
+          "source": "东方财富公告",
+          "llm_reviewed": true,
+          "llm_confidence": 0.55,
+          "llm_is_real_catalyst": false,
+          "llm_reasoning": "控股股东协议转让完成过户，方向不明"
+        }
+      ]
+    },
+    "SZSE:301529": {
+      "name": "301529",
+      "score": 50,
+      "score_raw": 0,
+      "score_components": {
+        "positive_weight_sum": 0,
+        "negative_weight_sum": 0
+      },
+      "signal": "⚪ No Trade (无数据)",
+      "strategy": "近期无相关有效新闻",
+      "suitable_for": "观望",
+      "confidence": "-",
+      "patterns": [],
+      "positive_factors": [],
+      "negative_factors": [],
+      "news_count": 0,
+      "news_dropped": 0,
+      "performance": {
+        "list_fetch_ms": 2989,
+        "candidate_filter_ms": 0,
+        "enrichment_ms": 0,
+        "raw_news_count": 40,
+        "raw_research_count": 2,
+        "candidate_news_count": 0,
+        "candidate_research_count": 0,
+        "enriched_news_count": 0,
+        "enriched_research_count": 0,
+        "candidate_reasons": {
+          "news": {
+            "no-subject-mention": 8,
+            "noise:\\d{1,2}月\\d{1,2}日(快速上涨|快速回调|涨停|": 4,
+            "dedup": 0,
+            "out_of_window": 28
+          },
+          "research": {
+            "dedup": 0,
+            "out_of_window": 2
+          }
+        },
+        "date_filter_ms": 0,
+        "relevance_ms": 0,
+        "llm_ms": 0,
+        "scoring_ms": 0
+      },
+      "top_news": []
+    },
+    "SZSE:300623": {
+      "name": "300623",
+      "score": 50,
+      "score_raw": 0,
+      "score_components": {
+        "positive_weight_sum": 0,
+        "negative_weight_sum": 0
+      },
+      "signal": "⚪ No Trade (无数据)",
+      "strategy": "近期无相关有效新闻",
+      "suitable_for": "观望",
+      "confidence": "-",
+      "patterns": [],
+      "positive_factors": [],
+      "negative_factors": [],
+      "news_count": 0,
+      "news_dropped": 0,
+      "performance": {
+        "list_fetch_ms": 3006,
+        "candidate_filter_ms": 0,
+        "enrichment_ms": 0,
+        "raw_news_count": 40,
+        "raw_research_count": 10,
+        "candidate_news_count": 0,
+        "candidate_research_count": 0,
+        "enriched_news_count": 0,
+        "enriched_research_count": 0,
+        "candidate_reasons": {
+          "news": {
+            "no-subject-mention": 2,
+            "dedup": 0,
+            "out_of_window": 38
+          },
+          "research": {
+            "dedup": 0,
+            "out_of_window": 10
+          }
+        },
+        "date_filter_ms": 0,
+        "relevance_ms": 0,
+        "llm_ms": 0,
+        "scoring_ms": 0
+      },
+      "top_news": []
+    },
+    "SZSE:002741": {
+      "name": "002741",
+      "score": 50,
+      "score_raw": 0,
+      "score_components": {
+        "positive_weight_sum": 0,
+        "negative_weight_sum": 0
+      },
+      "signal": "⚪ No Trade (无数据)",
+      "strategy": "近期无相关有效新闻",
+      "suitable_for": "观望",
+      "confidence": "-",
+      "patterns": [],
+      "positive_factors": [],
+      "negative_factors": [],
+      "news_count": 0,
+      "news_dropped": 0,
+      "performance": {
+        "list_fetch_ms": 2829,
+        "candidate_filter_ms": 0,
+        "enrichment_ms": 0,
+        "raw_news_count": 40,
+        "raw_research_count": 10,
+        "candidate_news_count": 0,
+        "candidate_research_count": 0,
+        "enriched_news_count": 0,
+        "enriched_research_count": 0,
+        "candidate_reasons": {
+          "news": {
+            "no-subject-mention": 8,
+            "noise:融资净(买入|卖出)": 1,
+            "dedup": 0,
+            "out_of_window": 31
+          },
+          "research": {
+            "dedup": 0,
+            "out_of_window": 10
+          }
+        },
+        "date_filter_ms": 0,
+        "relevance_ms": 0,
+        "llm_ms": 0,
+        "scoring_ms": 0
+      },
+      "top_news": []
+    }
+  }
+}

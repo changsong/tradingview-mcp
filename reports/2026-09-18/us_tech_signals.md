@@ -1,38 +1,55 @@
+---
+AIGC:
+    Label: "1"
+    ContentProducer: 001191440300708461136T1XGW3
+    ProduceID: 96e0402ca683a23de686ac6d805202d6_417897e4b35f11f185dc525400de85a5
+    ReservedCode1: TCgCCuOSZvhC0coNblQrJEoskBHohYHhoCo+bbLLDQmy9YvcDVtiWtnArpIaJB8gbqtYvqeXdmA8RvoA4b+6Q+LFKCxOllBml5HAWCnz+HgxyCAR9N1oTMO5scSKCf3IcYnrwaXCEDEG+1x+nEC1onU4ee+DfT244SfCkb9WVgpmzZpoGqzGNgpO4c8=
+    ContentPropagator: 001191440300708461136T1XGW3
+    PropagateID: 96e0402ca683a23de686ac6d805202d6_417897e4b35f11f185dc525400de85a5
+    ReservedCode2: TCgCCuOSZvhC0coNblQrJEoskBHohYHhoCo+bbLLDQmy9YvcDVtiWtnArpIaJB8gbqtYvqeXdmA8RvoA4b+6Q+LFKCxOllBml5HAWCnz+HgxyCAR9N1oTMO5scSKCf3IcYnrwaXCEDEG+1x+nEC1onU4ee+DfT244SfCkb9WVgpmzZpoGqzGNgpO4c8=
+---
+
 # US Stock Multi-Timeframe Analysis — Best Entry Tomorrow (v2)
-**Date:** 2026-09-17  |  **TF Weights:** 1W(25%) + 1D(40%) + 4H(25%) + 1H(10%)
-**Candidates:** 27  |  **Sources:** us_selected.txt + us_news_signals.md + SPY benchmark
+**Date:** 2026-09-18  |  **TF Weights:** 1W(25%) + 1D(40%) + 4H(25%) + 1H(10%)
+**Candidates:** 33  |  **Sources:** us_selected.txt + us_news_signals.md + SPY benchmark
 
 ## Summary Ranking
 
 | # | Symbol | Name | Tech (1W/1D/4H/1H) | Align | ADX | RS | R/R | News | Final | Bias | Conf | Type | Chase | SQZMOM | Risk |
 |---|--------|------|--------------------|-------|-----|----|----|------|-------|------|------|------|-------|--------|------|
-| 1 | **NYSE:SPNT** | NYSE:SPNT | +61.6 (53/86/41/37) | 2/4 (50%) | 10⚠ | +5.7 | 1.6 | +50 | **+67.6** | **Long** | **Medium** | Breakout (Squeeze Release) | NO | WAIT | RESIST CHOP |
-| 2 | **NYSE:LTC** | NYSE:LTC | +54.6 (33/63/67/44) | 4/4 (100%) | 27.6 | +9.4 | - | +50 | **+64.6** | **Strong Long** | **High** | Trend Follow (HH/HL Intact) | NO | WAIT | RESIST |
-| 3 | **NYSE:BAP** | NYSE:BAP | +57.4 (20/75/65/61) | 2/4 (50%) | 10.8⚠ | +5.2 | 6.8 | +50 | **+63.4** | **Long** | **Low** | Breakout (Squeeze Release) | NO | UNKNOWN | RESIST CHOP |
-| 4 | **NASDAQ:HRMY** | NASDAQ:HRMY | +46.8 (32/59/46/37) | 3/4 (75%) | 42.2★ | +10.5 | 1 | +50 | **+53.8** | **Strong Long** | **Low** | Pullback Buy (Near Support) | NO | UNKNOWN | RESIST MOM-DECAY POOR-RR |
-| 5 | **NASDAQ:PLTR** | NASDAQ:PLTR | +41.1 (24/43/45/66) | 3/4 (75%) | 21.7 | +3.4 | 4.6 | +57 | **+51.1** | **Strong Long** | **Low** | Pullback Buy (Near Support) | NO | WAIT | RESIST MOM-DECAY |
-| 6 | **NASDAQ:BGC** | NASDAQ:BGC | +50.2 (47/41/70/45) | 3/4 (75%) | 13.3⚠ | +11.8 | 0.5 | +52 | **+47.2** | **Long** | **Low** | Pullback Buy (Near Support) | NO | UNKNOWN | RESIST CHOP BEAR-DIV POOR-RR |
-| 7 | **NYSE:DELL** | NYSE:DELL | +39.2 (35/35/45/52) | 4/4 (100%) | 16.8⚠ | +21.9 | - | +50 | **+45.2** | **Long** | **Medium** | Trend Follow (HH/HL Intact) | NO | UNKNOWN | RESIST CHOP |
-| 8 | **NASDAQ:AMD** | NASDAQ:AMD | +41.9 (48/39/45/30) | 3/4 (75%) | 12.3⚠ | +7.5 | 0.3 | +50 | **+44.9** | **Long** | **Low** | Pullback Buy (Near Support) | NO | UNKNOWN | RESIST CHOP POOR-RR |
-| 9 | **NYSE:HGTY** | NYSE:HGTY | +43.4 (31/52/-/40) | 2/3 (67%) | 25.6 | +10.3 | 0 | +50 | **+44.4** | **Long** | **Low** | Breakout (Squeeze Release) | NO | UNKNOWN | RESIST BEAR-DIV POOR-RR |
-| 10 | **NYSE:HG** | NYSE:HG | +41.4 (26/46/32/85) | 1/4 (25%) | 15.3⚠ | +1.5 | 0.1 | +50 | **+44.4** | **Long** | **Low** | Breakout (Squeeze Release) | NO | UNKNOWN | RESIST MOM-DECAY CHOP POOR-RR |
-| 11 | **NYSE:DT** | NYSE:DT | +45.4 (31/54/43/53) | 4/4 (100%) | 16.9⚠ | +13.8 | - | +54 | **+41.4** | **Long** | **Medium** | Trend Follow (HH/HL Intact) | NO | UNKNOWN | FAKE-BRK RESIST CHOP |
-| 12 | **NYSE:LYB** | NYSE:LYB | +38.3 (35/24/66/34) | 4/4 (100%) | 15.4⚠ | +1.1 | 0 | +46 | **+41.3** | **Long** | **Low** | Pullback Buy (Near Support) | NO | UNKNOWN | RESIST MOM-DECAY CHOP POOR-RR |
-| 13 | **NYSE:SM** | NYSE:SM | +38.4 (31/46/32/42) | 1/4 (25%) | 26.8 | +9.3 | 0 | +50 | **+39.4** | **Long** | **Low** | Trend Follow (HH/HL Intact) | NO | WAIT | RESIST BEAR-DIV POOR-RR |
-| 14 | **NASDAQ:NBN** | NASDAQ:NBN | +35 (29/34/43/34) | 2/4 (50%) | 10.2⚠ | -0.1 | 0.5 | +50 | **+38** | **Long** | **Low** | Pullback Buy (Near Support) | NO | UNKNOWN | RESIST CHOP POOR-RR |
-| 15 | **NYSE:ANET** | NYSE:ANET | +33.8 (39/26/34/51) | 4/4 (100%) | 13.9⚠ | +4 | 0.3 | +50 | **+36.8** | **Long** | **Low** | Breakout (Squeeze Release) | NO | UNKNOWN | RESIST MOM-DECAY CHOP POOR-RR |
-| 16 | **NYSE:HPE** | NYSE:HPE | +31.3 (46/29/25/19) | 2/4 (50%) | 12.7⚠ | +3.5 | 1 | +67 | **+34.3** | **Long** | **Medium** | Trend Continuation | NO | UNKNOWN | CHOP POOR-RR |
-| 17 | **NYSE:BE** | NYSE:BE | +27.3 (6/48/11/38) | 4/4 (100%) | 16.8⚠ | +30.9 | 7.3 | +75 | **+33.3** | **Long** | **Medium** | Pullback Buy (Near Support) | NO | UNKNOWN | CHOP |
-| 18 | **NYSE:CF** | NYSE:CF | +22.4 (17/33/14/14) | 1/4 (25%) | 22.6 | +12 | 0.1 | +43 | **+29.4** | **Strong Long** | **Low** | Reversal (Bullish RSI Divergence) | NO | WAIT | RESIST MOM-DECAY POOR-RR |
-| 19 | **OTC:SMNEY** | OTC:SMNEY | +40.1 (11/46/48/69) | 4/4 (100%) | 24.2 | +25.3 | - | +50 | **+28.1** | **Long** | **Medium** | Trend Follow (HH/HL Intact) | NO | UNKNOWN | BULL-TRAP FAKE-BRK RESIST |
-| 20 | **NASDAQ:PGY** | NASDAQ:PGY | +24.8 (21/18/38/28) | 0/4 (0%) | 16.3⚠ | +8.2 | 0.5 | +62 | **+27.8** | **Long** | **Low** | Pullback Buy (Near Support) | NO | WAIT | RESIST MOM-DECAY CHOP POOR-RR |
-| 21 | **AMEX:CET** | AMEX:CET | +24.1 (32/16/34/12) | 1/4 (25%) | 19⚠ | +3.3 | 0.3 | +50 | **+27.1** | **Long** | **Low** | Pullback Buy (Near Support) | NO | WAIT | RESIST CHOP POOR-RR |
-| 22 | **NASDAQ:LITE** | NASDAQ:LITE | +23.9 (38/16/12/50) | 2/4 (50%) | 10.3⚠ | +7 | 0.1 | +52 | **+26.9** | **Long** | **Low** | Trend Follow (HH/HL Intact) | NO | UNKNOWN | RESIST MOM-DECAY CHOP POOR-RR |
-| 23 | **OTC:SMTGY** | OTC:SMTGY | +22 (17/27/18/24) | 4/4 (100%) | 11.3⚠ | +16.1 | 0.3 | +50 | **+25** | **Long** | **Low** | Trend Continuation | NO | WAIT | RESIST CHOP POOR-RR |
-| 24 | **NASDAQ:CRWD** | NASDAQ:CRWD | +33.9 (43/38/20/29) | 3/4 (75%) | 19.1⚠ | +15.1 | - | +56 | **+23.9** | **Long** | **Low** | Trend Follow (HH/HL Intact) | NO | UNKNOWN | FAKE-BRK RESIST CHOP BEAR-DIV |
-| 25 | **NASDAQ:PANW** | NASDAQ:PANW | +18.2 (18/12/20/39) | 3/4 (75%) | 18⚠ | +2.1 | 0.2 | +66 | **+21.2** | **Long** | **Low** | Trend Continuation | NO | UNKNOWN | RESIST CHOP POOR-RR |
-| 26 | **NASDAQ:AAPL** | NASDAQ:AAPL | +22.4 (18/17/31/33) | 3/4 (75%) | 15⚠ | +9 | 0.2 | +50 | **+19.4** | **Long** | **Low** | Pullback Buy (Near Support) | NO | UNKNOWN | RESIST CHOP BEAR-DIV POOR-RR |
-| 27 | **NASDAQ:GEN** | NASDAQ:GEN | +14.7 (13/10/11/47) | 1/4 (25%) | 16.5⚠ | +12.6 | 0.6 | +50 | **+11.7** | **Long** | **Low** | Pullback Buy (Near Support) | NO | WAIT | RESIST MOM-DECAY CHOP BEAR-DIV POOR-RR |
+| 1 | **NYSE:SPNT** | NYSE:SPNT | +64.6 (-/72/-/35) | 1/2 (50%) | 9.4⚠ | +5.3 | 1.9 | +50 | **+70.6** | **Long** | **Low** | Breakout (Squeeze Release) | NO | UNKNOWN | RESIST CHOP |
+| 2 | **NASDAQ:HRMY** | NASDAQ:HRMY | +47.2 (38/53/-/-) | 2/2 (100%) | 42.7★ | +7.9 | 0.4 | +50 | **+54.2** | **Strong Long** | **Medium** | Trend Follow (HH/HL Intact) | NO | UNKNOWN | RESIST POOR-RR |
+| 3 | **NYSE:BAP** | NYSE:BAP | +50.5 (15/69/-/65) | 3/3 (100%) | 10.1⚠ | +4.9 | 0.6 | +58 | **+53.5** | **Long** | **Low** | Breakout (Squeeze Release) | NO | UNKNOWN | RESIST CHOP POOR-RR |
+| 4 | **NYSE:LTC** | NYSE:LTC | +53 (33/65/-/55) | 3/3 (100%) | 28.9 | +8.8 | - | +50 | **+53** | **Long** | **High** | Trend Follow (HH/HL Intact) | NO | WAIT | FAKE-BRK RESIST |
+| 5 | **NYSE:ASX** | NYSE:ASX | +49.9 (45/51/47/65) | 4/4 (100%) | 10.4⚠ | +13 | 0.3 | +62 | **+52.9** | **Long** | **Low** | Pullback Buy (Near Support) | NO | UNKNOWN | RESIST CHOP POOR-RR |
+| 6 | **OTC:HTHIY** | OTC:HTHIY | +49.4 (-/47/-/59) | 2/2 (100%) | 15.6⚠ | +7.1 | 0.1 | +50 | **+52.4** | **Long** | **Low** | Pullback Buy (Near Support) | NO | UNKNOWN | RESIST CHOP POOR-RR |
+| 7 | **NASDAQ:PLTR** | NASDAQ:PLTR | +40.7 (29/47/42/41) | 4/4 (100%) | 21.4 | +1.4 | 2 | +67 | **+50.7** | **Strong Long** | **Medium** | Pullback Buy (Near Support) | NO | WAIT | RESIST MOM-DECAY |
+| 8 | **NASDAQ:TEM** | NASDAQ:TEM | +39.7 (30/53/31/32) | 3/4 (75%) | 28.2 | +32 | 2.3 | +62 | **+49.7** | **Strong Long** | **High** | Overextended Chase (High Risk) | NO | UNKNOWN | OVERHEAT |
+| 9 | **NYSE:DT** | NYSE:DT | +41.1 (33/47/30/65) | 4/4 (100%) | 17.8⚠ | +13.4 | - | +66 | **+47.1** | **Long** | **Medium** | Trend Follow (HH/HL Intact) | NO | UNKNOWN | RESIST CHOP |
+| 10 | **NASDAQ:AMD** | NASDAQ:AMD | +41.3 (43/41/39/44) | 4/4 (100%) | 13.5⚠ | +17.7 | 0 | +67 | **+44.3** | **Long** | **Low** | Trend Follow (HH/HL Intact) | NO | UNKNOWN | RESIST CHOP POOR-RR |
+| 11 | **NASDAQ:NBN** | NASDAQ:NBN | +38 (-/45/-/10) | 0/2 (0%) | 9.8⚠ | +2.9 | 1.9 | +50 | **+44** | **Long** | **Low** | Pullback Buy (Near Support) | NO | UNKNOWN | RESIST CHOP |
+| 12 | **NYSE:CF** | NYSE:CF | +36.5 (23/49/30/-) | 3/3 (100%) | 21.9 | +13.3 | 0.4 | +58 | **+43.5** | **Strong Long** | **Low** | Reversal (Bullish RSI Divergence) | NO | WAIT | RESIST MOM-DECAY POOR-RR |
+| 13 | **NASDAQ:SMCI** | NASDAQ:SMCI | +35.2 (9/56/27/38) | 3/4 (75%) | 23.2 | +11.1 | 0.3 | +50 | **+42.2** | **Strong Long** | **Low** | Breakout (Squeeze Release) | NO | UNKNOWN | RESIST MOM-DECAY POOR-RR |
+| 14 | **NYSE:ANET** | NYSE:ANET | +38.4 (30/36/49/42) | 3/4 (75%) | 14.4⚠ | +7.9 | 0.1 | +87 | **+41.4** | **Long** | **Low** | Breakout (Squeeze Release) | NO | UNKNOWN | RESIST MOM-DECAY CHOP POOR-RR |
+| 15 | **NYSE:HGTY** | NYSE:HGTY | +34 (-/37/-/22) | 1/2 (50%) | 24.7 | +8.4 | 0 | +50 | **+41** | **Strong Long** | **Medium** | Breakout (Squeeze Release) | NO | WAIT | RESIST POOR-RR |
+| 16 | **NYSE:HG** | NYSE:HG | +35.8 (26/42/-/-) | 0/2 (0%) | 15.7⚠ | +3 | 0.1 | +50 | **+38.8** | **Long** | **Low** | Breakout (Squeeze Release) | NO | UNKNOWN | RESIST MOM-DECAY CHOP POOR-RR |
+| 17 | **OTC:SMNEY** | OTC:SMNEY | +50.6 (-/46/-/69) | 2/2 (100%) | 24.2 | +24.4 | - | +50 | **+38.6** | **Long** | **Medium** | Trend Follow (HH/HL Intact) | NO | UNKNOWN | BULL-TRAP FAKE-BRK RESIST |
+| 18 | **NYSE:TSM** | NYSE:TSM | +33.3 (27/35/38/30) | 3/4 (75%) | 8.8⚠ | +5.2 | 0.5 | +62 | **+36.3** | **Long** | **Low** | Pullback Buy (Near Support) | NO | UNKNOWN | RESIST MOM-DECAY CHOP POOR-RR |
+| 19 | **NYSE:DELL** | NYSE:DELL | +36.2 (35/30/39/57) | 4/4 (100%) | 18.5⚠ | +35.3 | - | +66 | **+32.2** | **Long** | **Low** | Overextended Chase (High Risk) | NO | UNKNOWN | OVERHEAT FAKE-BRK RESIST CHOP |
+| 20 | **NASDAQ:QCOM** | NASDAQ:QCOM | +34.8 (20/47/34/25) | 3/4 (75%) | 23.6 | +17.4 | 0.5 | +63 | **+31.8** | **Long** | **Medium** | Trend Follow (HH/HL Intact) | NO | UNKNOWN | FAKE-BRK RESIST POOR-RR |
+| 21 | **NASDAQ:CRWD** | NASDAQ:CRWD | +36.2 (43/34/35/31) | 3/4 (75%) | 20.3 | +22.7 | - | +76 | **+30.2** | **Long** | **Medium** | Trend Follow (HH/HL Intact) | NO | UNKNOWN | FAKE-BRK RESIST BEAR-DIV |
+| 22 | **OTC:SMTGY** | OTC:SMTGY | +27 (-/27/-/-) | 1/1 (100%) | 11.3⚠ | +15.2 | 0.3 | +50 | **+30** | **Long** | **Low** | Trend Continuation | NO | WAIT | RESIST CHOP POOR-RR |
+| 23 | **NYSE:LYB** | NYSE:LYB | +26.5 (39/15/31/30) | 1/4 (25%) | 14.5⚠ | -1.9 | 0.1 | +56 | **+29.5** | **Long** | **Low** | Pullback Buy (Near Support) | NO | UNKNOWN | RESIST MOM-DECAY CHOP POOR-RR |
+| 24 | **AMEX:CET** | AMEX:CET | +26.2 (-/30/-/11) | 1/2 (50%) | 19.5⚠ | +2.7 | 0.2 | +50 | **+29.2** | **Long** | **Low** | Pullback Buy (Near Support) | NO | UNKNOWN | RESIST CHOP POOR-RR |
+| 25 | **NASDAQ:BGC** | NASDAQ:BGC | +30.5 (33/30/-/26) | 1/3 (33%) | 12.5⚠ | +11.9 | 0.2 | +50 | **+27.5** | **Long** | **Low** | Pullback Buy (Near Support) | NO | WAIT | RESIST MOM-DECAY CHOP BEAR-DIV POOR-RR |
+| 26 | **NYSE:P** | NYSE:P | +23.7 (20/-3/70/-) | 3/3 (100%) | 15.2⚠ | -6.3 | 0.7 | +85 | **+26.7** | **Long** | **Low** | Trend Continuation | NO | UNKNOWN | MOM-DECAY CHOP POOR-RR |
+| 27 | **NYSE:HPE** | NYSE:HPE | +32.2 (45/27/25/39) | 4/4 (100%) | 13.1⚠ | +15.7 | 0.1 | +67 | **+25.2** | **Long** | **Low** | Trend Continuation | NO | UNKNOWN | FAKE-BRK RESIST CHOP POOR-RR |
+| 28 | **NASDAQ:LITE** | NASDAQ:LITE | +21.1 (38/16/8/32) | 2/4 (50%) | 10.3⚠ | +8.8 | 0.1 | +58 | **+24.1** | **Long** | **Low** | Trend Follow (HH/HL Intact) | NO | WAIT | RESIST MOM-DECAY CHOP POOR-RR |
+| 29 | **NASDAQ:MU** | NASDAQ:MU | +19 (27/20/0/42) | 2/4 (50%) | 9.4⚠ | +5.2 | 0.2 | +53 | **+22** | **Long** | **Low** | Trend Continuation | NO | UNKNOWN | RESIST MOM-DECAY CHOP POOR-RR |
+| 30 | **NASDAQ:PANW** | NASDAQ:PANW | +18.9 (18/18/14/37) | 3/4 (75%) | 17.7⚠ | +5.1 | 0.3 | +78 | **+21.9** | **Long** | **Low** | Trend Continuation | NO | UNKNOWN | RESIST CHOP POOR-RR |
+| 31 | **NYSE:BE** | NYSE:BE | +23.4 (6/22/32/51) | 4/4 (100%) | 17.5⚠ | +36.7 | 0.2 | +44 | **+16.4** | **Long** | **Low** | Overextended Chase (High Risk) | NO | UNKNOWN | OVERHEAT FAKE-BRK RESIST CHOP POOR-RR |
+| 32 | **NASDAQ:AAPL** | NASDAQ:AAPL | +26.3 (23/17/33/55) | 4/4 (100%) | 15.8⚠ | +7.2 | 0.4 | +55 | **+13.3** | **Long** | **Low** | Trend Follow (HH/HL Intact) | NO | UNKNOWN | FAKE-BRK RESIST CHOP BEAR-DIV POOR-RR |
+| 33 | **NASDAQ:GEN** | NASDAQ:GEN | +11.9 (-/11/6/30) | 0/3 (0%) | 16.2⚠ | +10.5 | 1.6 | +50 | **+11.9** | **Long** | **Low** | Pullback Buy (Near Support) | NO | WAIT | RESIST MOM-DECAY CHOP BEAR-DIV |
 
 ---
 
@@ -40,19 +57,19 @@
 
 ### 1. NYSE:SPNT (NYSE:SPNT)
 
-News: +50 (Neutral)  |  Confidence: **Medium**
+News: +50 (Neutral)  |  Confidence: **Low**
 
 **Multi-TF Scores:**
-- 1W: 53 | 1D: 86 | 4H: 41 | 1H: 37 | **Composite: 61.6** | **Adj: 57.6** | **Final: 67.6**
-- Trend Alignment: 1W↑ 1D→ 4H↑ 1H→  →  **2/4 (50%)**
+- 1W: N/A | 1D: 72 | 4H: N/A | 1H: 35 | **Composite: 64.6** | **Adj: 60.6** | **Final: 70.6**
+- Trend Alignment: 1W:N/A 1D→ 4H:N/A 1H↑  →  **1/2 (50%)**
 
 **[TRADE SIGNAL]**
-- Conclusion: **Long** (Medium)
+- Conclusion: **Long** (Low)
 - Type: Breakout (Squeeze Release)
 - Chase OK: **NO**
-- SQZMOM: WAIT
-- Stop / Target: 23.64 / 25  (R/R: 1.6)
-- Key Risks: Near resistance / 52W high; Choppy market (ADX 10)
+- SQZMOM: UNKNOWN
+- Stop / Target: 23.62 / 25  (R/R: 1.9)
+- Key Risks: Near resistance / 52W high; OBV diverging (distribution); Choppy market (ADX 9.4)
 - Bull Trap: No
 - Fake Breakout: No
 - Reversal Setup: No
@@ -63,26 +80,26 @@ News: +50 (Neutral)  |  Confidence: **Medium**
 **1D Key Indicators:**
 | Indicator | Value | Status |
 |-----------|-------|--------|
-| Price | 24.47 | — |
-| ATR Stop / Target | 23.64 / 25 | R/R: 1.6 |
-| ADX(14) | 10 (+DI:21 -DI:20.2) | CHOP |
-| RS vs SPY | +5.7% | Leader |
-| EMA20 Distance | 0.9% | Dip zone |
-| RSI(14) | 54.9 | Healthy |
-| Stoch RSI | 26.6 | Mid |
+| Price | 24.43 | — |
+| ATR Stop / Target | 23.62 / 25 | R/R: 1.9 |
+| ADX(14) | 9.4 (+DI:19.6 -DI:18.9) | CHOP |
+| RS vs SPY | +5.3% | Leader |
+| EMA20 Distance | 0.7% | Dip zone |
+| RSI(14) | 54.2 | Healthy |
+| Stoch RSI | 20.4 | Mid |
 | RSI Divergence | None | — |
-| MACD hist | 0.0373 | Down |
-| Squeeze | COMPRESSED (1 bars) | Coiling |
-| BB Width% | 5.9% | Normal |
-| ATR% | 2.3% | Normal |
-| Volume Ratio | 1.8x | Surge |
+| MACD hist | 0.0239 | Down |
+| Squeeze | COMPRESSED (2 bars) | Coiling |
+| BB Width% | 5.1% | Normal |
+| ATR% | 2.2% | Normal |
+| Volume Ratio | 1.1x | Normal |
 | Volume Climax | No | - |
-| OBV | up | Inflow |
-| Returns 3d/5d/10d/20d | 1.1/0.9/0.2/3.9% | ★ accelerating |
+| OBV | down | Outflow |
+| Returns 3d/5d/10d/20d | -0.8/0.3/0.5/4.5% | - |
 | EMA Bull Stack | NO | — |
 | Above EMA200 | YES | — |
 | HH/HL | YES | — |
-| Range pos (20-bar) | 67.3% | Mid |
+| Range pos (20-bar) | 65.2% | Mid |
 | Support / tests | 24.13 (5 tests) | Near |
 | Resistance | 25 | NEAR |
 
@@ -90,43 +107,176 @@ News: +50 (Neutral)  |  Confidence: **Medium**
 - Above EMA200 (+8)
 - EMA200 rising (+4)
 - HH/HL uptrend (+5) ★
-- Near EMA20 dip zone (0.9%, +5) ★
-- ADX 10 CHOP — trend signals halved
-- RSI 54.9 healthy (+8)
+- Near EMA20 dip zone (0.7%, +5) ★
+- ADX 9.4 CHOP — trend signals halved
+- RSI 54.2 healthy (+8)
 - MACD hist positive (+4)
 - SQUEEZE compression — pre-breakout (+18) ★★★
 - Volume expanding (+8)
-- Vol 1.8x surge (+5)
-- OBV rising — inflow (+4)
-- Return accel 3d:1.1% 5d:0.9% (+5) ★
 - Near support (5 tests) +12 ★★
 - Near resistance (-8)
-- R/R 1.6 acceptable (+2)
-- RS +5.7% leading market (+6) ★
+- R/R 1.9 acceptable (+2)
+- RS +5.3% leading market (+6) ★
 
-**1W:** EMA stack=Y | HH/HL=Y | RSI=57.8 | ADX=23.3 | Squeeze=Y | Score=53
-**4H:** RSI=53.7 | MACD=- | ADX=14.5 | Vol=1.4x | Score=41
-**1H:** RSI=52.8 | MACD=- | Score=37
+**1H:** RSI=50.9 | MACD=- | Score=35
 
 ---
 
-### 2. NYSE:LTC (NYSE:LTC)
+### 2. NASDAQ:HRMY (NASDAQ:HRMY)
+
+News: +50 (Neutral)  |  Confidence: **Medium**
+
+**Multi-TF Scores:**
+- 1W: 38 | 1D: 53 | 4H: N/A | 1H: N/A | **Composite: 47.2** | **Adj: 44.2** | **Final: 54.2**
+- Trend Alignment: 1W↑ 1D↑ 4H:N/A 1H:N/A  →  **2/2 (100%)**
+
+**[TRADE SIGNAL]**
+- Conclusion: **Strong Long** (Medium)
+- Type: Trend Follow (HH/HL Intact)
+- Chase OK: **NO**
+- SQZMOM: UNKNOWN
+- Stop / Target: 40.93 / 43.49  (R/R: 0.4)
+- Key Risks: Near resistance / 52W high; Poor R/R (0.4) — wait for pullback
+- Bull Trap: No
+- Fake Breakout: No
+- Reversal Setup: No
+- Choppy Market: No
+- Bearish Divergence: No
+- Poor R/R: **YES**
+
+**1D Key Indicators:**
+| Indicator | Value | Status |
+|-----------|-------|--------|
+| Price | 42.74 | — |
+| ATR Stop / Target | 40.93 / 43.49 | R/R: 0.4 |
+| ADX(14) | 42.7 (+DI:31.1 -DI:10.8) | VERY STRONG |
+| RS vs SPY | +7.9% | Leader |
+| EMA20 Distance | 4.4% | Normal |
+| RSI(14) | 65.6 | Healthy |
+| Stoch RSI | 63.4 | Mid |
+| RSI Divergence | None | — |
+| MACD hist | 0.0087 | GOLDEN CROSS |
+| Squeeze | Released | - |
+| BB Width% | 15.3% | Normal |
+| ATR% | 2.8% | Normal |
+| Volume Ratio | 0.7x | Normal |
+| Volume Climax | No | - |
+| OBV | up | Inflow |
+| Returns 3d/5d/10d/20d | 2.9/4/-0.3/7% | - |
+| EMA Bull Stack | YES | — |
+| Above EMA200 | YES | — |
+| HH/HL | YES | — |
+| Range pos (20-bar) | 87.5% | High |
+| Support / tests | 40.92 (0 tests) | - |
+| Resistance | 43.49 | NEAR |
+
+**1D Signal Detail:**
+- EMA bull alignment (+12)
+- Above EMA200 (+8)
+- EMA200 rising (+4)
+- HH/HL uptrend (+10) ★
+- ADX 42.7 trend up (+6)
+- ADX 42.7 VERY STRONG (+3) ★
+- RSI 65.6 healthy (+8)
+- MACD golden cross (+12) ★
+- OBV rising — inflow (+4)
+- Near resistance (-8)
+- Near 52W high (-4)
+- R/R 0.4 poor entry (-8)
+- RS +7.9% leading market (+6) ★
+
+**1W:** EMA stack=Y | HH/HL=Y | RSI=69.4 | ADX=25.9 | Squeeze=N | Score=38
+
+---
+
+### 3. NYSE:BAP (NYSE:BAP)
+
+News: +58 (Neutral)  |  Confidence: **Low**
+
+**Multi-TF Scores:**
+- 1W: 15 | 1D: 69 | 4H: N/A | 1H: 65 | **Composite: 50.5** | **Adj: 43.5** | **Final: 53.5**
+- Trend Alignment: 1W↑ 1D↑ 4H:N/A 1H↑  →  **3/3 (100%)**
+
+**[TRADE SIGNAL]**
+- Conclusion: **Long** (Low)
+- Type: Breakout (Squeeze Release)
+- Chase OK: **NO**
+- SQZMOM: UNKNOWN
+- Stop / Target: 370.24 / 385.97  (R/R: 0.6)
+- Key Risks: Near resistance / 52W high; Choppy market (ADX 10.1); Poor R/R (0.6) — wait for pullback
+- Bull Trap: No
+- Fake Breakout: No
+- Reversal Setup: No
+- Choppy Market: **YES (ADX low)**
+- Bearish Divergence: No
+- Poor R/R: **YES**
+
+**1D Key Indicators:**
+| Indicator | Value | Status |
+|-----------|-------|--------|
+| Price | 383.96 | — |
+| ATR Stop / Target | 370.24 / 385.97 | R/R: 0.6 |
+| ADX(14) | 10.1 (+DI:18 -DI:18.3) | CHOP |
+| RS vs SPY | +4.9% | Outperform |
+| EMA20 Distance | 1.4% | Dip zone |
+| RSI(14) | 54.6 | Healthy |
+| Stoch RSI | 100 | Overbought |
+| RSI Divergence | None | — |
+| MACD hist | 0.8232 | Up |
+| Squeeze | COMPRESSED (12 bars) | Fully coiled |
+| BB Width% | 5.5% | Normal |
+| ATR% | 2.4% | Normal |
+| Volume Ratio | 1x | Normal |
+| Volume Climax | No | - |
+| OBV | up | Inflow |
+| Returns 3d/5d/10d/20d | 2.1/1.2/1.2/4.1% | ★ accelerating |
+| EMA Bull Stack | YES | — |
+| Above EMA200 | YES | — |
+| HH/HL | NO | — |
+| Range pos (20-bar) | 86.3% | High |
+| Support / tests | 380.43 (3 tests) | Near |
+| Resistance | 385.97 | NEAR |
+
+**1D Signal Detail:**
+- EMA bull alignment (+6 chop-disc)
+- Above EMA200 (+8)
+- EMA200 rising (+4)
+- Near EMA20 dip zone (1.4%, +5) ★
+- ADX 10.1 CHOP — trend signals halved
+- RSI 54.6 healthy (+8)
+- MACD hist accelerating (+10)
+- Stoch RSI 100 overbought (-4)
+- SQUEEZE compression — pre-breakout (+18) ★★★
+- Squeeze 12 bars — fully coiled (+6) ★
+- OBV rising — inflow (+4)
+- Return accel 3d:2.1% 5d:1.2% (+5) ★
+- Near support (3 tests) +12 ★★
+- Near resistance (-8)
+- R/R 0.6 poor entry (-8)
+- RS +4.9% beating market (+3)
+
+**1W:** EMA stack=Y | HH/HL=N | RSI=58.6 | ADX=20.4 | Squeeze=N | Score=15
+**1H:** RSI=59.6 | MACD=+ | Score=65
+
+---
+
+### 4. NYSE:LTC (NYSE:LTC)
 
 News: +50 (Neutral)  |  Confidence: **High**
 
 **Multi-TF Scores:**
-- 1W: 33 | 1D: 63 | 4H: 67 | 1H: 44 | **Composite: 54.6** | **Adj: 54.6** | **Final: 64.6**
-- Trend Alignment: 1W↑ 1D↑ 4H↑ 1H↑  →  **4/4 (100%)**
+- 1W: 33 | 1D: 65 | 4H: N/A | 1H: 55 | **Composite: 53** | **Adj: 43** | **Final: 53**
+- Trend Alignment: 1W↑ 1D↑ 4H:N/A 1H↑  →  **3/3 (100%)**
 
 **[TRADE SIGNAL]**
-- Conclusion: **Strong Long** (High)
+- Conclusion: **Long** (High)
 - Type: Trend Follow (HH/HL Intact)
 - Chase OK: **NO**
 - SQZMOM: WAIT
-- Stop / Target: 41.73 / -  (R/R: -)
-- Key Risks: Near resistance / 52W high
+- Stop / Target: 42.15 / -  (R/R: -)
+- Key Risks: Fake breakout: high range + low volume
 - Bull Trap: No
-- Fake Breakout: No
+- Fake Breakout: **YES**
 - Reversal Setup: No
 - Choppy Market: No
 - Bearish Divergence: No
@@ -135,26 +285,26 @@ News: +50 (Neutral)  |  Confidence: **High**
 **1D Key Indicators:**
 | Indicator | Value | Status |
 |-----------|-------|--------|
-| Price | 43.08 | — |
-| ATR Stop / Target | 41.73 / - | R/R: - |
-| ADX(14) | 27.6 (+DI:26.6 -DI:9.9) | Trending |
-| RS vs SPY | +9.4% | Leader |
-| EMA20 Distance | 3.3% | Normal |
-| RSI(14) | 64.6 | Healthy |
-| Stoch RSI | 75.4 | Mid |
+| Price | 43.5 | — |
+| ATR Stop / Target | 42.15 / - | R/R: - |
+| ADX(14) | 28.9 (+DI:25.3 -DI:9.4) | Trending |
+| RS vs SPY | +8.8% | Leader |
+| EMA20 Distance | 3.9% | Normal |
+| RSI(14) | 67 | Healthy |
+| Stoch RSI | 89.4 | Overbought |
 | RSI Divergence | None | — |
-| MACD hist | 0.1823 | Down |
+| MACD hist | 0.1838 | Up |
 | Squeeze | Released | - |
-| BB Width% | 9.6% | Normal |
+| BB Width% | 10.1% | Normal |
 | ATR% | 2.1% | Normal |
 | Volume Ratio | 1.1x | Normal |
 | Volume Climax | No | - |
 | OBV | up | Inflow |
-| Returns 3d/5d/10d/20d | 1.9/1.2/4.1/7.7% | ★ accelerating |
+| Returns 3d/5d/10d/20d | 2/2.4/4.6/7.9% | ★ accelerating |
 | EMA Bull Stack | YES | — |
 | Above EMA200 | YES | — |
 | HH/HL | YES | — |
-| Range pos (20-bar) | 86.2% | High |
+| Range pos (20-bar) | 97.1% | High |
 | Support / tests | 40.82 (0 tests) | - |
 | Resistance | - | - |
 
@@ -163,381 +313,35 @@ News: +50 (Neutral)  |  Confidence: **High**
 - Above EMA200 (+8)
 - EMA200 rising (+4)
 - HH/HL uptrend (+10) ★
-- ADX 27.6 trend up (+6)
-- RSI 64.6 healthy (+8)
-- MACD hist positive (+4)
-- OBV rising — inflow (+4)
-- Return accel 3d:1.9% 5d:1.2% (+5) ★
-- Near 52W high (-4)
-- RS +9.4% leading market (+6) ★
-
-**1W:** EMA stack=Y | HH/HL=Y | RSI=65.9 | ADX=16 | Squeeze=N | Score=33
-**4H:** RSI=65.6 | MACD=+ | ADX=35.1 | Vol=0.8x | Score=67
-**1H:** RSI=55.7 | MACD=- | Score=44
-
----
-
-### 3. NYSE:BAP (NYSE:BAP)
-
-News: +50 (Neutral)  |  Confidence: **Low**
-
-**Multi-TF Scores:**
-- 1W: 20 | 1D: 75 | 4H: 65 | 1H: 61 | **Composite: 57.4** | **Adj: 53.4** | **Final: 63.4**
-- Trend Alignment: 1W↑ 1D→ 4H→ 1H↑  →  **2/4 (50%)**
-
-**[TRADE SIGNAL]**
-- Conclusion: **Long** (Low)
-- Type: Breakout (Squeeze Release)
-- Chase OK: **NO**
-- SQZMOM: UNKNOWN
-- Stop / Target: 367.22 / 385.97  (R/R: 6.8)
-- Key Risks: Near resistance / 52W high; OBV diverging (distribution); Choppy market (ADX 10.8)
-- Bull Trap: No
-- Fake Breakout: No
-- Reversal Setup: No
-- Choppy Market: **YES (ADX low)**
-- Bearish Divergence: No
-- Poor R/R: No
-
-**1D Key Indicators:**
-| Indicator | Value | Status |
-|-----------|-------|--------|
-| Price | 381.14 | — |
-| ATR Stop / Target | 367.22 / 385.97 | R/R: 6.8 |
-| ADX(14) | 10.8 (+DI:19.2 -DI:19.5) | CHOP |
-| RS vs SPY | +5.2% | Leader |
-| EMA20 Distance | 0.8% | Dip zone |
-| RSI(14) | 52.4 | Healthy |
-| Stoch RSI | 88.6 | Overbought |
-| RSI Divergence | None | — |
-| MACD hist | 0.4424 | Up |
-| Squeeze | COMPRESSED (11 bars) | Fully coiled |
-| BB Width% | 5.5% | Normal |
-| ATR% | 2.4% | Normal |
-| Volume Ratio | 1.6x | Surge |
-| Volume Climax | No | - |
-| OBV | down | Outflow |
-| Returns 3d/5d/10d/20d | 0.9/1.5/2.3/3.4% | - |
-| EMA Bull Stack | NO | — |
-| Above EMA200 | YES | — |
-| HH/HL | NO | — |
-| Range pos (20-bar) | 73.8% | Mid |
-| Support / tests | 380.43 (3 tests) | Near |
-| Resistance | 385.97 | NEAR |
-
-**1D Signal Detail:**
-- Above EMA200 (+8)
-- EMA200 rising (+4)
-- Near EMA20 dip zone (0.8%, +5) ★
-- ADX 10.8 CHOP — trend signals halved
-- RSI 52.4 healthy (+8)
+- ADX 28.9 trend up (+6)
+- RSI 67 healthy (+8)
 - MACD hist accelerating (+10)
-- Stoch RSI 88.6 overbought (-4)
-- SQUEEZE compression — pre-breakout (+18) ★★★
-- Squeeze 11 bars — fully coiled (+6) ★
-- Vol 1.6x surge (+5)
-- Near support (3 tests) +12 ★★
-- Near resistance (-8)
-- R/R 6.8 excellent (+5) ★
-- RS +5.2% leading market (+6) ★
-
-**1W:** EMA stack=Y | HH/HL=N | RSI=57.7 | ADX=20.4 | Squeeze=N | Score=20
-**4H:** RSI=55 | MACD=+ ✕ | ADX=20.1 | Vol=1.8x | Score=65
-**1H:** RSI=55.7 | MACD=+ | Score=61
-
----
-
-### 4. NASDAQ:HRMY (NASDAQ:HRMY)
-
-News: +50 (Neutral)  |  Confidence: **Low**
-
-**Multi-TF Scores:**
-- 1W: 32 | 1D: 59 | 4H: 46 | 1H: 37 | **Composite: 46.8** | **Adj: 43.8** | **Final: 53.8**
-- Trend Alignment: 1W↑ 1D↑ 4H↑ 1H→  →  **3/4 (75%)**
-
-**[TRADE SIGNAL]**
-- Conclusion: **Strong Long** (Low)
-- Type: Pullback Buy (Near Support)
-- Chase OK: **NO**
-- SQZMOM: UNKNOWN
-- Stop / Target: 40.41 / 43.49  (R/R: 1)
-- Key Risks: Near resistance / 52W high; Momentum decay; Poor R/R (1) — wait for pullback
-- Bull Trap: No
-- Fake Breakout: No
-- Reversal Setup: No
-- Choppy Market: No
-- Bearish Divergence: No
-- Poor R/R: **YES**
-
-**1D Key Indicators:**
-| Indicator | Value | Status |
-|-----------|-------|--------|
-| Price | 42.21 | — |
-| ATR Stop / Target | 40.41 / 43.49 | R/R: 1 |
-| ADX(14) | 42.2 (+DI:32.8 -DI:11.4) | VERY STRONG |
-| RS vs SPY | +10.5% | Leader |
-| EMA20 Distance | 3.6% | Normal |
-| RSI(14) | 63.2 | Healthy |
-| Stoch RSI | 46 | Mid |
-| RSI Divergence | None | — |
-| MACD hist | -0.0135 | Down |
-| Squeeze | Released | - |
-| BB Width% | 14.8% | Normal |
-| ATR% | 2.8% | Normal |
-| Volume Ratio | 1.8x | Surge |
-| Volume Climax | No | - |
-| OBV | up | Inflow |
-| Returns 3d/5d/10d/20d | 1.7/1.4/2.3/8.7% | ★ accelerating |
-| EMA Bull Stack | YES | — |
-| Above EMA200 | YES | — |
-| HH/HL | YES | — |
-| Range pos (20-bar) | 78.7% | Mid |
-| Support / tests | 40.92 (1 tests) | Near |
-| Resistance | 43.49 | NEAR |
-
-**1D Signal Detail:**
-- EMA bull alignment (+12)
-- Above EMA200 (+8)
-- EMA200 rising (+4)
-- HH/HL uptrend (+10) ★
-- ADX 42.2 trend up (+6)
-- ADX 42.2 VERY STRONG (+3) ★
-- RSI 63.2 healthy (+8)
-- MACD hist negative (-6)
-- Vol 1.8x surge (+5)
+- Stoch RSI 89.4 overbought (-4)
 - OBV rising — inflow (+4)
-- Return accel 3d:1.7% 5d:1.4% (+5) ★
-- Near support (1 test) +6 ★
-- Near resistance (-8)
+- Return accel 3d:2% 5d:2.4% (+5) ★
 - Near 52W high (-4)
-- RS +10.5% leading market (+6) ★
+- RS +8.8% leading market (+6) ★
 
-**1W:** EMA stack=Y | HH/HL=Y | RSI=68.5 | ADX=25.9 | Squeeze=N | Score=32
-**4H:** RSI=58 | MACD=- | ADX=39.8 | Vol=1.3x | Score=46
-**1H:** RSI=53.6 | MACD=+ | Score=37
-
----
-
-### 5. NASDAQ:PLTR (NASDAQ:PLTR)
-
-News: +57 (Neutral)  |  Confidence: **Low**
-
-**Multi-TF Scores:**
-- 1W: 24 | 1D: 43 | 4H: 45 | 1H: 66 | **Composite: 41.1** | **Adj: 41.1** | **Final: 51.1**
-- Trend Alignment: 1W↑ 1D↑ 4H↑ 1H→  →  **3/4 (75%)**
-
-**[TRADE SIGNAL]**
-- Conclusion: **Strong Long** (Low)
-- Type: Pullback Buy (Near Support)
-- Chase OK: **NO**
-- SQZMOM: WAIT
-- Stop / Target: 163.42 / 174.57  (R/R: 4.6)
-- Key Risks: Near resistance / 52W high; Momentum decay; OBV diverging (distribution)
-- Bull Trap: No
-- Fake Breakout: No
-- Reversal Setup: No
-- Choppy Market: No
-- Bearish Divergence: No
-- Poor R/R: No
-
-**1D Key Indicators:**
-| Indicator | Value | Status |
-|-----------|-------|--------|
-| Price | 174.34 | — |
-| ATR Stop / Target | 163.42 / 174.57 | R/R: 4.6 |
-| ADX(14) | 21.7 (+DI:27.4 -DI:21.7) | Weak |
-| RS vs SPY | +3.4% | Outperform |
-| EMA20 Distance | 1.5% | Dip zone |
-| RSI(14) | 54.5 | Healthy |
-| Stoch RSI | 30 | Mid |
-| RSI Divergence | None | — |
-| MACD hist | -2.0073 | Up |
-| Squeeze | Released | - |
-| BB Width% | 13.7% | Normal |
-| ATR% | 4.2% | High risk |
-| Volume Ratio | 0.7x | Normal |
-| Volume Climax | No | - |
-| OBV | down | Outflow |
-| Returns 3d/5d/10d/20d | 4.3/2.8/-3.1/1.6% | - |
-| EMA Bull Stack | YES | — |
-| Above EMA200 | YES | — |
-| HH/HL | NO | — |
-| Range pos (20-bar) | 41.1% | Mid |
-| Support / tests | 174.29 (4 tests) | Near |
-| Resistance | 174.57 | NEAR |
-
-**1D Signal Detail:**
-- EMA bull alignment (+12)
-- Above EMA200 (+8)
-- EMA200 rising (+4)
-- Near EMA20 dip zone (1.5%, +5) ★
-- RSI 54.5 healthy (+8)
-- MACD hist negative (-6)
-- Near support (4 tests) +12 ★★
-- Near resistance (-8)
-- R/R 4.6 excellent (+5) ★
-- RS +3.4% beating market (+3)
-
-**1W:** EMA stack=Y | HH/HL=Y | RSI=58.5 | ADX=21.4 | Squeeze=N | Score=24
-**4H:** RSI=52 | MACD=+ | ADX=16.6 | Vol=0.6x | Score=45
-**1H:** RSI=57.1 | MACD=+ ✕ | Score=66
+**1W:** EMA stack=Y | HH/HL=Y | RSI=67 | ADX=16 | Squeeze=N | Score=33
+**1H:** RSI=63.4 | MACD=+ | Score=55
 
 ---
 
-### 6. NASDAQ:BGC (NASDAQ:BGC)
+### 5. NYSE:ASX (NYSE:ASX)
 
-News: +52 (Neutral)  |  Confidence: **Low**
-
-**Multi-TF Scores:**
-- 1W: 47 | 1D: 41 | 4H: 70 | 1H: 45 | **Composite: 50.2** | **Adj: 37.2** | **Final: 47.2**
-- Trend Alignment: 1W↑ 1D↑ 4H↑ 1H→  →  **3/4 (75%)**
-
-**[TRADE SIGNAL]**
-- Conclusion: **Long** (Low)
-- Type: Pullback Buy (Near Support)
-- Chase OK: **NO**
-- SQZMOM: UNKNOWN
-- Stop / Target: 11.65 / 12.35  (R/R: 0.5)
-- Key Risks: Near resistance / 52W high; Weekly LH structure; Choppy market (ADX 13.3); Bearish RSI divergence — momentum exhaustion; Poor R/R (0.5) — wait for pullback
-- Bull Trap: No
-- Fake Breakout: No
-- Reversal Setup: No
-- Choppy Market: **YES (ADX low)**
-- Bearish Divergence: **YES**
-- Poor R/R: **YES**
-
-**1D Key Indicators:**
-| Indicator | Value | Status |
-|-----------|-------|--------|
-| Price | 12.18 | — |
-| ATR Stop / Target | 11.65 / 12.35 | R/R: 0.5 |
-| ADX(14) | 13.3 (+DI:20.7 -DI:19.8) | CHOP |
-| RS vs SPY | +11.8% | Leader |
-| EMA20 Distance | 2.2% | Dip zone |
-| RSI(14) | 60.5 | Healthy |
-| Stoch RSI | 44.2 | Mid |
-| RSI Divergence | BEARISH ⚠ | — |
-| MACD hist | 0.0003 | Down |
-| Squeeze | Released | - |
-| BB Width% | 12.9% | Normal |
-| ATR% | 2.9% | Normal |
-| Volume Ratio | 1.4x | Normal |
-| Volume Climax | No | - |
-| OBV | up | Inflow |
-| Returns 3d/5d/10d/20d | 0.1/-0.1/1.6/10% | - |
-| EMA Bull Stack | YES | — |
-| Above EMA200 | YES | — |
-| HH/HL | YES | — |
-| Range pos (20-bar) | 81.4% | High |
-| Support / tests | 11.85 (2 tests) | Near |
-| Resistance | 12.35 | NEAR |
-
-**1D Signal Detail:**
-- EMA bull alignment (+6 chop-disc)
-- Above EMA200 (+8)
-- EMA200 rising (+4)
-- HH/HL uptrend (+5) ★
-- Near EMA20 dip zone (2.2%, +5) ★
-- ADX 13.3 CHOP — trend signals halved
-- RSI 60.5 healthy (+8)
-- MACD hist positive (+4)
-- Bearish RSI divergence (-10) ★★
-- Volume expanding (+8)
-- OBV rising — inflow (+4)
-- Near support (2 tests) +9 ★★
-- Near resistance (-8)
-- R/R 0.5 poor entry (-8)
-- RS +11.8% leading market (+6) ★
-
-**1W:** EMA stack=Y | HH/HL=N | RSI=60.6 | ADX=17.1 | Squeeze=Y | Score=47
-**4H:** RSI=55.8 | MACD=- | ADX=12.1 | Vol=2.5x | Score=70
-**1H:** RSI=52.8 | MACD=- | Score=45
-
----
-
-### 7. NYSE:DELL (NYSE:DELL)
-
-News: +50 (Neutral)  |  Confidence: **Medium**
+News: +62 (Mid Long)  |  Confidence: **Low**
 
 **Multi-TF Scores:**
-- 1W: 35 | 1D: 35 | 4H: 45 | 1H: 52 | **Composite: 39.2** | **Adj: 35.2** | **Final: 45.2**
+- 1W: 45 | 1D: 51 | 4H: 47 | 1H: 65 | **Composite: 49.9** | **Adj: 42.9** | **Final: 52.9**
 - Trend Alignment: 1W↑ 1D↑ 4H↑ 1H↑  →  **4/4 (100%)**
 
 **[TRADE SIGNAL]**
-- Conclusion: **Long** (Medium)
-- Type: Trend Follow (HH/HL Intact)
-- Chase OK: **NO**
-- SQZMOM: UNKNOWN
-- Stop / Target: 509.95 / -  (R/R: -)
-- Key Risks: Near resistance / 52W high; Choppy market (ADX 16.8)
-- Bull Trap: No
-- Fake Breakout: No
-- Reversal Setup: No
-- Choppy Market: **YES (ADX low)**
-- Bearish Divergence: No
-- Poor R/R: No
-
-**1D Key Indicators:**
-| Indicator | Value | Status |
-|-----------|-------|--------|
-| Price | 563.29 | — |
-| ATR Stop / Target | 509.95 / - | R/R: - |
-| ADX(14) | 16.8 (+DI:32.8 -DI:15.5) | CHOP |
-| RS vs SPY | +21.9% | Leader |
-| EMA20 Distance | 11.7% | Normal |
-| RSI(14) | 63.3 | Healthy |
-| Stoch RSI | 84.8 | Overbought |
-| RSI Divergence | None | — |
-| MACD hist | 6.2349 | Up |
-| Squeeze | Released | - |
-| BB Width% | 37.7% | Normal |
-| ATR% | 6.3% | High risk |
-| Volume Ratio | 1.4x | Normal |
-| Volume Climax | No | - |
-| OBV | up | Inflow |
-| Returns 3d/5d/10d/20d | -0.7/5.2/32.5/20.2% | - |
-| EMA Bull Stack | YES | — |
-| Above EMA200 | YES | — |
-| HH/HL | YES | — |
-| Range pos (20-bar) | 91.3% | High |
-| Support / tests | 506.25 (0 tests) | - |
-| Resistance | - | - |
-
-**1D Signal Detail:**
-- EMA bull alignment (+6 chop-disc)
-- Above EMA200 (+8)
-- EMA200 rising (+4)
-- HH/HL uptrend (+5) ★
-- ADX 16.8 CHOP — trend signals halved
-- RSI 63.3 healthy (+8)
-- MACD hist accelerating (+10)
-- Stoch RSI 84.8 overbought (-4)
-- ATR 6.3% high risk (-8)
-- OBV rising — inflow (+4)
-- Near 52W high (-4)
-- RS +21.9% leading market (+6) ★
-
-**1W:** EMA stack=Y | HH/HL=Y | RSI=74.1 | ADX=55.2 | Squeeze=N | Score=35
-**4H:** RSI=63.4 | MACD=+ | ADX=29.8 | Vol=0.7x | Score=45
-**1H:** RSI=56.8 | MACD=+ | Score=52
-
----
-
-### 8. NASDAQ:AMD (NASDAQ:AMD)
-
-News: +50 (Neutral)  |  Confidence: **Low**
-
-**Multi-TF Scores:**
-- 1W: 48 | 1D: 39 | 4H: 45 | 1H: 30 | **Composite: 41.9** | **Adj: 34.9** | **Final: 44.9**
-- Trend Alignment: 1W↑ 1D↑ 4H↑ 1H→  →  **3/4 (75%)**
-
-**[TRADE SIGNAL]**
 - Conclusion: **Long** (Low)
 - Type: Pullback Buy (Near Support)
 - Chase OK: **NO**
 - SQZMOM: UNKNOWN
-- Stop / Target: 482.27 / 517.35  (R/R: 0.3)
-- Key Risks: Near resistance / 52W high; Choppy market (ADX 12.3); Poor R/R (0.3) — wait for pullback
+- Stop / Target: 37.61 / 40.31  (R/R: 0.3)
+- Key Risks: Near resistance / 52W high; Choppy market (ADX 10.4); Poor R/R (0.3) — wait for pullback
 - Bull Trap: No
 - Fake Breakout: No
 - Reversal Setup: No
@@ -548,233 +352,300 @@ News: +50 (Neutral)  |  Confidence: **Low**
 **1D Key Indicators:**
 | Indicator | Value | Status |
 |-----------|-------|--------|
-| Price | 512.5 | — |
-| ATR Stop / Target | 482.27 / 517.35 | R/R: 0.3 |
-| ADX(14) | 12.3 (+DI:33.3 -DI:22.4) | CHOP |
-| RS vs SPY | +7.5% | Leader |
-| EMA20 Distance | 4.3% | Normal |
-| RSI(14) | 56.1 | Healthy |
-| Stoch RSI | 75.4 | Mid |
+| Price | 39.99 | — |
+| ATR Stop / Target | 37.61 / 40.31 | R/R: 0.3 |
+| ADX(14) | 10.4 (+DI:30.1 -DI:22.4) | CHOP |
+| RS vs SPY | +13% | Leader |
+| EMA20 Distance | 4.5% | Normal |
+| RSI(14) | 56.6 | Healthy |
+| Stoch RSI | 63.1 | Mid |
 | RSI Divergence | None | — |
-| MACD hist | 4.8564 | Up |
+| MACD hist | 0.0907 | GOLDEN CROSS |
 | Squeeze | Released | - |
-| BB Width% | 17.2% | Normal |
-| ATR% | 3.9% | Normal |
-| Volume Ratio | 1.3x | Normal |
-| Volume Climax | No | - |
-| OBV | up | Inflow |
-| Returns 3d/5d/10d/20d | -0.7/-1.6/11.5/5.8% | - |
-| EMA Bull Stack | YES | — |
-| Above EMA200 | YES | — |
-| HH/HL | NO | — |
-| Range pos (20-bar) | 83% | High |
-| Support / tests | 498.15 (2 tests) | Near |
-| Resistance | 517.35 | NEAR |
-
-**1D Signal Detail:**
-- EMA bull alignment (+6 chop-disc)
-- Above EMA200 (+8)
-- EMA200 rising (+4)
-- ADX 12.3 CHOP — trend signals halved
-- RSI 56.1 healthy (+8)
-- MACD hist accelerating (+10)
-- OBV rising — inflow (+4)
-- Near support (2 tests) +9 ★★
-- Near resistance (-8)
-- R/R 0.3 poor entry (-8)
-- RS +7.5% leading market (+6) ★
-
-**1W:** EMA stack=Y | HH/HL=Y | RSI=61 | ADX=26.8 | Squeeze=Y | Score=48
-**4H:** RSI=57.7 | MACD=+ | ADX=17.2 | Vol=1.1x | Score=45
-**1H:** RSI=52.9 | MACD=+ | Score=30
-
----
-
-### 9. NYSE:HGTY (NYSE:HGTY)
-
-News: +50 (Neutral)  |  Confidence: **Low**
-
-**Multi-TF Scores:**
-- 1W: 31 | 1D: 52 | 4H: N/A | 1H: 40 | **Composite: 43.4** | **Adj: 34.4** | **Final: 44.4**
-- Trend Alignment: 1W↑ 1D↑ 4H:N/A 1H→  →  **2/3 (67%)**
-
-**[TRADE SIGNAL]**
-- Conclusion: **Long** (Low)
-- Type: Breakout (Squeeze Release)
-- Chase OK: **NO**
-- SQZMOM: UNKNOWN
-- Stop / Target: 13.04 / 13.93  (R/R: 0)
-- Key Risks: Near resistance / 52W high; Bearish RSI divergence — momentum exhaustion; Poor R/R (0) — wait for pullback
-- Bull Trap: No
-- Fake Breakout: No
-- Reversal Setup: No
-- Choppy Market: No
-- Bearish Divergence: **YES**
-- Poor R/R: **YES**
-
-**1D Key Indicators:**
-| Indicator | Value | Status |
-|-----------|-------|--------|
-| Price | 13.9 | — |
-| ATR Stop / Target | 13.04 / 13.93 | R/R: 0 |
-| ADX(14) | 25.6 (+DI:24.9 -DI:18.4) | Trending |
-| RS vs SPY | +10.3% | Leader |
-| EMA20 Distance | 3.7% | Normal |
-| RSI(14) | 65 | Healthy |
-| Stoch RSI | 71.8 | Mid |
-| RSI Divergence | BEARISH ⚠ | — |
-| MACD hist | 0.023 | Up |
-| Squeeze | COMPRESSED (11 bars) | Fully coiled |
-| BB Width% | 9% | Normal |
-| ATR% | 4.1% | High risk |
-| Volume Ratio | 0.5x | Dry |
-| Volume Climax | No | - |
-| OBV | up | Inflow |
-| Returns 3d/5d/10d/20d | 2.6/4.8/5.9/8.5% | - |
-| EMA Bull Stack | YES | — |
-| Above EMA200 | YES | — |
-| HH/HL | NO | — |
-| Range pos (20-bar) | 87.5% | High |
-| Support / tests | 13.08 (0 tests) | - |
-| Resistance | 13.93 | NEAR |
-
-**1D Signal Detail:**
-- EMA bull alignment (+12)
-- Above EMA200 (+8)
-- EMA200 rising (+4)
-- LH downtrend (-8)
-- ADX 25.6 trend up (+6)
-- RSI 65 healthy (+8)
-- MACD hist accelerating (+10)
-- Bearish RSI divergence (-10) ★★
-- SQUEEZE compression — pre-breakout (+18) ★★★
-- Squeeze 11 bars — fully coiled (+6) ★
-- Volume expanding (+8)
-- OBV rising — inflow (+4)
-- Near resistance (-8)
-- Near 52W high (-4)
-- R/R 0 poor entry (-8)
-- RS +10.3% leading market (+6) ★
-
-**1W:** EMA stack=Y | HH/HL=Y | RSI=66.9 | ADX=23.1 | Squeeze=N | Score=31
-**1H:** RSI=56.2 | MACD=- | Score=40
-
----
-
-### 10. NYSE:HG (NYSE:HG)
-
-News: +50 (Neutral)  |  Confidence: **Low**
-
-**Multi-TF Scores:**
-- 1W: 26 | 1D: 46 | 4H: 32 | 1H: 85 | **Composite: 41.4** | **Adj: 34.4** | **Final: 44.4**
-- Trend Alignment: 1W→ 1D→ 4H→ 1H↑  →  **1/4 (25%)**
-
-**[TRADE SIGNAL]**
-- Conclusion: **Long** (Low)
-- Type: Breakout (Squeeze Release)
-- Chase OK: **NO**
-- SQZMOM: UNKNOWN
-- Stop / Target: 33.96 / 35.2  (R/R: 0.1)
-- Key Risks: Near resistance / 52W high; Momentum decay; Choppy market (ADX 15.3); Poor R/R (0.1) — wait for pullback
-- Bull Trap: No
-- Fake Breakout: No
-- Reversal Setup: No
-- Choppy Market: **YES (ADX low)**
-- Bearish Divergence: No
-- Poor R/R: **YES**
-
-**1D Key Indicators:**
-| Indicator | Value | Status |
-|-----------|-------|--------|
-| Price | 35.17 | — |
-| ATR Stop / Target | 33.96 / 35.2 | R/R: 0.1 |
-| ADX(14) | 15.3 (+DI:27.6 -DI:18.3) | CHOP |
-| RS vs SPY | +1.5% | Outperform |
-| EMA20 Distance | 0.1% | Dip zone |
-| RSI(14) | 50.9 | Healthy |
-| Stoch RSI | 45.8 | Mid |
-| RSI Divergence | None | — |
-| MACD hist | -0.0301 | Up |
-| Squeeze | COMPRESSED (16 bars) | Fully coiled |
-| BB Width% | 4.3% | Normal |
-| ATR% | 2.3% | Normal |
-| Volume Ratio | 1.3x | Normal |
-| Volume Climax | No | - |
-| OBV | up | Inflow |
-| Returns 3d/5d/10d/20d | 0.9/2.3/0.3/-0.3% | - |
-| EMA Bull Stack | NO | — |
-| Above EMA200 | YES | — |
-| HH/HL | NO | — |
-| Range pos (20-bar) | 48.4% | Mid |
-| Support / tests | 34.76 (3 tests) | Near |
-| Resistance | 35.2 | NEAR |
-
-**1D Signal Detail:**
-- Above EMA200 (+8)
-- EMA200 rising (+4)
-- Near EMA20 dip zone (0.1%, +5) ★
-- ADX 15.3 CHOP — trend signals halved
-- RSI 50.9 healthy (+8)
-- MACD hist negative (-6)
-- SQUEEZE compression — pre-breakout (+18) ★★★
-- Squeeze 16 bars — fully coiled (+6) ★
-- OBV rising — inflow (+4)
-- Near support (3 tests) +12 ★★
-- Near resistance (-8)
-- R/R 0.1 poor entry (-8)
-- RS +1.5% beating market (+3)
-
-**1W:** EMA stack=N | HH/HL=Y | RSI=61.9 | ADX=25.1 | Squeeze=N | Score=26
-**4H:** RSI=51.7 | MACD=+ | ADX=13 | Vol=1.4x | Score=32
-**1H:** RSI=55.6 | MACD=- | Score=85
-
----
-
-### 11. NYSE:DT (NYSE:DT)
-
-News: +54 (Neutral)  |  Confidence: **Medium**
-
-**Multi-TF Scores:**
-- 1W: 31 | 1D: 54 | 4H: 43 | 1H: 53 | **Composite: 45.4** | **Adj: 31.4** | **Final: 41.4**
-- Trend Alignment: 1W↑ 1D↑ 4H↑ 1H↑  →  **4/4 (100%)**
-
-**[TRADE SIGNAL]**
-- Conclusion: **Long** (Medium)
-- Type: Trend Follow (HH/HL Intact)
-- Chase OK: **NO**
-- SQZMOM: UNKNOWN
-- Stop / Target: 52.46 / -  (R/R: -)
-- Key Risks: Fake breakout: high range + low volume; Choppy market (ADX 16.9)
-- Bull Trap: No
-- Fake Breakout: **YES**
-- Reversal Setup: No
-- Choppy Market: **YES (ADX low)**
-- Bearish Divergence: No
-- Poor R/R: No
-
-**1D Key Indicators:**
-| Indicator | Value | Status |
-|-----------|-------|--------|
-| Price | 55.19 | — |
-| ATR Stop / Target | 52.46 / - | R/R: - |
-| ADX(14) | 16.9 (+DI:31.5 -DI:18.2) | CHOP |
-| RS vs SPY | +13.8% | Leader |
-| EMA20 Distance | 6.7% | Normal |
-| RSI(14) | 64.9 | Healthy |
-| Stoch RSI | 64.9 | Mid |
-| RSI Divergence | None | — |
-| MACD hist | 0.1015 | GOLDEN CROSS |
-| Squeeze | Released | - |
-| BB Width% | 15% | Normal |
-| ATR% | 3.3% | Normal |
+| BB Width% | 14.4% | Normal |
+| ATR% | 4% | Normal |
 | Volume Ratio | 1.1x | Normal |
 | Volume Climax | No | - |
 | OBV | up | Inflow |
-| Returns 3d/5d/10d/20d | 8.1/9.1/4.4/12% | ★ accelerating |
+| Returns 3d/5d/10d/20d | 7.8/0.3/7.8/12.1% | ★ accelerating |
 | EMA Bull Stack | YES | — |
 | Above EMA200 | YES | — |
 | HH/HL | YES | — |
-| Range pos (20-bar) | 92.6% | High |
+| Range pos (20-bar) | 75.3% | Mid |
+| Support / tests | 38.81 (2 tests) | Near |
+| Resistance | 40.31 | NEAR |
+
+**1D Signal Detail:**
+- EMA bull alignment (+6 chop-disc)
+- Above EMA200 (+8)
+- EMA200 rising (+4)
+- HH/HL uptrend (+5) ★
+- ADX 10.4 CHOP — trend signals halved
+- RSI 56.6 healthy (+8)
+- MACD golden cross (+12) ★
+- OBV rising — inflow (+4)
+- Return accel 3d:7.8% 5d:0.3% (+5) ★
+- Near support (2 tests) +9 ★★
+- Near resistance (-8)
+- R/R 0.3 poor entry (-8)
+- RS +13% leading market (+6) ★
+
+**1W:** EMA stack=Y | HH/HL=Y | RSI=62.8 | ADX=31.7 | Squeeze=Y | Score=45
+**4H:** RSI=59.6 | MACD=+ ✕ | ADX=15.7 | Vol=0.9x | Score=47
+**1H:** RSI=63.8 | MACD=+ | Score=65
+
+---
+
+### 6. OTC:HTHIY (OTC:HTHIY)
+
+News: +50 (Neutral)  |  Confidence: **Low**
+
+**Multi-TF Scores:**
+- 1W: N/A | 1D: 47 | 4H: N/A | 1H: 59 | **Composite: 49.4** | **Adj: 42.4** | **Final: 52.4**
+- Trend Alignment: 1W:N/A 1D↑ 4H:N/A 1H↑  →  **2/2 (100%)**
+
+**[TRADE SIGNAL]**
+- Conclusion: **Long** (Low)
+- Type: Pullback Buy (Near Support)
+- Chase OK: **NO**
+- SQZMOM: UNKNOWN
+- Stop / Target: 34.18 / 35.62  (R/R: 0.1)
+- Key Risks: Near resistance / 52W high; Choppy market (ADX 15.6); Poor R/R (0.1) — wait for pullback
+- Bull Trap: No
+- Fake Breakout: No
+- Reversal Setup: No
+- Choppy Market: **YES (ADX low)**
+- Bearish Divergence: No
+- Poor R/R: **YES**
+
+**1D Key Indicators:**
+| Indicator | Value | Status |
+|-----------|-------|--------|
+| Price | 35.54 | — |
+| ATR Stop / Target | 34.18 / 35.62 | R/R: 0.1 |
+| ADX(14) | 15.6 (+DI:34.1 -DI:19.7) | CHOP |
+| RS vs SPY | +7.1% | Leader |
+| EMA20 Distance | 4.2% | Normal |
+| RSI(14) | 61.9 | Healthy |
+| Stoch RSI | 100 | Overbought |
+| RSI Divergence | None | — |
+| MACD hist | 0.0395 | GOLDEN CROSS |
+| Squeeze | Released | - |
+| BB Width% | 7.8% | Normal |
+| ATR% | 2.6% | Normal |
+| Volume Ratio | 2.4x | Surge |
+| Volume Climax | No | - |
+| OBV | up | Inflow |
+| Returns 3d/5d/10d/20d | 3.4/7.1/4.8/6.3% | - |
+| EMA Bull Stack | YES | — |
+| Above EMA200 | YES | — |
+| HH/HL | NO | — |
+| Range pos (20-bar) | 96.8% | High |
+| Support / tests | 34.56 (1 tests) | Near |
+| Resistance | 35.62 | NEAR |
+
+**1D Signal Detail:**
+- EMA bull alignment (+6 chop-disc)
+- Above EMA200 (+8)
+- EMA200 rising (+4)
+- ADX 15.6 CHOP — trend signals halved
+- RSI 61.9 healthy (+8)
+- MACD golden cross (+12) ★
+- Stoch RSI 100 overbought (-4)
+- Volume expanding (+8)
+- Vol 2.4x surge (+5)
+- OBV rising — inflow (+4)
+- Near support (1 test) +6 ★
+- Near resistance (-8)
+- R/R 0.1 poor entry (-8)
+- RS +7.1% leading market (+6) ★
+
+**1H:** RSI=67.3 | MACD=+ | Score=59
+
+---
+
+### 7. NASDAQ:PLTR (NASDAQ:PLTR)
+
+News: +67 (Mid Long)  |  Confidence: **Medium**
+
+**Multi-TF Scores:**
+- 1W: 29 | 1D: 47 | 4H: 42 | 1H: 41 | **Composite: 40.7** | **Adj: 40.7** | **Final: 50.7**
+- Trend Alignment: 1W↑ 1D↑ 4H↑ 1H↑  →  **4/4 (100%)**
+
+**[TRADE SIGNAL]**
+- Conclusion: **Strong Long** (Medium)
+- Type: Pullback Buy (Near Support)
+- Chase OK: **NO**
+- SQZMOM: WAIT
+- Stop / Target: 165.76 / 180.18  (R/R: 2)
+- Key Risks: Near resistance / 52W high; Momentum decay
+- Bull Trap: No
+- Fake Breakout: No
+- Reversal Setup: No
+- Choppy Market: No
+- Bearish Divergence: No
+- Poor R/R: No
+
+**1D Key Indicators:**
+| Indicator | Value | Status |
+|-----------|-------|--------|
+| Price | 176.24 | — |
+| ATR Stop / Target | 165.76 / 180.18 | R/R: 2 |
+| ADX(14) | 21.4 (+DI:29 -DI:20.6) | Weak |
+| RS vs SPY | +1.4% | Outperform |
+| EMA20 Distance | 2.4% | Dip zone |
+| RSI(14) | 55.9 | Healthy |
+| Stoch RSI | 36.9 | Mid |
+| RSI Divergence | None | — |
+| MACD hist | -1.5877 | Up |
+| Squeeze | Released | - |
+| BB Width% | 13.7% | Normal |
+| ATR% | 4% | Normal |
+| Volume Ratio | 0.8x | Normal |
+| Volume Climax | No | - |
+| OBV | up | Inflow |
+| Returns 3d/5d/10d/20d | 1.7/6.3/4/0.6% | - |
+| EMA Bull Stack | YES | — |
+| Above EMA200 | YES | — |
+| HH/HL | NO | — |
+| Range pos (20-bar) | 49.1% | Mid |
+| Support / tests | 174.29 (4 tests) | Near |
+| Resistance | 180.18 | NEAR |
+
+**1D Signal Detail:**
+- EMA bull alignment (+12)
+- Above EMA200 (+8)
+- EMA200 rising (+4)
+- Near EMA20 dip zone (2.4%, +5) ★
+- RSI 55.9 healthy (+8)
+- MACD hist negative (-6)
+- OBV rising — inflow (+4)
+- Near support (4 tests) +12 ★★
+- Near resistance (-8)
+- R/R 2 excellent (+5) ★
+- RS +1.4% beating market (+3)
+
+**1W:** EMA stack=Y | HH/HL=Y | RSI=59 | ADX=21.5 | Squeeze=N | Score=29
+**4H:** RSI=55 | MACD=+ | ADX=14.6 | Vol=0.6x | Score=42
+**1H:** RSI=58.4 | MACD=+ | Score=41
+
+---
+
+### 8. NASDAQ:TEM (NASDAQ:TEM)
+
+News: +62 (Mid Long)  |  Confidence: **High**
+
+**Multi-TF Scores:**
+- 1W: 30 | 1D: 53 | 4H: 31 | 1H: 32 | **Composite: 39.7** | **Adj: 39.7** | **Final: 49.7**
+- Trend Alignment: 1W→ 1D↑ 4H↑ 1H↑  →  **3/4 (75%)**
+
+**[TRADE SIGNAL]**
+- Conclusion: **Strong Long** (High)
+- Type: Overextended Chase (High Risk)
+- Chase OK: **NO**
+- SQZMOM: UNKNOWN
+- Stop / Target: 73.1 / 93.38  (R/R: 2.3)
+- Key Risks: Overextended: dist20=24.9%, RSI=72.1
+- Bull Trap: No
+- Fake Breakout: No
+- Reversal Setup: No
+- Choppy Market: No
+- Bearish Divergence: No
+- Poor R/R: No
+
+**1D Key Indicators:**
+| Indicator | Value | Status |
+|-----------|-------|--------|
+| Price | 80.36 | — |
+| ATR Stop / Target | 73.1 / 93.38 | R/R: 2.3 |
+| ADX(14) | 28.2 (+DI:43.2 -DI:13.3) | Trending |
+| RS vs SPY | +32% | Leader |
+| EMA20 Distance | 24.9% | Overextended |
+| RSI(14) | 72.1 | Healthy |
+| Stoch RSI | 100 | Overbought |
+| RSI Divergence | None | — |
+| MACD hist | 0.861 | GOLDEN CROSS |
+| Squeeze | Released | - |
+| BB Width% | 30.3% | Normal |
+| ATR% | 6% | High risk |
+| Volume Ratio | 2.1x | Surge |
+| Volume Climax | No | - |
+| OBV | up | Inflow |
+| Returns 3d/5d/10d/20d | 29.2/36.8/29.7/31.2% | ★ accelerating |
+| EMA Bull Stack | YES | — |
+| Above EMA200 | YES | — |
+| HH/HL | NO | — |
+| Range pos (20-bar) | 96.1% | High |
+| Support / tests | 74.59 (0 tests) | - |
+| Resistance | 93.38 | - |
+
+**1D Signal Detail:**
+- EMA bull alignment (+12)
+- Above EMA200 (+8)
+- EMA200 rising (+4)
+- EMA20 deviation 24.9% overextended (-10)
+- ADX 28.2 trend up (+6)
+- MACD golden cross (+12) ★
+- Stoch RSI 100 overbought (-4)
+- ATR 6% high risk (-8)
+- Volume expanding (+8)
+- Vol 2.1x surge (+5)
+- OBV rising — inflow (+4)
+- Return accel 3d:29.2% 5d:36.8% (+5) ★
+- R/R 2.3 excellent (+5) ★
+- RS +32% leading market (+6) ★
+
+**1W:** EMA stack=N | HH/HL=N | RSI=63.3 | ADX=17.5 | Squeeze=N | Score=30
+**4H:** RSI=77.8 | MACD=+ | ADX=29.4 | Vol=1x | Score=31
+**1H:** RSI=81.7 | MACD=+ | Score=32
+
+---
+
+### 9. NYSE:DT (NYSE:DT)
+
+News: +66 (Mid Long)  |  Confidence: **Medium**
+
+**Multi-TF Scores:**
+- 1W: 33 | 1D: 47 | 4H: 30 | 1H: 65 | **Composite: 41.1** | **Adj: 37.1** | **Final: 47.1**
+- Trend Alignment: 1W↑ 1D↑ 4H↑ 1H↑  →  **4/4 (100%)**
+
+**[TRADE SIGNAL]**
+- Conclusion: **Long** (Medium)
+- Type: Trend Follow (HH/HL Intact)
+- Chase OK: **NO**
+- SQZMOM: UNKNOWN
+- Stop / Target: 53.22 / -  (R/R: -)
+- Key Risks: Near resistance / 52W high; Choppy market (ADX 17.8)
+- Bull Trap: No
+- Fake Breakout: No
+- Reversal Setup: No
+- Choppy Market: **YES (ADX low)**
+- Bearish Divergence: No
+- Poor R/R: No
+
+**1D Key Indicators:**
+| Indicator | Value | Status |
+|-----------|-------|--------|
+| Price | 55.83 | — |
+| ATR Stop / Target | 53.22 / - | R/R: - |
+| ADX(14) | 17.8 (+DI:31.6 -DI:17.1) | CHOP |
+| RS vs SPY | +13.4% | Leader |
+| EMA20 Distance | 7.1% | Normal |
+| RSI(14) | 66.4 | Healthy |
+| Stoch RSI | 72.2 | Mid |
+| RSI Divergence | None | — |
+| MACD hist | 0.1962 | Up |
+| Squeeze | Released | - |
+| BB Width% | 15.8% | Normal |
+| ATR% | 3.1% | Normal |
+| Volume Ratio | 1.2x | Normal |
+| Volume Climax | No | - |
+| OBV | up | Inflow |
+| Returns 3d/5d/10d/20d | 4.7/8.6/9.8/12.6% | - |
+| EMA Bull Stack | YES | — |
+| Above EMA200 | YES | — |
+| HH/HL | YES | — |
+| Range pos (20-bar) | 94.6% | High |
 | Support / tests | 49.56 (0 tests) | - |
 | Resistance | - | - |
 
@@ -783,175 +654,34 @@ News: +54 (Neutral)  |  Confidence: **Medium**
 - Above EMA200 (+8)
 - EMA200 rising (+4)
 - HH/HL uptrend (+5) ★
-- ADX 16.9 CHOP — trend signals halved
-- RSI 64.9 healthy (+8)
-- MACD golden cross (+12) ★
+- ADX 17.8 CHOP — trend signals halved
+- RSI 66.4 healthy (+8)
+- MACD hist accelerating (+10)
 - OBV rising — inflow (+4)
-- Return accel 3d:8.1% 5d:9.1% (+5) ★
 - Near 52W high (-4)
-- RS +13.8% leading market (+6) ★
+- RS +13.4% leading market (+6) ★
 
-**1W:** EMA stack=Y | HH/HL=Y | RSI=68 | ADX=25 | Squeeze=N | Score=31
-**4H:** RSI=68.4 | MACD=+ | ADX=22.6 | Vol=1.6x | Score=43
-**1H:** RSI=70.1 | MACD=- | Score=53
+**1W:** EMA stack=Y | HH/HL=Y | RSI=68.7 | ADX=25.1 | Squeeze=N | Score=33
+**4H:** RSI=71 | MACD=+ | ADX=25.2 | Vol=0.9x | Score=30
+**1H:** RSI=68.9 | MACD=- | Score=65
 
 ---
 
-### 12. NYSE:LYB (NYSE:LYB)
+### 10. NASDAQ:AMD (NASDAQ:AMD)
 
-News: +46 (Neutral)  |  Confidence: **Low**
+News: +67 (Mid Long)  |  Confidence: **Low**
 
 **Multi-TF Scores:**
-- 1W: 35 | 1D: 24 | 4H: 66 | 1H: 34 | **Composite: 38.3** | **Adj: 31.3** | **Final: 41.3**
+- 1W: 43 | 1D: 41 | 4H: 39 | 1H: 44 | **Composite: 41.3** | **Adj: 34.3** | **Final: 44.3**
 - Trend Alignment: 1W↑ 1D↑ 4H↑ 1H↑  →  **4/4 (100%)**
-
-**[TRADE SIGNAL]**
-- Conclusion: **Long** (Low)
-- Type: Pullback Buy (Near Support)
-- Chase OK: **NO**
-- SQZMOM: UNKNOWN
-- Stop / Target: 61.55 / 64.98  (R/R: 0)
-- Key Risks: Near resistance / 52W high; Momentum decay; OBV diverging (distribution); Choppy market (ADX 15.4); Poor R/R (0) — wait for pullback
-- Bull Trap: No
-- Fake Breakout: No
-- Reversal Setup: No
-- Choppy Market: **YES (ADX low)**
-- Bearish Divergence: No
-- Poor R/R: **YES**
-
-**1D Key Indicators:**
-| Indicator | Value | Status |
-|-----------|-------|--------|
-| Price | 64.9 | — |
-| ATR Stop / Target | 61.55 / 64.98 | R/R: 0 |
-| ADX(14) | 15.4 (+DI:20.5 -DI:19.2) | CHOP |
-| RS vs SPY | +1.1% | Outperform |
-| EMA20 Distance | 1.2% | Dip zone |
-| RSI(14) | 53.8 | Healthy |
-| Stoch RSI | 50.9 | Mid |
-| RSI Divergence | None | — |
-| MACD hist | -0.162 | Up |
-| Squeeze | Released | - |
-| BB Width% | 9.3% | Normal |
-| ATR% | 3.4% | Normal |
-| Volume Ratio | 1.3x | Normal |
-| Volume Climax | No | - |
-| OBV | down | Outflow |
-| Returns 3d/5d/10d/20d | 1.9/0.6/-0.4/-0.7% | - |
-| EMA Bull Stack | YES | — |
-| Above EMA200 | YES | — |
-| HH/HL | NO | — |
-| Range pos (20-bar) | 44.7% | Mid |
-| Support / tests | 62.91 (3 tests) | Near |
-| Resistance | 64.98 | NEAR |
-
-**1D Signal Detail:**
-- EMA bull alignment (+6 chop-disc)
-- Above EMA200 (+8)
-- EMA200 rising (+4)
-- LH downtrend (-8)
-- Near EMA20 dip zone (1.2%, +5) ★
-- ADX 15.4 CHOP — trend signals halved
-- RSI 53.8 healthy (+8)
-- MACD hist negative (-6)
-- Volume expanding (+8)
-- Near support (3 tests) +12 ★★
-- Near resistance (-8)
-- R/R 0 poor entry (-8)
-- RS +1.1% beating market (+3)
-
-**1W:** EMA stack=Y | HH/HL=N | RSI=53.1 | ADX=20.9 | Squeeze=N | Score=35
-**4H:** RSI=52.7 | MACD=+ | ADX=16.2 | Vol=0.9x | Score=66
-**1H:** RSI=53.4 | MACD=+ | Score=34
-
----
-
-### 13. NYSE:SM (NYSE:SM)
-
-News: +50 (Neutral)  |  Confidence: **Low**
-
-**Multi-TF Scores:**
-- 1W: 31 | 1D: 46 | 4H: 32 | 1H: 42 | **Composite: 38.4** | **Adj: 29.4** | **Final: 39.4**
-- Trend Alignment: 1W↑ 1D→ 4H→ 1H→  →  **1/4 (25%)**
 
 **[TRADE SIGNAL]**
 - Conclusion: **Long** (Low)
 - Type: Trend Follow (HH/HL Intact)
 - Chase OK: **NO**
-- SQZMOM: WAIT
-- Stop / Target: 35.84 / 38.25  (R/R: 0)
-- Key Risks: Near resistance / 52W high; Bearish RSI divergence — momentum exhaustion; Poor R/R (0) — wait for pullback
-- Bull Trap: No
-- Fake Breakout: No
-- Reversal Setup: No
-- Choppy Market: No
-- Bearish Divergence: **YES**
-- Poor R/R: **YES**
-
-**1D Key Indicators:**
-| Indicator | Value | Status |
-|-----------|-------|--------|
-| Price | 38.16 | — |
-| ATR Stop / Target | 35.84 / 38.25 | R/R: 0 |
-| ADX(14) | 26.8 (+DI:33.3 -DI:17.2) | Trending |
-| RS vs SPY | +9.3% | Leader |
-| EMA20 Distance | 2.5% | Dip zone |
-| RSI(14) | 56.6 | Healthy |
-| Stoch RSI | 0 | Oversold |
-| RSI Divergence | BEARISH ⚠ | — |
-| MACD hist | 0.0047 | Down |
-| Squeeze | Released | - |
-| BB Width% | 13.6% | Normal |
-| ATR% | 4% | Normal |
-| Volume Ratio | 1.6x | Surge |
-| Volume Climax | No | - |
-| OBV | up | Inflow |
-| Returns 3d/5d/10d/20d | 0.2/0.5/0.3/7.5% | - |
-| EMA Bull Stack | NO | — |
-| Above EMA200 | YES | — |
-| HH/HL | YES | — |
-| Range pos (20-bar) | 52% | Mid |
-| Support / tests | 36.28 (0 tests) | - |
-| Resistance | 38.25 | NEAR |
-
-**1D Signal Detail:**
-- Above EMA200 (+8)
-- EMA200 rising (+4)
-- HH/HL uptrend (+10) ★
-- Near EMA20 dip zone (2.5%, +5) ★
-- ADX 26.8 trend up (+6)
-- RSI 56.6 healthy (+8)
-- MACD hist positive (+4)
-- Bearish RSI divergence (-10) ★★
-- Stoch RSI 0 oversold (+4)
-- Volume expanding (+8)
-- Vol 1.6x surge (+5)
-- OBV rising — inflow (+4)
-- Near resistance (-8)
-- R/R 0 poor entry (-8)
-- RS +9.3% leading market (+6) ★
-
-**1W:** EMA stack=Y | HH/HL=Y | RSI=64.7 | ADX=24.6 | Squeeze=N | Score=31
-**4H:** RSI=50.7 | MACD=- | ADX=26.4 | Vol=1.9x | Score=32
-**1H:** RSI=39.9 | MACD=- | Score=42
-
----
-
-### 14. NASDAQ:NBN (NASDAQ:NBN)
-
-News: +50 (Neutral)  |  Confidence: **Low**
-
-**Multi-TF Scores:**
-- 1W: 29 | 1D: 34 | 4H: 43 | 1H: 34 | **Composite: 35** | **Adj: 28** | **Final: 38**
-- Trend Alignment: 1W↑ 1D↑ 4H→ 1H→  →  **2/4 (50%)**
-
-**[TRADE SIGNAL]**
-- Conclusion: **Long** (Low)
-- Type: Pullback Buy (Near Support)
-- Chase OK: **NO**
 - SQZMOM: UNKNOWN
-- Stop / Target: 127.18 / 133.11  (R/R: 0.5)
-- Key Risks: Near resistance / 52W high; Weekly LH structure; OBV diverging (distribution); Choppy market (ADX 10.2); Poor R/R (0.5) — wait for pullback
+- Stop / Target: 512.13 / 546.44  (R/R: 0)
+- Key Risks: Near resistance / 52W high; Choppy market (ADX 13.5); Poor R/R (0) — wait for pullback
 - Bull Trap: No
 - Fake Breakout: No
 - Reversal Setup: No
@@ -962,199 +692,66 @@ News: +50 (Neutral)  |  Confidence: **Low**
 **1D Key Indicators:**
 | Indicator | Value | Status |
 |-----------|-------|--------|
-| Price | 132.54 | — |
-| ATR Stop / Target | 127.18 / 133.11 | R/R: 0.5 |
-| ADX(14) | 10.2 (+DI:22 -DI:23.8) | CHOP |
-| RS vs SPY | -0.1% | - |
-| EMA20 Distance | 1.1% | Dip zone |
-| RSI(14) | 53.5 | Healthy |
-| Stoch RSI | 86.1 | Overbought |
+| Price | 545.09 | — |
+| ATR Stop / Target | 512.13 / 546.44 | R/R: 0 |
+| ADX(14) | 13.5 (+DI:36.6 -DI:19.9) | CHOP |
+| RS vs SPY | +17.7% | Leader |
+| EMA20 Distance | 9.8% | Normal |
+| RSI(14) | 62.8 | Healthy |
+| Stoch RSI | 100 | Overbought |
 | RSI Divergence | None | — |
-| MACD hist | 0.4146 | Down |
+| MACD hist | 6.7021 | Up |
 | Squeeze | Released | - |
-| BB Width% | 6.8% | Normal |
-| ATR% | 2.7% | Normal |
-| Volume Ratio | 1.5x | Normal |
+| BB Width% | 20.2% | Normal |
+| ATR% | 4% | Normal |
+| Volume Ratio | 1.6x | Surge |
 | Volume Climax | No | - |
-| OBV | down | Outflow |
-| Returns 3d/5d/10d/20d | -0.1/2.8/6.3/-1.8% | - |
+| OBV | up | Inflow |
+| Returns 3d/5d/10d/20d | 10.5/8.2/19.3/16.9% | ★ accelerating |
 | EMA Bull Stack | YES | — |
 | Above EMA200 | YES | — |
 | HH/HL | YES | — |
-| Range pos (20-bar) | 62.6% | Mid |
-| Support / tests | 131.35 (1 tests) | Near |
-| Resistance | 133.11 | NEAR |
+| Range pos (20-bar) | 94.3% | High |
+| Support / tests | 498.15 (0 tests) | - |
+| Resistance | 546.44 | NEAR |
 
 **1D Signal Detail:**
 - EMA bull alignment (+6 chop-disc)
 - Above EMA200 (+8)
 - EMA200 rising (+4)
 - HH/HL uptrend (+5) ★
-- Near EMA20 dip zone (1.1%, +5) ★
-- ADX 10.2 CHOP — trend signals halved
-- RSI 53.5 healthy (+8)
-- MACD hist positive (+4)
-- Stoch RSI 86.1 overbought (-4)
-- Volume expanding (+8)
-- Near support (1 test) +6 ★
+- ADX 13.5 CHOP — trend signals halved
+- RSI 62.8 healthy (+8)
+- MACD hist accelerating (+10)
+- Stoch RSI 100 overbought (-4)
+- Vol 1.6x surge (+5)
+- OBV rising — inflow (+4)
+- Return accel 3d:10.5% 5d:8.2% (+5) ★
 - Near resistance (-8)
-- R/R 0.5 poor entry (-8)
+- R/R 0 poor entry (-8)
+- RS +17.7% leading market (+6) ★
 
-**1W:** EMA stack=Y | HH/HL=N | RSI=57.5 | ADX=28.7 | Squeeze=Y | Score=29
-**4H:** RSI=53.4 | MACD=+ | ADX=11.6 | Vol=1x | Score=43
-**1H:** RSI=47.7 | MACD=- | Score=34
+**1W:** EMA stack=Y | HH/HL=Y | RSI=64.4 | ADX=27.5 | Squeeze=Y | Score=43
+**4H:** RSI=66.5 | MACD=+ | ADX=19 | Vol=0.7x | Score=39
+**1H:** RSI=66.6 | MACD=+ | Score=44
 
 ---
 
-### 15. NYSE:ANET (NYSE:ANET)
+### 11. NASDAQ:NBN (NASDAQ:NBN)
 
 News: +50 (Neutral)  |  Confidence: **Low**
 
 **Multi-TF Scores:**
-- 1W: 39 | 1D: 26 | 4H: 34 | 1H: 51 | **Composite: 33.8** | **Adj: 26.8** | **Final: 36.8**
-- Trend Alignment: 1W↑ 1D↑ 4H↑ 1H↑  →  **4/4 (100%)**
+- 1W: N/A | 1D: 45 | 4H: N/A | 1H: 10 | **Composite: 38** | **Adj: 34** | **Final: 44**
+- Trend Alignment: 1W:N/A 1D→ 4H:N/A 1H→  →  **0/2 (0%)**
 
 **[TRADE SIGNAL]**
 - Conclusion: **Long** (Low)
-- Type: Breakout (Squeeze Release)
-- Chase OK: **NO**
-- SQZMOM: UNKNOWN
-- Stop / Target: 186.35 / 200.68  (R/R: 0.3)
-- Key Risks: Near resistance / 52W high; Momentum decay; Choppy market (ADX 13.9); Poor R/R (0.3) — wait for pullback
-- Bull Trap: No
-- Fake Breakout: No
-- Reversal Setup: No
-- Choppy Market: **YES (ADX low)**
-- Bearish Divergence: No
-- Poor R/R: **YES**
-
-**1D Key Indicators:**
-| Indicator | Value | Status |
-|-----------|-------|--------|
-| Price | 197.54 | — |
-| ATR Stop / Target | 186.35 / 200.68 | R/R: 0.3 |
-| ADX(14) | 13.9 (+DI:31.2 -DI:23.3) | CHOP |
-| RS vs SPY | +4% | Outperform |
-| EMA20 Distance | 2.6% | Dip zone |
-| RSI(14) | 54.6 | Healthy |
-| Stoch RSI | 61.1 | Mid |
-| RSI Divergence | None | — |
-| MACD hist | -0.4128 | Up |
-| Squeeze | COMPRESSED (2 bars) | Coiling |
-| BB Width% | 10.5% | Normal |
-| ATR% | 3.8% | Normal |
-| Volume Ratio | 0.9x | Normal |
-| Volume Climax | No | - |
-| OBV | up | Inflow |
-| Returns 3d/5d/10d/20d | -1/2.4/4.4/2.3% | - |
-| EMA Bull Stack | YES | — |
-| Above EMA200 | YES | — |
-| HH/HL | NO | — |
-| Range pos (20-bar) | 65.4% | Mid |
-| Support / tests | 187.03 (0 tests) | - |
-| Resistance | 200.68 | NEAR |
-
-**1D Signal Detail:**
-- EMA bull alignment (+6 chop-disc)
-- Above EMA200 (+8)
-- EMA200 rising (+4)
-- LH downtrend (-8)
-- Near EMA20 dip zone (2.6%, +5) ★
-- ADX 13.9 CHOP — trend signals halved
-- RSI 54.6 healthy (+8)
-- MACD hist negative (-6)
-- SQUEEZE compression — pre-breakout (+18) ★★★
-- OBV rising — inflow (+4)
-- Near resistance (-8)
-- R/R 0.3 poor entry (-8)
-- RS +4% beating market (+3)
-
-**1W:** EMA stack=Y | HH/HL=Y | RSI=62.6 | ADX=22.4 | Squeeze=N | Score=39
-**4H:** RSI=55.4 | MACD=+ | ADX=14.8 | Vol=0.9x | Score=34
-**1H:** RSI=57.4 | MACD=+ | Score=51
-
----
-
-### 16. NYSE:HPE (NYSE:HPE)
-
-News: +67 (Mid Long)  |  Confidence: **Medium**
-
-**Multi-TF Scores:**
-- 1W: 46 | 1D: 29 | 4H: 25 | 1H: 19 | **Composite: 31.3** | **Adj: 24.3** | **Final: 34.3**
-- Trend Alignment: 1W↑ 1D↑ 4H→ 1H→  →  **2/4 (50%)**
-
-**[TRADE SIGNAL]**
-- Conclusion: **Long** (Medium)
-- Type: Trend Continuation
-- Chase OK: **NO**
-- SQZMOM: UNKNOWN
-- Stop / Target: 50.9 / 62.15  (R/R: 1)
-- Key Risks: Choppy market (ADX 12.7); Poor R/R (1) — wait for pullback
-- Bull Trap: No
-- Fake Breakout: No
-- Reversal Setup: No
-- Choppy Market: **YES (ADX low)**
-- Bearish Divergence: No
-- Poor R/R: **YES**
-
-**1D Key Indicators:**
-| Indicator | Value | Status |
-|-----------|-------|--------|
-| Price | 56.68 | — |
-| ATR Stop / Target | 50.9 / 62.15 | R/R: 1 |
-| ADX(14) | 12.7 (+DI:21 -DI:20.7) | CHOP |
-| RS vs SPY | +3.5% | Outperform |
-| EMA20 Distance | 3% | Normal |
-| RSI(14) | 53.9 | Healthy |
-| Stoch RSI | 45.2 | Mid |
-| RSI Divergence | None | — |
-| MACD hist | 0.1065 | Down |
-| Squeeze | Released | - |
-| BB Width% | 19.1% | Normal |
-| ATR% | 6.8% | High risk |
-| Volume Ratio | 1x | Normal |
-| Volume Climax | No | - |
-| OBV | up | Inflow |
-| Returns 3d/5d/10d/20d | -8.7/-3.8/11.4/1.8% | - |
-| EMA Bull Stack | YES | — |
-| Above EMA200 | YES | — |
-| HH/HL | NO | — |
-| Range pos (20-bar) | 66.7% | Mid |
-| Support / tests | 51.3 (0 tests) | - |
-| Resistance | 62.15 | - |
-
-**1D Signal Detail:**
-- EMA bull alignment (+6 chop-disc)
-- Above EMA200 (+8)
-- EMA200 rising (+4)
-- ADX 12.7 CHOP — trend signals halved
-- RSI 53.9 healthy (+8)
-- MACD hist positive (+4)
-- ATR 6.8% high risk (-8)
-- OBV rising — inflow (+4)
-- RS +3.5% beating market (+3)
-
-**1W:** EMA stack=Y | HH/HL=Y | RSI=64.8 | ADX=54.7 | Squeeze=N | Score=46
-**4H:** RSI=52.8 | MACD=- | ADX=16.2 | Vol=0.4x | Score=25
-**1H:** RSI=49.4 | MACD=- | Score=19
-
----
-
-### 17. NYSE:BE (NYSE:BE)
-
-News: +75 (Neutral)  |  Confidence: **Medium**
-
-**Multi-TF Scores:**
-- 1W: 6 | 1D: 48 | 4H: 11 | 1H: 38 | **Composite: 27.3** | **Adj: 23.3** | **Final: 33.3**
-- Trend Alignment: 1W↑ 1D↑ 4H↑ 1H↑  →  **4/4 (100%)**
-
-**[TRADE SIGNAL]**
-- Conclusion: **Long** (Medium)
 - Type: Pullback Buy (Near Support)
 - Chase OK: **NO**
 - SQZMOM: UNKNOWN
-- Stop / Target: 244.41 / 283.83  (R/R: 7.3)
-- Key Risks: Weekly LH structure; Choppy market (ADX 16.8)
+- Stop / Target: 126.54 / 133.11  (R/R: 1.9)
+- Key Risks: Near resistance / 52W high; OBV diverging (distribution); Choppy market (ADX 9.8)
 - Bull Trap: No
 - Fake Breakout: No
 - Reversal Setup: No
@@ -1165,64 +762,62 @@ News: +75 (Neutral)  |  Confidence: **Medium**
 **1D Key Indicators:**
 | Indicator | Value | Status |
 |-----------|-------|--------|
-| Price | 270.02 | — |
-| ATR Stop / Target | 244.41 / 283.83 | R/R: 7.3 |
-| ADX(14) | 16.8 (+DI:31.2 -DI:21.1) | CHOP |
-| RS vs SPY | +30.9% | Leader |
-| EMA20 Distance | 10.9% | Normal |
-| RSI(14) | 61 | Healthy |
-| Stoch RSI | 66.5 | Mid |
+| Price | 131.95 | — |
+| ATR Stop / Target | 126.54 / 133.11 | R/R: 1.9 |
+| ADX(14) | 9.8 (+DI:23.5 -DI:21.4) | CHOP |
+| RS vs SPY | +2.9% | Outperform |
+| EMA20 Distance | 0.6% | Dip zone |
+| RSI(14) | 52.2 | Healthy |
+| Stoch RSI | 78.3 | Mid |
 | RSI Divergence | None | — |
-| MACD hist | 4.4687 | Down |
+| MACD hist | 0.3419 | Down |
 | Squeeze | Released | - |
-| BB Width% | 46.5% | Normal |
-| ATR% | 6.3% | High risk |
-| Volume Ratio | 1x | Normal |
+| BB Width% | 6.9% | Normal |
+| ATR% | 2.7% | Normal |
+| Volume Ratio | 1.1x | Normal |
 | Volume Climax | No | - |
-| OBV | up | Inflow |
-| Returns 3d/5d/10d/20d | -2.1/0.3/26.4/29.2% | - |
-| EMA Bull Stack | YES | — |
+| OBV | down | Outflow |
+| Returns 3d/5d/10d/20d | -0.2/0.6/1.9/2% | - |
+| EMA Bull Stack | NO | — |
 | Above EMA200 | YES | — |
 | HH/HL | YES | — |
-| Range pos (20-bar) | 85.9% | High |
-| Support / tests | 268.13 (1 tests) | Near |
-| Resistance | 283.83 | - |
+| Range pos (20-bar) | 61% | Mid |
+| Support / tests | 131.35 (1 tests) | Near |
+| Resistance | 133.11 | NEAR |
 
 **1D Signal Detail:**
-- EMA bull alignment (+6 chop-disc)
 - Above EMA200 (+8)
 - EMA200 rising (+4)
 - HH/HL uptrend (+5) ★
-- ADX 16.8 CHOP — trend signals halved
-- RSI 61 healthy (+8)
+- Near EMA20 dip zone (0.6%, +5) ★
+- ADX 9.8 CHOP — trend signals halved
+- RSI 52.2 healthy (+8)
 - MACD hist positive (+4)
-- ATR 6.3% high risk (-8)
-- OBV rising — inflow (+4)
+- Volume expanding (+8)
 - Near support (1 test) +6 ★
-- R/R 7.3 excellent (+5) ★
-- RS +30.9% leading market (+6) ★
+- Near resistance (-8)
+- R/R 1.9 acceptable (+2)
+- RS +2.9% beating market (+3)
 
-**1W:** EMA stack=Y | HH/HL=N | RSI=58 | ADX=22.8 | Squeeze=N | Score=6
-**4H:** RSI=61.6 | MACD=- | ADX=22.9 | Vol=0.7x | Score=11
-**1H:** RSI=57.1 | MACD=+ | Score=38
+**1H:** RSI=44.8 | MACD=- | Score=10
 
 ---
 
-### 18. NYSE:CF (NYSE:CF)
+### 12. NYSE:CF (NYSE:CF)
 
-News: +43 (Neutral)  |  Confidence: **Low**
+News: +58 (Neutral)  |  Confidence: **Low**
 
 **Multi-TF Scores:**
-- 1W: 17 | 1D: 33 | 4H: 14 | 1H: 14 | **Composite: 22.4** | **Adj: 19.4** | **Final: 29.4**
-- Trend Alignment: 1W↑ 1D→ 4H→ 1H→  →  **1/4 (25%)**
+- 1W: 23 | 1D: 49 | 4H: 30 | 1H: N/A | **Composite: 36.5** | **Adj: 33.5** | **Final: 43.5**
+- Trend Alignment: 1W↑ 1D↑ 4H↑ 1H:N/A  →  **3/3 (100%)**
 
 **[TRADE SIGNAL]**
 - Conclusion: **Strong Long** (Low)
 - Type: Reversal (Bullish RSI Divergence)
 - Chase OK: **NO**
 - SQZMOM: WAIT
-- Stop / Target: 123.24 / 132.54  (R/R: 0.1)
-- Key Risks: Near resistance / 52W high; Momentum decay; Weekly LH structure; OBV diverging (distribution); Poor R/R (0.1) — wait for pullback
+- Stop / Target: 125.15 / 137.44  (R/R: 0.4)
+- Key Risks: Near resistance / 52W high; Momentum decay; Weekly LH structure; Poor R/R (0.4) — wait for pullback
 - Bull Trap: No
 - Fake Breakout: No
 - Reversal Setup: No
@@ -1233,55 +828,333 @@ News: +43 (Neutral)  |  Confidence: **Low**
 **1D Key Indicators:**
 | Indicator | Value | Status |
 |-----------|-------|--------|
-| Price | 131.99 | — |
-| ATR Stop / Target | 123.24 / 132.54 | R/R: 0.1 |
-| ADX(14) | 22.6 (+DI:21.8 -DI:14.8) | Weak |
-| RS vs SPY | +12% | Leader |
-| EMA20 Distance | 0.8% | Dip zone |
-| RSI(14) | 53.7 | Healthy |
-| Stoch RSI | 0 | Oversold |
+| Price | 133.82 | — |
+| ATR Stop / Target | 125.15 / 137.44 | R/R: 0.4 |
+| ADX(14) | 21.9 (+DI:20.5 -DI:15.6) | Weak |
+| RS vs SPY | +13.3% | Leader |
+| EMA20 Distance | 2% | Dip zone |
+| RSI(14) | 56 | Healthy |
+| Stoch RSI | 12.5 | Oversold |
 | RSI Divergence | BULLISH ★ | — |
-| MACD hist | -0.364 | Down |
+| MACD hist | -0.4214 | Down |
 | Squeeze | Released | - |
-| BB Width% | 15.6% | Normal |
-| ATR% | 4.4% | High risk |
+| BB Width% | 13% | Normal |
+| ATR% | 4.3% | High risk |
 | Volume Ratio | 0.6x | Dry |
 | Volume Climax | No | - |
-| OBV | down | Outflow |
-| Returns 3d/5d/10d/20d | -0.8/-4.4/-2.7/10.2% | - |
-| EMA Bull Stack | NO | — |
+| OBV | up | Inflow |
+| Returns 3d/5d/10d/20d | 2/-1/-3.9/12.4% | - |
+| EMA Bull Stack | YES | — |
 | Above EMA200 | YES | — |
 | HH/HL | YES | — |
-| Range pos (20-bar) | 57.4% | Mid |
+| Range pos (20-bar) | 61.1% | Mid |
 | Support / tests | 124.5 (0 tests) | - |
-| Resistance | 132.54 | NEAR |
+| Resistance | 137.44 | NEAR |
 
 **1D Signal Detail:**
+- EMA bull alignment (+12)
 - Above EMA200 (+8)
 - EMA200 rising (+4)
 - HH/HL uptrend (+10) ★
-- Near EMA20 dip zone (0.8%, +5) ★
-- RSI 53.7 healthy (+8)
+- Near EMA20 dip zone (2%, +5) ★
+- RSI 56 healthy (+8)
 - MACD hist negative (-6)
 - Bullish RSI divergence (+10) ★★
-- Stoch RSI 0 oversold (+4)
+- Stoch RSI 12.5 oversold (+4)
+- OBV rising — inflow (+4)
 - Near resistance (-8)
-- R/R 0.1 poor entry (-8)
-- RS +12% leading market (+6) ★
+- R/R 0.4 poor entry (-8)
+- RS +13.3% leading market (+6) ★
 
-**1W:** EMA stack=Y | HH/HL=N | RSI=60.5 | ADX=22.7 | Squeeze=N | Score=17
-**4H:** RSI=48.3 | MACD=- | ADX=28.6 | Vol=0.9x | Score=14
-**1H:** RSI=39.9 | MACD=- | Score=14
+**1W:** EMA stack=Y | HH/HL=N | RSI=61.9 | ADX=22.7 | Squeeze=N | Score=23
+**4H:** RSI=52.6 | MACD=- | ADX=26.8 | Vol=0.7x | Score=30
 
 ---
 
-### 19. OTC:SMNEY (OTC:SMNEY)
+### 13. NASDAQ:SMCI (NASDAQ:SMCI)
+
+News: +50 (Neutral)  |  Confidence: **Low**
+
+**Multi-TF Scores:**
+- 1W: 9 | 1D: 56 | 4H: 27 | 1H: 38 | **Composite: 35.2** | **Adj: 32.2** | **Final: 42.2**
+- Trend Alignment: 1W→ 1D↑ 4H↑ 1H↑  →  **3/4 (75%)**
+
+**[TRADE SIGNAL]**
+- Conclusion: **Strong Long** (Low)
+- Type: Breakout (Squeeze Release)
+- Chase OK: **NO**
+- SQZMOM: UNKNOWN
+- Stop / Target: 36.83 / 41.53  (R/R: 0.3)
+- Key Risks: Near resistance / 52W high; Momentum decay; Weekly LH structure; Poor R/R (0.3) — wait for pullback
+- Bull Trap: No
+- Fake Breakout: No
+- Reversal Setup: No
+- Choppy Market: No
+- Bearish Divergence: No
+- Poor R/R: **YES**
+
+**1D Key Indicators:**
+| Indicator | Value | Status |
+|-----------|-------|--------|
+| Price | 40.35 | — |
+| ATR Stop / Target | 36.83 / 41.53 | R/R: 0.3 |
+| ADX(14) | 23.2 (+DI:33 -DI:18.5) | Weak |
+| RS vs SPY | +11.1% | Leader |
+| EMA20 Distance | 8% | Normal |
+| RSI(14) | 58.8 | Healthy |
+| Stoch RSI | 67 | Mid |
+| RSI Divergence | None | — |
+| MACD hist | -0.2512 | Up |
+| Squeeze | COMPRESSED (7 bars) | Fully coiled |
+| BB Width% | 15.3% | Normal |
+| ATR% | 5.8% | High risk |
+| Volume Ratio | 1.6x | Surge |
+| Volume Climax | No | - |
+| OBV | up | Inflow |
+| Returns 3d/5d/10d/20d | 9.8/7.9/9.1/10.3% | ★ accelerating |
+| EMA Bull Stack | YES | — |
+| Above EMA200 | YES | — |
+| HH/HL | YES | — |
+| Range pos (20-bar) | 84.1% | High |
+| Support / tests | 35.63 (0 tests) | - |
+| Resistance | 41.53 | NEAR |
+
+**1D Signal Detail:**
+- EMA bull alignment (+12)
+- Above EMA200 (+8)
+- EMA200 rising (+4)
+- HH/HL uptrend (+10) ★
+- RSI 58.8 healthy (+8)
+- MACD hist negative (-6)
+- SQUEEZE compression — pre-breakout (+18) ★★★
+- Squeeze 7 bars — fully coiled (+6) ★
+- ATR 5.8% high risk (-8)
+- Vol 1.6x surge (+5)
+- OBV rising — inflow (+4)
+- Return accel 3d:9.8% 5d:7.9% (+5) ★
+- Near resistance (-8)
+- R/R 0.3 poor entry (-8)
+- RS +11.1% leading market (+6) ★
+
+**1W:** EMA stack=N | HH/HL=N | RSI=57.9 | ADX=18.5 | Squeeze=N | Score=9
+**4H:** RSI=58.9 | MACD=+ ✕ | ADX=16.3 | Vol=0.6x | Score=27
+**1H:** RSI=65.6 | MACD=+ | Score=38
+
+---
+
+### 14. NYSE:ANET (NYSE:ANET)
+
+News: +87 (Neutral)  |  Confidence: **Low**
+
+**Multi-TF Scores:**
+- 1W: 30 | 1D: 36 | 4H: 49 | 1H: 42 | **Composite: 38.4** | **Adj: 31.4** | **Final: 41.4**
+- Trend Alignment: 1W↑ 1D↑ 4H↑ 1H→  →  **3/4 (75%)**
+
+**[TRADE SIGNAL]**
+- Conclusion: **Long** (Low)
+- Type: Breakout (Squeeze Release)
+- Chase OK: **NO**
+- SQZMOM: UNKNOWN
+- Stop / Target: 187.8 / 200.68  (R/R: 0.1)
+- Key Risks: Near resistance / 52W high; Momentum decay; Choppy market (ADX 14.4); Poor R/R (0.1) — wait for pullback
+- Bull Trap: No
+- Fake Breakout: No
+- Reversal Setup: No
+- Choppy Market: **YES (ADX low)**
+- Bearish Divergence: No
+- Poor R/R: **YES**
+
+**1D Key Indicators:**
+| Indicator | Value | Status |
+|-----------|-------|--------|
+| Price | 199.53 | — |
+| ATR Stop / Target | 187.8 / 200.68 | R/R: 0.1 |
+| ADX(14) | 14.4 (+DI:32 -DI:21) | CHOP |
+| RS vs SPY | +7.9% | Leader |
+| EMA20 Distance | 3.3% | Normal |
+| RSI(14) | 55.9 | Healthy |
+| Stoch RSI | 88.1 | Overbought |
+| RSI Divergence | None | — |
+| MACD hist | -0.0433 | Up |
+| Squeeze | COMPRESSED (3 bars) | Coiling |
+| BB Width% | 10.5% | Normal |
+| ATR% | 3.9% | Normal |
+| Volume Ratio | 1.5x | Normal |
+| Volume Climax | No | - |
+| OBV | up | Inflow |
+| Returns 3d/5d/10d/20d | 6.2/5.6/7.2/7% | ★ accelerating |
+| EMA Bull Stack | YES | — |
+| Above EMA200 | YES | — |
+| HH/HL | NO | — |
+| Range pos (20-bar) | 73.5% | Mid |
+| Support / tests | 187.03 (0 tests) | - |
+| Resistance | 200.68 | NEAR |
+
+**1D Signal Detail:**
+- EMA bull alignment (+6 chop-disc)
+- Above EMA200 (+8)
+- EMA200 rising (+4)
+- LH downtrend (-8)
+- ADX 14.4 CHOP — trend signals halved
+- RSI 55.9 healthy (+8)
+- MACD hist negative (-6)
+- Stoch RSI 88.1 overbought (-4)
+- SQUEEZE compression — pre-breakout (+18) ★★★
+- Squeeze 3 bars — coiling (+3)
+- Volume expanding (+8)
+- OBV rising — inflow (+4)
+- Return accel 3d:6.2% 5d:5.6% (+5) ★
+- Near resistance (-8)
+- R/R 0.1 poor entry (-8)
+- RS +7.9% leading market (+6) ★
+
+**1W:** EMA stack=Y | HH/HL=Y | RSI=63.7 | ADX=22.7 | Squeeze=N | Score=30
+**4H:** RSI=57.4 | MACD=+ | ADX=16.5 | Vol=0.8x | Score=49
+**1H:** RSI=55.2 | MACD=+ | Score=42
+
+---
+
+### 15. NYSE:HGTY (NYSE:HGTY)
 
 News: +50 (Neutral)  |  Confidence: **Medium**
 
 **Multi-TF Scores:**
-- 1W: 11 | 1D: 46 | 4H: 48 | 1H: 69 | **Composite: 40.1** | **Adj: 18.1** | **Final: 28.1**
-- Trend Alignment: 1W↑ 1D↑ 4H↑ 1H↑  →  **4/4 (100%)**
+- 1W: N/A | 1D: 37 | 4H: N/A | 1H: 22 | **Composite: 34** | **Adj: 31** | **Final: 41**
+- Trend Alignment: 1W:N/A 1D↑ 4H:N/A 1H→  →  **1/2 (50%)**
+
+**[TRADE SIGNAL]**
+- Conclusion: **Strong Long** (Medium)
+- Type: Breakout (Squeeze Release)
+- Chase OK: **NO**
+- SQZMOM: WAIT
+- Stop / Target: 13.03 / 13.9  (R/R: 0)
+- Key Risks: Near resistance / 52W high; Poor R/R (0) — wait for pullback
+- Bull Trap: No
+- Fake Breakout: No
+- Reversal Setup: No
+- Choppy Market: No
+- Bearish Divergence: No
+- Poor R/R: **YES**
+
+**1D Key Indicators:**
+| Indicator | Value | Status |
+|-----------|-------|--------|
+| Price | 13.87 | — |
+| ATR Stop / Target | 13.03 / 13.9 | R/R: 0 |
+| ADX(14) | 24.7 (+DI:23.9 -DI:18.6) | Weak |
+| RS vs SPY | +8.4% | Leader |
+| EMA20 Distance | 3.2% | Normal |
+| RSI(14) | 64.1 | Healthy |
+| Stoch RSI | 64.7 | Mid |
+| RSI Divergence | None | — |
+| MACD hist | 0.0179 | Down |
+| Squeeze | COMPRESSED (12 bars) | Fully coiled |
+| BB Width% | 8.8% | Normal |
+| ATR% | 4% | Normal |
+| Volume Ratio | 0.4x | Dry |
+| Volume Climax | No | - |
+| OBV | up | Inflow |
+| Returns 3d/5d/10d/20d | -0.4/2.8/4.8/7.5% | - |
+| EMA Bull Stack | YES | — |
+| Above EMA200 | YES | — |
+| HH/HL | NO | — |
+| Range pos (20-bar) | 86.1% | High |
+| Support / tests | 13.08 (0 tests) | - |
+| Resistance | 13.9 | NEAR |
+
+**1D Signal Detail:**
+- EMA bull alignment (+12)
+- Above EMA200 (+8)
+- EMA200 rising (+4)
+- LH downtrend (-8)
+- RSI 64.1 healthy (+8)
+- MACD hist positive (+4)
+- SQUEEZE compression — pre-breakout (+18) ★★★
+- Squeeze 12 bars — fully coiled (+6) ★
+- Significantly low volume (-5)
+- OBV rising — inflow (+4)
+- Near resistance (-8)
+- Near 52W high (-4)
+- R/R 0 poor entry (-8)
+- RS +8.4% leading market (+6) ★
+
+**1H:** RSI=51.4 | MACD=- | Score=22
+
+---
+
+### 16. NYSE:HG (NYSE:HG)
+
+News: +50 (Neutral)  |  Confidence: **Low**
+
+**Multi-TF Scores:**
+- 1W: 26 | 1D: 42 | 4H: N/A | 1H: N/A | **Composite: 35.8** | **Adj: 28.8** | **Final: 38.8**
+- Trend Alignment: 1W→ 1D→ 4H:N/A 1H:N/A  →  **0/2 (0%)**
+
+**[TRADE SIGNAL]**
+- Conclusion: **Long** (Low)
+- Type: Breakout (Squeeze Release)
+- Chase OK: **NO**
+- SQZMOM: UNKNOWN
+- Stop / Target: 33.96 / 35.2  (R/R: 0.1)
+- Key Risks: Near resistance / 52W high; Momentum decay; OBV diverging (distribution); Choppy market (ADX 15.7); Poor R/R (0.1) — wait for pullback
+- Bull Trap: No
+- Fake Breakout: No
+- Reversal Setup: No
+- Choppy Market: **YES (ADX low)**
+- Bearish Divergence: No
+- Poor R/R: **YES**
+
+**1D Key Indicators:**
+| Indicator | Value | Status |
+|-----------|-------|--------|
+| Price | 35.15 | — |
+| ATR Stop / Target | 33.96 / 35.2 | R/R: 0.1 |
+| ADX(14) | 15.7 (+DI:26.2 -DI:17.4) | CHOP |
+| RS vs SPY | +3% | Outperform |
+| EMA20 Distance | 0.1% | Dip zone |
+| RSI(14) | 50.6 | Healthy |
+| Stoch RSI | 44.6 | Mid |
+| RSI Divergence | None | — |
+| MACD hist | -0.0212 | Up |
+| Squeeze | COMPRESSED (17 bars) | Fully coiled |
+| BB Width% | 3.9% | Coiling |
+| ATR% | 2.3% | Normal |
+| Volume Ratio | 1.3x | Normal |
+| Volume Climax | No | - |
+| OBV | down | Outflow |
+| Returns 3d/5d/10d/20d | 0.5/0.7/-1/2.2% | - |
+| EMA Bull Stack | NO | — |
+| Above EMA200 | YES | — |
+| HH/HL | NO | — |
+| Range pos (20-bar) | 47.7% | Mid |
+| Support / tests | 34.76 (3 tests) | Near |
+| Resistance | 35.2 | NEAR |
+
+**1D Signal Detail:**
+- Above EMA200 (+8)
+- EMA200 rising (+4)
+- Near EMA20 dip zone (0.1%, +5) ★
+- ADX 15.7 CHOP — trend signals halved
+- RSI 50.6 healthy (+8)
+- MACD hist negative (-6)
+- SQUEEZE compression — pre-breakout (+18) ★★★
+- Squeeze 17 bars — fully coiled (+6) ★
+- Near support (3 tests) +12 ★★
+- Near resistance (-8)
+- R/R 0.1 poor entry (-8)
+- RS +3% beating market (+3)
+
+**1W:** EMA stack=N | HH/HL=Y | RSI=61.8 | ADX=25.1 | Squeeze=N | Score=26
+
+---
+
+### 17. OTC:SMNEY (OTC:SMNEY)
+
+News: +50 (Neutral)  |  Confidence: **Medium**
+
+**Multi-TF Scores:**
+- 1W: N/A | 1D: 46 | 4H: N/A | 1H: 69 | **Composite: 50.6** | **Adj: 28.6** | **Final: 38.6**
+- Trend Alignment: 1W:N/A 1D↑ 4H:N/A 1H↑  →  **2/2 (100%)**
 
 **[TRADE SIGNAL]**
 - Conclusion: **Long** (Medium)
@@ -1303,7 +1176,7 @@ News: +50 (Neutral)  |  Confidence: **Medium**
 | Price | 175.64 | — |
 | ATR Stop / Target | 167.89 / - | R/R: - |
 | ADX(14) | 24.2 (+DI:42.5 -DI:12.8) | Weak |
-| RS vs SPY | +25.3% | Leader |
+| RS vs SPY | +24.4% | Leader |
 | EMA20 Distance | 11.2% | Normal |
 | RSI(14) | 74 | Healthy |
 | Stoch RSI | 100 | Overbought |
@@ -1332,168 +1205,27 @@ News: +50 (Neutral)  |  Confidence: **Medium**
 - Stoch RSI 100 overbought (-4)
 - OBV rising — inflow (+4)
 - Near 52W high (-4)
-- RS +25.3% leading market (+6) ★
+- RS +24.4% leading market (+6) ★
 
-**1W:** EMA stack=Y | HH/HL=Y | RSI=83.7 | ADX=51.7 | Squeeze=N | Score=11
-**4H:** RSI=77 | MACD=+ | ADX=35.7 | Vol=0.8x | Score=48
 **1H:** RSI=66.9 | MACD=+ ✕ | Score=69
 
 ---
 
-### 20. NASDAQ:PGY (NASDAQ:PGY)
+### 18. NYSE:TSM (NYSE:TSM)
 
 News: +62 (Mid Long)  |  Confidence: **Low**
 
 **Multi-TF Scores:**
-- 1W: 21 | 1D: 18 | 4H: 38 | 1H: 28 | **Composite: 24.8** | **Adj: 17.8** | **Final: 27.8**
-- Trend Alignment: 1W→ 1D→ 4H→ 1H→  →  **0/4 (0%)**
+- 1W: 27 | 1D: 35 | 4H: 38 | 1H: 30 | **Composite: 33.3** | **Adj: 26.3** | **Final: 36.3**
+- Trend Alignment: 1W↑ 1D↑ 4H↑ 1H→  →  **3/4 (75%)**
 
 **[TRADE SIGNAL]**
 - Conclusion: **Long** (Low)
 - Type: Pullback Buy (Near Support)
-- Chase OK: **NO**
-- SQZMOM: WAIT
-- Stop / Target: 19.74 / 21.89  (R/R: 0.5)
-- Key Risks: Near resistance / 52W high; Momentum decay; OBV diverging (distribution); Choppy market (ADX 16.3); Poor R/R (0.5) — wait for pullback
-- Bull Trap: No
-- Fake Breakout: No
-- Reversal Setup: No
-- Choppy Market: **YES (ADX low)**
-- Bearish Divergence: No
-- Poor R/R: **YES**
-
-**1D Key Indicators:**
-| Indicator | Value | Status |
-|-----------|-------|--------|
-| Price | 21.64 | — |
-| ATR Stop / Target | 19.74 / 21.89 | R/R: 0.5 |
-| ADX(14) | 16.3 (+DI:22.2 -DI:20.9) | CHOP |
-| RS vs SPY | +8.2% | Leader |
-| EMA20 Distance | 1.5% | Dip zone |
-| RSI(14) | 53 | Healthy |
-| Stoch RSI | 37.2 | Mid |
-| RSI Divergence | None | — |
-| MACD hist | -0.2248 | Up |
-| Squeeze | Released | - |
-| BB Width% | 16.7% | Normal |
-| ATR% | 5.9% | High risk |
-| Volume Ratio | 1.1x | Normal |
-| Volume Climax | No | - |
-| OBV | down | Outflow |
-| Returns 3d/5d/10d/20d | 8.4/0.2/3.3/6.5% | ★ accelerating |
-| EMA Bull Stack | NO | — |
-| Above EMA200 | YES | — |
-| HH/HL | NO | — |
-| Range pos (20-bar) | 50.6% | Mid |
-| Support / tests | 21.13 (4 tests) | Near |
-| Resistance | 21.89 | NEAR |
-
-**1D Signal Detail:**
-- Above EMA200 (+8)
-- EMA200 rising (+4)
-- LH downtrend (-8)
-- Near EMA20 dip zone (1.5%, +5) ★
-- ADX 16.3 CHOP — trend signals halved
-- RSI 53 healthy (+8)
-- MACD hist negative (-6)
-- ATR 5.9% high risk (-8)
-- Volume expanding (+8)
-- Return accel 3d:8.4% 5d:0.2% (+5) ★
-- Near support (4 tests) +12 ★★
-- Near resistance (-8)
-- R/R 0.5 poor entry (-8)
-- RS +8.2% leading market (+6) ★
-
-**1W:** EMA stack=N | HH/HL=Y | RSI=59.3 | ADX=28.7 | Squeeze=N | Score=21
-**4H:** RSI=52.3 | MACD=+ ✕ | ADX=12.5 | Vol=1.1x | Score=38
-**1H:** RSI=57.2 | MACD=+ | Score=28
-
----
-
-### 21. AMEX:CET (AMEX:CET)
-
-News: +50 (Neutral)  |  Confidence: **Low**
-
-**Multi-TF Scores:**
-- 1W: 32 | 1D: 16 | 4H: 34 | 1H: 12 | **Composite: 24.1** | **Adj: 17.1** | **Final: 27.1**
-- Trend Alignment: 1W↑ 1D→ 4H→ 1H→  →  **1/4 (25%)**
-
-**[TRADE SIGNAL]**
-- Conclusion: **Long** (Low)
-- Type: Pullback Buy (Near Support)
-- Chase OK: **NO**
-- SQZMOM: WAIT
-- Stop / Target: 54.06 / 55.5  (R/R: 0.3)
-- Key Risks: Near resistance / 52W high; OBV diverging (distribution); Choppy market (ADX 19); Poor R/R (0.3) — wait for pullback
-- Bull Trap: No
-- Fake Breakout: No
-- Reversal Setup: No
-- Choppy Market: **YES (ADX low)**
-- Bearish Divergence: No
-- Poor R/R: **YES**
-
-**1D Key Indicators:**
-| Indicator | Value | Status |
-|-----------|-------|--------|
-| Price | 55.1801 | — |
-| ATR Stop / Target | 54.06 / 55.5 | R/R: 0.3 |
-| ADX(14) | 19 (+DI:17.7 -DI:10.6) | CHOP |
-| RS vs SPY | +3.3% | Outperform |
-| EMA20 Distance | 0.2% | Dip zone |
-| RSI(14) | 53.1 | Healthy |
-| Stoch RSI | 37.7 | Mid |
-| RSI Divergence | None | — |
-| MACD hist | 0.0241 | Down |
-| Squeeze | Released | - |
-| BB Width% | 4.3% | Normal |
-| ATR% | 1.4% | Low vol |
-| Volume Ratio | 1x | Normal |
-| Volume Climax | No | - |
-| OBV | down | Outflow |
-| Returns 3d/5d/10d/20d | -1.5/-0.8/2.1/1.6% | - |
-| EMA Bull Stack | NO | — |
-| Above EMA200 | YES | — |
-| HH/HL | NO | — |
-| Range pos (20-bar) | 52.8% | Mid |
-| Support / tests | 54.21 (2 tests) | Near |
-| Resistance | 55.5 | NEAR |
-
-**1D Signal Detail:**
-- Above EMA200 (+8)
-- EMA200 rising (+4)
-- LH downtrend (-8)
-- Near EMA20 dip zone (0.2%, +5) ★
-- ADX 19 CHOP — trend signals halved
-- RSI 53.1 healthy (+8)
-- MACD hist positive (+4)
-- ATR 1.4% low vol (+3)
-- Near support (2 tests) +9 ★★
-- Near resistance (-8)
-- Near 52W high (-4)
-- R/R 0.3 poor entry (-8)
-- RS +3.3% beating market (+3)
-
-**1W:** EMA stack=Y | HH/HL=Y | RSI=60.6 | ADX=17.7 | Squeeze=N | Score=32
-**4H:** RSI=48 | MACD=- | ADX=17.2 | Vol=1.8x | Score=34
-**1H:** RSI=39.1 | MACD=- | Score=12
-
----
-
-### 22. NASDAQ:LITE (NASDAQ:LITE)
-
-News: +52 (Neutral)  |  Confidence: **Low**
-
-**Multi-TF Scores:**
-- 1W: 38 | 1D: 16 | 4H: 12 | 1H: 50 | **Composite: 23.9** | **Adj: 16.9** | **Final: 26.9**
-- Trend Alignment: 1W↑ 1D↑ 4H→ 1H→  →  **2/4 (50%)**
-
-**[TRADE SIGNAL]**
-- Conclusion: **Long** (Low)
-- Type: Trend Follow (HH/HL Intact)
 - Chase OK: **NO**
 - SQZMOM: UNKNOWN
-- Stop / Target: 828.37 / 925.5  (R/R: 0.1)
-- Key Risks: Near resistance / 52W high; Momentum decay; Choppy market (ADX 10.3); Poor R/R (0.1) — wait for pullback
+- Stop / Target: 415.03 / 436.04  (R/R: 0.5)
+- Key Risks: Near resistance / 52W high; Momentum decay; Weekly LH structure; Choppy market (ADX 8.8); Poor R/R (0.5) — wait for pullback
 - Bull Trap: No
 - Fake Breakout: No
 - Reversal Setup: No
@@ -1504,57 +1236,266 @@ News: +52 (Neutral)  |  Confidence: **Low**
 **1D Key Indicators:**
 | Indicator | Value | Status |
 |-----------|-------|--------|
-| Price | 919.4 | — |
-| ATR Stop / Target | 828.37 / 925.5 | R/R: 0.1 |
-| ADX(14) | 10.3 (+DI:32.8 -DI:27.2) | CHOP |
-| RS vs SPY | +7% | Leader |
-| EMA20 Distance | 3.2% | Normal |
-| RSI(14) | 53.2 | Healthy |
-| Stoch RSI | 52 | Mid |
+| Price | 430.26 | — |
+| ATR Stop / Target | 415.03 / 436.04 | R/R: 0.5 |
+| ADX(14) | 8.8 (+DI:29.3 -DI:25.9) | CHOP |
+| RS vs SPY | +5.2% | Leader |
+| EMA20 Distance | 1.8% | Dip zone |
+| RSI(14) | 54.8 | Healthy |
+| Stoch RSI | 57 | Mid |
 | RSI Divergence | None | — |
-| MACD hist | -6.4185 | Up |
+| MACD hist | -0.1112 | Up |
 | Squeeze | Released | - |
-| BB Width% | 21.3% | Normal |
-| ATR% | 6.6% | High risk |
-| Volume Ratio | 1.6x | Surge |
+| BB Width% | 7.6% | Normal |
+| ATR% | 2.4% | Normal |
+| Volume Ratio | 1.3x | Normal |
 | Volume Climax | No | - |
 | OBV | up | Inflow |
-| Returns 3d/5d/10d/20d | -0.8/-7/5.8/5.3% | - |
+| Returns 3d/5d/10d/20d | 2.9/0.5/3.6/4.4% | ★ accelerating |
 | EMA Bull Stack | YES | — |
 | Above EMA200 | YES | — |
 | HH/HL | YES | — |
-| Range pos (20-bar) | 55.7% | Mid |
-| Support / tests | 854.62 (0 tests) | - |
-| Resistance | 925.5 | NEAR |
+| Range pos (20-bar) | 64.2% | Mid |
+| Support / tests | 419.19 (1 tests) | Near |
+| Resistance | 436.04 | NEAR |
 
 **1D Signal Detail:**
 - EMA bull alignment (+6 chop-disc)
 - Above EMA200 (+8)
 - EMA200 rising (+4)
 - HH/HL uptrend (+5) ★
-- ADX 10.3 CHOP — trend signals halved
-- RSI 53.2 healthy (+8)
+- Near EMA20 dip zone (1.8%, +5) ★
+- ADX 8.8 CHOP — trend signals halved
+- RSI 54.8 healthy (+8)
 - MACD hist negative (-6)
-- ATR 6.6% high risk (-8)
-- Vol 1.6x surge (+5)
 - OBV rising — inflow (+4)
+- Return accel 3d:2.9% 5d:0.5% (+5) ★
+- Near support (1 test) +6 ★
 - Near resistance (-8)
-- R/R 0.1 poor entry (-8)
-- RS +7% leading market (+6) ★
+- R/R 0.5 poor entry (-8)
+- RS +5.2% leading market (+6) ★
 
-**1W:** EMA stack=Y | HH/HL=N | RSI=59.6 | ADX=35.7 | Squeeze=Y | Score=38
-**4H:** RSI=53.5 | MACD=- | ADX=14.4 | Vol=1.4x | Score=12
-**1H:** RSI=61.8 | MACD=+ | Score=50
+**1W:** EMA stack=Y | HH/HL=N | RSI=61 | ADX=23.9 | Squeeze=Y | Score=27
+**4H:** RSI=56.8 | MACD=- | ADX=15.7 | Vol=0.7x | Score=38
+**1H:** RSI=64.5 | MACD=+ | Score=30
 
 ---
 
-### 23. OTC:SMTGY (OTC:SMTGY)
+### 19. NYSE:DELL (NYSE:DELL)
+
+News: +66 (Mid Long)  |  Confidence: **Low**
+
+**Multi-TF Scores:**
+- 1W: 35 | 1D: 30 | 4H: 39 | 1H: 57 | **Composite: 36.2** | **Adj: 22.2** | **Final: 32.2**
+- Trend Alignment: 1W↑ 1D↑ 4H↑ 1H↑  →  **4/4 (100%)**
+
+**[TRADE SIGNAL]**
+- Conclusion: **Long** (Low)
+- Type: Overextended Chase (High Risk)
+- Chase OK: **NO**
+- SQZMOM: UNKNOWN
+- Stop / Target: 533.21 / -  (R/R: -)
+- Key Risks: Fake breakout: high range + low volume; Overextended: dist20=14.9%, RSI=66.4; Choppy market (ADX 18.5)
+- Bull Trap: No
+- Fake Breakout: **YES**
+- Reversal Setup: No
+- Choppy Market: **YES (ADX low)**
+- Bearish Divergence: No
+- Poor R/R: No
+
+**1D Key Indicators:**
+| Indicator | Value | Status |
+|-----------|-------|--------|
+| Price | 588.4 | — |
+| ATR Stop / Target | 533.21 / - | R/R: - |
+| ADX(14) | 18.5 (+DI:34.3 -DI:14.5) | CHOP |
+| RS vs SPY | +35.3% | Leader |
+| EMA20 Distance | 14.9% | Overextended |
+| RSI(14) | 66.4 | Healthy |
+| Stoch RSI | 99.4 | Overbought |
+| RSI Divergence | None | — |
+| MACD hist | 7.4913 | Up |
+| Squeeze | Released | - |
+| BB Width% | 39.7% | Normal |
+| ATR% | 6.3% | High risk |
+| Volume Ratio | 1x | Normal |
+| Volume Climax | No | - |
+| OBV | up | Inflow |
+| Returns 3d/5d/10d/20d | 10.1/16.1/19.5/34.5% | ★ accelerating |
+| EMA Bull Stack | YES | — |
+| Above EMA200 | YES | — |
+| HH/HL | YES | — |
+| Range pos (20-bar) | 96.8% | High |
+| Support / tests | 506.25 (0 tests) | - |
+| Resistance | - | - |
+
+**1D Signal Detail:**
+- EMA bull alignment (+6 chop-disc)
+- Above EMA200 (+8)
+- EMA200 rising (+4)
+- HH/HL uptrend (+5) ★
+- EMA20 deviation 14.9% overextended (-10)
+- ADX 18.5 CHOP — trend signals halved
+- RSI 66.4 healthy (+8)
+- MACD hist accelerating (+10)
+- Stoch RSI 99.4 overbought (-4)
+- ATR 6.3% high risk (-8)
+- OBV rising — inflow (+4)
+- Return accel 3d:10.1% 5d:16.1% (+5) ★
+- Near 52W high (-4)
+- RS +35.3% leading market (+6) ★
+
+**1W:** EMA stack=Y | HH/HL=Y | RSI=76.1 | ADX=55.3 | Squeeze=N | Score=35
+**4H:** RSI=68.2 | MACD=+ | ADX=32 | Vol=0.4x | Score=39
+**1H:** RSI=64.4 | MACD=+ | Score=57
+
+---
+
+### 20. NASDAQ:QCOM (NASDAQ:QCOM)
+
+News: +63 (Mid Long)  |  Confidence: **Medium**
+
+**Multi-TF Scores:**
+- 1W: 20 | 1D: 47 | 4H: 34 | 1H: 25 | **Composite: 34.8** | **Adj: 21.8** | **Final: 31.8**
+- Trend Alignment: 1W↑ 1D↑ 4H↑ 1H→  →  **3/4 (75%)**
+
+**[TRADE SIGNAL]**
+- Conclusion: **Long** (Medium)
+- Type: Trend Follow (HH/HL Intact)
+- Chase OK: **NO**
+- SQZMOM: UNKNOWN
+- Stop / Target: 176.6 / 196.09  (R/R: 0.5)
+- Key Risks: Fake breakout: high range + low volume; Poor R/R (0.5) — wait for pullback
+- Bull Trap: No
+- Fake Breakout: **YES**
+- Reversal Setup: No
+- Choppy Market: No
+- Bearish Divergence: No
+- Poor R/R: **YES**
+
+**1D Key Indicators:**
+| Indicator | Value | Status |
+|-----------|-------|--------|
+| Price | 188.71 | — |
+| ATR Stop / Target | 176.6 / 196.09 | R/R: 0.5 |
+| ADX(14) | 23.6 (+DI:28.5 -DI:12.7) | Weak |
+| RS vs SPY | +17.4% | Leader |
+| EMA20 Distance | 7.9% | Normal |
+| RSI(14) | 67.9 | Healthy |
+| Stoch RSI | 92.4 | Overbought |
+| RSI Divergence | None | — |
+| MACD hist | 2.4105 | Up |
+| Squeeze | Released | - |
+| BB Width% | 21.5% | Normal |
+| ATR% | 4.3% | High risk |
+| Volume Ratio | 1.1x | Normal |
+| Volume Climax | No | - |
+| OBV | up | Inflow |
+| Returns 3d/5d/10d/20d | 4.8/6.7/11/16.6% | ★ accelerating |
+| EMA Bull Stack | YES | — |
+| Above EMA200 | YES | — |
+| HH/HL | YES | — |
+| Range pos (20-bar) | 91% | High |
+| Support / tests | 172.32 (0 tests) | - |
+| Resistance | 196.09 | NEAR |
+
+**1D Signal Detail:**
+- EMA bull alignment (+12)
+- Above EMA200 (+8)
+- EMA200 rising (+4)
+- HH/HL uptrend (+10) ★
+- RSI 67.9 healthy (+8)
+- MACD hist accelerating (+10)
+- Stoch RSI 92.4 overbought (-4)
+- OBV rising — inflow (+4)
+- Return accel 3d:4.8% 5d:6.7% (+5) ★
+- Near resistance (-8)
+- R/R 0.5 poor entry (-8)
+- RS +17.4% leading market (+6) ★
+
+**1W:** EMA stack=Y | HH/HL=Y | RSI=54.5 | ADX=19 | Squeeze=N | Score=20
+**4H:** RSI=65.2 | MACD=+ | ADX=27.3 | Vol=0.6x | Score=34
+**1H:** RSI=55.2 | MACD=- | Score=25
+
+---
+
+### 21. NASDAQ:CRWD (NASDAQ:CRWD)
+
+News: +76 (Neutral)  |  Confidence: **Medium**
+
+**Multi-TF Scores:**
+- 1W: 43 | 1D: 34 | 4H: 35 | 1H: 31 | **Composite: 36.2** | **Adj: 20.2** | **Final: 30.2**
+- Trend Alignment: 1W↑ 1D↑ 4H↑ 1H→  →  **3/4 (75%)**
+
+**[TRADE SIGNAL]**
+- Conclusion: **Long** (Medium)
+- Type: Trend Follow (HH/HL Intact)
+- Chase OK: **NO**
+- SQZMOM: UNKNOWN
+- Stop / Target: 225.43 / -  (R/R: -)
+- Key Risks: Fake breakout: high range + low volume; Bearish RSI divergence — momentum exhaustion
+- Bull Trap: No
+- Fake Breakout: **YES**
+- Reversal Setup: No
+- Choppy Market: No
+- Bearish Divergence: **YES**
+- Poor R/R: No
+
+**1D Key Indicators:**
+| Indicator | Value | Status |
+|-----------|-------|--------|
+| Price | 245.7 | — |
+| ATR Stop / Target | 225.43 / - | R/R: - |
+| ADX(14) | 20.3 (+DI:32.5 -DI:15.4) | Weak |
+| RS vs SPY | +22.7% | Leader |
+| EMA20 Distance | 12% | Normal |
+| RSI(14) | 65.4 | Healthy |
+| Stoch RSI | 100 | Overbought |
+| RSI Divergence | BEARISH ⚠ | — |
+| MACD hist | 3.433 | Up |
+| Squeeze | Released | - |
+| BB Width% | 34.5% | Normal |
+| ATR% | 5.5% | High risk |
+| Volume Ratio | 1x | Normal |
+| Volume Climax | No | - |
+| OBV | up | Inflow |
+| Returns 3d/5d/10d/20d | 4.4/17.6/20.8/21.9% | - |
+| EMA Bull Stack | YES | — |
+| Above EMA200 | YES | — |
+| HH/HL | YES | — |
+| Range pos (20-bar) | 93.3% | High |
+| Support / tests | 204.27 (0 tests) | - |
+| Resistance | - | - |
+
+**1D Signal Detail:**
+- EMA bull alignment (+12)
+- Above EMA200 (+8)
+- EMA200 rising (+4)
+- HH/HL uptrend (+10) ★
+- EMA20 deviation 12% overextended (-10)
+- RSI 65.4 healthy (+8)
+- MACD hist accelerating (+10)
+- Bearish RSI divergence (-10) ★★
+- Stoch RSI 100 overbought (-4)
+- ATR 5.5% high risk (-8)
+- Volume expanding (+8)
+- OBV rising — inflow (+4)
+- Near 52W high (-4)
+- RS +22.7% leading market (+6) ★
+
+**1W:** EMA stack=Y | HH/HL=Y | RSI=69.3 | ADX=42.3 | Squeeze=N | Score=43
+**4H:** RSI=69.1 | MACD=+ | ADX=26.5 | Vol=0.7x | Score=35
+**1H:** RSI=63.8 | MACD=- | Score=31
+
+---
+
+### 22. OTC:SMTGY (OTC:SMTGY)
 
 News: +50 (Neutral)  |  Confidence: **Low**
 
 **Multi-TF Scores:**
-- 1W: 17 | 1D: 27 | 4H: 18 | 1H: 24 | **Composite: 22** | **Adj: 15** | **Final: 25**
-- Trend Alignment: 1W↑ 1D↑ 4H↑ 1H↑  →  **4/4 (100%)**
+- 1W: N/A | 1D: 27 | 4H: N/A | 1H: N/A | **Composite: 27** | **Adj: 20** | **Final: 30**
+- Trend Alignment: 1W:N/A 1D↑ 4H:N/A 1H:N/A  →  **1/1 (100%)**
 
 **[TRADE SIGNAL]**
 - Conclusion: **Long** (Low)
@@ -1562,7 +1503,7 @@ News: +50 (Neutral)  |  Confidence: **Low**
 - Chase OK: **NO**
 - SQZMOM: WAIT
 - Stop / Target: 6.35 / 6.89  (R/R: 0.3)
-- Key Risks: Near resistance / 52W high; Weekly LH structure; Choppy market (ADX 11.3); Poor R/R (0.3) — wait for pullback
+- Key Risks: Near resistance / 52W high; Choppy market (ADX 11.3); Poor R/R (0.3) — wait for pullback
 - Bull Trap: No
 - Fake Breakout: No
 - Reversal Setup: No
@@ -1576,7 +1517,7 @@ News: +50 (Neutral)  |  Confidence: **Low**
 | Price | 6.72 | — |
 | ATR Stop / Target | 6.35 / 6.89 | R/R: 0.3 |
 | ADX(14) | 11.3 (+DI:38.7 -DI:39.3) | CHOP |
-| RS vs SPY | +16.1% | Leader |
+| RS vs SPY | +15.2% | Leader |
 | EMA20 Distance | 1.3% | Dip zone |
 | RSI(14) | 51.6 | Healthy |
 | Stoch RSI | 76.9 | Mid |
@@ -1608,100 +1549,26 @@ News: +50 (Neutral)  |  Confidence: **Low**
 - OBV rising — inflow (+4)
 - Near resistance (-8)
 - R/R 0.3 poor entry (-8)
-- RS +16.1% leading market (+6) ★
+- RS +15.2% leading market (+6) ★
 
-**1W:** EMA stack=Y | HH/HL=N | RSI=57 | ADX=31.9 | Squeeze=N | Score=17
-**4H:** RSI=52.2 | MACD=+ | ADX=10.5 | Vol=0.4x | Score=18
-**1H:** RSI=52.9 | MACD=+ | Score=24
 
 ---
 
-### 24. NASDAQ:CRWD (NASDAQ:CRWD)
+### 23. NYSE:LYB (NYSE:LYB)
 
 News: +56 (Neutral)  |  Confidence: **Low**
 
 **Multi-TF Scores:**
-- 1W: 43 | 1D: 38 | 4H: 20 | 1H: 29 | **Composite: 33.9** | **Adj: 13.9** | **Final: 23.9**
-- Trend Alignment: 1W↑ 1D↑ 4H↑ 1H→  →  **3/4 (75%)**
+- 1W: 39 | 1D: 15 | 4H: 31 | 1H: 30 | **Composite: 26.5** | **Adj: 19.5** | **Final: 29.5**
+- Trend Alignment: 1W↑ 1D→ 4H→ 1H→  →  **1/4 (25%)**
 
 **[TRADE SIGNAL]**
 - Conclusion: **Long** (Low)
-- Type: Trend Follow (HH/HL Intact)
+- Type: Pullback Buy (Near Support)
 - Chase OK: **NO**
 - SQZMOM: UNKNOWN
-- Stop / Target: 218.65 / -  (R/R: -)
-- Key Risks: Fake breakout: high range + low volume; Choppy market (ADX 19.1); Bearish RSI divergence — momentum exhaustion
-- Bull Trap: No
-- Fake Breakout: **YES**
-- Reversal Setup: No
-- Choppy Market: **YES (ADX low)**
-- Bearish Divergence: **YES**
-- Poor R/R: No
-
-**1D Key Indicators:**
-| Indicator | Value | Status |
-|-----------|-------|--------|
-| Price | 241.36 | — |
-| ATR Stop / Target | 218.65 / - | R/R: - |
-| ADX(14) | 19.1 (+DI:32.8 -DI:17) | CHOP |
-| RS vs SPY | +15.1% | Leader |
-| EMA20 Distance | 11.5% | Normal |
-| RSI(14) | 63.9 | Healthy |
-| Stoch RSI | 95.6 | Overbought |
-| RSI Divergence | BEARISH ⚠ | — |
-| MACD hist | 2.9271 | Up |
-| Squeeze | Released | - |
-| BB Width% | 32.2% | Normal |
-| ATR% | 6.3% | High risk |
-| Volume Ratio | 1x | Normal |
-| Volume Climax | No | - |
-| OBV | up | Inflow |
-| Returns 3d/5d/10d/20d | 16.7/16.2/12.2/13.4% | ★ accelerating |
-| EMA Bull Stack | YES | — |
-| Above EMA200 | YES | — |
-| HH/HL | YES | — |
-| Range pos (20-bar) | 94% | High |
-| Support / tests | 204.27 (0 tests) | - |
-| Resistance | - | - |
-
-**1D Signal Detail:**
-- EMA bull alignment (+6 chop-disc)
-- Above EMA200 (+8)
-- EMA200 rising (+4)
-- HH/HL uptrend (+5) ★
-- ADX 19.1 CHOP — trend signals halved
-- RSI 63.9 healthy (+8)
-- MACD hist accelerating (+10)
-- Bearish RSI divergence (-10) ★★
-- Stoch RSI 95.6 overbought (-4)
-- ATR 6.3% high risk (-8)
-- Volume expanding (+8)
-- OBV rising — inflow (+4)
-- Return accel 3d:16.7% 5d:16.2% (+5) ★
-- Near 52W high (-4)
-- RS +15.1% leading market (+6) ★
-
-**1W:** EMA stack=Y | HH/HL=Y | RSI=68.6 | ADX=42.2 | Squeeze=N | Score=43
-**4H:** RSI=67.8 | MACD=+ | ADX=23.6 | Vol=0.7x | Score=20
-**1H:** RSI=66.1 | MACD=- | Score=29
-
----
-
-### 25. NASDAQ:PANW (NASDAQ:PANW)
-
-News: +66 (Mid Long)  |  Confidence: **Low**
-
-**Multi-TF Scores:**
-- 1W: 18 | 1D: 12 | 4H: 20 | 1H: 39 | **Composite: 18.2** | **Adj: 11.2** | **Final: 21.2**
-- Trend Alignment: 1W↑ 1D↑ 4H↑ 1H→  →  **3/4 (75%)**
-
-**[TRADE SIGNAL]**
-- Conclusion: **Long** (Low)
-- Type: Trend Continuation
-- Chase OK: **NO**
-- SQZMOM: UNKNOWN
-- Stop / Target: 343.09 / 387.33  (R/R: 0.2)
-- Key Risks: Near resistance / 52W high; Choppy market (ADX 18); Poor R/R (0.2) — wait for pullback
+- Stop / Target: 60.95 / 64.38  (R/R: 0.1)
+- Key Risks: Near resistance / 52W high; Momentum decay; OBV diverging (distribution); Choppy market (ADX 14.5); Poor R/R (0.1) — wait for pullback
 - Bull Trap: No
 - Fake Breakout: No
 - Reversal Setup: No
@@ -1712,26 +1579,502 @@ News: +66 (Mid Long)  |  Confidence: **Low**
 **1D Key Indicators:**
 | Indicator | Value | Status |
 |-----------|-------|--------|
-| Price | 375.65 | — |
-| ATR Stop / Target | 343.09 / 387.33 | R/R: 0.2 |
-| ADX(14) | 18 (+DI:29.6 -DI:19.7) | CHOP |
-| RS vs SPY | +2.1% | Outperform |
-| EMA20 Distance | 5.9% | Normal |
-| RSI(14) | 58.2 | Healthy |
-| Stoch RSI | 87.8 | Overbought |
+| Price | 64.25 | — |
+| ATR Stop / Target | 60.95 / 64.38 | R/R: 0.1 |
+| ADX(14) | 14.5 (+DI:19.6 -DI:18.3) | CHOP |
+| RS vs SPY | -1.9% | - |
+| EMA20 Distance | 0.1% | Dip zone |
+| RSI(14) | 51.4 | Healthy |
+| Stoch RSI | 34 | Mid |
 | RSI Divergence | None | — |
-| MACD hist | 2.222 | Up |
+| MACD hist | -0.1681 | Down |
 | Squeeze | Released | - |
-| BB Width% | 20.9% | Normal |
-| ATR% | 5.8% | High risk |
-| Volume Ratio | 0.8x | Normal |
+| BB Width% | 9.1% | Normal |
+| ATR% | 3.4% | Normal |
+| Volume Ratio | 1.3x | Normal |
 | Volume Climax | No | - |
-| OBV | up | Inflow |
-| Returns 3d/5d/10d/20d | 13.6/12.1/3.7/0.4% | ★ accelerating |
+| OBV | down | Outflow |
+| Returns 3d/5d/10d/20d | 2.4/-0.1/-3.5/-2.7% | - |
+| EMA Bull Stack | NO | — |
+| Above EMA200 | YES | — |
+| HH/HL | NO | — |
+| Range pos (20-bar) | 36.2% | Mid |
+| Support / tests | 62.91 (4 tests) | Near |
+| Resistance | 64.38 | NEAR |
+
+**1D Signal Detail:**
+- Above EMA200 (+8)
+- EMA200 rising (+4)
+- LH downtrend (-8)
+- Near EMA20 dip zone (0.1%, +5) ★
+- ADX 14.5 CHOP — trend signals halved
+- RSI 51.4 healthy (+8)
+- MACD hist negative (-6)
+- Volume expanding (+8)
+- Near support (4 tests) +12 ★★
+- Near resistance (-8)
+- R/R 0.1 poor entry (-8)
+
+**1W:** EMA stack=Y | HH/HL=N | RSI=52.3 | ADX=20.9 | Squeeze=N | Score=39
+**4H:** RSI=48.9 | MACD=- | ADX=14.7 | Vol=1.1x | Score=31
+**1H:** RSI=49 | MACD=- | Score=30
+
+---
+
+### 24. AMEX:CET (AMEX:CET)
+
+News: +50 (Neutral)  |  Confidence: **Low**
+
+**Multi-TF Scores:**
+- 1W: N/A | 1D: 30 | 4H: N/A | 1H: 11 | **Composite: 26.2** | **Adj: 19.2** | **Final: 29.2**
+- Trend Alignment: 1W:N/A 1D↑ 4H:N/A 1H→  →  **1/2 (50%)**
+
+**[TRADE SIGNAL]**
+- Conclusion: **Long** (Low)
+- Type: Pullback Buy (Near Support)
+- Chase OK: **NO**
+- SQZMOM: UNKNOWN
+- Stop / Target: 54.58 / 55.99  (R/R: 0.2)
+- Key Risks: Near resistance / 52W high; OBV diverging (distribution); Choppy market (ADX 19.5); Poor R/R (0.2) — wait for pullback
+- Bull Trap: No
+- Fake Breakout: No
+- Reversal Setup: No
+- Choppy Market: **YES (ADX low)**
+- Bearish Divergence: No
+- Poor R/R: **YES**
+
+**1D Key Indicators:**
+| Indicator | Value | Status |
+|-----------|-------|--------|
+| Price | 55.71 | — |
+| ATR Stop / Target | 54.58 / 55.99 | R/R: 0.2 |
+| ADX(14) | 19.5 (+DI:16.5 -DI:9.8) | CHOP |
+| RS vs SPY | +2.7% | Outperform |
+| EMA20 Distance | 1% | Dip zone |
+| RSI(14) | 58.1 | Healthy |
+| Stoch RSI | 67.5 | Mid |
+| RSI Divergence | None | — |
+| MACD hist | 0.0229 | Down |
+| Squeeze | Released | - |
+| BB Width% | 4.4% | Normal |
+| ATR% | 1.4% | Low vol |
+| Volume Ratio | 1.2x | Normal |
+| Volume Climax | No | - |
+| OBV | down | Outflow |
+| Returns 3d/5d/10d/20d | -0.3/0.4/3.1/1.8% | - |
 | EMA Bull Stack | YES | — |
 | Above EMA200 | YES | — |
 | HH/HL | NO | — |
-| Range pos (20-bar) | 82.3% | High |
+| Range pos (20-bar) | 76.7% | Mid |
+| Support / tests | 54.21 (2 tests) | Near |
+| Resistance | 55.99 | NEAR |
+
+**1D Signal Detail:**
+- EMA bull alignment (+6 chop-disc)
+- Above EMA200 (+8)
+- EMA200 rising (+4)
+- Near EMA20 dip zone (1%, +5) ★
+- ADX 19.5 CHOP — trend signals halved
+- RSI 58.1 healthy (+8)
+- MACD hist positive (+4)
+- ATR 1.4% low vol (+3)
+- Near support (2 tests) +9 ★★
+- Near resistance (-8)
+- Near 52W high (-4)
+- R/R 0.2 poor entry (-8)
+- RS +2.7% beating market (+3)
+
+**1H:** RSI=49.2 | MACD=- | Score=11
+
+---
+
+### 25. NASDAQ:BGC (NASDAQ:BGC)
+
+News: +50 (Neutral)  |  Confidence: **Low**
+
+**Multi-TF Scores:**
+- 1W: 33 | 1D: 30 | 4H: N/A | 1H: 26 | **Composite: 30.5** | **Adj: 17.5** | **Final: 27.5**
+- Trend Alignment: 1W↑ 1D→ 4H:N/A 1H→  →  **1/3 (33%)**
+
+**[TRADE SIGNAL]**
+- Conclusion: **Long** (Low)
+- Type: Pullback Buy (Near Support)
+- Chase OK: **NO**
+- SQZMOM: WAIT
+- Stop / Target: 11.46 / 12.03  (R/R: 0.2)
+- Key Risks: Near resistance / 52W high; Momentum decay; Weekly LH structure; OBV diverging (distribution); Choppy market (ADX 12.5); Bearish RSI divergence — momentum exhaustion; Poor R/R (0.2) — wait for pullback
+- Bull Trap: No
+- Fake Breakout: No
+- Reversal Setup: No
+- Choppy Market: **YES (ADX low)**
+- Bearish Divergence: **YES**
+- Poor R/R: **YES**
+
+**1D Key Indicators:**
+| Indicator | Value | Status |
+|-----------|-------|--------|
+| Price | 11.99 | — |
+| ATR Stop / Target | 11.46 / 12.03 | R/R: 0.2 |
+| ADX(14) | 12.5 (+DI:19.4 -DI:20.2) | CHOP |
+| RS vs SPY | +11.9% | Leader |
+| EMA20 Distance | 0.6% | Dip zone |
+| RSI(14) | 54.6 | Healthy |
+| Stoch RSI | 0 | Oversold |
+| RSI Divergence | BEARISH ⚠ | — |
+| MACD hist | -0.0185 | Down |
+| Squeeze | Released | - |
+| BB Width% | 9.5% | Normal |
+| ATR% | 2.9% | Normal |
+| Volume Ratio | 1.9x | Surge |
+| Volume Climax | No | - |
+| OBV | down | Outflow |
+| Returns 3d/5d/10d/20d | -1.4/-1.9/1.2/11% | - |
+| EMA Bull Stack | NO | — |
+| Above EMA200 | YES | — |
+| HH/HL | YES | — |
+| Range pos (20-bar) | 70.7% | Mid |
+| Support / tests | 11.85 (2 tests) | Near |
+| Resistance | 12.03 | NEAR |
+
+**1D Signal Detail:**
+- Above EMA200 (+8)
+- EMA200 rising (+4)
+- HH/HL uptrend (+5) ★
+- Near EMA20 dip zone (0.6%, +5) ★
+- ADX 12.5 CHOP — trend signals halved
+- RSI 54.6 healthy (+8)
+- MACD hist negative (-6)
+- Bearish RSI divergence (-10) ★★
+- Stoch RSI 0 oversold (+4)
+- Volume expanding (+8)
+- Vol 1.9x surge (+5)
+- Near support (2 tests) +9 ★★
+- Near resistance (-8)
+- R/R 0.2 poor entry (-8)
+- RS +11.9% leading market (+6) ★
+
+**1W:** EMA stack=Y | HH/HL=N | RSI=58.4 | ADX=17.1 | Squeeze=Y | Score=33
+**1H:** RSI=42.5 | MACD=- | Score=26
+
+---
+
+### 26. NYSE:P (NYSE:P)
+
+News: +85 (Strong Long)  |  Confidence: **Low**
+
+**Multi-TF Scores:**
+- 1W: 20 | 1D: -3 | 4H: 70 | 1H: N/A | **Composite: 23.7** | **Adj: 16.7** | **Final: 26.7**
+- Trend Alignment: 1W↑ 1D↑ 4H↑ 1H:N/A  →  **3/3 (100%)**
+
+**[TRADE SIGNAL]**
+- Conclusion: **Long** (Low)
+- Type: Trend Continuation
+- Chase OK: **NO**
+- SQZMOM: UNKNOWN
+- Stop / Target: 96.39 / 112.7  (R/R: 0.7)
+- Key Risks: Momentum decay; Choppy market (ADX 15.2); Poor R/R (0.7) — wait for pullback
+- Bull Trap: No
+- Fake Breakout: No
+- Reversal Setup: No
+- Choppy Market: **YES (ADX low)**
+- Bearish Divergence: No
+- Poor R/R: **YES**
+
+**1D Key Indicators:**
+| Indicator | Value | Status |
+|-----------|-------|--------|
+| Price | 103.99 | — |
+| ATR Stop / Target | 96.39 / 112.7 | R/R: 0.7 |
+| ADX(14) | 15.2 (+DI:27.3 -DI:19.8) | CHOP |
+| RS vs SPY | -6.3% | Laggard |
+| EMA20 Distance | 5.9% | Normal |
+| RSI(14) | 57.4 | Healthy |
+| Stoch RSI | 100 | Overbought |
+| RSI Divergence | None | — |
+| MACD hist | -0.4487 | Up |
+| Squeeze | Released | - |
+| BB Width% | 21.3% | Normal |
+| ATR% | 4.9% | High risk |
+| Volume Ratio | 1x | Normal |
+| Volume Climax | No | - |
+| OBV | up | Inflow |
+| Returns 3d/5d/10d/20d | 10.9/10.5/12.5/-7.2% | ★ accelerating |
+| EMA Bull Stack | YES | — |
+| Above EMA200 | YES | — |
+| HH/HL | NO | — |
+| Range pos (20-bar) | 57.5% | Mid |
+| Support / tests | 92.27 (0 tests) | - |
+| Resistance | 112.7 | - |
+
+**1D Signal Detail:**
+- EMA bull alignment (+6 chop-disc)
+- Above EMA200 (+8)
+- EMA200 rising (+4)
+- LH downtrend (-8)
+- ADX 15.2 CHOP — trend signals halved
+- RSI 57.4 healthy (+8)
+- MACD hist negative (-6)
+- Stoch RSI 100 overbought (-4)
+- ATR 4.9% high risk (-8)
+- OBV rising — inflow (+4)
+- Return accel 3d:10.9% 5d:10.5% (+5) ★
+- R/R 0.7 poor entry (-8)
+- RS -6.3% lagging market (-4)
+
+**1W:** EMA stack=Y | HH/HL=Y | RSI=61 | ADX=18.1 | Squeeze=N | Score=20
+**4H:** RSI=61.8 | MACD=+ | ADX=15.6 | Vol=1.3x | Score=70
+
+---
+
+### 27. NYSE:HPE (NYSE:HPE)
+
+News: +67 (Mid Long)  |  Confidence: **Low**
+
+**Multi-TF Scores:**
+- 1W: 45 | 1D: 27 | 4H: 25 | 1H: 39 | **Composite: 32.2** | **Adj: 15.2** | **Final: 25.2**
+- Trend Alignment: 1W↑ 1D↑ 4H↑ 1H↑  →  **4/4 (100%)**
+
+**[TRADE SIGNAL]**
+- Conclusion: **Long** (Low)
+- Type: Trend Continuation
+- Chase OK: **NO**
+- SQZMOM: UNKNOWN
+- Stop / Target: 54.86 / 62.15  (R/R: 0.1)
+- Key Risks: Fake breakout: high range + low volume; Choppy market (ADX 13.1); Poor R/R (0.1) — wait for pullback
+- Bull Trap: No
+- Fake Breakout: **YES**
+- Reversal Setup: No
+- Choppy Market: **YES (ADX low)**
+- Bearish Divergence: No
+- Poor R/R: **YES**
+
+**1D Key Indicators:**
+| Indicator | Value | Status |
+|-----------|-------|--------|
+| Price | 61.04 | — |
+| ATR Stop / Target | 54.86 / 62.15 | R/R: 0.1 |
+| ADX(14) | 13.1 (+DI:26.5 -DI:18.5) | CHOP |
+| RS vs SPY | +15.7% | Leader |
+| EMA20 Distance | 9.8% | Normal |
+| RSI(14) | 59.8 | Healthy |
+| Stoch RSI | 77 | Mid |
+| RSI Divergence | None | — |
+| MACD hist | 0.3392 | Up |
+| Squeeze | Released | - |
+| BB Width% | 21.5% | Normal |
+| ATR% | 6.8% | High risk |
+| Volume Ratio | 1x | Normal |
+| Volume Climax | No | - |
+| OBV | up | Inflow |
+| Returns 3d/5d/10d/20d | 10.2/10.5/17.8/14.9% | ★ accelerating |
+| EMA Bull Stack | YES | — |
+| Above EMA200 | YES | — |
+| HH/HL | NO | — |
+| Range pos (20-bar) | 93.3% | High |
+| Support / tests | 51.3 (0 tests) | - |
+| Resistance | 62.15 | NEAR |
+
+**1D Signal Detail:**
+- EMA bull alignment (+6 chop-disc)
+- Above EMA200 (+8)
+- EMA200 rising (+4)
+- ADX 13.1 CHOP — trend signals halved
+- RSI 59.8 healthy (+8)
+- MACD hist accelerating (+10)
+- ATR 6.8% high risk (-8)
+- OBV rising — inflow (+4)
+- Return accel 3d:10.2% 5d:10.5% (+5) ★
+- Near resistance (-8)
+- R/R 0.1 poor entry (-8)
+- RS +15.7% leading market (+6) ★
+
+**1W:** EMA stack=Y | HH/HL=Y | RSI=71.7 | ADX=54.7 | Squeeze=N | Score=45
+**4H:** RSI=61 | MACD=+ | ADX=18.8 | Vol=0.6x | Score=25
+**1H:** RSI=62 | MACD=+ | Score=39
+
+---
+
+### 28. NASDAQ:LITE (NASDAQ:LITE)
+
+News: +58 (Neutral)  |  Confidence: **Low**
+
+**Multi-TF Scores:**
+- 1W: 38 | 1D: 16 | 4H: 8 | 1H: 32 | **Composite: 21.1** | **Adj: 14.1** | **Final: 24.1**
+- Trend Alignment: 1W↑ 1D↑ 4H→ 1H→  →  **2/4 (50%)**
+
+**[TRADE SIGNAL]**
+- Conclusion: **Long** (Low)
+- Type: Trend Follow (HH/HL Intact)
+- Chase OK: **NO**
+- SQZMOM: WAIT
+- Stop / Target: 801.88 / 897  (R/R: 0.1)
+- Key Risks: Near resistance / 52W high; Momentum decay; Choppy market (ADX 10.3); Poor R/R (0.1) — wait for pullback
+- Bull Trap: No
+- Fake Breakout: No
+- Reversal Setup: No
+- Choppy Market: **YES (ADX low)**
+- Bearish Divergence: No
+- Poor R/R: **YES**
+
+**1D Key Indicators:**
+| Indicator | Value | Status |
+|-----------|-------|--------|
+| Price | 893.61 | — |
+| ATR Stop / Target | 801.88 / 897 | R/R: 0.1 |
+| ADX(14) | 10.3 (+DI:31.6 -DI:25.5) | CHOP |
+| RS vs SPY | +8.8% | Leader |
+| EMA20 Distance | 0.3% | Dip zone |
+| RSI(14) | 50.9 | Healthy |
+| Stoch RSI | 35.9 | Mid |
+| RSI Divergence | None | — |
+| MACD hist | -6.1901 | Up |
+| Squeeze | Released | - |
+| BB Width% | 20.1% | Normal |
+| ATR% | 6.8% | High risk |
+| Volume Ratio | 1.2x | Normal |
+| Volume Climax | No | - |
+| OBV | up | Inflow |
+| Returns 3d/5d/10d/20d | 7/-4.5/2.6/8% | - |
+| EMA Bull Stack | YES | — |
+| Above EMA200 | YES | — |
+| HH/HL | YES | — |
+| Range pos (20-bar) | 45% | Mid |
+| Support / tests | 854.62 (0 tests) | - |
+| Resistance | 897 | NEAR |
+
+**1D Signal Detail:**
+- EMA bull alignment (+6 chop-disc)
+- Above EMA200 (+8)
+- EMA200 rising (+4)
+- HH/HL uptrend (+5) ★
+- Near EMA20 dip zone (0.3%, +5) ★
+- ADX 10.3 CHOP — trend signals halved
+- RSI 50.9 healthy (+8)
+- MACD hist negative (-6)
+- ATR 6.8% high risk (-8)
+- OBV rising — inflow (+4)
+- Near resistance (-8)
+- R/R 0.1 poor entry (-8)
+- RS +8.8% leading market (+6) ★
+
+**1W:** EMA stack=Y | HH/HL=N | RSI=57.4 | ADX=35.7 | Squeeze=Y | Score=38
+**4H:** RSI=49.3 | MACD=- | ADX=15 | Vol=0.9x | Score=8
+**1H:** RSI=49.5 | MACD=+ | Score=32
+
+---
+
+### 29. NASDAQ:MU (NASDAQ:MU)
+
+News: +53 (Neutral)  |  Confidence: **Low**
+
+**Multi-TF Scores:**
+- 1W: 27 | 1D: 20 | 4H: 0 | 1H: 42 | **Composite: 19** | **Adj: 12** | **Final: 22**
+- Trend Alignment: 1W↑ 1D↑ 4H→ 1H→  →  **2/4 (50%)**
+
+**[TRADE SIGNAL]**
+- Conclusion: **Long** (Low)
+- Type: Trend Continuation
+- Chase OK: **NO**
+- SQZMOM: UNKNOWN
+- Stop / Target: 913.17 / 989.96  (R/R: 0.2)
+- Key Risks: Near resistance / 52W high; Momentum decay; OBV diverging (distribution); Choppy market (ADX 9.4); Poor R/R (0.2) — wait for pullback
+- Bull Trap: No
+- Fake Breakout: No
+- Reversal Setup: No
+- Choppy Market: **YES (ADX low)**
+- Bearish Divergence: No
+- Poor R/R: **YES**
+
+**1D Key Indicators:**
+| Indicator | Value | Status |
+|-----------|-------|--------|
+| Price | 977.5 | — |
+| ATR Stop / Target | 913.17 / 989.96 | R/R: 0.2 |
+| ADX(14) | 9.4 (+DI:27.3 -DI:23.3) | CHOP |
+| RS vs SPY | +5.2% | Leader |
+| EMA20 Distance | 2.4% | Dip zone |
+| RSI(14) | 53.8 | Healthy |
+| Stoch RSI | 52.1 | Mid |
+| RSI Divergence | None | — |
+| MACD hist | -3.6111 | Up |
+| Squeeze | Released | - |
+| BB Width% | 13.1% | Normal |
+| ATR% | 4.4% | High risk |
+| Volume Ratio | 0.9x | Normal |
+| Volume Climax | No | - |
+| OBV | down | Outflow |
+| Returns 3d/5d/10d/20d | 5.8/0/2.2/4.3% | ★ accelerating |
+| EMA Bull Stack | YES | — |
+| Above EMA200 | YES | — |
+| HH/HL | NO | — |
+| Range pos (20-bar) | 58.1% | Mid |
+| Support / tests | 918.88 (0 tests) | - |
+| Resistance | 989.96 | NEAR |
+
+**1D Signal Detail:**
+- EMA bull alignment (+6 chop-disc)
+- Above EMA200 (+8)
+- EMA200 rising (+4)
+- Near EMA20 dip zone (2.4%, +5) ★
+- ADX 9.4 CHOP — trend signals halved
+- RSI 53.8 healthy (+8)
+- MACD hist negative (-6)
+- Return accel 3d:5.8% 5d:0% (+5) ★
+- Near resistance (-8)
+- R/R 0.2 poor entry (-8)
+- RS +5.2% leading market (+6) ★
+
+**1W:** EMA stack=Y | HH/HL=Y | RSI=60.7 | ADX=42 | Squeeze=N | Score=27
+**4H:** RSI=55.4 | MACD=- | ADX=18 | Vol=0.4x | Score=0
+**1H:** RSI=64.8 | MACD=+ | Score=42
+
+---
+
+### 30. NASDAQ:PANW (NASDAQ:PANW)
+
+News: +78 (Strong Long)  |  Confidence: **Low**
+
+**Multi-TF Scores:**
+- 1W: 18 | 1D: 18 | 4H: 14 | 1H: 37 | **Composite: 18.9** | **Adj: 11.9** | **Final: 21.9**
+- Trend Alignment: 1W↑ 1D↑ 4H↑ 1H→  →  **3/4 (75%)**
+
+**[TRADE SIGNAL]**
+- Conclusion: **Long** (Low)
+- Type: Trend Continuation
+- Chase OK: **NO**
+- SQZMOM: UNKNOWN
+- Stop / Target: 345.24 / 387.33  (R/R: 0.3)
+- Key Risks: Near resistance / 52W high; Choppy market (ADX 17.7); Poor R/R (0.3) — wait for pullback
+- Bull Trap: No
+- Fake Breakout: No
+- Reversal Setup: No
+- Choppy Market: **YES (ADX low)**
+- Bearish Divergence: No
+- Poor R/R: **YES**
+
+**1D Key Indicators:**
+| Indicator | Value | Status |
+|-----------|-------|--------|
+| Price | 375.06 | — |
+| ATR Stop / Target | 345.24 / 387.33 | R/R: 0.3 |
+| ADX(14) | 17.7 (+DI:27.1 -DI:20.5) | CHOP |
+| RS vs SPY | +5.1% | Leader |
+| EMA20 Distance | 5.2% | Normal |
+| RSI(14) | 57.9 | Healthy |
+| Stoch RSI | 93.8 | Overbought |
+| RSI Divergence | None | — |
+| MACD hist | 2.8675 | Up |
+| Squeeze | Released | - |
+| BB Width% | 21.5% | Normal |
+| ATR% | 5.3% | High risk |
+| Volume Ratio | 1x | Normal |
+| Volume Climax | No | - |
+| OBV | up | Inflow |
+| Returns 3d/5d/10d/20d | 0.3/10.8/14.2/4.3% | - |
+| EMA Bull Stack | YES | — |
+| Above EMA200 | YES | — |
+| HH/HL | NO | — |
+| Range pos (20-bar) | 81.4% | High |
 | Support / tests | 328 (0 tests) | - |
 | Resistance | 387.33 | NEAR |
 
@@ -1740,111 +2083,110 @@ News: +66 (Mid Long)  |  Confidence: **Low**
 - Above EMA200 (+8)
 - EMA200 rising (+4)
 - LH downtrend (-8)
-- ADX 18 CHOP — trend signals halved
-- RSI 58.2 healthy (+8)
+- ADX 17.7 CHOP — trend signals halved
+- RSI 57.9 healthy (+8)
 - MACD hist accelerating (+10)
-- Stoch RSI 87.8 overbought (-4)
-- ATR 5.8% high risk (-8)
+- Stoch RSI 93.8 overbought (-4)
+- ATR 5.3% high risk (-8)
+- Volume expanding (+8)
 - OBV rising — inflow (+4)
-- Return accel 3d:13.6% 5d:12.1% (+5) ★
 - Near resistance (-8)
-- R/R 0.2 poor entry (-8)
-- RS +2.1% beating market (+3)
+- R/R 0.3 poor entry (-8)
+- RS +5.1% leading market (+6) ★
 
 **1W:** EMA stack=Y | HH/HL=Y | RSI=64.7 | ADX=44.2 | Squeeze=N | Score=18
-**4H:** RSI=60.9 | MACD=+ | ADX=21.5 | Vol=0.6x | Score=20
-**1H:** RSI=63.9 | MACD=- | Score=39
+**4H:** RSI=60.5 | MACD=+ | ADX=19.3 | Vol=0.6x | Score=14
+**1H:** RSI=56.7 | MACD=- | Score=37
 
 ---
 
-### 26. NASDAQ:AAPL (NASDAQ:AAPL)
+### 31. NYSE:BE (NYSE:BE)
 
-News: +50 (Neutral)  |  Confidence: **Low**
+News: +44 (Neutral)  |  Confidence: **Low**
 
 **Multi-TF Scores:**
-- 1W: 18 | 1D: 17 | 4H: 31 | 1H: 33 | **Composite: 22.4** | **Adj: 9.4** | **Final: 19.4**
-- Trend Alignment: 1W↑ 1D↑ 4H↑ 1H→  →  **3/4 (75%)**
+- 1W: 6 | 1D: 22 | 4H: 32 | 1H: 51 | **Composite: 23.4** | **Adj: 6.4** | **Final: 16.4**
+- Trend Alignment: 1W↑ 1D↑ 4H↑ 1H↑  →  **4/4 (100%)**
 
 **[TRADE SIGNAL]**
 - Conclusion: **Long** (Low)
-- Type: Pullback Buy (Near Support)
+- Type: Overextended Chase (High Risk)
 - Chase OK: **NO**
 - SQZMOM: UNKNOWN
-- Stop / Target: 320.89 / 334.99  (R/R: 0.2)
-- Key Risks: Near resistance / 52W high; Choppy market (ADX 15); Bearish RSI divergence — momentum exhaustion; Poor R/R (0.2) — wait for pullback
+- Stop / Target: 254.64 / 283.83  (R/R: 0.2)
+- Key Risks: Fake breakout: high range + low volume; Overextended: dist20=13.6%, RSI=63.8; Weekly LH structure; Choppy market (ADX 17.5); Poor R/R (0.2) — wait for pullback
 - Bull Trap: No
-- Fake Breakout: No
+- Fake Breakout: **YES**
 - Reversal Setup: No
 - Choppy Market: **YES (ADX low)**
-- Bearish Divergence: **YES**
+- Bearish Divergence: No
 - Poor R/R: **YES**
 
 **1D Key Indicators:**
 | Indicator | Value | Status |
 |-----------|-------|--------|
-| Price | 332.41 | — |
-| ATR Stop / Target | 320.89 / 334.99 | R/R: 0.2 |
-| ADX(14) | 15 (+DI:32.1 -DI:20.7) | CHOP |
-| RS vs SPY | +9% | Leader |
-| EMA20 Distance | 3.1% | Normal |
-| RSI(14) | 62.1 | Healthy |
-| Stoch RSI | 90.9 | Overbought |
-| RSI Divergence | BEARISH ⚠ | — |
-| MACD hist | 1.5385 | Down |
+| Price | 280.76 | — |
+| ATR Stop / Target | 254.64 / 283.83 | R/R: 0.2 |
+| ADX(14) | 17.5 (+DI:33.9 -DI:19.7) | CHOP |
+| RS vs SPY | +36.7% | Leader |
+| EMA20 Distance | 13.6% | Overextended |
+| RSI(14) | 63.8 | Healthy |
+| Stoch RSI | 77.8 | Mid |
+| RSI Divergence | None | — |
+| MACD hist | 4.6427 | Up |
 | Squeeze | Released | - |
-| BB Width% | 10% | Normal |
-| ATR% | 2.3% | Normal |
-| Volume Ratio | 0.9x | Normal |
+| BB Width% | 47.7% | Normal |
+| ATR% | 6.2% | High risk |
+| Volume Ratio | 1.1x | Normal |
 | Volume Climax | No | - |
 | OBV | up | Inflow |
-| Returns 3d/5d/10d/20d | 0/5.4/2.2/7.2% | - |
+| Returns 3d/5d/10d/20d | 9.2/8.6/29.2/35.9% | ★ accelerating |
 | EMA Bull Stack | YES | — |
 | Above EMA200 | YES | — |
 | HH/HL | YES | — |
-| Range pos (20-bar) | 87% | High |
-| Support / tests | 319.35 (1 tests) | Near |
-| Resistance | 334.99 | NEAR |
+| Range pos (20-bar) | 92.9% | High |
+| Support / tests | 268.13 (0 tests) | - |
+| Resistance | 283.83 | NEAR |
 
 **1D Signal Detail:**
 - EMA bull alignment (+6 chop-disc)
 - Above EMA200 (+8)
 - EMA200 rising (+4)
 - HH/HL uptrend (+5) ★
-- ADX 15 CHOP — trend signals halved
-- RSI 62.1 healthy (+8)
-- MACD hist positive (+4)
-- Bearish RSI divergence (-10) ★★
-- Stoch RSI 90.9 overbought (-4)
+- EMA20 deviation 13.6% overextended (-10)
+- ADX 17.5 CHOP — trend signals halved
+- RSI 63.8 healthy (+8)
+- MACD hist accelerating (+10)
+- ATR 6.2% high risk (-8)
 - OBV rising — inflow (+4)
-- Near support (1 test) +6 ★
+- Return accel 3d:9.2% 5d:8.6% (+5) ★
 - Near resistance (-8)
-- Near 52W high (-4)
 - R/R 0.2 poor entry (-8)
-- RS +9% leading market (+6) ★
+- RS +36.7% leading market (+6) ★
 
-**1W:** EMA stack=Y | HH/HL=Y | RSI=64.4 | ADX=24.3 | Squeeze=N | Score=18
-**4H:** RSI=61.1 | MACD=+ | ADX=17.1 | Vol=0.8x | Score=31
-**1H:** RSI=55.4 | MACD=- | Score=33
+**1W:** EMA stack=Y | HH/HL=N | RSI=59.7 | ADX=22.8 | Squeeze=N | Score=6
+**4H:** RSI=65.7 | MACD=+ ✕ | ADX=24.3 | Vol=0.5x | Score=32
+**1H:** RSI=65.3 | MACD=+ | Score=51
 
 ---
 
-### 27. NASDAQ:GEN (NASDAQ:GEN)
+### 32. NASDAQ:AAPL (NASDAQ:AAPL)
 
-News: +50 (Neutral)  |  Confidence: **Low**
+News: +55 (Short/Avoid)  |  Confidence: **Low**
 
 **Multi-TF Scores:**
-- 1W: 13 | 1D: 10 | 4H: 11 | 1H: 47 | **Composite: 14.7** | **Adj: 1.7** | **Final: 11.7**
-- Trend Alignment: 1W↑ 1D→ 4H→ 1H→  →  **1/4 (25%)**
+- 1W: 23 | 1D: 17 | 4H: 33 | 1H: 55 | **Composite: 26.3** | **Adj: 3.3** | **Final: 13.3**
+- Trend Alignment: 1W↑ 1D↑ 4H↑ 1H↑  →  **4/4 (100%)**
 
 **[TRADE SIGNAL]**
 - Conclusion: **Long** (Low)
-- Type: Pullback Buy (Near Support)
+- Type: Trend Follow (HH/HL Intact)
 - Chase OK: **NO**
-- SQZMOM: WAIT
-- Stop / Target: 29.37 / 31.29  (R/R: 0.6)
-- Key Risks: Near resistance / 52W high; Momentum decay; Weekly LH structure; OBV diverging (distribution); Choppy market (ADX 16.5); Bearish RSI divergence — momentum exhaustion; Poor R/R (0.6) — wait for pullback
+- SQZMOM: UNKNOWN
+- Stop / Target: 325.25 / 344.57  (R/R: 0.4)
+- Key Risks: Fake breakout: high range + low volume; Choppy market (ADX 15.8); Bearish RSI divergence — momentum exhaustion; Poor R/R (0.4) — wait for pullback
 - Bull Trap: No
-- Fake Breakout: No
+- Fake Breakout: **YES**
 - Reversal Setup: No
 - Choppy Market: **YES (ADX low)**
 - Bearish Divergence: **YES**
@@ -1853,113 +2195,186 @@ News: +50 (Neutral)  |  Confidence: **Low**
 **1D Key Indicators:**
 | Indicator | Value | Status |
 |-----------|-------|--------|
-| Price | 30.65 | — |
-| ATR Stop / Target | 29.37 / 31.29 | R/R: 0.6 |
-| ADX(14) | 16.5 (+DI:28.8 -DI:19.2) | CHOP |
-| RS vs SPY | +12.6% | Leader |
-| EMA20 Distance | 2% | Dip zone |
-| RSI(14) | 57.4 | Healthy |
-| Stoch RSI | 19.4 | Oversold |
+| Price | 337 | — |
+| ATR Stop / Target | 325.25 / 344.57 | R/R: 0.4 |
+| ADX(14) | 15.8 (+DI:32.4 -DI:19.1) | CHOP |
+| RS vs SPY | +7.2% | Leader |
+| EMA20 Distance | 4.1% | Normal |
+| RSI(14) | 65.4 | Healthy |
+| Stoch RSI | 100 | Overbought |
 | RSI Divergence | BEARISH ⚠ | — |
-| MACD hist | -0.0396 | Down |
+| MACD hist | 1.6861 | Up |
 | Squeeze | Released | - |
-| BB Width% | 13.6% | Normal |
-| ATR% | 2.8% | Normal |
-| Volume Ratio | 1.2x | Normal |
+| BB Width% | 10.8% | Normal |
+| ATR% | 2.3% | Normal |
+| Volume Ratio | 0.9x | Normal |
 | Volume Climax | No | - |
-| OBV | down | Outflow |
-| Returns 3d/5d/10d/20d | 1.3/3/2.1/10.9% | - |
-| EMA Bull Stack | NO | — |
+| OBV | up | Inflow |
+| Returns 3d/5d/10d/20d | 1.2/3.2/3.7/6.4% | - |
+| EMA Bull Stack | YES | — |
 | Above EMA200 | YES | — |
 | HH/HL | YES | — |
-| Range pos (20-bar) | 78.5% | Mid |
+| Range pos (20-bar) | 95.7% | High |
+| Support / tests | 319.35 (0 tests) | - |
+| Resistance | 344.57 | NEAR |
+
+**1D Signal Detail:**
+- EMA bull alignment (+6 chop-disc)
+- Above EMA200 (+8)
+- EMA200 rising (+4)
+- HH/HL uptrend (+5) ★
+- ADX 15.8 CHOP — trend signals halved
+- RSI 65.4 healthy (+8)
+- MACD hist accelerating (+10)
+- Bearish RSI divergence (-10) ★★
+- Stoch RSI 100 overbought (-4)
+- OBV rising — inflow (+4)
+- Near resistance (-8)
+- Near 52W high (-4)
+- R/R 0.4 poor entry (-8)
+- RS +7.2% leading market (+6) ★
+
+**1W:** EMA stack=Y | HH/HL=Y | RSI=65.8 | ADX=24.4 | Squeeze=N | Score=23
+**4H:** RSI=65.7 | MACD=+ | ADX=18 | Vol=0.5x | Score=33
+**1H:** RSI=65.8 | MACD=+ | Score=55
+
+---
+
+### 33. NASDAQ:GEN (NASDAQ:GEN)
+
+News: +50 (Neutral)  |  Confidence: **Low**
+
+**Multi-TF Scores:**
+- 1W: N/A | 1D: 11 | 4H: 6 | 1H: 30 | **Composite: 11.9** | **Adj: 1.9** | **Final: 11.9**
+- Trend Alignment: 1W:N/A 1D→ 4H→ 1H→  →  **0/3 (0%)**
+
+**[TRADE SIGNAL]**
+- Conclusion: **Long** (Low)
+- Type: Pullback Buy (Near Support)
+- Chase OK: **NO**
+- SQZMOM: WAIT
+- Stop / Target: 28.97 / 31.29  (R/R: 1.6)
+- Key Risks: Near resistance / 52W high; Momentum decay; OBV diverging (distribution); Choppy market (ADX 16.2); Bearish RSI divergence — momentum exhaustion
+- Bull Trap: No
+- Fake Breakout: No
+- Reversal Setup: No
+- Choppy Market: **YES (ADX low)**
+- Bearish Divergence: **YES**
+- Poor R/R: No
+
+**1D Key Indicators:**
+| Indicator | Value | Status |
+|-----------|-------|--------|
+| Price | 30.21 | — |
+| ATR Stop / Target | 28.97 / 31.29 | R/R: 1.6 |
+| ADX(14) | 16.2 (+DI:27.3 -DI:21.1) | CHOP |
+| RS vs SPY | +10.5% | Leader |
+| EMA20 Distance | 0.5% | Dip zone |
+| RSI(14) | 53.8 | Healthy |
+| Stoch RSI | 0 | Oversold |
+| RSI Divergence | BEARISH ⚠ | — |
+| MACD hist | -0.0891 | Down |
+| Squeeze | Released | - |
+| BB Width% | 11.2% | Normal |
+| ATR% | 2.7% | Normal |
+| Volume Ratio | 0.8x | Normal |
+| Volume Climax | No | - |
+| OBV | down | Outflow |
+| Returns 3d/5d/10d/20d | -3.8/0.8/-1.4/9.7% | - |
+| EMA Bull Stack | NO | — |
+| Above EMA200 | YES | — |
+| HH/HL | NO | — |
+| Range pos (20-bar) | 69% | Mid |
 | Support / tests | 29.55 (1 tests) | Near |
 | Resistance | 31.29 | NEAR |
 
 **1D Signal Detail:**
 - Above EMA200 (+8)
 - EMA200 rising (+4)
-- HH/HL uptrend (+5) ★
-- Near EMA20 dip zone (2%, +5) ★
-- ADX 16.5 CHOP — trend signals halved
-- RSI 57.4 healthy (+8)
+- LH downtrend (-8)
+- Near EMA20 dip zone (0.5%, +5) ★
+- ADX 16.2 CHOP — trend signals halved
+- RSI 53.8 healthy (+8)
 - MACD hist negative (-6)
 - Bearish RSI divergence (-10) ★★
-- Stoch RSI 19.4 oversold (+4)
+- Stoch RSI 0 oversold (+4)
 - Near support (1 test) +6 ★
 - Near resistance (-8)
-- Near 52W high (-4)
-- R/R 0.6 poor entry (-8)
-- RS +12.6% leading market (+6) ★
+- R/R 1.6 acceptable (+2)
+- RS +10.5% leading market (+6) ★
 
-**1W:** EMA stack=Y | HH/HL=N | RSI=65.5 | ADX=30.5 | Squeeze=N | Score=13
-**4H:** RSI=53.9 | MACD=- | ADX=18.9 | Vol=1.8x | Score=11
-**1H:** RSI=46.1 | MACD=- | Score=47
+**4H:** RSI=47.9 | MACD=- | ADX=16.4 | Vol=0.9x | Score=6
+**1H:** RSI=36 | MACD=- | Score=30
 
 ---
 
 ## Top Entry Candidates for Tomorrow
 
-### #1 — NYSE:LTC (NYSE:LTC)
+### #1 — NASDAQ:PLTR (NASDAQ:PLTR)
 
 | Dimension | Assessment |
 |-----------|-----------|
 | **Signal Bias** | **Strong Long** |
-| **Confidence** | **High** |
-| **Trade Type** | **Trend Follow (HH/HL Intact)** |
+| **Confidence** | **Medium** |
+| **Trade Type** | **Pullback Buy (Near Support)** |
 | **Chase OK?** | **NO** |
 | Multi-TF Alignment | 1W↑ 1D↑ 4H↑ 1H↑ → 4/4 (100%) |
-| Tech Composite | +54.6 → adj +54.6 |
-| News Score | +50 (Neutral) |
-| Final Combined | **+64.6** |
+| Tech Composite | +40.7 → adj +40.7 |
+| News Score | +67 (Mid Long) |
+| Final Combined | **+50.7** |
 | SQZMOM Daily | WAIT |
-| Current Price | 43.08 |
-| ATR Stop Loss | 41.73 (1.5× ATR) |
-| Pivot Target | - |
-| Risk/Reward | - |
-| ADX(14) | 27.6 (Trending up) |
-| RS vs SPY | +9.4% |
-| RSI(14) | 64.6 (healthy) |
-| Stoch RSI | 75.4  |
+| Current Price | 176.24 |
+| ATR Stop Loss | 165.76 (1.5× ATR) |
+| Pivot Target | 180.18 |
+| Risk/Reward | 2 ★ |
+| ADX(14) | 21.4 (Weak) |
+| RS vs SPY | +1.4% |
+| RSI(14) | 55.9 (healthy) |
+| Stoch RSI | 36.9  |
 | RSI Divergence | None |
-| MACD | hist +0.1823 decel |
+| MACD | hist -1.5877 accel up |
 | Squeeze | released |
 | EMA Alignment | Bull stack |
-| HH/HL Structure | YES — uptrend intact |
-| Volume Ratio | 1.1x |
+| HH/HL Structure | NO |
+| Volume Ratio | 0.8x |
 | Volume Climax | No |
 | OBV Direction | Rising — inflow |
-| Returns 3d/5d/20d | 1.9% / 1.2% / 7.7% ★ accel |
-| Support (0 tests) | 40.82 |
-| Key Resistance | N/A |
+| Returns 3d/5d/20d | 1.7% / 6.3% / 0.6%  |
+| Support (4 tests) | 174.29 |
+| Key Resistance | 180.18 |
 
 **Core Reasons:**
 - EMA bull alignment (+12)
 - Above EMA200 (+8)
 - EMA200 rising (+4)
-- HH/HL uptrend (+10) ★
-- ADX 27.6 trend up (+6)
-- RSI 64.6 healthy (+8)
-- MACD hist positive (+4)
+- Near EMA20 dip zone (2.4%, +5) ★
+- RSI 55.9 healthy (+8)
+- MACD hist negative (-6)
 - OBV rising — inflow (+4)
+- Near support (4 tests) +12 ★★
 
 **Key Risks:**
 - WARNING: Near resistance / 52W high
+- WARNING: Momentum decay
 
 ---
 
 ## Bull Trap / Fake Breakout / Overheated / Bearish Divergence Warnings
 
-- **NASDAQ:BGC (NASDAQ:BGC)** [BEAR-DIV] — final:47.2 — Near resistance / 52W high; Weekly LH structure; Choppy market (ADX 13.3); Bearish RSI divergence — momentum exhaustion; Poor R/R (0.5) — wait for pullback
-- **NYSE:HGTY (NYSE:HGTY)** [BEAR-DIV] — final:44.4 — Near resistance / 52W high; Bearish RSI divergence — momentum exhaustion; Poor R/R (0) — wait for pullback
-- **NYSE:DT (NYSE:DT)** [FAKE-BRK] — final:41.4 — Fake breakout: high range + low volume; Choppy market (ADX 16.9)
-- **NYSE:SM (NYSE:SM)** [BEAR-DIV] — final:39.4 — Near resistance / 52W high; Bearish RSI divergence — momentum exhaustion; Poor R/R (0) — wait for pullback
-- **OTC:SMNEY (OTC:SMNEY)** [BULL-TRAP, FAKE-BRK] — final:28.1 — Bull trap: RSI 74 + near resistance; Fake breakout: high range + low volume
-- **NASDAQ:CRWD (NASDAQ:CRWD)** [FAKE-BRK, BEAR-DIV] — final:23.9 — Fake breakout: high range + low volume; Choppy market (ADX 19.1); Bearish RSI divergence — momentum exhaustion
-- **NASDAQ:AAPL (NASDAQ:AAPL)** [BEAR-DIV] — final:19.4 — Near resistance / 52W high; Choppy market (ADX 15); Bearish RSI divergence — momentum exhaustion; Poor R/R (0.2) — wait for pullback
-- **NASDAQ:GEN (NASDAQ:GEN)** [BEAR-DIV] — final:11.7 — Near resistance / 52W high; Momentum decay; Weekly LH structure; OBV diverging (distribution); Choppy market (ADX 16.5); Bearish RSI divergence — momentum exhaustion; Poor R/R (0.6) — wait for pullback
+- **NYSE:LTC (NYSE:LTC)** [FAKE-BRK] — final:53 — Fake breakout: high range + low volume
+- **NASDAQ:TEM (NASDAQ:TEM)** [OVERHEAT] — final:49.7 — Overextended: dist20=24.9%, RSI=72.1
+- **OTC:SMNEY (OTC:SMNEY)** [BULL-TRAP, FAKE-BRK] — final:38.6 — Bull trap: RSI 74 + near resistance; Fake breakout: high range + low volume
+- **NYSE:DELL (NYSE:DELL)** [FAKE-BRK, OVERHEAT] — final:32.2 — Fake breakout: high range + low volume; Overextended: dist20=14.9%, RSI=66.4; Choppy market (ADX 18.5)
+- **NASDAQ:QCOM (NASDAQ:QCOM)** [FAKE-BRK] — final:31.8 — Fake breakout: high range + low volume; Poor R/R (0.5) — wait for pullback
+- **NASDAQ:CRWD (NASDAQ:CRWD)** [FAKE-BRK, BEAR-DIV] — final:30.2 — Fake breakout: high range + low volume; Bearish RSI divergence — momentum exhaustion
+- **NASDAQ:BGC (NASDAQ:BGC)** [BEAR-DIV] — final:27.5 — Near resistance / 52W high; Momentum decay; Weekly LH structure; OBV diverging (distribution); Choppy market (ADX 12.5); Bearish RSI divergence — momentum exhaustion; Poor R/R (0.2) — wait for pullback
+- **NYSE:HPE (NYSE:HPE)** [FAKE-BRK] — final:25.2 — Fake breakout: high range + low volume; Choppy market (ADX 13.1); Poor R/R (0.1) — wait for pullback
+- **NYSE:BE (NYSE:BE)** [FAKE-BRK, OVERHEAT] — final:16.4 — Fake breakout: high range + low volume; Overextended: dist20=13.6%, RSI=63.8; Weekly LH structure; Choppy market (ADX 17.5); Poor R/R (0.2) — wait for pullback
+- **NASDAQ:AAPL (NASDAQ:AAPL)** [FAKE-BRK, BEAR-DIV] — final:13.3 — Fake breakout: high range + low volume; Choppy market (ADX 15.8); Bearish RSI divergence — momentum exhaustion; Poor R/R (0.4) — wait for pullback
+- **NASDAQ:GEN (NASDAQ:GEN)** [BEAR-DIV] — final:11.9 — Near resistance / 52W high; Momentum decay; OBV diverging (distribution); Choppy market (ADX 16.2); Bearish RSI divergence — momentum exhaustion
 
 ---
-*Generated: 2026-09-17T12:49:54.191Z*
+*Generated: 2026-09-18T12:47:14.719Z*
 *Indicators (v2): EMA5/20/50/200, RSI, MACD, ADX(14), Squeeze(BB+KC), ATR, OBV, Pivot HH/HL, Stoch RSI, RSI Divergence*
 *Enhancements: ADX chop filter, divergence detect, volume climax, squeeze streak, return accel, support tests, R/R + ATR stop, RS vs SPY*
+*（内容由AI生成，仅供参考）*

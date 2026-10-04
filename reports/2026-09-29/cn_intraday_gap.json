@@ -1,0 +1,204 @@
+{
+  "generated_at": "2026-09-29T06:44:38.312Z",
+  "market": "cn",
+  "source": "./watchlist/cn_selected.txt",
+  "entry_signal": {
+    "can_enter": false,
+    "signal": "观望",
+    "reason": "隔夜美股上涨 → A股均值回归承压 (回测个股涨概率仅 40.8%)",
+    "strategy": "不入场, 等待下一个美股下跌日"
+  },
+  "overnight_us": {
+    "sp500_pct": 0.59,
+    "nasdaq_pct": 0.44,
+    "dji_pct": 0.65,
+    "avg_pct": 0.56,
+    "contrarian_signal": "US up → CN down (均值回归)"
+  },
+  "sector_flow": {
+    "top_gainers": [
+      {
+        "code": "BK1599",
+        "name": "其他医疗服务",
+        "change_pct": -2.63,
+        "flow": 4867.71
+      },
+      {
+        "code": "BK1355",
+        "name": "运动服装",
+        "change_pct": -2.19,
+        "flow": 3136.31
+      },
+      {
+        "code": "BK1569",
+        "name": "炼油化工",
+        "change_pct": -2.11,
+        "flow": 3637.37
+      },
+      {
+        "code": "BK1510",
+        "name": "其他养殖",
+        "change_pct": -2.03,
+        "flow": 905.38
+      },
+      {
+        "code": "BK1255",
+        "name": "林业Ⅱ",
+        "change_pct": -1.93,
+        "flow": 5119.85
+      }
+    ],
+    "top_losers": [
+      {
+        "code": "BK1305",
+        "name": "燃料电池",
+        "change_pct": 7.84,
+        "flow": 292.38
+      },
+      {
+        "code": "BK1304",
+        "name": "锂电专用设备",
+        "change_pct": 7.07,
+        "flow": 21577.98
+      },
+      {
+        "code": "BK1298",
+        "name": "文字媒体",
+        "change_pct": 6.88,
+        "flow": 2679.15
+      },
+      {
+        "code": "BK1340",
+        "name": "印制电路板",
+        "change_pct": 5.62,
+        "flow": 14475.68
+      },
+      {
+        "code": "BK1296",
+        "name": "视频媒体",
+        "change_pct": 5.33,
+        "flow": 955.25
+      }
+    ]
+  },
+  "model": "external_3d",
+  "formula": "Score = 隔夜外盘·均值回归(±4) + 新闻情绪(±3) + 板块资金流(±2)",
+  "strategy": {
+    "entry_condition": "隔夜美股下跌",
+    "priority_sort": "新闻<60 优先 (回测涨概率 65.1%), 新闻≥60 次之 (回测涨概率 48.8%)",
+    "rationale": "利好出尽是利空 — 高新闻分标的已被热钱透支，反弹力度弱"
+  },
+  "total": 27,
+  "success": 0,
+  "failed": [
+    {
+      "symbol": "SSE:600172",
+      "reason": "chart_not_ready"
+    },
+    {
+      "symbol": "SSE:600186",
+      "reason": "chart_not_ready"
+    },
+    {
+      "symbol": "SSE:601872",
+      "reason": "chart_not_ready"
+    },
+    {
+      "symbol": "SSE:603228",
+      "reason": "chart_not_ready"
+    },
+    {
+      "symbol": "SZSE:002463",
+      "reason": "chart_not_ready"
+    },
+    {
+      "symbol": "SZSE:002916",
+      "reason": "chart_not_ready"
+    },
+    {
+      "symbol": "SSE:601869",
+      "reason": "chart_not_ready"
+    },
+    {
+      "symbol": "SZSE:002636",
+      "reason": "chart_not_ready"
+    },
+    {
+      "symbol": "SZSE:300903",
+      "reason": "chart_not_ready"
+    },
+    {
+      "symbol": "SZSE:300408",
+      "reason": "chart_not_ready"
+    },
+    {
+      "symbol": "SZSE:300857",
+      "reason": "chart_not_ready"
+    },
+    {
+      "symbol": "SZSE:300037",
+      "reason": "chart_not_ready"
+    },
+    {
+      "symbol": "SSE:601208",
+      "reason": "chart_not_ready"
+    },
+    {
+      "symbol": "SSE:603259",
+      "reason": "chart_not_ready"
+    },
+    {
+      "symbol": "SSE:605168",
+      "reason": "chart_not_ready"
+    },
+    {
+      "symbol": "SZSE:001389",
+      "reason": "chart_not_ready"
+    },
+    {
+      "symbol": "SSE:603296",
+      "reason": "chart_not_ready"
+    },
+    {
+      "symbol": "SZSE:300285",
+      "reason": "chart_not_ready"
+    },
+    {
+      "symbol": "SZSE:300795",
+      "reason": "chart_not_ready"
+    },
+    {
+      "symbol": "SZSE:300684",
+      "reason": "chart_not_ready"
+    },
+    {
+      "symbol": "SZSE:300394",
+      "reason": "chart_not_ready"
+    },
+    {
+      "symbol": "SZSE:301217",
+      "reason": "chart_not_ready"
+    },
+    {
+      "symbol": "SSE:600110",
+      "reason": "chart_not_ready"
+    },
+    {
+      "symbol": "SZSE:300661",
+      "reason": "chart_not_ready"
+    },
+    {
+      "symbol": "SZSE:301529",
+      "reason": "chart_not_ready"
+    },
+    {
+      "symbol": "SSE:600206",
+      "reason": "chart_not_ready"
+    },
+    {
+      "symbol": "SZSE:002975",
+      "reason": "chart_not_ready"
+    }
+  ],
+  "results": []
+}

@@ -1,0 +1,46 @@
+# US Grade A Picks (Triple-Filter)
+
+**Generated:** 2026-09-24
+**Source:** watchlist/us_combined_signals.md (npm run combined:us)
+
+## 筛选条件
+1. 等级：🟢A
+2. 多周期对齐：3/4 (75%) 或 4/4 (100%)
+3. News Signal：GREEN Long (Strong)
+
+---
+
+## 命中名单 (1 只)
+
+### 1. NYSE:P (P)
+
+| Field | Value |
+|-------|-------|
+| Combined Score | 58.1 |
+| Tech Score | 37.2 (Trend Continuation) |
+| News Score | 77 → GREEN Long (Strong) |
+| Current Price | 109.65 |
+| Entry | 109.65 |
+| Stop | 101.1 (ATR × 1.5) |
+| Target | 122.19 |
+| R/R | 1.5:1 |
+| RSI | 60.3 |
+| MTF Alignment | 4/4 (100%) |
+| Risk Flags | near_resist chop low_rr |
+
+---
+
+## 接近命中（未过 News Signal 条件，供参考）
+
+| Symbol | MTF Alignment | News Signal |
+|--------|---------------|-------------|
+| NASDAQ:MSFT | 4/4 (100%) | GREEN Long (Mid) |
+| NYSE:GRMN | 3/4 (75%) | GREEN Long (Mid) |
+| NASDAQ:QCOM | 4/4 (100%) | GREEN Long (Mid) |
+| NASDAQ:PLTR | 4/4 (100%) | GREEN Long (Mid) |
+| NYSE:DT | 3/4 (75%) | GREEN Long (Mid) |
+| NASDAQ:CRWD | 4/4 (100%) | GREEN Long (Mid) |
+| NYSE:ANET | 4/4 (100%) | GREEN Long (Mid) |
+| NASDAQ:MRVL | 4/4 (100%) | GREEN Long (Mid) |
+
+> 注：以上股票满足等级 + 多周期对齐，但 News Signal 为 GREEN Long (Mid)，未达 Strong，故未入选。

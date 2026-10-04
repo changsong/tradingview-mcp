@@ -1,0 +1,2761 @@
+{
+  "generated_at": "2026-09-21T12:49:22.164Z",
+  "market": "us",
+  "source": "src/core/usNews.js",
+  "score_scale": "0-100 normalized (neutral=50)",
+  "window": {
+    "from": "2026-09-14",
+    "to": "2026-09-21",
+    "days": 7
+  },
+  "llm_used": true,
+  "performance": {
+    "totals_ms": {
+      "list_fetch_ms": 51184,
+      "enrichment_ms": 23336,
+      "relevance_ms": 0,
+      "llm_ms": 727502,
+      "report_write_ms": 20
+    },
+    "avg_ms": {
+      "list_fetch_ms": 1312,
+      "enrichment_ms": 598,
+      "relevance_ms": 0,
+      "llm_ms": 18654,
+      "report_write_ms": 1
+    }
+  },
+  "stocks": {
+    "NASDAQ:TEM": {
+      "name": "TEM",
+      "score": 78,
+      "score_raw": 6.72,
+      "score_components": {
+        "positive_weight_sum": 6.72,
+        "negative_weight_sum": 0,
+        "news_effective_count": 5,
+        "news_dropped_count": 0
+      },
+      "signal": "GREEN Long (Strong)",
+      "strategy": "Multiple bullish catalysts converging — strong sentiment + fundamental support",
+      "suitable_for": "Momentum / Hold",
+      "confidence": "High",
+      "patterns": [
+        "Sentiment Strengthening UP (trend)"
+      ],
+      "positive_factors": [
+        "[Industry|w2.52] Tempus AI (TEM), What Is Behind The Latest Buzz?",
+        "[Industry|w2.1] Tempus AI (TEM) Is Up 31.9% After Launching 100,000‑Genome AI Research",
+        "[Industry|w2.1] Tempus AI (TEM) Unveils Whole Genome Platform With Plans For 1 Million"
+      ],
+      "negative_factors": [],
+      "news_count": 5,
+      "news_dropped": 0,
+      "performance": {
+        "list_fetch_ms": 1290,
+        "candidate_filter_ms": 0,
+        "enrichment_ms": 817,
+        "raw_news_count": 31,
+        "raw_forum_count": 0,
+        "candidate_news_count": 5,
+        "candidate_forum_count": 0,
+        "enriched_news_count": 5,
+        "enriched_forum_count": 0,
+        "candidate_reasons": {
+          "news": {
+            "no-subject-mention": 12,
+            "dedup": 1,
+            "out_of_window": 13
+          },
+          "forum": {
+            "dedup": 0
+          }
+        },
+        "date_filter_ms": 0,
+        "relevance_ms": 0,
+        "llm_ms": 0,
+        "scoring_ms": 0
+      },
+      "top_news": [
+        {
+          "date": "2026-09-20",
+          "title": "Tempus AI (TEM), What Is Behind The Latest Buzz?",
+          "content": "Tempus AI (TEM) has put a new data project at the center of the story. The business plans a research platform built on 100,000 whole genomes linked to long term clinical records. Tempus AI’s new whole genome project arrives after a sharp run in the shares, with a 90 day share price return of 62.68% and a 7 day gain of 31.91%. However, the 1 year total shareholder return of an 11.79% decline shows the longer term picture has been more mixed despite the current momentum around the US$77.84...",
+          "type": "Industry",
+          "sentiment": 1,
+          "weight": 3,
+          "final_weight": 2.52,
+          "source_authority": 3.5,
+          "recency_factor": 0.72,
+          "source": "Finnhub",
+          "llm_reviewed": true,
+          "llm_confidence": 0.65,
+          "llm_is_real_catalyst": true,
+          "llm_reasoning": "100k genome project positive"
+        },
+        {
+          "date": "2026-09-19",
+          "title": "Tempus AI (TEM) Is Up 31.9% After Launching 100,000‑Genome AI Research Platform Initiative",
+          "content": "Earlier this month, Tempus AI announced a multi‑year initiative to build a research platform of 100,000 whole genomes linked to longitudinal clinical, imaging, pathology and outcome data, with plans to eventually scale toward one million genomes and offer broad access via its Tempus Lens environment by mid‑2027. This move extends Tempus AI beyond targeted panels into whole‑genome sequencing, creating a model‑ready, multimodal dataset specifically tailored for AI‑driven disease and drug...",
+          "type": "Industry",
+          "sentiment": 1,
+          "weight": 2,
+          "final_weight": 2.1,
+          "source_authority": 3.5,
+          "recency_factor": 0.6,
+          "source": "Finnhub",
+          "llm_reviewed": true,
+          "llm_confidence": 0.85,
+          "llm_is_real_catalyst": true,
+          "llm_reasoning": "concrete 100k genome launch"
+        },
+        {
+          "date": "2026-09-19",
+          "title": "Tempus AI (TEM) Unveils Whole Genome Platform With Plans For 1 Million Genomes",
+          "content": "Tempus AI (NasdaqGS:TEM) announced a new whole-genome sequencing initiative linked to clinical data for AI research in September 2026. The project aims to create a de-identified multimodal dataset that connects full genome reads with real-world clinical and imaging records. Management targets scaling the platform to one million whole genomes tied to patient outcomes for use in drug development and personalized care. This new whole-genome sequencing and clinical data platform comes against a...",
+          "type": "Industry",
+          "sentiment": 1,
+          "weight": 2,
+          "final_weight": 2.1,
+          "source_authority": 3.5,
+          "recency_factor": 0.6,
+          "source": "Finnhub",
+          "llm_reviewed": true,
+          "llm_confidence": 0.8,
+          "llm_is_real_catalyst": true,
+          "llm_reasoning": "WGS initiative quantifiable"
+        },
+        {
+          "date": "2026-09-18",
+          "title": "Strength Seen in Tempus (TEM): Can Its 14.9% Jump Turn into More Strength?",
+          "content": "Tempus (TEM) saw its shares surge in the last session with trading volume being higher than average. The latest trend in earnings estimate revisions may not translate into further price increase in the near term.",
+          "type": "Analyst Action",
+          "sentiment": 0,
+          "weight": 1,
+          "final_weight": 0.5,
+          "source_authority": 3.5,
+          "recency_factor": 0.5,
+          "source": "Finnhub",
+          "llm_reviewed": true,
+          "llm_confidence": 0.35,
+          "llm_is_real_catalyst": false,
+          "llm_reasoning": "momentum commentary only"
+        },
+        {
+          "date": "2026-09-15",
+          "title": "Tempus AI, Inc. (TEM) Presents at Morgan Stanley 24th Annual Global Healthcare Conference Transcript",
+          "content": "Tempus AI, Inc. (TEM) Morgan Stanley 24th Annual Global Healthcare Conference September 15, 2026 8:30 AM EDTCompany ParticipantsEric Lefkofsky - Co-Founder,...",
+          "type": "Industry",
+          "sentiment": 0,
+          "weight": 1,
+          "final_weight": 0.5,
+          "source_authority": 3.5,
+          "recency_factor": 0.3,
+          "source": "Finnhub",
+          "llm_reviewed": true,
+          "llm_confidence": 0.45,
+          "llm_is_real_catalyst": false,
+          "llm_reasoning": "conference transcript only"
+        }
+      ]
+    },
+    "NASDAQ:INCY": {
+      "name": "INCY",
+      "score": 67,
+      "score_raw": 4.02,
+      "score_components": {
+        "positive_weight_sum": 4.02,
+        "negative_weight_sum": 0,
+        "news_effective_count": 5,
+        "news_dropped_count": 0
+      },
+      "signal": "GREEN Long (Mid)",
+      "strategy": "Positive sentiment flow — suitable for dip-buy or light momentum entry",
+      "suitable_for": "Buy Dip / Light Momentum",
+      "confidence": "Medium",
+      "patterns": [],
+      "positive_factors": [
+        "[Policy|w1.76] MIRM, INCY Stocks In Focus — Will A September 26 FDA Ruling Reward Thi",
+        "[Policy|w1.76] Is Incyte (INCY) Undervalued After Ontario Backed MINJUVI Access?",
+        "[Industry|w0.5] Incyte (NASDAQ:INCY) Combines Minervini Trend Template Strength With H"
+      ],
+      "negative_factors": [],
+      "news_count": 5,
+      "news_dropped": 0,
+      "performance": {
+        "list_fetch_ms": 1161,
+        "candidate_filter_ms": 0,
+        "enrichment_ms": 2030,
+        "raw_news_count": 32,
+        "raw_forum_count": 0,
+        "candidate_news_count": 5,
+        "candidate_forum_count": 0,
+        "enriched_news_count": 5,
+        "enriched_forum_count": 0,
+        "candidate_reasons": {
+          "news": {
+            "no-subject-mention": 17,
+            "dedup": 1,
+            "out_of_window": 9
+          },
+          "forum": {
+            "dedup": 0
+          }
+        },
+        "date_filter_ms": 0,
+        "relevance_ms": 0,
+        "llm_ms": 0,
+        "scoring_ms": 0
+      },
+      "top_news": [
+        {
+          "date": "2026-09-21",
+          "title": "FDA Decision Watch: MRK, MIRM, INCY, GRAL Face Key Regulatory Catalysts This Week",
+          "content": "Biotech and pharmaceutical investors have several key U.S. Food and Drug Administration (FDA) events to watch this week, with decisions involving treatments for pulmonary arterial hypertension and a rare genetic bone disorder, along with an advisory committee meeting for a multi-cancer blood test.\nThe regulatory calendar could put Merck (MRK), Mirum Pharmaceuticals (MIRM), and Grail (GRAL) in focus for traders, while Incyte (INCY) also has exposure to the Zilurgisertib catalyst through its licensing agreement with Mirum.\nMerck is awaiting an FDA decision on an updated U.S. label for Winrevair (Sotatercept-CSRK) based on its Phase 3 Hyperion study. The FDA assigned a Sept. 21 PDUFA date to the supplemental application.\nA PDUFA date is the deadline by which the FDA decides whether to approve a drug for marketing in the United States.\nWinrevair treats pulmonary arterial hypertension (PAH), a serious condition in which blood vessels in the lungs become narrowed, causing high blood pressure in the lung arteries and forcing the heart to work harder to pump blood. Over time, the disease can lead to heart failure and death.\nIt is already FDA-approved for adults with PAH, while Hyperion studied patients diagnosed within the previous year, potentially supporting its use earlier in the disease.\nWinrevair generated $588 million in second-quarter sales, up 75%. Merck, which has a broad pipeline spanning oncology, cardiovascular disease, vaccines and infectious diseases, ended June with $6.85 billion in cash and cash equivalents.\nMirum faces a Sept. 26 PDUFA date for Zilurgisertib, an oral drug under Priority Review for patients aged 12 and older with Fibrodysplasia Ossificans Progressiva (FOP).\nFOP is an ultra-rare genetic disease in which bone forms abnormally inside muscles, tendons and other soft tissues. As this extra bone accumulates, patients progressively lose movement and can eventually experience severe disability and life-threatening complications.\nZilurgisertib inhibits ALK2, a protein whose abnormal activity drives excess bone formation in FOP.\nMirum acquired worldwide rights to Zilurgisertib from Incyte in April, while Incyte is eligible for milestone payments and royalties. Mirum paid Incyte $16 million upfront for Zilurgisertib and could potentially pay $63 million in regulatory and commercial milestones\nMirum already markets drugs to treat liver and genetic diseases, like Livmarli, Cholbam and Ctexli. It ended June with $561.3 million in unrestricted cash, cash equivalents and investments.\nIncyte, meanwhile, has nine marketed medicines and a broader oncology and inflammation pipeline.\nGrail faces a major regulatory event on Wednesday as an FDA advisory committee reviews its approval application for Galleri, a blood test that screens for signals associated with more than 50 types of cancer before symptoms appear.\nThe test analyzes DNA fragments in the bloodstream for abnormal methylation patterns associated with cancer and can predict where in the body a detected cancer signal likely originated.\nGalleri is designed to complement, rather than replace, established screening such as mammograms and colonoscopies. It is already commercially available as a laboratory-developed test but is not FDA-approved. Grail ended June with $767.6 million in cash, cash equivalents and marketable securities.\nRetail sentiment surrounding MRK and GRAL on Stocktwits was ‘bearish’, ‘neutral’ for INCY,  and ‘bullish’ for  MIRM.\nAmong these stocks, MRK has gained the most, rising nearly 40%, followed by INCY at more than 23% and MIRM at 17.6%. GRAL is the only stock in the red, falling more than 9%.\nAlso read: Critical Minerals Wrap: ELMT Lands $450M Govt Investment; CRML, USAR, TMQ Stocks In Focus Ahead Of Trump-Xi Meet\nFor updates and corrections, email newsroom[at]stocktwits[dot]com.\nComments posted here will also appear on symbol pages.",
+          "type": "Policy",
+          "sentiment": 0,
+          "weight": 1,
+          "final_weight": 0.71,
+          "source_authority": 3.5,
+          "recency_factor": 0.85,
+          "source": "Finnhub",
+          "llm_reviewed": true,
+          "llm_confidence": 0.3,
+          "llm_is_real_catalyst": false,
+          "llm_reasoning": "FDA calendar preview, no outcome"
+        },
+        {
+          "date": "2026-09-18",
+          "title": "Incyte (NASDAQ:INCY) Combines Minervini Trend Template Strength With High-Growth Momentum",
+          "content": "INCY combines Minervini Trend Template strength, 93.53 RS, and high-growth momentum. Technical Rating 9, but watch resistance near 129.93 for breakout.",
+          "type": "Industry",
+          "sentiment": 1,
+          "weight": 1,
+          "final_weight": 0.5,
+          "source_authority": 3.5,
+          "recency_factor": 0.5,
+          "source": "Finnhub",
+          "llm_reviewed": true,
+          "llm_confidence": 0.4,
+          "llm_is_real_catalyst": false,
+          "llm_reasoning": "Technical commentary only"
+        },
+        {
+          "date": "2026-09-17",
+          "title": "MIRM, INCY Stocks In Focus — Will A September 26 FDA Ruling Reward This Week’s Gains?",
+          "content": "Shares of Incyte (INCY) have climbed this week, and Mirum Pharmaceuticals (MIRM) has bounced off a midweek low, as investors line up for a September 26 Food and Drug Administration (FDA) decision on zilurgisertib, a once-a-day pill for an ultra-rare bone disease.\nIncyte finished at $127.62, up 2.3% on the day and about 5% from last Friday. Mirum closed at $98.82 after climbing 1.5% on Thursday and 3.7% on Wednesday, recovering from a midweek slide rather than posting a clean week-long run.\nThe FDA’s target date is nine days away, but a decision could be announced prior to that as well.\nZilurgisertib is meant to quiet ALK2, a signal that is overactive in fibrodysplasia ossificans progressiva, or FOP. In that disease, muscle and other soft tissue gradually harden into bone, stiffening joints and limiting movement. Roughly 300 people in the United States and about 900 worldwide have a diagnosis.\nRegulators are reviewing a first-time application for patients 12 and older on a shortened priority clock. Mirum took global rights from Incyte in the spring, paying $16 million upfront. Incyte can still collect extra milestone checks and royalties in the mid- to high-single digits if sales follow.\nIpsen’s Sohonos, approved in 2023, is already on the U.S. market. Regeneron’s garetosmab (Pasatru) was granted approval in August for the same indication. An approval would still give Mirum a fourth commercial product and a royalty stream for Incyte.\nThe filing rests on the first group in the mid-stage PROGRESS trial. Sixty-three teens and adults took a 100 mg daily pill or a dummy tablet for 24 weeks. One person on the drug formed a new extra bone growth (3.1%), versus five on placebo (16.7%). That 81% drop missed the usual statistical cutoff. A second measure was clearer: the total size of new growths fell by more than 99% versus placebo.\nPatients who started on placebo then switched to the drug. By week 48, follow-up scans showed no new growths, and existing volume kept shrinking.\nLeerink said in June that the volume result may still be enough for a September 26 approval even though the main count missed.\nOn Stocktwits, retail sentiment around MIRM was ‘bullish’ at the time of writing, while sentiment around INCY was ‘neutral.’\nWhile MIRM stock has gained 25% year-to-date, INCY has added 29%.\nRead More: RARE Stock Jumps 13% — Extends Gains After-Hours As FDA Clears First Sanfilippo Gene Therapy\nFor updates and corrections, email newsroom[at]stocktwits[dot]com.\nComments posted here will also appear on symbol pages.",
+          "type": "Policy",
+          "sentiment": 1,
+          "weight": 2,
+          "final_weight": 1.76,
+          "source_authority": 3.5,
+          "recency_factor": 0.42,
+          "source": "Finnhub",
+          "llm_reviewed": true,
+          "llm_confidence": 0.75,
+          "llm_is_real_catalyst": true,
+          "llm_reasoning": "FDA date Sept 26 catalyst"
+        },
+        {
+          "date": "2026-09-17",
+          "title": "Is Incyte (INCY) Undervalued After Ontario Backed MINJUVI Access?",
+          "content": "Incyte (INCY) drew fresh attention after Ontario agreed to fund MINJUVI for relapsed or refractory follicular lymphoma through its FAST Program, giving eligible patients earlier access while reimbursement reviews continue. For context, Incyte’s share price has climbed 27.0% over the past 90 days and the year-to-date share price return is 23.0%. Meanwhile, the 1-year total shareholder return of 47.1% and 3-year total shareholder return of 106.6% point to momentum that long-term holders have...",
+          "type": "Policy",
+          "sentiment": 1,
+          "weight": 2,
+          "final_weight": 1.76,
+          "source_authority": 3.5,
+          "recency_factor": 0.42,
+          "source": "Finnhub",
+          "llm_reviewed": true,
+          "llm_confidence": 0.85,
+          "llm_is_real_catalyst": true,
+          "llm_reasoning": "Ontario funding MINJUVI access"
+        },
+        {
+          "date": "2026-09-16",
+          "title": "Incyte Corporation (INCY) Presents at Morgan Stanley 24th Annual Global Healthcare Conference Transc",
+          "content": "Incyte Corporation (INCY) Morgan Stanley 24th Annual Global Healthcare Conference September 16, 2026 12:20 PM EDTCompany ParticipantsWilliam Meury - CEO...",
+          "type": "Industry",
+          "sentiment": 0,
+          "weight": 1,
+          "final_weight": 0.5,
+          "source_authority": 3.5,
+          "recency_factor": 0.36,
+          "source": "Finnhub",
+          "llm_reviewed": true,
+          "llm_confidence": 0.3,
+          "llm_is_real_catalyst": false,
+          "llm_reasoning": "Conference presentation, no news"
+        }
+      ]
+    },
+    "NYSE:ANET": {
+      "name": "ANET",
+      "score": 64,
+      "score_raw": 3.37,
+      "score_components": {
+        "positive_weight_sum": 3.37,
+        "negative_weight_sum": 0,
+        "news_effective_count": 3,
+        "news_dropped_count": 0
+      },
+      "signal": "GREEN Long (Mid)",
+      "strategy": "Positive sentiment flow — suitable for dip-buy or light momentum entry",
+      "suitable_for": "Buy Dip / Light Momentum",
+      "confidence": "Medium",
+      "patterns": [],
+      "positive_factors": [
+        "[Earnings|w2.27] Arista Networks (ANET) Raises Full Year Outlook As AI Data Center Dema",
+        "[Analyst Action|w0.6] Bull of the Day: Arista Networks, Inc. (ANET)",
+        "[Industry|w0.5] Arista Networks (NYSE:ANET): High Growth Momentum Meets a Breakout Set"
+      ],
+      "negative_factors": [],
+      "news_count": 3,
+      "news_dropped": 0,
+      "performance": {
+        "list_fetch_ms": 1359,
+        "candidate_filter_ms": 0,
+        "enrichment_ms": 1929,
+        "raw_news_count": 34,
+        "raw_forum_count": 0,
+        "candidate_news_count": 3,
+        "candidate_forum_count": 0,
+        "enriched_news_count": 3,
+        "enriched_forum_count": 0,
+        "candidate_reasons": {
+          "news": {
+            "no-subject-mention": 19,
+            "dedup": 0,
+            "out_of_window": 12
+          },
+          "forum": {
+            "dedup": 0
+          }
+        },
+        "date_filter_ms": 0,
+        "relevance_ms": 0,
+        "llm_ms": 0,
+        "scoring_ms": 0
+      },
+      "top_news": [
+        {
+          "date": "2026-09-18",
+          "title": "Arista Networks (ANET) Raises Full Year Outlook As AI Data Center Demand Stays Strong",
+          "content": "Arista Networks (NYSE: ANET) reported continued robust growth linked to demand for AI data center networking infrastructure. The company raised its full-year revenue outlook, signaling higher expected sales for the current financial year. Management highlighted Arista's role in AI data center buildouts, with industry experts praising its positioning in this segment. Arista's upgraded full-year revenue guidance and AI data center traction deserves weighing against the rest of our findings...",
+          "type": "Earnings",
+          "sentiment": 1,
+          "weight": 2,
+          "final_weight": 2.27,
+          "source_authority": 3.5,
+          "recency_factor": 0.5,
+          "source": "Finnhub",
+          "llm_reviewed": true,
+          "llm_confidence": 0.9,
+          "llm_is_real_catalyst": true,
+          "llm_reasoning": "Guidance raise on AI demand"
+        },
+        {
+          "date": "2026-09-18",
+          "title": "Arista Networks (NYSE:ANET): High Growth Momentum Meets a Breakout Setup",
+          "content": "ANET blends high growth momentum with a strong technical setup: Technical 10, Setup 8, HGM 7. See the breakout plan, risks, and screen criteria.",
+          "type": "Industry",
+          "sentiment": 1,
+          "weight": 1,
+          "final_weight": 0.5,
+          "source_authority": 3.5,
+          "recency_factor": 0.5,
+          "source": "Finnhub",
+          "llm_reviewed": true,
+          "llm_confidence": 0.3,
+          "llm_is_real_catalyst": false,
+          "llm_reasoning": "Technical commentary only"
+        },
+        {
+          "date": "2026-09-16",
+          "title": "Bull of the Day: Arista Networks, Inc. (ANET)",
+          "content": "Bull of the Day: Arista Networks, Inc. (ANET)\nBenjamin Rains\nWed, September 16, 2026 at 3:00 AM CDT 6 min read\nANET\n-0.07%\nMSFT\n-0.80%\nMETA\n-2.43%\nExplore stocks on Coinbase\nTrading disclosure\n\nArista Networks, Inc. ANET is a high-tech picks-and-shovels AI stock that more than doubled its revenue and earnings between 2022 and 2025.\n\nThe AI infrastructure company, which works directly with AI hyperscalers Microsoft and Meta and other big tech firms, is projected to follow up its impressive artificial intelligence-boosted expansion with 35%+ revenue and earnings growth in 2026 and another ~25% next year.\n\nArista's earnings outlook surged again after it reported another strong beat and raise quarter in early August.\n\nIts upbeat EPS revisions earn ANET a Zacks Rank #1 (Strong Buy) and extend an impressive streak of improving earnings estimates as it successfully rides the AI data center boom and other technology trends.\n\nZacks Investment Research\n\nImage Source: Zacks Investment Research\n\nThe back-end technology infrastructure company designs and builds tons of the critical, high-speed tech-based \"plumbing\" that massive AI data centers rely on. This means that investors don't have to worry about picking the front-facing winners as OpenAI, Anthropic, Google, and tons of others duke it out in the AI arms race.\n\nANET's balance sheet is fantastic, and it's churning out stellar free cash flow growth. Plus, the stock is finding technical support after pulling back from its early-August peaks, and its average Zacks price target implies 30% upside.\n\nAll in, Arista stock appears to be one of the better long-term buy-and-hold stocks in the broader AI infrastructure industry.\n\nIt is worth stressing that despite AI bubble fears, $750 billion in new AI capex initiatives were announced in August alone, adding to a pipeline that's already measured in trillions of dollars over the next several years.\n\nIs ANET the Best AI and Tech Stock to Buy Now and Hold Forever?\n\nArista is a client-to-cloud networking powerhouse for large AI, data center, campus, and routing environments. Its growing portfolio helps connect computers, servers, and beyond to ensure fast and reliable data transfer.\n\nIn layman's terms, ANETdesigns and builds the critical, high-speed technological \"plumbing\" networks that massive cloud computing and AI data centers depend on. Put differently, Arista makes the networking gear that enables huge data centers to talk to themselves at extreme speed.\n\nZacks Investment Research\n\nImage Source: Zacks Investment Research\n\nWhen Microsoft, Meta, and others train AI models, thousands of chips must pass data back and forth constantly. Arista's switches and beyond are the highway or tech-based railways that those chips use.\n\nArista's offerings like high-speed Ethernet switches and networking gear are vital behind-the-scenes cogs helping massive AI data centers perform at their absolute peak.\n\nStory Continues\nView Comments\nTerms and Privacy Policy\nYour Privacy Choices",
+          "type": "Analyst Action",
+          "sentiment": 1,
+          "weight": 1,
+          "final_weight": 0.6,
+          "source_authority": 3.5,
+          "recency_factor": 0.36,
+          "source": "Finnhub",
+          "llm_reviewed": true,
+          "llm_confidence": 0.5,
+          "llm_is_real_catalyst": false,
+          "llm_reasoning": "Zacks bullish commentary"
+        }
+      ]
+    },
+    "NASDAQ:SMCI": {
+      "name": "SMCI",
+      "score": 64,
+      "score_raw": 3.32,
+      "score_components": {
+        "positive_weight_sum": 3.32,
+        "negative_weight_sum": 0,
+        "news_effective_count": 4,
+        "news_dropped_count": 0
+      },
+      "signal": "GREEN Long (Mid)",
+      "strategy": "Positive sentiment flow — suitable for dip-buy or light momentum entry",
+      "suitable_for": "Buy Dip / Light Momentum",
+      "confidence": "Medium",
+      "patterns": [],
+      "positive_factors": [
+        "[Analyst Action|w1.43] Buy Top-Ranked DELL, SMCI & HPE to Form a Powerful AI-Server Portfolio",
+        "[Industry|w1.19] Super Micro Computer (NASDAQ:SMCI) Combines Strong Growth With a High-",
+        "[Industry|w0.7] The SMCI Number I’m Watching Could Decide Where the Stock Goes Next"
+      ],
+      "negative_factors": [],
+      "news_count": 4,
+      "news_dropped": 0,
+      "performance": {
+        "list_fetch_ms": 1054,
+        "candidate_filter_ms": 0,
+        "enrichment_ms": 1449,
+        "raw_news_count": 33,
+        "raw_forum_count": 0,
+        "candidate_news_count": 4,
+        "candidate_forum_count": 0,
+        "enriched_news_count": 4,
+        "enriched_forum_count": 0,
+        "candidate_reasons": {
+          "news": {
+            "no-subject-mention": 18,
+            "dedup": 0,
+            "out_of_window": 11
+          },
+          "forum": {
+            "dedup": 0
+          }
+        },
+        "date_filter_ms": 0,
+        "relevance_ms": 0,
+        "llm_ms": 0,
+        "scoring_ms": 0
+      },
+      "top_news": [
+        {
+          "date": "2026-09-21",
+          "title": "Buy Top-Ranked DELL, SMCI & HPE to Form a Powerful AI-Server Portfolio",
+          "content": "Buy Top-Ranked DELL, SMCI & HPE to Form a Powerful AI-Server Portfolio\nNalak Das\nMon, September 21, 2026 at 6:55 AM CDT 8 min read\nDELL\n-3.46%\nSMCI\n-3.12%\nHPE\n-0.46%\nMETA\n-2.43%\nINTC\n-0.18%\nExplore stocks on Coinbase\nTrading disclosure\n\nAI infrastructure stocks are flourishing on Wall Street with more vigor. In order to support aggressive workloads, AI-driven data centers are aggressively demanding high-density rack space and direct-to-chip liquid cooling. An astonishing rise in demand for high-performance rack servers boosted stock prices of companies in this space.\n\nHere, we have narrowed our search to three AI-server manufacturers with a top Zacks Rank for Investment. Their robust business model, industry-leading product portfolio and guidance will ensure the northward journey of these stock prices in 2027 and beyond.\n\nThe companies are: Dell Technologies Inc. DELL, Super Micro Computer Inc. SMCI and Hewlett Packard Enterprise Co. HPE. Each of our picks currently sports a Zacks Rank #1 (Strong Buy). You can see the complete list of today's Zacks #1 Rank stocks here.\n\nThe chart below shows the price performance of our three picks year to date.\n\nZacks Investment Research\n\nImage Source: Zacks Investment Research\n\nDell Technologies Inc.\n\nDell Technologies reported blockbuster results for the second quarter of fiscal 2027. Revenues surged 53% and EPS skyrocketed 203% year over year in the reported quarter. Infrastructure Solutions Group revenue jumped 89% to $31.8 billion, led by a 100% increase in AI-optimized server revenue to $16.4 billion and a 122% surge in traditional server and networking sales to $10.5 billion.\n\nAI Servers and Core Infrastructure Strength\n\nIn the second quarter of fiscal 2027, DELL booked a record $60.9 billion of AI orders and recognized $16.4 billion of AI server revenues. Orders totaled $131.7 billion over the past 12 months, while backlog rose to $95 billion from $51.3 billion at the end of first-quarter fiscal 2027. DELL expects roughly $19 billion of AI server revenues in third-quarter fiscal 2027.\n\nOn May 27, the Pentagon announced a five-year contract with Dell worth $9.7 billion for Microsoft 365 productivity services. As a result, management is hopeful that its fiscal 2027 AI server sales will reach $60 billion.\n\nIntegrated AI Portfolio\n\nDELL's expanding AI infrastructure stack supports customers that want compute, networking, storage and data management on infrastructure they control. DELL's ecosystem includes NVIDIA Corp. NVDA, Advanced Micro Devices Inc. AMD, OpenAI, Meta Platforms Inc. META, Palantir Technologies Inc. PLTR, Mistral AI, Alphabet Inc. GOOGL, Reflection, Hugging Face and Glean.\n\nSolid Estimate Revisions\n\nDell Technologies has an expected revenue and earnings growth rate of 72.6% and more than 100%, respectively, for the current year (ending January 2027). The Zacks Consensus Estimate for the current year's earnings has improved 32.3% over the last 30 days.\n\nStory Continues\nView Comments\nTerms and Privacy Policy\nYour Privacy Choices",
+          "type": "Analyst Action",
+          "sentiment": 1,
+          "weight": 1,
+          "final_weight": 1.43,
+          "source_authority": 3.5,
+          "recency_factor": 0.85,
+          "source": "Finnhub",
+          "llm_reviewed": true,
+          "llm_confidence": 0.65,
+          "llm_is_real_catalyst": false,
+          "llm_reasoning": "Zacks Strong Buy rank, positive"
+        },
+        {
+          "date": "2026-09-21",
+          "title": "Super Micro Computer (NASDAQ:SMCI) Combines Strong Growth With a High-Quality Technical Setup",
+          "content": "SMCI pairs 9/10 growth with an 8/10 breakout setup below resistance, offering a defined entry amid strong earnings and revenue expansion.",
+          "type": "Industry",
+          "sentiment": 1,
+          "weight": 1,
+          "final_weight": 1.19,
+          "source_authority": 3.5,
+          "recency_factor": 0.85,
+          "source": "Finnhub",
+          "llm_reviewed": true,
+          "llm_confidence": 0.5,
+          "llm_is_real_catalyst": false,
+          "llm_reasoning": "Technical setup, no hard trigger"
+        },
+        {
+          "date": "2026-09-18",
+          "title": "Did SMCI Stock Just Rise For The Wrong Reason?",
+          "content": "Super Micro Computer (SMCI) stock rose 9.5% on Thursday, September 17, closing just over $40. The move followed a bullish call on how big the market for AI servers gets. That call may well be right. But it answers a question Super Micro's own results never raised. That is why one big session tells you less than it looks like it does.",
+          "type": "Industry",
+          "sentiment": 0,
+          "weight": 1,
+          "final_weight": 0.7,
+          "source_authority": 3.5,
+          "recency_factor": 0.5,
+          "source": "Finnhub",
+          "llm_reviewed": true,
+          "llm_confidence": 0.5,
+          "llm_is_real_catalyst": false,
+          "llm_reasoning": "Skeptical on one-day rise"
+        },
+        {
+          "date": "2026-09-18",
+          "title": "The SMCI Number I’m Watching Could Decide Where the Stock Goes Next",
+          "content": "Super Micro Computer has beaten earnings three of the last four quarters, its backlog just hit a record, and one specific valuation metric now sits at a level that historically precedes a major repricing. Here is what has to happen for SMCI to add another 58% from here.",
+          "type": "Industry",
+          "sentiment": 1,
+          "weight": 1,
+          "final_weight": 0.7,
+          "source_authority": 3.5,
+          "recency_factor": 0.5,
+          "source": "Finnhub",
+          "llm_reviewed": true,
+          "llm_confidence": 0.5,
+          "llm_is_real_catalyst": false,
+          "llm_reasoning": "Record backlog, bullish valuation"
+        }
+      ]
+    },
+    "NASDAQ:PANW": {
+      "name": "PANW",
+      "score": 63,
+      "score_raw": 3.22,
+      "score_components": {
+        "positive_weight_sum": 3.22,
+        "negative_weight_sum": 0,
+        "news_effective_count": 2,
+        "news_dropped_count": 0
+      },
+      "signal": "GREEN Long (Mid)",
+      "strategy": "Positive sentiment flow — suitable for dip-buy or light momentum entry",
+      "suitable_for": "Buy Dip / Light Momentum",
+      "confidence": "Medium",
+      "patterns": [],
+      "positive_factors": [
+        "[Analyst Action|w2.52] Palo Alto Networks (PANW) Stock Gets Fair Value Boost After Analyst Ta",
+        "[Industry|w0.7] ZS, CRWD, PANW Stock In Focus — Cybersecurity Firms Lead Weekly Nasdaq"
+      ],
+      "negative_factors": [],
+      "news_count": 2,
+      "news_dropped": 0,
+      "performance": {
+        "list_fetch_ms": 1397,
+        "candidate_filter_ms": 0,
+        "enrichment_ms": 1,
+        "raw_news_count": 26,
+        "raw_forum_count": 0,
+        "candidate_news_count": 2,
+        "candidate_forum_count": 0,
+        "enriched_news_count": 2,
+        "enriched_forum_count": 0,
+        "candidate_reasons": {
+          "news": {
+            "no-subject-mention": 20,
+            "dedup": 0,
+            "out_of_window": 4
+          },
+          "forum": {
+            "dedup": 0
+          }
+        },
+        "date_filter_ms": 0,
+        "relevance_ms": 0,
+        "llm_ms": 0,
+        "scoring_ms": 0
+      },
+      "top_news": [
+        {
+          "date": "2026-09-19",
+          "title": "Palo Alto Networks (PANW) Stock Gets Fair Value Boost After Analyst Target Increases",
+          "content": "The fair value estimate for Palo Alto Networks has been updated from US$336.70 to US$395.38, a change of about 17% in the underlying model. This shift follows recent research in which many analysts have raised price targets, reflecting stronger conviction in Palo Alto Networks’ execution in AI driven cybersecurity, even as some question how much optimism is already reflected in the stock. Read on to see what is driving this evolving narrative and how to follow it from here. Analyst Price...",
+          "type": "Analyst Action",
+          "sentiment": 1,
+          "weight": 3,
+          "final_weight": 2.52,
+          "source_authority": 3.5,
+          "recency_factor": 0.6,
+          "source": "Finnhub",
+          "llm_reviewed": true,
+          "llm_confidence": 0.8,
+          "llm_is_real_catalyst": true,
+          "llm_reasoning": "FV +17%, PT hikes"
+        },
+        {
+          "date": "2026-09-18",
+          "title": "ZS, CRWD, PANW Stock In Focus — Cybersecurity Firms Lead Weekly Nasdaq 100 Gains As AI Security Deba",
+          "content": "Wall Street shifted its artificial intelligence narrative from pure productivity growth to defense this week, sparking a sharp, multi-billion-dollar rally across major cybersecurity stocks.\nShares of industry leaders CrowdStrike Holdings Inc. (CRWD), Palo Alto Networks Inc. (PANW), Zscaler Inc. (ZS), and Fortinet (FTNT) surged to the top of the Nasdaq 100 this week, following market-wide anxiety over AI safety, data security vulnerabilities, and autonomous software threats.\nThe rally also reflects a rotation within the technology sector as investors temporarily trimmed profits from hardware and chipmaker giants to fund positions in cloud and network defense vendors.\nMoreover, ETFs targeting cybersecurity stocks have consistently outperformed the tech-heavy QQQ ETF and the broader SPY ETF tracking the S&P 500 index.\nThe sudden rally was ignited by stark warnings from Anthropic’s Amodei and OpenAI’s Altman, who emphasized the urgent need for safety guardrails for next-generation models and agentic frameworks.\nThe warnings triggered a rotation out of semiconductors and hyperscalers to cybersecurity stocks. \"As an investor, I'm far less worried about AI ending humanity than about it causing operational or security failures with real financial consequences,\" Mark Malek, chief investment officer at Siebert, told Axios recently.\nAccording to Freedom Capital’s chief market strategist, Jay Woods, the sector’s strength has increasingly spread beyond its market leaders, creating opportunities among cybersecurity stocks that have yet to participate fully in the rally.\nAs companies move beyond simple chatbots toward fully autonomous agentic AI systems that can perform multi-step workflows across databases, the attack surface expands dramatically.\nIn response, enterprise buyers are leaning into identity management architectures. CrowdStrike’s Falcon ecosystem, Palo Alto’s broad platformization strategy, and Zscaler’s zero-trust networks have positioned each company to absorb this shift in corporate spending.\nOn Stocktwits, retail sentiment was ‘bullish’ for ZS and PANW, and ‘bearish’ for CRWD and OKTA.\nOne user highlighted the growing need for cybersecurity as autonomous agents develop.\nZS stock has lost 13%, CRWD stock has doubled and PANW stock added 93% year-to-date.\nFor updates and corrections, email newsroom[at]stocktwits[dot]com.\nComments posted here will also appear on symbol pages.",
+          "type": "Industry",
+          "sentiment": 1,
+          "weight": 1,
+          "final_weight": 0.7,
+          "source_authority": 3.5,
+          "recency_factor": 0.5,
+          "source": "Finnhub",
+          "llm_reviewed": true,
+          "llm_confidence": 0.5,
+          "llm_is_real_catalyst": false,
+          "llm_reasoning": "Industry-wide AI security rally"
+        }
+      ]
+    },
+    "NYSE:TSM": {
+      "name": "TSM",
+      "score": 60,
+      "score_raw": 2.32,
+      "score_components": {
+        "positive_weight_sum": 3.16,
+        "negative_weight_sum": 0.84,
+        "news_effective_count": 4,
+        "news_dropped_count": 0
+      },
+      "signal": "GREEN Long (Mid)",
+      "strategy": "Positive sentiment flow — suitable for dip-buy or light momentum entry",
+      "suitable_for": "Buy Dip / Light Momentum",
+      "confidence": "Medium",
+      "patterns": [],
+      "positive_factors": [
+        "[Industry|w1.75] Why Is Taiwan Semiconductor Manufacturing (TSM) Ramping 2nm Production",
+        "[Earnings|w0.91] TSMC (TSM) Beats Stock Market Upswing: What Investors Need to Know",
+        "[Analyst Action|w0.5] Taiwan Semiconductor (NYSE:TSM): High Growth Momentum Meets a Breakout"
+      ],
+      "negative_factors": [
+        "[Analyst Action|w0.84] Taiwan Semiconductor Manufacturing (TSM) Could Be 14% Overvalued As 2n"
+      ],
+      "news_count": 4,
+      "news_dropped": 0,
+      "performance": {
+        "list_fetch_ms": 754,
+        "candidate_filter_ms": 0,
+        "enrichment_ms": 1989,
+        "raw_news_count": 23,
+        "raw_forum_count": 0,
+        "candidate_news_count": 4,
+        "candidate_forum_count": 0,
+        "enriched_news_count": 4,
+        "enriched_forum_count": 0,
+        "candidate_reasons": {
+          "news": {
+            "no-subject-mention": 17,
+            "dedup": 0,
+            "out_of_window": 2
+          },
+          "forum": {
+            "dedup": 0
+          }
+        },
+        "date_filter_ms": 0,
+        "relevance_ms": 0,
+        "llm_ms": 0,
+        "scoring_ms": 0
+      },
+      "top_news": [
+        {
+          "date": "2026-09-19",
+          "title": "Taiwan Semiconductor (NYSE:TSM): High Growth Momentum Meets a Breakout Setup",
+          "content": "TSM blends high growth momentum with strong technicals and a defined breakout setup. See ratings, support zones, and key risks.",
+          "type": "Analyst Action",
+          "sentiment": 1,
+          "weight": 1,
+          "final_weight": 0.5,
+          "source_authority": 3.5,
+          "recency_factor": 0.6,
+          "source": "Finnhub",
+          "llm_reviewed": true,
+          "llm_confidence": 0.4,
+          "llm_is_real_catalyst": false,
+          "llm_reasoning": "technical/ratings commentary"
+        },
+        {
+          "date": "2026-09-18",
+          "title": "TSMC (TSM) Beats Stock Market Upswing: What Investors Need to Know",
+          "content": "TSMC (TSM) Beats Stock Market Upswing: What Investors Need to Know\nZacks Equity Research\nSat, September 19, 2026 at 6:45 AM GMT+9 3 min read\nTSM\n+1.02%\n^GSPC\n+0.17%\n^DJI\n-0.18%\nTSM\n+1.02%\n\nIn the latest trading session, TSMC (TSM) closed at $434.67, marking a +1.02% move from the previous day. The stock's change was more than the S&P 500's daily gain of 0.17%. On the other hand, the Dow registered a loss of 0.18%, and the technology-centric Nasdaq increased by 0.4%.\n\nThe chip company's shares have seen an increase of 3.43% over the last month, surpassing the Computer and Technology sector's gain of 0.37% and the S&P 500's loss of 1.29%.\n\nMarket participants will be closely following the financial results of TSMC in its upcoming release. The company is forecasted to report an EPS of $4.45, showcasing a 52.4% upward movement from the corresponding quarter of the prior year. Meanwhile, the latest consensus estimate predicts the revenue to be $45.54 billion, indicating a 37.59% increase compared to the same quarter of the previous year.\n\nFor the annual period, the Zacks Consensus Estimates anticipate earnings of $16.55 per share and a revenue of $167.09 billion, signifying shifts of +55.4% and +36.49%, respectively, from the last year.\n\nIt's also important for investors to be aware of any recent modifications to analyst estimates for TSMC. These latest adjustments often mirror the shifting dynamics of short-term business patterns. Consequently, upward revisions in estimates express analysts' positivity towards the business operations and its ability to generate profits.\n\nOur research suggests that these changes in estimates have a direct relationship with upcoming stock price performance. To utilize this, we have created the Zacks Rank, a proprietary model that integrates these estimate changes and provides a functional rating system.\n\nRanging from #1 (Strong Buy) to #5 (Strong Sell), the Zacks Rank system has a proven, outside-audited track record of outperformance, with #1 stocks returning an average of +25% annually since 1988. Over the past month, there's been a 0.64% rise in the Zacks Consensus EPS estimate. TSMC is holding a Zacks Rank of #2 (Buy) right now.\n\nIn the context of valuation, TSMC is at present trading with a Forward P/E ratio of 26. For comparison, its industry has an average Forward P/E of 26, which means TSMC is trading at no noticeable deviation to the group.\n\nMeanwhile, TSM's PEG ratio is currently 0.95. Comparable to the widely accepted P/E ratio, the PEG ratio also accounts for the company's projected earnings growth. By the end of yesterday's trading, the Semiconductor - Circuit Foundry industry had an average PEG ratio of 0.95.\n\nThe Semiconductor - Circuit Foundry industry is part of the Computer and Technology sector. At present, this industry carries a Zacks Industry Rank of 12, placing it within the top 5% of over 250 industries.\n\nStory Continues\nTerms and Privacy Policy\nPrivacy Dashboard",
+          "type": "Earnings",
+          "sentiment": 1,
+          "weight": 1,
+          "final_weight": 0.91,
+          "source_authority": 3.5,
+          "recency_factor": 0.5,
+          "source": "Finnhub",
+          "llm_reviewed": true,
+          "llm_confidence": 0.6,
+          "llm_is_real_catalyst": false,
+          "llm_reasoning": "price+upcoming estimates, no report"
+        },
+        {
+          "date": "2026-09-18",
+          "title": "Why Is Taiwan Semiconductor Manufacturing (TSM) Ramping 2nm Production And Spending More?",
+          "content": "Taiwan Semiconductor Manufacturing (NYSE:TSM) moves its 2nm process into commercial production as part of a new advanced manufacturing push. The chip producer accelerates investment in cutting edge fabrication capacity and raises capital expenditure targets to support 2nm roll out. Management frames the higher spending as preparation for an intensifying global semiconductor arms race among leading foundries and chip designers. The faster 2nm commercialization and higher capital spending only...",
+          "type": "Industry",
+          "sentiment": 1,
+          "weight": 2,
+          "final_weight": 1.75,
+          "source_authority": 3.5,
+          "recency_factor": 0.5,
+          "source": "Finnhub",
+          "llm_reviewed": true,
+          "llm_confidence": 0.8,
+          "llm_is_real_catalyst": true,
+          "llm_reasoning": "2nm production,capex target raised"
+        },
+        {
+          "date": "2026-09-18",
+          "title": "Taiwan Semiconductor Manufacturing (TSM) Could Be 14% Overvalued As 2nm MediaTek Win Lands",
+          "content": "Taiwan Semiconductor Manufacturing (NYSE:TSM) just picked up fresh attention after MediaTek chose its 2-nanometer process for the new Dimensity 9600 Pro, while keeping the broader 9600M line on TSMC’s 3nm technology. That MediaTek win comes on top of a strong run for Taiwan Semiconductor Manufacturing, with the share price up 34.62% year to date and a 1-year total shareholder return of 61.47%. However, the stock is down 6.89% over the past 90 days, which indicates that while long-term...",
+          "type": "Analyst Action",
+          "sentiment": -1,
+          "weight": 1,
+          "final_weight": 0.84,
+          "source_authority": 3.5,
+          "recency_factor": 0.5,
+          "source": "Finnhub",
+          "llm_reviewed": true,
+          "llm_confidence": 0.5,
+          "llm_is_real_catalyst": false,
+          "llm_reasoning": "overvalued claim, qualitative win"
+        }
+      ]
+    },
+    "NASDAQ:CRWD": {
+      "name": "CRWD",
+      "score": 59,
+      "score_raw": 2.04,
+      "score_components": {
+        "positive_weight_sum": 2.04,
+        "negative_weight_sum": 0,
+        "news_effective_count": 4,
+        "news_dropped_count": 0
+      },
+      "signal": "NEUTRAL No Trade (Weak Bullish)",
+      "strategy": "Mildly positive, insufficient signal — watch for stronger catalyst",
+      "suitable_for": "Watch",
+      "confidence": "Low",
+      "patterns": [],
+      "positive_factors": [
+        "[Industry|w0.84] CrowdStrike (CRWD) Lands Forrester Leadership Nod As AI Security Ties ",
+        "[Industry|w0.7] ZS, CRWD, PANW Stock In Focus — Cybersecurity Firms Lead Weekly Nasdaq",
+        "[Industry|w0.5] Jim Cramer Shared What CrowdStrike Holdings, Inc. (NASDAQ:CRWD)’s CEO "
+      ],
+      "negative_factors": [],
+      "news_count": 4,
+      "news_dropped": 0,
+      "performance": {
+        "list_fetch_ms": 2361,
+        "candidate_filter_ms": 0,
+        "enrichment_ms": 1,
+        "raw_news_count": 27,
+        "raw_forum_count": 0,
+        "candidate_news_count": 4,
+        "candidate_forum_count": 0,
+        "enriched_news_count": 4,
+        "enriched_forum_count": 0,
+        "candidate_reasons": {
+          "news": {
+            "no-subject-mention": 19,
+            "dedup": 0,
+            "out_of_window": 4
+          },
+          "forum": {
+            "dedup": 0
+          }
+        },
+        "date_filter_ms": 0,
+        "relevance_ms": 0,
+        "llm_ms": 0,
+        "scoring_ms": 0
+      },
+      "top_news": [
+        {
+          "date": "2026-09-19",
+          "title": "CrowdStrike (CRWD) Lands Forrester Leadership Nod As AI Security Ties Deepen",
+          "content": "CrowdStrike Holdings (NasdaqGS:CRWD) was named a Leader in The Forrester Wave Q3 2026 report on external threat intelligence services. The Forrester evaluation highlights CrowdStrike’s approach to Threat AI as a foundation for next generation security operations. CrowdStrike announced new integrations with Salt Security, Horizon3, and Nord Security to broaden its AI driven security and intelligence platform. For investors, the Forrester recognition and new partner integrations are useful...",
+          "type": "Industry",
+          "sentiment": 1,
+          "weight": 1,
+          "final_weight": 0.84,
+          "source_authority": 3.5,
+          "recency_factor": 0.6,
+          "source": "Finnhub",
+          "llm_reviewed": true,
+          "llm_confidence": 0.6,
+          "llm_is_real_catalyst": false,
+          "llm_reasoning": "Forrester leader, partnerships"
+        },
+        {
+          "date": "2026-09-18",
+          "title": "Jim Cramer Shared What CrowdStrike Holdings, Inc. (NASDAQ:CRWD)’s CEO Told Him About AI “Doomsaying”",
+          "content": "Cybersecurity provider CrowdStrike Holdings, Inc. (NASDAQ:CRWD)’s shares are up by more than 100% year to date. With AI continuing to dominate the market narrative, the firm has found itself at the center of the industry’s concerns about cybersecurity. While some, such as Anthropic’s Dario Amodei, have claimed that their AI software is sufficient for cybersecurity […]",
+          "type": "Industry",
+          "sentiment": 1,
+          "weight": 1,
+          "final_weight": 0.5,
+          "source_authority": 3.5,
+          "recency_factor": 0.5,
+          "source": "Finnhub",
+          "llm_reviewed": true,
+          "llm_confidence": 0.4,
+          "llm_is_real_catalyst": false,
+          "llm_reasoning": "CEO AI commentary, no trigger"
+        },
+        {
+          "date": "2026-09-18",
+          "title": "CRWD Stock Keeps Climbing. Should You Climb On?",
+          "content": "CRWD Stock Keeps Climbing. Should You Climb On?\nSeptember 18th, 2026 · by Trefis Team\nCRWDYTD+102.8%\nSPYYTD+12.3%\nQQQYTD+17.6%\nAnalyze CRWD →\n\nThis cybersecurity stock is on a historic run fueled by the AI boom, forcing investors to evaluate whether the growth engine has enough fuel left to justify its expanding multiple.\n\nAfter a stock has climbed 121% in a year to trade at its 52-week high, what is an investor supposed to do? For cybersecurity firm CrowdStrike (CRWD), that is not a theoretical question. The stock shows powerful trend strength, ranking in the top 8% of all US stocks with a market capitalization over $1 billion. The run is real, which brings us to the central question for any would-be buyer at this altitude: is this momentum with fuel, or is it momentum that is already fully priced?\n\nAnswering that question requires weighing whether CrowdStrike’s recent performance marks a permanent structural expansion or a temporary pull-forward in demand.\n\nImage from Pixabay\nWhat Is Actually Powering This Run?\n\nA formidable business engine backs CrowdStrike’s momentum, making it more than a simple line on a chart. Revenue over the last twelve months grew 24%, far outpacing the S&P 500 median revenue growth of 8.3%. The company is also a powerful cash generator, with an operating cash flow margin of 37% over the last twelve months, well above the 22% S&P 500 median.\n\nThe fuel for this engine is the corporate world’s race to adopt artificial intelligence. Management describes a market inflection point where securing AI is no longer optional. The company sees a new threat landscape of “AI agents” that requires a new defense, positioning its Falcon platform as the essential infrastructure for this shift. This narrative appears to be resonating with customers.\n\nThe company’s FalconFlex subscription model is a key part of this strategy, which management says is accelerating platform adoption. In its most recent quarter, ending annual recurring revenue (ARR) from accounts using this model surpassed $2.29 billion, accelerating to 101% year over year growth.\n\nWhat Does A Seat At This Table Cost?\n\nThis is where the air gets thin. The market is charging a steep price for CrowdStrike’s growth story. The stock trades at a price-to-sales multiple of 46.4, a significant premium to the S&P 500 median of 3.1. That price assumes the company’s torrid growth continues for a long time.\n\nAnd while the company generates strong cash flow, it is not yet profitable on a GAAP operating basis. Its operating margin over the last twelve months is -2.2%, versus an S&P 500 median of 18.6%. This is the core tension: you are paying a top-tier price for a business whose quality is still maturing by some measures. For those who favor the broader software landscape over individual stock risk at these valuations, a diversified vehicle such as the iShares Expanded Tech-Software Sector ETF (IGV) offers industry exposure without single-company concentration.\n\nThis valuation sets up the honest catch. The entire bull case rests on the recent demand surge being a sustainable new baseline. Management calls it a “sustainable tailwind.” The risk is that it was a one-time pull-forward of spending. If growth moderates from these historic levels, the current valuation would be difficult to defend.\n\nWhat Number Tells Us If The Acceleration Is Real?\n\nFor a subscription business like CrowdStrike, the clearest signal of forward momentum is net new ARR. This metric measures the addition of new business and is the lifeblood of future growth. Management has shown significant confidence here, raising its outlook for the current fiscal year.\n\nThe company now expects full-year net new ARR growth of approximately 34%. The most immediate test of this thesis will be the results for the coming quarter. Management has guided for net new ARR of $343 to $347 million. That guidance translates to 29% to 31% growth—a step down from the 34% projected for the full year—meaning the company would need to decisively beat that range to prove the momentum still has room to run.\n\nFor more runs powered by rising forecasts rather than pure sentiment, our Guidance Momentum screen surfaces exactly those setups, daily.\n\nWinners Take Over Portfolios Quietly\n\nQuality stocks in uptrends are exactly the positions that quietly take over portfolios. Concentration tends to arrive by accident rather than by decision. What your largest position would do to your net worth is exactly what the Trefis Wealth team computes, with the same rules-based systematic discipline that runs our High Quality Portfolio. Request a free vulnerability audit of your biggest positions.\n\nInvest with Trefis →\nMore Ideas →",
+          "type": "Industry",
+          "sentiment": 0,
+          "weight": 1,
+          "final_weight": 0.5,
+          "source_authority": 3.5,
+          "recency_factor": 0.5,
+          "source": "Finnhub",
+          "llm_reviewed": true,
+          "llm_confidence": 0.4,
+          "llm_is_real_catalyst": false,
+          "llm_reasoning": "Analysis, no hard trigger"
+        },
+        {
+          "date": "2026-09-18",
+          "title": "ZS, CRWD, PANW Stock In Focus — Cybersecurity Firms Lead Weekly Nasdaq 100 Gains As AI Security Deba",
+          "content": "Wall Street shifted its artificial intelligence narrative from pure productivity growth to defense this week, sparking a sharp, multi-billion-dollar rally across major cybersecurity stocks.\nShares of industry leaders CrowdStrike Holdings Inc. (CRWD), Palo Alto Networks Inc. (PANW), Zscaler Inc. (ZS), and Fortinet (FTNT) surged to the top of the Nasdaq 100 this week, following market-wide anxiety over AI safety, data security vulnerabilities, and autonomous software threats.\nThe rally also reflects a rotation within the technology sector as investors temporarily trimmed profits from hardware and chipmaker giants to fund positions in cloud and network defense vendors.\nMoreover, ETFs targeting cybersecurity stocks have consistently outperformed the tech-heavy QQQ ETF and the broader SPY ETF tracking the S&P 500 index.\nThe sudden rally was ignited by stark warnings from Anthropic’s Amodei and OpenAI’s Altman, who emphasized the urgent need for safety guardrails for next-generation models and agentic frameworks.\nThe warnings triggered a rotation out of semiconductors and hyperscalers to cybersecurity stocks. \"As an investor, I'm far less worried about AI ending humanity than about it causing operational or security failures with real financial consequences,\" Mark Malek, chief investment officer at Siebert, told Axios recently.\nAccording to Freedom Capital’s chief market strategist, Jay Woods, the sector’s strength has increasingly spread beyond its market leaders, creating opportunities among cybersecurity stocks that have yet to participate fully in the rally.\nAs companies move beyond simple chatbots toward fully autonomous agentic AI systems that can perform multi-step workflows across databases, the attack surface expands dramatically.\nIn response, enterprise buyers are leaning into identity management architectures. CrowdStrike’s Falcon ecosystem, Palo Alto’s broad platformization strategy, and Zscaler’s zero-trust networks have positioned each company to absorb this shift in corporate spending.\nOn Stocktwits, retail sentiment was ‘bullish’ for ZS and PANW, and ‘bearish’ for CRWD and OKTA.\nOne user highlighted the growing need for cybersecurity as autonomous agents develop.\nZS stock has lost 13%, CRWD stock has doubled and PANW stock added 93% year-to-date.\nFor updates and corrections, email newsroom[at]stocktwits[dot]com.\nComments posted here will also appear on symbol pages.",
+          "type": "Industry",
+          "sentiment": 1,
+          "weight": 1,
+          "final_weight": 0.7,
+          "source_authority": 3.5,
+          "recency_factor": 0.5,
+          "source": "Finnhub",
+          "llm_reviewed": true,
+          "llm_confidence": 0.5,
+          "llm_is_real_catalyst": false,
+          "llm_reasoning": "Sector rotation, no trigger"
+        }
+      ]
+    },
+    "NASDAQ:MU": {
+      "name": "MU",
+      "score": 59,
+      "score_raw": 2.1,
+      "score_components": {
+        "positive_weight_sum": 2.1,
+        "negative_weight_sum": 0,
+        "news_effective_count": 2,
+        "news_dropped_count": 0
+      },
+      "signal": "NEUTRAL No Trade (Weak Bullish)",
+      "strategy": "Mildly positive, insufficient signal — watch for stronger catalyst",
+      "suitable_for": "Watch",
+      "confidence": "Low",
+      "patterns": [],
+      "positive_factors": [
+        "[Industry|w2.1] Micron (MU) Unveils Breakthrough Memory Product. It Says Much About th"
+      ],
+      "negative_factors": [],
+      "news_count": 2,
+      "news_dropped": 0,
+      "performance": {
+        "list_fetch_ms": 890,
+        "candidate_filter_ms": 0,
+        "enrichment_ms": 0,
+        "raw_news_count": 35,
+        "raw_forum_count": 0,
+        "candidate_news_count": 2,
+        "candidate_forum_count": 0,
+        "enriched_news_count": 2,
+        "enriched_forum_count": 0,
+        "candidate_reasons": {
+          "news": {
+            "no-subject-mention": 31,
+            "dedup": 0,
+            "out_of_window": 2
+          },
+          "forum": {
+            "dedup": 0
+          }
+        },
+        "date_filter_ms": 0,
+        "relevance_ms": 0,
+        "llm_ms": 0,
+        "scoring_ms": 0
+      },
+      "top_news": [
+        {
+          "date": "2026-09-21",
+          "title": "MU, SNDK, SKHY Stocks In Focus: Memory Rebound Gains Steam Even As China’s CXMT Touts Faster Product",
+          "content": "China’s leading memory maker, Changxin Memory Technologies CXMT is taking another step toward narrowing the gap with global memory leaders after announcing that its fifth-generation technology platform has entered mass production.\nThe development could strengthen China’s position in the global memory-chip market, where Samsung Electronics, SK Hynix and Micron Technology have long dominated. CXMT said its new platform can produce more advanced memory chips at lower cost and with lower power consumption.\nShares of Micron were up 1%, and those of SK Hynix were flat in the overnight session late Sunday.\nThe Hefei-based company said its new platform, known as G5, reduces the spacing of key features in the memory-cell area to 11.95 nanometres using a manufacturing technique called quadruple patterning, according to a report in South China Morning Post.\nCXMT said the technology enables at least 50% more chip dies per wafer than the previous-generation platform, using an 8-gigabit chip as the baseline.\nThe company also unveiled two 24-gigabit LPDDR5X products based on the new platform. The low-power DRAM chips target smartphones and portable electronics and offer 50% more capacity than CXMT’s previous equivalent products. The company said both products are already in mass production.\nThe announcement comes as CXMT has been rapidly increasing its presence in the global DRAM market.\nAccording to TrendForce, CXMT’s share of global DRAM revenue rose to 9.5% in the second quarter from 7.6% in the first quarter, putting it in fourth place behind Samsung, SK Hynix and Micron. Its second-quarter DRAM revenue jumped 99.3% sequentially.\n“Server DRAM demand is expected to grow nearly 6x by 2030 and account for ~60% of the entire market,” Futurum Equities’ Shay Boloor said in an X post, citing new research.\n“That matters most for $MU and $SKHY since servers are expected to drive ~80% of all incremental DRAM demand as AI infrastructure becomes biggest source of growth.”\nCXMT’s expansion could eventually create additional competitive pressure for global memory makers including Micron, SanDisk and SK Hynix, particularly if Chinese suppliers use higher production capacity and lower costs to compete more aggressively on price.\nThat said, the threat is unlikely to alter the current supply-demand picture immediately. AI infrastructure spending has driven strong demand for DRAM, HBM and high-capacity server memory, while industry inventories remain low. TrendForce.\nMemory stocks have nevertheless rallied sharply lately. Micron closed up 3.9% on Friday, while SanDisk jumped 11% and SK Hynix’s U.S.-traded shares rose 2.5% to $187.50.\nOn Stocktwits, retail sentiment was ‘neutral’ for MU, and ‘bearish’ for SNDK and SKHY.\nFor updates and corrections, email newsroom[at]stocktwits[dot]com.\nComments posted here will also appear on symbol pages.",
+          "type": "Industry",
+          "sentiment": 0,
+          "weight": 1,
+          "final_weight": 0.6,
+          "source_authority": 3.5,
+          "recency_factor": 0.85,
+          "source": "Finnhub",
+          "llm_reviewed": true,
+          "llm_confidence": 0.4,
+          "llm_is_real_catalyst": false,
+          "llm_reasoning": "Competitor news; mixed MU impact"
+        },
+        {
+          "date": "2026-09-19",
+          "title": "Micron (MU) Unveils Breakthrough Memory Product. It Says Much About the Memory Market",
+          "content": "In a major milestone in memory innovation, Micron Technology, Inc. (NASDAQ:MU) on September 15 announced the successful demonstration of a 512GB DDR5 RDIMM memory module for servers. This module is the first of its kind in the world, according to the company. The module can reach speeds of up to 9,200 MT/s. It can also […]",
+          "type": "Industry",
+          "sentiment": 1,
+          "weight": 2,
+          "final_weight": 2.1,
+          "source_authority": 3.5,
+          "recency_factor": 0.6,
+          "source": "Finnhub",
+          "llm_reviewed": true,
+          "llm_confidence": 0.85,
+          "llm_is_real_catalyst": true,
+          "llm_reasoning": "First 512GB DDR5 module demo"
+        }
+      ]
+    },
+    "NASDAQ:NBIS": {
+      "name": "NBIS",
+      "score": 59,
+      "score_raw": 2.26,
+      "score_components": {
+        "positive_weight_sum": 2.26,
+        "negative_weight_sum": 0,
+        "news_effective_count": 2,
+        "news_dropped_count": 0
+      },
+      "signal": "NEUTRAL No Trade (Weak Bullish)",
+      "strategy": "Mildly positive, insufficient signal — watch for stronger catalyst",
+      "suitable_for": "Watch",
+      "confidence": "Low",
+      "patterns": [],
+      "positive_factors": [
+        "[Policy|w1.76] Nebius Group (NBIS) Raises AI Cloud Prices As Compute Demand Tests Cus",
+        "[Rumor|w0.5] NBIS Stock Jumps on Nebius Price Hike Rumors"
+      ],
+      "negative_factors": [],
+      "news_count": 2,
+      "news_dropped": 0,
+      "performance": {
+        "list_fetch_ms": 1084,
+        "candidate_filter_ms": 0,
+        "enrichment_ms": 3958,
+        "raw_news_count": 35,
+        "raw_forum_count": 0,
+        "candidate_news_count": 2,
+        "candidate_forum_count": 0,
+        "enriched_news_count": 2,
+        "enriched_forum_count": 0,
+        "candidate_reasons": {
+          "news": {
+            "no-subject-mention": 26,
+            "dedup": 0,
+            "out_of_window": 7
+          },
+          "forum": {
+            "dedup": 0
+          }
+        },
+        "date_filter_ms": 0,
+        "relevance_ms": 0,
+        "llm_ms": 0,
+        "scoring_ms": 0
+      },
+      "top_news": [
+        {
+          "date": "2026-09-17",
+          "title": "Nebius Group (NBIS) Raises AI Cloud Prices As Compute Demand Tests Customer Costs",
+          "content": "Nebius Group (NasdaqGS:NBIS) has raised prices for its Nvidia GPU and AMD CPU cloud services in response to strong AI demand. The company cites surging enterprise interest in large-scale AI training and inference workloads as a key driver of the new pricing. Higher rates apply to both Nvidia GPU instances and AMD CPU based compute bundles across Nebius Group's AI focused cloud offerings. The decision to lift Nvidia GPU and AMD CPU cloud pricing reshapes Nebius Group's AI compute economics...",
+          "type": "Policy",
+          "sentiment": 1,
+          "weight": 2,
+          "final_weight": 1.76,
+          "source_authority": 3.5,
+          "recency_factor": 0.42,
+          "source": "Finnhub",
+          "llm_reviewed": true,
+          "llm_confidence": 0.85,
+          "llm_is_real_catalyst": true,
+          "llm_reasoning": "AI cloud price hike boosts revenue"
+        },
+        {
+          "date": "2026-09-17",
+          "title": "NBIS Stock Jumps on Nebius Price Hike Rumors",
+          "content": "Nebius stock rallies on rumors of upcoming price hikes. Here’s what the price increases would mean NBIS shares if confirmed.",
+          "type": "Rumor",
+          "sentiment": 1,
+          "weight": 1,
+          "final_weight": 0.5,
+          "source_authority": 3.5,
+          "recency_factor": 0.42,
+          "source": "Finnhub",
+          "llm_reviewed": true,
+          "llm_confidence": 0.6,
+          "llm_is_real_catalyst": false,
+          "llm_reasoning": "Unconfirmed price hike rumor"
+        }
+      ]
+    },
+    "NYSE:DT": {
+      "name": "DT",
+      "score": 58,
+      "score_raw": 1.85,
+      "score_components": {
+        "positive_weight_sum": 2.35,
+        "negative_weight_sum": 0.5,
+        "news_effective_count": 5,
+        "news_dropped_count": 0
+      },
+      "signal": "NEUTRAL No Trade (Weak Bullish)",
+      "strategy": "Mildly positive, insufficient signal — watch for stronger catalyst",
+      "suitable_for": "Watch",
+      "confidence": "Low",
+      "patterns": [],
+      "positive_factors": [
+        "[Earnings|w0.76] Dynatrace (DT) Exceeds Market Returns: Some Facts to Consider",
+        "[Industry|w0.59] Dynatrace (DT) Targets Large European Enterprises With New Observabili",
+        "[Industry|w0.5] Dynatrace (NYSE:DT): A Quality Stock Built for Long-Term Compounding"
+      ],
+      "negative_factors": [
+        "[Industry|w0.5] FJTSY or DT: Which Is the Better Value Stock Right Now?"
+      ],
+      "news_count": 5,
+      "news_dropped": 0,
+      "performance": {
+        "list_fetch_ms": 1125,
+        "candidate_filter_ms": 0,
+        "enrichment_ms": 1,
+        "raw_news_count": 28,
+        "raw_forum_count": 0,
+        "candidate_news_count": 5,
+        "candidate_forum_count": 0,
+        "enriched_news_count": 5,
+        "enriched_forum_count": 0,
+        "candidate_reasons": {
+          "news": {
+            "no-subject-mention": 13,
+            "dedup": 0,
+            "out_of_window": 10
+          },
+          "forum": {
+            "dedup": 0
+          }
+        },
+        "date_filter_ms": 0,
+        "relevance_ms": 0,
+        "llm_ms": 0,
+        "scoring_ms": 0
+      },
+      "top_news": [
+        {
+          "date": "2026-09-18",
+          "title": "Dynatrace (NYSE:DT): A Quality Stock Built for Long-Term Compounding",
+          "content": "Home\n/\nUSA\n/\nNew York Stock Exchange\n/\nDT\n/\nnews\n/\nDynatrace (NYSE:DT): A Quality Stock Built for Long-Term Compounding\nBy Mill Chart – Last update: Sep 18, 2026\nQuotes Stocks Mentioned\nArticle Mentions:\nDT\n(55.14 ▼ -1.24%)\n\nThe Caviar Cruise quality screen is designed for investors who want to identify durable compounders and hold them for years rather than trade around short-term market moves. The framework emphasizes revenue and EBIT growth, improving profitability, high returns on invested capital, strong conversion of net income into free cash flow, and manageable leverage. DYNATRACE INC (NYSE:DT) is a candidate that clears several of those quantitative hurdles, which is why it belongs on a quality investor's research list.\n\nWhy the Caviar Cruise Criteria Matter\n\nQuality investing is not simply about buying cheap stocks. It is about owning strong businesses that can reinvest at attractive rates for a long time. That makes the screen's main filters complementary rather than redundant.\n\nRevenue growth above 5% shows that demand is still expanding. EBIT growth above 5%, and above revenue growth, suggests the company is gaining operating leverage or pricing power. A high return on invested capital indicates that the business turns reinvested capital into profit efficiently. Debt-to-free-cash-flow below 5 limits balance-sheet risk by ensuring borrowings can be repaid within a reasonable period. Profit quality above 75% helps confirm that reported earnings are backed by real cash.\n\nFor a buy-and-hold investor, those traits matter because they reduce the need to rely on multiple expansion or cyclical timing. The ideal candidate can compound through different market environments, which is exactly what the Caviar Cruise framework tries to isolate.\n\nScreen Evidence: Where the Company Stands\n\nThe latest data show the company passing several core quality thresholds by a wide margin.\n\nRevenue growth over the past five years: 12.99%, comfortably above the 5% minimum.\nEBIT growth over the past five years: 23.49%, above the 5% threshold and above revenue growth, indicating improving operating profitability.\nROIC excluding cash, goodwill, and intangibles: 227.54%, far above the 15% requirement and a sign of a very capital-light operating model.\nDebt-to-free-cash-flow: 0.0, well inside the screen's maximum of 5.0. The company has no outstanding debt in the reported data.\nProfit quality over the past five years: 278.29%, far above the 75% minimum, showing that free cash flow has exceeded net income over the period.\nForward revenue growth: analyst estimates point to roughly 13% annual growth, supporting the stricter version of the screen that requires future expansion above 5%.\n\nThose figures explain why the name surfaced in a quality-focused screen. The combination of double-digit top-line growth, faster EBIT growth, extreme capital efficiency, no debt, and strong cash conversion is rare in the broader market.\n\nWhat the Fundamental Report Adds\n\nThe fundamental report gives the stock a 6 out of 10 overall rating, describing profitability as excellent while noting some minor concerns on financial health. It also says the company is not priced too expensively while growing strongly, though valuation is not a clean pass across every metric.\n\nKey takeaways from the report include:\n\nProfitability: 7 out of 10. Gross margin is 81.37%, operating margin is 13.03%, and profit margin is 7.22%. Standard ROIC is 8.04%, above the three-year average but below the industry average and below the estimated cost of capital.\nGrowth: 8 out of 10. EPS grew 18.79% in the last year and 22.10% on average over recent years. Revenue grew 17.94% last year and 23.47% on average. Future EPS growth is expected at 15.82%.\nHealth: 6 out of 10. The company has no outstanding debt and an Altman-Z score of 6.84, which suggests low bankruptcy risk. The current ratio of 1.21 is adequate but weaker than many industry peers.\nValuation: 4 out of 10. A P/E of 31.54 is expensive relative to the S&P 500 average, while the forward P/E of 23.93 is closer to the industry and S&P 500 forward averages. The PEG ratio suggests the valuation is reasonable when growth is taken into account.\nDividend: 0 out of 10. The company pays no dividend, which is typical for a growth-oriented software business and not necessarily a drawback for total-return-focused quality investors.\n\nFor a fuller metric-by-metric breakdown, investors can review this fundamental analysis report.\n\nRisks and Limitations\n\nThe screen's strong headline numbers should be read alongside some important caveats.\n\nThe 227.54% ROIC excluding cash, goodwill, and intangibles is flattered by an asset-light software model. The report's standard ROIC of 8.04% is a more conservative view and sits below the estimated cost of capital.\nProfit quality of 278.29% is exceptionally high, but such a figure can reflect working-capital timing or other temporary effects. It should not be assumed to repeat at the same level every year.\nValuation is not cheap on a trailing P/E basis, so future growth needs to materialize to justify the multiple.\nFuture growth is expected to remain solid, but both EPS and revenue growth are forecast to slow from past rates.\nThe strict version of the Caviar Cruise screen also looks for improving operating margin, profit margin, and ROIC. The report notes that operating margin has been stable and profit margin has declined, so those trend tests deserve closer scrutiny.\nBlue-Chip Confirmation\n\nA separate screen adds useful support for the durability and financial-strength side of the quality thesis.\n\nOn the Blue Chip Stocks screen, DT is characterized as a large, established company with financial strength, reinforcing the article’s emphasis on a durable business and manageable balance-sheet risk.\nConclusion\n\nThe company's screen profile is attractive for quality investors because it combines strong growth, high capital efficiency, no debt, and excellent cash conversion. The fundamental report supports that view with strong profitability and growth scores, while correctly flagging valuation and standard ROIC as areas to monitor. For investors who want to apply the same quality methodology across a wider universe, this stock screener can help surface more names that meet the Caviar Cruise criteria.\n\nDisclaimer: This article is for informational and educational purposes only and does not constitute financial advice or a recommendation to buy or sell any security. Always conduct your own research and consider your risk tolerance before making investment decisions.",
+          "type": "Industry",
+          "sentiment": 1,
+          "weight": 1,
+          "final_weight": 0.5,
+          "source_authority": 3.5,
+          "recency_factor": 0.5,
+          "source": "Finnhub",
+          "llm_reviewed": true,
+          "llm_confidence": 0.4,
+          "llm_is_real_catalyst": false,
+          "llm_reasoning": "Quality screen, no trigger"
+        },
+        {
+          "date": "2026-09-17",
+          "title": "Dynatrace (DT) Exceeds Market Returns: Some Facts to Consider",
+          "content": "Dynatrace (DT) Exceeds Market Returns: Some Facts to Consider\nZacks Equity Research\nThu, September 17, 2026 at 5:15 PM CDT 3 min read\nDT\n-1.24%\n^GSPC\n+0.17%\nTrade DT on Coinbase\nTrading disclosure\n\nDynatrace (DT) closed the most recent trading day at $55.83, moving +1.16% from the previous trading session. The stock's change was more than the S&P 500's daily gain of 1.14%. On the other hand, the Dow registered a gain of 0.61%, and the technology-centric Nasdaq increased by 1.69%.\n\nShares of the software intellegence company have appreciated by 11.27% over the course of the past month, outperforming the Computer and Technology sector's loss of 1.69%, and the S&P 500's loss of 2.85%.\n\nThe investment community will be closely monitoring the performance of Dynatrace in its forthcoming earnings report. The company is expected to report EPS of $0.49, up 11.36% from the prior-year quarter. Simultaneously, our latest consensus estimate expects the revenue to be $567.79 million, showing a 14.97% escalation compared to the year-ago quarter.\n\nDT's full-year Zacks Consensus Estimates are calling for earnings of $1.95 per share and revenue of $2.32 billion. These results would represent year-over-year changes of +14.71% and +14.99%, respectively.\n\nInvestors should also take note of any recent adjustments to analyst estimates for Dynatrace. These recent revisions tend to reflect the evolving nature of short-term business trends. As such, positive estimate revisions reflect analyst optimism about the business and profitability.\n\nOur research suggests that these changes in estimates have a direct relationship with upcoming stock price performance. To take advantage of this, we've established the Zacks Rank, an exclusive model that considers these estimated changes and delivers an operational rating system.\n\nThe Zacks Rank system, ranging from #1 (Strong Buy) to #5 (Strong Sell), possesses a remarkable history of outdoing, externally audited, with #1 stocks returning an average annual gain of +25% since 1988. Within the past 30 days, our consensus EPS projection has moved 2.3% lower. Dynatrace is holding a Zacks Rank of #3 (Hold) right now.\n\nLooking at its valuation, Dynatrace is holding a Forward P/E ratio of 28.31. This denotes a premium relative to the industry average Forward P/E of 14.\n\nAlso, we should mention that DT has a PEG ratio of 1.93. The PEG ratio is akin to the commonly utilized P/E ratio, but this measure also incorporates the company's anticipated earnings growth rate. The Computers - IT Services industry had an average PEG ratio of 1.43 as trading concluded yesterday.\n\nThe Computers - IT Services industry is part of the Computer and Technology sector. At present, this industry carries a Zacks Industry Rank of 100, placing it within the top 41% of over 250 industries.\n\nStory Continues\nView Comments\nTerms and Privacy Policy\nYour Privacy Choices",
+          "type": "Earnings",
+          "sentiment": 1,
+          "weight": 1,
+          "final_weight": 0.76,
+          "source_authority": 3.5,
+          "recency_factor": 0.42,
+          "source": "Finnhub",
+          "llm_reviewed": true,
+          "llm_confidence": 0.5,
+          "llm_is_real_catalyst": false,
+          "llm_reasoning": "Earnings preview, price recap"
+        },
+        {
+          "date": "2026-09-17",
+          "title": "FJTSY or DT: Which Is the Better Value Stock Right Now?",
+          "content": "FJTSY or DT: Which Is the Better Value Stock Right Now?\nZacks Equity Research\nThu, September 17, 2026 at 10:40 AM CDT 2 min read\nFJTSF\n-4.39%\nDT\n-1.24%\nTrade DT on Coinbase\nTrading disclosure\n\nInvestors with an interest in Computers - IT Services stocks have likely encountered both Fujitsu Ltd. (FJTSY) and Dynatrace (DT). But which of these two stocks offers value investors a better bang for their buck right now? We'll need to take a closer look.\n\nThe best way to find great value stocks is to pair a strong Zacks Rank with an impressive grade in the Value category of our Style Scores system. The Zacks Rank is a proven strategy that targets companies with positive earnings estimate revision trends, while our Style Scores work to grade companies based on specific traits.\n\nRight now, Fujitsu Ltd. is sporting a Zacks Rank of #2 (Buy), while Dynatrace has a Zacks Rank of #3 (Hold). This means that FJTSY's earnings estimate revision activity has been more impressive, so investors should feel comfortable with its improving analyst outlook. However, value investors will care about much more than just this.\n\nValue investors also tend to look at a number of traditional, tried-and-true figures to help them find stocks that they believe are undervalued at their current share price levels.\n\nThe Style Score Value grade factors in a variety of key fundamental metrics, including the popular P/E ratio, P/S ratio, earnings yield, cash flow per share, and a number of other key stats that are commonly used by value investors.\n\nFJTSY currently has a forward P/E ratio of 22.52, while DT has a forward P/E of 28.31. We also note that FJTSY has a PEG ratio of 1.19. This popular metric is similar to the widely-known P/E ratio, with the difference being that the PEG ratio also takes into account the company's expected earnings growth rate. DT currently has a PEG ratio of 1.93.\n\nAnother notable valuation metric for FJTSY is its P/B ratio of 3.42. The P/B is a method of comparing a stock's market value to its book value, which is defined as total assets minus total liabilities. By comparison, DT has a P/B of 6.54.\n\nBased on these metrics and many more, FJTSY holds a Value grade of B, while DT has a Value grade of D.\n\nFJTSY has seen stronger estimate revision activity and sports more attractive valuation metrics than DT, so it seems like value investors will conclude that FJTSY is the superior option right now.\n\nWant the latest recommendations from Zacks Investment Research? Today, you can download 7 Best Stocks for the Next 30 Days. Click to get this free report\n\nFujitsu Ltd. (FJTSY) : Free Stock Analysis Report\n\nDynatrace, Inc. (DT) : Free Stock Analysis Report\n\nThis article originally published on Zacks Investment Research (zacks.com).\n\nZacks Investment Research\n\nView Comments\nTerms and Privacy Policy\nYour Privacy Choices",
+          "type": "Industry",
+          "sentiment": -1,
+          "weight": 1,
+          "final_weight": 0.5,
+          "source_authority": 3.5,
+          "recency_factor": 0.42,
+          "source": "Finnhub",
+          "llm_reviewed": true,
+          "llm_confidence": 0.4,
+          "llm_is_real_catalyst": false,
+          "llm_reasoning": "Value comparison, DT Hold"
+        },
+        {
+          "date": "2026-09-17",
+          "title": "Dynatrace (DT) Targets Large European Enterprises With New Observability Practice",
+          "content": "Dynatrace (NYSE:DT) and Sopra Steria have launched a new Observability and AIOps practice focused on large European enterprises. The practice targets sectors including banking, retail, and public administration, aiming to simplify IT management for complex environments. The alliance is designed to provide unified, AI driven observability across clients’ IT estates to support operational resilience and regulatory compliance. This new Observability and AIOps practice with Sopra Steria aligns...",
+          "type": "Industry",
+          "sentiment": 1,
+          "weight": 1,
+          "final_weight": 0.59,
+          "source_authority": 3.5,
+          "recency_factor": 0.42,
+          "source": "Finnhub",
+          "llm_reviewed": true,
+          "llm_confidence": 0.6,
+          "llm_is_real_catalyst": false,
+          "llm_reasoning": "Partnership, no financials"
+        },
+        {
+          "date": "2026-09-15",
+          "title": "Why Dynatrace (DT) Stock Is Trading Up Today",
+          "content": "Shares of cloud observability platform Dynatrace (NYSE:DT) jumped 3% in the afternoon session after the company announced the launch of a dedicated observability and AIOps practice with Sopra Steria to support European organizations with IT management and regulatory compliance.",
+          "type": "Industry",
+          "sentiment": 1,
+          "weight": 1,
+          "final_weight": 0.5,
+          "source_authority": 3.5,
+          "recency_factor": 0.3,
+          "source": "Finnhub",
+          "llm_reviewed": true,
+          "llm_confidence": 0.5,
+          "llm_is_real_catalyst": false,
+          "llm_reasoning": "Partnership news, stock up"
+        }
+      ]
+    },
+    "NYSE:HPE": {
+      "name": "HPE",
+      "score": 56,
+      "score_raw": 1.51,
+      "score_components": {
+        "positive_weight_sum": 1.51,
+        "negative_weight_sum": 0,
+        "news_effective_count": 2,
+        "news_dropped_count": 0
+      },
+      "signal": "NEUTRAL No Trade (Weak Bullish)",
+      "strategy": "Mildly positive, insufficient signal — watch for stronger catalyst",
+      "suitable_for": "Watch",
+      "confidence": "Low",
+      "patterns": [],
+      "positive_factors": [
+        "[Analyst Action|w1.01] Hewlett Packard Enterprise (HPE) Wins Top Zacks Rank, Is It Still Unde",
+        "[Rumor|w0.5] Jim Cramer Says Hewlett Packard Enterprise (HPE) Has the “Horses” but "
+      ],
+      "negative_factors": [],
+      "news_count": 2,
+      "news_dropped": 0,
+      "performance": {
+        "list_fetch_ms": 1180,
+        "candidate_filter_ms": 0,
+        "enrichment_ms": 0,
+        "raw_news_count": 29,
+        "raw_forum_count": 0,
+        "candidate_news_count": 2,
+        "candidate_forum_count": 0,
+        "enriched_news_count": 2,
+        "enriched_forum_count": 0,
+        "candidate_reasons": {
+          "news": {
+            "no-subject-mention": 19,
+            "dedup": 1,
+            "out_of_window": 7
+          },
+          "forum": {
+            "dedup": 0
+          }
+        },
+        "date_filter_ms": 0,
+        "relevance_ms": 0,
+        "llm_ms": 0,
+        "scoring_ms": 0
+      },
+      "top_news": [
+        {
+          "date": "2026-09-19",
+          "title": "Hewlett Packard Enterprise (HPE) Wins Top Zacks Rank, Is It Still Undervalued?",
+          "content": "Hewlett Packard Enterprise (HPE) has drawn fresh attention after outperforming its Computer and Technology sector peers this year, as analysts raised earnings estimates and assigned the stock a top Zacks Rank rating. Recent trading has cooled slightly, with the share price down over the past week, although Hewlett Packard Enterprise still carries a 30-day share price return of 14.36% and a 90-day gain of 28.16% at a latest share price of $60.76. That short term momentum sits on top of a...",
+          "type": "Analyst Action",
+          "sentiment": 1,
+          "weight": 1,
+          "final_weight": 1.01,
+          "source_authority": 3.5,
+          "recency_factor": 0.6,
+          "source": "Finnhub",
+          "llm_reviewed": true,
+          "llm_confidence": 0.5,
+          "llm_is_real_catalyst": false,
+          "llm_reasoning": "Zacks rank no concrete revision"
+        },
+        {
+          "date": "2026-09-18",
+          "title": "Jim Cramer Says Hewlett Packard Enterprise (HPE) Has the “Horses” but Remains a Dell (DELL) “Fan”",
+          "content": "Toward the end of the lightning round on September 14, when a caller inquired about Hewlett Packard Enterprise Company (NYSE:HPE), Mad Money host Jim Cramer said: Neri’s good. Neri’s good… I didn’t think they had the horses. They do have the horses. The fact is that I’m just a Dell fan, I guess, in the […]",
+          "type": "Rumor",
+          "sentiment": 1,
+          "weight": 1,
+          "final_weight": 0.5,
+          "source_authority": 3.5,
+          "recency_factor": 0.5,
+          "source": "Finnhub",
+          "llm_reviewed": true,
+          "llm_confidence": 0.5,
+          "llm_is_real_catalyst": false,
+          "llm_reasoning": "Cramer opinion, no hard data"
+        }
+      ]
+    },
+    "NASDAQ:LITE": {
+      "name": "LITE",
+      "score": 55,
+      "score_raw": 1.19,
+      "score_components": {
+        "positive_weight_sum": 1.19,
+        "negative_weight_sum": 0,
+        "news_effective_count": 2,
+        "news_dropped_count": 0
+      },
+      "signal": "NEUTRAL No Trade (Weak Bullish)",
+      "strategy": "Mildly positive, insufficient signal — watch for stronger catalyst",
+      "suitable_for": "Watch",
+      "confidence": "Low",
+      "patterns": [],
+      "positive_factors": [
+        "[Industry|w1.19] Is Lumentum (LITE) Quietly Rewiring Its AI Data Center Role With New O"
+      ],
+      "negative_factors": [],
+      "news_count": 2,
+      "news_dropped": 0,
+      "performance": {
+        "list_fetch_ms": 1120,
+        "candidate_filter_ms": 0,
+        "enrichment_ms": 0,
+        "raw_news_count": 31,
+        "raw_forum_count": 0,
+        "candidate_news_count": 2,
+        "candidate_forum_count": 0,
+        "enriched_news_count": 2,
+        "enriched_forum_count": 0,
+        "candidate_reasons": {
+          "news": {
+            "no-subject-mention": 20,
+            "dedup": 0,
+            "out_of_window": 9
+          },
+          "forum": {
+            "dedup": 0
+          }
+        },
+        "date_filter_ms": 0,
+        "relevance_ms": 0,
+        "llm_ms": 0,
+        "scoring_ms": 0
+      },
+      "top_news": [
+        {
+          "date": "2026-09-21",
+          "title": "Is Lumentum (LITE) Quietly Rewiring Its AI Data Center Role With New OCI Optics?",
+          "content": "Lumentum Holdings recently showcased its eight-wavelength DWDM External Laser SFP module and broader AI-focused optical solutions at ECOC 2026, underscoring its role in co-packaged and near-packaged optics aligned with the OCI MSA standard. By pairing this new DWDM ELSFP with a joint die-to-die optical interconnect demo with Qualcomm and Corning, Lumentum is positioning its photonics platform at the heart of emerging AI data center architectures. We’ll now examine how Lumentum’s...",
+          "type": "Industry",
+          "sentiment": 1,
+          "weight": 1,
+          "final_weight": 1.19,
+          "source_authority": 3.5,
+          "recency_factor": 0.85,
+          "source": "Finnhub",
+          "llm_reviewed": true,
+          "llm_confidence": 0.65,
+          "llm_is_real_catalyst": false,
+          "llm_reasoning": "ECOC demo positive, no data"
+        },
+        {
+          "date": "2026-09-21",
+          "title": "Lumentum (LITE) Moves 4.2% Higher: Will This Strength Last?",
+          "content": "Lumentum (LITE) saw its shares surge in the last session with trading volume being higher than average. The latest trend in earnings estimate revisions may not translate into further price increase in the near term.",
+          "type": "Industry",
+          "sentiment": 0,
+          "weight": 1,
+          "final_weight": 1.19,
+          "source_authority": 3.5,
+          "recency_factor": 0.85,
+          "source": "Finnhub",
+          "llm_reviewed": true,
+          "llm_confidence": 0.6,
+          "llm_is_real_catalyst": false,
+          "llm_reasoning": "Price surge, but may not last"
+        }
+      ]
+    },
+    "NYSE:ASX": {
+      "name": "ASX",
+      "score": 55,
+      "score_raw": 1.09,
+      "score_components": {
+        "positive_weight_sum": 1.09,
+        "negative_weight_sum": 0,
+        "news_effective_count": 2,
+        "news_dropped_count": 0
+      },
+      "signal": "NEUTRAL No Trade (Weak Bullish)",
+      "strategy": "Mildly positive, insufficient signal — watch for stronger catalyst",
+      "suitable_for": "Watch",
+      "confidence": "Low",
+      "patterns": [],
+      "positive_factors": [
+        "[Industry|w0.59] ASX Up 230.9% in the Past Year: Should You Capitalize on the Euphoria?",
+        "[Industry|w0.5] ASX vs. TER: Which AI Semiconductor Stock Should You Buy Right Now?"
+      ],
+      "negative_factors": [],
+      "news_count": 2,
+      "news_dropped": 0,
+      "performance": {
+        "list_fetch_ms": 836,
+        "candidate_filter_ms": 0,
+        "enrichment_ms": 1,
+        "raw_news_count": 22,
+        "raw_forum_count": 0,
+        "candidate_news_count": 2,
+        "candidate_forum_count": 0,
+        "enriched_news_count": 2,
+        "enriched_forum_count": 0,
+        "candidate_reasons": {
+          "news": {
+            "no-subject-mention": 7,
+            "dedup": 0,
+            "out_of_window": 13
+          },
+          "forum": {
+            "dedup": 0
+          }
+        },
+        "date_filter_ms": 0,
+        "relevance_ms": 0,
+        "llm_ms": 0,
+        "scoring_ms": 0
+      },
+      "top_news": [
+        {
+          "date": "2026-09-17",
+          "title": "ASX Up 230.9% in the Past Year: Should You Capitalize on the Euphoria?",
+          "content": "ASX Up 230.9% in the Past Year: Should You Capitalize on the Euphoria?\nSupriyo Bose\nThu, September 17, 2026 at 11:00 AM CDT 3 min read\nUCTT\n+4.59%\nACLS\n+4.51%\nASX\n+4.10%\nASX\n+4.10%\nExplore stocks on Coinbase\nTrading disclosure\n\nShares of ASE Technology Holding Co., Ltd. ASX have surged 230.9% over the past year compared with the industry's growth of 25.6%, riding on the healthy demand trends in the artificial intelligence (AI) semiconductor ecosystem. It has outperformed peers like Ultra Clean Holdings, Inc. UCTT and Axcelis Technologies, Inc. ACLS. UCTT has gained 135.4%, and ACLS is up 7.3% over this period.\n\nZacks Investment Research\n\nImage Source: Zacks Investment Research\n\nThe rally is backed by more than AI optimism. Strong demand for ASE Technology's Leading-Edge Advanced Packaging (LEAP) services is translating into accelerating revenues, higher factory utilization and expanding margins.\n\nAs AI chips become more complex and require sophisticated packaging, testing and high-bandwidth memory integration, ASE Technology appears well placed to capitalize on one of the semiconductor industry's fastest-growing areas.\n\nAI Boom Ignites Advanced Packaging Demand\n\nAs chipmakers increasingly combine advanced logic, chiplets and high-bandwidth memory, packaging is becoming an increasingly important contributor to chip performance. This is driving demand for advanced packaging and testing services — areas where ASE Technology has built considerable expertise.\n\nThe company's momentum is particularly visible in its Assembly, Testing and Materials (ATM) business. The increasing contribution from AI-related workloads is also changing its revenue mix and reducing some of the traditional seasonality associated with semiconductor demand.\n\nMargin Expansion Adds Fuel to the Rally\n\nThe improvement in profitability is one of the strongest arguments supporting ASX's rally. ATM gross margin expanded to 27.3% in the second quarter from 21.9% in the year-ago period, aided by higher LEAP volumes, better utilization and an improved product mix.\n\nASE Technology expects the momentum to continue and expects ATM gross margin to move above 30% in the fourth quarter of 2026. At the consolidated level, second-quarter earnings surged 167.9% year over year, while revenues climbed 26.7%. Earnings also comfortably surpassed the Zacks Consensus Estimate.\n\nASX Bets Big on Capacity Expansion\n\nTo capitalize on the solid growth dynamics, ASE Technology increased its 2026 capital expenditure outlay by another $2 billion to roughly $10.5 billion. Of approximately $6.5 billion allocated to equipment, about 70% is earmarked for leading-edge operations.\n\nThe company is simultaneously working on 13 greenfield and eight brownfield expansion projects, which are expected to provide additional capacity through 2028 and into 2029.\n\nThese investments should help ASE Technology meet rising demand across advanced packaging, wafer sorting and testing and strengthen its ability to capture the next wave of AI semiconductor spending.\n\nStory Continues\nView Comments\nTerms and Privacy Policy\nYour Privacy Choices",
+          "type": "Industry",
+          "sentiment": 1,
+          "weight": 1,
+          "final_weight": 0.59,
+          "source_authority": 3.5,
+          "recency_factor": 0.42,
+          "source": "Finnhub",
+          "llm_reviewed": true,
+          "llm_confidence": 0.6,
+          "llm_is_real_catalyst": false,
+          "llm_reasoning": "Commentary only, no catalyst"
+        },
+        {
+          "date": "2026-09-16",
+          "title": "ASX vs. TER: Which AI Semiconductor Stock Should You Buy Right Now?",
+          "content": "ASX vs. TER: Which AI Semiconductor Stock Should You Buy Right Now?\nOm Jaiswal\nWed, September 16, 2026 at 9:04 AM CDT 6 min read\nASX\n+4.10%\nTER\n+5.19%\nExplore stocks on Coinbase\nTrading disclosure\n\nASE Technology Holding ASX and Teradyne TER are both important players in the semiconductor industry, but they serve different roles in the chip manufacturing and testing ecosystem. ASE Technology provides outsourced semiconductor assembly, packaging and testing services, while Teradyne supplies automated test equipment used to evaluate semiconductor chips and electronic systems.\n\nBoth ASX and TER are well-positioned to benefit from the rising demand for AI chips, as hyperscalers continue to increase investments in AI infrastructure. However, from an investment point of view, one stock offers a more favorable outlook than the other right now. Let's break down their fundamentals, growth prospects, market challenges and valuation to determine which stock offers a more compelling investment case.\n\nThe Case for ASE Technology Stock\n\nASE Technology is seeing strong demand for its leading-edge advanced packaging (LEAP) services as the growth of AI increases demand for more complex semiconductor packaging and testing. LEAP revenues are tracking ahead of the company's earlier 2026 target of $3.5 billion. Management now expects to add another few hundred million dollars to this year's LEAP revenues and is targeting a doubling of LEAP revenues in 2027.\n\nThe company has clear visibility into customer demand and the capacity needed to support this growth. ASE plans to add facilities and equipment to expand LEAP capacity, with another $2 billion of CapEx added to its 2026 plans. Management said the company expects to continue making heavy investments in both advanced packaging and testing to support customer demand.\n\nThe growth is already showing up in ASE's results. In the second quarter of 2026, ATM revenues rose 36% year over year to TWD 126.1 billion. Higher LEAP volumes also helped lift ATM gross margin to 27.3% from 21.9% a year earlier. Management expects LEAP and test businesses to remain margin accretive and sees ATM gross margin moving above 30% in the fourth quarter of 2026.\n\nStill, execution remains a key factor. ASE said its near-term growth is limited by how quickly it can install equipment and complete new facilities. ASE is working on 13 greenfield and eight brownfield projects. These projects are expected to provide capacity through 2028 and into part of 2029. However, managing so many projects at the same time might create execution risks, particularly around construction, equipment installation and meeting required timelines.\n\nASE Technology is seeing continued demand for its Electronics Manufacturing Services (EMS) business, but rising component costs and product mix are putting pressure on EMS profitability. In the second quarter of 2026, EMS revenues increased 6% sequentially to TWD 65.8 billion. However, EMS gross margin fell 0.6 percentage points sequentially to 8.9%, while EMS operating margin declined to 2.4% from 3% in the prior quarter. Management attributed the margin pressure to unfavorable product mix and a higher component cost environment. While management expects to pass on these costs to customers, the lower-margin EMS business could remain a drag on overall profitability compared with ASE's faster-growing and more profitable ATM operations.\n\nStory Continues\nView Comments\nTerms and Privacy Policy\nYour Privacy Choices",
+          "type": "Industry",
+          "sentiment": 1,
+          "weight": 1,
+          "final_weight": 0.5,
+          "source_authority": 3.5,
+          "recency_factor": 0.36,
+          "source": "Finnhub",
+          "llm_reviewed": true,
+          "llm_confidence": 0.6,
+          "llm_is_real_catalyst": false,
+          "llm_reasoning": "Comparison only, no catalyst"
+        }
+      ]
+    },
+    "NASDAQ:BGC": {
+      "name": "BGC",
+      "score": 54,
+      "score_raw": 0.84,
+      "score_components": {
+        "positive_weight_sum": 0.84,
+        "negative_weight_sum": 0,
+        "news_effective_count": 1,
+        "news_dropped_count": 0
+      },
+      "signal": "NEUTRAL No Trade (Weak Bullish)",
+      "strategy": "Mildly positive, insufficient signal — watch for stronger catalyst",
+      "suitable_for": "Watch",
+      "confidence": "Low",
+      "patterns": [],
+      "positive_factors": [
+        "[Industry|w0.84] Is BGC Group (BGC) Fairly Valued As Charity Day Puts It Back In Focus?"
+      ],
+      "negative_factors": [],
+      "news_count": 1,
+      "news_dropped": 0,
+      "performance": {
+        "list_fetch_ms": 1448,
+        "candidate_filter_ms": 0,
+        "enrichment_ms": 0,
+        "raw_news_count": 11,
+        "raw_forum_count": 0,
+        "candidate_news_count": 1,
+        "candidate_forum_count": 0,
+        "enriched_news_count": 1,
+        "enriched_forum_count": 0,
+        "candidate_reasons": {
+          "news": {
+            "no-subject-mention": 1,
+            "dedup": 0,
+            "out_of_window": 9
+          },
+          "forum": {
+            "dedup": 0
+          }
+        },
+        "date_filter_ms": 0,
+        "relevance_ms": 0,
+        "llm_ms": 1,
+        "scoring_ms": 1
+      },
+      "top_news": [
+        {
+          "date": "2026-09-19",
+          "title": "Is BGC Group (BGC) Fairly Valued As Charity Day Puts It Back In Focus?",
+          "content": "BGC Group (BGC) just wrapped its latest Charity Day, raising more than $16 million and pushing the event’s lifetime total above $250 million since launching in 2005. For investors tracking the ticker, BGC Group’s 1-month share price return of 13.15% and year to date share price gain of 36.69% point to building momentum. Its 3-year total shareholder return of 140.63% and 5-year total shareholder return of 150.00% indicate that longer term holders have already seen substantial value creation...",
+          "type": "Industry",
+          "sentiment": 1,
+          "weight": 1,
+          "final_weight": 0.84,
+          "source_authority": 3.5,
+          "recency_factor": 0.6,
+          "source": "Finnhub",
+          "llm_reviewed": true,
+          "llm_confidence": 0.7,
+          "llm_is_real_catalyst": false,
+          "llm_reasoning": "Charity PR and stock momentum only"
+        }
+      ]
+    },
+    "NASDAQ:PLTR": {
+      "name": "PLTR",
+      "score": 53,
+      "score_raw": 0.6,
+      "score_components": {
+        "positive_weight_sum": 2.03,
+        "negative_weight_sum": 1.43,
+        "news_effective_count": 3,
+        "news_dropped_count": 0
+      },
+      "signal": "NEUTRAL No Trade (Weak Bullish)",
+      "strategy": "Mildly positive, insufficient signal — watch for stronger catalyst",
+      "suitable_for": "Watch",
+      "confidence": "Low",
+      "patterns": [],
+      "positive_factors": [
+        "[Industry|w1.19] Palantir Technologies (PLTR) Unveils Alliance Push Across AI Supply Ch",
+        "[Analyst Action|w0.84] Jim Cramer Says His Palantir Technologies Inc. (NASDAQ:PLTR) Price Tar"
+      ],
+      "negative_factors": [
+        "[Analyst Action|w1.43] Michael Burry Doubles Down On Palantir Bear Case: ‘A Lot Of’ Money Sti"
+      ],
+      "news_count": 3,
+      "news_dropped": 0,
+      "performance": {
+        "list_fetch_ms": 1574,
+        "candidate_filter_ms": 0,
+        "enrichment_ms": 2,
+        "raw_news_count": 33,
+        "raw_forum_count": 0,
+        "candidate_news_count": 3,
+        "candidate_forum_count": 0,
+        "enriched_news_count": 3,
+        "enriched_forum_count": 0,
+        "candidate_reasons": {
+          "news": {
+            "no-subject-mention": 23,
+            "dedup": 0,
+            "out_of_window": 7
+          },
+          "forum": {
+            "dedup": 0
+          }
+        },
+        "date_filter_ms": 0,
+        "relevance_ms": 0,
+        "llm_ms": 0,
+        "scoring_ms": 0
+      },
+      "top_news": [
+        {
+          "date": "2026-09-21",
+          "title": "Michael Burry Doubles Down On Palantir Bear Case: ‘A Lot Of’ Money Still To Be Made Shorting PLTR",
+          "content": "“The Big Short” investor Michael Burry has once again defended his bearish stance on Palantir Technologies, arguing that there is still money to be made betting against the AI software company even after its stock staged a powerful rebound.\nResponding to a user who noted that Burry had shorted Palantir about six months ago and that the trade had not played out, Burry said on his Substack chat that the stock had previously fallen from “over 200 to 107.”\n“There was a lot of money to be made shorting Palantir. And there still is,” Burry said in the post. PLTR stock rose 0.2% in premarket trading on Monday after gaining over 6% in the past week.\nBurry has been one of Palantir’s most vocal critics, repeatedly questioning the company’s valuation and accounting practices.\nThe bearish stance has become particularly notable as Palantir has continued to report strong operating results. In its latest quarterly report, revenue jumped 93% year over year to $1.94 billion, while U.S. commercial revenue surged 149%. The company also raised its full-year revenue-growth outlook.\nInvestors responded strongly to the results, with Palantir shares jumping nearly 30%% the day after the report.\nThat performance made Burry a target for increasingly frequent social media trolling. Burry has nevertheless continued to defend the trade.\nHis latest comments point to the stock’s earlier fall from above $200 to $107 as evidence that bearish trades can generate substantial returns even amid Palantir’s broader long-term rally.\nHis latest post suggests that Burry remains focused on the valuation and downside risks he has previously highlighted.\nOn Stocktwits, the retail sentiment for PLTR was ‘bearish’ as of early Monday. “$PLTR Palantir nearly doubled its revenue. Its stock stood still. Is it time to Buy the stock?” asked a trader.\nDiscussion also revolved around a recent Bloomberg investigative report, which said the U.S. military’s overreliance on Palantir’s AI-powered Maven Smart System, combined with outdated intelligence and lessened oversight, contributed to a devastating February 2026 missile strike on an Iranian school.\nYear to date, PLTR shares are flat, compared with the benchmark S&P 500's 12% gains.\nFor updates and corrections, email newsroom[at]stocktwits[dot]com.\nRead Next: Apple Reportedly Lays Off Some Fitness+ Division Staff Ahead Of Potential 'Major' Changes\nComments posted here will also appear on symbol pages.",
+          "type": "Analyst Action",
+          "sentiment": -1,
+          "weight": 1,
+          "final_weight": 1.43,
+          "source_authority": 3.5,
+          "recency_factor": 0.85,
+          "source": "Finnhub",
+          "llm_reviewed": true,
+          "llm_confidence": 0.7,
+          "llm_is_real_catalyst": false,
+          "llm_reasoning": "Burry reiterates short bearish"
+        },
+        {
+          "date": "2026-09-21",
+          "title": "Palantir Technologies (PLTR) Unveils Alliance Push Across AI Supply Chains And Cyber Defense",
+          "content": "Palantir Technologies (NasdaqGS:PLTR) announced a series of new global alliances with Fujitsu, NVIDIA, Method Security and Nebius. The renewed Fujitsu agreement aims to expand Palantir software across international manufacturing and other sectors for digital operations projects. Palantir reported a new NVIDIA supply chain effort, Method Security's Cardinal cybersecurity program, and a preferred AI infrastructure role with Nebius. The fresh Fujitsu, NVIDIA, Method Security and Nebius deals...",
+          "type": "Industry",
+          "sentiment": 1,
+          "weight": 1,
+          "final_weight": 1.19,
+          "source_authority": 3.5,
+          "recency_factor": 0.85,
+          "source": "Finnhub",
+          "llm_reviewed": true,
+          "llm_confidence": 0.6,
+          "llm_is_real_catalyst": false,
+          "llm_reasoning": "New alliances with NVIDIA"
+        },
+        {
+          "date": "2026-09-18",
+          "title": "Jim Cramer Says His Palantir Technologies Inc. (NASDAQ:PLTR) Price Target Is $250",
+          "content": "Data analytics firm Palantir Technologies Inc. (NASDAQ:PLTR) used to be a regular feature on Jim Cramer’s radar in 2025. The CNBC TV host praised the firm with no end as he remained optimistic about its ability to help businesses reduce costs and also play a role in the Trump administration’s cost cutting efforts. Cramer also […]",
+          "type": "Analyst Action",
+          "sentiment": 1,
+          "weight": 1,
+          "final_weight": 0.84,
+          "source_authority": 3.5,
+          "recency_factor": 0.5,
+          "source": "Finnhub",
+          "llm_reviewed": true,
+          "llm_confidence": 0.6,
+          "llm_is_real_catalyst": false,
+          "llm_reasoning": "Cramer PT $250 bullish"
+        }
+      ]
+    },
+    "NASDAQ:HRMY": {
+      "name": "HRMY",
+      "score": 50,
+      "score_raw": 0,
+      "score_components": {
+        "positive_weight_sum": 0,
+        "negative_weight_sum": 0
+      },
+      "signal": "NEUTRAL No Trade (No Data)",
+      "strategy": "No relevant news in window",
+      "suitable_for": "Watch",
+      "confidence": "-",
+      "patterns": [],
+      "positive_factors": [],
+      "negative_factors": [],
+      "news_count": 0,
+      "news_dropped": 0,
+      "performance": {
+        "list_fetch_ms": 3625,
+        "candidate_filter_ms": 0,
+        "enrichment_ms": 0,
+        "raw_news_count": 12,
+        "raw_forum_count": 0,
+        "candidate_news_count": 0,
+        "candidate_forum_count": 0,
+        "enriched_news_count": 0,
+        "enriched_forum_count": 0,
+        "candidate_reasons": {
+          "news": {
+            "dedup": 0,
+            "out_of_window": 12
+          },
+          "forum": {
+            "dedup": 0
+          }
+        },
+        "date_filter_ms": 0,
+        "relevance_ms": 0,
+        "llm_ms": 0,
+        "scoring_ms": 0
+      },
+      "top_news": []
+    },
+    "NYSE:LTC": {
+      "name": "LTC",
+      "score": 50,
+      "score_raw": 0,
+      "score_components": {
+        "positive_weight_sum": 0,
+        "negative_weight_sum": 0
+      },
+      "signal": "NEUTRAL No Trade (No Data)",
+      "strategy": "No relevant news in window",
+      "suitable_for": "Watch",
+      "confidence": "-",
+      "patterns": [],
+      "positive_factors": [],
+      "negative_factors": [],
+      "news_count": 0,
+      "news_dropped": 0,
+      "performance": {
+        "list_fetch_ms": 1371,
+        "candidate_filter_ms": 0,
+        "enrichment_ms": 0,
+        "raw_news_count": 12,
+        "raw_forum_count": 0,
+        "candidate_news_count": 0,
+        "candidate_forum_count": 0,
+        "enriched_news_count": 0,
+        "enriched_forum_count": 0,
+        "candidate_reasons": {
+          "news": {
+            "dedup": 0,
+            "out_of_window": 12
+          },
+          "forum": {
+            "dedup": 0
+          }
+        },
+        "date_filter_ms": 0,
+        "relevance_ms": 0,
+        "llm_ms": 0,
+        "scoring_ms": 0
+      },
+      "top_news": []
+    },
+    "NYSE:HGTY": {
+      "name": "HGTY",
+      "score": 50,
+      "score_raw": 0,
+      "score_components": {
+        "positive_weight_sum": 0,
+        "negative_weight_sum": 0
+      },
+      "signal": "NEUTRAL No Trade (No Data)",
+      "strategy": "No relevant news in window",
+      "suitable_for": "Watch",
+      "confidence": "-",
+      "patterns": [],
+      "positive_factors": [],
+      "negative_factors": [],
+      "news_count": 0,
+      "news_dropped": 0,
+      "performance": {
+        "list_fetch_ms": 1371,
+        "candidate_filter_ms": 1,
+        "enrichment_ms": 0,
+        "raw_news_count": 10,
+        "raw_forum_count": 0,
+        "candidate_news_count": 0,
+        "candidate_forum_count": 0,
+        "enriched_news_count": 0,
+        "enriched_forum_count": 0,
+        "candidate_reasons": {
+          "news": {
+            "no-subject-mention": 2,
+            "dedup": 0,
+            "out_of_window": 8
+          },
+          "forum": {
+            "dedup": 0
+          }
+        },
+        "date_filter_ms": 0,
+        "relevance_ms": 0,
+        "llm_ms": 0,
+        "scoring_ms": 0
+      },
+      "top_news": []
+    },
+    "OTC:SMNEY": {
+      "name": "OTC:SMNEY",
+      "score": 50,
+      "score_raw": 0,
+      "score_components": {
+        "positive_weight_sum": 0,
+        "negative_weight_sum": 0
+      },
+      "signal": "NEUTRAL No Trade (No Data)",
+      "strategy": "No relevant news in window",
+      "suitable_for": "Watch",
+      "confidence": "-",
+      "patterns": [],
+      "positive_factors": [],
+      "negative_factors": [],
+      "news_count": 0,
+      "news_dropped": 0,
+      "performance": {
+        "list_fetch_ms": 770,
+        "candidate_filter_ms": 0,
+        "enrichment_ms": 0,
+        "raw_news_count": 0,
+        "raw_forum_count": 0,
+        "candidate_news_count": 0,
+        "candidate_forum_count": 0,
+        "enriched_news_count": 0,
+        "enriched_forum_count": 0,
+        "candidate_reasons": {
+          "news": {
+            "dedup": 0
+          },
+          "forum": {
+            "dedup": 0
+          }
+        },
+        "date_filter_ms": 0,
+        "relevance_ms": 0,
+        "llm_ms": 0,
+        "scoring_ms": 0
+      },
+      "top_news": []
+    },
+    "NYSE:DELL": {
+      "name": "DELL",
+      "score": 50,
+      "score_raw": 0,
+      "score_components": {
+        "positive_weight_sum": 0,
+        "negative_weight_sum": 0
+      },
+      "signal": "NEUTRAL No Trade (No Data)",
+      "strategy": "LLM unavailable or call failed (no keyword fallback)",
+      "suitable_for": "Watch",
+      "confidence": "-",
+      "patterns": [],
+      "positive_factors": [],
+      "negative_factors": [],
+      "news_count": 0,
+      "news_dropped": 0,
+      "performance": {
+        "list_fetch_ms": 985,
+        "candidate_filter_ms": 0,
+        "enrichment_ms": 1,
+        "raw_news_count": 30,
+        "raw_forum_count": 0,
+        "candidate_news_count": 6,
+        "candidate_forum_count": 0,
+        "enriched_news_count": 6,
+        "enriched_forum_count": 0,
+        "candidate_reasons": {
+          "news": {
+            "no-subject-mention": 16,
+            "dedup": 0,
+            "out_of_window": 8
+          },
+          "forum": {
+            "dedup": 0
+          }
+        },
+        "date_filter_ms": 0,
+        "relevance_ms": 0,
+        "llm_ms": 89263,
+        "scoring_ms": 0
+      },
+      "top_news": []
+    },
+    "NYSE:SPNT": {
+      "name": "SPNT",
+      "score": 50,
+      "score_raw": 0,
+      "score_components": {
+        "positive_weight_sum": 0,
+        "negative_weight_sum": 0
+      },
+      "signal": "NEUTRAL No Trade (No Data)",
+      "strategy": "No relevant news in window",
+      "suitable_for": "Watch",
+      "confidence": "-",
+      "patterns": [],
+      "positive_factors": [],
+      "negative_factors": [],
+      "news_count": 0,
+      "news_dropped": 0,
+      "performance": {
+        "list_fetch_ms": 1131,
+        "candidate_filter_ms": 0,
+        "enrichment_ms": 0,
+        "raw_news_count": 15,
+        "raw_forum_count": 0,
+        "candidate_news_count": 0,
+        "candidate_forum_count": 0,
+        "enriched_news_count": 0,
+        "enriched_forum_count": 0,
+        "candidate_reasons": {
+          "news": {
+            "no-subject-mention": 2,
+            "dedup": 0,
+            "out_of_window": 13
+          },
+          "forum": {
+            "dedup": 0
+          }
+        },
+        "date_filter_ms": 0,
+        "relevance_ms": 0,
+        "llm_ms": 0,
+        "scoring_ms": 0
+      },
+      "top_news": []
+    },
+    "OTC:SMTGY": {
+      "name": "OTC:SMTGY",
+      "score": 50,
+      "score_raw": 0,
+      "score_components": {
+        "positive_weight_sum": 0,
+        "negative_weight_sum": 0
+      },
+      "signal": "NEUTRAL No Trade (No Data)",
+      "strategy": "No relevant news in window",
+      "suitable_for": "Watch",
+      "confidence": "-",
+      "patterns": [],
+      "positive_factors": [],
+      "negative_factors": [],
+      "news_count": 0,
+      "news_dropped": 0,
+      "performance": {
+        "list_fetch_ms": 748,
+        "candidate_filter_ms": 0,
+        "enrichment_ms": 0,
+        "raw_news_count": 0,
+        "raw_forum_count": 0,
+        "candidate_news_count": 0,
+        "candidate_forum_count": 0,
+        "enriched_news_count": 0,
+        "enriched_forum_count": 0,
+        "candidate_reasons": {
+          "news": {
+            "dedup": 0
+          },
+          "forum": {
+            "dedup": 0
+          }
+        },
+        "date_filter_ms": 0,
+        "relevance_ms": 0,
+        "llm_ms": 0,
+        "scoring_ms": 0
+      },
+      "top_news": []
+    },
+    "NASDAQ:AMD": {
+      "name": "AMD",
+      "score": 50,
+      "score_raw": 0,
+      "score_components": {
+        "positive_weight_sum": 0,
+        "negative_weight_sum": 0
+      },
+      "signal": "NEUTRAL No Trade (No Data)",
+      "strategy": "LLM unavailable or call failed (no keyword fallback)",
+      "suitable_for": "Watch",
+      "confidence": "-",
+      "patterns": [],
+      "positive_factors": [],
+      "negative_factors": [],
+      "news_count": 0,
+      "news_dropped": 0,
+      "performance": {
+        "list_fetch_ms": 1803,
+        "candidate_filter_ms": 0,
+        "enrichment_ms": 1151,
+        "raw_news_count": 30,
+        "raw_forum_count": 0,
+        "candidate_news_count": 16,
+        "candidate_forum_count": 0,
+        "enriched_news_count": 16,
+        "enriched_forum_count": 0,
+        "candidate_reasons": {
+          "news": {
+            "no-subject-mention": 9,
+            "dedup": 0,
+            "out_of_window": 5
+          },
+          "forum": {
+            "dedup": 0
+          }
+        },
+        "date_filter_ms": 0,
+        "relevance_ms": 0,
+        "llm_ms": 91177,
+        "scoring_ms": 0
+      },
+      "top_news": []
+    },
+    "NYSE:BE": {
+      "name": "BE",
+      "score": 50,
+      "score_raw": 0,
+      "score_components": {
+        "positive_weight_sum": 0,
+        "negative_weight_sum": 0
+      },
+      "signal": "NEUTRAL No Trade (No Data)",
+      "strategy": "LLM unavailable or call failed (no keyword fallback)",
+      "suitable_for": "Watch",
+      "confidence": "-",
+      "patterns": [],
+      "positive_factors": [],
+      "negative_factors": [],
+      "news_count": 0,
+      "news_dropped": 0,
+      "performance": {
+        "list_fetch_ms": 1163,
+        "candidate_filter_ms": 0,
+        "enrichment_ms": 1,
+        "raw_news_count": 34,
+        "raw_forum_count": 0,
+        "candidate_news_count": 4,
+        "candidate_forum_count": 0,
+        "enriched_news_count": 4,
+        "enriched_forum_count": 0,
+        "candidate_reasons": {
+          "news": {
+            "no-subject-mention": 18,
+            "dedup": 0,
+            "out_of_window": 12
+          },
+          "forum": {
+            "dedup": 0
+          }
+        },
+        "date_filter_ms": 0,
+        "relevance_ms": 0,
+        "llm_ms": 85848,
+        "scoring_ms": 0
+      },
+      "top_news": []
+    },
+    "NASDAQ:NBN": {
+      "name": "NBN",
+      "score": 50,
+      "score_raw": 0,
+      "score_components": {
+        "positive_weight_sum": 0,
+        "negative_weight_sum": 0
+      },
+      "signal": "NEUTRAL No Trade (No Data)",
+      "strategy": "No relevant news in window",
+      "suitable_for": "Watch",
+      "confidence": "-",
+      "patterns": [],
+      "positive_factors": [],
+      "negative_factors": [],
+      "news_count": 0,
+      "news_dropped": 0,
+      "performance": {
+        "list_fetch_ms": 1087,
+        "candidate_filter_ms": 0,
+        "enrichment_ms": 0,
+        "raw_news_count": 11,
+        "raw_forum_count": 0,
+        "candidate_news_count": 0,
+        "candidate_forum_count": 0,
+        "enriched_news_count": 0,
+        "enriched_forum_count": 0,
+        "candidate_reasons": {
+          "news": {
+            "dedup": 0,
+            "out_of_window": 11
+          },
+          "forum": {
+            "dedup": 0
+          }
+        },
+        "date_filter_ms": 0,
+        "relevance_ms": 0,
+        "llm_ms": 0,
+        "scoring_ms": 0
+      },
+      "top_news": []
+    },
+    "NASDAQ:AAPL": {
+      "name": "AAPL",
+      "score": 50,
+      "score_raw": 0,
+      "score_components": {
+        "positive_weight_sum": 0,
+        "negative_weight_sum": 0
+      },
+      "signal": "NEUTRAL No Trade (No Data)",
+      "strategy": "LLM unavailable or call failed (no keyword fallback)",
+      "suitable_for": "Watch",
+      "confidence": "-",
+      "patterns": [],
+      "positive_factors": [],
+      "negative_factors": [],
+      "news_count": 0,
+      "news_dropped": 0,
+      "performance": {
+        "list_fetch_ms": 2459,
+        "candidate_filter_ms": 0,
+        "enrichment_ms": 3078,
+        "raw_news_count": 30,
+        "raw_forum_count": 0,
+        "candidate_news_count": 20,
+        "candidate_forum_count": 0,
+        "enriched_news_count": 20,
+        "enriched_forum_count": 0,
+        "candidate_reasons": {
+          "news": {
+            "no-subject-mention": 6,
+            "dedup": 0,
+            "out_of_window": 4
+          },
+          "forum": {
+            "dedup": 0
+          }
+        },
+        "date_filter_ms": 0,
+        "relevance_ms": 0,
+        "llm_ms": 85535,
+        "scoring_ms": 0
+      },
+      "top_news": []
+    },
+    "AMEX:CET": {
+      "name": "CET",
+      "score": 50,
+      "score_raw": 0,
+      "score_components": {
+        "positive_weight_sum": 0,
+        "negative_weight_sum": 0
+      },
+      "signal": "NEUTRAL No Trade (No Data)",
+      "strategy": "No relevant news in window",
+      "suitable_for": "Watch",
+      "confidence": "-",
+      "patterns": [],
+      "positive_factors": [],
+      "negative_factors": [],
+      "news_count": 0,
+      "news_dropped": 0,
+      "performance": {
+        "list_fetch_ms": 1376,
+        "candidate_filter_ms": 0,
+        "enrichment_ms": 0,
+        "raw_news_count": 14,
+        "raw_forum_count": 0,
+        "candidate_news_count": 0,
+        "candidate_forum_count": 0,
+        "enriched_news_count": 0,
+        "enriched_forum_count": 0,
+        "candidate_reasons": {
+          "news": {
+            "dedup": 0,
+            "out_of_window": 14
+          },
+          "forum": {
+            "dedup": 0
+          }
+        },
+        "date_filter_ms": 0,
+        "relevance_ms": 0,
+        "llm_ms": 0,
+        "scoring_ms": 0
+      },
+      "top_news": []
+    },
+    "NYSE:BAP": {
+      "name": "BAP",
+      "score": 50,
+      "score_raw": 0,
+      "score_components": {
+        "positive_weight_sum": 0,
+        "negative_weight_sum": 0
+      },
+      "signal": "NEUTRAL No Trade (No Data)",
+      "strategy": "No relevant news in window",
+      "suitable_for": "Watch",
+      "confidence": "-",
+      "patterns": [],
+      "positive_factors": [],
+      "negative_factors": [],
+      "news_count": 0,
+      "news_dropped": 0,
+      "performance": {
+        "list_fetch_ms": 961,
+        "candidate_filter_ms": 0,
+        "enrichment_ms": 0,
+        "raw_news_count": 18,
+        "raw_forum_count": 0,
+        "candidate_news_count": 0,
+        "candidate_forum_count": 0,
+        "enriched_news_count": 0,
+        "enriched_forum_count": 0,
+        "candidate_reasons": {
+          "news": {
+            "no-subject-mention": 5,
+            "dedup": 0,
+            "out_of_window": 13
+          },
+          "forum": {
+            "dedup": 0
+          }
+        },
+        "date_filter_ms": 0,
+        "relevance_ms": 0,
+        "llm_ms": 0,
+        "scoring_ms": 0
+      },
+      "top_news": []
+    },
+    "OTC:HTHIY": {
+      "name": "OTC:HTHIY",
+      "score": 50,
+      "score_raw": 0,
+      "score_components": {
+        "positive_weight_sum": 0,
+        "negative_weight_sum": 0
+      },
+      "signal": "NEUTRAL No Trade (No Data)",
+      "strategy": "No relevant news in window",
+      "suitable_for": "Watch",
+      "confidence": "-",
+      "patterns": [],
+      "positive_factors": [],
+      "negative_factors": [],
+      "news_count": 0,
+      "news_dropped": 0,
+      "performance": {
+        "list_fetch_ms": 759,
+        "candidate_filter_ms": 0,
+        "enrichment_ms": 0,
+        "raw_news_count": 0,
+        "raw_forum_count": 0,
+        "candidate_news_count": 0,
+        "candidate_forum_count": 0,
+        "enriched_news_count": 0,
+        "enriched_forum_count": 0,
+        "candidate_reasons": {
+          "news": {
+            "dedup": 0
+          },
+          "forum": {
+            "dedup": 0
+          }
+        },
+        "date_filter_ms": 0,
+        "relevance_ms": 0,
+        "llm_ms": 0,
+        "scoring_ms": 0
+      },
+      "top_news": []
+    },
+    "NASDAQ:GRAL": {
+      "name": "GRAL",
+      "score": 50,
+      "score_raw": 0,
+      "score_components": {
+        "positive_weight_sum": 0,
+        "negative_weight_sum": 0
+      },
+      "signal": "NEUTRAL No Trade (No Data)",
+      "strategy": "No relevant news in window",
+      "suitable_for": "Watch",
+      "confidence": "-",
+      "patterns": [],
+      "positive_factors": [],
+      "negative_factors": [],
+      "news_count": 0,
+      "news_dropped": 0,
+      "performance": {
+        "list_fetch_ms": 1057,
+        "candidate_filter_ms": 0,
+        "enrichment_ms": 0,
+        "raw_news_count": 16,
+        "raw_forum_count": 0,
+        "candidate_news_count": 0,
+        "candidate_forum_count": 0,
+        "enriched_news_count": 0,
+        "enriched_forum_count": 0,
+        "candidate_reasons": {
+          "news": {
+            "no-subject-mention": 5,
+            "dedup": 0,
+            "out_of_window": 11
+          },
+          "forum": {
+            "dedup": 0
+          }
+        },
+        "date_filter_ms": 0,
+        "relevance_ms": 0,
+        "llm_ms": 0,
+        "scoring_ms": 0
+      },
+      "top_news": []
+    },
+    "NASDAQ:INTC": {
+      "name": "INTC",
+      "score": 50,
+      "score_raw": 0,
+      "score_components": {
+        "positive_weight_sum": 0,
+        "negative_weight_sum": 0
+      },
+      "signal": "NEUTRAL No Trade (No Data)",
+      "strategy": "LLM unavailable or call failed (no keyword fallback)",
+      "suitable_for": "Watch",
+      "confidence": "-",
+      "patterns": [],
+      "positive_factors": [],
+      "negative_factors": [],
+      "news_count": 0,
+      "news_dropped": 0,
+      "performance": {
+        "list_fetch_ms": 1293,
+        "candidate_filter_ms": 0,
+        "enrichment_ms": 1499,
+        "raw_news_count": 31,
+        "raw_forum_count": 0,
+        "candidate_news_count": 20,
+        "candidate_forum_count": 0,
+        "enriched_news_count": 20,
+        "enriched_forum_count": 0,
+        "candidate_reasons": {
+          "news": {
+            "no-subject-mention": 10,
+            "dedup": 0,
+            "out_of_window": 1
+          },
+          "forum": {
+            "dedup": 0
+          }
+        },
+        "date_filter_ms": 0,
+        "relevance_ms": 0,
+        "llm_ms": 92047,
+        "scoring_ms": 0
+      },
+      "top_news": []
+    },
+    "NASDAQ:MSFT": {
+      "name": "MSFT",
+      "score": 50,
+      "score_raw": 0,
+      "score_components": {
+        "positive_weight_sum": 0,
+        "negative_weight_sum": 0
+      },
+      "signal": "NEUTRAL No Trade (No Data)",
+      "strategy": "LLM unavailable or call failed (no keyword fallback)",
+      "suitable_for": "Watch",
+      "confidence": "-",
+      "patterns": [],
+      "positive_factors": [],
+      "negative_factors": [],
+      "news_count": 0,
+      "news_dropped": 0,
+      "performance": {
+        "list_fetch_ms": 1975,
+        "candidate_filter_ms": 0,
+        "enrichment_ms": 1671,
+        "raw_news_count": 29,
+        "raw_forum_count": 0,
+        "candidate_news_count": 12,
+        "candidate_forum_count": 0,
+        "enriched_news_count": 12,
+        "enriched_forum_count": 0,
+        "candidate_reasons": {
+          "news": {
+            "no-subject-mention": 15,
+            "dedup": 0,
+            "out_of_window": 2
+          },
+          "forum": {
+            "dedup": 0
+          }
+        },
+        "date_filter_ms": 0,
+        "relevance_ms": 0,
+        "llm_ms": 89645,
+        "scoring_ms": 0
+      },
+      "top_news": []
+    },
+    "NASDAQ:HOOD": {
+      "name": "HOOD",
+      "score": 50,
+      "score_raw": 0,
+      "score_components": {
+        "positive_weight_sum": 0,
+        "negative_weight_sum": 0
+      },
+      "signal": "NEUTRAL No Trade (No Data)",
+      "strategy": "No relevant news in window",
+      "suitable_for": "Watch",
+      "confidence": "-",
+      "patterns": [],
+      "positive_factors": [],
+      "negative_factors": [],
+      "news_count": 0,
+      "news_dropped": 0,
+      "performance": {
+        "list_fetch_ms": 1364,
+        "candidate_filter_ms": 0,
+        "enrichment_ms": 0,
+        "raw_news_count": 23,
+        "raw_forum_count": 0,
+        "candidate_news_count": 0,
+        "candidate_forum_count": 0,
+        "enriched_news_count": 0,
+        "enriched_forum_count": 0,
+        "candidate_reasons": {
+          "news": {
+            "no-subject-mention": 22,
+            "dedup": 0,
+            "out_of_window": 1
+          },
+          "forum": {
+            "dedup": 0
+          }
+        },
+        "date_filter_ms": 0,
+        "relevance_ms": 0,
+        "llm_ms": 0,
+        "scoring_ms": 0
+      },
+      "top_news": []
+    },
+    "NASDAQ:MRVL": {
+      "name": "MRVL",
+      "score": 50,
+      "score_raw": 0,
+      "score_components": {
+        "positive_weight_sum": 0,
+        "negative_weight_sum": 0
+      },
+      "signal": "NEUTRAL No Trade (No Data)",
+      "strategy": "LLM unavailable or call failed (no keyword fallback)",
+      "suitable_for": "Watch",
+      "confidence": "-",
+      "patterns": [],
+      "positive_factors": [],
+      "negative_factors": [],
+      "news_count": 0,
+      "news_dropped": 0,
+      "performance": {
+        "list_fetch_ms": 1316,
+        "candidate_filter_ms": 0,
+        "enrichment_ms": 1,
+        "raw_news_count": 33,
+        "raw_forum_count": 0,
+        "candidate_news_count": 3,
+        "candidate_forum_count": 0,
+        "enriched_news_count": 3,
+        "enriched_forum_count": 0,
+        "candidate_reasons": {
+          "news": {
+            "no-subject-mention": 19,
+            "dedup": 0,
+            "out_of_window": 11
+          },
+          "forum": {
+            "dedup": 0
+          }
+        },
+        "date_filter_ms": 0,
+        "relevance_ms": 0,
+        "llm_ms": 95937,
+        "scoring_ms": 0
+      },
+      "top_news": []
+    },
+    "NASDAQ:NVDA": {
+      "name": "NVDA",
+      "score": 50,
+      "score_raw": 0,
+      "score_components": {
+        "positive_weight_sum": 0,
+        "negative_weight_sum": 0
+      },
+      "signal": "NEUTRAL No Trade (No Data)",
+      "strategy": "LLM unavailable or call failed (no keyword fallback)",
+      "suitable_for": "Watch",
+      "confidence": "-",
+      "patterns": [],
+      "positive_factors": [],
+      "negative_factors": [],
+      "news_count": 0,
+      "news_dropped": 0,
+      "performance": {
+        "list_fetch_ms": 2042,
+        "candidate_filter_ms": 0,
+        "enrichment_ms": 1182,
+        "raw_news_count": 26,
+        "raw_forum_count": 0,
+        "candidate_news_count": 7,
+        "candidate_forum_count": 0,
+        "enriched_news_count": 7,
+        "enriched_forum_count": 0,
+        "candidate_reasons": {
+          "news": {
+            "no-subject-mention": 18,
+            "dedup": 0,
+            "out_of_window": 1
+          },
+          "forum": {
+            "dedup": 0
+          }
+        },
+        "date_filter_ms": 0,
+        "relevance_ms": 0,
+        "llm_ms": 98049,
+        "scoring_ms": 0
+      },
+      "top_news": []
+    },
+    "NASDAQ:QCOM": {
+      "name": "QCOM",
+      "score": 49,
+      "score_raw": -0.24,
+      "score_components": {
+        "positive_weight_sum": 2.03,
+        "negative_weight_sum": 2.27,
+        "news_effective_count": 5,
+        "news_dropped_count": 0
+      },
+      "signal": "NEUTRAL No Trade (Neutral)",
+      "strategy": "No clear directional bias — stay flat",
+      "suitable_for": "Watch",
+      "confidence": "Low",
+      "patterns": [],
+      "positive_factors": [
+        "[Industry|w1.19] QCOM Stock Inches Higher After Worst Drop In Three Months: Traders Eye",
+        "[Industry|w0.84] Qualcomm (QCOM) Joins New Edge AI Ecosystem"
+      ],
+      "negative_factors": [
+        "[Analyst Action|w1.43] Bear of the Day: Qualcomm (QCOM)",
+        "[Industry|w0.84] MediaTek Is Stepping Up Competition Against Qualcomm With a New 2-Nano"
+      ],
+      "news_count": 5,
+      "news_dropped": 0,
+      "performance": {
+        "list_fetch_ms": 971,
+        "candidate_filter_ms": 0,
+        "enrichment_ms": 2574,
+        "raw_news_count": 31,
+        "raw_forum_count": 0,
+        "candidate_news_count": 5,
+        "candidate_forum_count": 0,
+        "enriched_news_count": 5,
+        "enriched_forum_count": 0,
+        "candidate_reasons": {
+          "news": {
+            "no-subject-mention": 17,
+            "dedup": 0,
+            "out_of_window": 9
+          },
+          "forum": {
+            "dedup": 0
+          }
+        },
+        "date_filter_ms": 0,
+        "relevance_ms": 0,
+        "llm_ms": 0,
+        "scoring_ms": 0
+      },
+      "top_news": [
+        {
+          "date": "2026-09-21",
+          "title": "Bear of the Day: Qualcomm (QCOM)",
+          "content": "Bear of the Day: Qualcomm (QCOM)\nDavid Bartosiak\nMon, September 21, 2026 at 6:00 AM CDT 2 min read\n1\nQCOM\n-5.82%\nAXTI\n+3.37%\nFORM\n+6.14%\nExplore stocks on Coinbase\nTrading disclosure\n\nThere's an old saying in business, \"You don't want to stand in front of a freight train.\" But there's another rule that matters just as much. You don't want to stand underneath falling earnings estimates. That's where today's Bear of the Day sits. Estimates creeping down lower even as record earnings numbers continue to pile in for the rest of the S&P 500. When those estimates creep down, unfortunately, price has a tendency to follow.\n\nToday's Bear of the Day is Zacks Rank #5 (Strong Sell) Qualcomm (QCOM). Qualcomm remains one of the biggest names in wireless semiconductors, and there are absolutely pieces of the business working. Automotive is growing. IoT is growing. Edge AI provides another potential long-term opportunity. The problem is that the engine that has historically paid the bills, handsets, is sputtering.\n\nFiscal third-quarter revenue came in at $9.95 billion, down 4% year over year. Non-GAAP earnings were $2.21 per share, down a much uglier 20%. The headline underneath the headline was handset revenue, which dropped 20% to $5.09 billion. Revenue down 4%. Earnings down 20%.\n\nYou don't need a PhD in semiconductor engineering to figure out what that says about the margin picture. Higher input costs have been squeezing profitability, while Qualcomm's QCT business has been dealing with a weaker mix and softer handset demand. Management guided fiscal Q4 adjusted EPS to just $2.05-$2.25, with QCT EBT margins expected at 23%-25%.\n\nQUALCOMM Incorporated Price and Consensus\nQUALCOMM Incorporated Price and Consensus\n\nQUALCOMM Incorporated price-consensus-chart | QUALCOMM Incorporated Quote\n\nThen there's the elephant in the room. Apple. Apple's transition toward its own modem technology is happening faster than Qualcomm previously expected. Qualcomm said its modem share in the upcoming iPhone generation would be materially below its previous 20% assumption. That's premium business walking out the door, and Qualcomm now has to replace it somewhere else.\n\nAnalysts don't see it yet. Over the last sixty days, 11 analysts cut their estimates for the current year while 13 have done so for next year. The bearish moves have dropped our Zacks Consensus Estimate for the current year from $10.79 to $10.55 while next year's number is off from $10.88 to $10.02.\n\nQualcomm is in the Electronics – Semiconductor industry which ranks in the Top 18% of our Zacks Industry Rank. There are several stocks within this industry that are in the good graces of our Zacks Rank. These include Zacks Rank #1 (Strong Buy) stocks AXT (AXTI) and FormFactor (FORM).\n\nStory Continues\nView Comments (1)\nTerms and Privacy Policy\nYour Privacy Choices",
+          "type": "Analyst Action",
+          "sentiment": -1,
+          "weight": 1,
+          "final_weight": 1.43,
+          "source_authority": 3.5,
+          "recency_factor": 0.85,
+          "source": "Finnhub",
+          "llm_reviewed": true,
+          "llm_confidence": 0.7,
+          "llm_is_real_catalyst": false,
+          "llm_reasoning": "Bearish Zacks rating, weak handset"
+        },
+        {
+          "date": "2026-09-21",
+          "title": "QCOM Stock Inches Higher After Worst Drop In Three Months: Traders Eye Snapdragon Summit For Cues",
+          "content": "Shares of Qualcomm, Inc. gained 1.2% in premarket trading on Monday, recovering marginally from their worst drop in three months in the previous session.\nQualcomm is heading into a closely watched week as the chipmaker prepares to host its annual Snapdragon Summit in Maui, Hawaii, from Sept. 22-24, with investors looking for fresh details on its next generation of processors and its broader push into AI-powered computing.\nThe three-day event is expected to put Qualcomm’s latest Snapdragon platforms at the center of the spotlight, particularly its next flagship smartphone chips.\nQualcomm is widely expected to unveil the Snapdragon 8 Elite Gen 6 and a higher-end Snapdragon 8 Elite Gen 6 Pro, which are expected to power next-generation premium smartphones and other devices.\nReports point to a move toward TSMC’s 2-nanometer manufacturing technology, although Qualcomm has not confirmed all reported specifications ahead of the event.\nThe announcements matter for Qualcomm because smartphones remain a major part of its business, even as the company attempts to build new growth engines outside handsets.\nQualcomm’s summit is also expected to showcase its broader Snapdragon strategy, including AI-powered PCs, personal AI, gaming and other connected devices. The company has increasingly positioned its Snapdragon platforms around on-device AI.\nQualcomm is simultaneously trying to expand its addressable market through automotive, IoT and data-center opportunities.\nThe summit comes after a sharp pullback in Qualcomm shares on Friday. Shares dipped 5.8% without a major trigger, even as the broader semiconductor sector moved higher. Market reports largely attributed the decline to profit-taking after a strong multi-week rally.\nQualcomm reported a strong fiscal third-quarter earnings report in July, with revenue rising 10% to $10.4 billion and non-GAAP EPS climbing 14% to $2.77, both ahead of Wall Street estimates.\nA major boost to that diversification push came last week when Qualcomm announced a multi-generational partnership with Amazon to supply customized AI chips and optical connectivity for AWS data centers.\nOn Stocktwits, the retail sentiment for QCOM remained ‘neutral,’ unchanged from last week.\n“OnePlus 16 Geekbench listing reveals Snapdragon 8 Elite Gen 6 Pro, 16GB RAM, and 11,000+ score,” a trader wrote, referring to the soon-to-be announced Qualcomm processor.\nYear to date, QCOM shares are up 5.5%.\nFor updates and corrections, email newsroom[at]stocktwits[dot]com.\nComments posted here will also appear on symbol pages.",
+          "type": "Industry",
+          "sentiment": 1,
+          "weight": 1,
+          "final_weight": 1.19,
+          "source_authority": 3.5,
+          "recency_factor": 0.85,
+          "source": "Finnhub",
+          "llm_reviewed": true,
+          "llm_confidence": 0.6,
+          "llm_is_real_catalyst": false,
+          "llm_reasoning": "Summit preview lifts stock"
+        },
+        {
+          "date": "2026-09-19",
+          "title": "MediaTek Is Stepping Up Competition Against Qualcomm With a New 2-Nanometer Chip. What This Means fo",
+          "content": "MediaTek unveiled the Dimensity 9600 Pro on Sept. 15, its first flagship smartphone chip on TSMC’s 2-nanometer process, aiming more directly at Qualcomm’s premium Android position.",
+          "type": "Industry",
+          "sentiment": -1,
+          "weight": 1,
+          "final_weight": 0.84,
+          "source_authority": 3.5,
+          "recency_factor": 0.6,
+          "source": "Finnhub",
+          "llm_reviewed": true,
+          "llm_confidence": 0.6,
+          "llm_is_real_catalyst": false,
+          "llm_reasoning": "MediaTek 2nm chip threat"
+        },
+        {
+          "date": "2026-09-19",
+          "title": "Qualcomm (QCOM) Joins New Edge AI Ecosystem",
+          "content": "QUALCOMM (NasdaqGS:QCOM) has joined Advantech and other partners in the new WEDA edge AI ecosystem to support scalable deployments across varied hardware. The WEDA collaboration focuses on simplifying edge AI solutions by standardising tools and reference designs for industrial and enterprise use cases. QUALCOMM is also participating in up to 29 cross sector agreements between US and Vietnamese firms announced during a recent state visit. The WEDA edge AI alliance and the US Vietnam trade...",
+          "type": "Industry",
+          "sentiment": 1,
+          "weight": 1,
+          "final_weight": 0.84,
+          "source_authority": 3.5,
+          "recency_factor": 0.6,
+          "source": "Finnhub",
+          "llm_reviewed": true,
+          "llm_confidence": 0.5,
+          "llm_is_real_catalyst": false,
+          "llm_reasoning": "Edge AI ecosystem partnership"
+        },
+        {
+          "date": "2026-09-17",
+          "title": "Trump-Xi Dinner Next Week Brings AI Titans To The Table — OpenAI, NVDA, and QCOM CEOs To Attend, Say",
+          "content": "OpenAI Chief Executive Officer (CEO) Sam Altman, Nvidia Corp. (NVDA) CEO Jensen Huang and Qualcomm Inc. (QCOM) CEO Cristiano Amon are reportedly set to attend next week’s state dinner with President Donald Trump and Chinese President Xi Jinping.\nTheir presence puts AI and related technology issues in focus ahead of the September 24 White House summit, as the industry continues to debate the pace and safety of advanced AI development.\nAt the time of writing, in after-hours trading on Thursday, QCOM stock was down 0.11%, while NVDA stock was flat. During the regular session, QCOM ended 2.09% higher, and NVDA gained 2.54%.\nPolitico reported the executives’ planned attendance, citing four people familiar with the event. An OpenAI spokesperson confirmed Altman will attend but did not provide details on his objectives for the summit. Instead, the spokesperson pointed to Altman’s recent comments that Trump and Xi could earn a Nobel Peace Prize if they reach an agreement on AI.\nA person familiar with the event also confirmed Huang's attendance. That person did not say what Huang hopes to achieve at the summit.\nQualcomm confirmed Amon’s attendance. The CEO said he will represent the company and “the strength of American technology leadership on the global stage.”\nAnthropic declined to comment on whether it had received an invitation, while spokespeople for Google, Meta and AMD did not immediately respond to Politico’s requests for comment.\nThe September 24 meeting comes as some members of the AI industry are calling for safeguards around the rapid development of advanced models.\nAltman and Huang have taken different positions on whether AI development should be slowed to address safety concerns. Altman recently supported Anthropic CEO Dario Amodei’s call for an industrywide slowdown. In an interview with Fortune last week, Altman also said Trump and Xi should set standards for developing and testing advanced AI models.\nHuang, meanwhile, has dismissed concerns that AI could ultimately destroy humanity, describing such fears as “hysterical,” a stance similar to Trump’s.\nThe summit could also bring Nvidia’s business in China into focus. Huang has personally lobbied the White House and Congress to allow Nvidia to sell its advanced AI chips to China, raising the possibility that chip access could become part of the negotiations.\nTrump has previously invited technology executives to his meetings with Xi. In May, he invited 17 business leaders to join him in China for discussions with Xi, with Huang receiving a last-minute invitation to the trip.\nOn Stocktwits, retail sentiment for NVDA was ‘bearish,’ with ‘low’ message volume. The sentiment for QCOM was ‘neutral,’ while message volume was ‘normal.’\nRetail sentiment for OPEAZZX, meanwhile, was bullish’ at the time of writing.\nNVDA shares have gained nearly 17% year-to-date, while QCOM stock is up more than 8% over the same period.\nAlso See: Amazon, Walmart Face FTC Probe Call Over AI Chatbots And ‘Made In USA’ Claims — AMZN, WMT Stocks In Focus\nFor updates and corrections, email newsroom[at]stocktwits[dot]com.",
+          "type": "Policy",
+          "sentiment": 0,
+          "weight": 1,
+          "final_weight": 0.7,
+          "source_authority": 3.5,
+          "recency_factor": 0.42,
+          "source": "Finnhub",
+          "llm_reviewed": true,
+          "llm_confidence": 0.5,
+          "llm_is_real_catalyst": false,
+          "llm_reasoning": "US-China AI dinner attendance"
+        }
+      ]
+    },
+    "NASDAQ:VSAT": {
+      "name": "VSAT",
+      "score": 48,
+      "score_raw": -0.5,
+      "score_components": {
+        "positive_weight_sum": 0,
+        "negative_weight_sum": 0.5,
+        "news_effective_count": 1,
+        "news_dropped_count": 0
+      },
+      "signal": "NEUTRAL No Trade (Neutral)",
+      "strategy": "No clear directional bias — stay flat",
+      "suitable_for": "Watch",
+      "confidence": "Low",
+      "patterns": [],
+      "positive_factors": [],
+      "negative_factors": [
+        "[Industry|w0.5] Viasat (VSAT) Stock Looks Stretched As Its 197% Three Year Run Continu"
+      ],
+      "news_count": 1,
+      "news_dropped": 0,
+      "performance": {
+        "list_fetch_ms": 1056,
+        "candidate_filter_ms": 0,
+        "enrichment_ms": 0,
+        "raw_news_count": 22,
+        "raw_forum_count": 0,
+        "candidate_news_count": 1,
+        "candidate_forum_count": 0,
+        "enriched_news_count": 1,
+        "enriched_forum_count": 0,
+        "candidate_reasons": {
+          "news": {
+            "no-subject-mention": 6,
+            "dedup": 0,
+            "out_of_window": 15
+          },
+          "forum": {
+            "dedup": 0
+          }
+        },
+        "date_filter_ms": 0,
+        "relevance_ms": 0,
+        "llm_ms": 0,
+        "scoring_ms": 0
+      },
+      "top_news": [
+        {
+          "date": "2026-09-15",
+          "title": "Viasat (VSAT) Stock Looks Stretched As Its 197% Three Year Run Continues",
+          "content": "Viasat has delivered a powerful share price run in recent years, and the stock now trades in a very different place to where it was three years ago. With that kind of move on the screen, the key issue for you is whether the company’s cash flows can support where the valuation sits today. Viasat has gained 197.1% over the past 3 years, which puts a lot of weight on the idea that its future cash generation can justify such a reset in expectations. The new Equatys venture with Space42, backed...",
+          "type": "Industry",
+          "sentiment": -1,
+          "weight": 1,
+          "final_weight": 0.5,
+          "source_authority": 3.5,
+          "recency_factor": 0.3,
+          "source": "Finnhub",
+          "llm_reviewed": true,
+          "llm_confidence": 0.5,
+          "llm_is_real_catalyst": false,
+          "llm_reasoning": "Valuation commentary, no hard catalyst"
+        }
+      ]
+    },
+    "NYSE:P": {
+      "name": "P",
+      "score": 47,
+      "score_raw": -0.76,
+      "score_components": {
+        "positive_weight_sum": 2.26,
+        "negative_weight_sum": 3.02,
+        "news_effective_count": 3,
+        "news_dropped_count": 0
+      },
+      "signal": "NEUTRAL No Trade (Neutral)",
+      "strategy": "No clear directional bias — stay flat",
+      "suitable_for": "Watch",
+      "confidence": "Low",
+      "patterns": [],
+      "positive_factors": [
+        "[Analyst Action|w1.76] Why Everpure (P) Stock Is Up Today",
+        "[Rumor|w0.5] 3 Reasons P Has Explosive Upside Potential"
+      ],
+      "negative_factors": [
+        "[Policy|w3.02] Everpure (P) Dropped From Key Small Cap Indices As Fund Exposure Shift"
+      ],
+      "news_count": 3,
+      "news_dropped": 0,
+      "performance": {
+        "list_fetch_ms": 798,
+        "candidate_filter_ms": 0,
+        "enrichment_ms": 0,
+        "raw_news_count": 15,
+        "raw_forum_count": 0,
+        "candidate_news_count": 3,
+        "candidate_forum_count": 0,
+        "enriched_news_count": 3,
+        "enriched_forum_count": 0,
+        "candidate_reasons": {
+          "news": {
+            "no-subject-mention": 7,
+            "dedup": 0,
+            "out_of_window": 5
+          },
+          "forum": {
+            "dedup": 0
+          }
+        },
+        "date_filter_ms": 0,
+        "relevance_ms": 0,
+        "llm_ms": 0,
+        "scoring_ms": 0
+      },
+      "top_news": [
+        {
+          "date": "2026-09-20",
+          "title": "Everpure (P) Dropped From Key Small Cap Indices As Fund Exposure Shifts",
+          "content": "Everpure (NYSE:P) has been removed from both the Russell Small Cap Comp Growth Index and the Russell Small Cap Comp Value Index. The index changes affect benchmark exposure for funds that track these Russell small cap composites. Passive and rules based investors that reference these indices may now hold fewer or no Everpure shares. Everpure's removal from the Russell Small Cap Comp Growth and Value indices is one more factor to weigh against other signals. We have also flagged 4 other big...",
+          "type": "Policy",
+          "sentiment": -1,
+          "weight": 3,
+          "final_weight": 3.02,
+          "source_authority": 3.5,
+          "recency_factor": 0.72,
+          "source": "Finnhub",
+          "llm_reviewed": true,
+          "llm_confidence": 0.8,
+          "llm_is_real_catalyst": true,
+          "llm_reasoning": "Russell deletion may force selling"
+        },
+        {
+          "date": "2026-09-17",
+          "title": "Why Everpure (P) Stock Is Up Today",
+          "content": "Shares of data storage solutions provider Everpure (NYSE:P) jumped 4.4% in the afternoon session after Needham analyst Matthew Calitri assumed coverage of Everpure with a Buy rating and a $140 price target. According to Streetinsider, Calitri wrote in a note that customer demand remains robust, with channel checks pointing to rising storage needs even after price increases. A Buy rating signals an expectation the stock can outperform peers or the broader market, and the $140 target implies meani",
+          "type": "Analyst Action",
+          "sentiment": 1,
+          "weight": 2,
+          "final_weight": 1.76,
+          "source_authority": 3.5,
+          "recency_factor": 0.42,
+          "source": "Finnhub",
+          "llm_reviewed": true,
+          "llm_confidence": 0.9,
+          "llm_is_real_catalyst": true,
+          "llm_reasoning": "Buy initiation, $140 PT"
+        },
+        {
+          "date": "2026-09-17",
+          "title": "3 Reasons P Has Explosive Upside Potential",
+          "content": "What a time it’s been for Everpure. In the past six months alone, the company’s stock price has increased by a massive 54.9%, reaching $98.27 per share. This was partly due to its solid quarterly results, and the performance may have investors wondering how to approach the situation.",
+          "type": "Rumor",
+          "sentiment": 1,
+          "weight": 1,
+          "final_weight": 0.5,
+          "source_authority": 3.5,
+          "recency_factor": 0.42,
+          "source": "Finnhub",
+          "llm_reviewed": true,
+          "llm_confidence": 0.4,
+          "llm_is_real_catalyst": false,
+          "llm_reasoning": "Vague upside article"
+        }
+      ]
+    },
+    "NASDAQ:SNDK": {
+      "name": "SNDK",
+      "score": 47,
+      "score_raw": -0.7,
+      "score_components": {
+        "positive_weight_sum": 0,
+        "negative_weight_sum": 0.7,
+        "news_effective_count": 1,
+        "news_dropped_count": 0
+      },
+      "signal": "NEUTRAL No Trade (Neutral)",
+      "strategy": "No clear directional bias — stay flat",
+      "suitable_for": "Watch",
+      "confidence": "Low",
+      "patterns": [],
+      "positive_factors": [],
+      "negative_factors": [
+        "[Industry|w0.7] Is Sandisk (SNDK) Stock At Risk As New NAND Competition Targets AI Mem"
+      ],
+      "news_count": 1,
+      "news_dropped": 0,
+      "performance": {
+        "list_fetch_ms": 1070,
+        "candidate_filter_ms": 0,
+        "enrichment_ms": 0,
+        "raw_news_count": 34,
+        "raw_forum_count": 0,
+        "candidate_news_count": 1,
+        "candidate_forum_count": 0,
+        "enriched_news_count": 1,
+        "enriched_forum_count": 0,
+        "candidate_reasons": {
+          "news": {
+            "no-subject-mention": 21,
+            "dedup": 0,
+            "out_of_window": 12
+          },
+          "forum": {
+            "dedup": 0
+          }
+        },
+        "date_filter_ms": 0,
+        "relevance_ms": 0,
+        "llm_ms": 0,
+        "scoring_ms": 0
+      },
+      "top_news": [
+        {
+          "date": "2026-09-18",
+          "title": "Is Sandisk (SNDK) Stock At Risk As New NAND Competition Targets AI Memory?",
+          "content": "Sandisk (NasdaqGS:SNDK) faces fresh competition as China's CXMT Corp. moves to enter the NAND flash memory market. CXMT, known for DRAM, is setting up a dedicated NAND R&D line to build out its flash memory capabilities. The Chinese semiconductor firm has started early discussions with potential NAND customers, including at least one AI startup focused on memory needs. The CXMT push into NAND and AI memory is important, but it should be considered alongside other factors in Sandisk's story...",
+          "type": "Industry",
+          "sentiment": -1,
+          "weight": 1,
+          "final_weight": 0.7,
+          "source_authority": 3.5,
+          "recency_factor": 0.5,
+          "source": "Finnhub",
+          "llm_reviewed": true,
+          "llm_confidence": 0.7,
+          "llm_is_real_catalyst": false,
+          "llm_reasoning": "Competitive threat from CXMT NAND"
+        }
+      ]
+    }
+  }
+}

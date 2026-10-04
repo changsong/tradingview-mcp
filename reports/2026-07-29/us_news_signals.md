@@ -673,5 +673,5 @@ AIGC:
 | Divergence | Black swan present but mostly bullish | Avoid first, wait for clarity |
 
 ---
-*Generated: 2026-07-28T12:30:03.055Z | Sources: Yahoo / Finnhub / MarketWatch / NewsAPI / Seeking Alpha + deepseek-v4-pro*
+*Generated: 2026-07-28T12:30:03.055Z | Sources: Yahoo / Finnhub / MarketWatch / NewsAPI / Seeking Alpha + deepseek-flash*
 *（内容由AI生成，仅供参考）*

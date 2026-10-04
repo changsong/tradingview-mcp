@@ -1,0 +1,5022 @@
+{
+  "generated_at": "2026-08-01T00:44:14.707Z",
+  "market": "cn",
+  "source": "src/core/webNews.js",
+  "score_scale": "0-100 normalized (neutral=50)",
+  "window": {
+    "from": "2026-07-25",
+    "to": "2026-08-01",
+    "days": 7
+  },
+  "llm_used": true,
+  "performance": {
+    "totals_ms": {
+      "list_fetch_ms": 180830,
+      "enrichment_ms": 256433,
+      "relevance_ms": 0,
+      "llm_ms": 227357,
+      "report_write_ms": 16
+    },
+    "avg_ms": {
+      "list_fetch_ms": 2583,
+      "enrichment_ms": 3663,
+      "relevance_ms": 0,
+      "llm_ms": 3248,
+      "report_write_ms": 0
+    }
+  },
+  "stocks": {
+    "SZSE:002230": {
+      "name": "002230",
+      "score": 100,
+      "score_raw": 11.99,
+      "score_components": {
+        "positive_weight_sum": 11.99,
+        "negative_weight_sum": 0,
+        "news_effective_count": 4,
+        "news_dropped_count": 0
+      },
+      "signal": "⚠️ Long (谨慎)",
+      "strategy": "情绪强但存在风险信号，建议小仓位低吸",
+      "suitable_for": "低吸(控仓)",
+      "confidence": "中(有风险)",
+      "patterns": [
+        "情绪持续增强↑(trend)",
+        "⚠️疑似提前炒作(无硬催化)"
+      ],
+      "positive_factors": [
+        "[回购|w3.89] 科大讯飞:关于回购股份事项前十名股东及前十名无限售条件股东持股情况的公告",
+        "[回购|w2.7] 科大讯飞:回购报告书",
+        "[回购|w2.7] 科大讯飞:第七届董事会第五次会议决议公告"
+      ],
+      "negative_factors": [],
+      "news_count": 4,
+      "news_dropped": 0,
+      "performance": {
+        "list_fetch_ms": 2096,
+        "candidate_filter_ms": 0,
+        "enrichment_ms": 4278,
+        "raw_news_count": 40,
+        "raw_research_count": 10,
+        "candidate_news_count": 4,
+        "candidate_research_count": 0,
+        "enriched_news_count": 4,
+        "enriched_research_count": 0,
+        "candidate_reasons": {
+          "news": {
+            "no-subject-mention": 18,
+            "noise:\\d{1,2}月\\d{1,2}日(快速上涨|快速回调|涨停|": 1,
+            "noise:融资净(买入|卖出)": 1,
+            "dedup": 0,
+            "out_of_window": 16
+          },
+          "research": {
+            "dedup": 0,
+            "out_of_window": 10
+          }
+        },
+        "date_filter_ms": 0,
+        "relevance_ms": 0,
+        "llm_ms": 0,
+        "scoring_ms": 0
+      },
+      "top_news": [
+        {
+          "date": "2026-07-30",
+          "title": "科大讯飞:关于回购股份事项前十名股东及前十名无限售条件股东持股情况的公告",
+          "content": "",
+          "type": "回购",
+          "sentiment": 1,
+          "weight": 4,
+          "final_weight": 3.89,
+          "source_authority": 4.5,
+          "recency_factor": 0.72,
+          "source": "东方财富公告",
+          "llm_reviewed": true,
+          "llm_confidence": 0.95,
+          "llm_is_real_catalyst": true,
+          "llm_reasoning": "发布回购前股东持股公告，利好信号"
+        },
+        {
+          "date": "2026-07-28",
+          "title": "科大讯飞:回购报告书",
+          "content": "",
+          "type": "回购",
+          "sentiment": 1,
+          "weight": 3,
+          "final_weight": 2.7,
+          "source_authority": 4.5,
+          "recency_factor": 0.5,
+          "source": "东方财富公告",
+          "llm_reviewed": true,
+          "llm_confidence": 0.95,
+          "llm_is_real_catalyst": true,
+          "llm_reasoning": "发布回购报告书，明确回购计划"
+        },
+        {
+          "date": "2026-07-28",
+          "title": "科大讯飞:第七届董事会第五次会议决议公告",
+          "content": "",
+          "type": "回购",
+          "sentiment": 1,
+          "weight": 3,
+          "final_weight": 2.7,
+          "source_authority": 4.5,
+          "recency_factor": 0.5,
+          "source": "东方财富公告",
+          "llm_reviewed": true,
+          "llm_confidence": 0.95,
+          "llm_is_real_catalyst": true,
+          "llm_reasoning": "董事会决议通过回购方案"
+        },
+        {
+          "date": "2026-07-28",
+          "title": "科大讯飞:关于以集中竞价交易方式回购公司股份方案的公告",
+          "content": "",
+          "type": "回购",
+          "sentiment": 1,
+          "weight": 3,
+          "final_weight": 2.7,
+          "source_authority": 4.5,
+          "recency_factor": 0.5,
+          "source": "东方财富公告",
+          "llm_reviewed": true,
+          "llm_confidence": 0.95,
+          "llm_is_real_catalyst": true,
+          "llm_reasoning": "披露回购方案，准备实施"
+        }
+      ]
+    },
+    "SSE:600031": {
+      "name": "600031",
+      "score": 94,
+      "score_raw": 10.5,
+      "score_components": {
+        "positive_weight_sum": 10.5,
+        "negative_weight_sum": 0,
+        "news_effective_count": 2,
+        "news_dropped_count": 0
+      },
+      "signal": "🟢 Long (强)",
+      "strategy": "多重利好共振，基本面+情绪双支撑，适合追涨或持有",
+      "suitable_for": "追涨 / 持有",
+      "confidence": "高",
+      "patterns": [
+        "情绪持续增强↑(trend)"
+      ],
+      "positive_factors": [
+        "[回购|w5.4] 三一重工:三一重工股份有限公司关于回购股份事项前十大股东和前十大无限售条件股东持股情况的公告",
+        "[回购|w5.1] 三一重工股份有限公司关于回购股份事项前十大股东和前十大无限售条件股东持股情况的公告"
+      ],
+      "negative_factors": [],
+      "news_count": 2,
+      "news_dropped": 0,
+      "performance": {
+        "list_fetch_ms": 1323,
+        "candidate_filter_ms": 0,
+        "enrichment_ms": 5405,
+        "raw_news_count": 40,
+        "raw_research_count": 10,
+        "candidate_news_count": 2,
+        "candidate_research_count": 0,
+        "enriched_news_count": 2,
+        "enriched_research_count": 0,
+        "candidate_reasons": {
+          "news": {
+            "noise:融资净(买入|卖出)": 2,
+            "no-subject-mention": 17,
+            "noise:龙虎榜|大宗交易|盘口异动": 1,
+            "dedup": 0,
+            "out_of_window": 18
+          },
+          "research": {
+            "dedup": 0,
+            "out_of_window": 10
+          }
+        },
+        "date_filter_ms": 0,
+        "relevance_ms": 0,
+        "llm_ms": 0,
+        "scoring_ms": 0
+      },
+      "top_news": [
+        {
+          "date": "2026-08-01",
+          "title": "三一重工:三一重工股份有限公司关于回购股份事项前十大股东和前十大无限售条件股东持股情况的公告",
+          "content": "",
+          "type": "回购",
+          "sentiment": 1,
+          "weight": 5,
+          "final_weight": 5.4,
+          "source_authority": 4.5,
+          "recency_factor": 1,
+          "source": "东方财富公告",
+          "llm_reviewed": true,
+          "llm_confidence": 0.9,
+          "llm_is_real_catalyst": true,
+          "llm_reasoning": "公告董事会决议回购股份并披露前十大股东"
+        },
+        {
+          "date": "2026-07-31",
+          "title": "三一重工股份有限公司关于回购股份事项前十大股东和前十大无限售条件股东持股情况的公告",
+          "content": "1\n证券代码：600031 \t证券简称：三一重工 \t公告编号：2026-031\n三一重工股份有限公司\n关于回购股份事项前十大股东和前十大无限售条件\n股东持股情况的公告\n本公司董事会及全体董事保证本公告内容不存在任何虚假记载、\n误导性陈述或者重大遗漏，并对其内容的真实性、准确性和完整性承\n担法律责任。\n2026 \t年 \t7 \t月 \t24 \t日，三一重工股份有限公司(以下简称“公司”)召开第九届\n董事会第十一次会议，审议通过《关于以集中竞价交易方式回购公司 \tA \t股股份的\n议案》，具体内容详见公司 \t2026 \t年 \t7 \t月 \t25 \t日在《中国证券报》《证券时报》《上\n海证券报》及上海证券交易所网站（www.sse.com.cn）公开披露的《关于以集中\n竞价交易方式回购 \tA \t股股份方案的公告暨回购报告书》（公告编号：2026-030）。\n根据《上市公司股份回购规则》《上海证券交易所上市公司自律监管指引第\n7 \t号——回购股份》等相关规定，现将董事会公告回购股份的前一个交易日（2026\n年 \t7 \t月 \t24 \t日）登记在册的前十大股东和前十大无限售条件股东名称、持股数量\n及比例情况公告如下：\n序号 \t股东名称 \t持股数量（股） 占 公 司 总 股 本\n的比例（%）\n1 \t三一集团有限公司 \t2,057,460,315 \t22.38\n2 \t香港中央结算有限公司 \t1,318,536,528 \t14.34\n3 三一集团有限公司－三一集团有限公司 \t2020\n年非公开发行可交换公司债券质押专户 422,627,942 \t4.60\n4 \t梁稳根 \t235,840,517 \t2.56\n5 \t全国社保基金一零三组合 \t120,000,000 \t1.31\n6 \t全国社保基金一一四组合 \t100,000,000 \t1.09\n\n-- 1 of 2 --\n\n2\n序号 \t股东名称 \t持股数量（股） 占 公 司 总 股 本\n的比例（%）\n7 \t阿布达比投资局－自有资金 \t61,283,909 \t0.67\n8 \t瑞众人寿保险有限责任公司－自有资金 \t54,139,096 \t0.59\n9 中国银行股份有限公司－易方达供给改革灵\n活配置混合型证券投资基金 42,953,211 \t0.47\n10 中国人寿保险股份有限公司－传统－普通保\n险产品－005L－CT001 \t沪 42,719,701 \t0.46\n注：\n1、公司的前十大股东和前十大无限售条件股东一致。\n2、三一集团有限公司的持股数量不包含 \t2020 \t年非公开发行可交换公司债券\n质押专户的数量。\n特此公告。\n三一重工股份有限公司董事会\n2026 \t年 \t8 \t月 \t1 \t日\n\n-- 2 of 2 --",
+          "type": "回购",
+          "sentiment": 1,
+          "weight": 5,
+          "final_weight": 5.1,
+          "source_authority": 5,
+          "recency_factor": 0.85,
+          "source": "巨潮资讯",
+          "llm_reviewed": true,
+          "llm_confidence": 0.9,
+          "llm_is_real_catalyst": true,
+          "llm_reasoning": "公告董事会决议回购股份并披露前十大股东"
+        }
+      ]
+    },
+    "SSE:600690": {
+      "name": "600690",
+      "score": 81,
+      "score_raw": 7.48,
+      "score_components": {
+        "positive_weight_sum": 7.48,
+        "negative_weight_sum": 0,
+        "news_effective_count": 6,
+        "news_dropped_count": 0
+      },
+      "signal": "🟢 Long (强)",
+      "strategy": "多重利好共振，基本面+情绪双支撑，适合追涨或持有",
+      "suitable_for": "追涨 / 持有",
+      "confidence": "高",
+      "patterns": [],
+      "positive_factors": [
+        "[回购|w5.1] 海尔智家股份有限公司关于以集中竞价交易方式回购A股股份的进展公告",
+        "[财报|w1.3] 海尔智家股份有限公司提示性公告",
+        "[回购|w1.08] 海尔智家:海尔智家股份有限公司关于以集中竞价交易方式回购A股股份的进展公告"
+      ],
+      "negative_factors": [],
+      "news_count": 6,
+      "news_dropped": 0,
+      "performance": {
+        "list_fetch_ms": 1050,
+        "candidate_filter_ms": 0,
+        "enrichment_ms": 3194,
+        "raw_news_count": 40,
+        "raw_research_count": 10,
+        "candidate_news_count": 6,
+        "candidate_research_count": 0,
+        "enriched_news_count": 6,
+        "enriched_research_count": 0,
+        "candidate_reasons": {
+          "news": {
+            "no-subject-mention": 18,
+            "noise:龙虎榜|大宗交易|盘口异动": 2,
+            "dedup": 0,
+            "out_of_window": 14
+          },
+          "research": {
+            "dedup": 0,
+            "out_of_window": 10
+          }
+        },
+        "date_filter_ms": 0,
+        "relevance_ms": 0,
+        "llm_ms": 22702,
+        "scoring_ms": 0
+      },
+      "top_news": [
+        {
+          "date": "2026-08-01",
+          "title": "海尔智家:海尔智家股份有限公司关于以集中竞价交易方式回购A股股份的进展公告",
+          "content": "电器、电子产品、机械产品、通讯设备及相关配件、工业自动化控制设备、计算机软硬件及辅助设备的研发与制造;家用电器及电子产品技术咨询服务;进出口业务(按外经贸部核准范围经营);批发零售:国内商业(国家禁止商品除外);从事数字科技、智能科技、软件科技;技术开发、技术咨询、技术转让、技术服务(包含工业互联网及家电产品等);数据处理;应用软件开发及服务;先进控制与优化技术的开发与应用研究;矿泉水制造、饮食、旅游服务(限分支机构经营);企业管理服务及咨询、信息技术服务;(依法须经批准的项目,经相关部门批准后方可开展经营活动)。\n郑重声明：东方财富网发布此信息的目的在于传播更多信息，与本站立场无关。东方财富网不保证该信息（包括但不限于文字、视频、音频、数据及图表）全部或者部分内容的准确性、真实性、完整性、有效性、及时性、原创性等。相关信息并未经过本网站证实，不对您构成任何投资建议，据此操作，风险自担。",
+          "type": "回购",
+          "sentiment": 1,
+          "weight": 1,
+          "final_weight": 1.08,
+          "source_authority": 4.5,
+          "recency_factor": 1,
+          "source": "东方财富公告",
+          "llm_reviewed": true,
+          "llm_confidence": 0.4,
+          "llm_is_real_catalyst": false,
+          "llm_reasoning": "标题提及回购进展，正文无量化数据"
+        },
+        {
+          "date": "2026-08-01",
+          "title": "海尔智家:海尔智家股份有限公司关于为控股子公司提供担保的公告",
+          "content": "电器、电子产品、机械产品、通讯设备及相关配件、工业自动化控制设备、计算机软硬件及辅助设备的研发与制造;家用电器及电子产品技术咨询服务;进出口业务(按外经贸部核准范围经营);批发零售:国内商业(国家禁止商品除外);从事数字科技、智能科技、软件科技;技术开发、技术咨询、技术转让、技术服务(包含工业互联网及家电产品等);数据处理;应用软件开发及服务;先进控制与优化技术的开发与应用研究;矿泉水制造、饮食、旅游服务(限分支机构经营);企业管理服务及咨询、信息技术服务;(依法须经批准的项目,经相关部门批准后方可开展经营活动)。\n郑重声明：东方财富网发布此信息的目的在于传播更多信息，与本站立场无关。东方财富网不保证该信息（包括但不限于文字、视频、音频、数据及图表）全部或者部分内容的准确性、真实性、完整性、有效性、及时性、原创性等。相关信息并未经过本网站证实，不对您构成任何投资建议，据此操作，风险自担。",
+          "type": "行业",
+          "sentiment": 0,
+          "weight": 1,
+          "final_weight": 0.9,
+          "source_authority": 4.5,
+          "recency_factor": 1,
+          "source": "东方财富公告",
+          "llm_reviewed": true,
+          "llm_confidence": 0.3,
+          "llm_is_real_catalyst": false,
+          "llm_reasoning": "担保公告属常规经营，无股价催化"
+        },
+        {
+          "date": "2026-07-31",
+          "title": "海尔智家股份有限公司关于为控股子公司提供担保的公告",
+          "content": "证券代码：600690 \t证券简称：海尔智家 \t公告编号：临 \t2026-047\n海尔智家股份有限公司\n关于为控股子公司提供担保的公告\n本公司董事会及全体董事保证本公告内容不存在任何虚假记载、误导性陈述\n或者重大遗漏，并对其内容的真实性、准确性和完整性承担法律责任。\n重要内容提示：\n \t担保对象及基本情况\n被担保人名称 \t本次担保金额\n实际为其提供的\n担保余额（不含本\n次担保金额）\n是否在前期预计\n额度内\n本次担保是否有\n反担保\n智运天下（重庆）\n科技有限公司 600 \t万元 \t0 \t万元 \t是 \t否\n青岛飞升供应链管\n理有限公司 8,000 \t万元 \t41,750 \t万元 \t是 \t否\n \t累计担保情况\n对外担保逾期的累计金额（万元） \t0\n截至本公告日上市公司及其控股\n子公司对外担保总额（万元） 705,875\n对外担保总额占上市公司最近一\n期经审计净资产的比例（%） 5.9%\n特别风险提示（如有请勾选）\n□担保金额（含本次）超过上市公司最近一期\n经审计净资产 \t50%\n□对外担保总额（含本次）超过上市公司最近\n一期经审计净资产 \t100%\n□对合并报表外单位担保总额（含本次）达到\n或超过最近一期经审计净资产 \t30%\n本次对资产负债率超过 \t70%的单位提供担\n保\n其他风险提示（如有） \t无\n一、担保情况概述\n（一）担保的基本情况\n\n-- 1 of 7 --\n\n为满足子公司智运天下（重庆）科技有限公司、青岛飞升供应链管理有限公\n司（合称“被担保人”）日常经营和业务发展需求，保证子公司生产经营活动的顺\n利开展，海尔智家股份有限公司（简称“公司”）的子公司智运天下（上海）科技\n有限公司（简称“担保人”）为被担保人向金融机构申请融资提供连带责任保证，\n具体情况详见“三、担保协议的主要内容”。被担保人为担保人的全资子公司，本\n次担保无反担保。\n（二）内部决策程序\n公司分别于 \t2025 \t年、2026 \t年召开了股东会，审议通过了《海尔智家股份有\n限公司关于 \t2025 \t年度公司及子公司预计担保额的议案》以及《海尔智家股份有\n限公司关于 \t2026 \t年度公司及子公司预计担保额的议案》，自股东会审议通过该\n担保议案之日起至下一年度股东会审议预计公司及子公司担保额度事项时为止，\n公司及子公司向金融机构申请综合授信等事项时，公司对子公司提供担保、子公\n司之间互相提供担保以及子公司对公司提供担保，担保金额上限分别为 \t385 \t亿元、\n312 \t亿元。前述担保的内容包括但不限于在公司及子公司向银行等金融机构申请\n综合授信、向供应商等申请应付账款结算、为银行等金融机构以增资方式向子公\n司提供借款承担连带保证责任等时，为其实际发生金额提供担保等，但不包括公\n司及子公司以其财产或权利等为其自身从事上述活动所提供抵押、质押等类型担\n保。董事会授权总裁办公会等决定公司前述每一笔担保的具体事宜，并根据公司\n实际经营需要，具体调整公司对各级子公司及子公司之间的担保额度以及代表董\n事会签署有关法律文件（以下简称“年度担保授权”）。具体内容详见公司于 \t2025\n年 \t3 \t月 \t28 \t日在上海证券交易所网站披露的《海尔智家股份有限公司关于 \t2025\n年度公司及子公司预计担保额的公告》（编号：临 \t2025-010）、于 \t2026 \t年 \t3 \t月\n27 \t日在上海证券交易所网站披露的《海尔智家股份有限公司关于 \t2026 \t年度公司\n及子公司预计担保额的公告》（编号：临 \t2026-011）。\n（三）担保额度调剂情况\n本次新增担保金额在前述股东会批准的担保额度范围内，无须调剂。\n二、被担保人基本情况\n（一）基本情况\n\n-- 2 of 7 --\n\n被担保人 \t1：\n被担保人类型 \t法人\n被担保人名称 \t智运天下（重庆）科技有限公司\n被担保人类型及上市公\n司持股情况 控股子公司\n主要股东及持股比例 智运天下（上海）科技有限公司（公司控股子公司），\n100%\n法定代表人 \t冯超奇\n统一社会信用代码 \t91500231MAD9TPDD4A\n成立时间 \t2024-1-9\n注册地 \t重庆\n注册资本 \t500 \t万元\n公司类型 \t有限责任公司（法人独资）\n经营范围\n许可项目：道路货物运输（不含危险货物）；道路危险\n货物运输。（依法须经批准的项目，经相关部门批准后\n方可开展经营活动，具体经营项目以相关部门批准文件\n或许可证件为准）一般项目：供应链管理服务；普通货\n物仓储服务（不含危险化学品等需许可审批的项目）；\n装卸搬运；技术服务、技术开发、技术咨询、技术交流、\n技术转让、技术推广；货物进出口；技术进出口；航空\n国际货物运输代理；海上国际货物运输代理；陆路国际\n货物运输代理；无船承运业务；国内货物运输代理；劳\n务服务（不含劳务派遣）；运输货物打包服务；工程管\n理服务；汽车零配件批发；汽车零配件零售；摩托车及\n零配件批发；摩托车及零配件零售；五金产品批发；五\n金产品零售；计算机软硬件及辅助设备批发；计算机软\n硬件及辅助设备零售；日用百货销售；建筑装饰材料销\n售；日用木制品销售；软件开发；园林绿化工程施工。\n（除依法须经批准的项目外，凭营业执照依法自主开展\n经营活动）。企业当前经营状态为存续\n主要财务指标（万元）\n项目\n2026 \t年 \t6 \t月 \t30 \t日\n/2026 \t年 \t1-6 \t月（未\n经审计）\n2025 \t年 \t12 \t月 \t31 \t日\n/2025 \t年度（经审计）\n资产总额 \t4,245 \t5,375\n负债总额 \t3,251 \t4,475\n资产净额 \t994 \t900\n营业收入 \t6,008 \t10,891\n\n-- 3 of 7 --\n\n净利润 \t94 \t189\n被担保人 \t2：\n被担保人类型 \t法人\n被担保人名称 \t青岛飞升供应链管理有限公司\n被担保人类型及上市公\n司持股情况 控股子公司\n主要股东及持股比例 智运天下（上海）科技有限公司（公司控股子公司），\n100%\n法定代表人 \t王岩峰\n统一社会信用代码 \t91370281MA3Q7L861A\n成立时间 \t2019-7-17\n注册地 \t青岛市\n注册资本 \t4,000 \t万元\n公司类型 \t有限责任公司（法人独资）\n经营范围\n许可项目：道路货物运输（不含危险货物）。（依法须\n经批准的项目，经相关部门批准后方可开展经营活动，\n具体经营项目以相关部门批准文件或许可证件为准）一\n般项目：国际货物运输代理；国内货物运输代理；普通\n货物仓储服务（不含危险化学品等需许可审批的项目）；\n装卸搬运；软件开发；建筑装饰材料销售；汽车零配件\n批发；摩托车及零配件零售；五金产品零售；日用木制\n品销售；日用百货销售；计算机软硬件及辅助设备零售；\n货物进出口；技术进出口；企业管理咨询。（除依法须\n经批准的项目外，凭营业执照依法自主开展经营活动）。\n企业当前经营状态为存续\n主要财务指标（万元）\n项目\n2026 \t年 \t6 \t月 \t30 \t日\n/2026 \t年 \t1-6 \t月（未\n经审计）\n2025 \t年 \t12 \t月 \t31 \t日\n/2025 \t年度（经审计）\n资产总额 \t52,661 \t45,598\n负债总额 \t46,252 \t39,157\n资产净额 \t6,409 \t6,441\n营业收入 \t44,909 \t96,610\n净利润 \t-32 \t578\n（二）被担保人失信情况（如有）\n不涉及\n\n-- 4 of 7 --\n\n三、担保协议的主要内容\n前述担保涉及的担保协议的主要内容如下，合计担保金额 \t8,600 \t万元人民币：\n担保方 \t被担保方 金融机\n构 担保金额 \t担保方式\n担\n保\n期\n限\n是\n否\n有\n反\n担\n保\n其他\n股东\n是否\n提供\n担保\n智运天下\n（上海）科\n技有限公司\n智运天下（重庆）\n科技有限公司\n兴业银\n行 600万元 连带责任\n保证\n一\n年 否 \t否\n智运天下\n（上海）科\n技有限公司\n青岛飞升供应链\n管理有限公司\n兴业银\n行 5,000万元 连带责任\n保证\n一\n年 否 \t否\n智运天下\n（上海）科\n技有限公司\n青岛飞升供应链\n管理有限公司\n华夏银\n行 3,000万元 连带责任\n保证\n一\n年 否 \t否\n四、担保的必要性和合理性\n本次担保是为了满足被担保人日常经营和业务发展需求，保障其经营业务能\n够持续、稳健地开展，符合公司整体战略与利益。被担保人作为公司的控股子公\n司的全资子公司，公司对其经营管理、财务状况等核心环节拥有实质控制权，对\n其偿债能力有充分了解，担保风险、财务风险处于公司可控范围内。同时，被担\n保人经营状况稳定、资信状况良好，具备足额偿债能力，不存在影响其偿债能力\n的重大或有事项。本次担保事项涉及金额在年度预计担保额度内，符合公司及其\n子公司整体资金运用预算，不存在异常情况；本次担保有利于子公司业务运转，\n提高运营效率，不存在损害公司及中小股东利益的情形，不会对公司的正常运作\n和业务发展造成不利影响。\n五、董事会意见\n上述担保已经公司于 \t2025 \t年 \t3 \t月 \t27 \t日及 \t2026 \t年 \t3 \t月 \t26 \t日召开的董事会、\n于 \t2025 \t年 \t5 \t月 \t28 \t日及 \t2026 \t年 \t6 \t月 \t24 \t日召开的股东会审议通过，担保金额未超\n过该会议审议的预计担保议案披露的担保额度，符合相关法律法规及《公司章程》\n\n-- 5 of 7 --\n\n的规定，担保风险总体可控，有利于公司的生产经营及长远发展。\n六、累计对外担保数量及逾期担保的数量\n截至本公告披露日，公司及子公司对外担保总额 \t705,875 \t万元（均为对控股\n子公司的担保），占公司 \t2025 \t年度经审计净资产的 \t5.9%。\n截至本公告披露日，公司担保情况（含本次担保）如下：\n单位：万元/人民币\n序号 \t被担保子公司名称 \t提供担保的金额余额\n1 \t青岛飞升供应链管理有限公司 \t49,750\n2 \t智运天下（重庆）科技有限公司 \t600\n3 \t青岛海尔暖通空调设备有限公司 \t12,000\n4 \t青岛海绿源循环科技有限公司 \t15,464\n5 \t青岛海尔制冷电器有限公司 \t66,000\n6 \tCandy \tS.P.A. \t310,684\n7 \tCandy \tHoover \tGroup \tS.r.l \t155,342\n8 \tFisher \t& \tPaykel \tAppliances \tLimited \t96,035\n合计 \t705,875\n注：上述担保金额涉及外币的，按照中国人民银行公布的2026年6月30日人民币汇率中间价\n折算。\n自公司于 \t2026 \t年 \t3 \t月 \t27 \t日在上海证券交易所网站披露《海尔智家股份有限\n公司关于 \t2026 \t年度公司及子公司预计担保额的公告》（编号：临 \t2026-011）起，\n公司担保情况（本次担保除外）进展如下：\n除此之外，公司及子公司不存在其他对外担保，不存在对合并报表外的单位\n提供担保的情形，也不存在为控股股东、实际控制人及其关联人提供担保的情形，\n亦不存在逾期担保的情形。\n序号 \t被担保子公司名称 \t进展情况\n1 \t青岛海尔暖通空调设备有限公司 \t归还贷款1,000万\n2 \t青岛海绿源循环科技有限公司 \t归还贷款135万\n3 \t青岛海尔制冷电器有限公司 \t归还贷款2,000万\n\n-- 6 of 7 --\n\n特此公告。\n海尔智家股份有限公司董事会\n2026 \t年 \t7 \t月 \t31 \t日\n\n-- 7 of 7 --",
+          "type": "行业",
+          "sentiment": 0,
+          "weight": 2,
+          "final_weight": 1.7,
+          "source_authority": 5,
+          "recency_factor": 0.85,
+          "source": "巨潮资讯",
+          "llm_reviewed": true,
+          "llm_confidence": 0.5,
+          "llm_is_real_catalyst": false,
+          "llm_reasoning": "担保金额不重大，中性影响"
+        },
+        {
+          "date": "2026-07-31",
+          "title": "海尔智家股份有限公司关于以集中竞价交易方式回购A股股份的进展公告",
+          "content": "证券代码：600690 \t证券简称：海尔智家 \t公告编号：临 \t2026-046\n海尔智家股份有限公司\n关于以集中竞价交易方式回购 \tA \t股股份的进展公告\n本公司董事会及全体董事保证本公告内容不存在任何虚假记载、误导性陈述\n或者重大遗漏，并对其内容的真实性、准确性和完整性承担法律责任。\n重要内容提示：\n回购方案首次披露日 \t2026/3/27，由董事会提议\n回购方案实施期限 \t2026 \t年 \t3 \t月 \t26 \t日~2027 \t年 \t3 \t月 \t25 \t日\n预计回购金额 \t300,000万元~600,000万元\n回购用途\n□减少注册资本\n√用于员工持股计划或股权激励\n□用于转换公司可转债\n□为维护公司价值及股东权益\n累计已回购股数 \t9,170.22万股\n累计已回购股数占总股\n本比例 0.978%\n累计已回购金额 \t191,868.66万元\n实际回购价格区间 \t19.60元/股~22.40元/股\n一、 \t回购股份的基本情况\n海尔智家股份有限公司（以下简称“公司”）于 \t2026 \t年 \t3 \t月 \t26 \t日召开第十二届\n董事会第四次会议，审议通过了《海尔智家股份有限公司关于以集中竞价交易方\n式回购 \tA \t股股份的方案》，同意公司以集中竞价交易的方式使用自有资金或自筹资\n金（含股票回购专项贷款资金等）回购公司 \tA \t股股份，回购价格为不超过人民币\n35 \t元/股，拟回购总金额不超过人民币 \t60 \t亿元且不低于 \t30 \t亿元，实施期限为自董\n事会审议通过回购股份方案之日起 \t12 \t个月内。公司于 \t2026 \t年 \t3 \t月 \t27 \t日披露了《海\n尔智家股份有限公司关于以集中竞价交易方式回购 \tA \t股股份的方案暨回购报告书》\n及《海尔智家股份有限公司关于回购 \tA \t股股份取得融资承诺函的公告》、于 \t2026\n年 \t3 \t月 \t28 \t日披露了《海尔智家股份有限公司关于以集中竞价交易方式首次回购 \tA\n股股份的公告》、于 \t2026 \t年 \t3 \t月 \t31 \t日披露了《海尔智家股份有限公司关于回购股\n份事项前十大股东和前十大无限售条件股东持股情况的公告》，以及每月披露了回\n\n-- 1 of 2 --\n\n购进展公告。\n二、 \t回购股份的进展情况\n根据《上海证券交易所上市公司自律监管指引第 \t7 \t号——回购股份》等相关\n规定，现将公司回购股份进展情况公告如下：\n2026 \t年 \t7 \t月，公司通过集中竞价交易方式已累计回购 \tA \t股（下同）股份\n20,658,900 \t股，占公司总股本的比例为 \t0.220%，购买的最高价为 \t22.00 \t元/股、最\n低价为 \t19.74 \t元/股，支付的金额为 \t430,631,491.32 \t元（不含手续费等，下同）；本\n次回购实施起始日（2026 \t年 \t3 \t月 \t27 \t日）至 \t2026 \t年 \t7 \t月底，公司已累计回购股份\n91,702,200 \t股，占公司总股本的比例为 \t0.978%，购买的最高价为 \t22.40 \t元/股、最\n低价为 \t19.60 \t元/股，支付的金额为 \t1,918,686,608.11 \t元。\n上述回购符合相关法律法规规定及公司回购股份方案的要求。\n三、 \t回购方案的变更或终止\n无\n四、 \t其他事项\n公司将严格按照《上市公司股份回购规则》《上海证券交易所上市公司自律监\n管指引第 \t7 \t号——回购股份》等相关规定，在回购期限内根据市场情况择机做出\n回购决策并予以实施，同时根据回购股份事项进展情况及时履行信息披露义务，\n敬请广大投资者注意投资风险。\n特此公告。\n海尔智家股份有限公司董事会\n2026 \t年 \t7 \t月 \t31 \t日\n\n-- 2 of 2 --",
+          "type": "回购",
+          "sentiment": 1,
+          "weight": 5,
+          "final_weight": 5.1,
+          "source_authority": 5,
+          "recency_factor": 0.85,
+          "source": "巨潮资讯",
+          "llm_reviewed": true,
+          "llm_confidence": 0.9,
+          "llm_is_real_catalyst": true,
+          "llm_reasoning": "已回购19.18亿，推进回购计划，利好"
+        },
+        {
+          "date": "2026-07-29",
+          "title": "海尔智家:海尔智家股份有限公司提示性公告",
+          "content": "",
+          "type": "财报",
+          "sentiment": 0,
+          "weight": 1,
+          "final_weight": 0.7,
+          "source_authority": 4.5,
+          "recency_factor": 0.6,
+          "source": "东方财富公告",
+          "llm_reviewed": true,
+          "llm_confidence": 0.2,
+          "llm_is_real_catalyst": false,
+          "llm_reasoning": "提示性公告无内容，无法评估"
+        }
+      ]
+    },
+    "SSE:601869": {
+      "name": "601869",
+      "score": 75,
+      "score_raw": 6.04,
+      "score_components": {
+        "positive_weight_sum": 6.04,
+        "negative_weight_sum": 0,
+        "news_effective_count": 7,
+        "news_dropped_count": 0
+      },
+      "signal": "🟢 Long (强)",
+      "strategy": "多重利好共振，基本面+情绪双支撑，适合追涨或持有",
+      "suitable_for": "追涨 / 持有",
+      "confidence": "高",
+      "patterns": [
+        "情绪持续增强↑(trend)"
+      ],
+      "positive_factors": [
+        "[并购|w5.35] 长飞光纤:长飞光纤光缆股份有限公司关于收购合营公司股权暨关联交易公告",
+        "[分析师动作|w0.69] 公司事件点评报告：算力光纤需求持续爆发，全链条制造壁垒巩固长期盈利弹性"
+      ],
+      "negative_factors": [],
+      "news_count": 7,
+      "news_dropped": 0,
+      "performance": {
+        "list_fetch_ms": 1013,
+        "candidate_filter_ms": 0,
+        "enrichment_ms": 3886,
+        "raw_news_count": 40,
+        "raw_research_count": 10,
+        "candidate_news_count": 6,
+        "candidate_research_count": 1,
+        "enriched_news_count": 6,
+        "enriched_research_count": 1,
+        "candidate_reasons": {
+          "news": {
+            "noise:融资净(买入|卖出)": 1,
+            "no-subject-mention": 18,
+            "noise:开盘价|收盘价": 1,
+            "dedup": 0,
+            "out_of_window": 14
+          },
+          "research": {
+            "dedup": 0,
+            "out_of_window": 9
+          }
+        },
+        "date_filter_ms": 0,
+        "relevance_ms": 0,
+        "llm_ms": 0,
+        "scoring_ms": 0
+      },
+      "top_news": [
+        {
+          "date": "2026-07-31",
+          "title": "长飞光纤:长飞光纤光缆股份有限公司关于提高日常关联交易额度的公告",
+          "content": "",
+          "type": "行业",
+          "sentiment": 0,
+          "weight": 1,
+          "final_weight": 0.76,
+          "source_authority": 4.5,
+          "recency_factor": 0.85,
+          "source": "东方财富公告",
+          "llm_reviewed": true,
+          "llm_confidence": 0.4,
+          "llm_is_real_catalyst": false,
+          "llm_reasoning": "关联交易额度提高，影响中性"
+        },
+        {
+          "date": "2026-07-31",
+          "title": "长飞光纤:长飞光纤光缆股份有限公司关于收购合营公司股权暨关联交易公告",
+          "content": "",
+          "type": "并购",
+          "sentiment": 1,
+          "weight": 5,
+          "final_weight": 5.35,
+          "source_authority": 4.5,
+          "recency_factor": 0.85,
+          "source": "东方财富公告",
+          "llm_reviewed": true,
+          "llm_confidence": 0.8,
+          "llm_is_real_catalyst": true,
+          "llm_reasoning": "收购合营公司股权，构成并购利好"
+        },
+        {
+          "date": "2026-07-31",
+          "title": "长飞光纤:关于长飞光纤光缆股份有限公司2026年第一次临时股东会的法律意见书",
+          "content": "",
+          "type": "行业",
+          "sentiment": 0,
+          "weight": 1,
+          "final_weight": 0.76,
+          "source_authority": 4.5,
+          "recency_factor": 0.85,
+          "source": "东方财富公告",
+          "llm_reviewed": true,
+          "llm_confidence": 0.3,
+          "llm_is_real_catalyst": false,
+          "llm_reasoning": "股东会法律意见书，常规程序"
+        },
+        {
+          "date": "2026-07-31",
+          "title": "长飞光纤:长飞光纤光缆股份有限公司2026年第一次临时股东会决议公告",
+          "content": "",
+          "type": "行业",
+          "sentiment": 0,
+          "weight": 1,
+          "final_weight": 0.76,
+          "source_authority": 4.5,
+          "recency_factor": 0.85,
+          "source": "东方财富公告",
+          "llm_reviewed": true,
+          "llm_confidence": 0.3,
+          "llm_is_real_catalyst": false,
+          "llm_reasoning": "股东会决议公告，无特别事项"
+        },
+        {
+          "date": "2026-07-31",
+          "title": "长飞光纤:长飞光纤光缆股份有限公司第五届董事会第一次会议决议公告",
+          "content": "",
+          "type": "行业",
+          "sentiment": 0,
+          "weight": 1,
+          "final_weight": 0.76,
+          "source_authority": 4.5,
+          "recency_factor": 0.85,
+          "source": "东方财富公告",
+          "llm_reviewed": true,
+          "llm_confidence": 0.3,
+          "llm_is_real_catalyst": false,
+          "llm_reasoning": "董事会决议公告，常规治理"
+        }
+      ]
+    },
+    "SSE:601127": {
+      "name": "601127",
+      "score": 72,
+      "score_raw": 5.35,
+      "score_components": {
+        "positive_weight_sum": 5.35,
+        "negative_weight_sum": 0,
+        "news_effective_count": 1,
+        "news_dropped_count": 0
+      },
+      "signal": "🟢 Long (中)",
+      "strategy": "情绪偏多，适合低吸或轻仓参与",
+      "suitable_for": "低吸 / 轻仓追",
+      "confidence": "中",
+      "patterns": [
+        "情绪持续增强↑(trend)"
+      ],
+      "positive_factors": [
+        "[并购|w5.35] 赛力斯:关于子公司增资扩股的进展公告"
+      ],
+      "negative_factors": [],
+      "news_count": 1,
+      "news_dropped": 0,
+      "performance": {
+        "list_fetch_ms": 1952,
+        "candidate_filter_ms": 0,
+        "enrichment_ms": 4502,
+        "raw_news_count": 40,
+        "raw_research_count": 10,
+        "candidate_news_count": 1,
+        "candidate_research_count": 0,
+        "enriched_news_count": 1,
+        "enriched_research_count": 0,
+        "candidate_reasons": {
+          "news": {
+            "noise:融资净(买入|卖出)": 3,
+            "no-subject-mention": 16,
+            "noise:\\d{1,2}月\\d{1,2}日(快速上涨|快速回调|涨停|": 1,
+            "dedup": 0,
+            "out_of_window": 19
+          },
+          "research": {
+            "dedup": 0,
+            "out_of_window": 10
+          }
+        },
+        "date_filter_ms": 0,
+        "relevance_ms": 0,
+        "llm_ms": 0,
+        "scoring_ms": 0
+      },
+      "top_news": [
+        {
+          "date": "2026-07-31",
+          "title": "赛力斯:关于子公司增资扩股的进展公告",
+          "content": "",
+          "type": "并购",
+          "sentiment": 1,
+          "weight": 5,
+          "final_weight": 5.35,
+          "source_authority": 4.5,
+          "recency_factor": 0.85,
+          "source": "东方财富公告",
+          "llm_reviewed": true,
+          "llm_confidence": 0.9,
+          "llm_is_real_catalyst": true,
+          "llm_reasoning": "子公司增资扩股取得进展。"
+        }
+      ]
+    },
+    "SZSE:300017": {
+      "name": "300017",
+      "score": 69,
+      "score_raw": 4.59,
+      "score_components": {
+        "positive_weight_sum": 4.59,
+        "negative_weight_sum": 0,
+        "news_effective_count": 4,
+        "news_dropped_count": 0
+      },
+      "signal": "🟢 Long (中)",
+      "strategy": "情绪偏多，适合低吸或轻仓参与",
+      "suitable_for": "低吸 / 轻仓追",
+      "confidence": "中",
+      "patterns": [],
+      "positive_factors": [
+        "[回购|w4.59] 网宿科技:关于回购公司股份方案的公告"
+      ],
+      "negative_factors": [],
+      "news_count": 4,
+      "news_dropped": 0,
+      "performance": {
+        "list_fetch_ms": 1839,
+        "candidate_filter_ms": 1,
+        "enrichment_ms": 5154,
+        "raw_news_count": 40,
+        "raw_research_count": 10,
+        "candidate_news_count": 4,
+        "candidate_research_count": 0,
+        "enriched_news_count": 4,
+        "enriched_research_count": 0,
+        "candidate_reasons": {
+          "news": {
+            "no-subject-mention": 17,
+            "noise:\\d{1,2}月\\d{1,2}日(快速上涨|快速回调|涨停|": 2,
+            "noise:^.{0,8}重要公告集锦": 1,
+            "dedup": 0,
+            "out_of_window": 16
+          },
+          "research": {
+            "dedup": 0,
+            "out_of_window": 10
+          }
+        },
+        "date_filter_ms": 0,
+        "relevance_ms": 0,
+        "llm_ms": 0,
+        "scoring_ms": 0
+      },
+      "top_news": [
+        {
+          "date": "2026-07-31",
+          "title": "网宿科技:关于为全资子公司提供担保的公告",
+          "content": "许可项目:基础电信业务;第一类增值电信业务;第二类增值电信业务;互联网信息服务。(依法须经批准的项目,经相关部门批准后方可开展经营活动,具体经营项目以相关部门批准文件或许可证件为准)一般项目:网络技术服务;5G通信技术服务;互联网安全服务;网络与信息安全软件开发;软件开发;信息系统集成服务;物联网技术服务;云计算设备制造;云计算设备销售;云计算装备技术服务;互联网数据服务;工业互联网数据服务;数据处理和存储支持服务;大数据服务;数据处理服务;人工智能应用软件开发;人工智能基础软件开发;人工智能基础资源与技术平台;人工智能理论与算法软件开发;信息咨询服务(不含许可类信息咨询服务);技术服务、技术开发、技术咨询、技术交流、技术转让、技术推广;互联网设备销售;计算机软硬件及辅助设备批发;计算机软硬件及辅助设备零售;货物进出口;技术进出口。(除依法须经批准的项目外,凭营业执照依法自主开展经营活动)\n郑重声明：东方财富网发布此信息的目的在于传播更多信息，与本站立场无关。东方财富网不保证该信息（包括但不限于文字、视频、音频、数据及图表）全部或者部分内容的准确性、真实性、完整性、有效性、及时性、原创性等。相关信息并未经过本网站证实，不对您构成任何投资建议，据此操作，风险自担。",
+          "type": "行业",
+          "sentiment": 0,
+          "weight": 1,
+          "final_weight": 0.76,
+          "source_authority": 4.5,
+          "recency_factor": 0.85,
+          "source": "东方财富公告",
+          "llm_reviewed": true,
+          "llm_confidence": 0.2,
+          "llm_is_real_catalyst": false,
+          "llm_reasoning": "提供担保属常规财务安排"
+        },
+        {
+          "date": "2026-07-31",
+          "title": "网宿科技:第七届董事会第二次会议决议公告",
+          "content": "",
+          "type": "行业",
+          "sentiment": 0,
+          "weight": 1,
+          "final_weight": 0.76,
+          "source_authority": 4.5,
+          "recency_factor": 0.85,
+          "source": "东方财富公告",
+          "llm_reviewed": true,
+          "llm_confidence": 0.1,
+          "llm_is_real_catalyst": false,
+          "llm_reasoning": "董事会决议无实质内容"
+        },
+        {
+          "date": "2026-07-31",
+          "title": "网宿科技:关于召开2026年第三次临时股东会的通知",
+          "content": "",
+          "type": "行业",
+          "sentiment": 0,
+          "weight": 1,
+          "final_weight": 0.76,
+          "source_authority": 4.5,
+          "recency_factor": 0.85,
+          "source": "东方财富公告",
+          "llm_reviewed": true,
+          "llm_confidence": 0.1,
+          "llm_is_real_catalyst": false,
+          "llm_reasoning": "股东会通知无重大事项"
+        },
+        {
+          "date": "2026-07-31",
+          "title": "网宿科技:关于回购公司股份方案的公告",
+          "content": "",
+          "type": "回购",
+          "sentiment": 1,
+          "weight": 5,
+          "final_weight": 4.59,
+          "source_authority": 4.5,
+          "recency_factor": 0.85,
+          "source": "东方财富公告",
+          "llm_reviewed": true,
+          "llm_confidence": 0.85,
+          "llm_is_real_catalyst": true,
+          "llm_reasoning": "回购股份方案明确，提振市场信心"
+        }
+      ]
+    },
+    "SSE:601800": {
+      "name": "中国交建",
+      "score": 65,
+      "score_raw": 3.68,
+      "score_components": {
+        "positive_weight_sum": 3.68,
+        "negative_weight_sum": 0,
+        "news_effective_count": 11,
+        "news_dropped_count": 0
+      },
+      "signal": "🟢 Long (中)",
+      "strategy": "情绪偏多，适合低吸或轻仓参与",
+      "suitable_for": "低吸 / 轻仓追",
+      "confidence": "中",
+      "patterns": [],
+      "positive_factors": [
+        "[并购|w2.1] 中国交建：第六届董事会第七次会议决议公告",
+        "[行业|w0.86] 中国交建：公司持续积极把握国内沿海海堤升级改造相关市场机遇",
+        "[行业|w0.72] 中国交建：公司长期看好全球海岸防护工程的中长期市场机遇"
+      ],
+      "negative_factors": [],
+      "news_count": 11,
+      "news_dropped": 0,
+      "performance": {
+        "list_fetch_ms": 1279,
+        "candidate_filter_ms": 0,
+        "enrichment_ms": 12823,
+        "raw_news_count": 40,
+        "raw_research_count": 10,
+        "candidate_news_count": 11,
+        "candidate_research_count": 0,
+        "enriched_news_count": 11,
+        "enriched_research_count": 0,
+        "candidate_reasons": {
+          "news": {
+            "no-subject-mention": 2,
+            "noise:融资净(买入|卖出)": 1,
+            "dedup": 0,
+            "out_of_window": 26
+          },
+          "research": {
+            "dedup": 0,
+            "out_of_window": 10
+          }
+        },
+        "date_filter_ms": 0,
+        "relevance_ms": 0,
+        "llm_ms": 28830,
+        "scoring_ms": 0
+      },
+      "top_news": [
+        {
+          "date": "2026-08-01 07:33:25",
+          "title": "中国交建：融资净偿还687.33万元，融资余额12.48亿元",
+          "content": "在东方财富看资讯行情，选东方财富证券一站式开户交易>>\n\n交易所最新数据显示，中国交建于2026年7月31日获融资买入2490.44万元，融资偿还3177.77万元，当日融资净偿还687.33万元。目前，该股融资余额12.48亿，占流通市值比例为1.68%。\n\n该股当日融券卖出1100股，融券偿还9000股，融券净偿还7900股。目前，该股融券余量42.64万股，融券余额269.91万元。\n\n免责声明：本文基于AI生产，仅供参考，不构成任何投资建议，据此操作风险自担。东方财富发布此内容旨在传播更多信息，与本平台立场无关。东方财富力求但不保证数据的完全准确，如有错漏请以中国证监会指定上市公司信息披露媒体为准，东方财富不对因该资料全部或部分内容而引致的盈亏承担任何责任。用户个人对服务的使用承担风险，东方财富对此不作任何类型的担保。",
+          "type": "行业",
+          "sentiment": 0,
+          "weight": 1,
+          "final_weight": 0.6,
+          "source_authority": 3,
+          "recency_factor": 1,
+          "source": "东方财富资讯",
+          "llm_reviewed": true,
+          "llm_confidence": 0.3,
+          "llm_is_real_catalyst": false,
+          "llm_reasoning": "融资净偿还日常数据"
+        },
+        {
+          "date": "2026-07-31 07:53:57",
+          "title": "中国交建：融资净偿还605.77万元，融资余额12.55亿元",
+          "content": "炒股第一步，先开个股票账户\n\n交易所最新数据显示，中国交建于2026年7月30日获融资买入3323.31万元，融资偿还3929.08万元，当日融资净偿还605.77万元。目前，该股融资余额12.55亿，占流通市值比例为1.69%。\n\n该股当日融券卖出5500股，融券偿还500股，融券净卖出5000股。目前，该股融券余量43.43万股，融券余额275.35万元。\n\n免责声明：本文基于AI生产，仅供参考，不构成任何投资建议，据此操作风险自担。东方财富发布此内容旨在传播更多信息，与本平台立场无关。东方财富力求但不保证数据的完全准确，如有错漏请以中国证监会指定上市公司信息披露媒体为准，东方财富不对因该资料全部或部分内容而引致的盈亏承担任何责任。用户个人对服务的使用承担风险，东方财富对此不作任何类型的担保。",
+          "type": "行业",
+          "sentiment": 0,
+          "weight": 1,
+          "final_weight": 0.51,
+          "source_authority": 3,
+          "recency_factor": 0.85,
+          "source": "东方财富资讯",
+          "llm_reviewed": true,
+          "llm_confidence": 0.3,
+          "llm_is_real_catalyst": false,
+          "llm_reasoning": "融资净偿还日常数据"
+        },
+        {
+          "date": "2026-07-30 19:59:00",
+          "title": "中国交建：公司持续积极把握国内沿海海堤升级改造相关市场机遇",
+          "content": "专业金融数据，下一代智能终端\n\n　　证券日报网讯 7月30日，中国交建在互动平台回答投资者提问时表示，海岸防护、海堤提标加固、海岸侵蚀治理等业务属于公司主营业务范畴，公司在上述领域具备较强市场竞争力与较高市场份额，境内外拥有众多落地实施项目案例。伴随相关政策推进，公司持续积极把握国内沿海海堤升级改造相关市场机遇，持续跟进各类项目机会。",
+          "type": "行业",
+          "sentiment": 1,
+          "weight": 1,
+          "final_weight": 0.86,
+          "source_authority": 3,
+          "recency_factor": 0.72,
+          "source": "东方财富资讯",
+          "llm_reviewed": true,
+          "llm_confidence": 0.5,
+          "llm_is_real_catalyst": false,
+          "llm_reasoning": "海堤业务属主营，积极把握机遇"
+        },
+        {
+          "date": "2026-07-29 19:54:00",
+          "title": "中国交建：公司长期看好全球海岸防护工程的中长期市场机遇",
+          "content": "全新妙想投研助理，立即体验\n\n　　证券日报网讯 7月29日，中国交建在互动平台回答投资者提问时表示，海岸防护、海堤加固类工程属于公司主营业务范畴，公司在相关领域具备较强竞争力与较高市场份额。公司已有同类项目成功实施案例，长期看好全球海岸防护工程的中长期市场机遇，并持续积极跟踪海内外相关项目机会。重大项目进展如达到披露标准，公司将及时公告，相关动态也可关注公司官方新闻。",
+          "type": "行业",
+          "sentiment": 1,
+          "weight": 1,
+          "final_weight": 0.72,
+          "source_authority": 3,
+          "recency_factor": 0.6,
+          "source": "东方财富资讯",
+          "llm_reviewed": true,
+          "llm_confidence": 0.5,
+          "llm_is_real_catalyst": false,
+          "llm_reasoning": "长期看好海岸防护工程"
+        },
+        {
+          "date": "2026-07-29 07:34:03",
+          "title": "中国交建：融资净偿还1010.11万元，融资余额12.61亿元",
+          "content": "全新妙想投研助理，立即体验\n\n交易所最新数据显示，中国交建于2026年7月28日获融资买入1370.14万元，融资偿还2380.25万元，当日融资净偿还1010.11万元。目前，该股融资余额12.61亿，占流通市值比例为1.76%。\n\n该股当日融券卖出2900股，融券偿还9300股，融券净偿还6400股。目前，该股融券余量48.37万股，融券余额296.02万元。\n\n免责声明：本文基于AI生产，仅供参考，不构成任何投资建议，据此操作风险自担。东方财富发布此内容旨在传播更多信息，与本平台立场无关。东方财富力求但不保证数据的完全准确，如有错漏请以中国证监会指定上市公司信息披露媒体为准，东方财富不对因该资料全部或部分内容而引致的盈亏承担任何责任。用户个人对服务的使用承担风险，东方财富对此不作任何类型的担保。",
+          "type": "行业",
+          "sentiment": 0,
+          "weight": 1,
+          "final_weight": 0.5,
+          "source_authority": 3,
+          "recency_factor": 0.6,
+          "source": "东方财富资讯",
+          "llm_reviewed": true,
+          "llm_confidence": 0.3,
+          "llm_is_real_catalyst": false,
+          "llm_reasoning": "融资净偿还日常数据"
+        }
+      ]
+    },
+    "SZSE:159770": {
+      "name": "159770",
+      "score": 64,
+      "score_raw": 3.41,
+      "score_components": {
+        "positive_weight_sum": 3.41,
+        "negative_weight_sum": 0,
+        "news_effective_count": 2,
+        "news_dropped_count": 0
+      },
+      "signal": "🟢 Long (中)",
+      "strategy": "情绪偏多，适合低吸或轻仓参与",
+      "suitable_for": "低吸 / 轻仓追",
+      "confidence": "中",
+      "patterns": [],
+      "positive_factors": [
+        "[行业|w2.55] 比亚迪确认自研人形机器人将于8月首发亮相，机器人ETF天弘（159770）标的指数大涨超7%，已连续7日净流入",
+        "[行业|w0.86] 首届智能机器人应用技能大展启动！机器人ETF天弘（159770）昨日净申购3600万份，居深市同标的第一"
+      ],
+      "negative_factors": [],
+      "news_count": 2,
+      "news_dropped": 0,
+      "performance": {
+        "list_fetch_ms": 936,
+        "candidate_filter_ms": 0,
+        "enrichment_ms": 1,
+        "raw_news_count": 40,
+        "raw_research_count": 0,
+        "candidate_news_count": 2,
+        "candidate_research_count": 0,
+        "enriched_news_count": 2,
+        "enriched_research_count": 0,
+        "candidate_reasons": {
+          "news": {
+            "no-subject-mention": 18,
+            "dedup": 0,
+            "out_of_window": 20
+          },
+          "research": {
+            "dedup": 0
+          }
+        },
+        "date_filter_ms": 0,
+        "relevance_ms": 0,
+        "llm_ms": 0,
+        "scoring_ms": 0
+      },
+      "top_news": [
+        {
+          "date": "2026-07-31 13:41:14",
+          "title": "比亚迪确认自研人形机器人将于8月首发亮相，机器人ETF天弘（159770）标的指数大涨超7%，已连续7日净流入",
+          "content": "专业金融数据，下一代智能终端\n\n　　盘面上，两市午后拉升，机器人概念上涨。相关ETF方面，机器人ETF天弘（159770）标的指数盘中涨7.10%，申购额达600万份，为深市同标的第一；成交额达2.33亿元；换手率达3.85%。成分股中，奥比中光-W、科瑞技术、雷赛智能、快克智能、科远智慧、中大力德涨停，中控技术、绿的谐波、瑞松科技、昊志机电、拓斯达涨超5%，国茂股份、拓邦股份、新时达等多股跟涨。\n\n　　值得关注的是，Wind显示，机器人ETF天弘（159770）近7个交易日（2026年7月22日—2026年7月30日）实现连续“吸金”，最近二十个交易日累计获资金净流入9.27亿元。截至2026年7月30日，该基金最新规模为57.55亿元，为深市同标的第一。\n\n　　机器人ETF天弘（159770）紧密跟踪中证机器人指数，聚焦人工智能硬件终端，覆盖机器人产业链上下游各环节核心标的。该ETF还配备了2只场外联接基金（A类：014880；C类：014881）。\n\n　　近一年数据显示，机器人指数PE-TTM为51.79倍，当前估值处于近一年0.00%分位，低于近一年100.00%的时间。从估值水平来看，指数已具备显著性价比优势。\n\n　　消息面上，据财联社，比亚迪确认自研人形机器人将于8月在郑州“迪空间”首发亮相，为其首次公开展示实体样机。\n\n　　万联证券认为，2026年是人形机器人量产验证与场景落地的关键窗口，当前板块估值处于历史低位，具备较高安全边际。长城证券指出，灵巧手和“大脑”模型是产业链中价值量最高、技术壁垒最强的环节，伴随头部厂商量产节奏明晰，这些核心环节投资机会值得关注。东吴证券判断，产业化拐点已至，当单价降至40万元以内且工作效率超75%时，机器人的经济性将驱动市场规模从2026年的230亿元增长至2030年的2776亿元。",
+          "type": "行业",
+          "sentiment": 1,
+          "weight": 3,
+          "final_weight": 2.55,
+          "source_authority": 3,
+          "recency_factor": 0.85,
+          "source": "东方财富资讯",
+          "llm_reviewed": true,
+          "llm_confidence": 0.9,
+          "llm_is_real_catalyst": true,
+          "llm_reasoning": "比亚迪机器人将亮相，指数大涨7%，资金连续净流入"
+        },
+        {
+          "date": "2026-07-30 09:15:00",
+          "title": "首届智能机器人应用技能大展启动！机器人ETF天弘（159770）昨日净申购3600万份，居深市同标的第一",
+          "content": "专业金融数据，下一代智能终端\n\n　　7月29日，市场探底回升，三大指数集体收涨。截至收盘，中证机器人指数涨近1%。\n\n　　热门ETF中，截至收盘，机器人ETF天弘（159770）成交额超1.6亿元。成分股中，信邦智能、均普智能、石头科技涨幅领先。\n\n　　Wind数据显示，7月29日，该ETF获净申购3600万份，居深市同标的第一。\n\n　　资金流向上，Wind数据显示，截至7月28日，该ETF近五日获资金净流入累计近1.4亿元。\n\n　　机器人ETF天弘（159770）为深市规模最大的机器人主题ETF，成分股覆盖人形机器人、工业机器人、服务机器人等多个细分领域，帮助投资者一键布局机器人上中下游产业链。该ETF还配备了2只场外联接基金（A类：014880；C类：014881）。\n\n　　消息面上，据人民日报，7月28日，中央广播电视总台首届智能机器人应用技能大展在京启动，展示新技能、对接新需求、拓展新场景，推动智能机器人在更多领域落地应用，为经济社会发展注入新动能。\n\n　　国泰海通证券表示，看好机器人感知系统、核心零部件与本体厂商。物理AI基础模型与仿真引擎加速机器人研发进程，工业与服务领域场景落地打通商业模式，产业链投融资加速推动研发与产能投放，重磅产品规模效应显现有望激发终端需求。",
+          "type": "行业",
+          "sentiment": 1,
+          "weight": 1,
+          "final_weight": 0.86,
+          "source_authority": 3,
+          "recency_factor": 0.72,
+          "source": "东方财富资讯",
+          "llm_reviewed": true,
+          "llm_confidence": 0.7,
+          "llm_is_real_catalyst": false,
+          "llm_reasoning": "机器人大展启动，ETF获净申购"
+        }
+      ]
+    },
+    "SZSE:300684": {
+      "name": "中石科技",
+      "score": 61,
+      "score_raw": 2.72,
+      "score_components": {
+        "positive_weight_sum": 6.1,
+        "negative_weight_sum": 3.38,
+        "news_effective_count": 9,
+        "news_dropped_count": 0
+      },
+      "signal": "🟢 Long (中)",
+      "strategy": "情绪偏多，适合低吸或轻仓参与",
+      "suitable_for": "低吸 / 轻仓追",
+      "confidence": "中",
+      "patterns": [],
+      "positive_factors": [
+        "[回购|w4.59] 中石科技:关于取得金融机构股票回购专项贷款承诺函的公告",
+        "[行业|w0.51] 中石科技7月31日开盘涨幅达5%",
+        "[行业|w0.5] 中石科技7月30日快速反弹"
+      ],
+      "negative_factors": [
+        "[行业|w1.02] 中石科技：融资净偿还1507.23万元，融资余额2.11亿元",
+        "[行业|w0.86] 中石科技：融资净偿还6230.8万元，融资余额2.26亿元",
+        "[行业|w0.5] 中石科技7月30日盘中跌幅达5%"
+      ],
+      "news_count": 9,
+      "news_dropped": 0,
+      "performance": {
+        "list_fetch_ms": 2168,
+        "candidate_filter_ms": 0,
+        "enrichment_ms": 36500,
+        "raw_news_count": 40,
+        "raw_research_count": 10,
+        "candidate_news_count": 9,
+        "candidate_research_count": 0,
+        "enriched_news_count": 9,
+        "enriched_research_count": 0,
+        "candidate_reasons": {
+          "news": {
+            "noise:\\d{1,2}月\\d{1,2}日(快速上涨|快速回调|涨停|": 2,
+            "noise:融资净(买入|卖出)": 2,
+            "no-subject-mention": 5,
+            "dedup": 0,
+            "out_of_window": 22
+          },
+          "research": {
+            "dedup": 0,
+            "out_of_window": 10
+          }
+        },
+        "date_filter_ms": 0,
+        "relevance_ms": 0,
+        "llm_ms": 23733,
+        "scoring_ms": 0
+      },
+      "top_news": [
+        {
+          "date": "2026-07-31 09:35:52",
+          "title": "中石科技7月31日开盘涨幅达5%",
+          "content": "",
+          "type": "行业",
+          "sentiment": 1,
+          "weight": 1,
+          "final_weight": 0.51,
+          "source_authority": 3,
+          "recency_factor": 0.85,
+          "source": "东方财富资讯",
+          "llm_reviewed": true,
+          "llm_confidence": 0.3,
+          "llm_is_real_catalyst": false,
+          "llm_reasoning": "开盘涨幅达5%，无实质催化"
+        },
+        {
+          "date": "2026-07-31 09:05:38",
+          "title": "中石科技：融资净偿还1507.23万元，融资余额2.11亿元",
+          "content": "在东方财富看资讯行情，选东方财富证券一站式开户交易>>\n\n交易所最新数据显示，中石科技于2026年7月30日获融资买入3681.91万元，融资偿还5189.14万元，当日融资净偿还1507.23万元。目前，该股融资余额2.11亿，占流通市值比例为2.45%。\n\n该股当日融券卖出2100股，融券偿还300股，融券净卖出1800股。目前，该股融券余量1.83万股，融券余额77.1万元。\n\n免责声明：本文基于AI生产，仅供参考，不构成任何投资建议，据此操作风险自担。东方财富发布此内容旨在传播更多信息，与本平台立场无关。东方财富力求但不保证数据的完全准确，如有错漏请以中国证监会指定上市公司信息披露媒体为准，东方财富不对因该资料全部或部分内容而引致的盈亏承担任何责任。用户个人对服务的使用承担风险，东方财富对此不作任何类型的担保。",
+          "type": "行业",
+          "sentiment": -1,
+          "weight": 1,
+          "final_weight": 1.02,
+          "source_authority": 3,
+          "recency_factor": 0.85,
+          "source": "东方财富资讯",
+          "llm_reviewed": true,
+          "llm_confidence": 0.5,
+          "llm_is_real_catalyst": false,
+          "llm_reasoning": "融资净偿还1507万，偏空"
+        },
+        {
+          "date": "2026-07-31",
+          "title": "中石科技:关于取得金融机构股票回购专项贷款承诺函的公告",
+          "content": "经营本企业和成员企业自产产品及技术出口业务;本企业和成员企业生产所有的原辅材料、仪器仪表、机械设备、零配件及技术的进口业务(国家限定公司经营和国家禁止出口的商品除外);经营进料加工和“三来一补”业务。(企业依法自主选择经营项目,开展经营活动;依法须经批准的项目,经相关部门批准后依据批准的内容开展经营活动;不得从事本市产业政策禁止和限制类项目的经营活动。)\n郑重声明：东方财富网发布此信息的目的在于传播更多信息，与本站立场无关。东方财富网不保证该信息（包括但不限于文字、视频、音频、数据及图表）全部或者部分内容的准确性、真实性、完整性、有效性、及时性、原创性等。相关信息并未经过本网站证实，不对您构成任何投资建议，据此操作，风险自担。",
+          "type": "回购",
+          "sentiment": 1,
+          "weight": 5,
+          "final_weight": 4.59,
+          "source_authority": 4.5,
+          "recency_factor": 0.85,
+          "source": "东方财富公告",
+          "llm_reviewed": true,
+          "llm_confidence": 0.9,
+          "llm_is_real_catalyst": true,
+          "llm_reasoning": "获股票回购专项贷款承诺函"
+        },
+        {
+          "date": "2026-07-30 10:19:45",
+          "title": "中石科技7月30日快速反弹",
+          "content": "",
+          "type": "行业",
+          "sentiment": 1,
+          "weight": 1,
+          "final_weight": 0.5,
+          "source_authority": 3,
+          "recency_factor": 0.72,
+          "source": "东方财富资讯",
+          "llm_reviewed": true,
+          "llm_confidence": 0.3,
+          "llm_is_real_catalyst": false,
+          "llm_reasoning": "股价快速反弹，无实质催化"
+        },
+        {
+          "date": "2026-07-30 10:08:34",
+          "title": "中石科技7月30日盘中跌幅达5%",
+          "content": "",
+          "type": "行业",
+          "sentiment": -1,
+          "weight": 1,
+          "final_weight": 0.5,
+          "source_authority": 3,
+          "recency_factor": 0.72,
+          "source": "东方财富资讯",
+          "llm_reviewed": true,
+          "llm_confidence": 0.3,
+          "llm_is_real_catalyst": false,
+          "llm_reasoning": "盘中跌幅达5%，无实质催化"
+        }
+      ]
+    },
+    "SZSE:300357": {
+      "name": "300357",
+      "score": 61,
+      "score_raw": 2.7,
+      "score_components": {
+        "positive_weight_sum": 2.7,
+        "negative_weight_sum": 0,
+        "news_effective_count": 1,
+        "news_dropped_count": 0
+      },
+      "signal": "🟢 Long (中)",
+      "strategy": "情绪偏多，适合低吸或轻仓参与",
+      "suitable_for": "低吸 / 轻仓追",
+      "confidence": "中",
+      "patterns": [],
+      "positive_factors": [
+        "[政策|w2.7] 我武生物:关于获得药物临床试验申请受理通知书的公告"
+      ],
+      "negative_factors": [],
+      "news_count": 1,
+      "news_dropped": 0,
+      "performance": {
+        "list_fetch_ms": 790,
+        "candidate_filter_ms": 0,
+        "enrichment_ms": 1,
+        "raw_news_count": 40,
+        "raw_research_count": 10,
+        "candidate_news_count": 1,
+        "candidate_research_count": 0,
+        "enriched_news_count": 1,
+        "enriched_research_count": 0,
+        "candidate_reasons": {
+          "news": {
+            "noise:融资净(买入|卖出)": 1,
+            "no-subject-mention": 6,
+            "dedup": 0,
+            "out_of_window": 32
+          },
+          "research": {
+            "dedup": 0,
+            "out_of_window": 10
+          }
+        },
+        "date_filter_ms": 0,
+        "relevance_ms": 0,
+        "llm_ms": 0,
+        "scoring_ms": 0
+      },
+      "top_news": [
+        {
+          "date": "2026-07-28",
+          "title": "我武生物:关于获得药物临床试验申请受理通知书的公告",
+          "content": "生产销售变态反应原制品、体内诊断试剂(详见《中华人民共和国药品生产许可证》),二类:医用化验和基础设备器具的销售(详见《中华人民共和国医疗器械经营企业许可证》)。研究开发口服脱敏药、生物及化学制剂药品、生物及化学医药原料、医药包装材料、保健食品以及研究开发上述产品所需的机械设备、仪器仪表;并提供相关技术咨询、咨询服务;经营进出口业务。(依法须经批准的项目,经相关部门批准后方可开展经营活动)。\n郑重声明：东方财富网发布此信息的目的在于传播更多信息，与本站立场无关。东方财富网不保证该信息（包括但不限于文字、视频、音频、数据及图表）全部或者部分内容的准确性、真实性、完整性、有效性、及时性、原创性等。相关信息并未经过本网站证实，不对您构成任何投资建议，据此操作，风险自担。",
+          "type": "政策",
+          "sentiment": 1,
+          "weight": 3,
+          "final_weight": 2.7,
+          "source_authority": 4.5,
+          "recency_factor": 0.5,
+          "source": "东方财富公告",
+          "llm_reviewed": true,
+          "llm_confidence": 0.9,
+          "llm_is_real_catalyst": true,
+          "llm_reasoning": "获得临床试验受理通知书，研发进展"
+        }
+      ]
+    },
+    "SZSE:300703": {
+      "name": "300703",
+      "score": 59,
+      "score_raw": 2.14,
+      "score_components": {
+        "positive_weight_sum": 2.14,
+        "negative_weight_sum": 0,
+        "news_effective_count": 1,
+        "news_dropped_count": 0
+      },
+      "signal": "⚪ No Trade (微多)",
+      "strategy": "情绪轻微偏多，信号不足，以观望为主",
+      "suitable_for": "观望",
+      "confidence": "低",
+      "patterns": [],
+      "positive_factors": [
+        "[并购|w2.14] 创源股份:关于解除为全资子公司提供担保的公告"
+      ],
+      "negative_factors": [],
+      "news_count": 1,
+      "news_dropped": 0,
+      "performance": {
+        "list_fetch_ms": 5853,
+        "candidate_filter_ms": 0,
+        "enrichment_ms": 6,
+        "raw_news_count": 40,
+        "raw_research_count": 6,
+        "candidate_news_count": 1,
+        "candidate_research_count": 0,
+        "enriched_news_count": 1,
+        "enriched_research_count": 0,
+        "candidate_reasons": {
+          "news": {
+            "no-subject-mention": 1,
+            "noise:\\d{1,2}月\\d{1,2}日(快速上涨|快速回调|涨停|": 1,
+            "dedup": 0,
+            "out_of_window": 37
+          },
+          "research": {
+            "dedup": 0,
+            "out_of_window": 6
+          }
+        },
+        "date_filter_ms": 0,
+        "relevance_ms": 0,
+        "llm_ms": 0,
+        "scoring_ms": 0
+      },
+      "top_news": [
+        {
+          "date": "2026-07-31",
+          "title": "创源股份:关于解除为全资子公司提供担保的公告",
+          "content": "一般项目:组织文化艺术交流活动;专业设计服务;工艺美术品及礼仪用品制造(象牙及其制品除外);工艺美术品及收藏品批发(象牙及其制品除外);工艺美术品及收藏品零售(象牙及其制品除外);玩具、动漫及游艺用品销售;纸制品制造;纸制品销售;塑料制品制造;塑料制品销售;包装服务;包装材料及制品销售;教学用模型及教具销售;文具制造;文具用品批发;文具用品零售;办公用品销售;五金产品研发;五金产品制造;五金产品批发;五金产品零售;电工器材制造;电工器材销售;日用杂品制造;日用杂品销售;日用百货销售;日用品销售;日用品批发;玩具制造;玩具销售;厨具卫具及日用杂品批发;体育用品制造;体育用品及器材批发;体育用品及器材零售;户外用品销售;宠物食品及用品零售;宠物食品及用品批发;互联网销售(除销售需要许可的商品);信息系统集成服务;软件开发;计算机及办公设备维修;计算机软硬件及辅助设备批发;计算机软硬件及辅助设备零售;信息技术咨询服务;日用口罩(非医用)生产;日用口罩(非医用)销售;医用口罩零售;医用口罩批发;医护人员防护用品批发;医护人员防护用品零售;劳动保护用品生产;劳动保护用品销售;第一类医疗器械生产;第一类医疗器械销售;第二类医疗器械销售;园区管理服务;企业管理;物业管理;酒店管理;市场营销策划;信息咨询服务(不含许可类信息咨询服务);社会经济咨询服务;会议及展览服务;非居住房地产租赁。(除依法须经批准的项目外,凭营业执照依法自主开展经营活动)许可项目:道路货物运输(不含危险货物);出版物印刷;包装装潢印刷品印刷;文件、资料等其他印刷品印刷;特定印刷品印刷;医用口罩生产;第二类医疗器械生产;医护人员防护用品生产(Ⅱ类医疗器械);药品生产;药品委托生产;药品零售;药品批发;各类工程建设活动;技术进出口;货物进出口;进出口代理。(依法须经批准的项目,经相关部门批准后方可开展经营活动,具体经营项目以相关部门批准文件或许可证件为准)\n郑重声明：东方财富网发布此信息的目的在于传播更多信息，与本站立场无关。东方财富网不保证该信息（包括但不限于文字、视频、音频、数据及图表）全部或者部分内容的准确性、真实性、完整性、有效性、及时性、原创性等。相关信息并未经过本网站证实，不对您构成任何投资建议，据此操作，风险自担。",
+          "type": "并购",
+          "sentiment": 1,
+          "weight": 2,
+          "final_weight": 2.14,
+          "source_authority": 4.5,
+          "recency_factor": 0.85,
+          "source": "东方财富公告",
+          "llm_reviewed": true,
+          "llm_confidence": 0.6,
+          "llm_is_real_catalyst": false,
+          "llm_reasoning": "解除子公司的担保，降低或有负债"
+        }
+      ]
+    },
+    "SZSE:159819": {
+      "name": "159819",
+      "score": 57,
+      "score_raw": 1.62,
+      "score_components": {
+        "positive_weight_sum": 1.62,
+        "negative_weight_sum": 0,
+        "news_effective_count": 2,
+        "news_dropped_count": 0
+      },
+      "signal": "⚪ No Trade (微多)",
+      "strategy": "情绪轻微偏多，信号不足，以观望为主",
+      "suitable_for": "观望",
+      "confidence": "低",
+      "patterns": [],
+      "positive_factors": [
+        "[行业|w1.02] 微软单日市值暴增3万亿！人工智能ETF易方达（159819）涨8.56%，AI硬件与应用端共振大涨",
+        "[行业|w0.6] 国产超大参数模型开源催化行业创新，人工智能ETF易方达（159819）连续3日“吸金”累计超2亿元"
+      ],
+      "negative_factors": [],
+      "news_count": 2,
+      "news_dropped": 0,
+      "performance": {
+        "list_fetch_ms": 1955,
+        "candidate_filter_ms": 0,
+        "enrichment_ms": 1,
+        "raw_news_count": 40,
+        "raw_research_count": 0,
+        "candidate_news_count": 2,
+        "candidate_research_count": 0,
+        "enriched_news_count": 2,
+        "enriched_research_count": 0,
+        "candidate_reasons": {
+          "news": {
+            "no-subject-mention": 13,
+            "dedup": 0,
+            "out_of_window": 25
+          },
+          "research": {
+            "dedup": 0
+          }
+        },
+        "date_filter_ms": 0,
+        "relevance_ms": 0,
+        "llm_ms": 1,
+        "scoring_ms": 1
+      },
+      "top_news": [
+        {
+          "date": "2026-07-31 10:14:28",
+          "title": "微软单日市值暴增3万亿！人工智能ETF易方达（159819）涨8.56%，AI硬件与应用端共振大涨",
+          "content": "在东方财富看资讯行情，选东方财富证券一站式开户交易>>\n\n　　截至2026年7月31日10:03，人工智能ETF易方达（159819）高开高走，盘中涨幅达8.56%，报1.813元，盘中最高触及1.820元，最低1.772元，开盘后成交额迅速放大至5.15亿元，成交量达2.87亿份，换手率显著放大，AI赛道全线爆发，资金加速涌入。\n\n　　人工智能板块今日持续活跃，催化因素主要包括以下几个方面。首先，隔夜美股科技板块全线暴涨，微软单日市值暴增3万亿元，费城半导体指数暴涨9%，苹果、亚马逊业绩双双超预期，亚马逊宣布将全年资本支出上调至2200亿美元，AI算力基础设施建设需求持续井喷，海外AI产业链的强势表现直接点燃A股人工智能板块做多热情。其次，AI硬件板块今日全线反攻，CPO概念集体反弹，新易盛涨超15%，PCB概念开盘活跃，金安国纪、华正新材双双涨停，算力租赁概念表现活跃，利通电子一字涨停，存储芯片板块集体爆发，兆易创新等多股竞价涨停，AI算力产业链上下游形成共振式上涨，韩国KOSPI指数暴涨17%、SK海力士涨超29%进一步印证了全球AI算力投资的强劲需求。再次，AI应用端迎来重磅催化，MiniMax H3正式发布，标志着视频生成正式进入生产力时代，OpenAI近期大幅下调两款AI模型价格，降幅高达80%，\"Token价格战\"持续升温，AI应用成本持续下降推动商业化进程加速。财联社盘中宝指出，从\"技术可用\"到\"商业可看\"，AI应用端新品不断涌现，2026年被视为AI产业的重要分水岭，机构认为AI应用场景有望承接AI时代红利。此外，科创50指数高开超8%，创业板指高开5.15%，MSCI新兴市场股票指数飙升5%创4月以来最大涨幅，市场风险偏好显著回升，科技成长风格全面走强，人工智能作为本轮科技行情的核心主线持续获得资金青睐。长鑫科技市值突破4万亿元，进一步印证了AI算力需求对半导体产业链的强劲拉动效应。国家统计局公布7月制造业PMI为49.2%，政治局会议明确优化财金协同促内需，业内预计货币政策调整节奏有望提速，为市场提供了流动性改善预期。\n\n　　机构认为，中信证券研报指出，AI正成为本轮全球半导体产业周期的核心驱动力，带动全球晶圆厂资本开支进入新一轮上行周期，先进逻辑与先进存储形成扩产共振，预计2028年全球半导体设备市场规模将超过2900亿美元，中国半导体产业受益于AI与国产替代双重催化。东莞证券在2026年下半年投资策略报告中表示，AI算力需求持续高景气叠加关键领域国产替代加速推进，双重因素驱动板块业绩增长，申万半导体板块2025年及2026年一季度营收和归母净利润持续增长，下半年建议围绕AI算力、AI存力、先进封装等环节布局。中信建投表示，AI算力与存储复苏双轮驱动下行业维持高景气，全球半导体设备零部件正经历历史罕见的全品类涨价周期。业内人士认为，随着大模型从训练走向推理部署，AI应用端商业化进程加速，算力基础设施全产业链有望持续受益，人工智能板块仍具备中长期配置价值。\n\n　　关联产品：人工智能ETF易方达（159819）\n\n　　想炒股，先开户！选东方财富证券，行情交易一个APP搞定>>",
+          "type": "行业",
+          "sentiment": 1,
+          "weight": 1,
+          "final_weight": 1.02,
+          "source_authority": 3,
+          "recency_factor": 0.85,
+          "source": "东方财富资讯",
+          "llm_reviewed": true,
+          "llm_confidence": 0.95,
+          "llm_is_real_catalyst": false,
+          "llm_reasoning": "AI赛道爆发，ETF涨8.56%，多重催化共振"
+        },
+        {
+          "date": "2026-07-28 13:03:45",
+          "title": "国产超大参数模型开源催化行业创新，人工智能ETF易方达（159819）连续3日“吸金”累计超2亿元",
+          "content": "在东方财富看资讯行情，选东方财富证券一站式开户交易>>\n\n　　截至午间收盘，上证科创板人工智能指数下跌3.2%，中证人工智能主题指数下跌5.1%，中证科创创业人工智能指数下跌5.3%。同花顺iFinD数据显示，截至昨日，人工智能ETF易方达（159819，联接基金A/C：012733/012734）连续3日实现资金净流入，合计约2.3亿元。\n\n　　昨晚，月之暗面kimi正式开源Kimi K3完整模型权重，为全球首个落地的3万亿参数级开源大模型。数据显示，K3在保持第一梯队性能的同时，BrowseComp基准单次任务成本仅为GPT-5.6Sol的一半，较Claude Fable5便宜近一个数量级。月之暗面称每个人都可以下载并部署Kimi K3模型——无论是用于内部研发，还是嵌入到面向终端用户的产品中，均可自由使用，由此可见，开源社区有望迎来新一轮创新浪潮。",
+          "type": "行业",
+          "sentiment": 1,
+          "weight": 1,
+          "final_weight": 0.6,
+          "source_authority": 3,
+          "recency_factor": 0.5,
+          "source": "东方财富资讯",
+          "llm_reviewed": true,
+          "llm_confidence": 0.9,
+          "llm_is_real_catalyst": false,
+          "llm_reasoning": "Kimi K3开源催化创新，ETF连续3日净流入"
+        }
+      ]
+    },
+    "SSE:562500": {
+      "name": "机器人ETF华夏",
+      "score": 56,
+      "score_raw": 1.44,
+      "score_components": {
+        "positive_weight_sum": 1.44,
+        "negative_weight_sum": 0,
+        "news_effective_count": 3,
+        "news_dropped_count": 0
+      },
+      "signal": "⚪ No Trade (微多)",
+      "strategy": "情绪轻微偏多，信号不足，以观望为主",
+      "suitable_for": "观望",
+      "confidence": "低",
+      "patterns": [],
+      "positive_factors": [
+        "[行业|w0.72] 具身智能机器人将亮相智博会，机器人ETF华夏(562500)收涨0.32%",
+        "[行业|w0.72] 智元具身大模型登顶DailyOmni全模态榜单，机器人ETF华夏(562500)连续4天净流入"
+      ],
+      "negative_factors": [],
+      "news_count": 3,
+      "news_dropped": 0,
+      "performance": {
+        "list_fetch_ms": 1929,
+        "candidate_filter_ms": 0,
+        "enrichment_ms": 10594,
+        "raw_news_count": 40,
+        "raw_research_count": 0,
+        "candidate_news_count": 3,
+        "candidate_research_count": 0,
+        "enriched_news_count": 3,
+        "enriched_research_count": 0,
+        "candidate_reasons": {
+          "news": {
+            "no-subject-mention": 17,
+            "dedup": 0,
+            "out_of_window": 20
+          },
+          "research": {
+            "dedup": 0
+          }
+        },
+        "date_filter_ms": 0,
+        "relevance_ms": 0,
+        "llm_ms": 1,
+        "scoring_ms": 0
+      },
+      "top_news": [
+        {
+          "date": "2026-07-30 10:40:21",
+          "title": "机器人ETF华夏（562500）震荡回调，近5天获得连续资金净流入",
+          "content": "专业金融数据，下一代智能终端\n\n　　截至10:29，机器人ETF华夏（562500）下跌1.73%，最新报价0.91元。成分股涨跌互现，天智航领涨3.82%，汇川技术上涨2.55%，科沃斯上涨2.14%；埃斯顿领跌9.18%，云天励飞下跌8.88%，瑞松科技下跌8.76%。\n\n　　流动性方面，机器人ETF华夏盘中换手1.44%，成交2.44亿元，近5天获得连续资金净流入。拉长时间看，截至7月29日，机器人ETF华夏近1年日均成交12.26亿元，排名可比基金第一。\n\n　　智元创新已启动赴港上市流程。7月24日，通用AI机器人公司智元创新（上海）科技股份有限公司已启动赴港上市流程。智元创新拥有较全的产品矩阵，涵盖轮式、半人形、人形和四足机器人。\n\n　　东吴证券指出，具身智能将AI能力嵌入物理本体，使机器人形成“感知—决策—执行—反馈”闭环。2025年以来，全球头部厂商陆续进入工厂测试、小批量交付及商业部署阶段，行业竞争重点由“能否实现运动”逐步转向“能否稳定完成任务并实现规模制造”。\n\n　　机器人ETF华夏（562500）是同指数规模最大的机器人主题ETF，成分股覆盖核心零部件龙头人形机器人、工业机器人、服务机器人等多个细分领域，帮助投资者一键布局机器人上中下游产业链。场外联接（华夏中证机器人ETF发起式联接A：018344；华夏中证机器人ETF发起式联接C：018345）。\n\n　　本次成分股调样后，机器人ETF华夏（562500）人形机器人含量提升至超70%；此外，所跟踪指数近3年业绩回报均显著领先于国证机器人产业指数，且波动率与最大回撤更小，兼具更强的进攻性与防御性。",
+          "type": "行业",
+          "sentiment": 0,
+          "weight": 1,
+          "final_weight": 0.86,
+          "source_authority": 3,
+          "recency_factor": 0.72,
+          "source": "东方财富资讯",
+          "llm_reviewed": true,
+          "llm_confidence": 0.55,
+          "llm_is_real_catalyst": false,
+          "llm_reasoning": "ETF回调但资金流入，行业动态无硬催化"
+        },
+        {
+          "date": "2026-07-29 16:09:42",
+          "title": "具身智能机器人将亮相智博会，机器人ETF华夏(562500)收涨0.32%",
+          "content": "在东方财富看资讯行情，选东方财富证券一站式开户交易>>\n\n　　截至2026年7月29日 15:00，中证机器人指数(H30590)上涨0.71%，成分股信邦智能上涨20.00%，均普智能上涨6.61%，石头科技上涨5.79%，汇川技术上涨5.01%，科沃斯上涨4.48%。机器人ETF华夏(562500)上涨0.32%，最新价报0.93元。\n\n　　从资金净流入方面来看，机器人ETF华夏近4天获得连续资金净流入，最高单日获得1.88亿元净流入，合计“吸金”4.67亿元，日均净流入达1.17亿元。\n\n　　消息面上，2026人工智能产品应用博览会将于7月30日在苏州开幕，近400家硬核展商集结，展示国产大模型及覆盖全场景的具身智能机器人。\n\n　　国元证券指出，据Omdia统计，智元2025年出货量预计超5100台，占全球份额近四成，头部企业已跨越样机阶段进入小批量生产，带动核心零部件采购由定制转向批量供应。其选择港股上市路径，与宇树科技形成互补，若成功落地将为A股板块提供估值映射锚点，建议重点关注已进入其供应链的零部件商、系统集成商及具备仿真算法能力的软件服务商。\n\n　　机器人ETF华夏（562500）是同指数规模最大的机器人主题ETF，成分股覆盖核心零部件龙头人形机器人、工业机器人、服务机器人等多个细分领域，其中人形机器人含量近70%，帮助投资者一键布局机器人上中下游产业链。场外联接(华夏中证机器人ETF发起式联接A：018344；华夏中证机器人ETF发起式联接C：018345)。\n\n　　此外，市场轮动加快，可以“配点红利”，通过哑铃策略平衡风险和回报，一端是高成长性或进攻型资产，另一端是低波动防守型资产。\n\n　　红利低波ETF华夏(159547)：跟踪红利低波指数(H30269.CSI)，截至7月28日，指数近1年股息率为4.26%，对应的全收益指数自发布日(2013年12月19日)到26年6月底，任意时间持有6个月正收益概率是71%，持有1年、2年、3年正收益概率分别升至84%、90%和95%，适合作为哑铃策略中的防守型资产进行配置，管理费+托管费仅0.2%，在同类产品中费率最低，联接基金A类021482；联接基金C类021483。",
+          "type": "行业",
+          "sentiment": 1,
+          "weight": 1,
+          "final_weight": 0.72,
+          "source_authority": 3,
+          "recency_factor": 0.6,
+          "source": "东方财富资讯",
+          "llm_reviewed": true,
+          "llm_confidence": 0.6,
+          "llm_is_real_catalyst": false,
+          "llm_reasoning": "智博会预期带动板块微涨，非硬催化"
+        },
+        {
+          "date": "2026-07-29 14:57:22",
+          "title": "智元具身大模型登顶DailyOmni全模态榜单，机器人ETF华夏(562500)连续4天净流入",
+          "content": "全新妙想投研助理，立即体验\n\n　　截至2026年7月29日 14:47，中证机器人指数(H30590)上涨0.58%，成分股信邦智能上涨20.00%，均普智能上涨6.61%，石头科技上涨5.61%，汇川技术上涨4.98%，科沃斯上涨4.87%。机器人ETF华夏(562500)上涨0.32%，最新价报0.93元。\n\n　　从资金净流入方面来看，机器人ETF华夏近4天获得连续资金净流入，最高单日获得1.88亿元净流入，合计“吸金”4.67亿元，日均净流入达1.17亿元。\n\n　　消息面上，近日，具身全模态理解权威榜单 DailyOmni 最新评测结果揭晓，智元自研的具身原生全模态大模型 WITA-Omni Preview，凭借领先的音视频联合理解与时序推理能力，以 85.21分综合成绩登顶榜首，并在八项细分指标中的三项居首。\n\n　　机器人ETF华夏（562500）是同指数规模最大的机器人主题ETF，成分股覆盖核心零部件龙头人形机器人、工业机器人、服务机器人等多个细分领域，其中人形机器人含量近70%，帮助投资者一键布局机器人上中下游产业链。场外联接(华夏中证机器人ETF发起式联接A：018344；华夏中证机器人ETF发起式联接C：018345)。\n\n　　此外，市场轮动加快，可以“配点红利”，通过哑铃策略平衡风险和回报，一端是高成长性或进攻型资产，另一端是低波动防守型资产。\n\n　　红利低波ETF华夏(159547)：跟踪红利低波指数(H30269.CSI)，截至7月28日，指数近1年股息率为4.26%，对应的全收益指数自发布日(2013年12月19日)到26年6月底，任意时间持有6个月正收益概率是71%，持有1年、2年、3年正收益概率分别升至84%、90%和95%，适合作为哑铃策略中的防守型资产进行配置，管理费+托管费仅0.2%，在同类产品中费率最低，联接基金A类021482；联接基金C类021483。",
+          "type": "行业",
+          "sentiment": 1,
+          "weight": 1,
+          "final_weight": 0.72,
+          "source_authority": 3,
+          "recency_factor": 0.6,
+          "source": "东方财富资讯",
+          "llm_reviewed": true,
+          "llm_confidence": 0.5,
+          "llm_is_real_catalyst": false,
+          "llm_reasoning": "技术榜单利好但非量化催化"
+        }
+      ]
+    },
+    "SZSE:300502": {
+      "name": "新易盛",
+      "score": 53,
+      "score_raw": 0.69,
+      "score_components": {
+        "positive_weight_sum": 0.69,
+        "negative_weight_sum": 0,
+        "news_effective_count": 1,
+        "news_dropped_count": 0
+      },
+      "signal": "⚪ No Trade (微多)",
+      "strategy": "情绪轻微偏多，信号不足，以观望为主",
+      "suitable_for": "观望",
+      "confidence": "低",
+      "patterns": [],
+      "positive_factors": [
+        "[分析师动作|w0.69] 公司事件点评报告：供应链紧张逐步缓解，订单交付快速增长"
+      ],
+      "negative_factors": [],
+      "news_count": 1,
+      "news_dropped": 0,
+      "performance": {
+        "list_fetch_ms": 1965,
+        "candidate_filter_ms": 0,
+        "enrichment_ms": 13692,
+        "raw_news_count": 40,
+        "raw_research_count": 10,
+        "candidate_news_count": 0,
+        "candidate_research_count": 1,
+        "enriched_news_count": 0,
+        "enriched_research_count": 1,
+        "candidate_reasons": {
+          "news": {
+            "no-subject-mention": 18,
+            "noise:龙虎榜|大宗交易|盘口异动": 2,
+            "dedup": 0,
+            "out_of_window": 20
+          },
+          "research": {
+            "dedup": 0,
+            "out_of_window": 9
+          }
+        },
+        "date_filter_ms": 0,
+        "relevance_ms": 0,
+        "llm_ms": 1,
+        "scoring_ms": 0
+      },
+      "top_news": [
+        {
+          "date": "2026-07-26",
+          "title": "公司事件点评报告：供应链紧张逐步缓解，订单交付快速增长",
+          "content": "",
+          "type": "分析师动作",
+          "sentiment": 1,
+          "weight": 1,
+          "final_weight": 0.69,
+          "source_authority": 4,
+          "recency_factor": 0.36,
+          "source": "华鑫证券",
+          "llm_reviewed": true,
+          "llm_confidence": 0.9,
+          "llm_is_real_catalyst": false,
+          "llm_reasoning": "券商发布事件点评，供应链缓解利好"
+        }
+      ]
+    },
+    "SSE:600048": {
+      "name": "600048",
+      "score": 50,
+      "score_raw": 0,
+      "score_components": {
+        "positive_weight_sum": 0,
+        "negative_weight_sum": 0
+      },
+      "signal": "⚪ No Trade (无数据)",
+      "strategy": "近期无相关有效新闻",
+      "suitable_for": "观望",
+      "confidence": "-",
+      "patterns": [],
+      "positive_factors": [],
+      "negative_factors": [],
+      "news_count": 0,
+      "news_dropped": 0,
+      "performance": {
+        "list_fetch_ms": 2183,
+        "candidate_filter_ms": 0,
+        "enrichment_ms": 0,
+        "raw_news_count": 40,
+        "raw_research_count": 10,
+        "candidate_news_count": 0,
+        "candidate_research_count": 0,
+        "enriched_news_count": 0,
+        "enriched_research_count": 0,
+        "candidate_reasons": {
+          "news": {
+            "noise:融资净(买入|卖出)": 1,
+            "no-subject-mention": 19,
+            "dedup": 0,
+            "out_of_window": 20
+          },
+          "research": {
+            "dedup": 0,
+            "out_of_window": 10
+          }
+        },
+        "date_filter_ms": 0,
+        "relevance_ms": 0,
+        "llm_ms": 0,
+        "scoring_ms": 0
+      },
+      "top_news": []
+    },
+    "SZSE:300662": {
+      "name": "300662",
+      "score": 50,
+      "score_raw": 0,
+      "score_components": {
+        "positive_weight_sum": 0,
+        "negative_weight_sum": 0,
+        "news_effective_count": 1,
+        "news_dropped_count": 0
+      },
+      "signal": "⚪ No Trade (微多)",
+      "strategy": "情绪轻微偏多，信号不足，以观望为主",
+      "suitable_for": "观望",
+      "confidence": "低",
+      "patterns": [],
+      "positive_factors": [],
+      "negative_factors": [],
+      "news_count": 1,
+      "news_dropped": 0,
+      "performance": {
+        "list_fetch_ms": 2084,
+        "candidate_filter_ms": 0,
+        "enrichment_ms": 1,
+        "raw_news_count": 40,
+        "raw_research_count": 10,
+        "candidate_news_count": 1,
+        "candidate_research_count": 0,
+        "enriched_news_count": 1,
+        "enriched_research_count": 0,
+        "candidate_reasons": {
+          "news": {
+            "no-subject-mention": 4,
+            "noise:\\d{1,2}月\\d{1,2}日(快速上涨|快速回调|涨停|": 3,
+            "dedup": 0,
+            "out_of_window": 32
+          },
+          "research": {
+            "dedup": 0,
+            "out_of_window": 10
+          }
+        },
+        "date_filter_ms": 0,
+        "relevance_ms": 0,
+        "llm_ms": 0,
+        "scoring_ms": 0
+      },
+      "top_news": [
+        {
+          "date": "2026-07-28",
+          "title": "科锐国际:关于为控股子公司提供担保的进展公告",
+          "content": "职业中介活动。(依法须经批准的项目,经相关部门批准后方可开展经营活动,具体经营项目以相关部门批准文件或许可证件为准)一般项目:人力资源服务(不含职业中介活动、劳务派遣服务);技术服务、技术开发、技术咨询、技术交流、技术转让、技术推广。(除依法须经批准的项目外,凭营业执照依法自主开展经营活动)(不得从事国家和本市产业政策禁止和限制类项目的经营活动。)\n郑重声明：东方财富网发布此信息的目的在于传播更多信息，与本站立场无关。东方财富网不保证该信息（包括但不限于文字、视频、音频、数据及图表）全部或者部分内容的准确性、真实性、完整性、有效性、及时性、原创性等。相关信息并未经过本网站证实，不对您构成任何投资建议，据此操作，风险自担。",
+          "type": "行业",
+          "sentiment": 0,
+          "weight": 1,
+          "final_weight": 0.5,
+          "source_authority": 4.5,
+          "recency_factor": 0.5,
+          "source": "东方财富公告",
+          "llm_reviewed": true,
+          "llm_confidence": 0.1,
+          "llm_is_real_catalyst": false,
+          "llm_reasoning": "公告正文仅经营范围描述，无实质催化"
+        }
+      ]
+    },
+    "SZSE:300580": {
+      "name": "300580",
+      "score": 50,
+      "score_raw": 0,
+      "score_components": {
+        "positive_weight_sum": 0,
+        "negative_weight_sum": 0
+      },
+      "signal": "⚪ No Trade (无数据)",
+      "strategy": "近期无相关有效新闻",
+      "suitable_for": "观望",
+      "confidence": "-",
+      "patterns": [],
+      "positive_factors": [],
+      "negative_factors": [],
+      "news_count": 0,
+      "news_dropped": 0,
+      "performance": {
+        "list_fetch_ms": 2089,
+        "candidate_filter_ms": 0,
+        "enrichment_ms": 0,
+        "raw_news_count": 40,
+        "raw_research_count": 10,
+        "candidate_news_count": 0,
+        "candidate_research_count": 0,
+        "enriched_news_count": 0,
+        "enriched_research_count": 0,
+        "candidate_reasons": {
+          "news": {
+            "noise:\\d{1,2}月\\d{1,2}日(快速上涨|快速回调|涨停|": 2,
+            "no-subject-mention": 7,
+            "dedup": 0,
+            "out_of_window": 31
+          },
+          "research": {
+            "dedup": 0,
+            "out_of_window": 10
+          }
+        },
+        "date_filter_ms": 0,
+        "relevance_ms": 0,
+        "llm_ms": 0,
+        "scoring_ms": 0
+      },
+      "top_news": []
+    },
+    "SSE:603662": {
+      "name": "603662",
+      "score": 50,
+      "score_raw": 0,
+      "score_components": {
+        "positive_weight_sum": 0,
+        "negative_weight_sum": 0
+      },
+      "signal": "⚪ No Trade (无数据)",
+      "strategy": "近期无相关有效新闻",
+      "suitable_for": "观望",
+      "confidence": "-",
+      "patterns": [],
+      "positive_factors": [],
+      "negative_factors": [],
+      "news_count": 0,
+      "news_dropped": 0,
+      "performance": {
+        "list_fetch_ms": 2104,
+        "candidate_filter_ms": 0,
+        "enrichment_ms": 0,
+        "raw_news_count": 40,
+        "raw_research_count": 10,
+        "candidate_news_count": 0,
+        "candidate_research_count": 0,
+        "enriched_news_count": 0,
+        "enriched_research_count": 0,
+        "candidate_reasons": {
+          "news": {
+            "no-subject-mention": 8,
+            "noise:\\d{1,2}月\\d{1,2}日(快速上涨|快速回调|涨停|": 1,
+            "noise:融资净(买入|卖出)": 1,
+            "dedup": 0,
+            "out_of_window": 30
+          },
+          "research": {
+            "dedup": 0,
+            "out_of_window": 10
+          }
+        },
+        "date_filter_ms": 0,
+        "relevance_ms": 0,
+        "llm_ms": 0,
+        "scoring_ms": 0
+      },
+      "top_news": []
+    },
+    "SZSE:300706": {
+      "name": "300706",
+      "score": 50,
+      "score_raw": 0,
+      "score_components": {
+        "positive_weight_sum": 0,
+        "negative_weight_sum": 0,
+        "news_effective_count": 1,
+        "news_dropped_count": 0
+      },
+      "signal": "⚪ No Trade (微多)",
+      "strategy": "情绪轻微偏多，信号不足，以观望为主",
+      "suitable_for": "观望",
+      "confidence": "低",
+      "patterns": [],
+      "positive_factors": [],
+      "negative_factors": [],
+      "news_count": 1,
+      "news_dropped": 0,
+      "performance": {
+        "list_fetch_ms": 2111,
+        "candidate_filter_ms": 0,
+        "enrichment_ms": 3691,
+        "raw_news_count": 40,
+        "raw_research_count": 2,
+        "candidate_news_count": 1,
+        "candidate_research_count": 0,
+        "enriched_news_count": 1,
+        "enriched_research_count": 0,
+        "candidate_reasons": {
+          "news": {
+            "no-subject-mention": 8,
+            "noise:\\d{1,2}月\\d{1,2}日(快速上涨|快速回调|涨停|": 4,
+            "dedup": 0,
+            "out_of_window": 27
+          },
+          "research": {
+            "dedup": 0,
+            "out_of_window": 2
+          }
+        },
+        "date_filter_ms": 0,
+        "relevance_ms": 0,
+        "llm_ms": 1,
+        "scoring_ms": 0
+      },
+      "top_news": [
+        {
+          "date": "2026-07-29",
+          "title": "阿石创:关于完成工商变更登记并换发营业执照的公告",
+          "content": "",
+          "type": "行业",
+          "sentiment": 0,
+          "weight": 1,
+          "final_weight": 1.08,
+          "source_authority": 4.5,
+          "recency_factor": 0.6,
+          "source": "东方财富公告",
+          "llm_reviewed": true,
+          "llm_confidence": 0.5,
+          "llm_is_real_catalyst": false,
+          "llm_reasoning": "工商变更，无实质影响"
+        }
+      ]
+    },
+    "SSE:601872": {
+      "name": "601872",
+      "score": 50,
+      "score_raw": 0,
+      "score_components": {
+        "positive_weight_sum": 0,
+        "negative_weight_sum": 0,
+        "news_effective_count": 4,
+        "news_dropped_count": 0
+      },
+      "signal": "⚪ No Trade (微多)",
+      "strategy": "情绪轻微偏多，信号不足，以观望为主",
+      "suitable_for": "观望",
+      "confidence": "低",
+      "patterns": [],
+      "positive_factors": [],
+      "negative_factors": [],
+      "news_count": 4,
+      "news_dropped": 0,
+      "performance": {
+        "list_fetch_ms": 5212,
+        "candidate_filter_ms": 0,
+        "enrichment_ms": 4560,
+        "raw_news_count": 40,
+        "raw_research_count": 10,
+        "candidate_news_count": 4,
+        "candidate_research_count": 0,
+        "enriched_news_count": 4,
+        "enriched_research_count": 0,
+        "candidate_reasons": {
+          "news": {
+            "no-subject-mention": 18,
+            "noise:\\d{1,2}月\\d{1,2}日(快速上涨|快速回调|涨停|": 1,
+            "dedup": 0,
+            "out_of_window": 17
+          },
+          "research": {
+            "dedup": 0,
+            "out_of_window": 10
+          }
+        },
+        "date_filter_ms": 0,
+        "relevance_ms": 0,
+        "llm_ms": 1,
+        "scoring_ms": 0
+      },
+      "top_news": [
+        {
+          "date": "2026-07-29",
+          "title": "招商轮船:招商轮船第八届董事会第一次会议决议公告",
+          "content": "",
+          "type": "行业",
+          "sentiment": 0,
+          "weight": 1,
+          "final_weight": 0.54,
+          "source_authority": 4.5,
+          "recency_factor": 0.6,
+          "source": "东方财富公告",
+          "llm_reviewed": true,
+          "llm_confidence": 0.1,
+          "llm_is_real_catalyst": false,
+          "llm_reasoning": "董事会决议公告无实质内容"
+        },
+        {
+          "date": "2026-07-29",
+          "title": "招商轮船:北京市君合(深圳)律师事务所关于招商轮船2026年第一次临时股东会的法律意见书",
+          "content": "",
+          "type": "行业",
+          "sentiment": 0,
+          "weight": 1,
+          "final_weight": 0.54,
+          "source_authority": 4.5,
+          "recency_factor": 0.6,
+          "source": "东方财富公告",
+          "llm_reviewed": true,
+          "llm_confidence": 0.1,
+          "llm_is_real_catalyst": false,
+          "llm_reasoning": "法律意见书仅程序性文件"
+        },
+        {
+          "date": "2026-07-29",
+          "title": "招商轮船:招商轮船2026年第一次临时股东会决议公告",
+          "content": "",
+          "type": "行业",
+          "sentiment": 0,
+          "weight": 1,
+          "final_weight": 0.54,
+          "source_authority": 4.5,
+          "recency_factor": 0.6,
+          "source": "东方财富公告",
+          "llm_reviewed": true,
+          "llm_confidence": 0.1,
+          "llm_is_real_catalyst": false,
+          "llm_reasoning": "股东会决议公告无实质内容"
+        },
+        {
+          "date": "2026-07-27",
+          "title": "招商轮船:投资者关系活动记录表-20260727v3",
+          "content": "",
+          "type": "行业",
+          "sentiment": 0,
+          "weight": 1,
+          "final_weight": 0.5,
+          "source_authority": 4.5,
+          "recency_factor": 0.42,
+          "source": "东方财富公告",
+          "llm_reviewed": true,
+          "llm_confidence": 0.1,
+          "llm_is_real_catalyst": false,
+          "llm_reasoning": "投资者关系记录表内容未知"
+        }
+      ]
+    },
+    "SZSE:002261": {
+      "name": "002261",
+      "score": 50,
+      "score_raw": 0,
+      "score_components": {
+        "positive_weight_sum": 0,
+        "negative_weight_sum": 0
+      },
+      "signal": "⚪ No Trade (无数据)",
+      "strategy": "近期无相关有效新闻",
+      "suitable_for": "观望",
+      "confidence": "-",
+      "patterns": [],
+      "positive_factors": [],
+      "negative_factors": [],
+      "news_count": 0,
+      "news_dropped": 0,
+      "performance": {
+        "list_fetch_ms": 4077,
+        "candidate_filter_ms": 0,
+        "enrichment_ms": 0,
+        "raw_news_count": 40,
+        "raw_research_count": 10,
+        "candidate_news_count": 0,
+        "candidate_research_count": 0,
+        "enriched_news_count": 0,
+        "enriched_research_count": 0,
+        "candidate_reasons": {
+          "news": {
+            "no-subject-mention": 11,
+            "noise:\\d{1,2}月\\d{1,2}日(快速上涨|快速回调|涨停|": 1,
+            "dedup": 0,
+            "out_of_window": 28
+          },
+          "research": {
+            "dedup": 0,
+            "out_of_window": 10
+          }
+        },
+        "date_filter_ms": 0,
+        "relevance_ms": 0,
+        "llm_ms": 0,
+        "scoring_ms": 0
+      },
+      "top_news": []
+    },
+    "SZSE:300718": {
+      "name": "300718",
+      "score": 50,
+      "score_raw": 0,
+      "score_components": {
+        "positive_weight_sum": 0,
+        "negative_weight_sum": 0
+      },
+      "signal": "⚪ No Trade (无数据)",
+      "strategy": "近期无相关有效新闻",
+      "suitable_for": "观望",
+      "confidence": "-",
+      "patterns": [],
+      "positive_factors": [],
+      "negative_factors": [],
+      "news_count": 0,
+      "news_dropped": 0,
+      "performance": {
+        "list_fetch_ms": 4741,
+        "candidate_filter_ms": 0,
+        "enrichment_ms": 0,
+        "raw_news_count": 40,
+        "raw_research_count": 10,
+        "candidate_news_count": 0,
+        "candidate_research_count": 0,
+        "enriched_news_count": 0,
+        "enriched_research_count": 0,
+        "candidate_reasons": {
+          "news": {
+            "no-subject-mention": 11,
+            "noise:\\d{1,2}月\\d{1,2}日(快速上涨|快速回调|涨停|": 2,
+            "noise:融资净(买入|卖出)": 2,
+            "dedup": 0,
+            "out_of_window": 25
+          },
+          "research": {
+            "dedup": 0,
+            "out_of_window": 10
+          }
+        },
+        "date_filter_ms": 0,
+        "relevance_ms": 0,
+        "llm_ms": 0,
+        "scoring_ms": 0
+      },
+      "top_news": []
+    },
+    "SSE:603638": {
+      "name": "603638",
+      "score": 50,
+      "score_raw": 0,
+      "score_components": {
+        "positive_weight_sum": 0,
+        "negative_weight_sum": 0,
+        "news_effective_count": 1,
+        "news_dropped_count": 0
+      },
+      "signal": "⚪ No Trade (微多)",
+      "strategy": "情绪轻微偏多，信号不足，以观望为主",
+      "suitable_for": "观望",
+      "confidence": "低",
+      "patterns": [],
+      "positive_factors": [],
+      "negative_factors": [],
+      "news_count": 1,
+      "news_dropped": 0,
+      "performance": {
+        "list_fetch_ms": 4776,
+        "candidate_filter_ms": 0,
+        "enrichment_ms": 4287,
+        "raw_news_count": 40,
+        "raw_research_count": 10,
+        "candidate_news_count": 1,
+        "candidate_research_count": 0,
+        "enriched_news_count": 1,
+        "enriched_research_count": 0,
+        "candidate_reasons": {
+          "news": {
+            "no-subject-mention": 6,
+            "dedup": 0,
+            "out_of_window": 33
+          },
+          "research": {
+            "dedup": 0,
+            "out_of_window": 10
+          }
+        },
+        "date_filter_ms": 0,
+        "relevance_ms": 0,
+        "llm_ms": 0,
+        "scoring_ms": 0
+      },
+      "top_news": [
+        {
+          "date": "2026-07-28",
+          "title": "艾迪精密:艾迪精密关于公司持股5%以上股东股份补充质押的公告",
+          "content": "",
+          "type": "行业",
+          "sentiment": 0,
+          "weight": 2,
+          "final_weight": 2.25,
+          "source_authority": 4.5,
+          "recency_factor": 0.5,
+          "source": "东方财富公告",
+          "llm_reviewed": true,
+          "llm_confidence": 0.5,
+          "llm_is_real_catalyst": true,
+          "llm_reasoning": "补充质押公告，非重大行业催化"
+        }
+      ]
+    },
+    "SZSE:002409": {
+      "name": "002409",
+      "score": 50,
+      "score_raw": 0,
+      "score_components": {
+        "positive_weight_sum": 0,
+        "negative_weight_sum": 0,
+        "news_effective_count": 3,
+        "news_dropped_count": 0
+      },
+      "signal": "⚪ No Trade (微多)",
+      "strategy": "情绪轻微偏多，信号不足，以观望为主",
+      "suitable_for": "观望",
+      "confidence": "低",
+      "patterns": [],
+      "positive_factors": [],
+      "negative_factors": [],
+      "news_count": 3,
+      "news_dropped": 0,
+      "performance": {
+        "list_fetch_ms": 4921,
+        "candidate_filter_ms": 0,
+        "enrichment_ms": 4830,
+        "raw_news_count": 40,
+        "raw_research_count": 10,
+        "candidate_news_count": 3,
+        "candidate_research_count": 0,
+        "enriched_news_count": 3,
+        "enriched_research_count": 0,
+        "candidate_reasons": {
+          "news": {
+            "no-subject-mention": 12,
+            "noise:龙虎榜|大宗交易|盘口异动": 2,
+            "noise:开盘价|收盘价": 2,
+            "noise:\\d{1,2}月\\d{1,2}日(快速上涨|快速回调|涨停|": 2,
+            "noise:融资净(买入|卖出)": 2,
+            "dedup": 0,
+            "out_of_window": 17
+          },
+          "research": {
+            "dedup": 0,
+            "out_of_window": 10
+          }
+        },
+        "date_filter_ms": 0,
+        "relevance_ms": 0,
+        "llm_ms": 0,
+        "scoring_ms": 0
+      },
+      "top_news": [
+        {
+          "date": "2026-08-01",
+          "title": "雅克科技:关于公司股票交易异常波动的公告",
+          "content": "",
+          "type": "行业",
+          "sentiment": 0,
+          "weight": 1,
+          "final_weight": 0.9,
+          "source_authority": 4.5,
+          "recency_factor": 1,
+          "source": "东方财富公告",
+          "llm_reviewed": true,
+          "llm_confidence": 0.3,
+          "llm_is_real_catalyst": false,
+          "llm_reasoning": "股价异动自查公告无实质内容"
+        },
+        {
+          "date": "2026-07-29",
+          "title": "雅克科技:关于三级子公司向其参股公司提供财务资助的公告",
+          "content": "",
+          "type": "行业",
+          "sentiment": 0,
+          "weight": 1,
+          "final_weight": 0.54,
+          "source_authority": 4.5,
+          "recency_factor": 0.6,
+          "source": "东方财富公告",
+          "llm_reviewed": true,
+          "llm_confidence": 0.3,
+          "llm_is_real_catalyst": false,
+          "llm_reasoning": "三级子公司财务资助属内部事项"
+        },
+        {
+          "date": "2026-07-29",
+          "title": "雅克科技:第七届董事会第三次会议决议公告",
+          "content": "",
+          "type": "行业",
+          "sentiment": 0,
+          "weight": 1,
+          "final_weight": 0.54,
+          "source_authority": 4.5,
+          "recency_factor": 0.6,
+          "source": "东方财富公告",
+          "llm_reviewed": true,
+          "llm_confidence": 0.3,
+          "llm_is_real_catalyst": false,
+          "llm_reasoning": "董事会决议公告无具体内容披露"
+        }
+      ]
+    },
+    "SZSE:300760": {
+      "name": "300760",
+      "score": 50,
+      "score_raw": 0,
+      "score_components": {
+        "positive_weight_sum": 0,
+        "negative_weight_sum": 0
+      },
+      "signal": "⚪ No Trade (无数据)",
+      "strategy": "近期无相关有效新闻",
+      "suitable_for": "观望",
+      "confidence": "-",
+      "patterns": [],
+      "positive_factors": [],
+      "negative_factors": [],
+      "news_count": 0,
+      "news_dropped": 0,
+      "performance": {
+        "list_fetch_ms": 1170,
+        "candidate_filter_ms": 0,
+        "enrichment_ms": 0,
+        "raw_news_count": 40,
+        "raw_research_count": 10,
+        "candidate_news_count": 0,
+        "candidate_research_count": 0,
+        "enriched_news_count": 0,
+        "enriched_research_count": 0,
+        "candidate_reasons": {
+          "news": {
+            "no-subject-mention": 10,
+            "noise:龙虎榜|大宗交易|盘口异动": 3,
+            "dedup": 0,
+            "out_of_window": 27
+          },
+          "research": {
+            "dedup": 0,
+            "out_of_window": 10
+          }
+        },
+        "date_filter_ms": 0,
+        "relevance_ms": 0,
+        "llm_ms": 0,
+        "scoring_ms": 0
+      },
+      "top_news": []
+    },
+    "SZSE:300331": {
+      "name": "300331",
+      "score": 50,
+      "score_raw": 0,
+      "score_components": {
+        "positive_weight_sum": 0,
+        "negative_weight_sum": 0
+      },
+      "signal": "⚪ No Trade (无数据)",
+      "strategy": "近期无相关有效新闻",
+      "suitable_for": "观望",
+      "confidence": "-",
+      "patterns": [],
+      "positive_factors": [],
+      "negative_factors": [],
+      "news_count": 0,
+      "news_dropped": 0,
+      "performance": {
+        "list_fetch_ms": 1536,
+        "candidate_filter_ms": 0,
+        "enrichment_ms": 0,
+        "raw_news_count": 40,
+        "raw_research_count": 3,
+        "candidate_news_count": 0,
+        "candidate_research_count": 0,
+        "enriched_news_count": 0,
+        "enriched_research_count": 0,
+        "candidate_reasons": {
+          "news": {
+            "noise:\\d{1,2}月\\d{1,2}日(快速上涨|快速回调|涨停|": 4,
+            "no-subject-mention": 13,
+            "noise:融资净(买入|卖出)": 2,
+            "dedup": 0,
+            "out_of_window": 21
+          },
+          "research": {
+            "dedup": 0,
+            "out_of_window": 3
+          }
+        },
+        "date_filter_ms": 0,
+        "relevance_ms": 0,
+        "llm_ms": 0,
+        "scoring_ms": 0
+      },
+      "top_news": []
+    },
+    "SZSE:300206": {
+      "name": "300206",
+      "score": 50,
+      "score_raw": 0,
+      "score_components": {
+        "positive_weight_sum": 0,
+        "negative_weight_sum": 0
+      },
+      "signal": "⚪ No Trade (无数据)",
+      "strategy": "近期无相关有效新闻",
+      "suitable_for": "观望",
+      "confidence": "-",
+      "patterns": [],
+      "positive_factors": [],
+      "negative_factors": [],
+      "news_count": 0,
+      "news_dropped": 0,
+      "performance": {
+        "list_fetch_ms": 5590,
+        "candidate_filter_ms": 0,
+        "enrichment_ms": 0,
+        "raw_news_count": 40,
+        "raw_research_count": 10,
+        "candidate_news_count": 0,
+        "candidate_research_count": 0,
+        "enriched_news_count": 0,
+        "enriched_research_count": 0,
+        "candidate_reasons": {
+          "news": {
+            "dedup": 0,
+            "out_of_window": 40
+          },
+          "research": {
+            "dedup": 0,
+            "out_of_window": 10
+          }
+        },
+        "date_filter_ms": 0,
+        "relevance_ms": 0,
+        "llm_ms": 0,
+        "scoring_ms": 0
+      },
+      "top_news": []
+    },
+    "SSE:603259": {
+      "name": "603259",
+      "score": 50,
+      "score_raw": 0,
+      "score_components": {
+        "positive_weight_sum": 0,
+        "negative_weight_sum": 0
+      },
+      "signal": "⚪ No Trade (无数据)",
+      "strategy": "近期无相关有效新闻",
+      "suitable_for": "观望",
+      "confidence": "-",
+      "patterns": [],
+      "positive_factors": [],
+      "negative_factors": [],
+      "news_count": 0,
+      "news_dropped": 0,
+      "performance": {
+        "list_fetch_ms": 5700,
+        "candidate_filter_ms": 0,
+        "enrichment_ms": 0,
+        "raw_news_count": 40,
+        "raw_research_count": 10,
+        "candidate_news_count": 0,
+        "candidate_research_count": 0,
+        "enriched_news_count": 0,
+        "enriched_research_count": 0,
+        "candidate_reasons": {
+          "news": {
+            "noise:融资净(买入|卖出)": 2,
+            "no-subject-mention": 13,
+            "noise:龙虎榜|大宗交易|盘口异动": 3,
+            "noise:\\d{1,2}月\\d{1,2}日(快速上涨|快速回调|涨停|": 1,
+            "dedup": 0,
+            "out_of_window": 21
+          },
+          "research": {
+            "dedup": 0,
+            "out_of_window": 10
+          }
+        },
+        "date_filter_ms": 0,
+        "relevance_ms": 0,
+        "llm_ms": 0,
+        "scoring_ms": 0
+      },
+      "top_news": []
+    },
+    "SSE:600732": {
+      "name": "600732",
+      "score": 50,
+      "score_raw": 0,
+      "score_components": {
+        "positive_weight_sum": 0,
+        "negative_weight_sum": 0
+      },
+      "signal": "⚪ No Trade (无数据)",
+      "strategy": "近期无相关有效新闻",
+      "suitable_for": "观望",
+      "confidence": "-",
+      "patterns": [],
+      "positive_factors": [],
+      "negative_factors": [],
+      "news_count": 0,
+      "news_dropped": 0,
+      "performance": {
+        "list_fetch_ms": 5439,
+        "candidate_filter_ms": 0,
+        "enrichment_ms": 0,
+        "raw_news_count": 40,
+        "raw_research_count": 10,
+        "candidate_news_count": 0,
+        "candidate_research_count": 0,
+        "enriched_news_count": 0,
+        "enriched_research_count": 0,
+        "candidate_reasons": {
+          "news": {
+            "no-subject-mention": 7,
+            "noise:融资净(买入|卖出)": 3,
+            "noise:\\d{1,2}月\\d{1,2}日(快速上涨|快速回调|涨停|": 1,
+            "dedup": 0,
+            "out_of_window": 29
+          },
+          "research": {
+            "dedup": 0,
+            "out_of_window": 10
+          }
+        },
+        "date_filter_ms": 0,
+        "relevance_ms": 0,
+        "llm_ms": 0,
+        "scoring_ms": 0
+      },
+      "top_news": []
+    },
+    "SZSE:300611": {
+      "name": "300611",
+      "score": 50,
+      "score_raw": 0,
+      "score_components": {
+        "positive_weight_sum": 0,
+        "negative_weight_sum": 0
+      },
+      "signal": "⚪ No Trade (无数据)",
+      "strategy": "近期无相关有效新闻",
+      "suitable_for": "观望",
+      "confidence": "-",
+      "patterns": [],
+      "positive_factors": [],
+      "negative_factors": [],
+      "news_count": 0,
+      "news_dropped": 0,
+      "performance": {
+        "list_fetch_ms": 4154,
+        "candidate_filter_ms": 0,
+        "enrichment_ms": 0,
+        "raw_news_count": 40,
+        "raw_research_count": 8,
+        "candidate_news_count": 0,
+        "candidate_research_count": 0,
+        "enriched_news_count": 0,
+        "enriched_research_count": 0,
+        "candidate_reasons": {
+          "news": {
+            "dedup": 0,
+            "out_of_window": 40
+          },
+          "research": {
+            "dedup": 0,
+            "out_of_window": 8
+          }
+        },
+        "date_filter_ms": 0,
+        "relevance_ms": 0,
+        "llm_ms": 0,
+        "scoring_ms": 0
+      },
+      "top_news": []
+    },
+    "SSE:603306": {
+      "name": "603306",
+      "score": 50,
+      "score_raw": 0,
+      "score_components": {
+        "positive_weight_sum": 0,
+        "negative_weight_sum": 0
+      },
+      "signal": "⚪ No Trade (无数据)",
+      "strategy": "近期无相关有效新闻",
+      "suitable_for": "观望",
+      "confidence": "-",
+      "patterns": [],
+      "positive_factors": [],
+      "negative_factors": [],
+      "news_count": 0,
+      "news_dropped": 0,
+      "performance": {
+        "list_fetch_ms": 1259,
+        "candidate_filter_ms": 0,
+        "enrichment_ms": 0,
+        "raw_news_count": 40,
+        "raw_research_count": 10,
+        "candidate_news_count": 0,
+        "candidate_research_count": 0,
+        "enriched_news_count": 0,
+        "enriched_research_count": 0,
+        "candidate_reasons": {
+          "news": {
+            "no-subject-mention": 16,
+            "noise:\\d{1,2}月\\d{1,2}日(快速上涨|快速回调|涨停|": 3,
+            "dedup": 0,
+            "out_of_window": 21
+          },
+          "research": {
+            "dedup": 0,
+            "out_of_window": 10
+          }
+        },
+        "date_filter_ms": 0,
+        "relevance_ms": 0,
+        "llm_ms": 0,
+        "scoring_ms": 0
+      },
+      "top_news": []
+    },
+    "SZSE:000799": {
+      "name": "000799",
+      "score": 50,
+      "score_raw": 0,
+      "score_components": {
+        "positive_weight_sum": 0,
+        "negative_weight_sum": 0
+      },
+      "signal": "⚪ No Trade (无数据)",
+      "strategy": "近期无相关有效新闻",
+      "suitable_for": "观望",
+      "confidence": "-",
+      "patterns": [],
+      "positive_factors": [],
+      "negative_factors": [],
+      "news_count": 0,
+      "news_dropped": 0,
+      "performance": {
+        "list_fetch_ms": 1994,
+        "candidate_filter_ms": 0,
+        "enrichment_ms": 0,
+        "raw_news_count": 40,
+        "raw_research_count": 10,
+        "candidate_news_count": 0,
+        "candidate_research_count": 0,
+        "enriched_news_count": 0,
+        "enriched_research_count": 0,
+        "candidate_reasons": {
+          "news": {
+            "no-subject-mention": 17,
+            "noise:融资净(买入|卖出)": 1,
+            "noise:\\d{1,2}月\\d{1,2}日(快速上涨|快速回调|涨停|": 2,
+            "dedup": 0,
+            "out_of_window": 20
+          },
+          "research": {
+            "dedup": 0,
+            "out_of_window": 10
+          }
+        },
+        "date_filter_ms": 0,
+        "relevance_ms": 0,
+        "llm_ms": 0,
+        "scoring_ms": 0
+      },
+      "top_news": []
+    },
+    "SSE:603203": {
+      "name": "快克智能",
+      "score": 50,
+      "score_raw": 0,
+      "score_components": {
+        "positive_weight_sum": 2,
+        "negative_weight_sum": 2,
+        "news_effective_count": 13,
+        "news_dropped_count": 0
+      },
+      "signal": "⚪ No Trade (微多)",
+      "strategy": "情绪轻微偏多，信号不足，以观望为主",
+      "suitable_for": "观望",
+      "confidence": "低",
+      "patterns": [],
+      "positive_factors": [
+        "[行业|w0.5] 快克智能7月30日快速反弹",
+        "[行业|w0.5] 快克智能7月29日快速反弹",
+        "[行业|w0.5] 快克智能7月28日快速反弹"
+      ],
+      "negative_factors": [
+        "[行业|w0.5] 快克智能7月30日盘中跌幅达5%",
+        "[行业|w0.5] 快克智能7月29日盘中跌幅达5%",
+        "[行业|w0.5] 快克智能7月29日加速下跌"
+      ],
+      "news_count": 13,
+      "news_dropped": 0,
+      "performance": {
+        "list_fetch_ms": 2126,
+        "candidate_filter_ms": 0,
+        "enrichment_ms": 31773,
+        "raw_news_count": 40,
+        "raw_research_count": 10,
+        "candidate_news_count": 13,
+        "candidate_research_count": 0,
+        "enriched_news_count": 13,
+        "enriched_research_count": 0,
+        "candidate_reasons": {
+          "news": {
+            "noise:\\d{1,2}月\\d{1,2}日(快速上涨|快速回调|涨停|": 1,
+            "dedup": 0,
+            "out_of_window": 26
+          },
+          "research": {
+            "dedup": 0,
+            "out_of_window": 10
+          }
+        },
+        "date_filter_ms": 0,
+        "relevance_ms": 0,
+        "llm_ms": 64415,
+        "scoring_ms": 0
+      },
+      "top_news": [
+        {
+          "date": "2026-07-31 14:43:44",
+          "title": "快克智能7月31日打开涨停",
+          "content": "以下是快克智能在北京时间7月31日14:43分盘口异动快照：\n\n　　在东方财富看资讯行情，选东方财富证券一站式开户交易>>\n\n \n\n  7月31日14点43分，快克智能盘中打开涨停，现报38.11元，成交2.94亿元，换手率2.36%。该股之前于9点46分涨停。\n注：以上信息仅供参考，不对您构成任何投资建议。",
+          "type": "行业",
+          "sentiment": 0,
+          "weight": 1,
+          "final_weight": 1.02,
+          "source_authority": 3,
+          "recency_factor": 0.85,
+          "source": "东方财富资讯",
+          "llm_reviewed": true,
+          "llm_confidence": 0.5,
+          "llm_is_real_catalyst": false,
+          "llm_reasoning": "打开涨停，盘口异动无催化"
+        },
+        {
+          "date": "2026-07-31 10:08:40",
+          "title": "快克智能7月31日盘中涨停",
+          "content": "",
+          "type": "行业",
+          "sentiment": 0,
+          "weight": 1,
+          "final_weight": 0.51,
+          "source_authority": 3,
+          "recency_factor": 0.85,
+          "source": "东方财富资讯",
+          "llm_reviewed": true,
+          "llm_confidence": 0.3,
+          "llm_is_real_catalyst": false,
+          "llm_reasoning": "盘中涨停，无基本面信息"
+        },
+        {
+          "date": "2026-07-30 13:08:45",
+          "title": "快克智能7月30日快速反弹",
+          "content": "",
+          "type": "行业",
+          "sentiment": 1,
+          "weight": 1,
+          "final_weight": 0.5,
+          "source_authority": 3,
+          "recency_factor": 0.72,
+          "source": "东方财富资讯",
+          "llm_reviewed": true,
+          "llm_confidence": 0.3,
+          "llm_is_real_catalyst": false,
+          "llm_reasoning": "快速反弹，盘面波动无催化"
+        },
+        {
+          "date": "2026-07-30 10:32:05",
+          "title": "快克智能7月30日盘中跌幅达5%",
+          "content": "",
+          "type": "行业",
+          "sentiment": -1,
+          "weight": 1,
+          "final_weight": 0.5,
+          "source_authority": 3,
+          "recency_factor": 0.72,
+          "source": "东方财富资讯",
+          "llm_reviewed": true,
+          "llm_confidence": 0.4,
+          "llm_is_real_catalyst": false,
+          "llm_reasoning": "盘中跌5%，盘面异动无催化"
+        },
+        {
+          "date": "2026-07-30",
+          "title": "快克智能:快克智能关于完成注册资本工商变更登记的公告",
+          "content": "",
+          "type": "政策",
+          "sentiment": 0,
+          "weight": 2,
+          "final_weight": 1.56,
+          "source_authority": 4.5,
+          "recency_factor": 0.72,
+          "source": "东方财富公告",
+          "llm_reviewed": true,
+          "llm_confidence": 0.6,
+          "llm_is_real_catalyst": false,
+          "llm_reasoning": "完成工商变更登记，无基本面影响"
+        }
+      ]
+    },
+    "SZSE:002843": {
+      "name": "002843",
+      "score": 50,
+      "score_raw": 0,
+      "score_components": {
+        "positive_weight_sum": 0,
+        "negative_weight_sum": 0
+      },
+      "signal": "⚪ No Trade (无数据)",
+      "strategy": "近期无相关有效新闻",
+      "suitable_for": "观望",
+      "confidence": "-",
+      "patterns": [],
+      "positive_factors": [],
+      "negative_factors": [],
+      "news_count": 0,
+      "news_dropped": 0,
+      "performance": {
+        "list_fetch_ms": 7238,
+        "candidate_filter_ms": 0,
+        "enrichment_ms": 0,
+        "raw_news_count": 40,
+        "raw_research_count": 5,
+        "candidate_news_count": 0,
+        "candidate_research_count": 0,
+        "enriched_news_count": 0,
+        "enriched_research_count": 0,
+        "candidate_reasons": {
+          "news": {
+            "no-subject-mention": 10,
+            "noise:融资净(买入|卖出)": 1,
+            "dedup": 0,
+            "out_of_window": 29
+          },
+          "research": {
+            "dedup": 0,
+            "out_of_window": 5
+          }
+        },
+        "date_filter_ms": 0,
+        "relevance_ms": 0,
+        "llm_ms": 0,
+        "scoring_ms": 0
+      },
+      "top_news": []
+    },
+    "SZSE:300007": {
+      "name": "300007",
+      "score": 50,
+      "score_raw": 0,
+      "score_components": {
+        "positive_weight_sum": 0,
+        "negative_weight_sum": 0
+      },
+      "signal": "⚪ No Trade (无数据)",
+      "strategy": "近期无相关有效新闻",
+      "suitable_for": "观望",
+      "confidence": "-",
+      "patterns": [],
+      "positive_factors": [],
+      "negative_factors": [],
+      "news_count": 0,
+      "news_dropped": 0,
+      "performance": {
+        "list_fetch_ms": 3507,
+        "candidate_filter_ms": 0,
+        "enrichment_ms": 0,
+        "raw_news_count": 40,
+        "raw_research_count": 10,
+        "candidate_news_count": 0,
+        "candidate_research_count": 0,
+        "enriched_news_count": 0,
+        "enriched_research_count": 0,
+        "candidate_reasons": {
+          "news": {
+            "no-subject-mention": 8,
+            "noise:\\d{1,2}月\\d{1,2}日(快速上涨|快速回调|涨停|": 2,
+            "dedup": 0,
+            "out_of_window": 30
+          },
+          "research": {
+            "dedup": 0,
+            "out_of_window": 10
+          }
+        },
+        "date_filter_ms": 0,
+        "relevance_ms": 0,
+        "llm_ms": 0,
+        "scoring_ms": 0
+      },
+      "top_news": []
+    },
+    "SSE:603667": {
+      "name": "603667",
+      "score": 50,
+      "score_raw": 0,
+      "score_components": {
+        "positive_weight_sum": 0,
+        "negative_weight_sum": 0
+      },
+      "signal": "⚪ No Trade (无数据)",
+      "strategy": "近期无相关有效新闻",
+      "suitable_for": "观望",
+      "confidence": "-",
+      "patterns": [],
+      "positive_factors": [],
+      "negative_factors": [],
+      "news_count": 0,
+      "news_dropped": 0,
+      "performance": {
+        "list_fetch_ms": 3096,
+        "candidate_filter_ms": 0,
+        "enrichment_ms": 0,
+        "raw_news_count": 40,
+        "raw_research_count": 10,
+        "candidate_news_count": 0,
+        "candidate_research_count": 0,
+        "enriched_news_count": 0,
+        "enriched_research_count": 0,
+        "candidate_reasons": {
+          "news": {
+            "no-subject-mention": 9,
+            "noise:\\d{1,2}月\\d{1,2}日(快速上涨|快速回调|涨停|": 1,
+            "noise:融资净(买入|卖出)": 1,
+            "dedup": 0,
+            "out_of_window": 29
+          },
+          "research": {
+            "dedup": 0,
+            "out_of_window": 10
+          }
+        },
+        "date_filter_ms": 0,
+        "relevance_ms": 0,
+        "llm_ms": 0,
+        "scoring_ms": 0
+      },
+      "top_news": []
+    },
+    "SSE:000062": {
+      "name": "000062",
+      "score": 50,
+      "score_raw": 0,
+      "score_components": {
+        "positive_weight_sum": 0,
+        "negative_weight_sum": 0
+      },
+      "signal": "⚪ No Trade (无数据)",
+      "strategy": "近期无相关有效新闻",
+      "suitable_for": "观望",
+      "confidence": "-",
+      "patterns": [],
+      "positive_factors": [],
+      "negative_factors": [],
+      "news_count": 0,
+      "news_dropped": 0,
+      "performance": {
+        "list_fetch_ms": 6756,
+        "candidate_filter_ms": 0,
+        "enrichment_ms": 0,
+        "raw_news_count": 40,
+        "raw_research_count": 10,
+        "candidate_news_count": 0,
+        "candidate_research_count": 0,
+        "enriched_news_count": 0,
+        "enriched_research_count": 0,
+        "candidate_reasons": {
+          "news": {
+            "no-subject-mention": 20,
+            "dedup": 0,
+            "out_of_window": 20
+          },
+          "research": {
+            "dedup": 0,
+            "out_of_window": 10
+          }
+        },
+        "date_filter_ms": 0,
+        "relevance_ms": 0,
+        "llm_ms": 0,
+        "scoring_ms": 0
+      },
+      "top_news": []
+    },
+    "SZSE:301000": {
+      "name": "301000",
+      "score": 50,
+      "score_raw": 0,
+      "score_components": {
+        "positive_weight_sum": 1.3,
+        "negative_weight_sum": 1.3,
+        "news_effective_count": 8,
+        "news_dropped_count": 0
+      },
+      "signal": "⚪ No Trade (微多)",
+      "strategy": "情绪轻微偏多，信号不足，以观望为主",
+      "suitable_for": "观望",
+      "confidence": "低",
+      "patterns": [],
+      "positive_factors": [
+        "[回购|w1.3] 肇民科技:关于2024年限制性股票激励计划首次授予部分第二个归属期归属条件成就的公告"
+      ],
+      "negative_factors": [
+        "[回购|w1.3] 肇民科技:关于作废2024年限制性股票激励计划部分已授予但尚未归属的限制性股票的公告"
+      ],
+      "news_count": 8,
+      "news_dropped": 0,
+      "performance": {
+        "list_fetch_ms": 5727,
+        "candidate_filter_ms": 0,
+        "enrichment_ms": 19286,
+        "raw_news_count": 40,
+        "raw_research_count": 2,
+        "candidate_news_count": 8,
+        "candidate_research_count": 0,
+        "enriched_news_count": 8,
+        "enriched_research_count": 0,
+        "candidate_reasons": {
+          "news": {
+            "no-subject-mention": 7,
+            "noise:融资净(买入|卖出)": 1,
+            "dedup": 0,
+            "out_of_window": 24
+          },
+          "research": {
+            "dedup": 0,
+            "out_of_window": 2
+          }
+        },
+        "date_filter_ms": 0,
+        "relevance_ms": 0,
+        "llm_ms": 0,
+        "scoring_ms": 0
+      },
+      "top_news": [
+        {
+          "date": "2026-07-29",
+          "title": "肇民科技:关于作废2024年限制性股票激励计划部分已授予但尚未归属的限制性股票的公告",
+          "content": "",
+          "type": "回购",
+          "sentiment": -1,
+          "weight": 1,
+          "final_weight": 1.3,
+          "source_authority": 4.5,
+          "recency_factor": 0.6,
+          "source": "东方财富公告",
+          "llm_reviewed": true,
+          "llm_confidence": 0.9,
+          "llm_is_real_catalyst": false,
+          "llm_reasoning": "部分限制性股票作废，可能暗示未达业绩条件"
+        },
+        {
+          "date": "2026-07-29",
+          "title": "肇民科技:北京德恒(杭州)律师事务所关于上海肇民新材料科技股份有限公司2024年限制性股票激励计划授予价格调整、第二个归属期归属条件成就暨部分限制性股票作废事项的法律意见",
+          "content": "",
+          "type": "回购",
+          "sentiment": 0,
+          "weight": 1,
+          "final_weight": 1.3,
+          "source_authority": 4.5,
+          "recency_factor": 0.6,
+          "source": "东方财富公告",
+          "llm_reviewed": true,
+          "llm_confidence": 0.85,
+          "llm_is_real_catalyst": false,
+          "llm_reasoning": "法律意见书，无实质影响"
+        },
+        {
+          "date": "2026-07-29",
+          "title": "肇民科技:第三届董事会第十一次会议决议公告",
+          "content": "",
+          "type": "回购",
+          "sentiment": 0,
+          "weight": 1,
+          "final_weight": 1.3,
+          "source_authority": 4.5,
+          "recency_factor": 0.6,
+          "source": "东方财富公告",
+          "llm_reviewed": true,
+          "llm_confidence": 0.5,
+          "llm_is_real_catalyst": false,
+          "llm_reasoning": "董事会决议内容未披露"
+        },
+        {
+          "date": "2026-07-29",
+          "title": "肇民科技:关于暂不向下修正肇民转债转股价格的公告",
+          "content": "",
+          "type": "政策",
+          "sentiment": 0,
+          "weight": 1,
+          "final_weight": 0.65,
+          "source_authority": 4.5,
+          "recency_factor": 0.6,
+          "source": "东方财富公告",
+          "llm_reviewed": true,
+          "llm_confidence": 0.4,
+          "llm_is_real_catalyst": false,
+          "llm_reasoning": "暂不下修转债，无直接催化"
+        },
+        {
+          "date": "2026-07-29",
+          "title": "肇民科技:董事会薪酬与考核委员会关于2024年限制性股票激励计划首次授予部分第二个归属期归属名单的核查意见",
+          "content": "",
+          "type": "回购",
+          "sentiment": 0,
+          "weight": 1,
+          "final_weight": 1.3,
+          "source_authority": 4.5,
+          "recency_factor": 0.6,
+          "source": "东方财富公告",
+          "llm_reviewed": true,
+          "llm_confidence": 0.85,
+          "llm_is_real_catalyst": false,
+          "llm_reasoning": "考核委员会核查意见"
+        }
+      ]
+    },
+    "SZSE:000858": {
+      "name": "000858",
+      "score": 50,
+      "score_raw": 0,
+      "score_components": {
+        "positive_weight_sum": 0,
+        "negative_weight_sum": 0,
+        "news_effective_count": 8,
+        "news_dropped_count": 0
+      },
+      "signal": "⚪ No Trade (微多)",
+      "strategy": "情绪轻微偏多，信号不足，以观望为主",
+      "suitable_for": "观望",
+      "confidence": "低",
+      "patterns": [],
+      "positive_factors": [],
+      "negative_factors": [],
+      "news_count": 8,
+      "news_dropped": 0,
+      "performance": {
+        "list_fetch_ms": 6118,
+        "candidate_filter_ms": 0,
+        "enrichment_ms": 18546,
+        "raw_news_count": 40,
+        "raw_research_count": 10,
+        "candidate_news_count": 8,
+        "candidate_research_count": 0,
+        "enriched_news_count": 8,
+        "enriched_research_count": 0,
+        "candidate_reasons": {
+          "news": {
+            "no-subject-mention": 20,
+            "dedup": 0,
+            "out_of_window": 12
+          },
+          "research": {
+            "dedup": 0,
+            "out_of_window": 10
+          }
+        },
+        "date_filter_ms": 0,
+        "relevance_ms": 0,
+        "llm_ms": 0,
+        "scoring_ms": 0
+      },
+      "top_news": [
+        {
+          "date": "2026-07-29",
+          "title": "五粮液:第七届董事会2026年第10次会议决议公告",
+          "content": "",
+          "type": "政策",
+          "sentiment": 0,
+          "weight": 1,
+          "final_weight": 1.3,
+          "source_authority": 4.5,
+          "recency_factor": 0.6,
+          "source": "东方财富公告",
+          "llm_reviewed": true,
+          "llm_confidence": 0.8,
+          "llm_is_real_catalyst": false,
+          "llm_reasoning": "董事会会议决议，无实质影响"
+        },
+        {
+          "date": "2026-07-29",
+          "title": "五粮液:关于变更董事会秘书的公告",
+          "content": "",
+          "type": "政策",
+          "sentiment": 0,
+          "weight": 1,
+          "final_weight": 1.3,
+          "source_authority": 4.5,
+          "recency_factor": 0.6,
+          "source": "东方财富公告",
+          "llm_reviewed": true,
+          "llm_confidence": 0.8,
+          "llm_is_real_catalyst": false,
+          "llm_reasoning": "董事会秘书变更，正常人事调整"
+        },
+        {
+          "date": "2026-07-29",
+          "title": "五粮液:关于董事辞职的公告",
+          "content": "",
+          "type": "政策",
+          "sentiment": 0,
+          "weight": 1,
+          "final_weight": 1.3,
+          "source_authority": 4.5,
+          "recency_factor": 0.6,
+          "source": "东方财富公告",
+          "llm_reviewed": true,
+          "llm_confidence": 0.8,
+          "llm_is_real_catalyst": false,
+          "llm_reasoning": "董事辞职，正常人事变动"
+        },
+        {
+          "date": "2026-07-28",
+          "title": "五粮液:第七届董事会2026年第9次会议决议公告",
+          "content": "",
+          "type": "政策",
+          "sentiment": 0,
+          "weight": 1,
+          "final_weight": 1.08,
+          "source_authority": 4.5,
+          "recency_factor": 0.5,
+          "source": "东方财富公告",
+          "llm_reviewed": true,
+          "llm_confidence": 0.8,
+          "llm_is_real_catalyst": false,
+          "llm_reasoning": "董事会会议决议，解聘高管"
+        },
+        {
+          "date": "2026-07-28",
+          "title": "关于董事辞职的公告",
+          "content": "证券代码：000858 \t证券简称：五粮液 \t公告编号：2026/第 \t036 \t号\n宜宾五粮液股份有限公司\n关于董事辞职的公告\n本公司及董事会全体成员保证信息披露内容的真实、准确和完整，没有虚假\n记载、误导性陈述或重大遗漏。\n宜宾五粮液股份有限公司（以下简称公司）董事会近日收到董事\n肖浩先生的书面辞职报告。肖浩先生因工作变动，提请辞去公司第七\n届董事会董事、战略委员会委员职务（原定任期至公司第七届董事会\n任期届满之日止）。辞职后肖浩先生将不再担任公司及控股子公司任\n何职务。截至本公告披露日，肖浩先生未持有公司股份，不存在应当\n履行而未履行的承诺事项。\n根据《公司法》《深圳证券交易所上市公司自律监管指引第 \t1 \t号\n——主板上市公司规范运作》等相关法律法规以及《公司章程》的规\n定，肖浩先生的辞职不会导致公司董事会成员人数低于法定最低人数，\n不会导致公司董事会中兼任高级管理人员职务的董事以及由职工代\n表担任的董事超过公司董事总数的二分之一，不会导致公司董事会及\n专门委员会构成不符合法律法规规定，亦不会影响公司董事会的正常\n运作。肖浩先生的书面辞职报告自送达公司董事会之日起生效。\n肖浩先生自担任公司董事职务以来，恪尽职守,勤勉尽责，公司\n董事会对其为公司所作出的贡献表示衷心感谢。\n特此公告\n宜宾五粮液股份有限公司董事会\n2026 \t年 \t7 \t月 \t29 \t日\n\n-- 1 of 1 --",
+          "type": "政策",
+          "sentiment": 0,
+          "weight": 1,
+          "final_weight": 1.2,
+          "source_authority": 5,
+          "recency_factor": 0.5,
+          "source": "巨潮资讯",
+          "llm_reviewed": true,
+          "llm_confidence": 0.9,
+          "llm_is_real_catalyst": false,
+          "llm_reasoning": "董事辞职，因工作变动，无重大影响"
+        }
+      ]
+    },
+    "SZSE:300660": {
+      "name": "300660",
+      "score": 50,
+      "score_raw": 0,
+      "score_components": {
+        "positive_weight_sum": 0,
+        "negative_weight_sum": 0
+      },
+      "signal": "⚪ No Trade (无数据)",
+      "strategy": "近期无相关有效新闻",
+      "suitable_for": "观望",
+      "confidence": "-",
+      "patterns": [],
+      "positive_factors": [],
+      "negative_factors": [],
+      "news_count": 0,
+      "news_dropped": 0,
+      "performance": {
+        "list_fetch_ms": 4146,
+        "candidate_filter_ms": 0,
+        "enrichment_ms": 0,
+        "raw_news_count": 40,
+        "raw_research_count": 10,
+        "candidate_news_count": 0,
+        "candidate_research_count": 0,
+        "enriched_news_count": 0,
+        "enriched_research_count": 0,
+        "candidate_reasons": {
+          "news": {
+            "no-subject-mention": 8,
+            "noise:\\d{1,2}月\\d{1,2}日(快速上涨|快速回调|涨停|": 1,
+            "dedup": 0,
+            "out_of_window": 31
+          },
+          "research": {
+            "dedup": 0,
+            "out_of_window": 10
+          }
+        },
+        "date_filter_ms": 0,
+        "relevance_ms": 0,
+        "llm_ms": 0,
+        "scoring_ms": 0
+      },
+      "top_news": []
+    },
+    "SZSE:300503": {
+      "name": "300503",
+      "score": 50,
+      "score_raw": 0,
+      "score_components": {
+        "positive_weight_sum": 0,
+        "negative_weight_sum": 0,
+        "news_effective_count": 1,
+        "news_dropped_count": 0
+      },
+      "signal": "⚪ No Trade (微多)",
+      "strategy": "情绪轻微偏多，信号不足，以观望为主",
+      "suitable_for": "观望",
+      "confidence": "低",
+      "patterns": [],
+      "positive_factors": [],
+      "negative_factors": [],
+      "news_count": 1,
+      "news_dropped": 0,
+      "performance": {
+        "list_fetch_ms": 5627,
+        "candidate_filter_ms": 0,
+        "enrichment_ms": 8350,
+        "raw_news_count": 40,
+        "raw_research_count": 10,
+        "candidate_news_count": 1,
+        "candidate_research_count": 0,
+        "enriched_news_count": 1,
+        "enriched_research_count": 0,
+        "candidate_reasons": {
+          "news": {
+            "no-subject-mention": 18,
+            "noise:\\d{1,2}月\\d{1,2}日(快速上涨|快速回调|涨停|": 2,
+            "dedup": 0,
+            "out_of_window": 19
+          },
+          "research": {
+            "dedup": 0,
+            "out_of_window": 10
+          }
+        },
+        "date_filter_ms": 0,
+        "relevance_ms": 0,
+        "llm_ms": 0,
+        "scoring_ms": 0
+      },
+      "top_news": [
+        {
+          "date": "2026-08-01",
+          "title": "昊志机电:关于控股股东、实际控制人部分股份解除质押的公告",
+          "content": "",
+          "type": "回购",
+          "sentiment": 0,
+          "weight": 1,
+          "final_weight": 1.08,
+          "source_authority": 4.5,
+          "recency_factor": 1,
+          "source": "东方财富公告",
+          "llm_reviewed": true,
+          "llm_confidence": 0.4,
+          "llm_is_real_catalyst": false,
+          "llm_reasoning": "解除质押属股东行为，非可量化催化，中性"
+        }
+      ]
+    },
+    "SZSE:300394": {
+      "name": "300394",
+      "score": 50,
+      "score_raw": 0,
+      "score_components": {
+        "positive_weight_sum": 0,
+        "negative_weight_sum": 0
+      },
+      "signal": "⚪ No Trade (无数据)",
+      "strategy": "近期无相关有效新闻",
+      "suitable_for": "观望",
+      "confidence": "-",
+      "patterns": [],
+      "positive_factors": [],
+      "negative_factors": [],
+      "news_count": 0,
+      "news_dropped": 0,
+      "performance": {
+        "list_fetch_ms": 742,
+        "candidate_filter_ms": 0,
+        "enrichment_ms": 0,
+        "raw_news_count": 40,
+        "raw_research_count": 10,
+        "candidate_news_count": 0,
+        "candidate_research_count": 0,
+        "enriched_news_count": 0,
+        "enriched_research_count": 0,
+        "candidate_reasons": {
+          "news": {
+            "no-subject-mention": 19,
+            "noise:\\d{1,2}月\\d{1,2}日(快速上涨|快速回调|涨停|": 1,
+            "dedup": 0,
+            "out_of_window": 20
+          },
+          "research": {
+            "dedup": 0,
+            "out_of_window": 10
+          }
+        },
+        "date_filter_ms": 0,
+        "relevance_ms": 0,
+        "llm_ms": 0,
+        "scoring_ms": 0
+      },
+      "top_news": []
+    },
+    "SZSE:300354": {
+      "name": "300354",
+      "score": 50,
+      "score_raw": 0,
+      "score_components": {
+        "positive_weight_sum": 0,
+        "negative_weight_sum": 0
+      },
+      "signal": "⚪ No Trade (无数据)",
+      "strategy": "近期无相关有效新闻",
+      "suitable_for": "观望",
+      "confidence": "-",
+      "patterns": [],
+      "positive_factors": [],
+      "negative_factors": [],
+      "news_count": 0,
+      "news_dropped": 0,
+      "performance": {
+        "list_fetch_ms": 877,
+        "candidate_filter_ms": 0,
+        "enrichment_ms": 0,
+        "raw_news_count": 40,
+        "raw_research_count": 10,
+        "candidate_news_count": 0,
+        "candidate_research_count": 0,
+        "enriched_news_count": 0,
+        "enriched_research_count": 0,
+        "candidate_reasons": {
+          "news": {
+            "no-subject-mention": 1,
+            "dedup": 0,
+            "out_of_window": 39
+          },
+          "research": {
+            "dedup": 0,
+            "out_of_window": 10
+          }
+        },
+        "date_filter_ms": 0,
+        "relevance_ms": 0,
+        "llm_ms": 0,
+        "scoring_ms": 0
+      },
+      "top_news": []
+    },
+    "SZSE:000034": {
+      "name": "000034",
+      "score": 50,
+      "score_raw": 0,
+      "score_components": {
+        "positive_weight_sum": 0,
+        "negative_weight_sum": 0
+      },
+      "signal": "⚪ No Trade (无数据)",
+      "strategy": "近期无相关有效新闻",
+      "suitable_for": "观望",
+      "confidence": "-",
+      "patterns": [],
+      "positive_factors": [],
+      "negative_factors": [],
+      "news_count": 0,
+      "news_dropped": 0,
+      "performance": {
+        "list_fetch_ms": 844,
+        "candidate_filter_ms": 0,
+        "enrichment_ms": 0,
+        "raw_news_count": 40,
+        "raw_research_count": 10,
+        "candidate_news_count": 0,
+        "candidate_research_count": 0,
+        "enriched_news_count": 0,
+        "enriched_research_count": 0,
+        "candidate_reasons": {
+          "news": {
+            "no-subject-mention": 11,
+            "noise:\\d{1,2}月\\d{1,2}日(快速上涨|快速回调|涨停|": 1,
+            "noise:融资净(买入|卖出)": 1,
+            "dedup": 0,
+            "out_of_window": 27
+          },
+          "research": {
+            "dedup": 0,
+            "out_of_window": 10
+          }
+        },
+        "date_filter_ms": 0,
+        "relevance_ms": 0,
+        "llm_ms": 0,
+        "scoring_ms": 0
+      },
+      "top_news": []
+    },
+    "SZSE:002896": {
+      "name": "002896",
+      "score": 50,
+      "score_raw": 0,
+      "score_components": {
+        "positive_weight_sum": 0,
+        "negative_weight_sum": 0
+      },
+      "signal": "⚪ No Trade (无数据)",
+      "strategy": "近期无相关有效新闻",
+      "suitable_for": "观望",
+      "confidence": "-",
+      "patterns": [],
+      "positive_factors": [],
+      "negative_factors": [],
+      "news_count": 0,
+      "news_dropped": 0,
+      "performance": {
+        "list_fetch_ms": 935,
+        "candidate_filter_ms": 0,
+        "enrichment_ms": 0,
+        "raw_news_count": 40,
+        "raw_research_count": 10,
+        "candidate_news_count": 0,
+        "candidate_research_count": 0,
+        "enriched_news_count": 0,
+        "enriched_research_count": 0,
+        "candidate_reasons": {
+          "news": {
+            "no-subject-mention": 15,
+            "noise:\\d{1,2}月\\d{1,2}日(快速上涨|快速回调|涨停|": 1,
+            "noise:融资净(买入|卖出)": 2,
+            "dedup": 0,
+            "out_of_window": 22
+          },
+          "research": {
+            "dedup": 0,
+            "out_of_window": 10
+          }
+        },
+        "date_filter_ms": 0,
+        "relevance_ms": 0,
+        "llm_ms": 0,
+        "scoring_ms": 0
+      },
+      "top_news": []
+    },
+    "SZSE:300953": {
+      "name": "300953",
+      "score": 50,
+      "score_raw": 0,
+      "score_components": {
+        "positive_weight_sum": 0,
+        "negative_weight_sum": 0
+      },
+      "signal": "⚪ No Trade (无数据)",
+      "strategy": "近期无相关有效新闻",
+      "suitable_for": "观望",
+      "confidence": "-",
+      "patterns": [],
+      "positive_factors": [],
+      "negative_factors": [],
+      "news_count": 0,
+      "news_dropped": 0,
+      "performance": {
+        "list_fetch_ms": 908,
+        "candidate_filter_ms": 0,
+        "enrichment_ms": 0,
+        "raw_news_count": 40,
+        "raw_research_count": 10,
+        "candidate_news_count": 0,
+        "candidate_research_count": 0,
+        "enriched_news_count": 0,
+        "enriched_research_count": 0,
+        "candidate_reasons": {
+          "news": {
+            "noise:\\d{1,2}月\\d{1,2}日(快速上涨|快速回调|涨停|": 3,
+            "no-subject-mention": 12,
+            "noise:融资净(买入|卖出)": 1,
+            "dedup": 0,
+            "out_of_window": 24
+          },
+          "research": {
+            "dedup": 0,
+            "out_of_window": 10
+          }
+        },
+        "date_filter_ms": 0,
+        "relevance_ms": 0,
+        "llm_ms": 0,
+        "scoring_ms": 0
+      },
+      "top_news": []
+    },
+    "SZSE:301200": {
+      "name": "301200",
+      "score": 50,
+      "score_raw": 0,
+      "score_components": {
+        "positive_weight_sum": 0,
+        "negative_weight_sum": 0,
+        "news_effective_count": 2,
+        "news_dropped_count": 0
+      },
+      "signal": "⚪ No Trade (微多)",
+      "strategy": "情绪轻微偏多，信号不足，以观望为主",
+      "suitable_for": "观望",
+      "confidence": "低",
+      "patterns": [],
+      "positive_factors": [],
+      "negative_factors": [],
+      "news_count": 2,
+      "news_dropped": 0,
+      "performance": {
+        "list_fetch_ms": 815,
+        "candidate_filter_ms": 0,
+        "enrichment_ms": 1272,
+        "raw_news_count": 40,
+        "raw_research_count": 10,
+        "candidate_news_count": 2,
+        "candidate_research_count": 0,
+        "enriched_news_count": 2,
+        "enriched_research_count": 0,
+        "candidate_reasons": {
+          "news": {
+            "no-subject-mention": 12,
+            "noise:\\d{1,2}月\\d{1,2}日(快速上涨|快速回调|涨停|": 4,
+            "noise:融资净(买入|卖出)": 2,
+            "dedup": 0,
+            "out_of_window": 20
+          },
+          "research": {
+            "dedup": 0,
+            "out_of_window": 10
+          }
+        },
+        "date_filter_ms": 0,
+        "relevance_ms": 0,
+        "llm_ms": 0,
+        "scoring_ms": 0
+      },
+      "top_news": [
+        {
+          "date": "2026-07-31",
+          "title": "大族数控:北京市君合律师事务所关于深圳市大族数控科技股份有限公司2026年第二次临时股东会的法律意见书",
+          "content": "",
+          "type": "行业",
+          "sentiment": 0,
+          "weight": 1,
+          "final_weight": 0.76,
+          "source_authority": 4.5,
+          "recency_factor": 0.85,
+          "source": "东方财富公告",
+          "llm_reviewed": true,
+          "llm_confidence": 0.2,
+          "llm_is_real_catalyst": false,
+          "llm_reasoning": "法律意见书，无实质影响"
+        },
+        {
+          "date": "2026-07-31",
+          "title": "大族数控:2026年第二次临时股东会决议公告",
+          "content": "开发、生产、销售PCB专用数控设备及其相关产品、光机电一体化设备及高新技术产品;兴办实业(具体项目另行申报);国内商业、物资供销业(不含专营、专控、专卖商品);销售PCB设备;PCB设备控制软件的开发与销售;PCB设备领域内的技术开发、技术服务、技术咨询、技术转让及相关设备维修保养;设备零配件及耗材销售;经营进出口业务;物业管理;自有物业租赁;自有设备租赁。PCB数控设备产品代加工、PCB激光设备产品代加工。\n郑重声明：东方财富网发布此信息的目的在于传播更多信息，与本站立场无关。东方财富网不保证该信息（包括但不限于文字、视频、音频、数据及图表）全部或者部分内容的准确性、真实性、完整性、有效性、及时性、原创性等。相关信息并未经过本网站证实，不对您构成任何投资建议，据此操作，风险自担。",
+          "type": "行业",
+          "sentiment": 0,
+          "weight": 1,
+          "final_weight": 0.76,
+          "source_authority": 4.5,
+          "recency_factor": 0.85,
+          "source": "东方财富公告",
+          "llm_reviewed": true,
+          "llm_confidence": 0.2,
+          "llm_is_real_catalyst": false,
+          "llm_reasoning": "股东会决议公告，无实质利好"
+        }
+      ]
+    },
+    "SSE:600519": {
+      "name": "600519",
+      "score": 50,
+      "score_raw": 0,
+      "score_components": {
+        "positive_weight_sum": 0,
+        "negative_weight_sum": 0
+      },
+      "signal": "⚪ No Trade (无数据)",
+      "strategy": "近期无相关有效新闻",
+      "suitable_for": "观望",
+      "confidence": "-",
+      "patterns": [],
+      "positive_factors": [],
+      "negative_factors": [],
+      "news_count": 0,
+      "news_dropped": 0,
+      "performance": {
+        "list_fetch_ms": 955,
+        "candidate_filter_ms": 0,
+        "enrichment_ms": 0,
+        "raw_news_count": 40,
+        "raw_research_count": 10,
+        "candidate_news_count": 0,
+        "candidate_research_count": 0,
+        "enriched_news_count": 0,
+        "enriched_research_count": 0,
+        "candidate_reasons": {
+          "news": {
+            "no-subject-mention": 16,
+            "noise:融资净(买入|卖出)": 1,
+            "noise:龙虎榜|大宗交易|盘口异动": 3,
+            "dedup": 0,
+            "out_of_window": 20
+          },
+          "research": {
+            "dedup": 0,
+            "out_of_window": 10
+          }
+        },
+        "date_filter_ms": 0,
+        "relevance_ms": 0,
+        "llm_ms": 0,
+        "scoring_ms": 0
+      },
+      "top_news": []
+    },
+    "SSE:603529": {
+      "name": "603529",
+      "score": 50,
+      "score_raw": 0,
+      "score_components": {
+        "positive_weight_sum": 0,
+        "negative_weight_sum": 0,
+        "news_effective_count": 8,
+        "news_dropped_count": 0
+      },
+      "signal": "⚪ No Trade (微多)",
+      "strategy": "情绪轻微偏多，信号不足，以观望为主",
+      "suitable_for": "观望",
+      "confidence": "低",
+      "patterns": [],
+      "positive_factors": [],
+      "negative_factors": [],
+      "news_count": 8,
+      "news_dropped": 0,
+      "performance": {
+        "list_fetch_ms": 1757,
+        "candidate_filter_ms": 0,
+        "enrichment_ms": 3401,
+        "raw_news_count": 40,
+        "raw_research_count": 10,
+        "candidate_news_count": 8,
+        "candidate_research_count": 0,
+        "enriched_news_count": 8,
+        "enriched_research_count": 0,
+        "candidate_reasons": {
+          "news": {
+            "no-subject-mention": 7,
+            "dedup": 1,
+            "out_of_window": 24
+          },
+          "research": {
+            "dedup": 0,
+            "out_of_window": 10
+          }
+        },
+        "date_filter_ms": 0,
+        "relevance_ms": 0,
+        "llm_ms": 0,
+        "scoring_ms": 0
+      },
+      "top_news": [
+        {
+          "date": "2026-07-29",
+          "title": "爱玛科技:爱玛科技关于回购注销2025年限制性股票激励计划首次授予部分限制性股票通知债权人的公告",
+          "content": "",
+          "type": "回购",
+          "sentiment": 0,
+          "weight": 1,
+          "final_weight": 1.3,
+          "source_authority": 4.5,
+          "recency_factor": 0.6,
+          "source": "东方财富公告",
+          "llm_reviewed": true,
+          "llm_confidence": 0.9,
+          "llm_is_real_catalyst": false,
+          "llm_reasoning": "回购注销通知债权人"
+        },
+        {
+          "date": "2026-07-29",
+          "title": "爱玛科技:爱玛科技关于调整2025年限制性股票激励计划首次授予部分回购价格的公告",
+          "content": "",
+          "type": "回购",
+          "sentiment": 0,
+          "weight": 1,
+          "final_weight": 1.3,
+          "source_authority": 4.5,
+          "recency_factor": 0.6,
+          "source": "东方财富公告",
+          "llm_reviewed": true,
+          "llm_confidence": 0.9,
+          "llm_is_real_catalyst": false,
+          "llm_reasoning": "调整股权激励回购价格"
+        },
+        {
+          "date": "2026-07-29",
+          "title": "爱玛科技:爱玛科技董事会薪酬与考核委员会关于2025年限制性股票激励计划首次授予部分第一个解除限售期解除限售条件成就的核查意见",
+          "content": "",
+          "type": "回购",
+          "sentiment": 0,
+          "weight": 1,
+          "final_weight": 1.3,
+          "source_authority": 4.5,
+          "recency_factor": 0.6,
+          "source": "东方财富公告",
+          "llm_reviewed": true,
+          "llm_confidence": 0.9,
+          "llm_is_real_catalyst": false,
+          "llm_reasoning": "解除限售条件成就核查意见"
+        },
+        {
+          "date": "2026-07-29",
+          "title": "爱玛科技:爱玛科技关于2025年限制性股票激励计划首次授予部分第一个解除限售期解除限售条件成就的公告",
+          "content": "",
+          "type": "回购",
+          "sentiment": 0,
+          "weight": 1,
+          "final_weight": 1.3,
+          "source_authority": 4.5,
+          "recency_factor": 0.6,
+          "source": "东方财富公告",
+          "llm_reviewed": true,
+          "llm_confidence": 0.9,
+          "llm_is_real_catalyst": false,
+          "llm_reasoning": "解除限售条件成就公告"
+        },
+        {
+          "date": "2026-07-29",
+          "title": "爱玛科技:北京海润天睿律师事务所关于爱玛科技2025年限制性股票激励计划首次授予部分第一个解除限售期解除限售条件成就的法律意见书",
+          "content": "",
+          "type": "回购",
+          "sentiment": 0,
+          "weight": 1,
+          "final_weight": 1.3,
+          "source_authority": 4.5,
+          "recency_factor": 0.6,
+          "source": "东方财富公告",
+          "llm_reviewed": true,
+          "llm_confidence": 0.9,
+          "llm_is_real_catalyst": false,
+          "llm_reasoning": "解除限售法律意见书"
+        }
+      ]
+    },
+    "SZSE:301099": {
+      "name": "301099",
+      "score": 50,
+      "score_raw": 0,
+      "score_components": {
+        "positive_weight_sum": 0,
+        "negative_weight_sum": 0,
+        "news_effective_count": 2,
+        "news_dropped_count": 0
+      },
+      "signal": "⚪ No Trade (微多)",
+      "strategy": "情绪轻微偏多，信号不足，以观望为主",
+      "suitable_for": "观望",
+      "confidence": "低",
+      "patterns": [],
+      "positive_factors": [],
+      "negative_factors": [],
+      "news_count": 2,
+      "news_dropped": 0,
+      "performance": {
+        "list_fetch_ms": 1301,
+        "candidate_filter_ms": 0,
+        "enrichment_ms": 4847,
+        "raw_news_count": 40,
+        "raw_research_count": 4,
+        "candidate_news_count": 2,
+        "candidate_research_count": 0,
+        "enriched_news_count": 2,
+        "enriched_research_count": 0,
+        "candidate_reasons": {
+          "news": {
+            "no-subject-mention": 17,
+            "noise:融资净(买入|卖出)": 1,
+            "dedup": 0,
+            "out_of_window": 20
+          },
+          "research": {
+            "dedup": 0,
+            "out_of_window": 4
+          }
+        },
+        "date_filter_ms": 0,
+        "relevance_ms": 0,
+        "llm_ms": 11333,
+        "scoring_ms": 0
+      },
+      "top_news": [
+        {
+          "date": "2026-07-31",
+          "title": "雅创电子:关于为子公司提供担保的进展公告",
+          "content": "",
+          "type": "行业",
+          "sentiment": 0,
+          "weight": 1,
+          "final_weight": 0.76,
+          "source_authority": 4.5,
+          "recency_factor": 0.85,
+          "source": "东方财富公告",
+          "llm_reviewed": true,
+          "llm_confidence": 0.3,
+          "llm_is_real_catalyst": false,
+          "llm_reasoning": "担保进展公告无实质信息"
+        },
+        {
+          "date": "2026-07-27",
+          "title": "雅创电子:关于为子公司提供担保的进展公告",
+          "content": "电子产品、机电设备、通讯设备(除卫星电视广播地面接收设施)、仪器仪表、计算机软硬件(除计算机信息系统安全专用产品)销售,从事货物及技术的进出口业务,软硬件产品开发与设计。【依法须经批准的项目,经相关部门批准后方可开展经营活动】\n郑重声明：东方财富网发布此信息的目的在于传播更多信息，与本站立场无关。东方财富网不保证该信息（包括但不限于文字、视频、音频、数据及图表）全部或者部分内容的准确性、真实性、完整性、有效性、及时性、原创性等。相关信息并未经过本网站证实，不对您构成任何投资建议，据此操作，风险自担。",
+          "type": "行业",
+          "sentiment": 0,
+          "weight": 1,
+          "final_weight": 0.5,
+          "source_authority": 4.5,
+          "recency_factor": 0.42,
+          "source": "东方财富公告",
+          "llm_reviewed": true,
+          "llm_confidence": 0.2,
+          "llm_is_real_catalyst": false,
+          "llm_reasoning": "经营范围描述无实质催化"
+        }
+      ]
+    },
+    "SZSE:301109": {
+      "name": "301109",
+      "score": 50,
+      "score_raw": 0,
+      "score_components": {
+        "positive_weight_sum": 0,
+        "negative_weight_sum": 0
+      },
+      "signal": "⚪ No Trade (无数据)",
+      "strategy": "近期无相关有效新闻",
+      "suitable_for": "观望",
+      "confidence": "-",
+      "patterns": [],
+      "positive_factors": [],
+      "negative_factors": [],
+      "news_count": 0,
+      "news_dropped": 0,
+      "performance": {
+        "list_fetch_ms": 2038,
+        "candidate_filter_ms": 0,
+        "enrichment_ms": 0,
+        "raw_news_count": 40,
+        "raw_research_count": 6,
+        "candidate_news_count": 0,
+        "candidate_research_count": 0,
+        "enriched_news_count": 0,
+        "enriched_research_count": 0,
+        "candidate_reasons": {
+          "news": {
+            "no-subject-mention": 4,
+            "dedup": 0,
+            "out_of_window": 36
+          },
+          "research": {
+            "dedup": 0,
+            "out_of_window": 6
+          }
+        },
+        "date_filter_ms": 0,
+        "relevance_ms": 0,
+        "llm_ms": 0,
+        "scoring_ms": 0
+      },
+      "top_news": []
+    },
+    "SZSE:300383": {
+      "name": "300383",
+      "score": 50,
+      "score_raw": 0,
+      "score_components": {
+        "positive_weight_sum": 0,
+        "negative_weight_sum": 0
+      },
+      "signal": "⚪ No Trade (无数据)",
+      "strategy": "近期无相关有效新闻",
+      "suitable_for": "观望",
+      "confidence": "-",
+      "patterns": [],
+      "positive_factors": [],
+      "negative_factors": [],
+      "news_count": 0,
+      "news_dropped": 0,
+      "performance": {
+        "list_fetch_ms": 4777,
+        "candidate_filter_ms": 0,
+        "enrichment_ms": 0,
+        "raw_news_count": 40,
+        "raw_research_count": 10,
+        "candidate_news_count": 0,
+        "candidate_research_count": 0,
+        "enriched_news_count": 0,
+        "enriched_research_count": 0,
+        "candidate_reasons": {
+          "news": {
+            "no-subject-mention": 9,
+            "noise:\\d{1,2}月\\d{1,2}日(快速上涨|快速回调|涨停|": 2,
+            "noise:融资净(买入|卖出)": 1,
+            "dedup": 0,
+            "out_of_window": 28
+          },
+          "research": {
+            "dedup": 0,
+            "out_of_window": 10
+          }
+        },
+        "date_filter_ms": 0,
+        "relevance_ms": 0,
+        "llm_ms": 0,
+        "scoring_ms": 0
+      },
+      "top_news": []
+    },
+    "SZSE:301529": {
+      "name": "301529",
+      "score": 50,
+      "score_raw": 0,
+      "score_components": {
+        "positive_weight_sum": 0,
+        "negative_weight_sum": 0
+      },
+      "signal": "⚪ No Trade (无数据)",
+      "strategy": "近期无相关有效新闻",
+      "suitable_for": "观望",
+      "confidence": "-",
+      "patterns": [],
+      "positive_factors": [],
+      "negative_factors": [],
+      "news_count": 0,
+      "news_dropped": 0,
+      "performance": {
+        "list_fetch_ms": 4476,
+        "candidate_filter_ms": 0,
+        "enrichment_ms": 0,
+        "raw_news_count": 40,
+        "raw_research_count": 2,
+        "candidate_news_count": 0,
+        "candidate_research_count": 0,
+        "enriched_news_count": 0,
+        "enriched_research_count": 0,
+        "candidate_reasons": {
+          "news": {
+            "noise:\\d{1,2}月\\d{1,2}日(快速上涨|快速回调|涨停|": 4,
+            "no-subject-mention": 11,
+            "noise:融资净(买入|卖出)": 2,
+            "dedup": 0,
+            "out_of_window": 23
+          },
+          "research": {
+            "dedup": 0,
+            "out_of_window": 2
+          }
+        },
+        "date_filter_ms": 0,
+        "relevance_ms": 0,
+        "llm_ms": 0,
+        "scoring_ms": 0
+      },
+      "top_news": []
+    },
+    "SZSE:002983": {
+      "name": "002983",
+      "score": 50,
+      "score_raw": 0,
+      "score_components": {
+        "positive_weight_sum": 0,
+        "negative_weight_sum": 0
+      },
+      "signal": "⚪ No Trade (无数据)",
+      "strategy": "近期无相关有效新闻",
+      "suitable_for": "观望",
+      "confidence": "-",
+      "patterns": [],
+      "positive_factors": [],
+      "negative_factors": [],
+      "news_count": 0,
+      "news_dropped": 0,
+      "performance": {
+        "list_fetch_ms": 2684,
+        "candidate_filter_ms": 0,
+        "enrichment_ms": 0,
+        "raw_news_count": 40,
+        "raw_research_count": 8,
+        "candidate_news_count": 0,
+        "candidate_research_count": 0,
+        "enriched_news_count": 0,
+        "enriched_research_count": 0,
+        "candidate_reasons": {
+          "news": {
+            "dedup": 0,
+            "out_of_window": 40
+          },
+          "research": {
+            "dedup": 0,
+            "out_of_window": 8
+          }
+        },
+        "date_filter_ms": 0,
+        "relevance_ms": 0,
+        "llm_ms": 0,
+        "scoring_ms": 0
+      },
+      "top_news": []
+    },
+    "SSE:603486": {
+      "name": "603486",
+      "score": 50,
+      "score_raw": 0,
+      "score_components": {
+        "positive_weight_sum": 0,
+        "negative_weight_sum": 0,
+        "news_effective_count": 2,
+        "news_dropped_count": 0
+      },
+      "signal": "⚪ No Trade (微多)",
+      "strategy": "情绪轻微偏多，信号不足，以观望为主",
+      "suitable_for": "观望",
+      "confidence": "低",
+      "patterns": [],
+      "positive_factors": [],
+      "negative_factors": [],
+      "news_count": 2,
+      "news_dropped": 0,
+      "performance": {
+        "list_fetch_ms": 1619,
+        "candidate_filter_ms": 0,
+        "enrichment_ms": 2651,
+        "raw_news_count": 40,
+        "raw_research_count": 10,
+        "candidate_news_count": 2,
+        "candidate_research_count": 0,
+        "enriched_news_count": 2,
+        "enriched_research_count": 0,
+        "candidate_reasons": {
+          "news": {
+            "no-subject-mention": 9,
+            "dedup": 0,
+            "out_of_window": 29
+          },
+          "research": {
+            "dedup": 0,
+            "out_of_window": 10
+          }
+        },
+        "date_filter_ms": 0,
+        "relevance_ms": 0,
+        "llm_ms": 0,
+        "scoring_ms": 0
+      },
+      "top_news": [
+        {
+          "date": "2026-07-31",
+          "title": "科沃斯:关于注销部分募集资金理财专用结算账户的公告",
+          "content": "研发、设计、制造家庭服务机器人、智能化清洁机械及设备、电子产品及相关零部件、机电产品、非金属模具,货物和技术的进出口(不含分销业务),销售公司自产产品。(依法须经批准的项目,经相关部门批准后方可开展经营活动)许可项目:消毒器械生产;消毒器械销售;消毒剂生产(不含危险化学品);检验检测服务;认证服务(依法须经批准的项目,经相关部门批准后方可开展经营活动,具体经营项目以审批结果为准)一般项目:集成电路芯片及产品销售;电力电子元器件销售;电池销售;消毒剂销售(不含危险化学品);专用化学产品销售(不含危险化学品);日用化学产品销售;家用电器零配件销售;家用电器安装服务;电子产品销售;电子元器件零售;办公用品销售;日用百货销售;互联网销售(除销售需要许可的商品);服装服饰零售;信息咨询服务(不含许可类信息咨询服务);日用口罩(非医用)销售;专用化学产品制造(不含危险化学品);日用化学产品制造;家用电器制造;电子元器件制造(除依法须经批准的项目外,凭营业执照依法自主开展经营活动)\n郑重声明：东方财富网发布此信息的目的在于传播更多信息，与本站立场无关。东方财富网不保证该信息（包括但不限于文字、视频、音频、数据及图表）全部或者部分内容的准确性、真实性、完整性、有效性、及时性、原创性等。相关信息并未经过本网站证实，不对您构成任何投资建议，据此操作，风险自担。",
+          "type": "行业",
+          "sentiment": 0,
+          "weight": 1,
+          "final_weight": 0.76,
+          "source_authority": 4.5,
+          "recency_factor": 0.85,
+          "source": "东方财富公告",
+          "llm_reviewed": true,
+          "llm_confidence": 0.3,
+          "llm_is_real_catalyst": false,
+          "llm_reasoning": "募集资金账户注销常规操作"
+        },
+        {
+          "date": "2026-07-30",
+          "title": "科沃斯:关于公司股票期权限制行权期间的提示性公告",
+          "content": "",
+          "type": "回购",
+          "sentiment": 0,
+          "weight": 1,
+          "final_weight": 0.78,
+          "source_authority": 4.5,
+          "recency_factor": 0.72,
+          "source": "东方财富公告",
+          "llm_reviewed": true,
+          "llm_confidence": 0.4,
+          "llm_is_real_catalyst": false,
+          "llm_reasoning": "限制行权窗口期提示，无实质影响"
+        }
+      ]
+    },
+    "SZSE:001319": {
+      "name": "001319",
+      "score": 50,
+      "score_raw": 0,
+      "score_components": {
+        "positive_weight_sum": 0,
+        "negative_weight_sum": 0
+      },
+      "signal": "⚪ No Trade (无数据)",
+      "strategy": "近期无相关有效新闻",
+      "suitable_for": "观望",
+      "confidence": "-",
+      "patterns": [],
+      "positive_factors": [],
+      "negative_factors": [],
+      "news_count": 0,
+      "news_dropped": 0,
+      "performance": {
+        "list_fetch_ms": 873,
+        "candidate_filter_ms": 0,
+        "enrichment_ms": 0,
+        "raw_news_count": 40,
+        "raw_research_count": 2,
+        "candidate_news_count": 0,
+        "candidate_research_count": 0,
+        "enriched_news_count": 0,
+        "enriched_research_count": 0,
+        "candidate_reasons": {
+          "news": {
+            "noise:\\d{1,2}月\\d{1,2}日(快速上涨|快速回调|涨停|": 1,
+            "no-subject-mention": 1,
+            "dedup": 0,
+            "out_of_window": 38
+          },
+          "research": {
+            "dedup": 0,
+            "out_of_window": 2
+          }
+        },
+        "date_filter_ms": 0,
+        "relevance_ms": 0,
+        "llm_ms": 0,
+        "scoring_ms": 0
+      },
+      "top_news": []
+    },
+    "SZSE:001309": {
+      "name": "001309",
+      "score": 50,
+      "score_raw": 0,
+      "score_components": {
+        "positive_weight_sum": 3.15,
+        "negative_weight_sum": 3.15,
+        "news_effective_count": 2,
+        "news_dropped_count": 0
+      },
+      "signal": "⚪ No Trade (微多)",
+      "strategy": "情绪轻微偏多，信号不足，以观望为主",
+      "suitable_for": "观望",
+      "confidence": "低",
+      "patterns": [],
+      "positive_factors": [
+        "[并购|w3.15] 德明利:关于控股股东认购的2023年向特定对象发行股票限售股解除限售上市流通并承诺十二个月内不减持公司股票的提示性公告"
+      ],
+      "negative_factors": [
+        "[并购|w3.15] 德明利:华泰联合证券有限责任公司关于深圳市德明利技术股份有限公司2023年向特定对象发行股票部分限售股解除限售并上市流通的核查意见"
+      ],
+      "news_count": 2,
+      "news_dropped": 0,
+      "performance": {
+        "list_fetch_ms": 1230,
+        "candidate_filter_ms": 0,
+        "enrichment_ms": 4329,
+        "raw_news_count": 40,
+        "raw_research_count": 10,
+        "candidate_news_count": 2,
+        "candidate_research_count": 0,
+        "enriched_news_count": 2,
+        "enriched_research_count": 0,
+        "candidate_reasons": {
+          "news": {
+            "no-subject-mention": 12,
+            "noise:龙虎榜|大宗交易|盘口异动": 8,
+            "dedup": 0,
+            "out_of_window": 18
+          },
+          "research": {
+            "dedup": 0,
+            "out_of_window": 10
+          }
+        },
+        "date_filter_ms": 0,
+        "relevance_ms": 0,
+        "llm_ms": 18067,
+        "scoring_ms": 0
+      },
+      "top_news": [
+        {
+          "date": "2026-07-28",
+          "title": "德明利:华泰联合证券有限责任公司关于深圳市德明利技术股份有限公司2023年向特定对象发行股票部分限售股解除限售并上市流通的核查意见",
+          "content": "一般经营项目:计算机系统集成、计算机网络技术、计算机网络软件、计算机应用软件的研发、技术咨询;电脑软件、软件产品、计算机软硬件、电子产品、集成电路软硬件的研发、批发、技术咨询、技术服务、佣金代理(不含拍卖)、进出口及相关配套业务(不涉及国营贸易管理商品,涉及配额、许可证管理及其它专项规定管理的商品,按国家有关规定办理申请);转让自行研发的技术成果;从事货物及技术进出口(不含分销、国家专营专控商品);从事上述产品的售后服务。以上经营范围不含国家规定实施准入特别管理措施的项目,涉及备案许可资质的需取得相关证件后方可经营。许可经营项目是:计算机系统集成、计算机软硬件、集成电路和模块、电子设备、存储产品等电子产品的封装、测试、生产和销售。\n郑重声明：东方财富网发布此信息的目的在于传播更多信息，与本站立场无关。东方财富网不保证该信息（包括但不限于文字、视频、音频、数据及图表）全部或者部分内容的准确性、真实性、完整性、有效性、及时性、原创性等。相关信息并未经过本网站证实，不对您构成任何投资建议，据此操作，风险自担。",
+          "type": "并购",
+          "sentiment": -1,
+          "weight": 3,
+          "final_weight": 3.15,
+          "source_authority": 4.5,
+          "recency_factor": 0.5,
+          "source": "东方财富公告",
+          "llm_reviewed": true,
+          "llm_confidence": 0.7,
+          "llm_is_real_catalyst": true,
+          "llm_reasoning": "限售股解禁增加流通盘形成抛压"
+        },
+        {
+          "date": "2026-07-28",
+          "title": "德明利:关于控股股东认购的2023年向特定对象发行股票限售股解除限售上市流通并承诺十二个月内不减持公司股票的提示性公告",
+          "content": "",
+          "type": "并购",
+          "sentiment": 1,
+          "weight": 3,
+          "final_weight": 3.15,
+          "source_authority": 4.5,
+          "recency_factor": 0.5,
+          "source": "东方财富公告",
+          "llm_reviewed": true,
+          "llm_confidence": 0.8,
+          "llm_is_real_catalyst": true,
+          "llm_reasoning": "控股股东承诺12个月不减持，提振信心"
+        }
+      ]
+    },
+    "SSE:603199": {
+      "name": "603199",
+      "score": 50,
+      "score_raw": 0,
+      "score_components": {
+        "positive_weight_sum": 0,
+        "negative_weight_sum": 0
+      },
+      "signal": "⚪ No Trade (无数据)",
+      "strategy": "近期无相关有效新闻",
+      "suitable_for": "观望",
+      "confidence": "-",
+      "patterns": [],
+      "positive_factors": [],
+      "negative_factors": [],
+      "news_count": 0,
+      "news_dropped": 0,
+      "performance": {
+        "list_fetch_ms": 1163,
+        "candidate_filter_ms": 0,
+        "enrichment_ms": 0,
+        "raw_news_count": 40,
+        "raw_research_count": 10,
+        "candidate_news_count": 0,
+        "candidate_research_count": 0,
+        "enriched_news_count": 0,
+        "enriched_research_count": 0,
+        "candidate_reasons": {
+          "news": {
+            "dedup": 0,
+            "out_of_window": 40
+          },
+          "research": {
+            "dedup": 0,
+            "out_of_window": 10
+          }
+        },
+        "date_filter_ms": 0,
+        "relevance_ms": 0,
+        "llm_ms": 0,
+        "scoring_ms": 0
+      },
+      "top_news": []
+    },
+    "SSE:600667": {
+      "name": "600667",
+      "score": 50,
+      "score_raw": 0,
+      "score_components": {
+        "positive_weight_sum": 0,
+        "negative_weight_sum": 0
+      },
+      "signal": "⚪ No Trade (无数据)",
+      "strategy": "近期无相关有效新闻",
+      "suitable_for": "观望",
+      "confidence": "-",
+      "patterns": [],
+      "positive_factors": [],
+      "negative_factors": [],
+      "news_count": 0,
+      "news_dropped": 0,
+      "performance": {
+        "list_fetch_ms": 1505,
+        "candidate_filter_ms": 0,
+        "enrichment_ms": 0,
+        "raw_news_count": 40,
+        "raw_research_count": 10,
+        "candidate_news_count": 0,
+        "candidate_research_count": 0,
+        "enriched_news_count": 0,
+        "enriched_research_count": 0,
+        "candidate_reasons": {
+          "news": {
+            "noise:融资净(买入|卖出)": 1,
+            "no-subject-mention": 19,
+            "dedup": 0,
+            "out_of_window": 20
+          },
+          "research": {
+            "dedup": 0,
+            "out_of_window": 10
+          }
+        },
+        "date_filter_ms": 0,
+        "relevance_ms": 0,
+        "llm_ms": 0,
+        "scoring_ms": 0
+      },
+      "top_news": []
+    },
+    "SSE:601083": {
+      "name": "601083",
+      "score": 50,
+      "score_raw": 0,
+      "score_components": {
+        "positive_weight_sum": 0,
+        "negative_weight_sum": 0
+      },
+      "signal": "⚪ No Trade (无数据)",
+      "strategy": "近期无相关有效新闻",
+      "suitable_for": "观望",
+      "confidence": "-",
+      "patterns": [],
+      "positive_factors": [],
+      "negative_factors": [],
+      "news_count": 0,
+      "news_dropped": 0,
+      "performance": {
+        "list_fetch_ms": 3995,
+        "candidate_filter_ms": 0,
+        "enrichment_ms": 0,
+        "raw_news_count": 40,
+        "raw_research_count": 6,
+        "candidate_news_count": 0,
+        "candidate_research_count": 0,
+        "enriched_news_count": 0,
+        "enriched_research_count": 0,
+        "candidate_reasons": {
+          "news": {
+            "no-subject-mention": 4,
+            "noise:\\d{1,2}月\\d{1,2}日(快速上涨|快速回调|涨停|": 1,
+            "dedup": 0,
+            "out_of_window": 35
+          },
+          "research": {
+            "dedup": 0,
+            "out_of_window": 6
+          }
+        },
+        "date_filter_ms": 0,
+        "relevance_ms": 0,
+        "llm_ms": 0,
+        "scoring_ms": 0
+      },
+      "top_news": []
+    },
+    "SZSE:002056": {
+      "name": "002056",
+      "score": 50,
+      "score_raw": 0,
+      "score_components": {
+        "positive_weight_sum": 0,
+        "negative_weight_sum": 0,
+        "news_effective_count": 1,
+        "news_dropped_count": 0
+      },
+      "signal": "⚪ No Trade (微多)",
+      "strategy": "情绪轻微偏多，信号不足，以观望为主",
+      "suitable_for": "观望",
+      "confidence": "低",
+      "patterns": [],
+      "positive_factors": [],
+      "negative_factors": [],
+      "news_count": 1,
+      "news_dropped": 0,
+      "performance": {
+        "list_fetch_ms": 2120,
+        "candidate_filter_ms": 0,
+        "enrichment_ms": 1216,
+        "raw_news_count": 40,
+        "raw_research_count": 10,
+        "candidate_news_count": 1,
+        "candidate_research_count": 0,
+        "enriched_news_count": 1,
+        "enriched_research_count": 0,
+        "candidate_reasons": {
+          "news": {
+            "no-subject-mention": 8,
+            "noise:融资净(买入|卖出)": 2,
+            "noise:\\d{1,2}月\\d{1,2}日(快速上涨|快速回调|涨停|": 1,
+            "dedup": 0,
+            "out_of_window": 28
+          },
+          "research": {
+            "dedup": 0,
+            "out_of_window": 10
+          }
+        },
+        "date_filter_ms": 0,
+        "relevance_ms": 0,
+        "llm_ms": 7792,
+        "scoring_ms": 0
+      },
+      "top_news": [
+        {
+          "date": "2026-08-01",
+          "title": "横店东磁:关于为下属公司提供担保的进展公告",
+          "content": "一般项目:磁性材料生产;磁性材料销售;光伏设备及元器件制造;光伏设备及元器件销售;电子元器件与机电组件设备制造;电子元器件与机电组件设备销售;电池制造;电池销售;有色金属合金制造;有色金属合金销售;电子元器件制造;电力电子元器件销售;机械零件、零部件加工;技术服务、技术开发、技术咨询、技术交流、技术转让、技术推广;货物进出口;技术进出口(除依法须经批准的项目外,凭营业执照依法自主开展经营活动)。许可项目:电气安装服务(依法须经批准的项目,经相关部门批准后方可开展经营活动,具体经营项目以审批结果为准)\n郑重声明：东方财富网发布此信息的目的在于传播更多信息，与本站立场无关。东方财富网不保证该信息（包括但不限于文字、视频、音频、数据及图表）全部或者部分内容的准确性、真实性、完整性、有效性、及时性、原创性等。相关信息并未经过本网站证实，不对您构成任何投资建议，据此操作，风险自担。",
+          "type": "行业",
+          "sentiment": 0,
+          "weight": 1,
+          "final_weight": 0.9,
+          "source_authority": 4.5,
+          "recency_factor": 1,
+          "source": "东方财富公告",
+          "llm_reviewed": true,
+          "llm_confidence": 0.3,
+          "llm_is_real_catalyst": false,
+          "llm_reasoning": "下属公司担保公告无实质催化"
+        }
+      ]
+    },
+    "SZSE:300537": {
+      "name": "300537",
+      "score": 50,
+      "score_raw": 0,
+      "score_components": {
+        "positive_weight_sum": 0,
+        "negative_weight_sum": 0
+      },
+      "signal": "⚪ No Trade (无数据)",
+      "strategy": "近期无相关有效新闻",
+      "suitable_for": "观望",
+      "confidence": "-",
+      "patterns": [],
+      "positive_factors": [],
+      "negative_factors": [],
+      "news_count": 0,
+      "news_dropped": 0,
+      "performance": {
+        "list_fetch_ms": 2449,
+        "candidate_filter_ms": 0,
+        "enrichment_ms": 0,
+        "raw_news_count": 40,
+        "raw_research_count": 10,
+        "candidate_news_count": 0,
+        "candidate_research_count": 0,
+        "enriched_news_count": 0,
+        "enriched_research_count": 0,
+        "candidate_reasons": {
+          "news": {
+            "no-subject-mention": 5,
+            "noise:\\d{1,2}月\\d{1,2}日(快速上涨|快速回调|涨停|": 3,
+            "dedup": 0,
+            "out_of_window": 32
+          },
+          "research": {
+            "dedup": 0,
+            "out_of_window": 10
+          }
+        },
+        "date_filter_ms": 0,
+        "relevance_ms": 0,
+        "llm_ms": 0,
+        "scoring_ms": 0
+      },
+      "top_news": []
+    },
+    "SZSE:300812": {
+      "name": "300812",
+      "score": 50,
+      "score_raw": 0,
+      "score_components": {
+        "positive_weight_sum": 0,
+        "negative_weight_sum": 0
+      },
+      "signal": "⚪ No Trade (无数据)",
+      "strategy": "近期无相关有效新闻",
+      "suitable_for": "观望",
+      "confidence": "-",
+      "patterns": [],
+      "positive_factors": [],
+      "negative_factors": [],
+      "news_count": 0,
+      "news_dropped": 0,
+      "performance": {
+        "list_fetch_ms": 952,
+        "candidate_filter_ms": 0,
+        "enrichment_ms": 0,
+        "raw_news_count": 40,
+        "raw_research_count": 1,
+        "candidate_news_count": 0,
+        "candidate_research_count": 0,
+        "enriched_news_count": 0,
+        "enriched_research_count": 0,
+        "candidate_reasons": {
+          "news": {
+            "no-subject-mention": 2,
+            "noise:\\d{1,2}月\\d{1,2}日(快速上涨|快速回调|涨停|": 1,
+            "dedup": 0,
+            "out_of_window": 37
+          },
+          "research": {
+            "dedup": 0,
+            "out_of_window": 1
+          }
+        },
+        "date_filter_ms": 0,
+        "relevance_ms": 0,
+        "llm_ms": 0,
+        "scoring_ms": 0
+      },
+      "top_news": []
+    },
+    "SZSE:300903": {
+      "name": "300903",
+      "score": 50,
+      "score_raw": 0,
+      "score_components": {
+        "positive_weight_sum": 0,
+        "negative_weight_sum": 0
+      },
+      "signal": "⚪ No Trade (无数据)",
+      "strategy": "近期无相关有效新闻",
+      "suitable_for": "观望",
+      "confidence": "-",
+      "patterns": [],
+      "positive_factors": [],
+      "negative_factors": [],
+      "news_count": 0,
+      "news_dropped": 0,
+      "performance": {
+        "list_fetch_ms": 1259,
+        "candidate_filter_ms": 0,
+        "enrichment_ms": 0,
+        "raw_news_count": 40,
+        "raw_research_count": 2,
+        "candidate_news_count": 0,
+        "candidate_research_count": 0,
+        "enriched_news_count": 0,
+        "enriched_research_count": 0,
+        "candidate_reasons": {
+          "news": {
+            "noise:\\d{1,2}月\\d{1,2}日(快速上涨|快速回调|涨停|": 2,
+            "no-subject-mention": 14,
+            "noise:龙虎榜|大宗交易|盘口异动": 4,
+            "dedup": 0,
+            "out_of_window": 20
+          },
+          "research": {
+            "dedup": 0,
+            "out_of_window": 2
+          }
+        },
+        "date_filter_ms": 0,
+        "relevance_ms": 0,
+        "llm_ms": 0,
+        "scoring_ms": 0
+      },
+      "top_news": []
+    },
+    "SZSE:001257": {
+      "name": "001257",
+      "score": 50,
+      "score_raw": 0,
+      "score_components": {
+        "positive_weight_sum": 0,
+        "negative_weight_sum": 0,
+        "news_effective_count": 1,
+        "news_dropped_count": 0
+      },
+      "signal": "⚪ No Trade (微多)",
+      "strategy": "情绪轻微偏多，信号不足，以观望为主",
+      "suitable_for": "观望",
+      "confidence": "低",
+      "patterns": [],
+      "positive_factors": [],
+      "negative_factors": [],
+      "news_count": 1,
+      "news_dropped": 0,
+      "performance": {
+        "list_fetch_ms": 1024,
+        "candidate_filter_ms": 0,
+        "enrichment_ms": 1966,
+        "raw_news_count": 40,
+        "raw_research_count": 1,
+        "candidate_news_count": 1,
+        "candidate_research_count": 0,
+        "enriched_news_count": 1,
+        "enriched_research_count": 0,
+        "candidate_reasons": {
+          "news": {
+            "no-subject-mention": 3,
+            "noise:融资净(买入|卖出)": 2,
+            "dedup": 0,
+            "out_of_window": 34
+          },
+          "research": {
+            "dedup": 0,
+            "out_of_window": 1
+          }
+        },
+        "date_filter_ms": 0,
+        "relevance_ms": 0,
+        "llm_ms": 0,
+        "scoring_ms": 0
+      },
+      "top_news": [
+        {
+          "date": "2026-07-28",
+          "title": "盛龙股份:关于开立募集资金现金管理专用结算账户并签订募集资金监管协议的公告",
+          "content": "",
+          "type": "行业",
+          "sentiment": 0,
+          "weight": 1,
+          "final_weight": 0.9,
+          "source_authority": 4.5,
+          "recency_factor": 0.5,
+          "source": "东方财富公告",
+          "llm_reviewed": true,
+          "llm_confidence": 0.5,
+          "llm_is_real_catalyst": false,
+          "llm_reasoning": "募集资金现金管理公告，无实际催化"
+        }
+      ]
+    },
+    "SZSE:301479": {
+      "name": "301479",
+      "score": 50,
+      "score_raw": 0,
+      "score_components": {
+        "positive_weight_sum": 0,
+        "negative_weight_sum": 0
+      },
+      "signal": "⚪ No Trade (无数据)",
+      "strategy": "近期无相关有效新闻",
+      "suitable_for": "观望",
+      "confidence": "-",
+      "patterns": [],
+      "positive_factors": [],
+      "negative_factors": [],
+      "news_count": 0,
+      "news_dropped": 0,
+      "performance": {
+        "list_fetch_ms": 1356,
+        "candidate_filter_ms": 0,
+        "enrichment_ms": 0,
+        "raw_news_count": 40,
+        "raw_research_count": 7,
+        "candidate_news_count": 0,
+        "candidate_research_count": 0,
+        "enriched_news_count": 0,
+        "enriched_research_count": 0,
+        "candidate_reasons": {
+          "news": {
+            "no-subject-mention": 7,
+            "dedup": 0,
+            "out_of_window": 33
+          },
+          "research": {
+            "dedup": 0,
+            "out_of_window": 7
+          }
+        },
+        "date_filter_ms": 0,
+        "relevance_ms": 0,
+        "llm_ms": 0,
+        "scoring_ms": 0
+      },
+      "top_news": []
+    },
+    "SSE:603297": {
+      "name": "永新光学",
+      "score": 48,
+      "score_raw": -0.53,
+      "score_components": {
+        "positive_weight_sum": 3.35,
+        "negative_weight_sum": 3.88,
+        "news_effective_count": 11,
+        "news_dropped_count": 0
+      },
+      "signal": "⚪ No Trade (中性)",
+      "strategy": "情绪中性，无明显方向，观望",
+      "suitable_for": "观望",
+      "confidence": "低",
+      "patterns": [],
+      "positive_factors": [
+        "[财报|w2.34] 永新光学：八十年追光之路 “3+2”业务布局观察｜活力中国调研行",
+        "[行业|w0.51] 永新光学7月31日盘中涨幅达5%",
+        "[行业|w0.5] （活力中国调研行）镜头里的中国高度：永新光学逐梦星辰的“硬核”答卷"
+      ],
+      "negative_factors": [
+        "[行业|w1.02] 永新光学：融资净偿还1590.5万元，融资余额3.04亿元",
+        "[行业|w0.86] 永新光学：融资净偿还4275.67万元，融资余额3.2亿元",
+        "[行业|w0.5] 永新光学7月30日盘中跌幅达5%"
+      ],
+      "news_count": 11,
+      "news_dropped": 0,
+      "performance": {
+        "list_fetch_ms": 2029,
+        "candidate_filter_ms": 0,
+        "enrichment_ms": 22451,
+        "raw_news_count": 40,
+        "raw_research_count": 10,
+        "candidate_news_count": 11,
+        "candidate_research_count": 0,
+        "enriched_news_count": 11,
+        "enriched_research_count": 0,
+        "candidate_reasons": {
+          "news": {
+            "noise:融资净(买入|卖出)": 2,
+            "no-subject-mention": 5,
+            "noise:龙虎榜|大宗交易|盘口异动": 2,
+            "dedup": 0,
+            "out_of_window": 20
+          },
+          "research": {
+            "dedup": 0,
+            "out_of_window": 10
+          }
+        },
+        "date_filter_ms": 0,
+        "relevance_ms": 0,
+        "llm_ms": 20933,
+        "scoring_ms": 0
+      },
+      "top_news": [
+        {
+          "date": "2026-07-31 10:13:41",
+          "title": "永新光学7月31日盘中涨幅达5%",
+          "content": "",
+          "type": "行业",
+          "sentiment": 1,
+          "weight": 1,
+          "final_weight": 0.51,
+          "source_authority": 3,
+          "recency_factor": 0.85,
+          "source": "东方财富资讯",
+          "llm_reviewed": true,
+          "llm_confidence": 0.1,
+          "llm_is_real_catalyst": false,
+          "llm_reasoning": "仅盘中涨幅无催化"
+        },
+        {
+          "date": "2026-07-31 07:58:59",
+          "title": "永新光学：融资净偿还1590.5万元，融资余额3.04亿元",
+          "content": "全新妙想投研助理，立即体验\n\n交易所最新数据显示，永新光学于2026年7月30日获融资买入1708.23万元，融资偿还3298.73万元，当日融资净偿还1590.5万元。目前，该股融资余额3.04亿，占流通市值比例为3.18%。\n\n该股当日融券卖出200股，融券偿还1500股，融券净偿还1300股。目前，该股融券余量2.05万股，融券余额177.12万元。\n\n免责声明：本文基于AI生产，仅供参考，不构成任何投资建议，据此操作风险自担。东方财富发布此内容旨在传播更多信息，与本平台立场无关。东方财富力求但不保证数据的完全准确，如有错漏请以中国证监会指定上市公司信息披露媒体为准，东方财富不对因该资料全部或部分内容而引致的盈亏承担任何责任。用户个人对服务的使用承担风险，东方财富对此不作任何类型的担保。",
+          "type": "行业",
+          "sentiment": -1,
+          "weight": 1,
+          "final_weight": 1.02,
+          "source_authority": 3,
+          "recency_factor": 0.85,
+          "source": "东方财富资讯",
+          "llm_reviewed": true,
+          "llm_confidence": 0.6,
+          "llm_is_real_catalyst": false,
+          "llm_reasoning": "融资净偿还1590万"
+        },
+        {
+          "date": "2026-07-30 09:53:40",
+          "title": "永新光学7月30日盘中跌幅达5%",
+          "content": "",
+          "type": "行业",
+          "sentiment": -1,
+          "weight": 1,
+          "final_weight": 0.5,
+          "source_authority": 3,
+          "recency_factor": 0.72,
+          "source": "东方财富资讯",
+          "llm_reviewed": true,
+          "llm_confidence": 0.1,
+          "llm_is_real_catalyst": false,
+          "llm_reasoning": "仅盘中跌幅无催化"
+        },
+        {
+          "date": "2026-07-30 07:39:38",
+          "title": "永新光学：融资净偿还4275.67万元，融资余额3.2亿元",
+          "content": "炒股第一步，先开个股票账户\n\n交易所最新数据显示，永新光学于2026年7月29日获融资买入5687.57万元，融资偿还9963.24万元，当日融资净偿还4275.67万元。目前，该股融资余额3.20亿，占流通市值比例为3.10%。\n\n该股当日融券卖出1300股，融券偿还200股，融券净卖出1100股。目前，该股融券余量2.18万股，融券余额202.87万元。\n\n免责声明：本文基于AI生产，仅供参考，不构成任何投资建议，据此操作风险自担。东方财富发布此内容旨在传播更多信息，与本平台立场无关。东方财富力求但不保证数据的完全准确，如有错漏请以中国证监会指定上市公司信息披露媒体为准，东方财富不对因该资料全部或部分内容而引致的盈亏承担任何责任。用户个人对服务的使用承担风险，东方财富对此不作任何类型的担保。",
+          "type": "行业",
+          "sentiment": -1,
+          "weight": 1,
+          "final_weight": 0.86,
+          "source_authority": 3,
+          "recency_factor": 0.72,
+          "source": "东方财富资讯",
+          "llm_reviewed": true,
+          "llm_confidence": 0.6,
+          "llm_is_real_catalyst": false,
+          "llm_reasoning": "融资净偿还4275万"
+        },
+        {
+          "date": "2026-07-29 15:28:21",
+          "title": "永新光学：八十年追光之路 “3+2”业务布局观察｜活力中国调研行",
+          "content": "专业金融数据，下一代智能终端\n\n　　财联社7月29日讯 永新光学（603297.SH）的源头，可追溯至1943年创办的南京江南光学仪器厂。彼时，该厂研制出中国第一台生物显微镜，开启了中国光学工业的先河。\n\n　　而今，永新光学已成长为国家级制造业单项冠军示范企业，在精密光学仪器及核心光学元部件领域具备较强竞争力。公司拥有NOVEL、NEXCOPE、江南等自主品牌，同时是蔡司、徕卡、尼康等国际光学企业的重要供应商。\n\n　　2025年，公司将业务布局调整为“3+2”结构，即巩固光学显微镜、条码机器视觉、车载激光雷达三大核心业务，同时拓展医疗光学和专业光学两大新兴业务。\n\n　　三大“压舱石”：显微镜、条码视觉与激光雷达\n\n　　公司的显微镜业务经历了从为国际品牌代工到发展自主品牌的转变。目前，产品线涵盖教学、医疗、工业和科研等领域。2025年，高端显微镜在显微镜销售中的占比保持在40%以上，其中共聚焦显微镜国内市场份额有所提升。公司高端显微镜的国产化替代率已超过5%。\n\n　　2024年，公司牵头国家重大仪器专项“多模态纳米分辨率显微镜”，目标为亚2纳米定位精度的超分辨成像；2025年，“眼科手术导航显微镜”通过中期验收，“超高分辨活细胞成像显微镜”完成综合绩效评价，技术就绪度达到国家标准8级，具备规模化应用条件。\n\n　　条码机器视觉业务是公司的重要增长点。自1998年起，公司进入电子信息产业，现为斑马（Zebra）、霍尼韦尔（Honeywell）、康耐视（Cognex）等企业提供条码扫描光学元组件，全球出货量长期领先。目前，公司实现了从元组件供应商向模组供应商的升级，复杂模组产品进入批量交付阶段，单件产品价值量提升。\n\n　　在车载激光雷达领域，随着行业技术路线的演进，产品已进入规模化量产阶段。公司是禾赛科技、图达通、法雷奥等企业的核心供应商，与多家头部客户保持合作。随着L3级自动驾驶法规的推进，多传感器融合方案中激光雷达仍有需求，该业务预计将保持增长。\n\n　　两大“新引擎”：医疗光学与专业光学\n\n　　医疗光学是公司近年来着力拓展的新方向。2023年，公司突破了内窥镜高端镜头的技术瓶颈。此前，国内医院主要采购德国或日本的产品，价格较高。\n\n　　目前，公司产品已覆盖国内大多数主流内窥镜系统厂商，手术显微镜关键光学部件获得了一定订单，海外高端医疗客户拓展有所突破。\n\n　　此外，公司也在专业光学业务领域重点布局。\n\n　　在半导体光学量检测领域，公司产品已应用于量检测等关键制程装备，已获多家头部客户订单。据机构测算，2024年中国大陆半导体检测与量测设备市场规模达48亿美元，全球龙头科磊份额超六成，国产化率尚不足10%，替代空间广阔。\n\n　　据公司证券部主任曹晨辉透露，公司部分产品可广泛应用于光刻机对准系统、照明系统等核心环节，在手订单快速增加，新客户、新项目拓展顺利。随着国内半导体产业国产化趋势加快，公司作为光学产品核心供应商，有望从这一趋势中受益。\n\n　　短期扰动与长期底色\n\n　　业绩方面，2025年，公司营收同比增长8.25%，归母净利润2.20亿元，同比增长5.41%；2026年一季度，营收同比增长20.13%，归母净利润0.46亿元，同比下降17.10%。\n\n　　公司销售总监徐祖伟解释，利润增速不及营收主要有两个原因：一是美元贬值带来汇兑损失，因公司账上存有较多美元；二是条码模组业务中电子料成本较高，低毛利模组占比增加，拖累了综合毛利率。\n\n　　他进一步表示，这些影响是阶段性的，公司后续将通过提升效率、增强议价能力、优化产品结构来改善，而医疗光学、专业光学等新兴业务增速快、利润空间大，将成为未来增长的新引擎。\n\n　　分红方面，2025年公司拟每10股派发现金红利9元，合计派现约1.00亿元，现金分红占归母净利润比例达45.33%，为上市以来最高。上市以来，公司年度分红比例均保持在34%以上，累计现金分红超6.5亿元。\n\n　　研发方面，2025年公司投入0.93亿元，占主营业务收入的9.68%，研发人员351人，占总人数的25.71%。公司建有国家级企业技术中心和博士后科研工作站，与浙江大学、清华大学等高校保持合作，持续承担国家级研发项目。\n\n　　截至2025年底，宁波国家级制造业单项冠军总数达119家，连续8年位居全国城市首位，是全国首个“冠军”数量破百的城市。宁波A股上市公司中单项冠军占比近三成，总市值占宁波板块总市值30%以上。代表性企业还包括江丰电子（300666.SZ）、博威合金（601137.SH）、公牛集团（603195.SH）、东方电缆（603606.SH）等，覆盖半导体材料、合金新材料、电工电器、海洋电缆等多个领域。\n\n　　全新妙想投研助理，立即体验",
+          "type": "财报",
+          "sentiment": 1,
+          "weight": 2,
+          "final_weight": 2.34,
+          "source_authority": 3,
+          "recency_factor": 0.6,
+          "source": "东方财富资讯",
+          "llm_reviewed": true,
+          "llm_confidence": 0.9,
+          "llm_is_real_catalyst": true,
+          "llm_reasoning": "2025年及2026Q1业绩数据"
+        }
+      ]
+    },
+    "SSE:603919": {
+      "name": "603919",
+      "score": 26,
+      "score_raw": -5.85,
+      "score_components": {
+        "positive_weight_sum": 0,
+        "negative_weight_sum": 5.85,
+        "news_effective_count": 2,
+        "news_dropped_count": 0
+      },
+      "signal": "🔴 No Trade / 规避",
+      "strategy": "情绪偏空，建议规避或减仓，等待企稳",
+      "suitable_for": "反转(等企稳)",
+      "confidence": "中",
+      "patterns": [
+        "情绪持续走弱↓(trend)"
+      ],
+      "positive_factors": [],
+      "negative_factors": [
+        "[财报|w5.85] 金徽酒:金徽酒股份有限公司关于补缴税款的公告"
+      ],
+      "news_count": 2,
+      "news_dropped": 0,
+      "performance": {
+        "list_fetch_ms": 823,
+        "candidate_filter_ms": 0,
+        "enrichment_ms": 1631,
+        "raw_news_count": 40,
+        "raw_research_count": 10,
+        "candidate_news_count": 2,
+        "candidate_research_count": 0,
+        "enriched_news_count": 2,
+        "enriched_research_count": 0,
+        "candidate_reasons": {
+          "news": {
+            "no-subject-mention": 17,
+            "noise:融资净(买入|卖出)": 1,
+            "noise:龙虎榜|大宗交易|盘口异动": 2,
+            "dedup": 0,
+            "out_of_window": 18
+          },
+          "research": {
+            "dedup": 0,
+            "out_of_window": 10
+          }
+        },
+        "date_filter_ms": 0,
+        "relevance_ms": 0,
+        "llm_ms": 0,
+        "scoring_ms": 0
+      },
+      "top_news": [
+        {
+          "date": "2026-08-01",
+          "title": "金徽酒:金徽酒股份有限公司关于补缴税款的公告",
+          "content": "",
+          "type": "财报",
+          "sentiment": -1,
+          "weight": 6,
+          "final_weight": 5.85,
+          "source_authority": 4.5,
+          "recency_factor": 1,
+          "source": "东方财富公告",
+          "llm_reviewed": true,
+          "llm_confidence": 0.9,
+          "llm_is_real_catalyst": true,
+          "llm_reasoning": "补税追溯调整过往利润"
+        },
+        {
+          "date": "2026-08-01",
+          "title": "金徽酒:金徽酒股份有限公司关于持股5%以上股东解除股份质押的公告",
+          "content": "",
+          "type": "并购",
+          "sentiment": 0,
+          "weight": 3,
+          "final_weight": 2.52,
+          "source_authority": 4.5,
+          "recency_factor": 1,
+          "source": "东方财富公告",
+          "llm_reviewed": true,
+          "llm_confidence": 0.5,
+          "llm_is_real_catalyst": false,
+          "llm_reasoning": "股东解除质押，中性事件"
+        }
+      ]
+    },
+    "SZSE:002851": {
+      "name": "麦格米特",
+      "score": 18,
+      "score_raw": -15.18,
+      "score_components": {
+        "positive_weight_sum": 2.9,
+        "negative_weight_sum": 18.08,
+        "news_effective_count": 13,
+        "news_dropped_count": 0
+      },
+      "signal": "🔴 Short / 规避",
+      "strategy": "情绪持续走弱，多重利空，建议离场或反向关注",
+      "suitable_for": "反转(等底部)",
+      "confidence": "高",
+      "patterns": [
+        "情绪持续走弱↓(trend)"
+      ],
+      "positive_factors": [
+        "[行业|w1.02] 麦格米特7月31日盘中涨停",
+        "[行业|w1.02] 麦格米特7月31日开盘涨幅达5%",
+        "[行业|w0.86] 麦格米特7月30日打开跌停"
+      ],
+      "negative_factors": [
+        "[并购|w6.3] 麦格米特:关于向特定对象发行股票部分限售股份解除限售并上市流通的提示性公告",
+        "[并购|w6.3] 麦格米特:国金证券股份有限公司关于深圳麦格米特电气股份有限公司向特定对象发行股票部分限售股份解除限售并上市流通的核查意见",
+        "[行业|w1.02] 麦格米特7月31日打开涨停"
+      ],
+      "news_count": 13,
+      "news_dropped": 0,
+      "performance": {
+        "list_fetch_ms": 1895,
+        "candidate_filter_ms": 0,
+        "enrichment_ms": 15261,
+        "raw_news_count": 40,
+        "raw_research_count": 10,
+        "candidate_news_count": 13,
+        "candidate_research_count": 0,
+        "enriched_news_count": 13,
+        "enriched_research_count": 0,
+        "candidate_reasons": {
+          "news": {
+            "noise:龙虎榜|大宗交易|盘口异动": 5,
+            "no-subject-mention": 4,
+            "noise:开盘价|收盘价": 1,
+            "dedup": 0,
+            "out_of_window": 17
+          },
+          "research": {
+            "dedup": 0,
+            "out_of_window": 10
+          }
+        },
+        "date_filter_ms": 0,
+        "relevance_ms": 0,
+        "llm_ms": 29546,
+        "scoring_ms": 0
+      },
+      "top_news": [
+        {
+          "date": "2026-08-01",
+          "title": "麦格米特:关于向特定对象发行股票部分限售股份解除限售并上市流通的提示性公告",
+          "content": "研究、开发、设计、生产和销售(生产由分支机构经营)电力电子产品、电气产品、机电一体化设备、家用电器及其零部件,包括家用电器电源、工业与通信电源、节能灯及高频镇流器、便携式设备电源、医疗设备电源、电机及变频驱动器和可编程逻辑控制器、触摸屏、工业自动化软件、智能型电力电子模块,并为经营上述产品及业务提供必要的工程服务、技术咨询服务,售后维修服务、电池采购并配套销售服务;经营上述各项产品及系统的采购、零售(不设店铺)、批发、进出口(法律、行政法规、国务院决定禁止的项目除外,限制的项目须取得许可后方可经营)。\n郑重声明：东方财富网发布此信息的目的在于传播更多信息，与本站立场无关。东方财富网不保证该信息（包括但不限于文字、视频、音频、数据及图表）全部或者部分内容的准确性、真实性、完整性、有效性、及时性、原创性等。相关信息并未经过本网站证实，不对您构成任何投资建议，据此操作，风险自担。",
+          "type": "并购",
+          "sentiment": -1,
+          "weight": 6,
+          "final_weight": 6.3,
+          "source_authority": 4.5,
+          "recency_factor": 1,
+          "source": "东方财富公告",
+          "llm_reviewed": true,
+          "llm_confidence": 0.95,
+          "llm_is_real_catalyst": true,
+          "llm_reasoning": "定增限售股解禁，增加流通盘，偏空"
+        },
+        {
+          "date": "2026-08-01",
+          "title": "麦格米特:国金证券股份有限公司关于深圳麦格米特电气股份有限公司向特定对象发行股票部分限售股份解除限售并上市流通的核查意见",
+          "content": "",
+          "type": "并购",
+          "sentiment": -1,
+          "weight": 6,
+          "final_weight": 6.3,
+          "source_authority": 4.5,
+          "recency_factor": 1,
+          "source": "东方财富公告",
+          "llm_reviewed": true,
+          "llm_confidence": 0.95,
+          "llm_is_real_catalyst": true,
+          "llm_reasoning": "券商核查解禁，同属定增相关，略偏空"
+        },
+        {
+          "date": "2026-07-31 09:59:05",
+          "title": "麦格米特7月31日打开涨停",
+          "content": "以下是麦格米特在北京时间7月31日09:40分盘口异动快照：\n\n　　专业金融数据，下一代智能终端\n\n分笔\n\n09:40:39 106.26 2047↓\n09:40:36 106.45 550↓\n09:40:33 106.45 585↓\n09:40:30 106.45 479↓\n09:40:27 106.45 980↓\n \n09:40:24 106.45 732↓\n09:40:21 106.45 766↓\n09:40:18 106.45 327↓\n09:40:15 106.45 264↓\n09:40:12 106.45 821↓\n \n报价\n\n卖五 \n\n106.43\n\n 4\n卖四 \n\n106.42\n\n 69\n卖三 \n\n106.4\n\n 1\n卖二 \n\n106.39\n\n 2\n卖一 \n\n106.38\n\n 6\n\n买一 \n\n106.26\n\n 15\n买二 \n\n106.25\n\n 185\n买三 \n\n106.24\n\n 5\n买四 \n\n106.23\n\n 1\n买五 \n\n106.2\n\n 87\n\n最新：106.26\n涨幅：9.81%\n涨跌：9.49\n换手率：2.94%\n成交量：13.55万手\n成交额：14.29亿元\n主力净流入：\n2.36亿元\n\n  7月31日9点40分，麦格米特盘中打开涨停，现报106.26元，成交14.29亿元，换手率2.94%。该股之前于9点38分涨停。\n注：以上信息仅供参考，不对您构成任何投资建议。",
+          "type": "行业",
+          "sentiment": -1,
+          "weight": 1,
+          "final_weight": 1.02,
+          "source_authority": 3,
+          "recency_factor": 0.85,
+          "source": "东方财富资讯",
+          "llm_reviewed": true,
+          "llm_confidence": 0.7,
+          "llm_is_real_catalyst": false,
+          "llm_reasoning": "涨停打开，抛压显现，偏消极"
+        },
+        {
+          "date": "2026-07-31 09:54:45",
+          "title": "麦格米特7月31日盘中涨停",
+          "content": "以下是麦格米特在北京时间7月31日09:38分盘口异动快照：\n\n　　炒股第一步，先开个股票账户\n\n \n\n  7月31日9点38分，麦格米特盘中涨停，报106.45元，目前封单64230手，折合6.84亿元。截至目前，成交12.31亿元，换手率2.53%。\n注：以上信息仅供参考，不对您构成任何投资建议。",
+          "type": "行业",
+          "sentiment": 1,
+          "weight": 1,
+          "final_weight": 1.02,
+          "source_authority": 3,
+          "recency_factor": 0.85,
+          "source": "东方财富资讯",
+          "llm_reviewed": true,
+          "llm_confidence": 0.8,
+          "llm_is_real_catalyst": false,
+          "llm_reasoning": "封涨停，买盘强劲，偏积极"
+        },
+        {
+          "date": "2026-07-31 09:32:58",
+          "title": "麦格米特7月31日开盘涨幅达5%",
+          "content": "",
+          "type": "行业",
+          "sentiment": 1,
+          "weight": 1,
+          "final_weight": 1.02,
+          "source_authority": 3,
+          "recency_factor": 0.85,
+          "source": "东方财富资讯",
+          "llm_reviewed": true,
+          "llm_confidence": 0.5,
+          "llm_is_real_catalyst": false,
+          "llm_reasoning": "高开5%，盘口强势，偏多"
+        }
+      ]
+    },
+    "SSE:600703": {
+      "name": "600703",
+      "score": 4,
+      "score_raw": -14.24,
+      "score_components": {
+        "positive_weight_sum": 0,
+        "negative_weight_sum": 14.24,
+        "news_effective_count": 4,
+        "news_dropped_count": 0
+      },
+      "signal": "🔴 No Trade / Short",
+      "strategy": "黑天鹅事件规避，等待事件明朗化再评估",
+      "suitable_for": "反转(等底部确认)",
+      "confidence": "高",
+      "patterns": [],
+      "positive_factors": [],
+      "negative_factors": [
+        "[黑天鹅|w6.38] 三安光电股份有限公司关于公司总经理增持股份进展公告",
+        "[财报|w5.52] 三安光电股份有限公司关于全资子公司补缴税款的公告",
+        "[财报|w2.34] 三安光电:三安光电股份有限公司关于全资子公司补缴税款的公告"
+      ],
+      "news_count": 4,
+      "news_dropped": 0,
+      "performance": {
+        "list_fetch_ms": 1800,
+        "candidate_filter_ms": 0,
+        "enrichment_ms": 2047,
+        "raw_news_count": 40,
+        "raw_research_count": 10,
+        "candidate_news_count": 4,
+        "candidate_research_count": 0,
+        "enriched_news_count": 4,
+        "enriched_research_count": 0,
+        "candidate_reasons": {
+          "news": {
+            "noise:融资净(买入|卖出)": 3,
+            "no-subject-mention": 9,
+            "dedup": 0,
+            "out_of_window": 24
+          },
+          "research": {
+            "dedup": 0,
+            "out_of_window": 10
+          }
+        },
+        "date_filter_ms": 0,
+        "relevance_ms": 0,
+        "llm_ms": 1,
+        "scoring_ms": 0
+      },
+      "top_news": [
+        {
+          "date": "2026-08-01",
+          "title": "三安光电:三安光电股份有限公司关于公司总经理增持股份进展公告",
+          "content": "",
+          "type": "回购",
+          "sentiment": 0,
+          "weight": 1,
+          "final_weight": 1.08,
+          "source_authority": 4.5,
+          "recency_factor": 1,
+          "source": "东方财富公告",
+          "llm_reviewed": true,
+          "llm_confidence": 0.3,
+          "llm_is_real_catalyst": false,
+          "llm_reasoning": "标题仅提增持进展，无具体内容"
+        },
+        {
+          "date": "2026-08-01",
+          "title": "三安光电:三安光电股份有限公司关于全资子公司补缴税款的公告",
+          "content": "",
+          "type": "财报",
+          "sentiment": -1,
+          "weight": 2,
+          "final_weight": 2.34,
+          "source_authority": 4.5,
+          "recency_factor": 1,
+          "source": "东方财富公告",
+          "llm_reviewed": true,
+          "llm_confidence": 0.5,
+          "llm_is_real_catalyst": false,
+          "llm_reasoning": "子公司补税，无金额，属利空"
+        },
+        {
+          "date": "2026-07-31",
+          "title": "三安光电股份有限公司关于全资子公司补缴税款的公告",
+          "content": "证券代码：600703 \t股票简称：三安光电 \t编号：临 \t2026-073\n三安光电股份有限公司\n关于全资子公司补缴税款的公告\n本公司及董事会全体成员保证公告内容不存在任何虚假记载、误导性陈述或者重大遗漏，\n并对其内容的真实、准确和完整承担法律责任。\n三安光电股份有限公司（以下简称“公司”）全资子公司泉州三安半导体科技有\n限公司（以下简称“泉州三安”）近期根据税收法律法规相关要求，对涉税事项展开\n自查，现将有关情况公告如下：\n一、基本情况\n经自查，泉州三安需补缴税款及滞纳金共计约 \t8,640.95 \t万元。截至本公告披露\n日，泉州三安已缴纳税款 \t5,473.67 \t万元，剩余部分正与税务部门沟通确认中。本次\n涉税事项不涉及行政处罚，不会影响公司的正常经营。\n二、对公司的影响及风险提示\n根据《企业会计准则第 \t28 \t号--会计政策、会计估计变更和差错更正》，上述补缴\n事项不属于前期会计差错，不涉及前期财务数据追溯调整。\n本次补缴金额约 \t8,640.95 \t万元将计入 \t2026 \t年当期损益，具体影响 \t2026 \t年度归\n属于上市公司股东净利润的金额，最终以会计师事务所审计的数据为准。敬请广大投\n资者注意投资风险。\n特此公告。\n三安光电股份有限公司董事会\n2026 \t年 \t8 \t月 \t1 \t日\n\n-- 1 of 1 --",
+          "type": "财报",
+          "sentiment": -1,
+          "weight": 6,
+          "final_weight": 5.52,
+          "source_authority": 5,
+          "recency_factor": 0.85,
+          "source": "巨潮资讯",
+          "llm_reviewed": true,
+          "llm_confidence": 1,
+          "llm_is_real_catalyst": true,
+          "llm_reasoning": "补缴税款及滞纳金约8641万元"
+        },
+        {
+          "date": "2026-07-31",
+          "title": "三安光电股份有限公司关于公司总经理增持股份进展公告",
+          "content": "证券代码：600703 \t证券简称：三安光电 \t公告编号：临 \t2026-074\n三安光电股份有限公司\n关于公司总经理增持股份进展公告\n本公司董事会、全体董事及相关股东保证本公告内容不存在任何虚假记载、误导性陈\n述或者重大遗漏，并对其内容的真实性、准确性和完整性承担法律责任。\n重要内容提示：\n \t已披露增持计划情况\n公司于 \t2026 \t年 \t3 \t月 \t30 \t日披露了《关于公司董事长、总经理增持股份计划公\n告》，其中公司总经理林科闯先生拟自 \t2026 \t年 \t3 \t月 \t31 \t日（含本日）起的 \t6 \t个月\n内，通过上海证券交易所系统以集中竞价方式增持公司股份，拟增持金额不低于\n人民币 \t500.00 \t万元，不超过人民币 \t1,000.00 \t万元。\n \t增持计划的实施进展情况\n截至本公告日，公司总经理林科闯先生被采取留置措施，暂未实施增持操作。\n一、增持主体的基本情况\n增持主体名称 \t林科闯\n增持主体身份\n控股股东、实控人 \t是 \t否\n控股股东、实控人的一致行动人 \t是 \t否\n直接持股 \t5%以上股东 \t是 \t否\n董事、监事和高级管理人员 \t是 \t否\n其他：__________\n增持前持股数量 \t1,752,960 \t股\n增持前持股比例\n（占总股本） 0.04%\n二、增持计划的实施进展\n本次增持主体公司总经理林科闯先生被采取留置措施，暂未实施增持操作。\n三、增持计划实施相关风险提示\n本次增持主体公司总经理林科闯先生被采取留置措施，暂未实施增持操作。\n若增持计划届满前，林科闯先生仍未解除留置措施，本次增持计划可能存在无法\n如期实施的风险。公司将持续关注该事项进展情况，及时履行信息披露义务。\n\n-- 1 of 2 --\n\n四、其他说明\n1、本次增持计划符合《中华人民共和国证券法》等法律法规、部门规章及\n上海证券交易所业务规则等有关规定。\n2、本次增持计划的实施不会影响公司上市地位，不会导致公司股权分布不\n具备上市条件，不会导致公司控股股东及实际控制人发生变化。\n3、公司将持续关注增持主体后续增持公司股份的相关情况，按照《上海证\n券交易所股票上市规则》等相关规定及时履行信息披露义务。\n特此公告。\n三安光电股份有限公司董事会\n2026 \t年 \t8 \t月 \t1 \t日\n\n-- 2 of 2 --",
+          "type": "黑天鹅",
+          "sentiment": -1,
+          "weight": 6,
+          "final_weight": 6.38,
+          "source_authority": 5,
+          "recency_factor": 0.85,
+          "source": "巨潮资讯",
+          "llm_reviewed": true,
+          "llm_confidence": 1,
+          "llm_is_real_catalyst": true,
+          "llm_reasoning": "总经理被留置，增持计划或无法实施"
+        }
+      ]
+    }
+  }
+}

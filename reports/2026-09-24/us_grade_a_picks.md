@@ -1,0 +1,69 @@
+---
+AIGC:
+    Label: "1"
+    ContentProducer: 001191440300708461136T1XGW3
+    ProduceID: 96e0402ca683a23de686ac6d805202d6_c94f3d65b74e11f191c0525400cd780f
+    ReservedCode1: gAQ5hMJcZLm3DVvWGFoIIV2LhmQ5i4qmLcISQf+c3SFwgxXIGA5Q9WvgIvarq656LbQ8H8X4Q6zkMNTs7Q3mzhUZ9Qhpjo1ZC2wEP9xurxCfNxDZjsBfiQCXtLadiEdzbnQD2GYTp/flUM2RegEGSkEQma07VDR+hcEHURePNmcva5QmMtow5DD2vLs=
+    ContentPropagator: 001191440300708461136T1XGW3
+    PropagateID: 96e0402ca683a23de686ac6d805202d6_c94f3d65b74e11f191c0525400cd780f
+    ReservedCode2: gAQ5hMJcZLm3DVvWGFoIIV2LhmQ5i4qmLcISQf+c3SFwgxXIGA5Q9WvgIvarq656LbQ8H8X4Q6zkMNTs7Q3mzhUZ9Qhpjo1ZC2wEP9xurxCfNxDZjsBfiQCXtLadiEdzbnQD2GYTp/flUM2RegEGSkEQma07VDR+hcEHURePNmcva5QmMtow5DD2vLs=
+---
+
+# US Grade A Picks · 精选名单
+
+**Date:** 2026-09-23
+**筛选条件：**
+1. Grade = 🟢A
+2. MTF Alignment = 3/4 (75%) 或 4/4 (100%)
+3. News Signal = GREEN Long (Strong)
+
+**数据来源:** watchlist/us_combined_signals.md（`npm run combined:us` 产物，Tech 60% × News 40%）
+
+---
+
+## 🎯 入选名单（共 1 只）
+
+| # | Symbol | Combined | Grade | Tech | News | News Signal | MTF Alignment | Entry | Stop | Target | R/R | Risks |
+|---|--------|----------|-------|------|------|-------------|---------------|-------|------|--------|-----|-------|
+| 1 | **NASDAQ:MU** | **60.7** | 🟢A | 42.8 | 75 | GREEN Long (Strong) | **4/4 (100%)** | 1043.96 | 978.19 | 1140.42 | 1.5:1 | chop low_rr |
+
+### NASDAQ:MU（美光科技）
+
+| Field | Value |
+|-------|-------|
+| Combined Score | **60.7** |
+| Tech Score | 42.8 (Trend Continuation) |
+| News Score | 75 → GREEN Long (Strong) |
+| Current Price | 1043.96 |
+| **Entry** | **1043.96** |
+| **Stop** | **978.19** (ATR × 1.5) |
+| **Target** | **1140.42** |
+| R/R | 1.5:1 |
+| RSI | 61.2 |
+| ATR% | 4.2% |
+| Dist EMA20 | 7.8% |
+| Chase OK | NO |
+| MTF Alignment | **4/4 (100%)** |
+| Risk Flags | chop low_rr |
+
+---
+
+## 📋 排除说明（Grade A 但未入选）
+
+| Symbol | Grade | MTF Alignment | News Signal | 排除原因 |
+|--------|-------|---------------|-------------|----------|
+| NYSE:SPNT | 🟢A | 3/3 (100%) | GREEN Long (Mid) | News 非 Strong |
+| NASDAQ:CRWD | 🟢A | 4/4 (100%) | GREEN Long (Mid) | News 非 Strong |
+| NYSE:DT | 🟢A | 4/4 (100%) | GREEN Long (Mid) | News 非 Strong |
+| NASDAQ:QCOM | 🟢A | 4/4 (100%) | GREEN Long (Mid) | News 非 Strong |
+| NASDAQ:MSFT | 🟢A | 3/4 (75%) | GREEN Long (Mid) | News 非 Strong |
+| NYSE:LLY | 🟢A | 2/4 (50%) | GREEN Long (Mid) | MTF 不达标 + News 非 Strong |
+| NYSE:ANET | 🟢A | 4/4 (100%) | GREEN Long (Mid) | News 非 Strong |
+| NYSE:P | 🟢A | 4/4 (100%) | WARN Long (Cautious) | News 非 Strong |
+| NYSE:ASX | 🟢A | 4/4 (100%) | GREEN Long (Mid) | News 非 Strong |
+| NASDAQ:PLTR | 🟢A | 4/4 (100%) | GREEN Long (Mid) | News 非 Strong |
+
+---
+
+*Generated: 2026/9/23 · 基于 combined:us 全量信号筛选*
+*（内容由AI生成，仅供参考）*

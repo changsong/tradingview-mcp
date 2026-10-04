@@ -162,4 +162,4 @@
 | Divergence | Black swan present but mostly bullish | Avoid first, wait for clarity |
 
 ---
-*Generated: 2026-08-26T12:25:43.550Z | Sources: Yahoo / Finnhub / MarketWatch / NewsAPI / Seeking Alpha + deepseek-v4-pro*
+*Generated: 2026-08-26T12:25:43.550Z | Sources: Yahoo / Finnhub / MarketWatch / NewsAPI / Seeking Alpha + deepseek-flash*

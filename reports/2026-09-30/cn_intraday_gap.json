@@ -1,0 +1,634 @@
+{
+  "generated_at": "2026-09-30T06:40:45.908Z",
+  "market": "cn",
+  "source": "./watchlist/cn_selected.txt",
+  "entry_signal": {
+    "can_enter": false,
+    "signal": "观望",
+    "reason": "隔夜美股上涨 → A股均值回归承压 (回测个股涨概率仅 40.8%)",
+    "strategy": "不入场, 等待下一个美股下跌日"
+  },
+  "overnight_us": {
+    "sp500_pct": 0.59,
+    "nasdaq_pct": 0.44,
+    "dji_pct": 0.65,
+    "avg_pct": 0.56,
+    "contrarian_signal": "US up → CN down (均值回归)"
+  },
+  "sector_flow": {
+    "top_gainers": [
+      {
+        "code": "BK1340",
+        "name": "印制电路板",
+        "change_pct": -4.38,
+        "flow": 13817.24
+      },
+      {
+        "code": "BK1328",
+        "name": "集成电路封测",
+        "change_pct": -3.9,
+        "flow": 8306.85
+      },
+      {
+        "code": "BK0459",
+        "name": "元件",
+        "change_pct": -3.8,
+        "flow": 62021.9
+      },
+      {
+        "code": "BK1329",
+        "name": "集成电路制造",
+        "change_pct": -3.34,
+        "flow": 3400.81
+      },
+      {
+        "code": "BK1325",
+        "name": "半导体材料",
+        "change_pct": -2.98,
+        "flow": 12777.67
+      }
+    ],
+    "top_losers": [
+      {
+        "code": "BK1296",
+        "name": "视频媒体",
+        "change_pct": 6.46,
+        "flow": 1019.06
+      },
+      {
+        "code": "BK1500",
+        "name": "医美耗材",
+        "change_pct": 5.52,
+        "flow": 1430.97
+      },
+      {
+        "code": "BK1596",
+        "name": "其他生物制品",
+        "change_pct": 4.87,
+        "flow": 8660.3
+      },
+      {
+        "code": "BK1598",
+        "name": "疫苗",
+        "change_pct": 4.86,
+        "flow": 4517.8
+      },
+      {
+        "code": "BK1044",
+        "name": "生物制品",
+        "change_pct": 4.69,
+        "flow": 1094.32
+      }
+    ]
+  },
+  "model": "external_3d",
+  "formula": "Score = 隔夜外盘·均值回归(±4) + 新闻情绪(±3) + 板块资金流(±2)",
+  "strategy": {
+    "entry_condition": "隔夜美股下跌",
+    "priority_sort": "新闻<60 优先 (回测涨概率 65.1%), 新闻≥60 次之 (回测涨概率 48.8%)",
+    "rationale": "利好出尽是利空 — 高新闻分标的已被热钱透支，反弹力度弱"
+  },
+  "total": 13,
+  "success": 13,
+  "failed": [],
+  "results": [
+    {
+      "symbol": "SSE:600172",
+      "name": "600172",
+      "ok": true,
+      "price": 14.19,
+      "open": 14.93,
+      "high": 15.14,
+      "low": 14.08,
+      "volume": 142419699,
+      "chg_pct": -0.049565,
+      "gap_pct": 0.049565,
+      "real_gap": 0.002013,
+      "candle": "阴",
+      "mkt_contrib": -4,
+      "news_score": 50,
+      "news_signal": "⚪ No Trade (无数据)",
+      "news_patterns": [],
+      "news_contrib": -3,
+      "sector_score": 2,
+      "matched_boards": [
+        {
+          "board": "磨具磨料",
+          "direction": "top",
+          "rank": 3
+        }
+      ],
+      "all_boards": [
+        "机械设备",
+        "通用设备",
+        "磨具磨料",
+        "河南板块",
+        "高市净率"
+      ],
+      "can_enter": false,
+      "entry_label": "⛔ 观望",
+      "priority": -1,
+      "score": -5,
+      "prediction": "偏空"
+    },
+    {
+      "symbol": "SSE:601872",
+      "name": "601872",
+      "ok": true,
+      "price": 20.22,
+      "open": 19.8,
+      "high": 20.45,
+      "low": 19.79,
+      "volume": 65571153,
+      "chg_pct": 0.021212,
+      "gap_pct": 0.021212,
+      "real_gap": -0.004525,
+      "candle": "阳",
+      "mkt_contrib": -4,
+      "news_score": 50,
+      "news_signal": "⚪ No Trade (无数据)",
+      "news_patterns": [],
+      "news_contrib": -3,
+      "sector_score": 0,
+      "matched_boards": [],
+      "all_boards": [
+        "交通运输",
+        "航运港口",
+        "航运",
+        "上海板块",
+        "2026中报预增"
+      ],
+      "can_enter": false,
+      "entry_label": "⛔ 观望",
+      "priority": -1,
+      "score": -7,
+      "prediction": "偏空"
+    },
+    {
+      "symbol": "SZSE:002636",
+      "name": "002636",
+      "ok": true,
+      "price": 80.41,
+      "open": 82.2,
+      "high": 83,
+      "low": 79.48,
+      "volume": 29820236,
+      "chg_pct": -0.021776,
+      "gap_pct": 0.021776,
+      "real_gap": -0.009996,
+      "candle": "阴",
+      "mkt_contrib": -4,
+      "news_score": 50,
+      "news_signal": "⚪ No Trade (无数据)",
+      "news_patterns": [],
+      "news_contrib": -3,
+      "sector_score": 2,
+      "matched_boards": [
+        {
+          "board": "电子",
+          "direction": "top",
+          "rank": 1
+        },
+        {
+          "board": "元件",
+          "direction": "top",
+          "rank": 2
+        },
+        {
+          "board": "印制电路板",
+          "direction": "top",
+          "rank": 3
+        }
+      ],
+      "all_boards": [
+        "电子",
+        "元件",
+        "印制电路板",
+        "上海板块",
+        "2026中报预增"
+      ],
+      "can_enter": false,
+      "entry_label": "⛔ 观望",
+      "priority": -1,
+      "score": -5,
+      "prediction": "偏空"
+    },
+    {
+      "symbol": "SSE:601208",
+      "name": "601208",
+      "ok": true,
+      "price": 48.24,
+      "open": 50.03,
+      "high": 50.48,
+      "low": 48.01,
+      "volume": 43618722,
+      "chg_pct": -0.035779,
+      "gap_pct": 0.035779,
+      "real_gap": -0.009895,
+      "candle": "阴",
+      "mkt_contrib": -4,
+      "news_score": 50,
+      "news_signal": "⚪ No Trade (无数据)",
+      "news_patterns": [],
+      "news_contrib": -3,
+      "sector_score": 0,
+      "matched_boards": [],
+      "all_boards": [
+        "基础化工",
+        "塑料",
+        "膜材料",
+        "四川板块",
+        "2026中报预增"
+      ],
+      "can_enter": false,
+      "entry_label": "⛔ 观望",
+      "priority": -1,
+      "score": -7,
+      "prediction": "偏空"
+    },
+    {
+      "symbol": "SSE:603259",
+      "name": "603259",
+      "ok": true,
+      "price": 167.44,
+      "open": 160.01,
+      "high": 169.2,
+      "low": 159.4,
+      "volume": 41550071,
+      "chg_pct": 0.046435,
+      "gap_pct": 0.046435,
+      "real_gap": -0.004046,
+      "candle": "阳",
+      "mkt_contrib": -4,
+      "news_score": 50,
+      "news_signal": "⚪ No Trade (微多)",
+      "news_patterns": [
+        "催化剂集中(catalyst burst)"
+      ],
+      "news_contrib": -3,
+      "sector_score": -2,
+      "matched_boards": [
+        {
+          "board": "医疗服务",
+          "direction": "bottom",
+          "rank": 2
+        },
+        {
+          "board": "医疗研发外包",
+          "direction": "bottom",
+          "rank": 3
+        }
+      ],
+      "all_boards": [
+        "医药生物",
+        "医疗服务",
+        "医疗研发外包",
+        "江苏板块",
+        "券商金股"
+      ],
+      "can_enter": false,
+      "entry_label": "⛔ 观望",
+      "priority": -1,
+      "score": -9,
+      "prediction": "偏空"
+    },
+    {
+      "symbol": "SZSE:001389",
+      "name": "001389",
+      "ok": true,
+      "price": 176.31,
+      "open": 193,
+      "high": 193.66,
+      "low": 175.87,
+      "volume": 8348690,
+      "chg_pct": -0.086477,
+      "gap_pct": 0.086477,
+      "real_gap": 0.006047,
+      "candle": "阴",
+      "mkt_contrib": -4,
+      "news_score": 50,
+      "news_signal": "⚪ No Trade (微多)",
+      "news_patterns": [
+        "催化剂集中(catalyst burst)"
+      ],
+      "news_contrib": -3,
+      "sector_score": 2,
+      "matched_boards": [
+        {
+          "board": "电子",
+          "direction": "top",
+          "rank": 1
+        },
+        {
+          "board": "元件",
+          "direction": "top",
+          "rank": 2
+        },
+        {
+          "board": "印制电路板",
+          "direction": "top",
+          "rank": 3
+        }
+      ],
+      "all_boards": [
+        "电子",
+        "元件",
+        "印制电路板",
+        "广东板块",
+        "2026中报预增"
+      ],
+      "can_enter": false,
+      "entry_label": "⛔ 观望",
+      "priority": -1,
+      "score": -5,
+      "prediction": "偏空"
+    },
+    {
+      "symbol": "SZSE:300684",
+      "name": "300684",
+      "ok": true,
+      "price": 108.14,
+      "open": 108.09,
+      "high": 116.12,
+      "low": 107.89,
+      "volume": 19762289,
+      "chg_pct": 0.000463,
+      "gap_pct": 0.000463,
+      "real_gap": 0.006612,
+      "candle": "阳",
+      "mkt_contrib": -4,
+      "news_score": 50,
+      "news_signal": "⚪ No Trade (无数据)",
+      "news_patterns": [],
+      "news_contrib": -3,
+      "sector_score": 2,
+      "matched_boards": [
+        {
+          "board": "电子",
+          "direction": "top",
+          "rank": 1
+        },
+        {
+          "board": "电子化学品Ⅱ",
+          "direction": "top",
+          "rank": 2
+        },
+        {
+          "board": "电子化学品Ⅲ",
+          "direction": "top",
+          "rank": 3
+        }
+      ],
+      "all_boards": [
+        "电子",
+        "电子化学品Ⅱ",
+        "电子化学品Ⅲ",
+        "北京板块",
+        "高市净率"
+      ],
+      "can_enter": false,
+      "entry_label": "⛔ 观望",
+      "priority": -1,
+      "score": -5,
+      "prediction": "偏空"
+    },
+    {
+      "symbol": "SZSE:300394",
+      "name": "300394",
+      "ok": true,
+      "price": 261.5,
+      "open": 256.01,
+      "high": 266.85,
+      "low": 253.16,
+      "volume": 27022248,
+      "chg_pct": 0.021444,
+      "gap_pct": 0.021444,
+      "real_gap": 0.000078,
+      "candle": "阳",
+      "mkt_contrib": -4,
+      "news_score": 50,
+      "news_signal": "⚪ No Trade (微多)",
+      "news_patterns": [],
+      "news_contrib": -3,
+      "sector_score": 0,
+      "matched_boards": [],
+      "all_boards": [
+        "通信",
+        "通信设备",
+        "通信网络设备及器件",
+        "江苏板块",
+        "券商金股"
+      ],
+      "can_enter": false,
+      "entry_label": "⛔ 观望",
+      "priority": -1,
+      "score": -7,
+      "prediction": "偏空"
+    },
+    {
+      "symbol": "SZSE:301217",
+      "name": "301217",
+      "ok": true,
+      "price": 99.82,
+      "open": 103.11,
+      "high": 103.81,
+      "low": 99.08,
+      "volume": 13381857,
+      "chg_pct": -0.031908,
+      "gap_pct": 0.031908,
+      "real_gap": 0.008411,
+      "candle": "阴",
+      "mkt_contrib": -4,
+      "news_score": 50,
+      "news_signal": "⚪ No Trade (无数据)",
+      "news_patterns": [],
+      "news_contrib": -3,
+      "sector_score": 0,
+      "matched_boards": [],
+      "all_boards": [
+        "电力设备",
+        "电池",
+        "锂电池",
+        "安徽板块",
+        "高市净率"
+      ],
+      "can_enter": false,
+      "entry_label": "⛔ 观望",
+      "priority": -1,
+      "score": -7,
+      "prediction": "偏空"
+    },
+    {
+      "symbol": "SZSE:300661",
+      "name": "300661",
+      "ok": true,
+      "price": 110.6,
+      "open": 112.98,
+      "high": 114.3,
+      "low": 110.44,
+      "volume": 6492187,
+      "chg_pct": -0.021066,
+      "gap_pct": 0.021066,
+      "real_gap": 0.001596,
+      "candle": "阴",
+      "mkt_contrib": -4,
+      "news_score": 50,
+      "news_signal": "⚪ No Trade (无数据)",
+      "news_patterns": [],
+      "news_contrib": -3,
+      "sector_score": 2,
+      "matched_boards": [
+        {
+          "board": "电子",
+          "direction": "top",
+          "rank": 1
+        },
+        {
+          "board": "半导体",
+          "direction": "top",
+          "rank": 2
+        },
+        {
+          "board": "模拟芯片设计",
+          "direction": "top",
+          "rank": 3
+        }
+      ],
+      "all_boards": [
+        "电子",
+        "半导体",
+        "模拟芯片设计",
+        "北京板块",
+        "科技风格"
+      ],
+      "can_enter": false,
+      "entry_label": "⛔ 观望",
+      "priority": -1,
+      "score": -5,
+      "prediction": "偏空"
+    },
+    {
+      "symbol": "SZSE:301529",
+      "name": "301529",
+      "ok": true,
+      "price": 140.72,
+      "open": 137,
+      "high": 143.49,
+      "low": 134.2,
+      "volume": 3242056,
+      "chg_pct": 0.027153,
+      "gap_pct": 0.027153,
+      "real_gap": 0.000877,
+      "candle": "阳",
+      "mkt_contrib": -4,
+      "news_score": 50,
+      "news_signal": "⚪ No Trade (无数据)",
+      "news_patterns": [],
+      "news_contrib": -3,
+      "sector_score": 0,
+      "matched_boards": [],
+      "all_boards": [
+        "汽车",
+        "汽车零部件",
+        "车身附件及饰件",
+        "安徽板块",
+        "趋势股"
+      ],
+      "can_enter": false,
+      "entry_label": "⛔ 观望",
+      "priority": -1,
+      "score": -7,
+      "prediction": "偏空"
+    },
+    {
+      "symbol": "SSE:600206",
+      "name": "600206",
+      "ok": true,
+      "price": 47.12,
+      "open": 49.05,
+      "high": 49.34,
+      "low": 47,
+      "volume": 50178062,
+      "chg_pct": -0.039348,
+      "gap_pct": 0.039348,
+      "real_gap": -0.013078,
+      "candle": "阴",
+      "mkt_contrib": -4,
+      "news_score": 50,
+      "news_signal": "⚪ No Trade (无数据)",
+      "news_patterns": [],
+      "news_contrib": -3,
+      "sector_score": 2,
+      "matched_boards": [
+        {
+          "board": "电子",
+          "direction": "top",
+          "rank": 1
+        },
+        {
+          "board": "半导体",
+          "direction": "top",
+          "rank": 2
+        },
+        {
+          "board": "半导体材料",
+          "direction": "top",
+          "rank": 3
+        }
+      ],
+      "all_boards": [
+        "电子",
+        "半导体",
+        "半导体材料",
+        "北京板块",
+        "中盘股"
+      ],
+      "can_enter": false,
+      "entry_label": "⛔ 观望",
+      "priority": -1,
+      "score": -5,
+      "prediction": "偏空"
+    },
+    {
+      "symbol": "SZSE:301099",
+      "name": "301099",
+      "ok": true,
+      "price": 50.97,
+      "open": 54.12,
+      "high": 54.48,
+      "low": 50.2,
+      "volume": 13825980,
+      "chg_pct": -0.058204,
+      "gap_pct": 0.058204,
+      "real_gap": -0.002948,
+      "candle": "阴",
+      "mkt_contrib": -4,
+      "news_score": 50,
+      "news_signal": "⚪ No Trade (微多)",
+      "news_patterns": [
+        "催化剂集中(catalyst burst)"
+      ],
+      "news_contrib": -3,
+      "sector_score": 2,
+      "matched_boards": [
+        {
+          "board": "电子",
+          "direction": "top",
+          "rank": 1
+        }
+      ],
+      "all_boards": [
+        "电子",
+        "其他电子Ⅱ",
+        "其他电子Ⅲ",
+        "上海板块",
+        "2026中报预增"
+      ],
+      "can_enter": false,
+      "entry_label": "⛔ 观望",
+      "priority": -1,
+      "score": -5,
+      "prediction": "偏空"
+    }
+  ]
+}
