@@ -19,6 +19,7 @@
 import { readFileSync, writeFileSync, existsSync, mkdirSync } from 'fs';
 import { runCli, sleep } from '../lib/runCli.mjs';
 import { snapshotMarket } from '../lib/snapshot.mjs';
+import { runCnGap } from './sectorSelection.mjs';
 
 const SWITCH_DELAY = 1700;
 const TF_DELAY     = 600;
@@ -199,6 +200,9 @@ function saveSectorFlowSnapshot(market, sectorFlow) {
  * @param {'cn'|'us'|'hk'} market
  */
 export async function runGap(market) {
+  // CN 走独立的「热点板块资金流」模型，与 us/hk 完全解耦（无 CDP / TradingView 依赖）。
+  if (market === 'cn') return runCnGap();
+
   const tag = market.toUpperCase();
   const SELECTED_PATH = './watchlist/' + market + '_selected.txt';
   const TECH_JSON     = './watchlist/' + market + '_tech_signals.json';

@@ -16,13 +16,10 @@ import { readFileSync, writeFileSync } from 'fs';
 import { fileURLToPath } from 'url';
 import { dirname, resolve } from 'path';
 import { performance } from 'node:perf_hooks';
-import { searchNews, extractCode } from '../../src/core/webNews.js';
 import { closeSharedBrowser } from '../../src/core/browserScraper.js';
-import { analyzeStockData } from './lib/analyze.mjs';
-import { filterRelevantCandidates } from './lib/relevance.mjs';
 import { isLLMEnabled, MODEL } from './lib/llm_common.mjs';
 import { pruneWatchlist } from './lib/prune_watchlist.mjs';
-import { createLimiter } from '../../src/core/concurrency.js';
+import { analyzeSymbols, makeWindow } from './lib/analyze_symbols.mjs';
 
 // 锁定 CWD 为项目根，使 ./watchlist 等相对路径稳定
 process.chdir(resolve(dirname(fileURLToPath(import.meta.url)), '../..'));
@@ -40,33 +37,9 @@ const MARKET       = 'cn';
 
 const llmFlag = !process.argv.includes('--no-llm');
 
-const today  = new Date();
-const cutoff = new Date(today);
-cutoff.setDate(today.getDate() - DAYS_BACK);
-const cutoffStr = cutoff.toISOString().split('T')[0];
-const todayStr  = today.toISOString().split('T')[0];
+const { cutoff, today, cutoffStr, todayStr } = makeWindow(DAYS_BACK);
 
 const msSince = start => Math.round(performance.now() - start);
-
-function isInWindow(dateStr) {
-  if (!dateStr) return false;
-  const d = new Date(String(dateStr).slice(0, 10));
-  return !Number.isNaN(d.getTime()) && d >= cutoff && d <= today;
-}
-
-function filterCandidatesForEnrichment(items, ctx) {
-  const recent = (items || []).filter(item => isInWindow(item.date));
-  const outOfWindow = (items || []).length - recent.length;
-  const filtered = filterRelevantCandidates(recent, ctx.symbol, ctx.name, { market: MARKET });
-  return {
-    ...filtered,
-    dropped: filtered.dropped + outOfWindow,
-    reasons: {
-      ...filtered.reasons,
-      ...(outOfWindow ? { out_of_window: outOfWindow } : {}),
-    },
-  };
-}
 
 function sumPerformance(results, reportWriteMs = 0) {
   const totals = {
@@ -99,63 +72,6 @@ function logPerformanceSummary(perf) {
   console.log(`  relevance    total=${t.relevance_ms} avg=${a.relevance_ms}`);
   console.log(`  llm          total=${t.llm_ms} avg=${a.llm_ms}`);
   console.log(`  report_write total=${t.report_write_ms}`);
-}
-
-// ─── 单股分析 ─────────────────────────────────────────────────────────────────
-async function analyzeStock(symbol) {
-  const code = extractCode(symbol);
-  process.stdout.write(`  [${symbol}] 抓取中...`);
-
-  try {
-    const result = await searchNews({
-      symbol,
-      source: 'news',
-      count: NEWS_COUNT,
-      enrich: 'candidate',
-      candidateFilterFn: filterCandidatesForEnrichment,
-      enrichTopN: NEWS_ENRICH_TOP_N,
-      researchEnrichTopN: RESEARCH_ENRICH_TOP_N,
-    });
-
-    // 合并新闻 + 研报
-    const allNews = [
-      ...result.news.map(n     => ({ ...n, category: 'news'     })),
-      ...result.research.map(n => ({ ...n, category: 'research' })),
-    ];
-
-    const r = await analyzeStockData(allNews, {
-      symbol,
-      name:   result.name || code,
-      today, cutoff,
-      market: MARKET,
-      classifierFn: llmFlag ? undefined : async () => null,
-    });
-
-    process.stdout.write(` → ${r.news_count}条有效 / ${r.news_dropped}过滤, score=${r.score}\n`);
-
-    return {
-      symbol,
-      name: result.name || code,
-      ...r,
-      sources_status: result.sources_status,
-      performance: {
-        ...(result.performance || {}),
-        ...(r.performance || {}),
-      },
-    };
-  } catch (err) {
-    process.stdout.write(` ❌ 错误: ${err.message}\n`);
-    return {
-      symbol, name: code,
-      score: 50, score_raw: 0,
-      signal: '⚪ No Trade (抓取失败)', strategy: err.message,
-      suitableFor: '-', confidence: '-',
-      patterns: [], tagged: [],
-      positive_factors: [], negative_factors: [],
-      news_count: 0, news_dropped: 0,
-      score_components: { positive_weight_sum: 0, negative_weight_sum: 0 },
-    };
-  }
 }
 
 // ─── 报告生成 ─────────────────────────────────────────────────────────────────
@@ -296,23 +212,14 @@ async function main() {
   const symbols = content.split(',').map(s => s.trim()).filter(Boolean);
   console.log(`✅ 加载 ${symbols.length} 只股票 (并发=${STOCK_CONCURRENCY})\n`);
 
-  const results = [];
-  const stockLimiter = createLimiter(STOCK_CONCURRENCY);
-  let completed = 0;
-
-  const settled = await Promise.allSettled(
-    symbols.map((s) =>
-      stockLimiter(async () => {
-        const r = await analyzeStock(s);
-        completed++;
-        process.stdout.write(`  [${completed}/${symbols.length}] ${s} 完成\n`);
-        return r;
-      })
-    )
-  );
-  settled.forEach(r => {
-    if (r.status === 'fulfilled') results.push(r.value);
-    else console.warn('  ⚠ 异常:', r.reason?.message);
+  const results = await analyzeSymbols(symbols, {
+    market: MARKET,
+    daysBack: DAYS_BACK,
+    newsCount: NEWS_COUNT,
+    enrichTopN: NEWS_ENRICH_TOP_N,
+    researchEnrichTopN: RESEARCH_ENRICH_TOP_N,
+    concurrency: STOCK_CONCURRENCY,
+    llm: llmFlag,
   });
 
   // 按归一化分降序
